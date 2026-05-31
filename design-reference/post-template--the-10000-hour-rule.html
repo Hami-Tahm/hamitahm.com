@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 10,000-Hour Rule, Revisited — Hami Tahm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F6F1E8;--panel:#FFFFFF;--ink:#181715;--muted:#6F6A60;--faint:#9A9384;
+    --line:rgba(24,23,21,.10);--line-strong:#DDD3C3;
+    --accent:#0F6E78;--accent-dark:#0B5F68;--accent-soft:rgba(15,110,120,.10);
+    --serif:'Newsreader',Georgia,serif;--sans:'Hanken Grotesk',-apple-system,sans-serif;--mono:'JetBrains Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(620px 420px at 90% -10%,rgba(15,110,120,.06),transparent 72%),radial-gradient(680px 500px at -12% 112%,rgba(15,110,120,.04),transparent 72%)}
+  body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.02;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .wrap{position:relative;z-index:1;max-width:720px;margin:0 auto;padding:0 32px}
+  .wrap-wide{max-width:980px}
+  a{color:inherit}
+
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);background:rgba(246,241,232,.80);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:980px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
+  .brand{font-family:var(--serif);font-size:21px;font-weight:500;letter-spacing:-.01em;display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink)}
+  .brand .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{font-family:var(--mono);font-size:12.5px;letter-spacing:.05em;color:var(--muted);transition:color .2s;text-decoration:none}
+  .nav-links a:hover,.nav-links a.active{color:var(--ink)}
+  .nav-cta{border:1px solid var(--line-strong);padding:8px 16px;border-radius:999px;color:var(--ink)!important;transition:all .2s}
+  .nav-cta:hover{border-color:var(--accent);background:var(--accent-soft)}
+
+  /* article header */
+  .art-head{padding:70px 0 30px}
+  .back{font-family:var(--mono);font-size:12px;color:var(--muted);text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:color .2s;margin-bottom:30px}
+  .back:hover{color:var(--accent)}
+  .meta-top{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+  h1{font-family:var(--serif);font-weight:500;font-size:clamp(34px,5vw,52px);line-height:1.08;letter-spacing:-.025em}
+  .dek{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--muted);margin-top:20px;line-height:1.5;font-weight:400}
+  .byline{display:flex;align-items:center;gap:14px;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
+  .avatar{width:40px;height:40px;border-radius:50%;border:1px solid var(--line-strong);background:linear-gradient(145deg,#e8dfce,#fff);flex-shrink:0}
+  .byline-t{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--ink)}
+  .byline-s{font-family:var(--mono);font-size:11.5px;color:var(--faint);margin-top:1px}
+
+  /* article body — Newsreader for reading */
+  article{padding:14px 0 30px}
+  .prose{font-family:var(--serif);font-size:20px;line-height:1.72;color:#2a2824}
+  .prose p{margin-bottom:26px}
+  .prose h2{font-family:var(--serif);font-weight:600;font-size:30px;letter-spacing:-.02em;line-height:1.2;margin:48px 0 18px;color:var(--ink)}
+  .prose h3{font-family:var(--serif);font-weight:600;font-size:23px;letter-spacing:-.01em;margin:36px 0 14px;color:var(--ink)}
+  .prose a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+  .prose strong{font-weight:600;color:var(--ink)}
+  .prose ul,.prose ol{margin:0 0 26px 24px}
+  .prose li{margin-bottom:10px}
+  .prose blockquote{border-left:2px solid var(--accent);padding:6px 0 6px 24px;margin:32px 0;font-style:italic;color:var(--muted)}
+  .prose hr{border:none;border-top:1px solid var(--line);margin:44px 0}
+  .pull{font-family:var(--serif);font-size:26px;line-height:1.4;color:var(--ink);font-weight:500;margin:40px 0;padding:0;letter-spacing:-.01em}
+
+  /* author / cta box */
+  .author-box{margin:50px 0 0;background:var(--panel);border:1px solid var(--line-strong);border-radius:14px;padding:32px;display:flex;gap:20px;align-items:flex-start;box-shadow:0 1px 2px rgba(24,23,21,.04),0 12px 40px -22px rgba(24,23,21,.18)}
+  .author-box .avatar{width:54px;height:54px}
+  .author-box h4{font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:-.01em}
+  .author-box p{font-size:14.5px;color:var(--muted);margin-top:7px;line-height:1.55}
+  .author-box a.al{color:var(--accent);font-family:var(--mono);font-size:12.5px;text-decoration:none;margin-top:12px;display:inline-block;border-bottom:1px solid transparent;transition:border-color .2s}
+  .author-box a.al:hover{border-color:var(--accent)}
+
+  /* more posts */
+  .more{padding:50px 0 30px;border-top:1px solid var(--line);margin-top:50px}
+  .more-label{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:24px}
+  .more-row{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:padding-left .2s}
+  .more-row:hover{padding-left:8px}
+  .more-row .mt{font-family:var(--serif);font-size:19px;font-weight:500;color:var(--ink);transition:color .2s}
+  .more-row:hover .mt{color:var(--accent)}
+  .more-row .md{font-family:var(--mono);font-size:11.5px;color:var(--faint);white-space:nowrap}
+
+  footer{border-top:1px solid var(--line);padding:40px 0 50px;margin-top:20px}
+  .foot-in{max-width:980px;margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .foot-brand{font-family:var(--serif);font-size:18px;font-weight:500}
+  .foot-links{display:flex;gap:20px}
+  .foot-links a{font-family:var(--mono);font-size:12.5px;color:var(--muted);transition:color .2s;text-decoration:none}
+  .foot-links a:hover{color:var(--accent)}
+
+  @media(max-width:680px){
+    .nav-links{display:none}
+    .prose{font-size:18.5px}
+    .prose h2{font-size:26px}
+    .author-box{flex-direction:column;gap:14px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a href="/" class="brand"><span class="dot"></span>Hami Tahm</a>
+    <div class="nav-links">
+      <a href="/writing/" class="active">Writing</a>
+      <a href="/hami-tahm/">About</a>
+      <a href="/ai-visibility/" class="nav-cta">AI Visibility</a>
+    </div>
+  </div>
+</nav>
+
+<div class="art-head">
+  <div class="wrap">
+    <a href="/writing/" class="back">← Writing</a>
+    <div class="meta-top">Productivity</div>
+    <h1>The 10,000-Hour Rule, Revisited</h1>
+    <p class="dek">How long mastery really takes — and what the famous rule gets wrong about the people who reach it.</p>
+    <div class="byline">
+      <div class="avatar"></div>
+      <div>
+        <div class="byline-t">Hami Tahm</div>
+        <div class="byline-s">Dec 2025 · 7 min read</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<article>
+  <div class="wrap prose">
+    <p><em>[This is a sample layout. Replace the body below with the real text of your existing post — keep the same URL slug so you don't lose its rankings.]</em></p>
+
+    <p>Most people have heard the claim: it takes 10,000 hours to master anything. It's a clean, quotable number — and like most clean, quotable numbers, it hides more than it reveals.</p>
+
+    <p>The figure comes from research on expert performance, later popularized into a rule of thumb. But somewhere between the study and the bestseller, an important nuance got lost. The number was never meant to be a finish line you cross. It was an <strong>average</strong> — and averages tell you very little about any individual path.</p>
+
+    <h2>Where the number comes from</h2>
+
+    <p>The original work studied elite performers in fields with clear feedback and structured practice. What mattered wasn't just time logged, but the <strong>quality</strong> of that time: deliberate, focused, uncomfortable practice aimed squarely at weaknesses.</p>
+
+    <blockquote>Ten thousand hours of doing the same thing comfortably is not ten thousand hours of getting better.</blockquote>
+
+    <p>This is the part the rule erases. Two people can each spend 10,000 hours and end up in completely different places, because one was practicing and the other was merely repeating.</p>
+
+    <p class="pull">Time is the denominator. Deliberate effort is the numerator. The rule only mentions the denominator.</p>
+
+    <h2>What this means in practice</h2>
+
+    <p>If you're trying to get good at something, the question isn't "how many hours do I need?" It's:</p>
+
+    <ul>
+      <li>Am I working at the edge of my current ability, or staying comfortable?</li>
+      <li>Do I get fast, honest feedback on whether I'm improving?</li>
+      <li>Am I isolating and attacking specific weaknesses?</li>
+    </ul>
+
+    <p>Answer yes to those, and you'll compress the timeline dramatically. Answer no, and 10,000 hours may not be enough.</p>
+
+    <h3>The founder parallel</h3>
+
+    <p>I think about this constantly in building companies. You can run a venture for years and learn almost nothing, or run a brutal six-month experiment and learn more than a decade of comfortable operating would teach. <a href="/the-real-founder-dilemma/">The discipline is the same one I wrote about here</a>: it's not the time, it's what you do inside it.</p>
+
+    <hr>
+
+    <p>So revisit the rule, but don't worship it. Mastery isn't a number you reach. It's a quality of attention you sustain.</p>
+  </div>
+
+  <!-- author box -->
+  <div class="wrap">
+    <div class="author-box">
+      <div class="avatar"></div>
+      <div>
+        <h4>Hami Tahm</h4>
+        <p>Serial tech founder in Toronto. I build, test, and ship digital products — currently HomeCalc.ca — and help Canadian businesses get found in AI search.</p>
+        <a href="/hami-tahm/" class="al">More about me →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- more posts -->
+  <div class="wrap">
+    <div class="more">
+      <div class="more-label">Keep reading</div>
+      <a href="/the-real-founder-dilemma/" class="more-row"><span class="mt">The Real Founder Dilemma</span><span class="md">Unicorn Building</span></a>
+      <a href="/how-much-wealth-should-you-aim-for/" class="more-row"><span class="mt">How Much Wealth Should You Aim For?</span><span class="md">Financial</span></a>
+      <a href="/the-future-of-life-expectancy/" class="more-row"><span class="mt">The Future of Life Expectancy</span><span class="md">Longevity &amp; Health</span></a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="foot-in">
+    <div class="foot-brand">Hami Tahm<span style="color:var(--accent)">.</span></div>
+    <div class="foot-links"><a href="/writing/">Writing</a><a href="/hami-tahm/">About</a><a href="/ai-visibility/">AI Visibility</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

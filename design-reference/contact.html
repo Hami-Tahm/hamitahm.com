@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Hami Tahm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F6F1E8;--panel:#FFFFFF;--ink:#181715;--muted:#6F6A60;--faint:#9A9384;
+    --line:rgba(24,23,21,.10);--line-strong:#DDD3C3;
+    --accent:#0F6E78;--accent-dark:#0B5F68;--accent-soft:rgba(15,110,120,.10);
+    --serif:'Newsreader',Georgia,serif;--sans:'Hanken Grotesk',-apple-system,sans-serif;--mono:'JetBrains Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column}
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(620px 420px at 90% -10%,rgba(15,110,120,.07),transparent 72%),radial-gradient(680px 500px at -12% 112%,rgba(15,110,120,.045),transparent 72%)}
+  body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.02;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .wrap{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:0 32px;width:100%}
+  a{color:inherit;text-decoration:none}
+
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);background:rgba(246,241,232,.80);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:980px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
+  .brand{font-family:var(--serif);font-size:21px;font-weight:500;letter-spacing:-.01em;display:flex;align-items:center;gap:9px}
+  .brand .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{font-family:var(--mono);font-size:12.5px;letter-spacing:.05em;color:var(--muted);transition:color .2s}
+  .nav-links a:hover,.nav-links a.active{color:var(--ink)}
+  .nav-cta{border:1px solid var(--line-strong);padding:8px 16px;border-radius:999px;color:var(--ink)!important;transition:all .2s}
+  .nav-cta:hover{border-color:var(--accent);background:var(--accent-soft)}
+
+  .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-bottom:24px;display:flex;align-items:center;gap:12px}
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--accent)}
+
+  main{flex:1;display:flex;align-items:center;padding:60px 0}
+  .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:start;width:100%}
+
+  h1{font-family:var(--serif);font-weight:500;font-size:clamp(38px,5.4vw,60px);line-height:1.03;letter-spacing:-.03em}
+  h1 em{font-style:italic;color:var(--accent)}
+  .intro{margin-top:24px;font-size:18.5px;color:var(--muted);max-width:42ch;line-height:1.65}
+  .intro b{color:var(--ink);font-weight:500}
+
+  /* fit list */
+  .fit{margin-top:34px;display:flex;flex-direction:column;gap:2px}
+  .fit-row{display:flex;gap:13px;padding:11px 0;align-items:baseline}
+  .fit-row .mk{font-family:var(--mono);font-size:13px;color:var(--accent);flex-shrink:0}
+  .fit-row span{font-size:15.5px;color:var(--muted)}
+  .fit-row span b{color:var(--ink);font-weight:500}
+
+  /* contact card */
+  .card{background:var(--panel);border:1px solid var(--line-strong);border-radius:14px;padding:34px;box-shadow:0 1px 2px rgba(24,23,21,.04),0 12px 40px -20px rgba(24,23,21,.18)}
+  .card-label{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:20px}
+  .channel{display:flex;align-items:center;gap:16px;padding:16px 0;border-top:1px solid var(--line);transition:padding-left .2s}
+  .channel:first-of-type{border-top:none;padding-top:0}
+  .channel:hover{padding-left:6px}
+  .ch-ic{width:42px;height:42px;border-radius:10px;border:1px solid var(--line-strong);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--mono);font-size:14px;color:var(--accent);transition:all .2s}
+  .channel:hover .ch-ic{border-color:var(--accent);background:var(--accent-soft)}
+  .ch-t{font-family:var(--sans);font-size:16px;font-weight:600;color:var(--ink)}
+  .ch-s{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-top:2px}
+  .channel:hover .ch-s{color:var(--accent)}
+
+  .primary-cta{margin-top:26px;display:block;text-align:center;background:var(--accent);color:#fff;font-family:var(--sans);font-size:15px;font-weight:600;padding:15px;border-radius:999px;transition:all .2s}
+  .primary-cta:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 12px 32px -12px var(--accent)}
+
+  .loc{margin-top:22px;font-family:var(--mono);font-size:12px;color:var(--faint);text-align:center;letter-spacing:.04em}
+
+  footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:34px 0}
+  .foot-in{max-width:980px;margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .foot-brand{font-family:var(--serif);font-size:18px;font-weight:500}
+  .foot-links{display:flex;gap:20px}
+  .foot-links a{font-family:var(--mono);font-size:12.5px;color:var(--muted);transition:color .2s}
+  .foot-links a:hover{color:var(--accent)}
+
+  @media(max-width:760px){
+    .nav-links{display:none}
+    .grid{grid-template-columns:1fr;gap:40px}
+    main{padding:36px 0}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a href="/" class="brand"><span class="dot"></span>Hami Tahm</a>
+    <div class="nav-links">
+      <a href="/writing/">Writing</a>
+      <a href="/hami-tahm/">About</a>
+      <a href="/ai-visibility/" class="nav-cta">AI Visibility</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="wrap grid">
+    <!-- left -->
+    <div>
+      <div class="eyebrow">Contact</div>
+      <h1>Let's build something <em>worth scaling.</em></h1>
+      <p class="intro">Whether you want your business found in AI search, or you're working on something ambitious and thinking globally — <b>I read every message.</b></p>
+
+      <div class="fit">
+        <div class="fit-row"><span class="mk">→</span><span><b>AI visibility &amp; SEO</b> — get found in ChatGPT, Perplexity, and Google AI Overviews.</span></div>
+        <div class="fit-row"><span class="mk">→</span><span><b>Founders &amp; operators</b> — building something ambitious, especially AI-driven or with strong distribution loops.</span></div>
+        <div class="fit-row"><span class="mk">→</span><span><b>Collaboration &amp; ideas</b> — partnerships, advising, or just a good conversation.</span></div>
+      </div>
+    </div>
+
+    <!-- right: contact card -->
+    <div class="card">
+      <div class="card-label">Reach me directly</div>
+
+      <a href="mailto:hi@hamitahm.com" class="channel">
+        <div class="ch-ic">@</div>
+        <div><div class="ch-t">Email</div><div class="ch-s">hi@hamitahm.com</div></div>
+      </a>
+
+      <a href="https://www.linkedin.com/in/hamitahm/" class="channel" target="_blank" rel="noopener">
+        <div class="ch-ic">in</div>
+        <div><div class="ch-t">LinkedIn</div><div class="ch-s">Best for work inquiries</div></div>
+      </a>
+
+      <a href="https://x.com/hamitahm" class="channel" target="_blank" rel="noopener">
+        <div class="ch-ic">X</div>
+        <div><div class="ch-t">X / Twitter</div><div class="ch-s">DMs open</div></div>
+      </a>
+
+      <a href="/ai-visibility/ai-visibility-audit/" class="primary-cta">Get a Free AI Visibility Snapshot →</a>
+
+      <div class="loc">📍 Toronto, Ontario · Canada</div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-in">
+    <div class="foot-brand">Hami Tahm<span style="color:var(--accent)">.</span></div>
+    <div class="foot-links"><a href="/writing/">Writing</a><a href="/hami-tahm/">About</a><a href="/ai-visibility/">AI Visibility</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

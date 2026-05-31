@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Writing — Hami Tahm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F6F1E8;--panel:#FFFFFF;--ink:#181715;--muted:#6F6A60;--faint:#9A9384;
+    --line:rgba(24,23,21,.10);--line-strong:#DDD3C3;
+    --accent:#0F6E78;--accent-soft:rgba(15,110,120,.10);
+    --serif:'Newsreader',Georgia,serif;--sans:'Hanken Grotesk',-apple-system,sans-serif;--mono:'JetBrains Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(620px 420px at 90% -10%,rgba(15,110,120,.07),transparent 72%),radial-gradient(680px 500px at -12% 112%,rgba(15,110,120,.045),transparent 72%)}
+  body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.02;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .wrap{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:0 32px}
+  a{color:inherit;text-decoration:none}
+
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);background:rgba(246,241,232,.80);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:980px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
+  .brand{font-family:var(--serif);font-size:21px;font-weight:500;letter-spacing:-.01em;display:flex;align-items:center;gap:9px}
+  .brand .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{font-family:var(--mono);font-size:12.5px;letter-spacing:.05em;color:var(--muted);transition:color .2s}
+  .nav-links a:hover,.nav-links a.active{color:var(--ink)}
+  .nav-cta{border:1px solid var(--line-strong);padding:8px 16px;border-radius:999px;color:var(--ink)!important;transition:all .2s}
+  .nav-cta:hover{border-color:var(--accent);background:var(--accent-soft)}
+
+  .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-bottom:24px;display:flex;align-items:center;gap:12px}
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--accent)}
+
+  header{padding:84px 0 36px}
+  h1{font-family:var(--serif);font-weight:500;font-size:clamp(38px,5.4vw,58px);line-height:1.04;letter-spacing:-.03em}
+  .sub{margin-top:20px;font-size:18px;color:var(--muted);max-width:56ch;line-height:1.6}
+
+  /* filter chips */
+  .filters{display:flex;flex-wrap:wrap;gap:8px;padding:28px 0 8px;border-bottom:1px solid var(--line)}
+  .chip{font-family:var(--mono);font-size:12px;letter-spacing:.03em;color:var(--muted);background:transparent;border:1px solid var(--line-strong);border-radius:999px;padding:7px 14px;cursor:pointer;transition:all .18s;white-space:nowrap}
+  .chip:hover{border-color:var(--accent);color:var(--ink)}
+  .chip.active{background:var(--accent);border-color:var(--accent);color:#fff}
+
+  /* list */
+  .list{padding:8px 0 40px}
+  .row{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line);transition:padding-left .25s,box-shadow .25s;position:relative}
+  .row::before{content:"";position:absolute;left:-1px;top:22px;bottom:22px;width:2px;background:var(--accent);opacity:0;transition:opacity .25s}
+  .row:hover{padding-left:18px}
+  .row:hover::before{opacity:1}
+  .row-l{display:flex;flex-direction:column;gap:7px}
+  .cat{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+  .title{font-family:var(--serif);font-size:24px;font-weight:500;letter-spacing:-.01em;line-height:1.2;transition:color .2s}
+  .row:hover .title{color:var(--accent)}
+  .excerpt{font-size:14.5px;color:var(--muted);max-width:62ch;line-height:1.55}
+  .date{font-family:var(--mono);font-size:12px;color:var(--faint);white-space:nowrap}
+
+  footer{border-top:1px solid var(--line);padding:46px 0 56px;margin-top:30px}
+  .foot-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+  .foot-brand{font-family:var(--serif);font-size:19px;font-weight:500}
+  .foot-links{display:flex;gap:22px}
+  .foot-links a{font-family:var(--mono);font-size:13px;color:var(--muted);transition:color .2s}
+  .foot-links a:hover{color:var(--accent)}
+  .copy{font-family:var(--mono);font-size:11.5px;color:var(--faint);margin-top:24px}
+
+  @media(max-width:680px){
+    .nav-links{display:none}
+    .row{grid-template-columns:1fr;gap:8px}
+    .date{order:-1}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a href="/" class="brand"><span class="dot"></span>Hami Tahm</a>
+    <div class="nav-links">
+      <a href="/writing/" class="active">Writing</a>
+      <a href="/hami-tahm/">About</a>
+      <a href="/ai-visibility/" class="nav-cta">AI Visibility</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Writing</div>
+    <h1>Notes on building, markets, and living well.</h1>
+    <p class="sub">Essays and field notes from a decade of launching, testing, and killing ventures — plus the occasional detour into longevity, money, and craft.</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="filters" id="filters">
+    <button class="chip active" data-cat="all">All</button>
+    <button class="chip" data-cat="unicorn">Unicorn Building</button>
+    <button class="chip" data-cat="startup">Startup &amp; Market</button>
+    <button class="chip" data-cat="financial">Financial</button>
+    <button class="chip" data-cat="longevity">Longevity &amp; Health</button>
+    <button class="chip" data-cat="mindset">Mindset &amp; Growth</button>
+    <button class="chip" data-cat="productivity">Productivity</button>
+    <button class="chip" data-cat="hobby">Hobby</button>
+  </div>
+
+  <div class="list" id="list">
+
+    <a href="/what-im-actually-good-at/" class="row" data-cat="unicorn">
+      <div class="row-l"><span class="cat">Unicorn Building</span><span class="title">What I'm Actually Good At</span><span class="excerpt">After years of building and shutting down ventures, four strengths kept showing up. Together they form a system.</span></div>
+      <span class="date">Apr 20, 2026</span>
+    </a>
+
+    <a href="/the-longevity-economy-6-high-growth-sectors/" class="row" data-cat="startup">
+      <div class="row-l"><span class="cat">Startup &amp; Market Analysis</span><span class="title">The Longevity Economy: 6 High-Growth Sectors</span><span class="excerpt">The biggest opportunities in aging, ranked by projected 2030 market size.</span></div>
+      <span class="date">Mar 28, 2026</span>
+    </a>
+
+    <a href="/wine-profile/" class="row" data-cat="hobby">
+      <div class="row-l"><span class="cat">Hobby</span><span class="title">Understanding My Wine Taste Profile</span><span class="excerpt">Breaking wine down into spectrums — sweetness, body, acidity — to map what I actually like.</span></div>
+      <span class="date">Mar 7, 2026</span>
+    </a>
+
+    <a href="/the-real-founder-dilemma/" class="row" data-cat="unicorn">
+      <div class="row-l"><span class="cat">Unicorn Building</span><span class="title">The Real Founder Dilemma</span><span class="excerpt">The hard part isn't the idea — it's deciding when to commit and when to walk away.</span></div>
+      <span class="date">Feb 2026</span>
+    </a>
+
+    <a href="/how-ai-is-reshaping-learning/" class="row" data-cat="startup">
+      <div class="row-l"><span class="cat">Startup &amp; Market Analysis</span><span class="title">How AI Is Reshaping Learning</span><span class="excerpt">What changes when the cost of explanation drops to zero.</span></div>
+      <span class="date">Feb 2026</span>
+    </a>
+
+    <a href="/the-future-of-life-expectancy/" class="row" data-cat="longevity">
+      <div class="row-l"><span class="cat">Longevity &amp; Health</span><span class="title">The Future of Life Expectancy</span><span class="excerpt">Where the science, technology, and economics of aging are heading.</span></div>
+      <span class="date">Jan 2026</span>
+    </a>
+
+    <a href="/how-much-wealth-should-you-aim-for/" class="row" data-cat="financial">
+      <div class="row-l"><span class="cat">Financial</span><span class="title">How Much Wealth Should You Aim For?</span><span class="excerpt">A framework for thinking about "enough" instead of "more."</span></div>
+      <span class="date">Jan 2026</span>
+    </a>
+
+    <a href="/the-10000-hour-rule/" class="row" data-cat="productivity">
+      <div class="row-l"><span class="cat">Productivity</span><span class="title">The 10,000-Hour Rule, Revisited</span><span class="excerpt">How long mastery really takes — and what the famous rule gets wrong.</span></div>
+      <span class="date">Dec 2025</span>
+    </a>
+
+    <a href="/how-many-diets-exist-in-the-world/" class="row" data-cat="longevity">
+      <div class="row-l"><span class="cat">Longevity &amp; Health</span><span class="title">How Many Diets Exist in the World?</span><span class="excerpt">A tour through the dizzying landscape of eating philosophies.</span></div>
+      <span class="date">Dec 2025</span>
+    </a>
+
+    <a href="/invest-amid-inflation-in-canada/" class="row" data-cat="financial">
+      <div class="row-l"><span class="cat">Financial</span><span class="title">How to Invest Amid Inflation in Canada</span><span class="excerpt">Protecting purchasing power when the rules keep shifting.</span></div>
+      <span class="date">Nov 2025</span>
+    </a>
+
+    <a href="/investment-types/" class="row" data-cat="financial">
+      <div class="row-l"><span class="cat">Financial</span><span class="title">Investment Types and Their Returns</span><span class="excerpt">A plain-language map of where money can go and what it tends to do.</span></div>
+      <span class="date">Nov 2025</span>
+    </a>
+
+    <a href="/reit/" class="row" data-cat="financial">
+      <div class="row-l"><span class="cat">Financial</span><span class="title">REITs: The Pros and Cons</span><span class="excerpt">Real estate exposure without owning property — and the trade-offs.</span></div>
+      <span class="date">Oct 2025</span>
+    </a>
+
+    <a href="/happiness-and-satisfaction-in-2024/" class="row" data-cat="mindset">
+      <div class="row-l"><span class="cat">Mindset &amp; Growth</span><span class="title">Happiness and Satisfaction</span><span class="excerpt">Notes on what actually moves the needle, and what just feels like it should.</span></div>
+      <span class="date">2024</span>
+    </a>
+
+    <a href="/sleep-quality-101/" class="row" data-cat="longevity">
+      <div class="row-l"><span class="cat">Longevity &amp; Health</span><span class="title">Sleep Quality 101</span><span class="excerpt">The highest-leverage health habit, and how to actually improve it.</span></div>
+      <span class="date">2024</span>
+    </a>
+
+    <a href="/fitness-pyramid/" class="row" data-cat="longevity">
+      <div class="row-l"><span class="cat">Longevity &amp; Health</span><span class="title">The Fitness Pyramid</span><span class="excerpt">What matters most for fitness, in order of impact.</span></div>
+      <span class="date">2024</span>
+    </a>
+
+    <a href="/after-product-launch/" class="row" data-cat="unicorn">
+      <div class="row-l"><span class="cat">Unicorn Building</span><span class="title">What Happens After Product Launch</span><span class="excerpt">The unglamorous work that decides whether anything survives.</span></div>
+      <span class="date">2024</span>
+    </a>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot-in">
+    <div class="foot-brand">Hami Tahm<span style="color:var(--accent)">.</span></div>
+    <div class="foot-links"><a href="#">X / Twitter</a><a href="#">LinkedIn</a><a href="/contact/">Contact</a></div>
+  </div>
+  <div class="wrap"><div class="copy">© 2026 Hami Tahm — Toronto, Canada. Building toward a unicorn.</div></div>
+</footer>
+
+<script>
+  const chips=document.querySelectorAll('.chip');
+  const rows=document.querySelectorAll('.row');
+  chips.forEach(c=>c.addEventListener('click',()=>{
+    chips.forEach(x=>x.classList.remove('active'));
+    c.classList.add('active');
+    const cat=c.dataset.cat;
+    rows.forEach(r=>{r.style.display=(cat==='all'||r.dataset.cat===cat)?'grid':'none'});
+  }));
+</script>
+</body>
+</html>

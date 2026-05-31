@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is AI Visibility? A Plain-English Guide (2026) — Hami Tahm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F6F1E8;--panel:#FFFFFF;--ink:#181715;--muted:#6F6A60;--faint:#9A9384;
+    --line:rgba(24,23,21,.10);--line-strong:#DDD3C3;
+    --accent:#0F6E78;--accent-dark:#0B5F68;--accent-soft:rgba(15,110,120,.10);
+    --serif:'Newsreader',Georgia,serif;--sans:'Hanken Grotesk',-apple-system,sans-serif;--mono:'JetBrains Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(620px 420px at 90% -10%,rgba(15,110,120,.06),transparent 72%),radial-gradient(680px 500px at -12% 112%,rgba(15,110,120,.04),transparent 72%)}
+  body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.02;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .wrap{position:relative;z-index:1;max-width:720px;margin:0 auto;padding:0 32px}
+  .wide{max-width:980px}
+  a{color:inherit}
+
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);background:rgba(246,241,232,.80);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:980px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
+  .brand{font-family:var(--serif);font-size:21px;font-weight:500;letter-spacing:-.01em;display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink)}
+  .brand .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{font-family:var(--mono);font-size:12.5px;letter-spacing:.05em;color:var(--muted);transition:color .2s;text-decoration:none}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-cta{background:var(--accent);border:1px solid var(--accent);padding:8px 16px;border-radius:999px;color:#fff!important;transition:all .2s}
+  .nav-cta:hover{background:var(--accent-dark)}
+
+  .crumb{font-family:var(--mono);font-size:12px;color:var(--faint);padding:24px 0 0;max-width:720px;margin:0 auto}
+  .crumb a{color:var(--muted);text-decoration:none}.crumb a:hover{color:var(--accent)}
+
+  .art-head{padding:24px 0 26px}
+  .meta-top{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+  h1{font-family:var(--serif);font-weight:500;font-size:clamp(34px,5vw,52px);line-height:1.08;letter-spacing:-.025em}
+  .dek{font-family:var(--serif);font-style:italic;font-size:21px;color:var(--muted);margin-top:18px;line-height:1.5}
+  .byline{display:flex;align-items:center;gap:14px;margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
+  .avatar{width:38px;height:38px;border-radius:50%;border:1px solid var(--line-strong);background:linear-gradient(145deg,#e8dfce,#fff);flex-shrink:0}
+  .byline-t{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--ink)}
+  .byline-s{font-family:var(--mono);font-size:11.5px;color:var(--faint);margin-top:1px}
+
+  /* TL;DR box — great for AI extraction */
+  .tldr{background:var(--panel);border:1px solid var(--line-strong);border-left:3px solid var(--accent);border-radius:10px;padding:24px 26px;margin:6px 0 36px}
+  .tldr .l{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  .tldr p{font-family:var(--sans);font-size:16px;color:var(--ink);line-height:1.55;margin:0}
+
+  article{padding:0 0 20px}
+  .prose{font-family:var(--serif);font-size:20px;line-height:1.72;color:#2a2824}
+  .prose p{margin-bottom:26px}
+  .prose h2{font-family:var(--serif);font-weight:600;font-size:30px;letter-spacing:-.02em;line-height:1.2;margin:46px 0 16px;color:var(--ink)}
+  .prose h3{font-family:var(--serif);font-weight:600;font-size:23px;letter-spacing:-.01em;margin:34px 0 12px;color:var(--ink)}
+  .prose a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+  .prose strong{font-weight:600;color:var(--ink)}
+  .prose ul,.prose ol{margin:0 0 26px 22px}
+  .prose li{margin-bottom:11px}
+  .prose blockquote{border-left:2px solid var(--accent);padding:6px 0 6px 24px;margin:30px 0;font-style:italic;color:var(--muted)}
+  .prose hr{border:none;border-top:1px solid var(--line);margin:42px 0}
+
+  /* inline CTA */
+  .inline-cta{background:var(--panel);border:1px solid var(--line-strong);border-radius:14px;padding:30px 32px;margin:42px 0;box-shadow:0 1px 2px rgba(24,23,21,.04),0 12px 40px -26px rgba(24,23,21,.16)}
+  .inline-cta h3{font-family:var(--serif);font-size:22px;font-weight:600;letter-spacing:-.01em}
+  .inline-cta p{font-family:var(--sans);font-size:14.5px;color:var(--muted);margin:8px 0 18px;line-height:1.55}
+  .btn{font-family:var(--sans);font-size:15px;font-weight:600;padding:12px 22px;border-radius:999px;transition:all .2s;display:inline-flex;align-items:center;gap:9px;cursor:pointer;text-decoration:none}
+  .btn-primary{background:var(--accent);color:#fff}
+  .btn-primary:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 12px 32px -12px var(--accent)}
+  .btn .arr{transition:transform .2s}.btn:hover .arr{transform:translateX(3px)}
+
+  /* related */
+  .related{padding:44px 0 30px;border-top:1px solid var(--line);margin-top:44px}
+  .related-l{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:22px}
+  .rel-row{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:15px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:padding-left .2s}
+  .rel-row:hover{padding-left:8px}
+  .rel-row .rt{font-family:var(--serif);font-size:19px;font-weight:500;color:var(--ink);transition:color .2s}
+  .rel-row:hover .rt{color:var(--accent)}
+  .rel-row .rc{font-family:var(--mono);font-size:11.5px;color:var(--faint);white-space:nowrap}
+
+  footer{border-top:1px solid var(--line);padding:40px 0 50px;margin-top:20px}
+  .foot-in{max-width:980px;margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .foot-brand{font-family:var(--serif);font-size:18px;font-weight:500}
+  .foot-links{display:flex;gap:20px}
+  .foot-links a{font-family:var(--mono);font-size:12.5px;color:var(--muted);transition:color .2s;text-decoration:none}
+  .foot-links a:hover{color:var(--accent)}
+
+  @media(max-width:680px){
+    .nav-links{display:none}
+    .prose{font-size:18.5px}
+    .prose h2{font-size:26px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a href="/" class="brand"><span class="dot"></span>Hami Tahm</a>
+    <div class="nav-links">
+      <a href="/writing/">Writing</a>
+      <a href="/hami-tahm/">About</a>
+      <a href="/ai-visibility/ai-visibility-audit/" class="nav-cta">Get an Audit</a>
+    </div>
+  </div>
+</nav>
+
+<div class="crumb"><a href="/ai-visibility/">AI Visibility</a> / <a href="/blog/">Blog</a> / What Is AI Visibility</div>
+
+<div class="art-head">
+  <div class="wrap">
+    <div class="meta-top">Basics</div>
+    <h1>What Is AI Visibility?</h1>
+    <p class="dek">As people stop Googling and start asking AI, being named in the answer becomes the new being found. Here's what that means — in plain English.</p>
+    <div class="byline">
+      <div class="avatar"></div>
+      <div>
+        <div class="byline-t">Hami Tahm</div>
+        <div class="byline-s">Updated 2026 · 6 min read</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<article>
+  <div class="wrap prose">
+
+    <div class="tldr">
+      <div class="l">In short</div>
+      <p>AI visibility is how often, and how favourably, your business appears in answers from AI systems like ChatGPT, Perplexity, and Google's AI Overviews. It's the AI-era successor to SEO: instead of ranking a link, you're trying to be the source the AI names and cites.</p>
+    </div>
+
+    <p>For twenty years, "being found online" meant one thing: ranking on Google. You optimized a page, climbed the results, and hoped people clicked. That game still exists — but a second game has started next to it, and most businesses haven't noticed.</p>
+
+    <p>People are increasingly skipping the list of links entirely. They ask ChatGPT "who's a good mortgage broker in Toronto?" They type a question into Perplexity. They read the AI Overview at the top of Google and never scroll. In each case, <strong>an AI gives them an answer that names a few businesses — and silently leaves out everyone else.</strong></p>
+
+    <p>AI visibility is simply: <strong>are you one of the names the AI mentions?</strong></p>
+
+    <h2>Why this is different from SEO</h2>
+
+    <p>It's tempting to think this is just SEO with a new label. It isn't, though the foundations overlap. The difference is in the <strong>target</strong>:</p>
+
+    <ul>
+      <li><strong>SEO</strong> optimizes to rank a link in a list. The user still chooses and clicks.</li>
+      <li><strong>AI visibility</strong> optimizes to be selected and cited <em>inside a generated answer</em>. The AI chooses for the user.</li>
+    </ul>
+
+    <p>That shift changes what matters. Answer engines lean heavily on how clearly your content can be extracted, how well your brand is understood as a distinct entity, and how much third-party authority backs you up. In fact, research on Google AI Overviews has found that a meaningful share of cited sources don't even rank on the first page of normal results — which means the old playbook doesn't automatically carry over.</p>
+
+    <blockquote>You can rank #1 on Google and still be invisible in AI answers. They're related games, not the same game.</blockquote>
+
+    <div class="inline-cta">
+      <h3>Curious where your business stands?</h3>
+      <p>I run a free AI Visibility Snapshot that checks whether ChatGPT, Perplexity, and Google AI mention you today.</p>
+      <a href="/ai-visibility/ai-visibility-audit/" class="btn btn-primary">Get a Free Snapshot <span class="arr">→</span></a>
+    </div>
+
+    <h2>The three terms you'll hear</h2>
+
+    <p>This field is young, so the vocabulary is still settling. Three acronyms come up constantly:</p>
+
+    <h3>AEO — Answer Engine Optimization</h3>
+    <p>Structuring your content so answer engines can cleanly extract and cite it. Think clear questions and direct answers, not buried paragraphs.</p>
+
+    <h3>GEO — Generative Engine Optimization</h3>
+    <p>The broader practice of earning mentions and citations inside AI-generated responses — heavily influenced by authority and what others say about you, not just your own pages.</p>
+
+    <h3>AI SEO / AI visibility</h3>
+    <p>The umbrella term. If the acronyms feel confusing, that's normal — most buyers just want one thing: <strong>"I want to show up when people ask AI about what I do."</strong> <a href="/blog/aeo-vs-geo-vs-seo/">I break down how AEO, GEO and SEO differ here.</a></p>
+
+    <h2>Why it matters now, not later</h2>
+
+    <p>AI search is newer and far less saturated than Google. The businesses that show up well in AI answers today are mostly there by luck — very few are optimizing for it deliberately. That's the opening. <strong>Moving early in an uncrowded channel is how you win before it becomes competitive.</strong></p>
+
+    <p>If you want to understand the practical side next, read <a href="/blog/how-to-check-ai-visibility/">how to check your AI visibility</a>, or <a href="/blog/how-to-get-mentioned-by-chatgpt/">how to get your business mentioned by ChatGPT</a>.</p>
+
+    <hr>
+
+    <p>The short version: search is splitting into two games, and a new one is wide open. AI visibility is making sure that when the machine answers, your name is in it.</p>
+  </div>
+
+  <!-- related -->
+  <div class="wrap">
+    <div class="related">
+      <div class="related-l">Keep reading</div>
+      <a href="/blog/how-to-check-ai-visibility/" class="rel-row"><span class="rt">How to Check Your AI Visibility</span><span class="rc">Basics</span></a>
+      <a href="/blog/how-to-get-mentioned-by-chatgpt/" class="rel-row"><span class="rt">How to Get Mentioned by ChatGPT</span><span class="rc">ChatGPT &amp; Perplexity</span></a>
+      <a href="/blog/aeo-vs-geo-vs-seo/" class="rel-row"><span class="rt">AEO vs GEO vs SEO Explained</span><span class="rc">Comparison</span></a>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="foot-in">
+    <div class="foot-brand">Hami Tahm<span style="color:var(--accent)">.</span></div>
+    <div class="foot-links"><a href="/ai-visibility/">AI Visibility</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

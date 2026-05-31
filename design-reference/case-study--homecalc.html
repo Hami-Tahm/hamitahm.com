@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HomeCalc.ca AI Visibility Case Study — Hami Tahm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F6F1E8;--panel:#FFFFFF;--ink:#181715;--muted:#6F6A60;--faint:#9A9384;
+    --line:rgba(24,23,21,.10);--line-strong:#DDD3C3;
+    --accent:#0F6E78;--accent-dark:#0B5F68;--accent-soft:rgba(15,110,120,.10);
+    --serif:'Newsreader',Georgia,serif;--sans:'Hanken Grotesk',-apple-system,sans-serif;--mono:'JetBrains Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(620px 420px at 90% -8%,rgba(15,110,120,.08),transparent 72%),radial-gradient(680px 500px at -12% 112%,rgba(15,110,120,.045),transparent 72%)}
+  body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.02;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .wrap{position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:0 32px}
+  .narrow{max-width:740px}
+  a{color:inherit;text-decoration:none}
+
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);background:rgba(246,241,232,.80);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:1000px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between}
+  .brand{font-family:var(--serif);font-size:21px;font-weight:500;letter-spacing:-.01em;display:flex;align-items:center;gap:9px}
+  .brand .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{font-family:var(--mono);font-size:12.5px;letter-spacing:.05em;color:var(--muted);transition:color .2s}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-cta{background:var(--accent);border:1px solid var(--accent);padding:8px 16px;border-radius:999px;color:#fff!important;transition:all .2s}
+  .nav-cta:hover{background:var(--accent-dark)}
+
+  .crumb{font-family:var(--mono);font-size:12px;color:var(--faint);padding:24px 0 0}
+  .crumb a{color:var(--muted)}.crumb a:hover{color:var(--accent)}
+
+  .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-bottom:22px;display:flex;align-items:center;gap:12px}
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--accent)}
+
+  header{padding:30px 0 44px}
+  h1{font-family:var(--serif);font-weight:500;font-size:clamp(36px,5.2vw,58px);line-height:1.06;letter-spacing:-.03em;max-width:18ch}
+  h1 em{font-style:italic;color:var(--accent)}
+  .hero-lead{margin-top:24px;font-size:19.5px;color:var(--muted);max-width:58ch;line-height:1.62}
+  .hero-lead b{color:var(--ink);font-weight:500}
+
+  /* meta strip */
+  .meta{display:flex;flex-wrap:wrap;gap:30px;margin-top:34px;padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .meta-i .k{font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint)}
+  .meta-i .v{font-family:var(--sans);font-size:15px;font-weight:500;color:var(--ink);margin-top:5px}
+  .meta-i .v a{color:var(--accent)}
+
+  section{padding:46px 0}
+  .sec-label{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--faint);text-transform:uppercase;margin-bottom:24px;display:flex;align-items:center;gap:14px}
+  .sec-label::after{content:"";flex:1;height:1px;background:var(--line)}
+
+  .prose{font-family:var(--serif);font-size:20px;line-height:1.72;color:#2a2824;max-width:740px}
+  .prose p{margin-bottom:24px}
+  .prose p b{color:var(--ink);font-weight:600}
+  .prose h2{font-family:var(--serif);font-weight:600;font-size:30px;letter-spacing:-.02em;margin:8px 0 18px;color:var(--ink)}
+
+  /* results grid */
+  .results{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .r-card{background:var(--panel);border:1px solid var(--line-strong);border-radius:12px;padding:28px;box-shadow:0 1px 2px rgba(24,23,21,.04),0 12px 40px -26px rgba(24,23,21,.16)}
+  .r-card .n{font-family:var(--serif);font-size:40px;font-weight:500;color:var(--accent);letter-spacing:-.02em;line-height:1}
+  .r-card .l{font-family:var(--sans);font-size:14px;color:var(--muted);margin-top:10px;line-height:1.45}
+  .r-note{font-family:var(--mono);font-size:11.5px;color:var(--faint);margin-top:18px;font-style:normal}
+
+  /* approach steps */
+  .appr{display:flex;flex-direction:column}
+  .a-item{display:grid;grid-template-columns:54px 1fr;gap:22px;padding:22px 0;border-top:1px solid var(--line);align-items:baseline}
+  .a-item:last-child{border-bottom:1px solid var(--line)}
+  .a-item .an{font-family:var(--serif);font-size:26px;font-weight:500;color:var(--accent)}
+  .a-item h3{font-family:var(--serif);font-size:20px;font-weight:600;letter-spacing:-.01em}
+  .a-item p{font-size:15px;color:var(--muted);margin-top:6px;line-height:1.55;max-width:62ch}
+
+  .pull{font-family:var(--serif);font-size:clamp(24px,3.2vw,32px);line-height:1.36;color:var(--ink);font-weight:500;letter-spacing:-.015em;max-width:22ch;margin:10px 0}
+  .pull em{font-style:italic;color:var(--accent)}
+
+  /* final cta */
+  .final{background:var(--panel);border:1px solid var(--line-strong);border-radius:16px;padding:54px 40px;text-align:center;position:relative;overflow:hidden;box-shadow:0 1px 2px rgba(24,23,21,.04),0 16px 50px -24px rgba(24,23,21,.2)}
+  .final::before{content:"";position:absolute;top:-50%;left:50%;transform:translateX(-50%);width:460px;height:340px;background:radial-gradient(circle,rgba(15,110,120,.13),transparent 70%)}
+  .final h2{font-family:var(--serif);font-size:clamp(28px,4vw,40px);font-weight:500;letter-spacing:-.02em;position:relative}
+  .final p{color:var(--muted);margin:14px auto 30px;max-width:48ch;position:relative;font-size:17px}
+  .btn{font-family:var(--sans);font-size:15px;font-weight:600;padding:13px 24px;border-radius:999px;transition:all .2s;display:inline-flex;align-items:center;gap:9px;cursor:pointer}
+  .btn-primary{background:var(--accent);color:#fff;position:relative}
+  .btn-primary:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 12px 32px -12px var(--accent)}
+  .btn .arr{transition:transform .2s}.btn:hover .arr{transform:translateX(3px)}
+
+  footer{border-top:1px solid var(--line);padding:46px 0 56px;margin-top:40px}
+  .foot-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+  .foot-brand{font-family:var(--serif);font-size:19px;font-weight:500}
+  .foot-links{display:flex;gap:22px}
+  .foot-links a{font-family:var(--mono);font-size:13px;color:var(--muted);transition:color .2s}
+  .foot-links a:hover{color:var(--accent)}
+  .copy{font-family:var(--mono);font-size:11.5px;color:var(--faint);margin-top:24px}
+
+  @media(max-width:760px){
+    .nav-links{display:none}
+    .results{grid-template-columns:1fr}
+    .prose{font-size:18.5px}
+    .final{padding:32px}
+    .a-item{grid-template-columns:1fr;gap:6px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a href="/" class="brand"><span class="dot"></span>Hami Tahm</a>
+    <div class="nav-links">
+      <a href="/writing/">Writing</a>
+      <a href="/hami-tahm/">About</a>
+      <a href="/ai-visibility/ai-visibility-audit/" class="nav-cta">Get an Audit</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap"><div class="crumb"><a href="/ai-visibility/">AI Visibility</a> / Case Study / HomeCalc.ca</div></div>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Case Study</div>
+    <h1>How I built HomeCalc.ca to be found in <em>AI search</em> from day one.</h1>
+    <p class="hero-lead">HomeCalc.ca is my own product — a suite of real-estate calculators for Ontario. <b>I treat it as the live lab where I test every AI visibility method before recommending it to a client.</b> Here's exactly what I did, and why.</p>
+
+    <div class="meta">
+      <div class="meta-i"><div class="k">Project</div><div class="v"><a href="https://homecalc.ca">HomeCalc.ca ↗</a></div></div>
+      <div class="meta-i"><div class="k">Role</div><div class="v">Solo founder &amp; builder</div></div>
+      <div class="meta-i"><div class="k">Market</div><div class="v">Ontario real estate</div></div>
+      <div class="meta-i"><div class="k">Stack</div><div class="v">Vite · React · Supabase</div></div>
+      <div class="meta-i"><div class="k">Launched</div><div class="v">March 2026</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- CONTEXT -->
+<section>
+  <div class="wrap">
+    <div class="sec-label">01 — The starting point</div>
+    <div class="prose">
+      <p>Most websites are built for humans first and search engines second — and almost never with AI answer engines in mind. I wanted to do the opposite: build a real, useful product and treat <b>being citable by AI</b> as a first-class design constraint from the very first commit.</p>
+      <p>HomeCalc.ca is a set of 11+ calculators — house flipping, house hacking, mortgage affordability, and more — aimed at Ontario buyers, investors, and the mortgage brokers who serve them. It's a perfect testbed because it's <b>YMYL content</b> (your-money-your-life), which AI systems treat cautiously and only cite when they trust the source.</p>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section>
+  <div class="wrap">
+    <div class="sec-label">02 — What I did</div>
+    <div class="appr">
+      <div class="a-item"><div class="an">01</div><div><h3>Structured every answer for extraction</h3><p>Each calculator and guide answers a specific question in a clean, self-contained way an AI can lift and cite — clear headings, direct definitions, and no burying the answer.</p></div></div>
+      <div class="a-item"><div class="an">02</div><div><h3>Full structured data (schema)</h3><p>JSON-LD across the site — organization, calculator, FAQ, and article schemas — so machines understand exactly what each page is and who's behind it.</p></div></div>
+      <div class="a-item"><div class="an">03</div><div><h3>Entity clarity &amp; authority</h3><p>Consistent entity signals tying the site to a real, credible author and brand — the trust layer AI search weighs heavily for financial content.</p></div></div>
+      <div class="a-item"><div class="an">04</div><div><h3>Technical foundation that crawlers love</h3><p>Pre-rendered, fast pages with a clean sitemap, robots, and near-perfect Core Web Vitals — so both Google and AI crawlers get complete HTML instantly.</p></div></div>
+      <div class="a-item"><div class="an">05</div><div><h3>Question-first content architecture</h3><p>Content mapped to the exact questions people ask AI about Ontario real estate — the queries most likely to trigger an AI answer.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PULL -->
+<section>
+  <div class="wrap narrow">
+    <p class="pull">The goal was simple: when someone asks AI about Ontario real-estate math, <em>HomeCalc should be the source it reaches for.</em></p>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section>
+  <div class="wrap">
+    <div class="sec-label">03 — Results</div>
+    <div class="results">
+      <div class="r-card"><div class="n">100/100</div><div class="l">Core Web Vitals — SEO &amp; Best Practices scores</div></div>
+      <div class="r-card"><div class="n">11+</div><div class="l">Calculators, each built as a citable, standalone answer</div></div>
+      <div class="r-card"><div class="n">[ ___ ]</div><div class="l">AI citations / mentions tracked across engines</div></div>
+    </div>
+    <p class="r-note" style="font-family:var(--mono);font-size:12px;color:var(--faint);margin-top:20px">↑ Replace the bracketed metric with your real, current numbers (AI citations, indexed pages, query coverage, or early traffic). Keep results honest and specific — this is the trust anchor of the whole site.</p>
+  </div>
+</section>
+
+<!-- WHAT IT MEANS -->
+<section>
+  <div class="wrap">
+    <div class="sec-label">04 — Why this matters for you</div>
+    <div class="prose">
+      <p>HomeCalc isn't a client I'm describing from the outside — it's a product I own, where I control every variable and can prove what actually moves AI visibility. <b>Everything I do for clients, I've already pressure-tested here first.</b></p>
+      <p>If you run a clinic, a real-estate or mortgage business, or a SaaS product in Canada, the same playbook applies: build (or fix) your site so AI answer engines can find, trust, and cite you — before your competitors figure it out.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section>
+  <div class="wrap">
+    <div class="final">
+      <h2>Want this for your business?</h2>
+      <p>Start with a free AI Visibility Snapshot. I'll show you where you stand and what it would take to become the source AI reaches for.</p>
+      <a href="/ai-visibility/ai-visibility-audit/" class="btn btn-primary">Get a Free AI Visibility Snapshot <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <div class="foot-brand">Hami Tahm<span style="color:var(--accent)">.</span></div>
+    <div class="foot-links"><a href="/ai-visibility/">AI Visibility</a><a href="/hami-tahm/">About</a><a href="/contact/">Contact</a></div>
+  </div>
+  <div class="wrap"><div class="copy">© 2026 Hami Tahm — AI Visibility Consultant · Toronto, Canada.</div></div>
+</footer>
+
+</body>
+</html>
