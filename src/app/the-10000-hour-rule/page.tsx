@@ -1,0 +1,317 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "The 10,000-Hour Rule: How Many Hours Do You Need to Reach 7/10 Mastery?",
+  description: "The 10,000-Hour Rule: How Many Hours Do You Need to Reach 7/10 Mastery? — by Hami Tahm",
+};
+
+export default function Post() {
+  return (
+    <article style={ { padding: "80px 0" } }>
+      <div className="wrap" style={ { maxWidth: 720 } }>
+        {/* Breadcrumb */}
+        <div style={ { fontFamily: "var(--mono)", fontSize: 12, color: "var(--faint)", marginBottom: 40, display: "flex", gap: 8 } }>
+          <Link href="/" style={ { color: "var(--accent)" } }>Home</Link>
+          <span>/</span>
+          <Link href="/writing" style={ { color: "var(--accent)" } }>Writing</Link>
+          <span>/</span>
+          <span>The 10,000-Hour Rule: How Many Hours Do You Need to Reach 7/10 Mastery?</span>
+        </div>
+
+        {/* Header */}
+        <div style={ { fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--accent)", marginBottom: 12 } }>
+          Productivity
+        </div>
+        <h1 style={ { fontFamily: "var(--serif)", fontWeight: 500, fontSize: "clamp(32px, 5vw, 48px)", lineHeight: 1.1, letterSpacing: "-.02em", marginBottom: 16 } }>
+          The 10,000-Hour Rule: How Many Hours Do You Need to Reach 7/10 Mastery?
+        </h1>
+        <div style={ { fontFamily: "var(--mono)", fontSize: 12, color: "var(--faint)", marginBottom: 48 } }>
+          Feb 22, 2025 &mdash; Hami Tahm
+        </div>
+
+        {/* Content */}
+        <div
+          className="post-content"
+          dangerouslySetInnerHTML={ { __html: `<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-uho16t r-nwxazl r-1vr29t4" dir="ltr"></div>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-1adg3ll r-1b5gpbm r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Have you ever heard of the 10,000-hour rule? Popularized by <a href="https://www.amazon.ca/s?k=the+outliers+by+malcolm+gladwell&ref=nb_sb_noss" target="_blank" rel="noopener">Malcolm Gladwell in his book Outliers</a></span><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">, this idea suggests that 10,000 hours of deliberate practice can make you a world-class expert in any skill. It’s based on research by Anders Ericsson, but what if you don’t aim to be the best in the world? What if you just want to be competent (7/10) or intermediate (5/10) in a skill? In this guide, we’ll break down how many hours you need to reach these levels in any field, offering practical advice to help you get there faster.</span></span></div>
+<div dir="ltr"></div>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-1adg3ll r-1b5gpbm r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-b88u0q r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Learn more about deliberate practice and skill mastery in <a href="https://www.amazon.ca/s?k=peak+ericsson&ref=nb_sb_noss" target="_blank" rel="noopener">Anders Ericsson’s book Peak</a></span></span></span></div>
+<div dir="ltr"></div>
+<h2 class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-adyw6z r-135wba7 r-b88u0q" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Understanding the Learning Curve: Diminishing Returns</span></span></h2>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-1adg3ll r-1b5gpbm r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Learning a new skill isn’t a straight line—it follows a logarithmic curve. This means you make rapid progress early on, but as you approach mastery, improvement slows down significantly. Here’s a simple breakdown of how skill levels typically progress:</span></span></div>
+<div dir="ltr"></div>
+<div class="css-175oi2r r-lltvgl r-1l7z4oj r-13qz1uu">
+<table>
+<tbody>
+<tr>
+<th>
+<div class="css-175oi2r r-1adg3ll r-11f147o r-3o4zer">
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">Hours Invested</span></div>
+</div></th>
+<th>
+<div class="css-175oi2r r-1adg3ll r-11f147o r-3o4zer">
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">Understanding Level (0-10)</span></div>
+</div></th>
+<th>
+<div class="css-175oi2r r-1adg3ll r-11f147o r-3o4zer">
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">Learning Phase</span></div>
+</div></th>
+</tr>
+<tr>
+<td>
+<div class="css-175oi2r r-1adg3ll r-11f147o r-3o4zer">
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-b88u0q r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">10 hours</span></span></div>
+</div></td>
+<td>
+<div class="css-175oi2r r-1adg3ll r-11f147o r-3o4zer">
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">1/10</span></div>
+</div></td>
+<td>
+<div class="css-175oi2r r-1adg3ll r-11f147o r-3o4zer">
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">Basic awareness (Novice)</span></div>
+</div></td>
+</tr>
+<tr>
+<td>
+<div class="css-175oi2r r-1adg3ll r-11f147o r-3o4zer">
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-b88u0q r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">100 hours</span></span></div>
+</div></td>
+<td>
+<div class="css-175oi2r r-1adg3ll r-11f147o r-3o4zer">
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">3/10</span></div>
+</div></td>
+<td>
+<div class="css-175oi2r r-1adg3ll r-11f147o r-3o4zer">
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">Beginner (Familiar but limited)</span></div>
+</div></td>
+</tr>
+<tr>
+<td>
+<div class="css-175oi2r r-1adg3ll r-11f147o r-3o4zer">
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-b88u0q r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">500 hours</span></span></div>
+</div></td>
+<td>
+<div class="css-175oi2r r-1adg3ll r-11f147o r-3o4zer">
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">5/10</span></div>
+</div></td>
+<td>
+<div class="css-175oi2r r-1adg3ll r-11f147o r-3o4zer">
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">Intermediate (Can apply skills)</span></div>
+</div></td>
+</tr>
+<tr>
+<td>
+<div class="css-175oi2r r-1adg3ll r-11f147o r-3o4zer">
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-b88u0q r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">1,000 hours</span></span></div>
+</div></td>
+<td>
+<div class="css-175oi2r r-1adg3ll r-11f147o r-3o4zer">
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">7/10</span></div>
+</div></td>
+<td>
+<div class="css-175oi2r r-1adg3ll r-11f147o r-3o4zer">
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">Competent (Proficient, not expert)</span></div>
+</div></td>
+</tr>
+<tr>
+<td>
+<div class="css-175oi2r r-1adg3ll r-11f147o r-3o4zer">
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-b88u0q r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">2,500 hours</span></span></div>
+</div></td>
+<td>
+<div class="css-175oi2r r-1adg3ll r-11f147o r-3o4zer">
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">8.5/10</span></div>
+</div></td>
+<td>
+<div class="css-175oi2r r-1adg3ll r-11f147o r-3o4zer">
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">Advanced (Highly skilled)</span></div>
+</div></td>
+</tr>
+<tr>
+<td>
+<div class="css-175oi2r r-1adg3ll r-11f147o r-3o4zer">
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-b88u0q r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">5,000 hours</span></span></div>
+</div></td>
+<td>
+<div class="css-175oi2r r-1adg3ll r-11f147o r-3o4zer">
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">9.5/10</span></div>
+</div></td>
+<td>
+<div class="css-175oi2r r-1adg3ll r-11f147o r-3o4zer">
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">Expert (Near mastery)</span></div>
+</div></td>
+</tr>
+<tr>
+<td>
+<div class="css-175oi2r r-1adg3ll r-11f147o r-3o4zer">
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-b88u0q r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">10,000 hours</span></span></div>
+</div></td>
+<td>
+<div class="css-175oi2r r-1adg3ll r-11f147o r-3o4zer">
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">10/10</span></div>
+</div></td>
+<td>
+<div class="css-175oi2r r-1adg3ll r-11f147o r-3o4zer">
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">World-class Mastery</span></div>
+</div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-1adg3ll r-1b5gpbm r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">As you can see, the first 1,000 hours boost you, taking you from a beginner to a competent level (7/10). But jumping from 7/10 to 10/10 takes much longer due to diminishing returns. This pattern applies to most skills, but the exact hours vary by field.</span></span></div>
+<div dir="ltr"></div>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-1adg3ll r-1b5gpbm r-a8ghvy" dir="ltr"></div>
+<div dir="ltr"><img class="aligncenter" src="https://hamitahm.com/wp-content/uploads/2025/02/image_2025_02_22T16_46_25_692Z.png" /></div>
+<h2 class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-adyw6z r-135wba7 r-b88u0q" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">How Many Hours Do You Need to Reach 7/10 or 5/10?</span></span></h2>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-1adg3ll r-1b5gpbm r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">If your goal is to be </span><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-b88u0q r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">competent (7/10)</span></span><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">—meaning you’re skilled enough to handle most tasks confidently—you’ll need about </span><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-b88u0q r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">1,000 hours</span></span><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy"> of deliberate practice. For </span><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-b88u0q r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">intermediate proficiency (5/10)</span></span><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">—where you’re functional but not advanced—</span><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-b88u0q r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">500 hours</span></span><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy"> is typically sufficient for most skills.</span></span></div>
+<h3 class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-rjixqe r-b88u0q" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Why These Numbers?</span></span></h3>
+<ul dir="ltr">
+ 	<li>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-rjixqe r-16dba41" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-b88u0q r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">500 hours (5/10)</span></span></span><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">: This gets you to a solid intermediate level where you can apply the skill in real-world situations, like <strong>holding a basic conversation in a new language or coding a simple app.</strong></span></span></div></li>
+ 	<li>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-rjixqe r-16dba41" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-b88u0q r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">1,000 hours (7/10)</span></span></span><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">: You’re proficient and reliable, but you’re not yet an expert. You could, for example, <strong>design professional graphics or market a product effectively.</strong></span></span></div></li>
+</ul>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-1adg3ll r-1b5gpbm r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">This timeline works for many fields, but depending on their complexity, some may require more or fewer hours. Let’s explore that next.</span></span></div>
+<div dir="ltr"></div>
+<h2 class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-adyw6z r-135wba7 r-b88u0q" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Does This Apply to All Fields?</span></span></h2>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-1adg3ll r-1b5gpbm r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Not every skill follows the same timeline. The hours needed depend on the field’s complexity, physical demands, and competition. Here’s how it breaks down:</span></span></div>
+<div dir="ltr"></div>
+<h3 class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-rjixqe r-b88u0q" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Fast-Learning Fields (~500–1,000 hrs for 7/10)</span></span></h3>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-1adg3ll r-1b5gpbm r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">These skills are relatively easy to pick up and don’t require deep technical knowledge:</span></span></div>
+<ul dir="ltr">
+ 	<li>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-rjixqe r-16dba41" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-b88u0q r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Digital Marketing</span></span></span><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">: Around 700 hours to master SEO, social media ads, and basic campaign strategies.</span></span></div></li>
+ 	<li>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-rjixqe r-16dba41" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-b88u0q r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Sales</span></span></span><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">: About 800 hours to become a skilled closer and relationship-builder.</span></span></div></li>
+ 	<li>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-rjixqe r-16dba41" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-b88u0q r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Copywriting</span></span></span><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">: Roughly 700 hours to effectively write persuasive ads, blog posts, or emails.</span></span></div></li>
+ 	<li>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-rjixqe r-16dba41" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-b88u0q r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Learning a New Language</span></span></span><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">: About 1,000 hours to reach conversational fluency (e.g., B2 level in Spanish or French).</span></span></div></li>
+ 	<li>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-rjixqe r-16dba41" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-b88u0q r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Graphic Design</span></span></span><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">: Around 1,000 hours to create professional-quality designs using tools like Adobe Photoshop.</span></span></div></li>
+</ul>
+<h3 class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-rjixqe r-b88u0q" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Medium-Learning Fields (~2,000–5,000 hrs for 7/10)</span></span></h3>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-1adg3ll r-1b5gpbm r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">These skills need more practice or technical expertise:</span></span></div>
+<ul dir="ltr">
+ 	<li>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-rjixqe r-16dba41" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-b88u0q r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Software Engineering</span></span></span><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">: About 2,500 hours to build complex applications and understand coding principles deeply.</span></span></div></li>
+ 	<li>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-rjixqe r-16dba41" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-b88u0q r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Chess</span></span></span><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">: Around 3,000 hours to reach a strong amateur level (e.g., 1,800 Elo rating).</span></span></div></li>
+ 	<li>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-rjixqe r-16dba41" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-b88u0q r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Data Science</span></span></span><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">: Roughly 2,500 hours to master data analysis, visualization, and basic machine learning.</span></span></div></li>
+ 	<li>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-rjixqe r-16dba41" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-b88u0q r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Professional Writing</span></span></span><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">: About 3,000 hours to consistently produce high-quality articles, books, or scripts.</span></span></div></li>
+</ul>
+<h3 class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-rjixqe r-b88u0q" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Slow-Learning Fields (~5,000+ hrs for 7/10)</span></span></h3>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-1adg3ll r-1b5gpbm r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">These are complex, physically demanding, or highly competitive skills:</span></span></div>
+<ul dir="ltr">
+ 	<li>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-rjixqe r-16dba41" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-b88u0q r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Surgery</span></span></span><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">: It takes around 6,000 hours to become a skilled general surgeon (though full expertise takes much longer with residency and experience).</span></span></div></li>
+ 	<li>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-rjixqe r-16dba41" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-b88u0q r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Professional Athlete</span></span></span><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">: About 7,000 hours to compete at a national level in sports like tennis or swimming.</span></span></div></li>
+ 	<li>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-rjixqe r-16dba41" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-b88u0q r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Professional Musician</span></span></span><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">: Roughly 6,000 hours to perform complex pieces confidently on an instrument like the piano or violin.</span></span></div></li>
+</ul>
+<h2 class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-adyw6z r-135wba7 r-b88u0q" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Optimizing Learning Time</span></span></h2>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-1adg3ll r-1b5gpbm r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Want to reach 7/10 or 5/10 faster? Here are proven strategies to maximize your practice:</span></span></div>
+<ul dir="ltr">
+ 	<li>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-rjixqe r-16dba41" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-b88u0q r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Deliberate Practice</span></span></span><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">: Focus on your weaknesses, get feedback from experts, and set clear goals—like mastering a tricky coding problem or perfecting a musical passage.</span></span></div></li>
+ 	<li>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-rjixqe r-16dba41" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-b88u0q r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Active Learning</span></span></span><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">: Don’t just read or watch tutorials—work on real projects, like building a website, creating art, or practicing conversations in a new language.</span></span></div></li>
+ 	<li>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-rjixqe r-16dba41" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-b88u0q r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Mentorship</span></span></span><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">: Find a mentor or coach who’s already proficient to guide you and help you avoid common mistakes.</span></span></div></li>
+ 	<li>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-rjixqe r-16dba41" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-b88u0q r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Consistency</span></span></span><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3">: Dedicate 2–4 hours a day for faster results, but even 1 hour daily can work if you stay committed over time.</span></span></div></li>
+</ul>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-1adg3ll r-1b5gpbm r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">By combining these techniques, you can cut down on wasted effort and reach your goals more efficiently.</span></span></div>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-1adg3ll r-1b5gpbm r-a8ghvy" dir="ltr"></div>
+<h2 class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-adyw6z r-135wba7 r-b88u0q" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Final Verdict: Is This Model Feasible?</span></span></h2>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-1adg3ll r-1b5gpbm r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Yes, this model is solid and feasible for most fields. It gives you a realistic roadmap—like, “I need about 1,000 hours to get competent at digital marketing.” But you’ll need to adjust for the specific skill’s complexity, your starting point, and how consistently you practice. Some fields might take more time, while simpler skills might take less.</span></span></div>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-1adg3ll r-1b5gpbm r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">The key? Consistent, high-quality practice. Just logging hours won’t get you there—deliberate effort is what counts. If you’re targeting a specific skill, use this framework to estimate your timeline and get started today.</span></span></div>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-1adg3ll r-1b5gpbm r-a8ghvy" dir="ltr"></div>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-adyw6z r-135wba7 r-b88u0q" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">What’s Next?</span></span></div>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-1adg3ll r-1b5gpbm r-a8ghvy" dir="ltr"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3"><span class="css-1jxf684 r-bcqeeo r-1ttztb7 r-qvutc0 r-poiln3 r-a8ghvy">Ready to pick up a new skill? Let us know in the comments which skill you’re aiming for, and we’ll help you estimate how long it might take to reach 5/10 or 7/10 proficiency. Whether it’s coding, playing an instrument, or mastering a language, we’ve got you covered!</span></span></div>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-1adg3ll r-1b5gpbm r-a8ghvy" dir="ltr"></div>
+<div dir="ltr">Next: <a href="https://hamitahm.com/how-ai-is-reshaping-learning/">How AI is reshaping learning?</a></div>
+<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-1adg3ll r-a8ghvy r-p1pxzi" dir="ltr"></div>` } }
+        />
+
+        {/* Author box */}
+        <div style={ { marginTop: 60, padding: "24px 0", borderTop: "1px solid var(--line)", display: "flex", gap: 16, alignItems: "center" } }>
+          <div>
+            <div style={ { fontFamily: "var(--serif)", fontSize: 18, fontWeight: 500 } }>Hami Tahm</div>
+            <div style={ { fontFamily: "var(--mono)", fontSize: 12, color: "var(--muted)" } }>Tech Founder &middot; Toronto</div>
+          </div>
+        </div>
+      </div>
+
+      <style jsx global>{`
+        .post-content {
+          font-family: var(--serif);
+          font-size: 18px;
+          line-height: 1.75;
+          color: var(--ink);
+        }
+        .post-content p {
+          margin-bottom: 1.4em;
+        }
+        .post-content h2 {
+          font-family: var(--serif);
+          font-size: 28px;
+          font-weight: 500;
+          margin: 2em 0 0.8em;
+          letter-spacing: -.01em;
+        }
+        .post-content h3 {
+          font-family: var(--serif);
+          font-size: 22px;
+          font-weight: 500;
+          margin: 1.8em 0 0.6em;
+        }
+        .post-content a {
+          color: var(--accent);
+          text-decoration: underline;
+          text-underline-offset: 3px;
+        }
+        .post-content ul, .post-content ol {
+          margin: 1em 0;
+          padding-left: 1.5em;
+        }
+        .post-content li {
+          margin-bottom: 0.5em;
+        }
+        .post-content blockquote {
+          border-left: 3px solid var(--accent);
+          padding-left: 20px;
+          margin: 1.5em 0;
+          color: var(--muted);
+          font-style: italic;
+        }
+        .post-content img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 8px;
+          margin: 1.5em 0;
+        }
+        .post-content table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 1.5em 0;
+          font-family: var(--sans);
+          font-size: 15px;
+        }
+        .post-content th, .post-content td {
+          border: 1px solid var(--line-strong);
+          padding: 10px 14px;
+          text-align: left;
+        }
+        .post-content th {
+          background: var(--accent-soft);
+          font-weight: 600;
+        }
+      `}</style>
+    </article>
+  );
+}
