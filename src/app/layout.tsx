@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { Newsreader, JetBrains_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+
+const GA_ID = "G-Z1L4M2SD14";
 
 const newsreader = Newsreader({
   variable: "--font-newsreader",
@@ -19,7 +22,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Hami Tahm — Tech Founder, Toronto",
+    default: "Hami Tahm \u2014 Tech Founder, Toronto",
     template: "%s | Hami Tahm",
   },
   description:
@@ -46,6 +49,10 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`}
+        </Script>
       </head>
       <body>
         <Nav />
