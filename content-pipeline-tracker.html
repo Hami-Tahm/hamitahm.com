@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content Pipeline Tracker — HamiTahm.com</title>
+<style>
+  :root {
+    --bg: #0d1117; --panel: #161b22; --border: #30363d; --text: #e6edf3;
+    --muted: #8b949e; --accent: #0F6E78; --accent-soft: rgba(15,110,120,.15);
+    --green: #2ea043; --green-bg: rgba(46,160,67,.12); --green-text: #3fb950;
+    --yellow: #d29922; --yellow-bg: rgba(210,153,34,.12); --yellow-text: #e3b341;
+    --red: #f85149; --red-bg: rgba(248,81,73,.12); --red-text: #ff7b72;
+    --blue: #58a6ff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; line-height: 1.5; padding: 24px; }
+
+  h1 { font-size: 24px; font-weight: 600; margin-bottom: 6px; }
+  .subtitle { color: var(--muted); margin-bottom: 24px; font-size: 14px; }
+
+  .stats { display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+  .stat { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; min-width: 140px; }
+  .stat .n { font-size: 28px; font-weight: 700; }
+  .stat .l { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .stat.green .n { color: var(--green-text); }
+  .stat.yellow .n { color: var(--yellow-text); }
+  .stat.red .n { color: var(--red-text); }
+
+  .filters { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+  .filters button { background: var(--panel); border: 1px solid var(--border); color: var(--muted); padding: 6px 14px; border-radius: 20px; cursor: pointer; font-size: 13px; transition: all .15s; }
+  .filters button:hover, .filters button.active { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+
+  table { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  thead { background: rgba(255,255,255,.04); }
+  th { text-align: left; padding: 10px 12px; font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  td { padding: 10px 12px; border-bottom: 1px solid var(--border); font-size: 13px; vertical-align: middle; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover { background: rgba(255,255,255,.02); }
+  tr.done { opacity: .5; }
+
+  .sprint { font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 10px; white-space: nowrap; }
+  .sprint-s1 { background: rgba(248,81,73,.15); color: var(--red-text); }
+  .sprint-s2 { background: rgba(210,153,34,.15); color: var(--yellow-text); }
+  .sprint-s3 { background: rgba(210,153,34,.15); color: var(--yellow-text); }
+  .sprint-s4 { background: rgba(88,166,255,.12); color: var(--blue); }
+  .sprint-s5 { background: rgba(139,148,158,.12); color: var(--muted); }
+
+  .badge { display: inline-block; padding: 2px 10px; border-radius: 10px; font-size: 12px; font-weight: 500; white-space: nowrap; }
+  .badge-published { background: var(--green-bg); color: var(--green-text); }
+  .badge-placeholder { background: var(--yellow-bg); color: var(--yellow-text); }
+  .badge-live { background: var(--green-bg); color: var(--green-text); }
+  .badge-yes { background: var(--green-bg); color: var(--green-text); }
+  .badge-no { background: var(--red-bg); color: var(--red-text); }
+  .badge-na { background: rgba(139,148,158,.1); color: var(--muted); }
+
+  .type { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; }
+  .type-money { color: var(--green-text); }
+  .type-proof { color: var(--yellow-text); }
+  .type-info { color: var(--blue); }
+  .type-identity { color: var(--muted); }
+
+  .url { color: var(--blue); text-decoration: none; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 12px; }
+  .url:hover { text-decoration: underline; }
+
+  .notes { color: var(--muted); font-size: 12px; max-width: 200px; }
+  .notes.priority { color: var(--red-text); font-weight: 500; }
+
+  .progress-bar { width: 100%; height: 6px; background: var(--border); border-radius: 3px; margin-top: 16px; overflow: hidden; }
+  .progress-fill { height: 100%; border-radius: 3px; transition: width .3s; }
+
+  .guide { margin-top: 40px; background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 24px; }
+  .guide h2 { font-size: 16px; margin-bottom: 16px; }
+  .guide .step { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+  .guide .step:last-child { border-bottom: none; }
+  .guide .step-n { font-weight: 700; color: var(--accent); min-width: 24px; }
+  .guide .step-t { font-weight: 600; }
+  .guide .step-d { color: var(--muted); }
+
+  @media (max-width: 900px) {
+    body { padding: 12px; }
+    table { font-size: 12px; display: block; overflow-x: auto; }
+    .stats { gap: 8px; }
+    .stat { min-width: 100px; padding: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Content Pipeline Tracker</h1>
+<p class="subtitle">HamiTahm.com — 21 pages across 5 sprints</p>
+
+<div class="stats" id="stats"></div>
+<div class="progress-bar"><div class="progress-fill" id="progress" style="background: var(--green);"></div></div>
+
+<div class="filters" style="margin-top: 20px;">
+  <button class="active" onclick="filter('all')">All</button>
+  <button onclick="filter('S1')">S1</button>
+  <button onclick="filter('S2')">S2</button>
+  <button onclick="filter('S3')">S3</button>
+  <button onclick="filter('S4')">S4</button>
+  <button onclick="filter('S5')">S5</button>
+  <button onclick="filter('placeholder')">Needs Content</button>
+  <button onclick="filter('done')">Done</button>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Sprint</th>
+      <th>URL</th>
+      <th>Page Title</th>
+      <th>Type</th>
+      <th>Code</th>
+      <th>Content</th>
+      <th>KW Mapped</th>
+      <th>Brief</th>
+      <th>Content Done</th>
+      <th>Live</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody id="tbody"></tbody>
+</table>
+
+<div class="guide">
+  <h2>Pipeline Workflow</h2>
+  <div class="step"><span class="step-n">1</span><div><span class="step-t">Keyword Cluster</span><br><span class="step-d">Map keyword clusters from your research to each page</span></div></div>
+  <div class="step"><span class="step-n">2</span><div><span class="step-t">Content Brief</span><br><span class="step-d">Write brief based on cluster, intent, SERP analysis (Chat 2)</span></div></div>
+  <div class="step"><span class="step-n">3</span><div><span class="step-t">Write Content</span><br><span class="step-d">Replace placeholder with researched, optimized content (Chat 3 or 4)</span></div></div>
+  <div class="step"><span class="step-n">4</span><div><span class="step-t">QA</span><br><span class="step-d">Run through Chat 5 verification before publish</span></div></div>
+  <div class="step"><span class="step-n">5</span><div><span class="step-t">Publish</span><br><span class="step-d">Push to GitHub → Vercel auto-deploys → mark Published</span></div></div>
+  <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border);">
+    <strong style="color: var(--red-text);">Priority:</strong>
+    <span style="color: var(--muted);"> Dental Clinics → Audit → Case Study → What Is AI Visibility → Best AI Visibility Tools → everything else by sprint</span>
+  </div>
+</div>
+
+<script>
+const DATA = [
+  {n:1,s:"S1",url:"/ai-visibility/ai-visibility-audit/",title:"AI Visibility Audit for Canadian Businesses",type:"Money",code:"Published",content:"Placeholder",kw:"No",brief:"No",done:"No",live:"No",notes:"CTA target — highest priority for content rewrite"},
+  {n:2,s:"S1",url:"/case-studies/homecalc-ai-visibility/",title:"HomeCalc.ca AI Visibility Case Study",type:"Proof",code:"Published",content:"Placeholder",kw:"No",brief:"No",done:"No",live:"No",notes:"Need real metrics + detailed narrative"},
+  {n:3,s:"S1",url:"/ai-visibility/ai-visibility-for-dental-clinics/",title:"AI Visibility Audit for Dental Clinics",type:"Money",code:"Published",content:"Placeholder",kw:"No",brief:"No",done:"No",live:"No",notes:"OUTREACH ACTIVE — priority content rewrite"},
+  {n:4,s:"S2",url:"/ai-visibility/answer-engine-optimization-consultant-canada/",title:"AEO Consultant in Canada",type:"Money",code:"Published",content:"Placeholder",kw:"No",brief:"No",done:"No",live:"No",notes:""},
+  {n:5,s:"S2",url:"/ai-visibility/generative-engine-optimization-consultant-canada/",title:"GEO Consultant in Canada",type:"Money",code:"Published",content:"Placeholder",kw:"No",brief:"No",done:"No",live:"No",notes:""},
+  {n:6,s:"S2",url:"/ai-visibility/ai-visibility-for-mortgage-brokers/",title:"AI Visibility for Mortgage Brokers",type:"Money",code:"Published",content:"Placeholder",kw:"No",brief:"No",done:"No",live:"No",notes:""},
+  {n:7,s:"S3",url:"/",title:"Homepage",type:"Identity",code:"Published",content:"Live",kw:"—",brief:"—",done:"Yes",live:"Yes",notes:"Needs CTA update to audit page"},
+  {n:8,s:"S3",url:"/hami-tahm/",title:"About (Entity Hub)",type:"Identity",code:"Published",content:"Live",kw:"—",brief:"—",done:"Yes",live:"Yes",notes:"Needs photo + audit CTA"},
+  {n:9,s:"S3",url:"/ai-visibility/",title:"AI Visibility Pillar Hub",type:"Money",code:"Published",content:"Live",kw:"—",brief:"—",done:"Yes",live:"Yes",notes:"Needs internal links to all children"},
+  {n:10,s:"S3",url:"/ai-visibility/ai-visibility-consultant-canada/",title:"AI Visibility Consultant Canada",type:"Money",code:"Published",content:"Live",kw:"—",brief:"—",done:"Yes",live:"Yes",notes:"Needs case study proof links"},
+  {n:11,s:"S4",url:"/blog/",title:"Blog Index",type:"Info",code:"Published",content:"Placeholder",kw:"—",brief:"—",done:"—",live:"No",notes:"Auto-generated from posts"},
+  {n:12,s:"S4",url:"/blog/what-is-ai-visibility/",title:"What Is AI Visibility",type:"Info",code:"Published",content:"Placeholder",kw:"No",brief:"No",done:"No",live:"No",notes:"Core definition — highest priority blog rewrite"},
+  {n:13,s:"S4",url:"/blog/aeo-vs-geo-vs-seo/",title:"AEO vs GEO vs SEO",type:"Info",code:"Published",content:"Placeholder",kw:"No",brief:"No",done:"No",live:"No",notes:"High search intent comparison"},
+  {n:14,s:"S4",url:"/blog/how-to-get-mentioned-by-chatgpt/",title:"How to Get Mentioned by ChatGPT",type:"Info",code:"Published",content:"Placeholder",kw:"No",brief:"No",done:"No",live:"No",notes:""},
+  {n:15,s:"S4",url:"/blog/how-to-appear-in-google-ai-overviews/",title:"How to Appear in Google AI Overviews",type:"Info",code:"Published",content:"Placeholder",kw:"No",brief:"No",done:"No",live:"No",notes:""},
+  {n:16,s:"S4",url:"/blog/how-to-get-cited-by-perplexity/",title:"How to Get Cited by Perplexity",type:"Info",code:"Published",content:"Placeholder",kw:"No",brief:"No",done:"No",live:"No",notes:""},
+  {n:17,s:"S4",url:"/blog/how-to-check-ai-visibility/",title:"How to Check AI Visibility",type:"Info",code:"Published",content:"Placeholder",kw:"No",brief:"No",done:"No",live:"No",notes:""},
+  {n:18,s:"S4",url:"/blog/what-is-answer-engine-optimization/",title:"What Is Answer Engine Optimization",type:"Info",code:"Published",content:"Placeholder",kw:"No",brief:"No",done:"No",live:"No",notes:""},
+  {n:19,s:"S5",url:"/blog/best-ai-visibility-tools/",title:"Best AI Visibility Tools (2025)",type:"Info",code:"Published",content:"Placeholder",kw:"No",brief:"No",done:"No",live:"No",notes:"HIGHEST volume — tool-intent capture"},
+  {n:20,s:"S5",url:"/blog/ai-visibility-tools-vs-audit/",title:"Tools vs Audit",type:"Info",code:"Published",content:"Placeholder",kw:"No",brief:"No",done:"No",live:"No",notes:"Core positioning piece"},
+  {n:21,s:"S5",url:"/blog/peec-vs-profound-vs-airops/",title:"Peec vs Profound vs AirOps",type:"Info",code:"Published",content:"Placeholder",kw:"No",brief:"No",done:"No",live:"No",notes:"Expert reviewer comparison"},
+];
+
+function badge(val) {
+  if (val === "Published" || val === "Live" || val === "Yes") return `<span class="badge badge-yes">${val}</span>`;
+  if (val === "Placeholder") return `<span class="badge badge-placeholder">${val}</span>`;
+  if (val === "No") return `<span class="badge badge-no">${val}</span>`;
+  if (val === "—") return `<span class="badge badge-na">—</span>`;
+  return val;
+}
+
+function sprintBadge(s) {
+  return `<span class="sprint sprint-${s.toLowerCase()}">${s}</span>`;
+}
+
+function typeClass(t) {
+  return `type-${t.toLowerCase()}`;
+}
+
+function renderStats() {
+  const total = DATA.length;
+  const live = DATA.filter(d => d.content === "Live").length;
+  const placeholder = DATA.filter(d => d.content === "Placeholder").length;
+  const kwDone = DATA.filter(d => d.kw === "Yes").length;
+  const briefDone = DATA.filter(d => d.brief === "Yes").length;
+  const contentDone = DATA.filter(d => d.done === "Yes").length;
+  const published = DATA.filter(d => d.live === "Yes").length;
+
+  document.getElementById("stats").innerHTML = `
+    <div class="stat"><div class="n">${total}</div><div class="l">Total Pages</div></div>
+    <div class="stat green"><div class="n">${live}</div><div class="l">Live Content</div></div>
+    <div class="stat yellow"><div class="n">${placeholder}</div><div class="l">Need Content</div></div>
+    <div class="stat"><div class="n">${kwDone}</div><div class="l">KW Mapped</div></div>
+    <div class="stat"><div class="n">${briefDone}</div><div class="l">Briefs Done</div></div>
+    <div class="stat green"><div class="n">${published}</div><div class="l">Published</div></div>
+  `;
+  document.getElementById("progress").style.width = `${(published / total * 100)}%`;
+}
+
+function render(data) {
+  const tbody = document.getElementById("tbody");
+  tbody.innerHTML = data.map(d => {
+    const isDone = d.content === "Live" && d.live === "Yes";
+    const isPriority = d.notes && (d.notes.includes("OUTREACH") || d.notes.includes("highest priority") || d.notes.includes("HIGHEST"));
+    return `<tr class="${isDone ? 'done' : ''}">
+      <td>${d.n}</td>
+      <td>${sprintBadge(d.s)}</td>
+      <td><a class="url" href="https://hamitahm.com${d.url}" target="_blank">${d.url}</a></td>
+      <td>${d.title}</td>
+      <td><span class="type ${typeClass(d.type)}">${d.type}</span></td>
+      <td>${badge(d.code)}</td>
+      <td>${badge(d.content)}</td>
+      <td>${badge(d.kw)}</td>
+      <td>${badge(d.brief)}</td>
+      <td>${badge(d.done)}</td>
+      <td>${badge(d.live)}</td>
+      <td><span class="notes ${isPriority ? 'priority' : ''}">${d.notes || ''}</span></td>
+    </tr>`;
+  }).join('');
+}
+
+function filter(f) {
+  document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  if (f === 'all') render(DATA);
+  else if (f === 'placeholder') render(DATA.filter(d => d.content === 'Placeholder'));
+  else if (f === 'done') render(DATA.filter(d => d.content === 'Live'));
+  else render(DATA.filter(d => d.s === f));
+}
+
+renderStats();
+render(DATA);
+</script>
+</body>
+</html>
