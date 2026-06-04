@@ -34,7 +34,15 @@ const structuredData = {
       "@id": "https://hamitahm.com/ai-visibility/#service",
       name: "Hami Tahm AI Visibility Consulting",
       url: "https://hamitahm.com/ai-visibility/",
-      provider: { "@id": "https://hamitahm.com/hami-tahm/#hami-tahm" },
+      image: `https://hamitahm.com${PORTRAIT_SRC}`,
+      priceRange: "$$$",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Toronto",
+        addressRegion: "ON",
+        addressCountry: "CA",
+      },
+      provider: { "@id": "https://hamitahm.com/#hami-tahm" },
       areaServed: [
         { "@type": "Country", name: "Canada" },
         { "@type": "City", name: "Toronto" },

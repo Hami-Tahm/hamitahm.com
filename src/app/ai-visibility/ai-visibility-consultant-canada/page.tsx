@@ -7,6 +7,7 @@ const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const WALKTHROUGH_MINUTES = 60;
 const TURNAROUND = "7 business days";
 const PRICE_DISPLAY = "$1,500 CAD";
+const PORTRAIT_SRC = "/images/hami-tahm/hami-tahm-portrait.png";
 
 const FAQ_ITEMS = [
   {
@@ -44,13 +45,20 @@ const structuredData = {
         "https://hamitahm.com/ai-visibility/ai-visibility-consultant-canada/#service",
       name: "Hami Tahm — AI Visibility Consultant",
       url: "https://hamitahm.com/ai-visibility/ai-visibility-consultant-canada/",
-      provider: { "@id": "https://hamitahm.com/hami-tahm/#hami-tahm" },
+      image: `https://hamitahm.com${PORTRAIT_SRC}`,
+      priceRange: "$$$",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Toronto",
+        addressRegion: "ON",
+        addressCountry: "CA",
+      },
+      provider: { "@id": "https://hamitahm.com/#hami-tahm" },
       areaServed: [
         { "@type": "Country", name: "Canada" },
         { "@type": "City", name: "Toronto" },
       ],
       serviceType: "AI Visibility Consulting",
-      priceRange: "$1500 CAD",
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "AI Visibility Consulting Services",
