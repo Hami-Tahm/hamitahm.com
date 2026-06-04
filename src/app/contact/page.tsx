@@ -178,7 +178,7 @@ export default function ContactPage() {
               </div>
 
               {/* Email */}
-              <a href="mailto:hi@hamitahm.com" className="channel">
+              <a href="mailto:TahmHami@gmail.com" className="channel">
                 <span className="ch-ic">@</span>
                 <div>
                   <div
@@ -199,7 +199,7 @@ export default function ContactPage() {
                       marginTop: 2,
                     }}
                   >
-                    hi@hamitahm.com
+                    TahmHami@gmail.com
                   </div>
                 </div>
               </a>
@@ -268,9 +268,44 @@ export default function ContactPage() {
                 </div>
               </a>
 
+              {/* Office address */}
+              <a
+                href="https://maps.google.com/?q=111+Peter+Street+9th+Floor+Suite+902+Toronto+ON+M5V+2H1"
+                target="_blank"
+                rel="noopener"
+                className="channel"
+              >
+                <span className="ch-ic">&#9678;</span>
+                <div>
+                  <div
+                    style={{
+                      fontFamily: "var(--sans)",
+                      fontSize: "16px",
+                      fontWeight: 600,
+                      color: "var(--ink)",
+                    }}
+                  >
+                    Office
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: "var(--mono)",
+                      fontSize: "12.5px",
+                      color: "var(--muted)",
+                      marginTop: 2,
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    111 Peter Street, 9th Floor, Suite 902
+                    <br />
+                    Toronto, ON M5V 2H1 &middot; Canada
+                  </div>
+                </div>
+              </a>
+
               {/* CTA */}
               <Link
-                href="/ai-visibility/ai-visibility-audit"
+                href="/ai-visibility/ai-visibility-audit/"
                 style={{
                   display: "block",
                   textAlign: "center",
@@ -284,21 +319,8 @@ export default function ContactPage() {
                   transition: "transform .2s, box-shadow .2s",
                 }}
               >
-                Get a Free AI Visibility Snapshot &rarr;
+                Get Your AI Visibility Audit &rarr;
               </Link>
-
-              {/* Location */}
-              <div
-                style={{
-                  fontFamily: "var(--mono)",
-                  fontSize: "12px",
-                  color: "var(--faint)",
-                  textAlign: "center",
-                  marginTop: 22,
-                }}
-              >
-                Toronto, Ontario &middot; Canada
-              </div>
             </div>
           </RevealSection>
         </div>

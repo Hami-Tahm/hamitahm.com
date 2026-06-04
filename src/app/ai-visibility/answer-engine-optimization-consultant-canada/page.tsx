@@ -987,8 +987,8 @@ export default function AEOConsultantCanada() {
                 }}
               >
                 Or email{" "}
-                <a href="mailto:hami@hamitahm.com" style={{ color: "var(--ink)" }}>
-                  hami@hamitahm.com
+                <a href="mailto:TahmHami@gmail.com" style={{ color: "var(--ink)" }}>
+                  TahmHami@gmail.com
                 </a>
               </p>
             </div>

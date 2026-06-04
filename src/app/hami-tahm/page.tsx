@@ -35,7 +35,10 @@ const structuredData = {
         "Hami Tahm is a Canadian AI visibility consultant and founder of HomeCalc.ca and HamiTahm.com.",
       address: {
         "@type": "PostalAddress",
+        streetAddress: "111 Peter Street, 9th Floor, Suite 902",
         addressLocality: "Toronto",
+        addressRegion: "ON",
+        postalCode: "M5V 2H1",
         addressCountry: "CA",
       },
       knowsAbout: [

@@ -49,8 +49,10 @@ const structuredData = {
       priceRange: "$$$",
       address: {
         "@type": "PostalAddress",
+        streetAddress: "111 Peter Street, 9th Floor, Suite 902",
         addressLocality: "Toronto",
         addressRegion: "ON",
+        postalCode: "M5V 2H1",
         addressCountry: "CA",
       },
       provider: { "@id": "https://hamitahm.com/#hami-tahm" },
