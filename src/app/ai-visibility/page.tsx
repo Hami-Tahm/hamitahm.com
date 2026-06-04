@@ -1,16 +1,138 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
+import { HOMECALC_PROOF } from "@/lib/homecalc-proof";
+
+const PORTRAIT_SRC = "/images/hami-tahm/hami-tahm-portrait.png";
+const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
+
+const HUB_FAQ = [
+  {
+    q: "What is the difference between AI visibility and SEO?",
+    a: "SEO improves how your page ranks in classic search results. AI visibility covers how AI platforms describe, cite, and recommend your business when users ask questions. You can rank #1 on Google and still be invisible in ChatGPT, Perplexity, and Google AI Overviews.",
+  },
+  {
+    q: "Which AI platforms should my business be visible in?",
+    a: "The six that drive most AI-generated answers today are ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, and Bing Copilot. Different platforms weight different signals — strategy is built per platform.",
+  },
+  {
+    q: "How do I check my AI visibility?",
+    a: "Start with an AI visibility audit. It reviews how your business appears across all six platforms and identifies what's missing, misrepresented, or invisible.",
+  },
+  {
+    q: "How much does AI visibility consulting cost?",
+    a: "Engagements start with a $1,500 CAD AI visibility audit — flat fee, one-time. Ongoing consulting is scoped per project after the audit. No retainer.",
+  },
+] as const;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://hamitahm.com/ai-visibility/#service",
+      name: "Hami Tahm AI Visibility Consulting",
+      url: "https://hamitahm.com/ai-visibility/",
+      provider: { "@id": "https://hamitahm.com/hami-tahm/#hami-tahm" },
+      areaServed: [
+        { "@type": "Country", name: "Canada" },
+        { "@type": "City", name: "Toronto" },
+      ],
+      serviceType: "AI Visibility Consulting",
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "AI Visibility Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            price: "1500",
+            priceCurrency: "CAD",
+            availability: "https://schema.org/InStock",
+            itemOffered: {
+              "@type": "Service",
+              name: "AI Visibility Audit",
+              url: "https://hamitahm.com/ai-visibility/ai-visibility-audit/",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Answer Engine Optimization Consulting",
+              url: "https://hamitahm.com/ai-visibility/answer-engine-optimization-consultant-canada/",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Generative Engine Optimization Consulting",
+              url: "https://hamitahm.com/ai-visibility/generative-engine-optimization-consultant-canada/",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "AI Visibility for Dental Clinics",
+              url: "https://hamitahm.com/ai-visibility/ai-visibility-for-dental-clinics/",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "AI Visibility for Mortgage Brokers",
+              url: "https://hamitahm.com/ai-visibility/ai-visibility-for-mortgage-brokers/",
+            },
+          },
+        ],
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://hamitahm.com/ai-visibility/#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://hamitahm.com/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "AI Visibility",
+          item: "https://hamitahm.com/ai-visibility/",
+        },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: HUB_FAQ.map(({ q, a }) => ({
+        "@type": "Question",
+        name: q,
+        acceptedAnswer: { "@type": "Answer", text: a },
+      })),
+    },
+  ],
+};
 
 export const metadata: Metadata = {
-  title: "AI Visibility Consultant in Canada",
+  title: "AI Visibility Consulting in Canada | Hami Tahm",
   description:
-    "Get found when your customers ask AI. I help Canadian businesses show up in ChatGPT, Perplexity, and Google AI Overviews. Toronto-based AI visibility consultant.",
+    "AI visibility consulting in Canada — from ChatGPT citations to Google AI Overviews. Hami Tahm, Toronto-based consultant with a public case study. Not an agency.",
 };
 
 export default function AIVisibilityPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+
       {/* ── HEADER ── */}
       <header style={{ padding: "80px 0 50px" }}>
         <div className="wrap">
@@ -69,13 +191,12 @@ export default function AIVisibilityPage() {
                 lineHeight: 1.65,
               }}
             >
-              I&rsquo;m Hami Tahm, a Toronto-based founder and AI visibility
-              consultant. I help Canadian businesses show up in{" "}
-              <b style={{ color: "var(--ink)", fontWeight: 500 }}>
-                ChatGPT, Perplexity, Google AI Overviews, and AI search
-              </b>{" "}
-              &mdash; using the same system I built and proved on my own
-              products.
+              AI visibility is the practice of ensuring your business appears
+              &mdash; accurately and consistently &mdash; when people use AI
+              tools like ChatGPT, Perplexity, and Google AI Overviews to find
+              products, services, and answers. Hami Tahm is a Toronto-based AI
+              visibility consultant helping Canadian businesses build and
+              measure their presence across AI-powered search.
             </p>
           </RevealSection>
 
@@ -89,11 +210,8 @@ export default function AIVisibilityPage() {
                 alignItems: "center",
               }}
             >
-              <Link
-                href="/ai-visibility/ai-visibility-audit"
-                className="btn btn-primary"
-              >
-                Get a Free AI Visibility Snapshot{" "}
+              <Link href={AUDIT_URL} className="btn btn-primary">
+                Book Your AI Visibility Audit &mdash; $1,500 CAD{" "}
                 <span className="arr">&rarr;</span>
               </Link>
               <a href="#how" className="btn btn-ghost">
@@ -206,6 +324,532 @@ export default function AIVisibilityPage() {
                     surface, new rules &mdash; and a real opening for businesses
                     that move early
                   </div>
+                </div>
+              </div>
+            </div>
+          </RevealSection>
+        </div>
+      </section>
+
+      {/* ── SERVICES DIRECTORY ── */}
+      <section style={{ padding: "80px 0" }}>
+        <div className="wrap">
+          <RevealSection>
+            <h2
+              style={{
+                fontFamily: "var(--serif)",
+                fontWeight: 500,
+                fontSize: "clamp(28px,3.8vw,42px)",
+                lineHeight: 1.12,
+                letterSpacing: "-.01em",
+              }}
+            >
+              AI Visibility Services
+            </h2>
+          </RevealSection>
+
+          <RevealSection delay={0.06}>
+            <div className="inc-grid" style={{ marginTop: 34 }}>
+              <Link href={AUDIT_URL} className="inc">
+                <h3
+                  style={{
+                    fontFamily: "var(--serif)",
+                    fontSize: 19,
+                    fontWeight: 500,
+                    lineHeight: 1.25,
+                  }}
+                >
+                  AI Visibility Audit
+                </h3>
+                <p
+                  style={{
+                    fontSize: "13.5px",
+                    color: "var(--muted)",
+                    marginTop: 10,
+                    lineHeight: 1.55,
+                  }}
+                >
+                  Structured review across six AI platforms. Report, action
+                  plan, walkthrough call. $1,500 CAD flat.
+                </p>
+                <div
+                  style={{
+                    fontFamily: "var(--mono)",
+                    fontSize: 12,
+                    color: "var(--accent)",
+                    marginTop: 14,
+                  }}
+                >
+                  Book an AI Visibility Audit &rarr;
+                </div>
+              </Link>
+
+              <Link
+                href="/ai-visibility/ai-visibility-consultant-canada/"
+                className="inc"
+              >
+                <h3
+                  style={{
+                    fontFamily: "var(--serif)",
+                    fontSize: 19,
+                    fontWeight: 500,
+                    lineHeight: 1.25,
+                  }}
+                >
+                  AI Visibility Consultant in Canada
+                </h3>
+                <p
+                  style={{
+                    fontSize: "13.5px",
+                    color: "var(--muted)",
+                    marginTop: 10,
+                    lineHeight: 1.55,
+                  }}
+                >
+                  Consultant-led AI visibility practice for Canadian
+                  businesses. One person, public case study, transparent pricing.
+                </p>
+                <div
+                  style={{
+                    fontFamily: "var(--mono)",
+                    fontSize: 12,
+                    color: "var(--accent)",
+                    marginTop: 14,
+                  }}
+                >
+                  AI Visibility Consultant Canada &rarr;
+                </div>
+              </Link>
+
+              <Link
+                href="/ai-visibility/answer-engine-optimization-consultant-canada/"
+                className="inc"
+              >
+                <h3
+                  style={{
+                    fontFamily: "var(--serif)",
+                    fontSize: 19,
+                    fontWeight: 500,
+                    lineHeight: 1.25,
+                  }}
+                >
+                  Answer Engine Optimization Consultant
+                </h3>
+                <p
+                  style={{
+                    fontSize: "13.5px",
+                    color: "var(--muted)",
+                    marginTop: 10,
+                    lineHeight: 1.55,
+                  }}
+                >
+                  Structuring your content so AI engines can extract it as a
+                  direct answer.
+                </p>
+                <div
+                  style={{
+                    fontFamily: "var(--mono)",
+                    fontSize: 12,
+                    color: "var(--accent)",
+                    marginTop: 14,
+                  }}
+                >
+                  AEO Consulting &rarr;
+                </div>
+              </Link>
+
+              <Link
+                href="/ai-visibility/generative-engine-optimization-consultant-canada/"
+                className="inc"
+              >
+                <h3
+                  style={{
+                    fontFamily: "var(--serif)",
+                    fontSize: 19,
+                    fontWeight: 500,
+                    lineHeight: 1.25,
+                  }}
+                >
+                  Generative Engine Optimization Consultant
+                </h3>
+                <p
+                  style={{
+                    fontSize: "13.5px",
+                    color: "var(--muted)",
+                    marginTop: 10,
+                    lineHeight: 1.55,
+                  }}
+                >
+                  Building the entity signals and citation authority that cause
+                  AI models to recognize and cite your brand.
+                </p>
+                <div
+                  style={{
+                    fontFamily: "var(--mono)",
+                    fontSize: 12,
+                    color: "var(--accent)",
+                    marginTop: 14,
+                  }}
+                >
+                  GEO Consulting &rarr;
+                </div>
+              </Link>
+
+              <Link
+                href="/ai-visibility/ai-visibility-for-dental-clinics/"
+                className="inc"
+              >
+                <h3
+                  style={{
+                    fontFamily: "var(--serif)",
+                    fontSize: 19,
+                    fontWeight: 500,
+                    lineHeight: 1.25,
+                  }}
+                >
+                  AI Visibility for Dental Clinics
+                </h3>
+                <p
+                  style={{
+                    fontSize: "13.5px",
+                    color: "var(--muted)",
+                    marginTop: 10,
+                    lineHeight: 1.55,
+                  }}
+                >
+                  When a patient asks ChatGPT for a dentist, is your clinic in
+                  the answer?
+                </p>
+                <div
+                  style={{
+                    fontFamily: "var(--mono)",
+                    fontSize: 12,
+                    color: "var(--accent)",
+                    marginTop: 14,
+                  }}
+                >
+                  Dental Clinic AI Visibility &rarr;
+                </div>
+              </Link>
+
+              <Link
+                href="/ai-visibility/ai-visibility-for-mortgage-brokers/"
+                className="inc"
+              >
+                <h3
+                  style={{
+                    fontFamily: "var(--serif)",
+                    fontSize: 19,
+                    fontWeight: 500,
+                    lineHeight: 1.25,
+                  }}
+                >
+                  AI Visibility for Mortgage Brokers
+                </h3>
+                <p
+                  style={{
+                    fontSize: "13.5px",
+                    color: "var(--muted)",
+                    marginTop: 10,
+                    lineHeight: 1.55,
+                  }}
+                >
+                  Canadian homebuyers are asking AI mortgage questions.
+                  Brokerages who aren&rsquo;t cited don&rsquo;t get the call.
+                </p>
+                <div
+                  style={{
+                    fontFamily: "var(--mono)",
+                    fontSize: 12,
+                    color: "var(--accent)",
+                    marginTop: 14,
+                  }}
+                >
+                  Mortgage Broker AI Visibility &rarr;
+                </div>
+              </Link>
+            </div>
+          </RevealSection>
+        </div>
+      </section>
+
+      {/* ── HOMECALC PROOF ── */}
+      <section style={{ padding: "0 0 80px" }}>
+        <div className="wrap">
+          <RevealSection>
+            <h2
+              style={{
+                fontFamily: "var(--serif)",
+                fontWeight: 500,
+                fontSize: "clamp(28px,3.8vw,42px)",
+                lineHeight: 1.12,
+                letterSpacing: "-.01em",
+              }}
+            >
+              Proof &mdash; HomeCalc.ca Case Study
+            </h2>
+          </RevealSection>
+
+          <RevealSection delay={0.06}>
+            <div className="cs-stat-strip" style={{ marginTop: 34 }}>
+              <div className="tier">
+                <div
+                  style={{
+                    fontFamily: "var(--serif)",
+                    fontSize: 32,
+                    fontWeight: 500,
+                    color: "var(--accent)",
+                  }}
+                >
+                  {HOMECALC_PROOF.citations}
+                </div>
+                <div
+                  style={{
+                    fontFamily: "var(--mono)",
+                    fontSize: 11,
+                    color: "var(--muted)",
+                    marginTop: 6,
+                    textTransform: "uppercase",
+                    letterSpacing: ".06em",
+                  }}
+                >
+                  AI citations
+                </div>
+              </div>
+              <div className="tier">
+                <div
+                  style={{
+                    fontFamily: "var(--serif)",
+                    fontSize: 32,
+                    fontWeight: 500,
+                    color: "var(--accent)",
+                  }}
+                >
+                  {HOMECALC_PROOF.timeframe}
+                </div>
+                <div
+                  style={{
+                    fontFamily: "var(--mono)",
+                    fontSize: 11,
+                    color: "var(--muted)",
+                    marginTop: 6,
+                    textTransform: "uppercase",
+                    letterSpacing: ".06em",
+                  }}
+                >
+                  Time to lift
+                </div>
+              </div>
+              <div className="tier">
+                <div
+                  style={{
+                    fontFamily: "var(--serif)",
+                    fontSize: 32,
+                    fontWeight: 500,
+                    color: "var(--accent)",
+                  }}
+                >
+                  &lt;3 mo
+                </div>
+                <div
+                  style={{
+                    fontFamily: "var(--mono)",
+                    fontSize: 11,
+                    color: "var(--muted)",
+                    marginTop: 6,
+                    textTransform: "uppercase",
+                    letterSpacing: ".06em",
+                  }}
+                >
+                  Domain age
+                </div>
+              </div>
+              <div className="tier">
+                <div
+                  style={{
+                    fontFamily: "var(--serif)",
+                    fontSize: 32,
+                    fontWeight: 500,
+                    color: "var(--accent)",
+                  }}
+                >
+                  Toronto
+                </div>
+                <div
+                  style={{
+                    fontFamily: "var(--mono)",
+                    fontSize: 11,
+                    color: "var(--muted)",
+                    marginTop: 6,
+                    textTransform: "uppercase",
+                    letterSpacing: ".06em",
+                  }}
+                >
+                  Based
+                </div>
+              </div>
+            </div>
+          </RevealSection>
+
+          <RevealSection delay={0.12}>
+            <p
+              style={{
+                marginTop: 28,
+                fontSize: 18,
+                color: "var(--muted)",
+                maxWidth: "68ch",
+                lineHeight: 1.65,
+              }}
+            >
+              HomeCalc.ca &mdash; a Toronto-based Canadian financial calculator
+              site &mdash; went from near-zero AI citations to over{" "}
+              {HOMECALC_PROOF.citations} across {HOMECALC_PROOF.pagesCited}{" "}
+              pages in {HOMECALC_PROOF.timeframe}. The work covered ChatGPT,
+              Perplexity, and Google AI Overviews. The domain was{" "}
+              {HOMECALC_PROOF.domainAge} at the time.
+            </p>
+            <blockquote
+              style={{
+                marginTop: 22,
+                paddingLeft: 20,
+                borderLeft: "3px solid var(--accent)",
+                fontStyle: "italic",
+                color: "var(--muted)",
+                fontSize: 17,
+                lineHeight: 1.6,
+                maxWidth: "62ch",
+              }}
+            >
+              I identified a specific technical change that produced this lift.
+              The methodology is part of what you receive in the audit.
+            </blockquote>
+            <Link
+              href={HOMECALC_PROOF.caseStudyPath}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                marginTop: 22,
+                fontFamily: "var(--sans)",
+                fontSize: 14,
+                fontWeight: 600,
+                color: "var(--accent)",
+              }}
+            >
+              Read the full case study <span>&rarr;</span>
+            </Link>
+          </RevealSection>
+        </div>
+      </section>
+
+      {/* ── CONSULTANT WEDGE ── */}
+      <section style={{ padding: "0 0 80px" }}>
+        <div className="wrap">
+          <RevealSection>
+            <h2
+              style={{
+                fontFamily: "var(--serif)",
+                fontWeight: 500,
+                fontSize: "clamp(28px,3.8vw,42px)",
+                lineHeight: 1.12,
+                letterSpacing: "-.01em",
+              }}
+            >
+              Why a Consultant, Not an Agency
+            </h2>
+          </RevealSection>
+
+          <RevealSection delay={0.06}>
+            <div className="hero-grid" style={{ marginTop: 34 }}>
+              <div>
+                <p
+                  style={{
+                    fontSize: 18,
+                    color: "var(--muted)",
+                    lineHeight: 1.65,
+                    maxWidth: "58ch",
+                  }}
+                >
+                  Most AI visibility providers in Canada are agencies. You sign
+                  a retainer, meet an account manager, and your strategy is built
+                  by a team you may never speak to. That&rsquo;s a different
+                  product.
+                </p>
+                <p
+                  style={{
+                    fontSize: 18,
+                    color: "var(--muted)",
+                    lineHeight: 1.65,
+                    maxWidth: "58ch",
+                    marginTop: 18,
+                  }}
+                >
+                  Working with an individual consultant means the same person
+                  who reviews your data writes your action plan, runs the
+                  walkthrough call, and is reachable for follow-up questions. No
+                  handoffs, no retainer, public case study, public pricing.
+                </p>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  gap: 20,
+                  alignItems: "flex-start",
+                }}
+              >
+                <div
+                  style={{
+                    width: 96,
+                    height: 120,
+                    borderRadius: 10,
+                    overflow: "hidden",
+                    flexShrink: 0,
+                    border: "1px solid var(--line-strong)",
+                  }}
+                >
+                  <Image
+                    src={PORTRAIT_SRC}
+                    alt="Hami Tahm, AI visibility consultant, Toronto"
+                    width={96}
+                    height={120}
+                    sizes="96px"
+                    style={{ objectFit: "cover", width: "100%", height: "100%" }}
+                  />
+                </div>
+                <div>
+                  <p
+                    style={{
+                      fontFamily: "var(--serif)",
+                      fontSize: 20,
+                      fontWeight: 500,
+                      lineHeight: 1.3,
+                    }}
+                  >
+                    Hami Tahm
+                  </p>
+                  <p
+                    style={{
+                      fontSize: 14,
+                      color: "var(--muted)",
+                      marginTop: 8,
+                      lineHeight: 1.55,
+                    }}
+                  >
+                    AI Visibility Consultant. Based in Toronto. Builder of
+                    HamiTahm.com, HomeCalc.ca, and Houmse.com.
+                  </p>
+                  <Link
+                    href="/hami-tahm/"
+                    style={{
+                      display: "inline-block",
+                      marginTop: 14,
+                      fontFamily: "var(--mono)",
+                      fontSize: 12,
+                      color: "var(--accent)",
+                    }}
+                  >
+                    About Hami Tahm &rarr;
+                  </Link>
                 </div>
               </div>
             </div>
@@ -873,327 +1517,38 @@ export default function AIVisibilityPage() {
         </div>
       </section>
 
-      {/* ── 05 — EXPLORE ── */}
+      {/* ── 05 — RESOURCES ── */}
       <section style={{ padding: "80px 0" }}>
         <div className="wrap">
           <RevealSection>
-            <SectionLabel number="05" text="Explore" />
+            <SectionLabel number="05" text="Resources" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
-            <div className="explore-grid">
-              <Link
-                href="/ai-visibility/ai-visibility-consultant-canada/"
-                className="ex-row"
-              >
-                <div>
-                  <div
-                    style={{
-                      fontFamily: "var(--serif)",
-                      fontSize: 18,
-                      fontWeight: 500,
-                    }}
-                  >
-                    AI Visibility Consultant in Canada
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: "var(--mono)",
-                      fontSize: 11,
-                      color: "var(--faint)",
-                      marginTop: 3,
-                      textTransform: "uppercase",
-                      letterSpacing: ".08em",
-                    }}
-                  >
-                    Service
-                  </div>
-                </div>
-                <span
-                  style={{
-                    fontFamily: "var(--mono)",
-                    fontSize: 13,
-                    color: "var(--muted)",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  &rarr;
-                </span>
-              </Link>
-
-              <Link
-                href="/ai-visibility/ai-visibility-audit"
-                className="ex-row"
-              >
-                <div>
-                  <div
-                    style={{
-                      fontFamily: "var(--serif)",
-                      fontSize: 18,
-                      fontWeight: 500,
-                    }}
-                  >
-                    AI Visibility Audit
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: "var(--mono)",
-                      fontSize: 11,
-                      color: "var(--faint)",
-                      marginTop: 3,
-                      textTransform: "uppercase",
-                      letterSpacing: ".08em",
-                    }}
-                  >
-                    Service
-                  </div>
-                </div>
-                <span
-                  style={{
-                    fontFamily: "var(--mono)",
-                    fontSize: 13,
-                    color: "var(--muted)",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  &rarr;
-                </span>
-              </Link>
-
-              <Link
-                href="/ai-visibility/answer-engine-optimization"
-                className="ex-row"
-              >
-                <div>
-                  <div
-                    style={{
-                      fontFamily: "var(--serif)",
-                      fontSize: 18,
-                      fontWeight: 500,
-                    }}
-                  >
-                    Answer Engine Optimization (AEO)
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: "var(--mono)",
-                      fontSize: 11,
-                      color: "var(--faint)",
-                      marginTop: 3,
-                      textTransform: "uppercase",
-                      letterSpacing: ".08em",
-                    }}
-                  >
-                    Service
-                  </div>
-                </div>
-                <span
-                  style={{
-                    fontFamily: "var(--mono)",
-                    fontSize: 13,
-                    color: "var(--muted)",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  &rarr;
-                </span>
-              </Link>
-
-              <Link
-                href="/ai-visibility/generative-engine-optimization-consultant-canada/"
-                className="ex-row"
-              >
-                <div>
-                  <div
-                    style={{
-                      fontFamily: "var(--serif)",
-                      fontSize: 18,
-                      fontWeight: 500,
-                    }}
-                  >
-                    Generative Engine Optimization (GEO)
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: "var(--mono)",
-                      fontSize: 11,
-                      color: "var(--faint)",
-                      marginTop: 3,
-                      textTransform: "uppercase",
-                      letterSpacing: ".08em",
-                    }}
-                  >
-                    Service
-                  </div>
-                </div>
-                <span
-                  style={{
-                    fontFamily: "var(--mono)",
-                    fontSize: 13,
-                    color: "var(--muted)",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  &rarr;
-                </span>
-              </Link>
-
-              <Link
-                href="/blog/what-is-ai-visibility/"
-                className="ex-row"
-              >
-                <div>
-                  <div
-                    style={{
-                      fontFamily: "var(--serif)",
-                      fontSize: 18,
-                      fontWeight: 500,
-                    }}
-                  >
-                    What is AI visibility?
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: "var(--mono)",
-                      fontSize: 11,
-                      color: "var(--faint)",
-                      marginTop: 3,
-                      textTransform: "uppercase",
-                      letterSpacing: ".08em",
-                    }}
-                  >
-                    Guide
-                  </div>
-                </div>
-                <span
-                  style={{
-                    fontFamily: "var(--mono)",
-                    fontSize: 13,
-                    color: "var(--muted)",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  &rarr;
-                </span>
-              </Link>
-
-              <Link
-                href="/blog/how-to-get-mentioned-by-chatgpt/"
-                className="ex-row"
-              >
-                <div>
-                  <div
-                    style={{
-                      fontFamily: "var(--serif)",
-                      fontSize: 18,
-                      fontWeight: 500,
-                    }}
-                  >
-                    How to get mentioned by ChatGPT
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: "var(--mono)",
-                      fontSize: 11,
-                      color: "var(--faint)",
-                      marginTop: 3,
-                      textTransform: "uppercase",
-                      letterSpacing: ".08em",
-                    }}
-                  >
-                    Guide
-                  </div>
-                </div>
-                <span
-                  style={{
-                    fontFamily: "var(--mono)",
-                    fontSize: 13,
-                    color: "var(--muted)",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  &rarr;
-                </span>
-              </Link>
-
-              <Link
-                href="/blog/how-to-appear-in-google-ai-overviews/"
-                className="ex-row"
-              >
-                <div>
-                  <div
-                    style={{
-                      fontFamily: "var(--serif)",
-                      fontSize: 18,
-                      fontWeight: 500,
-                    }}
-                  >
-                    How to appear in Google AI Overviews
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: "var(--mono)",
-                      fontSize: 11,
-                      color: "var(--faint)",
-                      marginTop: 3,
-                      textTransform: "uppercase",
-                      letterSpacing: ".08em",
-                    }}
-                  >
-                    Guide
-                  </div>
-                </div>
-                <span
-                  style={{
-                    fontFamily: "var(--mono)",
-                    fontSize: 13,
-                    color: "var(--muted)",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  &rarr;
-                </span>
-              </Link>
-
-              <Link
-                href="/blog/aeo-vs-geo-vs-seo/"
-                className="ex-row"
-              >
-                <div>
-                  <div
-                    style={{
-                      fontFamily: "var(--serif)",
-                      fontSize: 18,
-                      fontWeight: 500,
-                    }}
-                  >
-                    AEO vs GEO vs SEO explained
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: "var(--mono)",
-                      fontSize: 11,
-                      color: "var(--faint)",
-                      marginTop: 3,
-                      textTransform: "uppercase",
-                      letterSpacing: ".08em",
-                    }}
-                  >
-                    Guide
-                  </div>
-                </div>
-                <span
-                  style={{
-                    fontFamily: "var(--mono)",
-                    fontSize: 13,
-                    color: "var(--muted)",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  &rarr;
-                </span>
-              </Link>
-            </div>
+            <h2
+              style={{
+                fontFamily: "var(--serif)",
+                fontWeight: 500,
+                fontSize: "clamp(24px,3vw,34px)",
+                lineHeight: 1.2,
+                letterSpacing: "-.01em",
+                marginTop: -8,
+              }}
+            >
+              AI Visibility Resources
+            </h2>
+            <p
+              style={{
+                marginTop: 16,
+                fontSize: 17,
+                color: "var(--muted)",
+                maxWidth: "52ch",
+                lineHeight: 1.65,
+              }}
+            >
+              Deep guides, comparisons, and analysis. New posts ship in Sprint
+              S4.
+            </p>
           </RevealSection>
         </div>
       </section>
@@ -1206,148 +1561,57 @@ export default function AIVisibilityPage() {
           </RevealSection>
 
           <RevealSection delay={0.06}>
+            <h2
+              style={{
+                fontFamily: "var(--serif)",
+                fontWeight: 500,
+                fontSize: "clamp(24px,3vw,34px)",
+                lineHeight: 1.2,
+                letterSpacing: "-.01em",
+                marginTop: -8,
+                marginBottom: 8,
+              }}
+            >
+              Frequently Asked Questions
+            </h2>
             <div>
-              <div className="faq-item">
-                <h3
-                  style={{
-                    fontFamily: "var(--serif)",
-                    fontSize: 21,
-                    fontWeight: 500,
-                    lineHeight: 1.3,
-                  }}
-                >
-                  What is AI visibility?
-                </h3>
-                <p
-                  style={{
-                    color: "var(--muted)",
-                    fontSize: 16,
-                    lineHeight: 1.6,
-                    marginTop: 10,
-                    maxWidth: "68ch",
-                  }}
-                >
-                  AI visibility is the practice of making your business show up
-                  when people use AI-powered search tools like ChatGPT,
-                  Perplexity, and Google AI Overviews. Instead of optimizing for
-                  ten blue links, you optimize for the short list of names the AI
-                  actually recommends.
-                </p>
-              </div>
-
-              <div className="faq-item">
-                <h3
-                  style={{
-                    fontFamily: "var(--serif)",
-                    fontSize: 21,
-                    fontWeight: 500,
-                    lineHeight: 1.3,
-                  }}
-                >
-                  How is this different from regular SEO?
-                </h3>
-                <p
-                  style={{
-                    color: "var(--muted)",
-                    fontSize: 16,
-                    lineHeight: 1.6,
-                    marginTop: 10,
-                    maxWidth: "68ch",
-                  }}
-                >
-                  Traditional SEO gets you ranked in a list. AI visibility gets
-                  you named in an answer. The tactics overlap &mdash; content
-                  quality, authority, and structured data all matter &mdash; but
-                  the signals AI models prioritize (entity clarity, citation
-                  patterns, concise direct answers) are different from what moves
-                  a page from position 7 to position 3.
-                </p>
-              </div>
-
-              <div className="faq-item">
-                <h3
-                  style={{
-                    fontFamily: "var(--serif)",
-                    fontSize: 21,
-                    fontWeight: 500,
-                    lineHeight: 1.3,
-                  }}
-                >
-                  Do you only work with Canadian businesses?
-                </h3>
-                <p
-                  style={{
-                    color: "var(--muted)",
-                    fontSize: 16,
-                    lineHeight: 1.6,
-                    marginTop: 10,
-                    maxWidth: "68ch",
-                  }}
-                >
-                  Most of my clients are in Canada &mdash; especially Toronto
-                  and the GTA &mdash; but the system works for any
-                  English-language market. If your customers are asking AI for
-                  recommendations in your category, I can help.
-                </p>
-              </div>
-
-              <div className="faq-item">
-                <h3
-                  style={{
-                    fontFamily: "var(--serif)",
-                    fontSize: 21,
-                    fontWeight: 500,
-                    lineHeight: 1.3,
-                  }}
-                >
-                  How do we start?
-                </h3>
-                <p
-                  style={{
-                    color: "var(--muted)",
-                    fontSize: 16,
-                    lineHeight: 1.6,
-                    marginTop: 10,
-                    maxWidth: "68ch",
-                  }}
-                >
-                  Request a free AI Visibility Snapshot. I&rsquo;ll check
-                  whether ChatGPT, Perplexity, and Google AI Overviews mention
-                  your business today and send you a short report within
-                  48&nbsp;hours. No cost, no commitment &mdash; just a clear
-                  picture of where you stand.
-                </p>
-              </div>
-
-              <div className="faq-item">
-                <h3
-                  style={{
-                    fontFamily: "var(--serif)",
-                    fontSize: 21,
-                    fontWeight: 500,
-                    lineHeight: 1.3,
-                  }}
-                >
-                  How long until I see results?
-                </h3>
-                <p
-                  style={{
-                    color: "var(--muted)",
-                    fontSize: 16,
-                    lineHeight: 1.6,
-                    marginTop: 10,
-                    maxWidth: "68ch",
-                  }}
-                >
-                  Some changes &mdash; like schema markup and structured-data
-                  fixes &mdash; can show up in AI Overviews within weeks.
-                  Broader citation gains in ChatGPT and Perplexity typically
-                  build over 2&ndash;4 months as models retrain and your
-                  authority signals compound. This is early-mover territory:
-                  the sooner you start, the harder it is for competitors to
-                  catch&nbsp;up.
-                </p>
-              </div>
+              {HUB_FAQ.map(({ q, a }) => (
+                <div className="faq-item" key={q}>
+                  <h3
+                    style={{
+                      fontFamily: "var(--serif)",
+                      fontSize: 21,
+                      fontWeight: 500,
+                      lineHeight: 1.3,
+                    }}
+                  >
+                    {q}
+                  </h3>
+                  <p
+                    style={{
+                      color: "var(--muted)",
+                      fontSize: 16,
+                      lineHeight: 1.6,
+                      marginTop: 10,
+                      maxWidth: "68ch",
+                    }}
+                  >
+                    {a}
+                    {q === "How do I check my AI visibility?" && (
+                      <>
+                        {" "}
+                        <Link
+                          href={AUDIT_URL}
+                          style={{ color: "var(--accent)", fontWeight: 500 }}
+                        >
+                          Book an AI visibility audit &mdash; $1,500 CAD
+                        </Link>
+                        .
+                      </>
+                    )}
+                  </p>
+                </div>
+              ))}
             </div>
           </RevealSection>
         </div>
@@ -1368,7 +1632,7 @@ export default function AIVisibilityPage() {
                   position: "relative",
                 }}
               >
-                See where you stand in AI search &mdash; free.
+                Start with a structured AI visibility audit.
               </h2>
               <p
                 style={{
@@ -1382,16 +1646,15 @@ export default function AIVisibilityPage() {
                   lineHeight: 1.6,
                 }}
               >
-                A quick snapshot of whether ChatGPT, Perplexity, and Google AI
-                Overviews mention your business &mdash; delivered in 48 hours,
-                no cost, no obligation.
+                Six platforms reviewed, written report, action plan, and
+                walkthrough call. $1,500 CAD flat &mdash; no retainer.
               </p>
               <Link
-                href="/ai-visibility/ai-visibility-audit"
+                href={AUDIT_URL}
                 className="btn btn-primary"
                 style={{ position: "relative" }}
               >
-                Get a Free AI Visibility Snapshot{" "}
+                Book Your AI Visibility Audit &mdash; $1,500 CAD{" "}
                 <span className="arr">&rarr;</span>
               </Link>
             </div>
