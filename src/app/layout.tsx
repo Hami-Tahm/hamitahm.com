@@ -20,13 +20,56 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500"],
 });
 
+const siteStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://hamitahm.com/#hami-tahm",
+      name: "Hami Tahm",
+      url: "https://hamitahm.com/",
+      jobTitle: "AI Visibility Consultant",
+      worksFor: { "@id": "https://hamitahm.com/#organization" },
+      address: {
+        "@type": "PostalAddress",
+        addressCountry: "CA",
+      },
+      knowsAbout: [
+        "AI Visibility",
+        "Answer Engine Optimization",
+        "Generative Engine Optimization",
+        "AI Search Optimization",
+      ],
+      sameAs: [
+        "https://linkedin.com/in/hamitahm",
+        "https://x.com/hamitahm",
+      ],
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://hamitahm.com/#organization",
+      name: "HamiTahm.com",
+      url: "https://hamitahm.com/",
+      founder: { "@id": "https://hamitahm.com/#hami-tahm" },
+      areaServed: { "@type": "Country", name: "Canada" },
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://hamitahm.com/#website",
+      name: "Hami Tahm",
+      url: "https://hamitahm.com/",
+      publisher: { "@id": "https://hamitahm.com/#organization" },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   title: {
-    default: "Hami Tahm \u2014 Tech Founder, Toronto",
+    default: "Hami Tahm \u2014 AI Visibility Consultant in Canada",
     template: "%s | Hami Tahm",
   },
   description:
-    "Serial founder helping Canadian businesses get found inside ChatGPT, Perplexity, and Google AI Overviews. AI Visibility Consultant based in Toronto.",
+    "Hami Tahm \u2014 AI Visibility Consultant in Canada. Helping businesses appear in ChatGPT, Perplexity, and Google AI Overviews.",
   metadataBase: new URL("https://hamitahm.com"),
   openGraph: {
     type: "website",
@@ -53,6 +96,12 @@ export default function RootLayout({
         <Script id="gtag-init" strategy="afterInteractive">
           {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`}
         </Script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(siteStructuredData),
+          }}
+        />
       </head>
       <body>
         <Nav />

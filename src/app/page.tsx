@@ -30,11 +30,14 @@ export default function Home() {
 
           <RevealSection delay={0.18}>
             <div style={{ marginTop: 42, display: "flex", gap: 14, flexWrap: "wrap", alignItems: "center" }}>
-              <Link href="/ai-visibility/ai-visibility-audit" className="btn btn-primary">
-                Get an AI Visibility Audit <span className="arr">&rarr;</span>
+              <Link
+                href="/ai-visibility/ai-visibility-audit/"
+                className="btn btn-primary"
+              >
+                Get Your AI Visibility Audit <span className="arr">&rarr;</span>
               </Link>
-              <Link href="#work" className="btn btn-ghost">
-                See what I&rsquo;m building
+              <Link href="/ai-visibility/" className="btn btn-ghost">
+                Explore AI visibility services
               </Link>
             </div>
           </RevealSection>
@@ -67,14 +70,20 @@ export default function Home() {
               <p style={{ color: "var(--muted)", marginTop: 18, maxWidth: "52ch", position: "relative" }}>
                 Search is moving to answer engines. I help Canadian clinics, real-estate brands, and SaaS companies show up when buyers ask ChatGPT, Perplexity, and Google&rsquo;s AI&nbsp;Overviews &mdash; using the same system I built and proved on my own products.
               </p>
-              <div className="ladder">
-                <Step n="01" title="Free Snapshot" desc="Where you stand" />
-                <Step n="02" title="Visibility Audit" desc="Full diagnosis" />
-                <Step n="03" title="Implementation Sprint" desc="Fixes shipped" />
-                <Step n="04" title="Monthly System" desc="Ongoing growth" />
+              <div
+                className="ladder"
+                style={{ gridTemplateColumns: "repeat(3, 1fr)" }}
+              >
+                <Step n="01" title="Audit" desc="Full AI visibility diagnosis" />
+                <Step n="02" title="Report" desc="Prioritized action plan" />
+                <Step n="03" title="Walkthrough" desc="60-min review call" />
               </div>
-              <Link href="/ai-visibility/ai-visibility-audit" className="btn btn-primary" style={{ marginTop: 36, position: "relative" }}>
-                Start with a free snapshot <span className="arr">&rarr;</span>
+              <Link
+                href="/ai-visibility/ai-visibility-audit/"
+                className="btn btn-primary"
+                style={{ marginTop: 36, position: "relative" }}
+              >
+                Get Your AI Visibility Audit <span className="arr">&rarr;</span>
               </Link>
             </div>
           </RevealSection>
