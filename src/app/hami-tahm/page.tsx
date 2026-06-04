@@ -128,11 +128,10 @@ export default function AboutPage() {
       {/* FACTS STRIP */}
       <div className="wrap">
         <RevealSection delay={0.12}>
-          <div className="stats-grid">
+          <div className="stats-grid stats-grid-3">
             <Stat value="12" unit=" yrs" label="Building" />
             <Stat value="~14" label="Ventures" />
-            <Stat value="2" label="Markets" />
-            <Stat value="7.5" unit=" yrs" label="#1 SEO case" />
+            <Stat value="100" unit="hrs/wk" label="Deep work" />
           </div>
         </RevealSection>
       </div>

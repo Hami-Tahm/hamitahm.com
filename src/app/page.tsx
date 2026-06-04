@@ -24,20 +24,20 @@ export default function Home() {
                 fontFamily: "var(--serif)",
                 fontWeight: 500,
                 fontSize: "clamp(40px, 6.4vw, 76px)",
-                lineHeight: 1.12,
+                lineHeight: 1.02,
                 letterSpacing: "-.032em",
-                maxWidth: "16ch",
               }}
             >
-              <span style={{ display: "block" }}>Build fast.</span>
-              <span style={{ display: "block" }}>Test hard.</span>
-              <span style={{ display: "block" }}>Kill what doesn&rsquo;t work.</span>
-              <span style={{ display: "block" }}>
-                <em style={{ fontStyle: "italic", color: "var(--accent)" }}>
-                  Double down
-                </em>{" "}
-                on what does.
-              </span>
+              Build fast.
+              <br />
+              Test hard.
+              <br />
+              Kill what doesn&rsquo;t work.
+              <br />
+              <em style={{ fontStyle: "italic", color: "var(--accent)" }}>
+                Double down
+              </em>{" "}
+              on what does.
             </h1>
           </RevealSection>
 
