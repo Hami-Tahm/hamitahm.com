@@ -1,15 +1,88 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 
+const PORTRAIT_SRC = "/images/hami-tahm/hami-tahm-portrait.png";
+const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
+const CONSULTANT_URL = "/ai-visibility/ai-visibility-consultant-canada/";
+
 export const metadata: Metadata = {
-  title: "About Hami Tahm — Tech Founder & AI Visibility Consultant, Toronto",
-  description: "Serial tech founder based in Toronto. 12+ years, ~14 ventures, two markets. Now building HomeCalc.ca and helping Canadian businesses get found in AI search.",
+  title: "Hami Tahm — AI Visibility Consultant | HamiTahm.com",
+  description:
+    "Hami Tahm is a Canadian AI visibility consultant — builder of HomeCalc.ca, HamiTahm.com, and Houmse.com. Helping businesses appear in ChatGPT, Perplexity, and Google AI Overviews.",
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": "https://hamitahm.com/hami-tahm/#profilepage",
+      url: "https://hamitahm.com/hami-tahm/",
+      name: "Hami Tahm — AI Visibility Consultant",
+      mainEntity: { "@id": "https://hamitahm.com/hami-tahm/#hami-tahm" },
+      breadcrumb: { "@id": "https://hamitahm.com/hami-tahm/#breadcrumb" },
+    },
+    {
+      "@type": "Person",
+      "@id": "https://hamitahm.com/hami-tahm/#hami-tahm",
+      name: "Hami Tahm",
+      jobTitle: "AI Visibility Consultant",
+      url: "https://hamitahm.com/hami-tahm/",
+      image: `https://hamitahm.com${PORTRAIT_SRC}`,
+      description:
+        "Hami Tahm is a Canadian AI visibility consultant and founder of HomeCalc.ca and HamiTahm.com.",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Toronto",
+        addressCountry: "CA",
+      },
+      knowsAbout: [
+        "AI Visibility",
+        "Answer Engine Optimization",
+        "Generative Engine Optimization",
+        "AI Search Optimization",
+        "SEO",
+        "Real estate technology",
+        "Canadian mortgage market",
+      ],
+      sameAs: [
+        "https://www.linkedin.com/in/hamitahm",
+        "https://x.com/hamitahm",
+        "https://homecalc.ca",
+        "https://houmse.com",
+      ],
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://hamitahm.com/hami-tahm/#breadcrumb",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://hamitahm.com/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Hami Tahm",
+          item: "https://hamitahm.com/hami-tahm/",
+        },
+      ],
+    },
+  ],
 };
 
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+
       {/* HERO */}
       <header style={{ padding: "92px 0 56px" }}>
         <div className="wrap">
@@ -29,12 +102,23 @@ export default function AboutPage() {
                   on what works.
                 </h1>
                 <p style={{ marginTop: 28, fontSize: "clamp(17px, 2vw, 20px)", color: "var(--muted)", maxWidth: "54ch", lineHeight: 1.65 }}>
-                  I&rsquo;m Hami Tahm, a serial tech founder based in Toronto. Over 12&nbsp;years and roughly fourteen ventures across two markets, I&rsquo;ve learned what works and what doesn&rsquo;t.{" "}
-                  <b style={{ color: "var(--ink)", fontWeight: 500 }}>Today I build HomeCalc.ca</b> and help Canadian businesses get found in ChatGPT, Perplexity, and Google AI&nbsp;Overviews.
+                  Hami Tahm is a Canadian AI visibility consultant and founder — building tools and practices that help businesses appear in AI-powered search. Based in Toronto, Hami runs HamiTahm.com as his AI visibility practice and HomeCalc.ca as a live case study in AI citation growth.
                 </p>
               </div>
               <div className="portrait">
-                <span style={{ fontFamily: "var(--mono)", fontSize: 12, color: "var(--faint)" }}>Portrait</span>
+                <Image
+                  src={PORTRAIT_SRC}
+                  alt="Hami Tahm, AI visibility consultant, Toronto, Canada"
+                  width={480}
+                  height={600}
+                  priority
+                  sizes="(max-width: 760px) 280px, 36vw"
+                  style={{
+                    objectFit: "cover",
+                    width: "100%",
+                    height: "100%",
+                  }}
+                />
               </div>
             </div>
           </RevealSection>
@@ -62,6 +146,9 @@ export default function AboutPage() {
           <RevealSection delay={0.24}>
             <div className="prose">
               <p className="big">
+                Hami Tahm is a Canadian AI visibility consultant who built HomeCalc.ca from zero to 1,100 AI citations in 30 days while the domain was under three months old.
+              </p>
+              <p>
                 I&rsquo;m Hami Tahm, a tech entrepreneur focused on building and testing scalable digital products across multiple industries.
               </p>
               <p>
@@ -95,6 +182,48 @@ export default function AboutPage() {
               <MethodCard n="02" title="Test aggressively" desc="Let the market, not the roadmap, decide what&rsquo;s true. Real signal over comfortable assumptions." />
               <MethodCard n="03" title="Kill what doesn&rsquo;t work" desc="No sunk-cost loyalty. A clean shutdown frees the resources the next bet needs." />
               <MethodCard n="04" title="Double down on what does" desc="When something works, concentrate everything on it. Focus beats spreading thin every time." />
+            </div>
+          </RevealSection>
+        </div>
+      </section>
+
+      {/* CTA — before Execution Snapshot */}
+      <section style={{ padding: "0 0 80px" }}>
+        <div className="wrap">
+          <RevealSection delay={0.06}>
+            <div className="entity-cta">
+              <p
+                style={{
+                  fontFamily: "var(--sans)",
+                  fontSize: 17,
+                  fontWeight: 600,
+                  color: "var(--ink)",
+                  marginBottom: 14,
+                }}
+              >
+                Working on AI visibility for your business?
+              </p>
+              <ul
+                style={{
+                  listStyle: "none",
+                  padding: 0,
+                  margin: 0,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 10,
+                }}
+              >
+                <li>
+                  <Link href={AUDIT_URL} style={{ color: "var(--accent)", fontWeight: 500 }}>
+                    Book an AI visibility audit &rarr;
+                  </Link>
+                </li>
+                <li>
+                  <Link href={CONSULTANT_URL} style={{ color: "var(--accent)", fontWeight: 500 }}>
+                    Explore AI visibility services &rarr;
+                  </Link>
+                </li>
+              </ul>
             </div>
           </RevealSection>
         </div>
@@ -199,24 +328,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 04 — SELECTED PRESS & TALKS */}
-      <section style={{ padding: "80px 0" }}>
-        <div className="wrap">
-          <RevealSection delay={0.06}>
-            <SectionLabel number="04" text="Selected press & talks" />
-          </RevealSection>
-          <RevealSection delay={0.12}>
-            <div className="press-list">
-              <span>Donya-e-Eqtesad</span>
-              <span>Shanbeh Mag</span>
-              <span>Peyvast</span>
-              <span>Karnakan (podcast)</span>
-              <span>RubyGap (podcast)</span>
-            </div>
-          </RevealSection>
-        </div>
-      </section>
-
       {/* CTA */}
       <section style={{ padding: "0 0 80px" }}>
         <div className="wrap">
@@ -228,8 +339,8 @@ export default function AboutPage() {
               <p style={{ color: "var(--muted)", marginTop: 16, position: "relative", maxWidth: "54ch", marginLeft: "auto", marginRight: "auto" }}>
                 I help Canadian businesses show up in ChatGPT, Perplexity, and Google AI&nbsp;Overviews &mdash; using the same system I proved on my own products.
               </p>
-              <Link href="/ai-visibility/ai-visibility-audit" className="btn btn-primary" style={{ marginTop: 36, position: "relative" }}>
-                Get an AI Visibility Audit <span className="arr">&rarr;</span>
+              <Link href={AUDIT_URL} className="btn btn-primary" style={{ marginTop: 36, position: "relative" }}>
+                Get Your AI Visibility Audit <span className="arr">&rarr;</span>
               </Link>
             </div>
           </RevealSection>
