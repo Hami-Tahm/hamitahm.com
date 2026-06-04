@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
+import { blogSchemaJson } from "@/lib/blog-schema";
 
 export const metadata: Metadata = {
   title:
@@ -12,6 +13,17 @@ export const metadata: Metadata = {
 export default function PeecVsProfoundVsAirOpsPost() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: blogSchemaJson({
+            slug: "peec-vs-profound-vs-airops",
+            title: "Peec AI vs Profound vs AirOps — AI Visibility Tools Compared",
+            description: "Detailed comparison of Peec AI, Profound, and AirOps — the three leading AI visibility platforms. Features, pricing, strengths, and which one fits your needs.",
+            datePublished: "2026-05-21",
+          }),
+        }}
+      />
       {/* ── Breadcrumb ── */}
       <div className="wrap" style={{ paddingTop: 24 }}>
         <RevealSection>

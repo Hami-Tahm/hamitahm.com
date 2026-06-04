@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
+import { blogSchemaJson } from "@/lib/blog-schema";
 
 export const metadata: Metadata = {
   title:
@@ -12,6 +13,17 @@ export const metadata: Metadata = {
 export default function ToolsVsAuditPost() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: blogSchemaJson({
+            slug: "ai-visibility-tools-vs-audit",
+            title: "AI Visibility Tools vs AI Visibility Audit — Which Do You Need?",
+            description: "AI visibility tools show dashboards. An AI visibility audit shows what to fix. Learn when you need a tool, when you need an audit, and when you need both.",
+            datePublished: "2026-05-18",
+          }),
+        }}
+      />
       {/* ── Breadcrumb ── */}
       <div className="wrap" style={{ paddingTop: 24 }}>
         <RevealSection>

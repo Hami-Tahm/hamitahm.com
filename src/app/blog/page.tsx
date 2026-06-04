@@ -81,9 +81,44 @@ const posts = [
   },
 ];
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Blog",
+      "@id": "https://hamitahm.com/blog/#blog",
+      url: "https://hamitahm.com/blog/",
+      name: "AI Visibility Blog",
+      description:
+        "Practical guides on how AI search works, how to get cited by ChatGPT, Perplexity, and Google AI Overviews, and what Canadian businesses need to do about it.",
+      inLanguage: "en-CA",
+      publisher: { "@id": "https://hamitahm.com/#organization" },
+      author: { "@id": "https://hamitahm.com/#hami-tahm" },
+      blogPost: posts.map((p) => ({
+        "@type": "BlogPosting",
+        headline: p.title,
+        url: `https://hamitahm.com${p.href}`,
+        description: p.excerpt,
+      })),
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://hamitahm.com/blog/#breadcrumb",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://hamitahm.com/" },
+        { "@type": "ListItem", position: 2, name: "Blog", item: "https://hamitahm.com/blog/" },
+      ],
+    },
+  ],
+};
+
 export default function BlogIndexPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       {/* ── BREADCRUMB ── */}
       <div className="wrap">
         <div

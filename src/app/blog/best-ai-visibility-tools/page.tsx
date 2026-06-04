@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
+import { blogSchemaJson } from "@/lib/blog-schema";
 
 export const metadata: Metadata = {
   title: "Best AI Visibility Tools (2025) — Complete Guide | Hami Tahm",
@@ -11,6 +12,17 @@ export const metadata: Metadata = {
 export default function BestAIVisibilityToolsPost() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: blogSchemaJson({
+            slug: "best-ai-visibility-tools",
+            title: "Best AI Visibility Tools (2026) — Complete Guide",
+            description: "Compare the best AI visibility tools: Peec AI, AirOps, Profound, Limy, Ubersuggest, and more. What they do, what they cost, and when you need more than a dashboard.",
+            datePublished: "2026-05-20",
+          }),
+        }}
+      />
       {/* ── Breadcrumb ── */}
       <div className="wrap" style={{ paddingTop: 24 }}>
         <RevealSection>

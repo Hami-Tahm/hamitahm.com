@@ -20,6 +20,8 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500"],
 });
 
+// Site-wide entity schema — establishes Hami Tahm + HamiTahm.com as canonical
+// entities across every page. Page-level schema references these via @id.
 const siteStructuredData = {
   "@context": "https://schema.org",
   "@graph": [
@@ -32,6 +34,8 @@ const siteStructuredData = {
       worksFor: { "@id": "https://hamitahm.com/#organization" },
       address: {
         "@type": "PostalAddress",
+        addressLocality: "Toronto",
+        addressRegion: "ON",
         addressCountry: "CA",
       },
       knowsAbout: [
@@ -39,10 +43,13 @@ const siteStructuredData = {
         "Answer Engine Optimization",
         "Generative Engine Optimization",
         "AI Search Optimization",
+        "SEO",
       ],
       sameAs: [
-        "https://linkedin.com/in/hamitahm",
+        "https://www.linkedin.com/in/hamitahm",
         "https://x.com/hamitahm",
+        "https://homecalc.ca",
+        "https://houmse.com",
       ],
     },
     {
@@ -52,6 +59,7 @@ const siteStructuredData = {
       url: "https://hamitahm.com/",
       founder: { "@id": "https://hamitahm.com/#hami-tahm" },
       areaServed: { "@type": "Country", name: "Canada" },
+      foundingDate: "2024",
     },
     {
       "@type": "WebSite",
@@ -59,6 +67,7 @@ const siteStructuredData = {
       name: "Hami Tahm",
       url: "https://hamitahm.com/",
       publisher: { "@id": "https://hamitahm.com/#organization" },
+      inLanguage: "en-CA",
     },
   ],
 };

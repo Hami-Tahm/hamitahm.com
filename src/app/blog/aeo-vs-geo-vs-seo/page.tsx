@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
+import { blogSchemaJson } from "@/lib/blog-schema";
 
 export const metadata: Metadata = {
   title: "AEO vs GEO vs SEO — What's the Difference? | Hami Tahm",
@@ -11,6 +12,17 @@ export const metadata: Metadata = {
 export default function AEOvsGEOvsSEOPost() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: blogSchemaJson({
+            slug: "aeo-vs-geo-vs-seo",
+            title: "AEO vs GEO vs SEO — What's the Difference?",
+            description: "SEO = ranking on search results pages. AEO = being cited in AI answer engines. GEO = appearing in generative search. All three matter — here's how they differ.",
+            datePublished: "2026-05-15",
+          }),
+        }}
+      />
       {/* ── Breadcrumb ── */}
       <div className="wrap" style={{ paddingTop: 24 }}>
         <RevealSection>

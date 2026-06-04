@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
+import { blogSchemaJson } from "@/lib/blog-schema";
 
 export const metadata: Metadata = {
   title: "How to Get Cited by Perplexity AI | Hami Tahm",
@@ -11,6 +12,17 @@ export const metadata: Metadata = {
 export default function HowToGetCitedByPerplexityPost() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: blogSchemaJson({
+            slug: "how-to-get-cited-by-perplexity",
+            title: "How to Get Cited by Perplexity AI",
+            description: "Learn how Perplexity AI selects sources to cite. Practical guide for Canadian businesses on getting your content cited in Perplexity answers.",
+            datePublished: "2026-05-25",
+          }),
+        }}
+      />
       {/* ── Breadcrumb ── */}
       <div className="wrap" style={{ paddingTop: 24 }}>
         <RevealSection>

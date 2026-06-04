@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
+import { blogSchemaJson } from "@/lib/blog-schema";
 
 export const metadata: Metadata = {
   title: "How to Appear in Google AI Overviews | Hami Tahm",
@@ -11,6 +12,17 @@ export const metadata: Metadata = {
 export default function HowToAppearInGoogleAIOverviewsPost() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: blogSchemaJson({
+            slug: "how-to-appear-in-google-ai-overviews",
+            title: "How to Appear in Google AI Overviews",
+            description: "Google AI Overviews pull from pages that already rank well AND have clear, extractable answers. Here's how to optimize for both traditional SEO and AI-friendly content.",
+            datePublished: "2026-05-22",
+          }),
+        }}
+      />
       {/* ── Breadcrumb ── */}
       <div className="wrap" style={{ paddingTop: 24 }}>
         <RevealSection>

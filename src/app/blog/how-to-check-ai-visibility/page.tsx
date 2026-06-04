@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
+import { blogSchemaJson } from "@/lib/blog-schema";
 
 export const metadata: Metadata = {
   title: "How to Check Your AI Visibility | Hami Tahm",
@@ -11,6 +12,17 @@ export const metadata: Metadata = {
 export default function HowToCheckAIVisibilityPost() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: blogSchemaJson({
+            slug: "how-to-check-ai-visibility",
+            title: "How to Check Your AI Visibility",
+            description: "Step-by-step guide to checking how your brand appears in ChatGPT, Perplexity, Google AI Overviews, and other AI search engines.",
+            datePublished: "2026-05-12",
+          }),
+        }}
+      />
       {/* ── Breadcrumb ── */}
       <div className="wrap" style={{ paddingTop: 24 }}>
         <RevealSection>

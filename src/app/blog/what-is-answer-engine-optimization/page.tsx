@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
+import { blogSchemaJson } from "@/lib/blog-schema";
 
 export const metadata: Metadata = {
   title: "What Is Answer Engine Optimization (AEO)? | Hami Tahm",
@@ -11,6 +12,17 @@ export const metadata: Metadata = {
 export default function WhatIsAnswerEngineOptimizationPost() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: blogSchemaJson({
+            slug: "what-is-answer-engine-optimization",
+            title: "What Is Answer Engine Optimization (AEO)?",
+            description: "Answer Engine Optimization explained. Learn what AEO is, how it differs from SEO, and how to optimize your content for AI-generated answers.",
+            datePublished: "2026-05-14",
+          }),
+        }}
+      />
       {/* ── Breadcrumb ── */}
       <div className="wrap" style={{ paddingTop: 24 }}>
         <RevealSection>

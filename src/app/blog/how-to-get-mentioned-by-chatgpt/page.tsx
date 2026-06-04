@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
+import { blogSchemaJson } from "@/lib/blog-schema";
 
 export const metadata: Metadata = {
   title: "How to Get Your Business Mentioned by ChatGPT | Hami Tahm",
@@ -11,6 +12,17 @@ export const metadata: Metadata = {
 export default function HowToGetMentionedByChatGPTPost() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: blogSchemaJson({
+            slug: "how-to-get-mentioned-by-chatgpt",
+            title: "How to Get Your Business Mentioned by ChatGPT",
+            description: "ChatGPT mentions brands it finds authoritative and well-structured. Here's how to improve entity clarity, structured data, and authority to get cited.",
+            datePublished: "2026-05-24",
+          }),
+        }}
+      />
       {/* ── Breadcrumb ── */}
       <div className="wrap" style={{ paddingTop: 24 }}>
         <RevealSection>

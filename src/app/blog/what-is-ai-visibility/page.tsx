@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
+import { blogSchemaJson } from "@/lib/blog-schema";
 
 export const metadata: Metadata = {
   title: "What Is AI Visibility (and Why It Matters Now) | Hami Tahm",
@@ -11,6 +12,17 @@ export const metadata: Metadata = {
 export default function WhatIsAIVisibilityPost() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: blogSchemaJson({
+            slug: "what-is-ai-visibility",
+            title: "What Is AI Visibility (and Why It Matters Now)",
+            description: "AI visibility is whether your brand appears when people ask ChatGPT, Perplexity, or Google AI Overviews for recommendations in your space. Here's what it means in plain English.",
+            datePublished: "2026-05-10",
+          }),
+        }}
+      />
       {/* ── Breadcrumb ── */}
       <div className="wrap" style={{ paddingTop: 24 }}>
         <RevealSection>
