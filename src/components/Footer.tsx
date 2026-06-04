@@ -37,7 +37,7 @@ export function Footer() {
             marginTop: 26,
           }}
         >
-          &copy; {new Date().getFullYear()} Hami Tahm &mdash; Toronto, Canada. Building toward a unicorn.
+          {`\u00A9 ${new Date().getFullYear()} Hami Tahm`} &mdash; Toronto, Canada. Building toward a unicorn.
         </div>
       </div>
     </footer>

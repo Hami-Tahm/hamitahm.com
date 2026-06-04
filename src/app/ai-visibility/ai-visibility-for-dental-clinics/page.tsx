@@ -1,17 +1,217 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
+import { HOMECALC_PROOF } from "@/lib/homecalc-proof";
+
+const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
+const CASE_STUDY_URL = HOMECALC_PROOF.caseStudyPath;
+const WALKTHROUGH_MINUTES = 60;
+const TURNAROUND = "7 business days";
+const PRICE_DISPLAY = "$1,500 CAD";
 
 export const metadata: Metadata = {
-  title: "AI Visibility Audit for Dental Clinics",
+  title: "AI Visibility for Dental Clinics | Hami Tahm",
   description:
-    "Is your dental clinic showing up when patients ask AI for recommendations? Get a free AI Visibility Snapshot and see how your clinic appears in ChatGPT, Perplexity, and Google AI Overviews.",
+    "Ensure your dental clinic appears when patients ask ChatGPT, Perplexity, or Google AI Overviews for dentist recommendations. AI visibility audit by Hami Tahm — $1,500 CAD flat.",
+};
+
+const DENTAL_CHECKS = [
+  "Whether your clinic is mentioned when patients ask for dentists in your city",
+  "Which procedures AI engines associate with your practice — implants, Invisalign, pediatric, cosmetic, emergency, sedation",
+  "Accuracy of your address, hours, phone number, and accepted insurance in AI-generated answers",
+  "How patient reviews are summarized and represented across platforms",
+  "Whether competitors are being recommended in queries your clinic should own",
+  "Which sources AI engines pull from when describing your clinic — and which ones are missing, outdated, or contradicting each other",
+] as const;
+
+const PLATFORMS = [
+  "ChatGPT (OpenAI)",
+  "Perplexity",
+  "Google AI Overviews",
+  "Claude (Anthropic)",
+  "Gemini",
+  "Bing Copilot",
+] as const;
+
+const DELIVERABLES = [
+  "A written report covering each platform — what AI says about your clinic, what it gets wrong, and where you're invisible",
+  "A prioritized action plan ranked by impact and effort",
+  `A ${WALKTHROUGH_MINUTES}-minute walkthrough call to review findings and next steps`,
+  "14 days of follow-up questions after delivery",
+] as const;
+
+const PROOF_STATS = [
+  { value: HOMECALC_PROOF.citations, label: "AI citations" },
+  { value: HOMECALC_PROOF.timeframe, label: "Time to lift" },
+  { value: "< 3 months", label: "Domain age" },
+  { value: "YMYL", label: "Category" },
+] as const;
+
+const COMPARISON_ROWS = [
+  [
+    "What it checks",
+    "How AI platforms describe your clinic in patient queries",
+    "How your site ranks on Google search results",
+    "Your profile in Google's local map pack",
+  ],
+  [
+    "Platforms covered",
+    "ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, Bing Copilot",
+    "Google search",
+    "Google Maps + local pack",
+  ],
+  [
+    "Who controls the result",
+    "Multiple data sources AI engines pull from",
+    "Your website and backlinks",
+    "You, directly",
+  ],
+  [
+    "Patient outcome",
+    "Whether your clinic appears in AI-generated answers",
+    "Whether your clinic ranks in classic search results",
+    "Whether your clinic appears in the map pack",
+  ],
+  [
+    "Relationship to SEO & GMB",
+    "Additional layer — audit runs alongside your existing SEO and GMB work",
+    "Keep investing — strong SEO feeds AI citation signals",
+    "Keep optimizing — GMB data feeds AI local answers",
+  ],
+  [
+    "Pricing model",
+    "$1,500 CAD, flat (one-time)",
+    "Monthly retainer",
+    "Free (Google product)",
+  ],
+] as const;
+
+const PERSONAS = [
+  {
+    label: "Specialty practices",
+    desc: "Implant clinics, Invisalign providers, cosmetic, pediatric, and other specialty practices competing on high-value AI queries. Specialty work has the highest ROI from AI visibility because each new patient is worth more.",
+  },
+  {
+    label: "Solo practice owners",
+    desc: "Independent dentists at one location with local reputation built but unclear standing in AI search.",
+  },
+  {
+    label: "Multi-location dental groups",
+    desc: "2+ clinics where AI responses vary by location, hours, services, or pricing — inconsistency erodes trust before a patient ever calls.",
+  },
+  {
+    label: "Dental marketing agencies",
+    desc: "Agencies serving dental clients who want to add AI visibility to existing SEO/GMB retainers without building the audit capability in-house.",
+  },
+] as const;
+
+const FAQ_ITEMS: {
+  q: string;
+  a: string;
+  auditLink?: boolean;
+}[] = [
+  {
+    q: "Do AI tools actually recommend dental clinics to patients?",
+    a: 'Yes. ChatGPT, Perplexity, Google AI Overviews, Gemini, and Bing Copilot all answer questions like "best dentist for implants in [city]" or "which clinic should I go to for Invisalign near me" with named clinic recommendations. Patients who ask these questions often call the named clinic directly — without ever opening Google search.',
+  },
+  {
+    q: "Is this the same as dental SEO?",
+    a: "No. Dental SEO improves how your website ranks in Google's classic search results. AI visibility is an additional layer on top — it covers how AI platforms describe and recommend your clinic. Keep your SEO and GMB investments; the audit shows what's missing from the AI surface specifically. You can rank #1 on Google and still be missing from the answer ChatGPT gives a patient.",
+  },
+  {
+    q: "My clinic has great Google reviews — why am I not showing up in AI?",
+    a: "Reviews are one signal AI engines use, but they're not enough on their own. AI platforms pull from your website content, Google Business Profile, directory listings, third-party mentions, and structured data. If any of those sources are inconsistent, outdated, or missing critical information, AI engines often skip your clinic — even with strong reviews.",
+  },
+  {
+    q: "How quickly can I see results?",
+    a: "HomeCalc.ca started seeing citations climb within 48 hours of implementing the audit's recommendations, with the full lift visible in 30 days. Timelines vary by clinic, but the audit identifies which changes produce results fastest.",
+  },
+  {
+    q: "How much does the audit cost?",
+    a: `$1,500 CAD, flat. One-time payment, no retainer. See the full audit page for what's included.`,
+    auditLink: true,
+  },
+  {
+    q: "What do I receive at the end?",
+    a: `A written report covering each AI platform, a prioritized action plan, a ${WALKTHROUGH_MINUTES}-minute walkthrough call, and 14 days of follow-up questions.`,
+  },
+  {
+    q: "Do you work with clinics outside major cities?",
+    a: "Yes. Clinics in smaller markets often see the largest AI visibility wins, because AI engines tend to default to clinics in nearby larger cities — leaving local practices missing from answers their own patients are asking.",
+  },
+];
+
+const RELATED_LINKS = [
+  { label: "The full AI visibility audit", href: AUDIT_URL },
+  {
+    label: "HomeCalc case study — 1,100 AI citations in 30 days",
+    href: CASE_STUDY_URL,
+  },
+  { label: "What is AI visibility?", href: "/ai-visibility/" },
+  {
+    label: "AI visibility for mortgage brokers",
+    href: "/ai-visibility/ai-visibility-for-mortgage-brokers/",
+  },
+] as const;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://hamitahm.com/" },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "AI Visibility",
+          item: "https://hamitahm.com/ai-visibility/",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "AI Visibility for Dental Clinics",
+          item: "https://hamitahm.com/ai-visibility/ai-visibility-for-dental-clinics/",
+        },
+      ],
+    },
+    {
+      "@type": "Service",
+      name: "AI Visibility Audit for Dental Clinics",
+      serviceType: "AI Visibility Consulting for Dental Clinics",
+      areaServed: "Canada",
+      provider: {
+        "@type": "Person",
+        name: "Hami Tahm",
+        url: "https://hamitahm.com/hami-tahm/",
+        sameAs: "https://hamitahm.com/hami-tahm/",
+      },
+      url: "https://hamitahm.com/ai-visibility/ai-visibility-for-dental-clinics/",
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: FAQ_ITEMS.map(({ q, a, auditLink }) => ({
+        "@type": "Question",
+        name: q,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: auditLink
+            ? `${PRICE_DISPLAY}, flat. One-time payment, no retainer. See the full audit page for what's included.`
+            : a,
+        },
+      })),
+    },
+  ],
 };
 
 export default function AIVisibilityDentalClinics() {
   return (
     <>
-      {/* ── Breadcrumb ── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+
       <div className="wrap" style={{ paddingTop: 24 }}>
         <RevealSection>
           <nav
@@ -32,36 +232,10 @@ export default function AIVisibilityDentalClinics() {
         </RevealSection>
       </div>
 
-      {/* ── Header ── */}
+      {/* ── 1 — Hero ── */}
       <header style={{ padding: "34px 0 50px" }}>
         <div className="wrap">
           <RevealSection>
-            <div
-              style={{
-                fontFamily: "var(--mono)",
-                fontSize: "12.5px",
-                letterSpacing: ".18em",
-                color: "var(--accent)",
-                textTransform: "uppercase",
-                marginBottom: 24,
-                display: "flex",
-                alignItems: "center",
-                gap: 12,
-              }}
-            >
-              <span
-                style={{
-                  width: 34,
-                  height: 1,
-                  background: "var(--accent)",
-                  display: "inline-block",
-                }}
-              />
-              AI Visibility for Dental Clinics
-            </div>
-          </RevealSection>
-
-          <RevealSection delay={0.06}>
             <h1
               style={{
                 fontFamily: "var(--serif)",
@@ -69,74 +243,192 @@ export default function AIVisibilityDentalClinics() {
                 fontSize: "clamp(38px, 5.6vw, 62px)",
                 lineHeight: 1.04,
                 letterSpacing: "-.03em",
-                maxWidth: "20ch",
+                maxWidth: "22ch",
               }}
             >
-              When patients ask AI for a dentist, is your clinic{" "}
-              <em style={{ fontStyle: "italic", color: "var(--accent)" }}>
-                the one it recommends?
-              </em>
+              AI Visibility for Dental Clinics
             </h1>
           </RevealSection>
 
-          <RevealSection delay={0.12}>
+          <RevealSection delay={0.06}>
             <p
               style={{
                 marginTop: 28,
                 fontSize: "clamp(17px, 2vw, 20px)",
                 color: "var(--muted)",
-                maxWidth: "54ch",
+                maxWidth: "62ch",
                 lineHeight: 1.65,
               }}
             >
-              More patients are asking ChatGPT, Perplexity, and Google
-              AI&nbsp;Overviews for dental recommendations before they ever open
-              Google&nbsp;Maps. If your clinic isn&rsquo;t showing up in those AI
-              answers, you&rsquo;re invisible to a growing share of high-intent
-              patients.{" "}
-              <b style={{ color: "var(--ink)", fontWeight: 500 }}>
-                We help dental clinics across Canada get found, recommended, and
-                cited by&nbsp;AI.
-              </b>
+              AI visibility for dental clinics is the practice of ensuring your
+              clinic appears — accurately and consistently — when patients ask AI
+              tools like ChatGPT, Perplexity, or Google AI Overviews for dentist
+              recommendations. Hami Tahm audits dental clinics across these
+              platforms to identify where your clinic is missing, misrepresented,
+              or invisible in AI-generated answers, and delivers a prioritized
+              action plan to fix it.
             </p>
           </RevealSection>
 
-          <RevealSection delay={0.18}>
-            <div
+          <RevealSection delay={0.1}>
+            <p
               style={{
-                marginTop: 38,
-                display: "flex",
-                gap: 14,
-                flexWrap: "wrap",
-                alignItems: "center",
+                marginTop: 24,
+                fontFamily: "var(--serif)",
+                fontSize: "clamp(20px, 2.4vw, 24px)",
+                fontWeight: 500,
+                color: "var(--ink)",
+                maxWidth: "42ch",
+                lineHeight: 1.4,
               }}
             >
-              <Link
-                href="/ai-visibility/ai-visibility-audit/"
-                className="btn btn-primary"
-              >
-                Get a Free AI Visibility Snapshot{" "}
-                <span className="arr">&rarr;</span>
-              </Link>
-              <Link
-                href="/case-studies/homecalc-ai-visibility/"
-                className="btn btn-ghost"
-              >
-                See how it works
+              Your patient asked ChatGPT for a dentist. Were you in the answer?
+            </p>
+          </RevealSection>
+
+          <RevealSection delay={0.14}>
+            <div style={{ marginTop: 32 }}>
+              <Link href={AUDIT_URL} className="btn btn-primary">
+                Book Your AI Visibility Audit <span className="arr">&rarr;</span>
               </Link>
             </div>
           </RevealSection>
         </div>
       </header>
 
-      {/* ── 01 — The Problem ── */}
+      {/* ── 2 — How Patients Find Dentists ── */}
       <section style={{ padding: "60px 0" }}>
-        <div className="wrap" style={{ maxWidth: 760 }}>
+        <div className="wrap" style={{ maxWidth: 740 }}>
           <RevealSection>
-            <SectionLabel number="01" text="The problem" />
+            <h2
+              style={{
+                fontFamily: "var(--serif)",
+                fontWeight: 500,
+                fontSize: "clamp(27px, 3.6vw, 40px)",
+                lineHeight: 1.12,
+                letterSpacing: "-.015em",
+                marginBottom: 24,
+              }}
+            >
+              How Patients Find Dentists in 2025
+            </h2>
+            <p
+              style={{
+                fontSize: "clamp(17px, 2vw, 19px)",
+                color: "var(--muted)",
+                lineHeight: 1.65,
+                marginBottom: 24,
+              }}
+            >
+              Five years ago, a patient looking for a dentist opened Google,
+              scanned the map pack, read a few reviews, and called the top
+              result. That flow still exists. A growing share of patients now skip
+              Google entirely.
+            </p>
+            <p
+              className="dental-scenario-turn"
+              style={{
+                fontSize: "clamp(17px, 2vw, 19px)",
+                color: "var(--muted)",
+                lineHeight: 1.78,
+                marginBottom: 24,
+              }}
+            >
+              A patient opens ChatGPT and types:{" "}
+              <em style={{ fontStyle: "italic", color: "var(--ink)" }}>
+                &ldquo;dentist near me.&rdquo;
+              </em>{" "}
+              ChatGPT answers with a paragraph that names two or three clinics.
+              The patient calls one of them. They never saw a map pack, never
+              read a review page, never visited your website.
+            </p>
+            <p
+              style={{
+                fontSize: "clamp(17px, 2vw, 19px)",
+                color: "var(--muted)",
+                lineHeight: 1.65,
+              }}
+            >
+              The same pattern plays out on Perplexity, Google AI Overviews,
+              Gemini, and Bing Copilot. Each one generates an answer to a
+              patient&rsquo;s question, and each one decides which clinics to
+              mention. If your clinic isn&rsquo;t in those answers, you
+              don&rsquo;t get the call — regardless of how well you rank on
+              traditional Google search.
+            </p>
           </RevealSection>
+        </div>
+      </section>
 
-          <RevealSection delay={0.06}>
+      {/* ── 3 — Definition ── */}
+      <section style={{ padding: "60px 0" }}>
+        <div className="wrap">
+          <RevealSection>
+            <div className="local-panel" style={{ maxWidth: 740 }}>
+              <h2
+                style={{
+                  fontFamily: "var(--serif)",
+                  fontWeight: 500,
+                  fontSize: "clamp(27px, 3.6vw, 36px)",
+                  lineHeight: 1.12,
+                  letterSpacing: "-.015em",
+                  position: "relative",
+                }}
+              >
+                What AI Visibility Means for Your Practice
+              </h2>
+              <h3
+                style={{
+                  fontFamily: "var(--sans)",
+                  fontSize: 17,
+                  fontWeight: 600,
+                  marginTop: 24,
+                  position: "relative",
+                }}
+              >
+                What is AI visibility for dental clinics?
+              </h3>
+              <p
+                style={{
+                  marginTop: 16,
+                  fontSize: "clamp(17px, 2vw, 19px)",
+                  color: "var(--muted)",
+                  lineHeight: 1.65,
+                  position: "relative",
+                }}
+              >
+                AI visibility for dental clinics is what an AI engine says about
+                your clinic when a patient asks. It covers three things: whether
+                you&rsquo;re mentioned at all, what services and specialties
+                you&rsquo;re associated with, and whether the practical details
+                — location, hours, accepted insurance, procedure list — are
+                accurate.
+              </p>
+              <p
+                style={{
+                  marginTop: 16,
+                  fontSize: "clamp(17px, 2vw, 19px)",
+                  color: "var(--muted)",
+                  lineHeight: 1.65,
+                  position: "relative",
+                }}
+              >
+                AI platforms build these answers by pulling from your website,
+                your Google Business Profile, third-party directories, review
+                sites, and any article or social mention they can index. If any
+                of those sources are missing, outdated, or inconsistent, the AI
+                either skips your clinic or describes it incorrectly. Patients
+                see the result, not the source.
+              </p>
+            </div>
+          </RevealSection>
+        </div>
+      </section>
+
+      {/* ── 4 — Audit Scope ── */}
+      <section style={{ padding: "60px 0" }}>
+        <div className="wrap">
+          <RevealSection>
             <h2
               style={{
                 fontFamily: "var(--serif)",
@@ -146,443 +438,428 @@ export default function AIVisibilityDentalClinics() {
                 letterSpacing: "-.015em",
               }}
             >
-              Your patients are changing how they search.
+              What the Audit Covers for Dental Clinics
             </h2>
           </RevealSection>
 
-          <RevealSection delay={0.12}>
-            <p
-              style={{
-                marginTop: 24,
-                fontSize: "clamp(17px, 2vw, 20px)",
-                color: "var(--muted)",
-                lineHeight: 1.65,
-              }}
-            >
-              Traditional search meant Google&nbsp;Maps and &ldquo;dentist near
-              me.&rdquo; That still matters &mdash; but a growing number of
-              patients are now asking AI questions like &ldquo;best dentist for
-              Invisalign in Mississauga&rdquo; or &ldquo;should I get a root
-              canal or extraction?&rdquo; and AI is naming specific clinics in
-              the answer.
-            </p>
-          </RevealSection>
-
-          <RevealSection delay={0.18}>
-            <p
-              style={{
-                marginTop: 20,
-                fontSize: "clamp(17px, 2vw, 20px)",
-                color: "var(--muted)",
-                lineHeight: 1.65,
-              }}
-            >
-              <b style={{ color: "var(--ink)", fontWeight: 500 }}>
-                If your competitors are named and you aren&rsquo;t, the patient
-                never sees your clinic.
-              </b>{" "}
-              They don&rsquo;t scroll past your listing &mdash; your name never
-              enters the conversation at all.
-            </p>
+          <RevealSection delay={0.06}>
+            <div className="deliv" style={{ marginTop: 36 }}>
+              <div>
+                <h3
+                  style={{
+                    fontFamily: "var(--sans)",
+                    fontSize: 16,
+                    fontWeight: 600,
+                    marginBottom: 16,
+                  }}
+                >
+                  What we check for your clinic
+                </h3>
+                <BulletList items={DENTAL_CHECKS} />
+              </div>
+              <div>
+                <h3
+                  style={{
+                    fontFamily: "var(--sans)",
+                    fontSize: 16,
+                    fontWeight: 600,
+                    marginBottom: 16,
+                  }}
+                >
+                  AI platforms covered
+                </h3>
+                <BulletList items={PLATFORMS} />
+                <h3
+                  style={{
+                    fontFamily: "var(--sans)",
+                    fontSize: 16,
+                    fontWeight: 600,
+                    marginTop: 28,
+                    marginBottom: 16,
+                  }}
+                >
+                  What you receive
+                </h3>
+                <BulletList items={DELIVERABLES} />
+              </div>
+            </div>
           </RevealSection>
         </div>
       </section>
 
-      {/* ── 02 — What We Audit ── */}
+      {/* ── 5 — Proof ── */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
-            <SectionLabel number="02" text="What we audit" />
-          </RevealSection>
-
-          <RevealSection delay={0.06}>
-            <div
+            <h2
               style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-                gap: 20,
+                fontFamily: "var(--serif)",
+                fontWeight: 500,
+                fontSize: "clamp(27px, 3.6vw, 40px)",
+                lineHeight: 1.12,
+                letterSpacing: "-.015em",
+                marginBottom: 24,
               }}
             >
-              <AuditCard
-                title="AI Citations"
-                body="Is your clinic named when patients ask AI about dental services in your area? We test across ChatGPT, Perplexity, Gemini, and Google AI Overviews."
-              />
-              <AuditCard
-                title="Entity Clarity"
-                body="Does AI know your clinic name, location, specialties, and what makes you different from the practice down the street?"
-              />
-              <AuditCard
-                title="Content Retrievability"
-                body="Can AI engines extract useful, cite-worthy answers from your website content — or is it locked in PDFs, images, and JavaScript?"
-              />
-              <AuditCard
-                title="Competitor Gap"
-                body="Which clinics does AI recommend instead of yours — and why? We identify the specific signals driving their visibility."
-              />
-            </div>
-          </RevealSection>
-        </div>
-      </section>
-
-      {/* ── 03 — How It Works ── */}
-      <section style={{ padding: "60px 0" }}>
-        <div className="wrap">
-          <RevealSection>
-            <SectionLabel number="03" text="How it works" />
+              Proof — Results From a Real AI Visibility Audit
+            </h2>
           </RevealSection>
 
           <RevealSection delay={0.06}>
-            <div>
-              <div className="pstep">
-                <div
-                  style={{
-                    fontFamily: "var(--serif)",
-                    fontSize: 30,
-                    color: "var(--accent)",
-                    fontWeight: 400,
-                  }}
-                >
-                  01
-                </div>
-                <div>
-                  <h3
-                    style={{
-                      fontFamily: "var(--serif)",
-                      fontSize: 21,
-                      fontWeight: 600,
-                      letterSpacing: "-.01em",
-                    }}
-                  >
-                    Free Snapshot
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: 15,
-                      color: "var(--muted)",
-                      marginTop: 8,
-                      lineHeight: 1.6,
-                    }}
-                  >
-                    I check how your clinic appears across ChatGPT, Perplexity,
-                    Gemini, and Google AI&nbsp;Overviews &mdash; cited, missing,
-                    or misrepresented. 48-hour turnaround.
-                  </p>
-                </div>
-              </div>
-
-              <div className="pstep">
-                <div
-                  style={{
-                    fontFamily: "var(--serif)",
-                    fontSize: 30,
-                    color: "var(--accent)",
-                    fontWeight: 400,
-                  }}
-                >
-                  02
-                </div>
-                <div>
-                  <h3
-                    style={{
-                      fontFamily: "var(--serif)",
-                      fontSize: 21,
-                      fontWeight: 600,
-                      letterSpacing: "-.01em",
-                    }}
-                  >
-                    Full Audit + Action Plan
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: 15,
-                      color: "var(--muted)",
-                      marginTop: 8,
-                      lineHeight: 1.6,
-                    }}
-                  >
-                    Deep diagnosis: prompt testing with dental-specific queries,
-                    entity mapping, schema review, and competitor citation
-                    analysis. You get a prioritized action plan you can act on
-                    immediately.
-                  </p>
-                </div>
-              </div>
-
-              <div className="pstep">
-                <div
-                  style={{
-                    fontFamily: "var(--serif)",
-                    fontSize: 30,
-                    color: "var(--accent)",
-                    fontWeight: 400,
-                  }}
-                >
-                  03
-                </div>
-                <div>
-                  <h3
-                    style={{
-                      fontFamily: "var(--serif)",
-                      fontSize: 21,
-                      fontWeight: 600,
-                      letterSpacing: "-.01em",
-                    }}
-                  >
-                    Implementation
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: 15,
-                      color: "var(--muted)",
-                      marginTop: 8,
-                      lineHeight: 1.6,
-                    }}
-                  >
-                    I execute the fixes myself &mdash; AEO content, schema
-                    markup, entity signals, and authority building &mdash; in a
-                    focused 4&ndash;6 week sprint.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </RevealSection>
-        </div>
-      </section>
-
-      {/* ── 04 — Common AI Queries ── */}
-      <section style={{ padding: "60px 0" }}>
-        <div className="wrap" style={{ maxWidth: 760 }}>
-          <RevealSection>
-            <SectionLabel
-              number="04"
-              text="Queries your patients are asking AI"
-            />
-          </RevealSection>
-
-          <RevealSection delay={0.06}>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: 0,
-              }}
-            >
-              <QueryItem text={`"Best dentist for Invisalign in [city]"`} />
-              <QueryItem
-                text={`"Family dentist near me with Saturday hours"`}
-              />
-              <QueryItem
-                text={`"How much does a dental implant cost in Ontario?"`}
-              />
-              <QueryItem
-                text={`"Pediatric dentist recommendations in [city]"`}
-              />
-              <QueryItem text={`"Should I get a crown or veneer?"`} />
-              <QueryItem text={`"Emergency dentist open now near me"`} />
-              <QueryItem text={`"Best cosmetic dentist in Toronto"`} />
+            <div className="cs-stat-strip" style={{ marginBottom: 28 }}>
+              {PROOF_STATS.map(({ value, label }) => (
+                <StatBox key={label} value={value} label={label} />
+              ))}
             </div>
           </RevealSection>
 
-          <RevealSection delay={0.12}>
-            <p
-              style={{
-                marginTop: 30,
-                fontSize: "clamp(17px, 2vw, 20px)",
-                color: "var(--muted)",
-                lineHeight: 1.65,
-              }}
-            >
-              <b style={{ color: "var(--ink)", fontWeight: 500 }}>
-                If your clinic isn&rsquo;t being cited for queries like these,
-                you&rsquo;re leaving patients on the table.
-              </b>
-            </p>
-          </RevealSection>
-        </div>
-      </section>
-
-      {/* ── Proof ── */}
-      <section style={{ padding: "60px 0" }}>
-        <div className="wrap" style={{ maxWidth: 760 }}>
-          <RevealSection>
-            <SectionLabel number="05" text="Proof, not promises" />
-          </RevealSection>
-
-          <RevealSection delay={0.06}>
-            <div className="local-panel">
-              <h2
-                style={{
-                  fontFamily: "var(--serif)",
-                  fontWeight: 500,
-                  fontSize: "clamp(24px, 3.2vw, 34px)",
-                  lineHeight: 1.14,
-                  letterSpacing: "-.015em",
-                  maxWidth: "26ch",
-                  position: "relative",
-                }}
-              >
-                I built my own product to prove this works.
-              </h2>
+          <RevealSection delay={0.1}>
+            <div style={{ maxWidth: 740 }}>
               <p
                 style={{
-                  marginTop: 20,
-                  fontSize: 16,
+                  fontSize: "clamp(17px, 2vw, 19px)",
                   color: "var(--muted)",
-                  maxWidth: "54ch",
                   lineHeight: 1.65,
-                  position: "relative",
+                  marginBottom: 20,
                 }}
               >
-                I built HomeCalc.ca to be cited{" "}
-                <b style={{ color: "var(--ink)", fontWeight: 500 }}>
-                  1,100+ times
-                </b>{" "}
-                by AI search engines. The same methods apply to dental clinics
-                &mdash; structured content, entity clarity, and the technical
-                foundation that AI trusts. I test on my own products before I
-                touch yours.
+                HomeCalc.ca is a Canadian personal finance calculator site —{" "}
+                {HOMECALC_PROOF.domainAge} at the time of the audit. After an AI
+                visibility audit by Hami Tahm, the site went from near-zero AI
+                citations to over {HOMECALC_PROOF.citations} across{" "}
+                {HOMECALC_PROOF.pagesCited} pages in {HOMECALC_PROOF.timeframe},
+                with citations appearing in ChatGPT, Perplexity, and Google AI
+                Overviews.
+              </p>
+              <p
+                style={{
+                  fontSize: "clamp(17px, 2vw, 19px)",
+                  color: "var(--muted)",
+                  lineHeight: 1.65,
+                  marginBottom: 24,
+                }}
+              >
+                HomeCalc operates in financial services — one of Google&rsquo;s
+                strictest YMYL categories{" "}
+                <em style={{ fontStyle: "italic" }}>
+                  (Your Money or Your Life)
+                </em>
+                . Dental is also a YMYL category — health. AI engines apply
+                similar caution before citing both.
+              </p>
+              <p
+                style={{
+                  fontSize: "clamp(17px, 2vw, 19px)",
+                  color: "var(--ink)",
+                  fontWeight: 500,
+                  lineHeight: 1.65,
+                  marginBottom: 24,
+                }}
+              >
+                If this worked on a 3-month-old YMYL finance site, it works
+                faster on a multi-year dental clinic with real authority.
+              </p>
+              <blockquote
+                style={{
+                  margin: "0 0 24px",
+                  paddingLeft: 20,
+                  borderLeft: "3px solid var(--accent)",
+                  fontFamily: "var(--serif)",
+                  fontSize: "clamp(17px, 2vw, 19px)",
+                  fontStyle: "italic",
+                  color: "var(--ink)",
+                  lineHeight: 1.6,
+                }}
+              >
+                &ldquo;I identified a specific technical change that produced this
+                lift. The methodology is part of what you receive in the
+                audit.&rdquo;
+              </blockquote>
+              <p
+                style={{
+                  fontSize: 15,
+                  color: "var(--muted)",
+                  lineHeight: 1.65,
+                  marginBottom: 20,
+                }}
+              >
+                Each audit is conducted personally by{" "}
+                <Link
+                  href="/hami-tahm/"
+                  style={{ color: "var(--accent)", fontWeight: 500 }}
+                >
+                  Hami Tahm
+                </Link>
+                , AI visibility consultant based in Canada.
               </p>
               <Link
-                href="/case-studies/homecalc-ai-visibility/"
+                href={CASE_STUDY_URL}
                 style={{
-                  display: "inline-block",
-                  marginTop: 20,
-                  fontFamily: "var(--mono)",
-                  fontSize: 13,
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  fontFamily: "var(--sans)",
+                  fontSize: 14,
+                  fontWeight: 600,
                   color: "var(--accent)",
                 }}
               >
-                Read the HomeCalc case study &rarr;
+                Read the full HomeCalc case study <span>&rarr;</span>
               </Link>
             </div>
           </RevealSection>
-        </div>
-      </section>
 
-      {/* ── FAQ ── */}
-      <section style={{ padding: "60px 0" }}>
-        <div className="wrap" style={{ maxWidth: 760 }}>
-          <RevealSection>
-            <SectionLabel number="06" text="Questions" />
-          </RevealSection>
-
-          <RevealSection delay={0.06}>
-            <div>
-              <div className="faq-item">
-                <h3
-                  style={{
-                    fontFamily: "var(--serif)",
-                    fontSize: 19,
-                    fontWeight: 500,
-                    letterSpacing: "-.01em",
-                  }}
-                >
-                  Is this just SEO with a new name?
-                </h3>
-                <p
-                  style={{
-                    marginTop: 10,
-                    fontSize: 15,
-                    color: "var(--muted)",
-                    lineHeight: 1.65,
-                  }}
-                >
-                  No. Traditional SEO gets you ranked on a results page. AI
-                  visibility gets you{" "}
-                  <em style={{ fontStyle: "italic" }}>named in the answer</em>.
-                  When a patient asks ChatGPT &ldquo;best dentist for implants
-                  in Brampton,&rdquo; the AI doesn&rsquo;t return ten blue links
-                  &mdash; it names two or three clinics. The signals that drive
-                  those mentions are different from traditional SEO.
-                </p>
-              </div>
-
-              <div className="faq-item">
-                <h3
-                  style={{
-                    fontFamily: "var(--serif)",
-                    fontSize: 19,
-                    fontWeight: 500,
-                    letterSpacing: "-.01em",
-                  }}
-                >
-                  How much does this cost?
-                </h3>
-                <p
-                  style={{
-                    marginTop: 10,
-                    fontSize: 15,
-                    color: "var(--muted)",
-                    lineHeight: 1.65,
-                  }}
-                >
-                  The free snapshot costs nothing. The full audit is a fixed-fee
-                  engagement. Implementation sprints are scoped and priced per
-                  project, not by the hour, so you know the cost before we
-                  start. Reach out for exact pricing.
-                </p>
-              </div>
-
-              <div className="faq-item">
-                <h3
-                  style={{
-                    fontFamily: "var(--serif)",
-                    fontSize: 19,
-                    fontWeight: 500,
-                    letterSpacing: "-.01em",
-                  }}
-                >
-                  Do I need to change my website?
-                </h3>
-                <p
-                  style={{
-                    marginTop: 10,
-                    fontSize: 15,
-                    color: "var(--muted)",
-                    lineHeight: 1.65,
-                  }}
-                >
-                  Usually, yes &mdash; but not a redesign. Most dental clinic
-                  websites have the right information buried in the wrong format.
-                  We restructure your existing content so AI can extract and cite
-                  it, add schema markup, and strengthen entity signals. The
-                  changes are invisible to your patients but make a material
-                  difference to how AI engines read your site.
-                </p>
-              </div>
-
-              <div className="faq-item">
-                <h3
-                  style={{
-                    fontFamily: "var(--serif)",
-                    fontSize: 19,
-                    fontWeight: 500,
-                    letterSpacing: "-.01em",
-                  }}
-                >
-                  How long before I see results?
-                </h3>
-                <p
-                  style={{
-                    marginTop: 10,
-                    fontSize: 15,
-                    color: "var(--muted)",
-                    lineHeight: 1.65,
-                  }}
-                >
-                  Some changes &mdash; like schema markup and entity
-                  clarification &mdash; can affect AI responses within weeks.
-                  Broader visibility gains typically take 4&ndash;8 weeks as AI
-                  models re-index and retrain. The snapshot and audit will give
-                  you a clear baseline to measure against.
-                </p>
-              </div>
+          <RevealSection delay={0.14}>
+            <div style={{ marginTop: 24 }}>
+              <PlaceholderCard note="First dental client case study — coming summer 2026" />
             </div>
           </RevealSection>
         </div>
       </section>
 
-      {/* ── Final CTA ── */}
+      {/* ── 6 — Comparison ── */}
+      <section style={{ padding: "60px 0" }}>
+        <div className="wrap">
+          <RevealSection>
+            <h2
+              style={{
+                fontFamily: "var(--serif)",
+                fontWeight: 500,
+                fontSize: "clamp(27px, 3.6vw, 40px)",
+                lineHeight: 1.12,
+                letterSpacing: "-.015em",
+              }}
+            >
+              Is This Different From Dental SEO?
+            </h2>
+            <p
+              style={{
+                marginTop: 16,
+                fontSize: "clamp(17px, 2vw, 19px)",
+                color: "var(--muted)",
+                maxWidth: "62ch",
+                lineHeight: 1.65,
+              }}
+            >
+              Most dental clinics already invest in Google SEO, Google My Business
+              optimization, or a dental marketing agency. An AI visibility audit
+              is not a replacement for any of those — it is an additional layer
+              on top of the work you already do. Strong SEO and a complete GMB
+              profile feed AI signals; the audit shows what&rsquo;s still missing
+              from AI-generated answers. Here&rsquo;s how the three compare.
+            </p>
+          </RevealSection>
+
+          <RevealSection delay={0.08}>
+            <ComparisonTable
+              columns={[
+                "AI Visibility Audit",
+                "Dental SEO Agency",
+                "Google My Business",
+              ]}
+              rows={COMPARISON_ROWS}
+            />
+            <p style={{ marginTop: 24, fontSize: 15, color: "var(--muted)" }}>
+              Strong Google reviews and a complete GMB profile help your AI
+              visibility — but they don&rsquo;t guarantee it on their own. AI
+              engines pull from many more sources, and inconsistencies across
+              those sources are the most common reason a clinic stays invisible
+              in AI answers. Keep your SEO and GMB programs running; add the
+              audit to close the AI gap.
+            </p>
+          </RevealSection>
+        </div>
+      </section>
+
+      {/* ── 7 — How It Works ── */}
+      <section style={{ padding: "60px 0" }}>
+        <div className="wrap" style={{ maxWidth: 720 }}>
+          <RevealSection>
+            <h2
+              style={{
+                fontFamily: "var(--serif)",
+                fontWeight: 500,
+                fontSize: "clamp(27px, 3.6vw, 40px)",
+                lineHeight: 1.12,
+                letterSpacing: "-.015em",
+              }}
+            >
+              How It Works
+            </h2>
+          </RevealSection>
+          <RevealSection delay={0.06}>
+            <div style={{ marginTop: 32 }}>
+              <ProcessStep
+                n="1"
+                title="Book and pay."
+                body={`${PRICE_DISPLAY} flat. One invoice, one payment, no retainer.`}
+              />
+              <ProcessStep
+                n="2"
+                title="The audit runs."
+                body="I review your clinic across ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, and Bing Copilot."
+              />
+              <ProcessStep
+                n="3"
+                title="You receive the report."
+                body={`Written report plus a ${WALKTHROUGH_MINUTES}-minute walkthrough call within ${TURNAROUND} of payment.`}
+              />
+            </div>
+          </RevealSection>
+        </div>
+      </section>
+
+      {/* ── 8 — Who This Is For ── */}
+      <section style={{ padding: "60px 0" }}>
+        <div className="wrap">
+          <RevealSection>
+            <h2
+              style={{
+                fontFamily: "var(--serif)",
+                fontWeight: 500,
+                fontSize: "clamp(27px, 3.6vw, 40px)",
+                lineHeight: 1.12,
+                letterSpacing: "-.015em",
+                marginBottom: 28,
+              }}
+            >
+              Who This Is For
+            </h2>
+          </RevealSection>
+          <RevealSection delay={0.06}>
+            <div className="audit-verts-2x2">
+              {PERSONAS.map(({ label, desc }) => (
+                <div key={label} className="vert">
+                  <div
+                    style={{
+                      fontFamily: "var(--sans)",
+                      fontSize: 16,
+                      fontWeight: 600,
+                    }}
+                  >
+                    {label}
+                  </div>
+                  <p
+                    style={{
+                      marginTop: 10,
+                      fontSize: 14,
+                      color: "var(--muted)",
+                      lineHeight: 1.55,
+                    }}
+                  >
+                    {desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </RevealSection>
+        </div>
+      </section>
+
+      {/* ── 9 — FAQ ── */}
+      <section style={{ padding: "60px 0" }}>
+        <div className="wrap" style={{ maxWidth: 760 }}>
+          <RevealSection>
+            <h2
+              style={{
+                fontFamily: "var(--serif)",
+                fontWeight: 500,
+                fontSize: "clamp(27px, 3.6vw, 40px)",
+                lineHeight: 1.12,
+                letterSpacing: "-.015em",
+                marginBottom: 28,
+              }}
+            >
+              Frequently Asked Questions
+            </h2>
+          </RevealSection>
+          <RevealSection delay={0.06}>
+            <div>
+              {FAQ_ITEMS.map(({ q, a, auditLink }) => (
+                <div key={q} className="faq-item">
+                  <h3
+                    style={{
+                      fontFamily: "var(--serif)",
+                      fontSize: 19,
+                      fontWeight: 500,
+                      letterSpacing: "-.01em",
+                    }}
+                  >
+                    {q}
+                  </h3>
+                  <p
+                    style={{
+                      marginTop: 10,
+                      fontSize: 15,
+                      color: "var(--muted)",
+                      lineHeight: 1.65,
+                    }}
+                  >
+                    {auditLink ? (
+                      <>
+                        {PRICE_DISPLAY}, flat. One-time payment, no retainer.
+                        See the{" "}
+                        <Link href={AUDIT_URL} style={{ color: "var(--accent)" }}>
+                          full audit page
+                        </Link>{" "}
+                        for what&rsquo;s included.
+                      </>
+                    ) : (
+                      a
+                    )}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </RevealSection>
+        </div>
+      </section>
+
+      {/* ── 10 — Related Reading ── */}
+      <section style={{ padding: "60px 0" }}>
+        <div className="wrap" style={{ maxWidth: 760 }}>
+          <RevealSection>
+            <h2
+              style={{
+                fontFamily: "var(--serif)",
+                fontWeight: 500,
+                fontSize: "clamp(24px, 3.2vw, 34px)",
+                lineHeight: 1.14,
+                marginBottom: 20,
+              }}
+            >
+              Related Reading
+            </h2>
+            <ul
+              style={{
+                listStyle: "none",
+                padding: 0,
+                margin: 0,
+                display: "flex",
+                flexDirection: "column",
+                gap: 12,
+              }}
+            >
+              {RELATED_LINKS.map(({ label, href }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    style={{
+                      fontSize: 16,
+                      color: "var(--accent)",
+                      fontWeight: 500,
+                    }}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </RevealSection>
+        </div>
+      </section>
+
+      {/* ── 11 — Final CTA ── */}
       <section style={{ padding: "60px 0 80px" }}>
         <div className="wrap">
           <RevealSection>
@@ -597,7 +874,7 @@ export default function AIVisibilityDentalClinics() {
                   position: "relative",
                 }}
               >
-                Find out if patients can find your clinic in AI&nbsp;search.
+                Book Your Dental Clinic AI Visibility Audit
               </h2>
               <p
                 style={{
@@ -611,17 +888,39 @@ export default function AIVisibilityDentalClinics() {
                   position: "relative",
                 }}
               >
-                Request a free AI Visibility Snapshot &mdash; I&rsquo;ll show
-                you exactly how your clinic appears (or doesn&rsquo;t) when
-                patients ask AI for dental recommendations in your&nbsp;area.
+                Ready to find out if patients can find your clinic in AI search?
+              </p>
+              <p
+                style={{
+                  marginTop: 12,
+                  fontSize: 15,
+                  color: "var(--muted)",
+                  position: "relative",
+                }}
+              >
+                {PRICE_DISPLAY} flat. Report and walkthrough call within{" "}
+                {TURNAROUND}.
               </p>
               <Link
-                href="/ai-visibility/ai-visibility-audit/"
+                href={AUDIT_URL}
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
               >
-                Get Your Free Snapshot <span className="arr">&rarr;</span>
+                Book Your AI Visibility Audit <span className="arr">&rarr;</span>
               </Link>
+              <p
+                style={{
+                  marginTop: 20,
+                  fontSize: 14,
+                  color: "var(--muted)",
+                  position: "relative",
+                }}
+              >
+                Or email{" "}
+                <a href="mailto:hami@hamitahm.com" style={{ color: "var(--ink)" }}>
+                  hami@hamitahm.com
+                </a>
+              </p>
             </div>
           </RevealSection>
         </div>
@@ -630,93 +929,241 @@ export default function AIVisibilityDentalClinics() {
   );
 }
 
-/* ── Local helper components ── */
-
-function SectionLabel({ number, text }: { number: string; text: string }) {
+function BulletList({ items }: { items: readonly string[] }) {
   return (
-    <div
-      style={{
-        fontFamily: "var(--mono)",
-        fontSize: 12,
-        letterSpacing: ".14em",
-        color: "var(--faint)",
-        textTransform: "uppercase",
-        marginBottom: 34,
-        display: "flex",
-        alignItems: "center",
-        gap: 14,
-      }}
-    >
-      {number} &mdash; {text}
-      <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
-    </div>
+    <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+      {items.map((item) => (
+        <li key={item} className="d-row">
+          <span style={{ color: "var(--accent)", flexShrink: 0 }}>&rarr;</span>
+          <span style={{ color: "var(--muted)", fontSize: 15 }}>{item}</span>
+        </li>
+      ))}
+    </ul>
   );
 }
 
-function AuditCard({ title, body }: { title: string; body: string }) {
+function StatBox({ value, label }: { value: string; label: string }) {
   return (
-    <div
-      style={{
-        border: "1px solid var(--line)",
-        borderRadius: 10,
-        padding: "28px 26px",
-      }}
-    >
-      <h3
+    <div className="proof-card">
+      <div
         style={{
           fontFamily: "var(--serif)",
-          fontSize: 19,
-          fontWeight: 600,
-          letterSpacing: "-.01em",
+          fontSize: "clamp(28px, 3.5vw, 36px)",
+          fontWeight: 500,
+          color: "var(--accent)",
+          letterSpacing: "-.02em",
+          lineHeight: 1,
         }}
       >
-        {title}
-      </h3>
-      <p
+        {value}
+      </div>
+      <div
         style={{
-          fontSize: 15,
+          fontFamily: "var(--sans)",
+          fontSize: 14,
           color: "var(--muted)",
           marginTop: 10,
-          lineHeight: 1.6,
+          lineHeight: 1.45,
         }}
       >
-        {body}
-      </p>
+        {label}
+      </div>
     </div>
   );
 }
 
-function QueryItem({ text }: { text: string }) {
+function ProcessStep({
+  n,
+  title,
+  body,
+}: {
+  n: string;
+  title: string;
+  body: string;
+}) {
+  return (
+    <div className="pstep">
+      <div
+        style={{
+          fontFamily: "var(--serif)",
+          fontSize: 30,
+          color: "var(--accent)",
+          fontWeight: 400,
+        }}
+      >
+        {n}
+      </div>
+      <div>
+        <h3
+          style={{
+            fontFamily: "var(--serif)",
+            fontSize: 21,
+            fontWeight: 600,
+            letterSpacing: "-.01em",
+          }}
+        >
+          {title}
+        </h3>
+        <p
+          style={{
+            fontSize: 15,
+            color: "var(--muted)",
+            marginTop: 8,
+            lineHeight: 1.6,
+          }}
+        >
+          {body}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function ComparisonTable({
+  columns,
+  rows,
+}: {
+  columns: readonly [string, string, string];
+  rows: readonly (readonly [string, string, string, string])[];
+}) {
+  return (
+    <>
+      <div
+        className="audit-comparison-desktop"
+        style={{ overflowX: "auto", marginTop: 36 }}
+      >
+        <table
+          style={{
+            width: "100%",
+            borderCollapse: "collapse",
+            fontFamily: "var(--sans)",
+            fontSize: 14,
+            lineHeight: 1.5,
+          }}
+        >
+          <thead>
+            <tr style={{ borderBottom: "2px solid var(--line-strong)" }}>
+              <th style={{ padding: "12px 12px 12px 0", width: "18%" }} />
+              {columns.map((col) => (
+                <th
+                  key={col}
+                  style={{
+                    textAlign: "left",
+                    padding: 12,
+                    fontWeight: 600,
+                    color: "var(--ink)",
+                  }}
+                >
+                  {col}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map(([label, a, b, c]) => (
+              <tr key={label} style={{ borderBottom: "1px solid var(--line)" }}>
+                <td
+                  style={{
+                    padding: "14px 12px 14px 0",
+                    fontWeight: 600,
+                    color: "var(--ink)",
+                    verticalAlign: "top",
+                  }}
+                >
+                  {label}
+                </td>
+                {[a, b, c].map((cell, i) => (
+                  <td
+                    key={i}
+                    style={{
+                      padding: 14,
+                      color: "var(--muted)",
+                      verticalAlign: "top",
+                    }}
+                  >
+                    {cell}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="audit-comparison-mobile" style={{ marginTop: 32 }}>
+        {columns.map((title, colIndex) => (
+          <div key={title} className="proof-card" style={{ marginBottom: 14 }}>
+            <h3
+              style={{
+                fontFamily: "var(--sans)",
+                fontSize: 16,
+                fontWeight: 600,
+                marginBottom: 16,
+              }}
+            >
+              {title}
+            </h3>
+            {rows.map(([label, a, b, c]) => {
+              const value = [a, b, c][colIndex];
+              return (
+                <div
+                  key={label}
+                  style={{
+                    padding: "12px 0",
+                    borderTop: "1px solid var(--line)",
+                  }}
+                >
+                  <div
+                    style={{
+                      fontSize: 12,
+                      fontFamily: "var(--mono)",
+                      color: "var(--faint)",
+                      marginBottom: 4,
+                    }}
+                  >
+                    {label}
+                  </div>
+                  <div style={{ fontSize: 14, color: "var(--muted)" }}>
+                    {value}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
+function PlaceholderCard({ note }: { note: string }) {
   return (
     <div
-      style={{
-        display: "flex",
-        gap: 14,
-        alignItems: "baseline",
-        padding: "13px 0",
-        borderBottom: "1px solid var(--line)",
-      }}
+      className="proof-card dental-coming-soon-card"
+      style={{ borderStyle: "dashed", maxWidth: 420 }}
     >
-      <span
+      <div
         style={{
           fontFamily: "var(--mono)",
-          fontSize: 13,
+          fontSize: 11,
           color: "var(--accent)",
-          flexShrink: 0,
+          textTransform: "uppercase",
+          letterSpacing: ".08em",
         }}
       >
-        &rarr;
-      </span>
-      <span
+        Coming soon
+      </div>
+      <p
         style={{
-          fontSize: 16,
+          marginTop: 10,
+          fontFamily: "var(--sans)",
+          fontSize: 15,
+          fontWeight: 600,
           color: "var(--ink)",
           lineHeight: 1.5,
-          fontFamily: "var(--sans)",
         }}
       >
-        {text}
-      </span>
+        {note}
+      </p>
     </div>
   );
 }
