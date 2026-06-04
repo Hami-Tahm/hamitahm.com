@@ -1000,7 +1000,7 @@ export default function AIVisibilityPage() {
               </Link>
 
               <Link
-                href="/ai-visibility/generative-engine-optimization"
+                href="/ai-visibility/generative-engine-optimization-consultant-canada/"
                 className="ex-row"
               >
                 <div>
