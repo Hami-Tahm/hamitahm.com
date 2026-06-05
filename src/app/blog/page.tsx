@@ -3,7 +3,7 @@ import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "AI Visibility Blog — Guides on AEO, GEO & AI Search | Hami Tahm",
+  title: "AI Visibility Blog & Guides | Hami Tahm",
   description:
     "Practical guides on how AI search works, how to get cited by ChatGPT, Perplexity, and Google AI Overviews, and what Canadian businesses need to do about it.",
 };
