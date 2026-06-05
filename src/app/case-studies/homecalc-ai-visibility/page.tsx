@@ -17,7 +17,7 @@ const CHART_ALT =
 export const metadata: Metadata = {
   title: "HomeCalc.ca AI Visibility Case Study",
   description:
-    "How HomeCalc.ca went from near-zero AI citations to 1,100+ in 30 days on a YMYL financial site under three months old — after an AI visibility audit by Hami Tahm.",
+    "How HomeCalc.ca went from near-zero to 1,100+ AI citations in 30 days on a YMYL financial site under three months old. By Hami Tahm.",
 };
 
 const HERO_STATS = [

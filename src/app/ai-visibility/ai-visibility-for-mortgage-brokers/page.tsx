@@ -12,7 +12,7 @@ const PRICE_DISPLAY = "$1,500 CAD";
 export const metadata: Metadata = {
   title: "AI Visibility for Mortgage Brokers",
   description:
-    "Ensure your mortgage brokerage appears when homebuyers ask ChatGPT, Perplexity, or Google AI Overviews for mortgage guidance. AI visibility audit by Hami Tahm — $1,500 CAD flat.",
+    "Ensure your mortgage brokerage appears when buyers ask ChatGPT, Perplexity, or Google AI Overviews. Audit by Hami Tahm — $1,500 CAD flat.",
 };
 
 /** Real Canadian homebuyer queries — must match case study / dashboard figures. */

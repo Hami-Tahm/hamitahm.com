@@ -13,7 +13,7 @@ const PRICE_DISPLAY = "$1,500 CAD";
 export const metadata: Metadata = {
   title: "Generative Engine Optimization Consultant",
   description:
-    "Generative engine optimization (GEO) helps Canadian businesses get recognized and cited by ChatGPT, Perplexity, and Google Gemini. Consultant-led GEO by Hami Tahm — starts with a $1,500 CAD audit.",
+    "GEO helps Canadian businesses get recognized by ChatGPT, Perplexity, and Google Gemini. Consultant-led by Hami Tahm — starts with a $1,500 audit.",
 };
 
 const CONSULTANT_WORK = [

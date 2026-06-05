@@ -10,7 +10,7 @@ const CONSULTANT_URL = "/ai-visibility/ai-visibility-consultant-canada/";
 export const metadata: Metadata = {
   title: "Hami Tahm — AI Visibility Consultant | HamiTahm.com",
   description:
-    "Hami Tahm is a Canadian AI visibility consultant — builder of HomeCalc.ca, HamiTahm.com, and Houmse.com. Helping businesses appear in ChatGPT, Perplexity, and Google AI Overviews.",
+    "Hami Tahm — Canadian AI visibility consultant. Builder of HomeCalc.ca and Houmse.com. Helping businesses appear in ChatGPT, Perplexity, and Google AI Overviews.",
 };
 
 const structuredData = {
