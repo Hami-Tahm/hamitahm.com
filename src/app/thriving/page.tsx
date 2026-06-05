@@ -4,6 +4,9 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Adapting and thriving in a new country",
   description: "Adapting and thriving in a new country — by Hami Tahm",
+  alternates: {
+    canonical: "https://hamitahm.com/thriving/",
+  },
 };
 
 export default function Post() {

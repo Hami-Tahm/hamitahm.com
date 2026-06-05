@@ -4,6 +4,9 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Exercise & Physical Activity: Your Guide to Smarter Workouts",
   description: "Exercise & Physical Activity: Your Guide to Smarter Workouts — by Hami Tahm",
+  alternates: {
+    canonical: "https://hamitahm.com/exercise/",
+  },
 };
 
 export default function Post() {

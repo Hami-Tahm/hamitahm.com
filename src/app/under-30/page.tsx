@@ -4,6 +4,9 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "How to be under 30 (Bioage)",
   description: "How to be under 30 (Bioage) — by Hami Tahm",
+  alternates: {
+    canonical: "https://hamitahm.com/under-30/",
+  },
 };
 
 export default function Post() {

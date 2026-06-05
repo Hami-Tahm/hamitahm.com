@@ -5,6 +5,9 @@ import { writingPosts } from "@/lib/writing-posts";
 export const metadata: Metadata = {
   title: "Writing",
   description: "Articles by Hami Tahm on startups, longevity, finance, and building toward a unicorn.",
+  alternates: {
+    canonical: "https://hamitahm.com/writing/",
+  },
 };
 
 export default function WritingPage() {

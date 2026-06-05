@@ -4,6 +4,9 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "How to Invest Amid Inflation and the Weakening Canadian Dollar",
   description: "How to Invest Amid Inflation and the Weakening Canadian Dollar — by Hami Tahm",
+  alternates: {
+    canonical: "https://hamitahm.com/invest-amid-inflation-in-canada/",
+  },
 };
 
 export default function Post() {

@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Get in touch with Hami Tahm — AI visibility, SEO, partnerships, or ambitious projects. Based in Toronto, Canada.",
+  alternates: {
+    canonical: "https://hamitahm.com/contact/",
+  },
 };
 
 export default function ContactPage() {
@@ -298,33 +301,4 @@ export default function ContactPage() {
                   >
                     111 Peter Street, 9th Floor, Suite 902
                     <br />
-                    Toronto, ON M5V 2H1 &middot; Canada
-                  </div>
-                </div>
-              </a>
-
-              {/* CTA */}
-              <Link
-                href="/ai-visibility/ai-visibility-audit/"
-                style={{
-                  display: "block",
-                  textAlign: "center",
-                  background: "var(--accent)",
-                  color: "#fff",
-                  fontSize: "15px",
-                  fontWeight: 600,
-                  padding: "15px",
-                  borderRadius: "999px",
-                  marginTop: 26,
-                  transition: "transform .2s, box-shadow .2s",
-                }}
-              >
-                Get Your AI Visibility Audit &rarr;
-              </Link>
-            </div>
-          </RevealSection>
-        </div>
-      </div>
-    </section>
-  );
-}
+                    Toronto, ON M5V 2H1 &middot; C

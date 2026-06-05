@@ -4,6 +4,9 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "The Complex Relationship Between Money, Happiness, and Satisfaction",
   description: "The Complex Relationship Between Money, Happiness, and Satisfaction — by Hami Tahm",
+  alternates: {
+    canonical: "https://hamitahm.com/happiness-and-satisfaction-in-2024/",
+  },
 };
 
 export default function Post() {

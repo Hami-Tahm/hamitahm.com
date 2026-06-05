@@ -10,7 +10,10 @@ const CONSULTANT_URL = "/ai-visibility/ai-visibility-consultant-canada/";
 export const metadata: Metadata = {
   title: "Hami Tahm — AI Visibility Consultant | HamiTahm.com",
   description:
-    "Hami Tahm is a Canadian AI visibility consultant — builder of HomeCalc.ca, HamiTahm.com, and Houmse.com. Helping businesses appear in ChatGPT, Perplexity, and Google AI Overviews.",
+    "Hami Tahm is a Canadian AI visibility consultant — builder of HomeCalc.ca, HamiTahm.com, and Houmse.com.",
+  alternates: {
+    canonical: "https://hamitahm.com/hami-tahm/",
+  },
 };
 
 const structuredData = {
@@ -376,8 +379,4 @@ function MethodCard({ n, title, desc }: { n: string; title: string; desc: string
   return (
     <div className="m-card">
       <div style={{ fontFamily: "var(--mono)", fontSize: 11, color: "var(--accent)", letterSpacing: ".06em", marginBottom: 10 }}>{n}</div>
-      <div style={{ fontFamily: "var(--serif)", fontSize: 21, fontWeight: 500, letterSpacing: "-.01em", marginBottom: 8 }}>{title}</div>
-      <div style={{ color: "var(--muted)", fontSize: 15, lineHeight: 1.6 }}>{desc}</div>
-    </div>
-  );
-}
+      <div style={{ fontFamily: "var(--serif)", fontSize: 21, fontWeight: 500, letterSpacing: "-.01em", marginBottom: 8

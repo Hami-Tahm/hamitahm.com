@@ -4,6 +4,9 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Sleep Quality 101: Unlock the Secrets to Better Rest",
   description: "Sleep Quality 101: Unlock the Secrets to Better Rest — by Hami Tahm",
+  alternates: {
+    canonical: "https://hamitahm.com/sleep-quality-101/",
+  },
 };
 
 export default function Post() {

@@ -11,9 +11,12 @@ const TURNAROUND = "7 business days";
 const PRICE_DISPLAY = "$1,500 CAD";
 
 export const metadata: Metadata = {
-  title: "Answer Engine Optimization Consultant | Hami Tahm",
+  title: "Answer Engine Optimization Consultant",
   description:
-    "Answer engine optimization (AEO) helps Canadian businesses get cited by ChatGPT, Perplexity, and Google AI Overviews. Consultant-led AEO by Hami Tahm — starts with a $1,500 CAD audit.",
+    "Answer engine optimization (AEO) helps Canadian businesses get cited by ChatGPT, Perplexity, and Google AI Overviews.",
+  alternates: {
+    canonical: "https://hamitahm.com/ai-visibility/answer-engine-optimization-consultant-canada/",
+  },
 };
 
 const CONSULTANT_WORK = [
@@ -1231,3 +1234,4 @@ function PlaceholderCard({ label, note }: { label: string; note: string }) {
     </div>
   );
 }
+          

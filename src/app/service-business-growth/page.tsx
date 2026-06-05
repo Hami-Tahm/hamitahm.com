@@ -4,6 +4,9 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "What I’m Actually Good At",
   description: "What I’m Actually Good At — by Hami Tahm",
+  alternates: {
+    canonical: "https://hamitahm.com/service-business-growth/",
+  },
 };
 
 export default function Post() {

@@ -4,6 +4,9 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "2024 Market Analysis: Home Services Industry in Iran",
   description: "2024 Market Analysis: Home Services Industry in Iran — by Hami Tahm",
+  alternates: {
+    canonical: "https://hamitahm.com/home-service-in-iran/",
+  },
 };
 
 export default function Post() {

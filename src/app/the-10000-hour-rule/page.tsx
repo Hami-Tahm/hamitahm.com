@@ -4,6 +4,9 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "The 10,000-Hour Rule: How Many Hours Do You Need to Reach 7/10 Mastery?",
   description: "The 10,000-Hour Rule: How Many Hours Do You Need to Reach 7/10 Mastery? — by Hami Tahm",
+  alternates: {
+    canonical: "https://hamitahm.com/the-10000-hour-rule/",
+  },
 };
 
 export default function Post() {
