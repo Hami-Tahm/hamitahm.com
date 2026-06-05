@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: "AI Visibility for Dental Clinics",
   description:
     "Ensure your dental clinic appears when patients ask ChatGPT, Perplexity, or Google AI Overviews. Audit by Hami Tahm — $1,500 CAD flat.",
+  alternates: {
+    canonical: "https://hamitahm.com/ai-visibility/ai-visibility-for-dental-clinics/",
+  },
 };
 
 const DENTAL_CHECKS = [

@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: "Generative Engine Optimization Consultant",
   description:
     "GEO helps Canadian businesses get recognized by ChatGPT, Perplexity, and Google Gemini. Consultant-led by Hami Tahm — starts with a $1,500 audit.",
+  alternates: {
+    canonical: "https://hamitahm.com/ai-visibility/generative-engine-optimization-consultant-canada/",
+  },
 };
 
 const CONSULTANT_WORK = [

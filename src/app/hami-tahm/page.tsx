@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "Hami Tahm — AI Visibility Consultant | HamiTahm.com",
   description:
     "Hami Tahm — Canadian AI visibility consultant. Builder of HomeCalc.ca and Houmse.com. Helping businesses appear in ChatGPT, Perplexity, and Google AI Overviews.",
+  alternates: {
+    canonical: "https://hamitahm.com/hami-tahm/",
+  },
 };
 
 const structuredData = {

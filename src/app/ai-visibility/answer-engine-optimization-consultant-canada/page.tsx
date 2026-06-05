@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: "Answer Engine Optimization Consultant",
   description:
     "AEO helps Canadian businesses get cited by ChatGPT, Perplexity, and Google AI Overviews. Consultant-led by Hami Tahm — starts with a $1,500 audit.",
+  alternates: {
+    canonical: "https://hamitahm.com/ai-visibility/answer-engine-optimization-consultant-canada/",
+  },
 };
 
 const CONSULTANT_WORK = [

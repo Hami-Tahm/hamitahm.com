@@ -119,6 +119,9 @@ export const metadata: Metadata = {
   title: "AI Visibility Consultant in Canada — Toronto",
   description:
     "AI visibility consultant in Canada. Hami Tahm offers a $1,500 flat-fee audit across ChatGPT, Perplexity, and Google AI Overviews. No agency, no retainer.",
+  alternates: {
+    canonical: "https://hamitahm.com/ai-visibility/ai-visibility-consultant-canada/",
+  },
 };
 
 export default function AIVisibilityConsultantCanada() {

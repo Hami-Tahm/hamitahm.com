@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "AI Visibility Audit | $1,500 CAD Flat",
   description:
     "Structured AI visibility audit across ChatGPT, Perplexity, and Google AI Overviews. $1,500 CAD flat. Report, plan, and walkthrough call by Hami Tahm.",
+  alternates: {
+    canonical: "https://hamitahm.com/ai-visibility/ai-visibility-audit/",
+  },
 };
 
 const FAQ_ITEMS = [
