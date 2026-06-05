@@ -4,9 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "SEO expert Toronto + FAQ",
   description: "SEO expert Toronto + FAQ — by Hami Tahm",
-  alternates: {
-    canonical: "https://hamitahm.com/seo-expert-toronto/",
-  },
 };
 
 export default function Post() {

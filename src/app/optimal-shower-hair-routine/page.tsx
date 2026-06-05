@@ -4,9 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "The Optimal Shower & Hair Routine for Busy Found­ers (Oily Skin & Sc­alp)",
   description: "The Optimal Shower & Hair Routine for Busy Found­ers (Oily Skin & Sc­alp) — by Hami Tahm",
-  alternates: {
-    canonical: "https://hamitahm.com/optimal-shower-hair-routine/",
-  },
 };
 
 export default function Post() {

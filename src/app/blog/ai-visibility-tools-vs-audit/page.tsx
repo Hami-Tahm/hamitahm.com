@@ -5,12 +5,9 @@ import { blogSchemaJson } from "@/lib/blog-schema";
 
 export const metadata: Metadata = {
   title:
-    "AI Visibility Tools vs AI Visibility Audit — Which Do You Need?",
+    "AI Visibility Tools vs AI Visibility Audit — Which Do You Need? | Hami Tahm",
   description:
     "AI visibility tools show dashboards. An AI visibility audit shows what to fix. Learn when you need a tool, when you need an audit, and when you need both.",
-  alternates: {
-    canonical: "https://hamitahm.com/blog/ai-visibility-tools-vs-audit/",
-  },
 };
 
 export default function ToolsVsAuditPost() {

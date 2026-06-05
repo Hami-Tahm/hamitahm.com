@@ -4,9 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Fitness Pyramid (Beginner → Advanced)",
   description: "Fitness Pyramid (Beginner → Advanced) — by Hami Tahm",
-  alternates: {
-    canonical: "https://hamitahm.com/fitness-pyramid/",
-  },
 };
 
 export default function Post() {

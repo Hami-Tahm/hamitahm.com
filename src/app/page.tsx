@@ -1,16 +1,9 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { latestWritingPosts } from "@/lib/writing-posts";
 
 const BUILDING_SINCE = 2014;
 const buildingYears = new Date().getFullYear() - BUILDING_SINCE;
-
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "https://hamitahm.com/",
-  },
-};
 
 export default function Home() {
   return (

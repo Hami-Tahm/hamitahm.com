@@ -5,12 +5,9 @@ import { blogSchemaJson } from "@/lib/blog-schema";
 
 export const metadata: Metadata = {
   title:
-    "Peec AI vs Profound vs AirOps — AI Visibility Tools Compared",
+    "Peec AI vs Profound vs AirOps — AI Visibility Tools Compared | Hami Tahm",
   description:
     "Detailed comparison of Peec AI, Profound, and AirOps — the three leading AI visibility platforms. Features, pricing, strengths, and which one fits your needs.",
-  alternates: {
-    canonical: "https://hamitahm.com/blog/peec-vs-profound-vs-airops/",
-  },
 };
 
 export default function PeecVsProfoundVsAirOpsPost() {

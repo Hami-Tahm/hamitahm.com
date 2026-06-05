@@ -4,9 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "A Comprehensive Guide to Investment Types: Understanding Returns, Risks, and Efforts",
   description: "A Comprehensive Guide to Investment Types: Understanding Returns, Risks, and Efforts — by Hami Tahm",
-  alternates: {
-    canonical: "https://hamitahm.com/investment-types/",
-  },
 };
 
 export default function Post() {

@@ -4,9 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Lifespan: The Role of Wealth and Technology in Extending Life Expectancy",
   description: "Lifespan: The Role of Wealth and Technology in Extending Life Expectancy — by Hami Tahm",
-  alternates: {
-    canonical: "https://hamitahm.com/the-future-of-life-expectancy/",
-  },
 };
 
 export default function Post() {

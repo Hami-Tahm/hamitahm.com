@@ -4,9 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "How Much Wealth Should You Aim For? A Simple Guide to Matching Income and Net Worth",
   description: "How Much Wealth Should You Aim For? A Simple Guide to Matching Income and Net Worth — by Hami Tahm",
-  alternates: {
-    canonical: "https://hamitahm.com/how-much-wealth-should-you-aim-for/",
-  },
 };
 
 export default function Post() {

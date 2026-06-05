@@ -15,12 +15,9 @@ const CHART_ALT =
   "HomeCalc.ca AI citation growth chart — 1,100 total citations across 15 cited pages, May 2026. Citations begin climbing on May 24 and accelerate to roughly 200 per day.";
 
 export const metadata: Metadata = {
-  title: "HomeCalc.ca AI Visibility Case Study",
+  title: "HomeCalc.ca AI Visibility Case Study | Hami Tahm",
   description:
-    "How HomeCalc.ca went from near-zero AI citations to 1,100+ in 30 days on a YMYL financial site under three months old — after an AI visibility audit by.",
-  alternates: {
-    canonical: "https://hamitahm.com/case-studies/homecalc-ai-visibility/",
-  },
+    "How HomeCalc.ca went from near-zero AI citations to 1,100+ in 30 days on a YMYL financial site under three months old — after an AI visibility audit by Hami Tahm.",
 };
 
 const HERO_STATS = [

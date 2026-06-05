@@ -4,9 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "From Zero to Unicorn: Can an Ordinary Founder Make It?",
   description: "From Zero to Unicorn: Can an Ordinary Founder Make It? — by Hami Tahm",
-  alternates: {
-    canonical: "https://hamitahm.com/1-out-of-20/",
-  },
 };
 
 export default function Post() {

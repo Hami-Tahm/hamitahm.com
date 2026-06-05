@@ -116,12 +116,9 @@ const structuredData = {
 };
 
 export const metadata: Metadata = {
-  title: "AI Visibility Consultant in Canada — Toronto",
+  title: "AI Visibility Consultant in Canada | Hami Tahm — Toronto",
   description:
-    "Looking for an AI visibility consultant in Canada? Hami Tahm is a Toronto-based AI visibility consultant offering a $1,500 flat-fee audit — no agency, no.",
-  alternates: {
-    canonical: "https://hamitahm.com/ai-visibility/ai-visibility-consultant-canada/",
-  },
+    "Looking for an AI visibility consultant in Canada? Hami Tahm is a Toronto-based AI visibility consultant offering a $1,500 flat-fee audit — no agency, no retainer.",
 };
 
 export default function AIVisibilityConsultantCanada() {
@@ -1268,4 +1265,12 @@ function EngagementStep({
             fontSize: 15,
             color: "var(--muted)",
             marginTop: 8,
-            lineH
+            lineHeight: 1.6,
+          }}
+        >
+          {body}
+        </p>
+      </div>
+    </div>
+  );
+}

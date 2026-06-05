@@ -4,9 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "How Many Diets Exist in the World?",
   description: "How Many Diets Exist in the World? — by Hami Tahm",
-  alternates: {
-    canonical: "https://hamitahm.com/how-many-diets-exist-in-the-world/",
-  },
 };
 
 export default function Post() {

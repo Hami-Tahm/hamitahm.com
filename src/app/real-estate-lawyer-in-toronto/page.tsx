@@ -4,9 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Real estate lawyer in Toronto",
   description: "Real estate lawyer in Toronto — by Hami Tahm",
-  alternates: {
-    canonical: "https://hamitahm.com/real-estate-lawyer-in-toronto/",
-  },
 };
 
 export default function Post() {

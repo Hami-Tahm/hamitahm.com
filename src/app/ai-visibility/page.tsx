@@ -130,12 +130,9 @@ const structuredData = {
 };
 
 export const metadata: Metadata = {
-  title: "AI Visibility Consulting in Canada",
+  title: "AI Visibility Consulting in Canada | Hami Tahm",
   description:
     "AI visibility consulting in Canada — from ChatGPT citations to Google AI Overviews. Hami Tahm, Toronto-based consultant with a public case study. Not an agency.",
-  alternates: {
-    canonical: "https://hamitahm.com/ai-visibility/",
-  },
 };
 
 export default function AIVisibilityPage() {
@@ -1693,4 +1690,8 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
         gap: 14,
       }}
     >
-      {number} &mdash; {t
+      {number} &mdash; {text}
+      <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
+    </div>
+  );
+}

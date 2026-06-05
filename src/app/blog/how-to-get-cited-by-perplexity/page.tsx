@@ -4,12 +4,9 @@ import { RevealSection } from "@/components/Reveal";
 import { blogSchemaJson } from "@/lib/blog-schema";
 
 export const metadata: Metadata = {
-  title: "How to Get Cited by Perplexity AI",
+  title: "How to Get Cited by Perplexity AI | Hami Tahm",
   description:
     "Learn how Perplexity AI selects sources to cite. Practical guide for Canadian businesses on getting your content cited in Perplexity answers.",
-  alternates: {
-    canonical: "https://hamitahm.com/blog/how-to-get-cited-by-perplexity/",
-  },
 };
 
 export default function HowToGetCitedByPerplexityPost() {

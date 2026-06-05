@@ -4,9 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "From Top 10 to #1: How I Built a Dental Empire Through Honest SEO and Strategy",
   description: "From Top 10 to #1: How I Built a Dental Empire Through Honest SEO and Strategy — by Hami Tahm",
-  alternates: {
-    canonical: "https://hamitahm.com/orthodontic-seo-marketing-case-study/",
-  },
 };
 
 export default function Post() {
