@@ -116,7 +116,7 @@ const structuredData = {
 };
 
 export const metadata: Metadata = {
-  title: "AI Visibility Consultant in Canada | Hami Tahm — Toronto",
+  title: "AI Visibility Consultant in Canada — Toronto",
   description:
     "Looking for an AI visibility consultant in Canada? Hami Tahm is a Toronto-based AI visibility consultant offering a $1,500 flat-fee audit — no agency, no retainer.",
 };

@@ -4,7 +4,7 @@ import { RevealSection } from "@/components/Reveal";
 import { blogSchemaJson } from "@/lib/blog-schema";
 
 export const metadata: Metadata = {
-  title: "How to Get Your Business Mentioned by ChatGPT | Hami Tahm",
+  title: "How to Get Your Business Mentioned by ChatGPT",
   description:
     "ChatGPT mentions brands it finds authoritative and well-structured. Here's how to improve entity clarity, structured data, and authority to get cited.",
 };

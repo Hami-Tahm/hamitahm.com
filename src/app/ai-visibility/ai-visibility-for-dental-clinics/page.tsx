@@ -10,7 +10,7 @@ const TURNAROUND = "7 business days";
 const PRICE_DISPLAY = "$1,500 CAD";
 
 export const metadata: Metadata = {
-  title: "AI Visibility for Dental Clinics | Hami Tahm",
+  title: "AI Visibility for Dental Clinics",
   description:
     "Ensure your dental clinic appears when patients ask ChatGPT, Perplexity, or Google AI Overviews for dentist recommendations. AI visibility audit by Hami Tahm — $1,500 CAD flat.",
 };

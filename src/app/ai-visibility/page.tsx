@@ -130,7 +130,7 @@ const structuredData = {
 };
 
 export const metadata: Metadata = {
-  title: "AI Visibility Consulting in Canada | Hami Tahm",
+  title: "AI Visibility Consulting in Canada",
   description:
     "AI visibility consulting in Canada — from ChatGPT citations to Google AI Overviews. Hami Tahm, Toronto-based consultant with a public case study. Not an agency.",
 };

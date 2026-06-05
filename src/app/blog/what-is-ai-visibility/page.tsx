@@ -4,7 +4,7 @@ import { RevealSection } from "@/components/Reveal";
 import { blogSchemaJson } from "@/lib/blog-schema";
 
 export const metadata: Metadata = {
-  title: "What Is AI Visibility (and Why It Matters Now) | Hami Tahm",
+  title: "What Is AI Visibility (and Why It Matters Now)",
   description:
     "AI visibility is whether your brand appears when people ask ChatGPT, Perplexity, or Google AI Overviews for recommendations in your space. Here's what it means in plain English.",
 };

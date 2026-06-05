@@ -4,7 +4,7 @@ import { RevealSection } from "@/components/Reveal";
 import { blogSchemaJson } from "@/lib/blog-schema";
 
 export const metadata: Metadata = {
-  title: "How to Appear in Google AI Overviews | Hami Tahm",
+  title: "How to Appear in Google AI Overviews",
   description:
     "Google AI Overviews pull from pages that already rank well AND have clear, extractable answers. Here's how to optimize for both traditional SEO and AI-friendly content.",
 };

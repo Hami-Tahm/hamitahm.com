@@ -4,7 +4,7 @@ import { RevealSection } from "@/components/Reveal";
 import { blogSchemaJson } from "@/lib/blog-schema";
 
 export const metadata: Metadata = {
-  title: "Best AI Visibility Tools (2025) — Complete Guide | Hami Tahm",
+  title: "Best AI Visibility Tools (2025) — Complete Guide",
   description:
     "Compare the best AI visibility tools: Peec AI, AirOps, Profound, Limy, Ubersuggest, and more. What they do, what they cost, and when you need more than a dashboard.",
 };

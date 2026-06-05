@@ -4,7 +4,7 @@ import { RevealSection } from "@/components/Reveal";
 import { blogSchemaJson } from "@/lib/blog-schema";
 
 export const metadata: Metadata = {
-  title: "AEO vs GEO vs SEO — What's the Difference? | Hami Tahm",
+  title: "AEO vs GEO vs SEO — What's the Difference?",
   description:
     "SEO = ranking on search results pages. AEO = being cited in AI answer engines. GEO = appearing in generative search. All three matter — here's how they differ.",
 };

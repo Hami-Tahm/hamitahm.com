@@ -4,7 +4,7 @@ import { RevealSection } from "@/components/Reveal";
 import { blogSchemaJson } from "@/lib/blog-schema";
 
 export const metadata: Metadata = {
-  title: "What Is Answer Engine Optimization (AEO)? | Hami Tahm",
+  title: "What Is Answer Engine Optimization (AEO)?",
   description:
     "Answer Engine Optimization explained. Learn what AEO is, how it differs from SEO, and how to optimize your content for AI-generated answers.",
 };
