@@ -4,9 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "The Courage to Start",
   description: "The Courage to Start — by Hami Tahm",
-  alternates: {
-    canonical: "https://hamitahm.com/the-first-one/",
-  },
 };
 
 export default function Post() {

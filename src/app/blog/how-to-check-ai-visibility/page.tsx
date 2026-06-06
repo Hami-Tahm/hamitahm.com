@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   title: "How to Check Your AI Visibility",
   description:
     "Step-by-step guide to checking how your brand appears in ChatGPT, Perplexity, Google AI Overviews, and other AI search engines.",
-  alternates: {
-    canonical: "https://hamitahm.com/blog/how-to-check-ai-visibility/",
-  },
 };
 
 export default function HowToCheckAIVisibilityPost() {

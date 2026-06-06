@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   title: "AEO vs GEO vs SEO — What's the Difference?",
   description:
     "SEO = ranking on search results pages. AEO = being cited in AI answer engines. GEO = appearing in generative search. All three matter — here's how they differ.",
-  alternates: {
-    canonical: "https://hamitahm.com/blog/aeo-vs-geo-vs-seo/",
-  },
 };
 
 export default function AEOvsGEOvsSEOPost() {

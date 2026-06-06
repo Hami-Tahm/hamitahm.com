@@ -4,9 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Pushing Boundaries",
   description: "Pushing Boundaries — by Hami Tahm",
-  alternates: {
-    canonical: "https://hamitahm.com/pushing-boundaries/",
-  },
 };
 
 export default function Post() {

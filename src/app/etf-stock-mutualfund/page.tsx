@@ -4,9 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Understanding the Difference Between Stocks, ETFs, and Mutual Funds",
   description: "Understanding the Difference Between Stocks, ETFs, and Mutual Funds — by Hami Tahm",
-  alternates: {
-    canonical: "https://hamitahm.com/etf-stock-mutualfund/",
-  },
 };
 
 export default function Post() {

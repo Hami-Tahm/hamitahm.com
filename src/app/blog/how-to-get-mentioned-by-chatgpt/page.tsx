@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   title: "How to Get Your Business Mentioned by ChatGPT",
   description:
     "ChatGPT mentions brands it finds authoritative and well-structured. Here's how to improve entity clarity, structured data, and authority to get cited.",
-  alternates: {
-    canonical: "https://hamitahm.com/blog/how-to-get-mentioned-by-chatgpt/",
-  },
 };
 
 export default function HowToGetMentionedByChatGPTPost() {

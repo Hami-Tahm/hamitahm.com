@@ -4,9 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "These days ...",
   description: "These days ... — by Hami Tahm",
-  alternates: {
-    canonical: "https://hamitahm.com/these-days/",
-  },
 };
 
 export default function Post() {

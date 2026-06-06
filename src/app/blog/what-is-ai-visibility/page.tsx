@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   title: "What Is AI Visibility (and Why It Matters Now)",
   description:
     "AI visibility is whether your brand appears when people ask ChatGPT, Perplexity, or Google AI Overviews. Plain-English explanation by Hami Tahm.",
-  alternates: {
-    canonical: "https://hamitahm.com/blog/what-is-ai-visibility/",
-  },
 };
 
 export default function WhatIsAIVisibilityPost() {
@@ -666,4 +663,3 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
     </div>
   );
 }
-                                 

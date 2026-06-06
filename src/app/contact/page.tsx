@@ -6,9 +6,6 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Get in touch with Hami Tahm — AI visibility, SEO, partnerships, or ambitious projects. Based in Toronto, Canada.",
-  alternates: {
-    canonical: "https://hamitahm.com/contact/",
-  },
 };
 
 export default function ContactPage() {

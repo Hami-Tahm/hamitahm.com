@@ -7,9 +7,6 @@ export const metadata: Metadata = {
   title: "How to Get Cited by Perplexity AI",
   description:
     "Learn how Perplexity AI selects sources to cite. Practical guide for Canadian businesses on getting your content cited in Perplexity answers.",
-  alternates: {
-    canonical: "https://hamitahm.com/blog/how-to-get-cited-by-perplexity/",
-  },
 };
 
 export default function HowToGetCitedByPerplexityPost() {
