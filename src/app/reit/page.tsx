@@ -4,6 +4,9 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Understanding REITs: Pros, Cons, and Building a Balanced Portfolio",
   description: "Understanding REITs: Pros, Cons, and Building a Balanced Portfolio — by Hami Tahm",
+  alternates: {
+    canonical: "https://hamitahm.com/reit/",
+  },
 };
 
 export default function Post() {

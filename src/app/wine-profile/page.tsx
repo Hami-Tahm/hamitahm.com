@@ -4,6 +4,9 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Understanding My Wine Taste Profile",
   description: "Understanding My Wine Taste Profile — by Hami Tahm",
+  alternates: {
+    canonical: "https://hamitahm.com/wine-profile/",
+  },
 };
 
 export default function Post() {

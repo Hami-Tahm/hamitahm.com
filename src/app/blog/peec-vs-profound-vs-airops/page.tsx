@@ -8,6 +8,9 @@ export const metadata: Metadata = {
     "Peec AI vs Profound vs AirOps — AI Visibility Tools Compared",
   description:
     "Detailed comparison of Peec AI, Profound, and AirOps — the three leading AI visibility platforms. Features, pricing, strengths, and which one fits your needs.",
+  alternates: {
+    canonical: "https://hamitahm.com/blog/peec-vs-profound-vs-airops/",
+  },
 };
 
 export default function PeecVsProfoundVsAirOpsPost() {

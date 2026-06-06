@@ -4,6 +4,9 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Hydration for High Performers: Maximize Energy, Focus, and Productivity",
   description: "Hydration for High Performers: Maximize Energy, Focus, and Productivity — by Hami Tahm",
+  alternates: {
+    canonical: "https://hamitahm.com/hydration/",
+  },
 };
 
 export default function Post() {

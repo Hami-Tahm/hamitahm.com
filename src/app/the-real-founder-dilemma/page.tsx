@@ -4,6 +4,9 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "The Real Founder Dilemma (Not About Shares)",
   description: "The Real Founder Dilemma (Not About Shares) — by Hami Tahm",
+  alternates: {
+    canonical: "https://hamitahm.com/the-real-founder-dilemma/",
+  },
 };
 
 export default function Post() {

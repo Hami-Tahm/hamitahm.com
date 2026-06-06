@@ -4,6 +4,9 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "My Entrepreneurial Journey with Up-Diet.com",
   description: "My Entrepreneurial Journey with Up-Diet.com — by Hami Tahm",
+  alternates: {
+    canonical: "https://hamitahm.com/after-product-launch/",
+  },
 };
 
 export default function Post() {

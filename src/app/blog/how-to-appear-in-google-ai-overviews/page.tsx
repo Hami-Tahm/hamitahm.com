@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "How to Appear in Google AI Overviews",
   description:
     "Google AI Overviews pull from pages that rank well AND have clear, extractable answers. How to optimize for both SEO and AI-friendly content.",
+  alternates: {
+    canonical: "https://hamitahm.com/blog/how-to-appear-in-google-ai-overviews/",
+  },
 };
 
 export default function HowToAppearInGoogleAIOverviewsPost() {
@@ -703,3 +706,4 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
     </div>
   );
 }
+                           

@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Best AI Visibility Tools (2025) — Complete Guide",
   description:
     "Compare the best AI visibility tools: Peec AI, AirOps, Profound, and more. What they do, what they cost, and when you need more than a dashboard.",
+  alternates: {
+    canonical: "https://hamitahm.com/blog/best-ai-visibility-tools/",
+  },
 };
 
 export default function BestAIVisibilityToolsPost() {
@@ -889,3 +892,4 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
     </div>
   );
 }
+                   

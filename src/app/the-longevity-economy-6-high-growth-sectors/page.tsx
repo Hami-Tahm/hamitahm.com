@@ -4,6 +4,9 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "The Longevity Economy: 6 High-Growth Sectors Ranked by Market Size",
   description: "The Longevity Economy: 6 High-Growth Sectors Ranked by Market Size — by Hami Tahm",
+  alternates: {
+    canonical: "https://hamitahm.com/the-longevity-economy-6-high-growth-sectors/",
+  },
 };
 
 export default function Post() {
