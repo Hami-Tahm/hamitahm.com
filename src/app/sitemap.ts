@@ -33,7 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // ── AI Visibility blog ───────────────────────────────────────────────
     { path: "/blog/", priority: 0.75, changeFrequency: "weekly" },
-    { path: "/blog/what-is-ai-visibility/", priority: 0.75 },
+    { path: "/blog/what-is-ai-visibility/", priority: 0.7 },
     { path: "/blog/what-is-answer-engine-optimization/", priority: 0.75 },
     { path: "/blog/aeo-vs-geo-vs-seo/", priority: 0.75 },
     { path: "/blog/how-to-check-ai-visibility/", priority: 0.7 },
