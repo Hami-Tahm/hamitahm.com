@@ -52,6 +52,7 @@ export function Nav() {
         </Link>
 
         <div className="nav-links-desktop" style={{ display: "flex", gap: 30, alignItems: "center" }}>
+          <NavLink href="/blog">Blog</NavLink>
           <NavLink href="/writing">Writing</NavLink>
           <NavLink href="/hami-tahm">About</NavLink>
           <Link
@@ -93,6 +94,7 @@ export function Nav() {
 
       {open && (
         <div style={{ padding: "0 32px 18px", display: "flex", flexDirection: "column", gap: 16 }}>
+          <NavLink href="/blog">Blog</NavLink>
           <NavLink href="/writing">Writing</NavLink>
           <NavLink href="/hami-tahm">About</NavLink>
           <Link href="/ai-visibility" style={{ fontFamily: "var(--mono)", fontSize: "12.5px", letterSpacing: ".05em", color: "var(--accent)" }}>
