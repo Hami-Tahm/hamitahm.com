@@ -38,7 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/blog/aeo-vs-geo-vs-seo/", priority: 0.7 },
     { path: "/blog/how-to-check-ai-visibility/", priority: 0.7 },
     { path: "/blog/how-to-get-mentioned-by-chatgpt/", priority: 0.65 },
-    { path: "/blog/how-to-get-cited-by-perplexity/", priority: 0.7 },
+    { path: "/blog/how-to-get-cited-by-perplexity/", priority: 0.6 },
     { path: "/blog/how-to-appear-in-google-ai-overviews/", priority: 0.65 },
     { path: "/blog/best-ai-visibility-tools/", priority: 0.7 },
     { path: "/blog/ai-visibility-tools-vs-audit/", priority: 0.7 },
