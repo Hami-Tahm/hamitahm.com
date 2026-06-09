@@ -12,14 +12,14 @@ const posts = [
   {
     href: "/blog/what-is-ai-visibility/",
     cat: "Basics",
-    title: "What Is AI Visibility?",
+    title: "What Is AI Visibility (and Why It Matters Now)",
     excerpt:
       "The shift from links to answers, and why being cited by AI is the new being found.",
   },
   {
     href: "/blog/aeo-vs-geo-vs-seo/",
     cat: "AEO / GEO / SEO",
-    title: "AEO vs GEO vs SEO: What Canadian Businesses Need to Know",
+    title: "AEO vs GEO vs SEO — What's the Difference?",
     excerpt:
       "Three acronyms, one goal — being found. Here’s how they differ and where to focus.",
   },
@@ -40,7 +40,7 @@ const posts = [
   {
     href: "/blog/how-to-get-cited-by-perplexity/",
     cat: "ChatGPT & Perplexity",
-    title: "How to Get Cited by Perplexity",
+    title: "How to Get Cited by Perplexity AI",
     excerpt:
       "Perplexity shows its sources — here’s how to become one of them.",
   },
@@ -68,14 +68,14 @@ const posts = [
   {
     href: "/blog/ai-visibility-tools-vs-audit/",
     cat: "Strategy",
-    title: "AI Visibility Tools vs AI Visibility Audit",
+    title: "AI Visibility Tools vs AI Visibility Audit — Which Do You Need?",
     excerpt:
       "Tools show dashboards. Audits show what to fix. When you need a tool, an audit, or both.",
   },
   {
     href: "/blog/peec-vs-profound-vs-airops/",
     cat: "Tools & Comparisons",
-    title: "Peec AI vs Profound vs AirOps — Compared",
+    title: "Peec AI vs Profound vs AirOps — AI Visibility Tools Compared",
     excerpt:
       "Detailed comparison of the three leading AI visibility platforms — features, pricing, and fit.",
   },
