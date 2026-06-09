@@ -1,29 +1,104 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
-import { blogSchemaJson } from "@/lib/blog-schema";
+import { buildBlogSchema } from "@/lib/blog-schema";
+
+const SLUG = "what-is-answer-engine-optimization";
+const ARTICLE_TITLE = "What Is Answer Engine Optimization (AEO)?";
+const ARTICLE_DESCRIPTION =
+  "Answer Engine Optimization (AEO) is the practice of structuring content so AI-powered search engines cite it directly. Here's what it is, how it works, and why it's different from SEO.";
+const DATE_PUBLISHED = "2026-06-09";
+const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
+const HUB_URL = "/ai-visibility/";
+const AEO_URL =
+  "/ai-visibility/answer-engine-optimization-consultant-canada/";
+const DEFINITION_URL = "/blog/what-is-ai-visibility/";
+const COMPARISON_URL = "/blog/aeo-vs-geo-vs-seo/";
+const TOOLS_URL = "/blog/best-ai-visibility-tools/";
+
+const FAQ_ITEMS = [
+  {
+    q: "Is AEO replacing SEO?",
+    a: "No. AEO is an additional layer, not a replacement. SEO remains essential for traditional search rankings, and ranking is often a prerequisite for AIO citation. AEO and SEO work best together — they target different surfaces of modern search.",
+  },
+  {
+    q: "Does AEO work for small businesses?",
+    a: "Yes. A well-structured page from a small business can be cited by AI platforms over a poorly structured page from a major brand — if it's more direct, clear, and authoritative on the specific question. The playing field is more level than traditional search.",
+  },
+  {
+    q: "How long does AEO take to show results?",
+    a: "It depends on the platform and what's being changed. Structural and technical changes produce visible lift in Perplexity and Google AIO within weeks. Training data improvements in ChatGPT operate on a longer cycle. Most businesses see measurable movement within one to three months of focused work.",
+  },
+  {
+    q: "Can I do AEO myself or do I need a consultant?",
+    a: "Some elements are accessible without a consultant — schema markup tools, content restructuring, FAQ additions. The harder parts — entity mapping, cross-platform citation strategy, competitor gap analysis — benefit from expertise. Most businesses start with a professional audit to understand where they stand before deciding how much to implement themselves.",
+  },
+  {
+    q: "What's the difference between AEO and GEO?",
+    a: "AEO optimizes for being cited in AI-generated direct answers. GEO (Generative Engine Optimization) is broader — it covers how AI systems represent your brand across all AI-generated content, not just direct Q&A responses. They overlap, but AEO is narrower and answer-specific. See AEO vs GEO vs SEO for the full breakdown.",
+  },
+  {
+    q: "Is AEO only for ChatGPT?",
+    a: "No. AEO applies to any platform that generates AI answers — Perplexity, Google AI Overviews, Gemini, Bing Copilot, and ChatGPT. The tactics differ by platform; the foundation is the same.",
+  },
+] as const;
+
+const blogGraph = buildBlogSchema({
+  slug: SLUG,
+  title: ARTICLE_TITLE,
+  description: ARTICLE_DESCRIPTION,
+  datePublished: DATE_PUBLISHED,
+})["@graph"];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    ...blogGraph,
+    {
+      "@type": "FAQPage",
+      mainEntity: FAQ_ITEMS.map(({ q, a }) => ({
+        "@type": "Question",
+        name: q,
+        acceptedAnswer: { "@type": "Answer", text: a },
+      })),
+    },
+  ],
+};
 
 export const metadata: Metadata = {
-  title: "What Is Answer Engine Optimization (AEO)?",
-  description:
-    "Answer Engine Optimization explained. Learn what AEO is, how it differs from SEO, and how to optimize your content for AI-generated answers.",
+  title: ARTICLE_TITLE,
+  description: ARTICLE_DESCRIPTION,
 };
+
+const linkStyle = {
+  color: "var(--accent)",
+  textDecoration: "underline",
+  textUnderlineOffset: 3,
+  textDecorationThickness: 1,
+} as const;
+
+const h3Style = {
+  fontFamily: "var(--serif)",
+  fontWeight: 600,
+  fontSize: 23,
+  letterSpacing: "-.01em",
+  margin: "34px 0 12px",
+  color: "var(--ink)",
+} as const;
+
+const labelStyle = {
+  fontWeight: 600,
+  color: "var(--ink)",
+} as const;
 
 export default function WhatIsAnswerEngineOptimizationPost() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: blogSchemaJson({
-            slug: "what-is-answer-engine-optimization",
-            title: "What Is Answer Engine Optimization (AEO)?",
-            description: "Answer Engine Optimization explained. Learn what AEO is, how it differs from SEO, and how to optimize your content for AI-generated answers.",
-            datePublished: "2026-05-14",
-          }),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      {/* ── Breadcrumb ── */}
+
       <div className="wrap" style={{ paddingTop: 24 }}>
         <RevealSection>
           <nav
@@ -35,7 +110,7 @@ export default function WhatIsAnswerEngineOptimizationPost() {
               gap: 8,
             }}
           >
-            <Link href="/ai-visibility/" style={{ color: "var(--muted)" }}>
+            <Link href={HUB_URL} style={{ color: "var(--muted)" }}>
               AI Visibility
             </Link>
             <span>/</span>
@@ -48,7 +123,6 @@ export default function WhatIsAnswerEngineOptimizationPost() {
         </RevealSection>
       </div>
 
-      {/* ── Header ── */}
       <header style={{ padding: "24px 0 26px" }}>
         <div className="wrap">
           <RevealSection>
@@ -94,8 +168,8 @@ export default function WhatIsAnswerEngineOptimizationPost() {
                 lineHeight: 1.5,
               }}
             >
-              SEO got you into the list of links. AEO gets you into the answer
-              itself.
+              SEO targets rankings. AEO targets citations — being the source AI
+              chooses to quote when users ask questions in your space.
             </p>
           </RevealSection>
 
@@ -130,7 +204,7 @@ export default function WhatIsAnswerEngineOptimizationPost() {
                     marginTop: 1,
                   }}
                 >
-                  Updated 2026 &middot; 8 min read
+                  June 9, 2026 &middot; 11 min read
                 </div>
               </div>
             </div>
@@ -138,7 +212,6 @@ export default function WhatIsAnswerEngineOptimizationPost() {
         </div>
       </header>
 
-      {/* ── Article ── */}
       <article>
         <div
           className="wrap"
@@ -150,7 +223,6 @@ export default function WhatIsAnswerEngineOptimizationPost() {
             maxWidth: 740,
           }}
         >
-          {/* ── TL;DR ── */}
           <RevealSection>
             <div
               style={{
@@ -183,413 +255,345 @@ export default function WhatIsAnswerEngineOptimizationPost() {
                   margin: 0,
                 }}
               >
-                AEO = optimizing content so AI answer engines (ChatGPT,
-                Perplexity, Google AI Overviews) can find, understand, and cite
-                it. It&rsquo;s the evolution of SEO for AI-first search.
+                AEO structures content so AI search platforms — Perplexity,
+                Google AI Overviews, ChatGPT — cite it directly. The goal is
+                citations, not rankings.
               </p>
             </div>
-          </RevealSection>
-
-          {/* ── 01 — Definition ── */}
-          <RevealSection>
-            <SectionLabel number="01" text="Definition" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
               Answer Engine Optimization (AEO) is the practice of structuring
-              your content so that AI-powered answer engines can find it, extract
-              useful information from it, and cite it in their responses. The
-              &ldquo;answer engines&rdquo; in question are tools like ChatGPT,
-              Perplexity, Google AI Overviews, and Microsoft Copilot &mdash;
-              systems that generate direct answers instead of returning a list of
-              links.
+              your content so that AI-powered search platforms — Perplexity,
+              Google AI Overviews, ChatGPT, and Gemini — cite it directly in
+              their answers. Where SEO targets rankings, AEO targets citations.
+              The goal is not to be ranked first, but to be the source AI
+              chooses to quote, paraphrase, or recommend when users ask questions
+              in your space.
             </p>
-
+            <blockquote
+              style={{
+                borderLeft: "2px solid var(--accent)",
+                padding: "6px 0 6px 24px",
+                margin: "0 0 26px",
+                fontStyle: "italic",
+                color: "var(--muted)",
+              }}
+            >
+              AEO structures content so AI search platforms — Perplexity, Google
+              AI Overviews, ChatGPT — cite it directly. The goal is citations,
+              not rankings.
+            </blockquote>
             <p style={{ marginBottom: 26 }}>
-              If SEO was about getting into the search results, AEO is about
-              getting into the answer. The distinction matters because{" "}
-              <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
-                the answer is increasingly the only thing people read.
-              </strong>
+              AEO is one layer of a broader{" "}
+              <Link href={DEFINITION_URL} style={linkStyle}>
+                AI visibility
+              </Link>{" "}
+              strategy. If you&rsquo;re new to the concept of AI visibility,
+              start there.
             </p>
           </RevealSection>
 
-          {/* ── 02 — How answer engines work ── */}
+          <RevealSection>
+            <SectionLabel number="01" text="AEO vs SEO — what's different" />
+          </RevealSection>
+
+          <RevealSection delay={0.06}>
+            <p style={{ marginBottom: 26 }}>
+              SEO optimizes for position in a ranked list. AEO optimizes for
+              inclusion in a synthesized answer. Both matter — but they require
+              different strategies and produce different outcomes.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              The clearest way to see the difference: in traditional search, users
+              see a list of links and choose one. In AI search, users get an
+              answer — and your brand either contributed to that answer or it
+              didn&rsquo;t. If it didn&rsquo;t, you weren&rsquo;t ranked lower.
+              You were absent entirely.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              For the full three-way comparison — AEO, GEO, and SEO — including
+              which to prioritize for your business, see{" "}
+              <Link href={COMPARISON_URL} style={linkStyle}>
+                AEO vs GEO vs SEO
+              </Link>
+              .
+            </p>
+          </RevealSection>
+
           <RevealSection>
             <SectionLabel number="02" text="How answer engines work" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
-              Answer engines use large language models (LLMs) to generate
-              responses. Depending on the engine, they draw from two sources:
+              Answer engines like Perplexity, Google AI Overviews, and ChatGPT
+              don&rsquo;t rank pages. They retrieve content, read it, and generate
+              a synthesized response — citing the sources they found most direct,
+              credible, and well-structured.
             </p>
-
-            <ul style={{ margin: "0 0 26px 22px" }}>
+            <p style={{ marginBottom: 26 }}>The citation pipeline:</p>
+            <ol style={{ margin: "0 0 26px 22px" }}>
+              <li style={{ marginBottom: 11 }}>User asks a question</li>
               <li style={{ marginBottom: 11 }}>
-                <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
-                  Training data.
-                </strong>{" "}
-                Information absorbed during the model&rsquo;s training phase.
-                This is how base ChatGPT and Claude work &mdash; they
-                &ldquo;know&rdquo; things from their training corpus.
+                The engine retrieves relevant content (from training data, live
+                web retrieval, or both)
               </li>
               <li style={{ marginBottom: 11 }}>
-                <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
-                  Real-time retrieval.
-                </strong>{" "}
-                Live web searches that fetch current pages. This is how
-                Perplexity works by default, and how ChatGPT works when using
-                its browsing feature.
+                It synthesizes an answer from what it found
               </li>
-            </ul>
-
+              <li style={{ marginBottom: 11 }}>
+                It cites the sources that contributed most directly
+              </li>
+            </ol>
             <p style={{ marginBottom: 26 }}>
-              Google AI Overviews blend both: they use Google&rsquo;s index
-              (essentially a retrieval system) combined with an LLM to generate
-              summaries. The key takeaway is that{" "}
-              <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
-                every answer engine needs source material.
-              </strong>{" "}
-              AEO is about making your content the best source material
-              available.
+              AEO is the practice of engineering your content to perform well at
+              steps 2, 3, and 4 — so the engine retrieves you, extracts your
+              content cleanly, and names you as a source.
             </p>
           </RevealSection>
 
-          {/* ── 03 — AEO vs traditional SEO ── */}
           <RevealSection>
-            <SectionLabel number="03" text="AEO vs traditional SEO" />
+            <SectionLabel number="03" text="What AEO actually involves" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
-              AEO and SEO share foundations but differ in what they optimize for:
+              AEO is not one tactic. It&rsquo;s a set of practices across
+              content, structure, and authority.
             </p>
 
-            <ul style={{ margin: "0 0 26px 22px" }}>
-              <li style={{ marginBottom: 11 }}>
-                <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
-                  SEO
-                </strong>{" "}
-                optimizes for ranking &mdash; getting your link as high as
-                possible in a list. The user still clicks through and reads your
-                page.
-              </li>
-              <li style={{ marginBottom: 11 }}>
-                <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
-                  AEO
-                </strong>{" "}
-                optimizes for extraction &mdash; making your content easy for an
-                AI to read, summarize, and cite. The user may never visit your
-                page directly.
-              </li>
-            </ul>
-
+            <h3 style={h3Style}>Content structure</h3>
             <p style={{ marginBottom: 26 }}>
-              This doesn&rsquo;t mean SEO is dead. Traditional search still
-              drives enormous traffic. But{" "}
-              <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
-                the share of queries answered by AI is growing fast,
-              </strong>{" "}
-              and businesses that only optimize for the old model are losing
-              ground in the new one.
+              AI systems extract content that&rsquo;s organized for direct
+              retrieval: clear headings that describe exactly what each section
+              covers, direct answers in the first 1-2 sentences after each
+              heading, FAQ sections with short and specific responses, and
+              numbered or bulleted lists for multi-part answers.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              The rule: if an AI can pull a clean, quotable answer from your
+              page, it will. If your best answer is buried in paragraph four, it
+              won&rsquo;t.
             </p>
 
-            <blockquote
-              style={{
-                borderLeft: "2px solid var(--accent)",
-                padding: "6px 0 6px 24px",
-                margin: "30px 0",
-                fontStyle: "italic",
-                color: "var(--muted)",
-              }}
-            >
-              SEO gets you a link in the list. AEO gets your name in the answer.
-              You need both.
-            </blockquote>
-
+            <h3 style={h3Style}>Schema markup</h3>
             <p style={{ marginBottom: 26 }}>
-              For a deeper comparison of the acronyms in this space, read{" "}
-              <Link
-                href="/blog/aeo-vs-geo-vs-seo/"
-                style={{
-                  color: "var(--accent)",
-                  textDecoration: "underline",
-                  textUnderlineOffset: 3,
-                  textDecorationThickness: 1,
-                }}
-              >
-                AEO vs GEO vs SEO explained
-              </Link>
-              .
+              Schema markup removes ambiguity. FAQPage schema tells AI systems
+              which questions your page answers. Article schema with author
+              signals freshness and authority. HowTo schema makes step-based
+              content directly parseable.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              Schema doesn&rsquo;t guarantee citation — but it reduces friction
+              between your content and the AI&rsquo;s extraction process.
+            </p>
+
+            <h3 style={h3Style}>Authority signals</h3>
+            <p style={{ marginBottom: 26 }}>
+              Answer engines favor sources that other credible sources trust.
+              Backlinks from relevant industry publications, mentions on platforms
+              AI systems read heavily — Reddit, Quora, G2, Clutch — and consistent
+              brand presence across the web all contribute to citation authority.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              E-E-A-T — Experience, Expertise, Authoritativeness,
+              Trustworthiness — is Google&rsquo;s own quality framework, and it
+              applies to AIO citation decisions directly. Named authors, clear
+              credentials, and external validation increase your citation
+              probability.
+            </p>
+
+            <h3 style={h3Style}>Entity clarity</h3>
+            <p style={{ marginBottom: 26 }}>
+              AI systems need to know who you are before they can represent you
+              accurately. Organization schema, consistent name/location/category
+              across your web properties, and clearly stated positioning on your
+              core pages all make your brand identifiable and citable. An ambiguous
+              entity gets skipped.
             </p>
           </RevealSection>
 
-          {/* ── 04 — Core AEO strategies ── */}
           <RevealSection>
-            <SectionLabel number="04" text="Core AEO strategies" />
+            <SectionLabel number="04" text="What AEO is for" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
-            <h3
-              style={{
-                fontFamily: "var(--serif)",
-                fontWeight: 600,
-                fontSize: 23,
-                letterSpacing: "-.01em",
-                margin: "34px 0 12px",
-                color: "var(--ink)",
-              }}
-            >
-              Content structure
-            </h3>
             <p style={{ marginBottom: 26 }}>
-              Write content that leads with clear answers. Use descriptive
-              headings that match how people phrase questions. Keep paragraphs
-              concise and self-contained so the AI can extract a clean quote
-              without pulling in unrelated context.
+              AEO produces the highest return in industries with high-intent,
+              question-driven buyer behavior:
             </p>
-
-            <h3
-              style={{
-                fontFamily: "var(--serif)",
-                fontWeight: 600,
-                fontSize: 23,
-                letterSpacing: "-.01em",
-                margin: "34px 0 12px",
-                color: "var(--ink)",
-              }}
-            >
-              Entity clarity
-            </h3>
+            <ul style={{ margin: "0 0 26px 22px" }}>
+              <li style={{ marginBottom: 11 }}>
+                <strong style={labelStyle}>Professional services</strong> — legal,
+                financial, consulting, accounting
+              </li>
+              <li style={{ marginBottom: 11 }}>
+                <strong style={labelStyle}>Healthcare and wellness</strong> — where
+                patients research before they book
+              </li>
+              <li style={{ marginBottom: 11 }}>
+                <strong style={labelStyle}>Real estate and mortgage</strong> —
+                buyers ask specific, high-stakes questions
+              </li>
+              <li style={{ marginBottom: 11 }}>
+                <strong style={labelStyle}>B2B software and SaaS</strong> —
+                comparison and evaluation queries
+              </li>
+              <li style={{ marginBottom: 11 }}>
+                <strong style={labelStyle}>
+                  Any business where customers research before they buy
+                </strong>
+              </li>
+            </ul>
             <p style={{ marginBottom: 26 }}>
-              Make it unambiguous what your brand is, what you do, and where you
-              operate. Use consistent naming across your site and third-party
-              profiles. The AI needs to understand you as a distinct,
-              well-defined entity before it can confidently recommend you.
-            </p>
-
-            <h3
-              style={{
-                fontFamily: "var(--serif)",
-                fontWeight: 600,
-                fontSize: 23,
-                letterSpacing: "-.01em",
-                margin: "34px 0 12px",
-                color: "var(--ink)",
-              }}
-            >
-              Schema markup
-            </h3>
-            <p style={{ marginBottom: 26 }}>
-              Structured data (Organization, LocalBusiness, FAQPage, HowTo)
-              gives answer engines machine-readable context about your content.
-              It&rsquo;s the difference between the AI guessing what your page
-              is about and knowing with certainty.
-            </p>
-
-            <h3
-              style={{
-                fontFamily: "var(--serif)",
-                fontWeight: 600,
-                fontSize: 23,
-                letterSpacing: "-.01em",
-                margin: "34px 0 12px",
-                color: "var(--ink)",
-              }}
-            >
-              Authority building
-            </h3>
-            <p style={{ marginBottom: 26 }}>
-              Third-party mentions, reviews, press coverage, backlinks, and
-              citations from other credible sources all signal to AI that
-              you&rsquo;re worth recommending. This is where AEO and traditional
-              SEO overlap most heavily &mdash; authority matters in both worlds.
+              If your customers ask specific questions before making a decision —
+              and most do — AEO determines whether your brand is the answer they
+              find.
             </p>
           </RevealSection>
 
-          {/* ── Inline CTA ── */}
           <RevealSection>
-            <div
-              style={{
-                background: "var(--panel)",
-                border: "1px solid var(--line-strong)",
-                borderRadius: 14,
-                padding: "30px 32px",
-                margin: "42px 0",
-                boxShadow:
-                  "0 1px 2px rgba(24,23,21,.04),0 12px 40px -26px rgba(24,23,21,.16)",
-              }}
-            >
-              <h3
-                style={{
-                  fontFamily: "var(--serif)",
-                  fontSize: 22,
-                  fontWeight: 600,
-                  letterSpacing: "-.01em",
-                }}
-              >
-                Want to see how your content performs in AI answers?
-              </h3>
-              <p
-                style={{
-                  fontFamily: "var(--sans)",
-                  fontSize: "14.5px",
-                  color: "var(--muted)",
-                  margin: "8px 0 18px",
-                  lineHeight: 1.55,
-                }}
-              >
-                I&rsquo;ll run your brand through ChatGPT, Perplexity, and
-                Google AI Overviews and show you exactly where you stand.
-              </p>
-              <Link
-                href="/ai-visibility/ai-visibility-audit/"
-                className="btn btn-primary"
-              >
-                Get a Free Snapshot <span className="arr">&rarr;</span>
+            <SectionLabel number="05" text="AEO for AI search visibility" />
+          </RevealSection>
+
+          <RevealSection delay={0.06}>
+            <p style={{ marginBottom: 26 }}>
+              AEO is the foundational layer of{" "}
+              <Link href={HUB_URL} style={linkStyle}>
+                AI visibility
               </Link>
+              . Before GEO, before platform-specific tactics, AEO determines
+              whether AI systems can extract and cite your content at all.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              The sequence matters: if your content isn&rsquo;t structured for
+              extraction, no amount of entity-building or third-party citation
+              work compensates. AI systems can&rsquo;t cite what they can&rsquo;t
+              parse. AEO is where visibility starts. GEO builds brand presence on
+              top of it. Platform-specific work extends coverage from there.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              There are emerging tools for tracking AEO performance — but AEO
+              itself is a content and structure practice, not a software purchase.
+              If you&rsquo;re looking for tracking tools, the{" "}
+              <Link href={TOOLS_URL} style={linkStyle}>
+                AI visibility tools overview
+              </Link>{" "}
+              covers what&rsquo;s currently available.
+            </p>
+          </RevealSection>
+
+          <RevealSection>
+            <SectionLabel number="06" text="What AEO is not" />
+          </RevealSection>
+
+          <RevealSection delay={0.06}>
+            <p style={{ marginBottom: 26 }}>
+              This matters — because AEO is one of the more frequently
+              misunderstood practices in digital marketing right now.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              <strong style={labelStyle}>AEO is not paid placement.</strong> You
+              cannot pay Perplexity, ChatGPT, or Google AI Overviews to cite you.
+              There is no ad unit inside an AI-generated answer. Citations are
+              earned by being credible, structured, and authoritative. There is no
+              shortcut here.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              <strong style={labelStyle}>AEO is not just adding FAQ pages.</strong>{" "}
+              FAQPage schema is one tactic inside a broader practice. Businesses
+              that add a single FAQ section and expect AI citation are missing
+              most of what drives it — content structure, authority, entity
+              clarity, and third-party signals. FAQ is a tool, not the strategy.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              <strong style={labelStyle}>AEO is not an overnight result.</strong>{" "}
+              Structural changes can produce visible lift within weeks on
+              retrieval-based platforms like Perplexity and Google AIO. Training
+              data improvements take longer — months. AEO is a compounding
+              practice, not a one-time fix.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              <strong style={labelStyle}>AEO is not only for ChatGPT.</strong> AEO
+              applies to every AI search platform: Perplexity, Google AI Overviews,
+              Gemini, Bing Copilot, and ChatGPT. The retrieval mechanics differ
+              by platform, but the AEO foundation — structured, credible, citable
+              content — applies universally.
+            </p>
+          </RevealSection>
+
+          <RevealSection>
+            <InlineAEOCTA />
+          </RevealSection>
+
+          <RevealSection>
+            <SectionLabel number="07" text="Frequently asked questions" />
+          </RevealSection>
+
+          <RevealSection delay={0.06}>
+            <div style={{ marginBottom: 36 }}>
+              {FAQ_ITEMS.map(({ q, a }) => (
+                <div className="faq-item" key={q}>
+                  <h3
+                    style={{
+                      fontFamily: "var(--serif)",
+                      fontSize: 21,
+                      fontWeight: 600,
+                      letterSpacing: "-.01em",
+                      color: "var(--ink)",
+                    }}
+                  >
+                    {q}
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: "var(--sans)",
+                      fontSize: 16,
+                      color: "var(--muted)",
+                      marginTop: 10,
+                      lineHeight: 1.65,
+                    }}
+                  >
+                    {a}
+                  </p>
+                </div>
+              ))}
             </div>
           </RevealSection>
 
-          {/* ── 05 — Who needs AEO ── */}
           <RevealSection>
-            <SectionLabel number="05" text="Who needs AEO" />
-          </RevealSection>
-
-          <RevealSection delay={0.06}>
-            <p style={{ marginBottom: 26 }}>
-              Any business that relies on being found online needs to think about
-              AEO. But some categories are feeling the shift earlier than others:
-            </p>
-
-            <ul style={{ margin: "0 0 26px 22px" }}>
-              <li style={{ marginBottom: 11 }}>
-                <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
-                  Professional services
-                </strong>{" "}
-                (lawyers, consultants, accountants) &mdash; people increasingly
-                ask AI for recommendations by city and specialty.
-              </li>
-              <li style={{ marginBottom: 11 }}>
-                <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
-                  SaaS and tech companies
-                </strong>{" "}
-                &mdash; buyers use AI to compare tools and shortlist vendors
-                before ever visiting a website.
-              </li>
-              <li style={{ marginBottom: 11 }}>
-                <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
-                  Local businesses
-                </strong>{" "}
-                &mdash; &ldquo;best [service] near me&rdquo; queries are moving
-                from Google to AI at a rapid pace.
-              </li>
-              <li style={{ marginBottom: 11 }}>
-                <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
-                  E-commerce brands
-                </strong>{" "}
-                &mdash; product recommendations from AI carry significant weight
-                because they feel personalized.
-              </li>
-            </ul>
-
-            <p style={{ marginBottom: 26 }}>
-              If your customers might ask an AI about what you do before they
-              Google it, you need AEO.
-            </p>
-          </RevealSection>
-
-          {/* ── 06 — Getting started ── */}
-          <RevealSection>
-            <SectionLabel number="06" text="Getting started" />
-          </RevealSection>
-
-          <RevealSection delay={0.06}>
-            <p style={{ marginBottom: 26 }}>
-              <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
-                1. Check your current AI visibility.
-              </strong>{" "}
-              Ask ChatGPT, Perplexity, and Google the questions your customers
-              ask. See if you appear. Read{" "}
-              <Link
-                href="/blog/how-to-check-ai-visibility/"
-                style={{
-                  color: "var(--accent)",
-                  textDecoration: "underline",
-                  textUnderlineOffset: 3,
-                  textDecorationThickness: 1,
-                }}
-              >
-                how to check your AI visibility
-              </Link>{" "}
-              for a detailed walkthrough.
-            </p>
-
-            <p style={{ marginBottom: 26 }}>
-              <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
-                2. Audit your content structure.
-              </strong>{" "}
-              Can an AI extract clean, specific answers from your key pages? If
-              your content buries the point or mixes topics, restructure it.
-            </p>
-
-            <p style={{ marginBottom: 26 }}>
-              <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
-                3. Strengthen your entity.
-              </strong>{" "}
-              Add or improve your schema markup. Make sure your Google Business
-              Profile, LinkedIn, and website all tell the same story.
-            </p>
-
-            <p style={{ marginBottom: 26 }}>
-              <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
-                4. Build authority signals.
-              </strong>{" "}
-              Pursue third-party mentions, reviews, and citations. Every
-              independent source that confirms your expertise increases
-              AI&rsquo;s confidence in recommending you.
-            </p>
-
-            <p style={{ marginBottom: 26 }}>
-              <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
-                5. Work with a specialist.
-              </strong>{" "}
-              AEO is new enough that most marketing teams haven&rsquo;t built
-              the muscle yet. An{" "}
-              <Link
-                href="/ai-visibility/answer-engine-optimization-consultant-canada/"
-                style={{
-                  color: "var(--accent)",
-                  textDecoration: "underline",
-                  textUnderlineOffset: 3,
-                  textDecorationThickness: 1,
-                }}
-              >
-                answer engine optimization consultant
-              </Link>{" "}
-              can accelerate the process and avoid the trial-and-error phase.
-            </p>
-
-            <hr
+            <p
               style={{
-                border: "none",
-                borderTop: "1px solid var(--line)",
-                margin: "42px 0",
+                fontFamily: "var(--sans)",
+                fontSize: 15,
+                color: "var(--muted)",
+                lineHeight: 1.65,
+                marginBottom: 12,
               }}
-            />
-
-            <p style={{ marginBottom: 26 }}>
-              AEO is not a replacement for SEO &mdash; it&rsquo;s an addition.
-              The businesses that adapt early get to shape how AI understands and
-              recommends them, while everyone else waits for the old playbook to
-              stop working.
+            >
+              For the full{" "}
+              <Link href={HUB_URL} style={linkStyle}>
+                AI visibility
+              </Link>{" "}
+              strategy framework and how AEO fits into it, see the hub.
+            </p>
+            <p
+              style={{
+                fontFamily: "var(--sans)",
+                fontSize: 15,
+                color: "var(--muted)",
+                lineHeight: 1.65,
+              }}
+            >
+              <em>
+                Hami Tahm is an AI visibility consultant based in Toronto.
+              </em>
             </p>
           </RevealSection>
         </div>
 
-        {/* ── Keep reading ── */}
         <div className="wrap" style={{ maxWidth: 740 }}>
           <RevealSection>
             <div
@@ -612,79 +616,26 @@ export default function WhatIsAnswerEngineOptimizationPost() {
                 Keep reading
               </div>
 
-              <Link
-                href="/blog/aeo-vs-geo-vs-seo/"
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "baseline",
-                  gap: 20,
-                  padding: "15px 0",
-                  borderBottom: "1px solid var(--line)",
-                  transition: "padding-left .2s",
-                }}
-              >
-                <span
-                  style={{
-                    fontFamily: "var(--serif)",
-                    fontSize: 19,
-                    fontWeight: 500,
-                    color: "var(--ink)",
-                  }}
-                >
-                  AEO vs GEO vs SEO Explained
-                </span>
-                <span
-                  style={{
-                    fontFamily: "var(--mono)",
-                    fontSize: "11.5px",
-                    color: "var(--faint)",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  Comparison
-                </span>
-              </Link>
-
-              <Link
-                href="/blog/what-is-ai-visibility/"
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "baseline",
-                  gap: 20,
-                  padding: "15px 0",
-                  borderBottom: "1px solid var(--line)",
-                  transition: "padding-left .2s",
-                }}
-              >
-                <span
-                  style={{
-                    fontFamily: "var(--serif)",
-                    fontSize: 19,
-                    fontWeight: 500,
-                    color: "var(--ink)",
-                  }}
-                >
-                  What Is AI Visibility?
-                </span>
-                <span
-                  style={{
-                    fontFamily: "var(--mono)",
-                    fontSize: "11.5px",
-                    color: "var(--faint)",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  Basics
-                </span>
-              </Link>
+              <KeepReadingLink
+                href={COMPARISON_URL}
+                title="AEO vs GEO vs SEO Explained"
+                tag="Comparison"
+              />
+              <KeepReadingLink
+                href={DEFINITION_URL}
+                title="What Is AI Visibility?"
+                tag="Basics"
+              />
+              <KeepReadingLink
+                href="/blog/how-to-check-ai-visibility/"
+                title="How to Check Your AI Visibility"
+                tag="Basics"
+              />
             </div>
           </RevealSection>
         </div>
       </article>
 
-      {/* ── Final CTA ── */}
       <section style={{ padding: "60px 0 80px" }}>
         <div className="wrap">
           <RevealSection>
@@ -699,7 +650,7 @@ export default function WhatIsAnswerEngineOptimizationPost() {
                   position: "relative",
                 }}
               >
-                Let&rsquo;s see if you&rsquo;re showing up.
+                Ready to implement AEO for your business?
               </h2>
               <p
                 style={{
@@ -713,16 +664,19 @@ export default function WhatIsAnswerEngineOptimizationPost() {
                   position: "relative",
                 }}
               >
-                Start with a free AI Visibility Snapshot &mdash; I&rsquo;ll show
-                you exactly how your brand appears (or doesn&rsquo;t) inside
-                ChatGPT, Perplexity, and Google AI&nbsp;Overviews.
+                Platform-specific citation work with a clear audit and prioritized
+                action plan — or start with a cross-platform{" "}
+                <Link href={AUDIT_URL} style={linkStyle}>
+                  AI visibility audit
+                </Link>{" "}
+                ($1,500 CAD flat).
               </p>
               <Link
-                href="/ai-visibility/ai-visibility-audit/"
+                href={AEO_URL}
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
               >
-                Get your free snapshot <span className="arr">&rarr;</span>
+                Work With an AEO Consultant <span className="arr">&rarr;</span>
               </Link>
             </div>
           </RevealSection>
@@ -731,8 +685,6 @@ export default function WhatIsAnswerEngineOptimizationPost() {
     </>
   );
 }
-
-/* ── Local helper ── */
 
 function SectionLabel({ number, text }: { number: string; text: string }) {
   return (
@@ -752,5 +704,94 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
       {number} &mdash; {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
     </div>
+  );
+}
+
+function InlineAEOCTA() {
+  return (
+    <div
+      style={{
+        background: "var(--panel)",
+        border: "1px solid var(--line-strong)",
+        borderRadius: 14,
+        padding: "30px 32px",
+        margin: "42px 0",
+        boxShadow:
+          "0 1px 2px rgba(24,23,21,.04),0 12px 40px -26px rgba(24,23,21,.16)",
+      }}
+    >
+      <h3
+        style={{
+          fontFamily: "var(--serif)",
+          fontSize: 22,
+          fontWeight: 600,
+          letterSpacing: "-.01em",
+        }}
+      >
+        Work with an AEO consultant
+      </h3>
+      <p
+        style={{
+          fontFamily: "var(--sans)",
+          fontSize: "14.5px",
+          color: "var(--muted)",
+          margin: "8px 0 18px",
+          lineHeight: 1.55,
+        }}
+      >
+        If you&rsquo;re ready to implement AEO — not just understand what it is
+        — the next step is working with someone who can audit where you stand and
+        build a plan specific to your industry and platforms.
+      </p>
+      <Link href={AEO_URL} className="btn btn-primary">
+        Work With an AEO Consultant <span className="arr">&rarr;</span>
+      </Link>
+    </div>
+  );
+}
+
+function KeepReadingLink({
+  href,
+  title,
+  tag,
+}: {
+  href: string;
+  title: string;
+  tag: string;
+}) {
+  return (
+    <Link
+      href={href}
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "baseline",
+        gap: 20,
+        padding: "15px 0",
+        borderBottom: "1px solid var(--line)",
+        transition: "padding-left .2s",
+      }}
+    >
+      <span
+        style={{
+          fontFamily: "var(--serif)",
+          fontSize: 19,
+          fontWeight: 500,
+          color: "var(--ink)",
+        }}
+      >
+        {title}
+      </span>
+      <span
+        style={{
+          fontFamily: "var(--mono)",
+          fontSize: "11.5px",
+          color: "var(--faint)",
+          whiteSpace: "nowrap",
+        }}
+      >
+        {tag}
+      </span>
+    </Link>
   );
 }
