@@ -322,7 +322,7 @@ export default function AIVisibilityMortgageBrokers() {
                 marginBottom: 24,
               }}
             >
-              How Homebuyers Research Mortgages in 2025
+              How Homebuyers Research Mortgages in 2026
             </h2>
             <p
               style={{

@@ -313,7 +313,7 @@ export default function AIVisibilityDentalClinics() {
                 marginBottom: 24,
               }}
             >
-              How Patients Find Dentists in 2025
+              How Patients Find Dentists in 2026
             </h2>
             <p
               style={{

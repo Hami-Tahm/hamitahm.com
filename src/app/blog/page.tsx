@@ -61,9 +61,9 @@ const posts = [
   {
     href: "/blog/best-ai-visibility-tools/",
     cat: "Tools & Comparisons",
-    title: "Best AI Visibility Tools (2025) — Complete Guide",
+    title: "Best AI Visibility Tools in 2026: Ranked by an Independent Consultant",
     excerpt:
-      "Compare the best AI visibility tools: Peec AI, AirOps, Profound, Limy, Ubersuggest, and more.",
+      "The tools that track AI search visibility — ranked, tested, and reviewed by an independent consultant who doesn't sell them.",
   },
   {
     href: "/blog/ai-visibility-tools-vs-audit/",
