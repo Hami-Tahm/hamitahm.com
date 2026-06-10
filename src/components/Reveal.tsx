@@ -15,6 +15,16 @@ export function RevealSection({
     const el = ref.current;
     if (!el) return;
 
+    // If already visible on mount, reveal immediately — prevents stuck-hidden
+    // content when JS hydrates after element is already in viewport.
+    const rect = el.getBoundingClientRect();
+    const viewportH =
+      window.innerHeight || document.documentElement.clientHeight;
+    if (rect.top < viewportH && rect.bottom > 0) {
+      el.classList.add("in");
+      return;
+    }
+
     const io = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -22,11 +32,23 @@ export function RevealSection({
           io.unobserve(el);
         }
       },
-      { threshold: 0.12 }
+      // threshold:0 so even 1px visibility triggers reveal.
+      // rootMargin pre-triggers slightly before scroll reaches element.
+      { threshold: 0, rootMargin: "0px 0px -5% 0px" }
     );
 
     io.observe(el);
-    return () => io.disconnect();
+
+    // Safety net: if observer never fires within 1.5s, force reveal.
+    const safety = window.setTimeout(() => {
+      el.classList.add("in");
+      io.disconnect();
+    }, 1500);
+
+    return () => {
+      window.clearTimeout(safety);
+      io.disconnect();
+    };
   }, []);
 
   return (
