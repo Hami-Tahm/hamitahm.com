@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -31,6 +32,13 @@ export default function Post() {
         </div>
 
         {/* Content */}
+        <Image
+          src="/images/writing/the-longevity-economy-6-high-growth-sectors/Longivity-1.png"
+          alt="Longevity economy sectors chart — market size by 2030"
+          width={752}
+          height={753}
+          style={{ width: "100%", height: "auto", borderRadius: 12, margin: "32px 0" }}
+        />
         <div
           className="post-content"
           dangerouslySetInnerHTML={ { __html: `<p>As global life expectancy increases, the focus has shifted from simply living longer to living <strong>better</strong>. This shift has birthed a massive new opportunity: the <strong>longevity economy</strong>.</p><p>Whether it's through gene therapy, personalized diets, or AI-powered wearables, the future of aging is being rewritten by science, technology, and wellness. In this post, we explore the <strong>six key longevity sectors</strong> — now sorted by their projected <strong>market size by 2030</strong>, to help you understand where the biggest opportunities lie.

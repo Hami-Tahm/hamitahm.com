@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -31,6 +32,13 @@ export default function Post() {
         </div>
 
         {/* Content */}
+        <Image
+          src="/images/writing/the-10000-hour-rule/image_2025_02_22T16_46_25_692Z.png"
+          alt="Learning curve chart showing hours invested vs mastery level for the 10,000-hour rule"
+          width={639}
+          height={439}
+          style={{ width: "100%", height: "auto", borderRadius: 12, margin: "32px 0" }}
+        />
         <div
           className="post-content"
           dangerouslySetInnerHTML={ { __html: `<div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-uho16t r-nwxazl r-1vr29t4" dir="ltr"></div>

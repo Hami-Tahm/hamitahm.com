@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -31,6 +32,13 @@ export default function Post() {
         </div>
 
         {/* Content */}
+        <Image
+          src="/images/writing/the-future-of-life-expectancy/output.png"
+          alt="Chart showing life expectancy trends over the past 100 years"
+          width={1686}
+          height={998}
+          style={{ width: "100%", height: "auto", borderRadius: 12, margin: "32px 0" }}
+        />
         <div
           className="post-content"
           dangerouslySetInnerHTML={ { __html: `<span style="font-weight: 400;">Life expectancy has increased dramatically over the last hundred years due to advancements in medicine, living conditions, and healthier lifestyles. The trend is expected to continue - increasing wealth and the march of technological innovation are vital in extending human life</span>

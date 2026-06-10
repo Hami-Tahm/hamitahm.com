@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -31,6 +32,13 @@ export default function Post() {
         </div>
 
         {/* Content */}
+        <Image
+          src="/images/writing/happiness-and-satisfaction-in-2024/1-3d79563d.png"
+          alt="Chart showing the relationship between income, happiness, and life satisfaction"
+          width={630}
+          height={1083}
+          style={{ width: "100%", height: "auto", borderRadius: 12, margin: "32px 0" }}
+        />
         <div
           className="post-content"
           dangerouslySetInnerHTML={ { __html: `<p>Economists, psychologists, and entrepreneurs have explored the intricate connection between income, happiness, and life satisfaction for decades. <span style="font-weight: 400;">Does money make us happy? There’s evidence it can, but also a complicated connection between money, happiness, and contentedness. The complex relationship between income happiness and life satisfaction has fascinated economists, psychologists and entrepreneurs for decades. Money is a factor in these areas, for sure, but its impact varies by personal circumstance, aspirations and larger economic factors, like inflation. So let’s check out the recent research.</span></p><p><hr /></p><p><h3>Key Insights: How Much Money is Enough?</h3>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -31,6 +32,20 @@ export default function Post() {
         </div>
 
         {/* Content */}
+        <Image
+          src="/images/writing/wine-profile/infoghrapgy-wine.webp"
+          alt="Wine taste profile infographic — sweetness, tannin, acidity, body, and complexity"
+          width={1408}
+          height={768}
+          style={{ width: "100%", height: "auto", borderRadius: 12, margin: "32px 0" }}
+        />
+        <Image
+          src="/images/writing/wine-profile/fav-wine.webp"
+          alt="Favorite wines that match this taste profile — Shiraz, Cabernet Sauvignon, Amarone, Barolo"
+          width={1920}
+          height={1047}
+          style={{ width: "100%", height: "auto", borderRadius: 12, margin: "32px 0" }}
+        />
         <div
           className="post-content"
           dangerouslySetInnerHTML={ { __html: `<p>When I taste wine, I like to break it down into several key dimensions. Each wine sits somewhere on a spectrum — from low to high, light to powerful. By placing a wine along these spectrums, we can clearly understand its personality.</p><p>Below are the main characteristics I use when evaluating wine.

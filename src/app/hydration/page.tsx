@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -31,6 +32,13 @@ export default function Post() {
         </div>
 
         {/* Content */}
+        <Image
+          src="/images/writing/hydration/Hydration.png"
+          alt="Hydration guide for high performers — water intake and energy optimization"
+          width={662}
+          height={487}
+          style={{ width: "100%", height: "auto", borderRadius: 12, margin: "32px 0" }}
+        />
         <div
           className="post-content"
           dangerouslySetInnerHTML={ { __html: `<span style="font-weight: 400;">Drinking enough water (<strong>at least 2-3 liters daily</strong>) helps with digestion, brain function, and energy levels. </span><span style="font-weight: 400;">Dehydration can cause <strong>headaches</strong>, <strong>fatigue</strong>, and <strong>poor concentration</strong>.</span></p><p>We will go over some key points in the discussion.

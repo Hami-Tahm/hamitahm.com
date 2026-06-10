@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -31,6 +32,13 @@ export default function Post() {
         </div>
 
         {/* Content */}
+        <Image
+          src="/images/writing/invest-amid-inflation-in-canada/CAD.png"
+          alt="Canadian dollar USD/CAD exchange rate chart showing currency depreciation"
+          width={860}
+          height={577}
+          style={{ width: "100%", height: "auto", borderRadius: 12, margin: "32px 0" }}
+        />
         <div
           className="post-content"
           dangerouslySetInnerHTML={ { __html: `<p>Recently, the weakening Canadian dollar (CAD) against the US dollar (USD) has raised concerns for many investors. <a href="https://www.google.com/finance/quote/USD-CAD?sa=X&ved=2ahUKEwja8biVxp2KAxW9nokEHVGtPTkQmY0JegQIKBAu&window=1Y">As of December 10, 2024</a>, the USD/CAD exchange rate is <strong>1.4167</strong>, marking a 4.32% increase over the past year. This article explores how one might consider diversifying investments to combat inflation and currency depreciation.</p><p><em>Note: <strong>This is not financial advice—just personal curiosity and exploration.</strong></em></p><p> </p><p><img class="aligncenter" src="https://hamitahm.com/wp-content/uploads/2024/12/CAD.png" width="400" height="268" />

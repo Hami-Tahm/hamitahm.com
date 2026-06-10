@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -28,6 +29,16 @@ export default function Post() {
         </h1>
         <div style={ { fontFamily: "var(--mono)", fontSize: 12, color: "var(--faint)", marginBottom: 48 } }>
           Mar 02, 2026 &mdash; Hami Tahm
+        </div>
+
+        {/* Exercise Icons */}
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 16, justifyContent: "center", margin: "32px 0" }}>
+          <Image src="/images/writing/under-30/1.jpg" alt="Strength exercise icon — squats" width={93} height={93} style={{ borderRadius: 12 }} />
+          <Image src="/images/writing/under-30/2.jpg" alt="Strength exercise icon — push-ups" width={93} height={93} style={{ borderRadius: 12 }} />
+          <Image src="/images/writing/under-30/3.jpg" alt="Strength exercise icon — rows" width={93} height={93} style={{ borderRadius: 12 }} />
+          <Image src="/images/writing/under-30/4.jpg" alt="Strength exercise icon — plank" width={93} height={93} style={{ borderRadius: 12 }} />
+          <Image src="/images/writing/under-30/7.jpg" alt="Strength exercise icon — lunges" width={93} height={93} style={{ borderRadius: 12 }} />
+          <Image src="/images/writing/under-30/9.jpg" alt="Strength exercise icon — full body" width={93} height={93} style={{ borderRadius: 12 }} />
         </div>
 
         {/* Content */}
