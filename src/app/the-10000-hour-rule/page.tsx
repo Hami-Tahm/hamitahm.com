@@ -3,9 +3,17 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "The 10,000-Hour Rule: How Many Hours Do You Need to Reach 7/10 Mastery?",
-  description: "The 10,000-Hour Rule: How Many Hours Do You Need to Reach 7/10 Mastery? — by Hami Tahm",
+  title: "The 10,000-Hour Rule — Hours to Reach 7/10 Mastery",
+  description:
+    "How many hours does it actually take to reach 7/10 mastery in any skill? A practical breakdown of the 10,000-hour rule, with hour estimates for digital marketing, software, languages, and more.",
+  alternates: {
+    canonical: "https://hamitahm.com/the-10000-hour-rule/",
+  },
 };
+
+const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
+const HUB_URL = "/ai-visibility/";
+const CASE_STUDY_URL = "/case-studies/homecalc-ai-visibility/";
 
 export default function Post() {
   return (
@@ -29,6 +37,47 @@ export default function Post() {
         </h1>
         <div style={ { fontFamily: "var(--mono)", fontSize: 12, color: "var(--faint)", marginBottom: 48 } }>
           Feb 22, 2025 &mdash; Hami Tahm
+        </div>
+
+        {/* Author note — bridge from authority post to commercial */}
+        <div
+          style={{
+            background: "var(--panel, #f6f3ec)",
+            border: "1px solid var(--line-strong, #d8d2c4)",
+            borderLeft: "3px solid var(--accent, #0f6e78)",
+            borderRadius: 10,
+            padding: "20px 22px",
+            margin: "0 0 36px",
+            fontFamily: "var(--sans)",
+            fontSize: 15,
+            lineHeight: 1.6,
+            color: "var(--ink, #1a1a1a)",
+          }}
+        >
+          <div
+            style={{
+              fontFamily: "var(--mono)",
+              fontSize: 11,
+              letterSpacing: ".1em",
+              textTransform: "uppercase",
+              color: "var(--accent, #0f6e78)",
+              marginBottom: 10,
+            }}
+          >
+            From the author
+          </div>
+          <p style={{ margin: 0 }}>
+            This post is one of the most-cited results in Microsoft Copilot
+            for queries about mastery and skill timelines &mdash; over 7,000
+            AI citations and counting. I do the same thing professionally for
+            other businesses.{" "}
+            <Link
+              href={AUDIT_URL}
+              style={{ color: "var(--accent, #0f6e78)", fontWeight: 600 }}
+            >
+              See the AI Visibility Audit &rarr;
+            </Link>
+          </p>
         </div>
 
         {/* Content */}
@@ -246,11 +295,109 @@ export default function Post() {
 <div class="css-146c3p1 r-bcqeeo r-1ttztb7 r-qvutc0 r-37j5jr r-a023e6 r-16dba41 r-1adg3ll r-a8ghvy r-p1pxzi" dir="ltr"></div>` } }
         />
 
+        {/* Final CTA bridge — the meta proof */}
+        <div
+          style={{
+            marginTop: 56,
+            background: "var(--panel, #f6f3ec)",
+            border: "1px solid var(--line-strong, #d8d2c4)",
+            borderRadius: 14,
+            padding: "36px 32px",
+            textAlign: "center",
+          }}
+        >
+          <div
+            style={{
+              fontFamily: "var(--mono)",
+              fontSize: 11,
+              letterSpacing: ".12em",
+              textTransform: "uppercase",
+              color: "var(--accent, #0f6e78)",
+              marginBottom: 14,
+            }}
+          >
+            The meta proof
+          </div>
+          <h2
+            style={{
+              fontFamily: "var(--serif)",
+              fontWeight: 500,
+              fontSize: "clamp(24px, 3.4vw, 32px)",
+              lineHeight: 1.18,
+              letterSpacing: "-.015em",
+              marginBottom: 16,
+              maxWidth: "24ch",
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+          >
+            This article gets 7,000+ AI citations a quarter.
+          </h2>
+          <p
+            style={{
+              fontSize: 16,
+              color: "var(--muted, #555)",
+              lineHeight: 1.6,
+              maxWidth: "52ch",
+              marginLeft: "auto",
+              marginRight: "auto",
+              marginBottom: 24,
+            }}
+          >
+            When people ask Microsoft Copilot &ldquo;how many hours to master a
+            skill,&rdquo; this post is one of the named sources. That&rsquo;s
+            not luck. It&rsquo;s the same AI visibility methodology I now run
+            for businesses &mdash; documented in the{" "}
+            <Link
+              href={CASE_STUDY_URL}
+              style={{ color: "var(--accent, #0f6e78)", fontWeight: 500 }}
+            >
+              HomeCalc case study
+            </Link>{" "}
+            (1,100+ AI citations in 30 days on a YMYL site under three months
+            old).
+          </p>
+          <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
+            <Link
+              href={AUDIT_URL}
+              style={{
+                display: "inline-block",
+                background: "var(--accent, #0f6e78)",
+                color: "#fff",
+                fontFamily: "var(--sans)",
+                fontSize: 15,
+                fontWeight: 600,
+                padding: "13px 24px",
+                borderRadius: "999px",
+                textDecoration: "none",
+              }}
+            >
+              Get Your AI Visibility Audit &rarr;
+            </Link>
+            <Link
+              href={HUB_URL}
+              style={{
+                display: "inline-block",
+                color: "var(--ink, #1a1a1a)",
+                fontFamily: "var(--sans)",
+                fontSize: 15,
+                fontWeight: 500,
+                padding: "13px 24px",
+                borderRadius: "999px",
+                border: "1px solid var(--line-strong, #d8d2c4)",
+                textDecoration: "none",
+              }}
+            >
+              How AI visibility works
+            </Link>
+          </div>
+        </div>
+
         {/* Author box */}
-        <div style={ { marginTop: 60, padding: "24px 0", borderTop: "1px solid var(--line)", display: "flex", gap: 16, alignItems: "center" } }>
+        <div style={{ marginTop: 36, padding: "24px 0", borderTop: "1px solid var(--line)", display: "flex", gap: 16, alignItems: "center" }}>
           <div>
-            <div style={ { fontFamily: "var(--serif)", fontSize: 18, fontWeight: 500 } }>Hami Tahm</div>
-            <div style={ { fontFamily: "var(--mono)", fontSize: 12, color: "var(--muted)" } }>Tech Founder &middot; Toronto</div>
+            <div style={{ fontFamily: "var(--serif)", fontSize: 18, fontWeight: 500 }}>Hami Tahm</div>
+            <div style={{ fontFamily: "var(--mono)", fontSize: 12, color: "var(--muted)" }}>AI Visibility Consultant &middot; Toronto</div>
           </div>
         </div>
       </div>
