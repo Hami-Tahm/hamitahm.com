@@ -52,6 +52,7 @@ const siteStructuredData = {
         "https://x.com/hamitahm",
         "https://homecalc.ca",
         "https://houmse.com",
+        "https://dimaht.com/",
       ],
     },
     {
