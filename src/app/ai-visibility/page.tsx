@@ -1098,7 +1098,7 @@ export default function AIVisibilityPage() {
           </RevealSection>
 
           <RevealSection delay={0.06}>
-            <div className="ladder">
+            <div className="ladder ladder-3">
               <div className="tier">
                 <div
                   style={{
@@ -1119,7 +1119,7 @@ export default function AIVisibilityPage() {
                     lineHeight: 1.25,
                   }}
                 >
-                  Snapshot
+                  Audit
                 </h3>
                 <div
                   style={{
@@ -1129,7 +1129,7 @@ export default function AIVisibilityPage() {
                     marginTop: 8,
                   }}
                 >
-                  Free
+                  $1,500 CAD &middot; flat
                 </div>
                 <p
                   style={{
@@ -1139,9 +1139,9 @@ export default function AIVisibilityPage() {
                     lineHeight: 1.55,
                   }}
                 >
-                  A quick read on whether AI search engines mention you today
-                  &mdash; delivered in 48&nbsp;hours, no&nbsp;cost, no
-                  obligation.
+                  Full diagnosis of your AI footprint: where you appear, where
+                  competitors appear, and the exact gaps to close &mdash;
+                  delivered in 7&nbsp;days.
                 </p>
               </div>
 
@@ -1165,50 +1165,6 @@ export default function AIVisibilityPage() {
                     lineHeight: 1.25,
                   }}
                 >
-                  Audit
-                </h3>
-                <div
-                  style={{
-                    fontFamily: "var(--mono)",
-                    fontSize: 13,
-                    marginTop: 8,
-                  }}
-                >
-                  $750 &ndash; $2,500
-                </div>
-                <p
-                  style={{
-                    fontSize: "13.5px",
-                    color: "var(--muted)",
-                    marginTop: 10,
-                    lineHeight: 1.55,
-                  }}
-                >
-                  Full diagnosis of your AI footprint: where you appear, where
-                  competitors appear, and the exact gaps to close.
-                </p>
-              </div>
-
-              <div className="tier">
-                <div
-                  style={{
-                    fontFamily: "var(--mono)",
-                    fontSize: 11,
-                    color: "var(--accent)",
-                    letterSpacing: ".04em",
-                  }}
-                >
-                  Step 03
-                </div>
-                <h3
-                  style={{
-                    fontFamily: "var(--serif)",
-                    fontSize: 21,
-                    fontWeight: 600,
-                    marginTop: 10,
-                    lineHeight: 1.25,
-                  }}
-                >
                   Sprint
                 </h3>
                 <div
@@ -1218,7 +1174,7 @@ export default function AIVisibilityPage() {
                     marginTop: 8,
                   }}
                 >
-                  $3,000 &ndash; $8,000
+                  from $5,000
                 </div>
                 <p
                   style={{
@@ -1243,7 +1199,7 @@ export default function AIVisibilityPage() {
                     letterSpacing: ".04em",
                   }}
                 >
-                  Step 04
+                  Step 03
                 </div>
                 <h3
                   style={{
@@ -1263,7 +1219,7 @@ export default function AIVisibilityPage() {
                     marginTop: 8,
                   }}
                 >
-                  $2,000 &ndash; $6,000/mo
+                  from $2,500/mo
                 </div>
                 <p
                   style={{

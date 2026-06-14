@@ -398,15 +398,15 @@ export default function BlogIndexPage() {
                   marginTop: 5,
                 }}
               >
-                Get a free AI Visibility Snapshot for your business &mdash; no
-                commitment.
+                Book a $1,500 AI Visibility Audit &mdash; full diagnosis of
+                where AI engines mention you, delivered in 7&nbsp;days.
               </p>
             </div>
             <Link
               href="/ai-visibility/ai-visibility-audit/"
               className="btn btn-primary"
             >
-              Get a Free Snapshot <span className="arr">&rarr;</span>
+              Book Your AI Visibility Audit <span className="arr">&rarr;</span>
             </Link>
           </div>
         </RevealSection>
