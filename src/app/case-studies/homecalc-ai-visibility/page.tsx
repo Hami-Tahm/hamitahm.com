@@ -5,6 +5,7 @@ import { RevealSection } from "@/components/Reveal";
 import {
   HOMECALC_CITED_PAGES,
   HOMECALC_PROOF,
+  HOMECALC_TOP_QUERIES,
   homecalcPageUrl,
 } from "@/lib/homecalc-proof";
 
@@ -12,12 +13,12 @@ const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const TURNAROUND = "7 business days";
 const CHART_SRC = "/images/case-studies/homecalc-citation-chart.png";
 const CHART_ALT =
-  "HomeCalc.ca AI citation growth chart — 1,100 total citations across 15 cited pages, May 2026. Citations begin climbing on May 24 and accelerate to roughly 200 per day.";
+  "HomeCalc.ca AI citation growth chart, May–June 2026 — citations climbing from May 24 through mid-June, reaching 3,100+ total across 20+ cited pages, with daily peaks of 250+.";
 
 export const metadata: Metadata = {
   title: "HomeCalc.ca AI Visibility Case Study",
   description:
-    "How HomeCalc.ca went from near-zero to 1,100+ AI citations in 30 days on a YMYL financial site under three months old. By Hami Tahm.",
+    "How HomeCalc.ca went from near-zero to 3,100+ AI citations in 60 days on a YMYL financial site under three months old — now commanding up to 88% citation share on key queries. By Hami Tahm.",
   alternates: {
     canonical: "https://hamitahm.com/case-studies/homecalc-ai-visibility/",
   },
@@ -51,11 +52,10 @@ const PROCESS_STEPS = [
   },
 ] as const;
 
-const TOP_QUERIES = [
-  ["best rent increase calculator", "81"],
-  ["how much mortgage can I afford", "51"],
-  ["covering closing costs", "39"],
-] as const;
+const TOP_QUERIES = HOMECALC_TOP_QUERIES.map(
+  ({ query, citations, share }) =>
+    [query, `${citations} · ${share} AI citation share`] as const,
+);
 
 const VERTICALS = [
   {
@@ -97,6 +97,7 @@ const structuredData = {
       "@type": "Article",
       headline: "HomeCalc.ca — AI Visibility Case Study",
       datePublished: "2026-05-01",
+      dateModified: "2026-06-17",
       author: {
         "@type": "Person",
         name: "Hami Tahm",
@@ -177,7 +178,7 @@ export default function HomeCalcCaseStudy() {
               <Link href="/hami-tahm/" style={{ color: "var(--accent)" }}>
                 Hami Tahm
               </Link>{" "}
-              — May 2026.
+              — May 2026. Updated June 17, 2026 with latest citation data.
             </p>
           </RevealSection>
 
@@ -192,11 +193,13 @@ export default function HomeCalcCaseStudy() {
               }}
             >
               HomeCalc.ca is a Canadian financial calculator site — under three
-              months old — operating in one of Google&rsquo;s most scrutinized
-              content categories: personal finance. After an AI visibility audit
-              by Hami Tahm, the site went from near-zero AI citations to over
-              1,100 citations in 30 days, with 15 pages being cited across
-              ChatGPT, Perplexity, and Google AI Overviews.
+              months old at the time of the audit — operating in one of
+              Google&rsquo;s most scrutinized content categories: personal
+              finance. After an AI visibility audit by Hami Tahm, the site went
+              from near-zero AI citations to 3,100+ citations in 60 days, with
+              20+ pages cited across major AI search platforms — and now
+              commands up to 88% citation share on key Canadian financial
+              queries.
             </p>
           </RevealSection>
 
@@ -393,10 +396,13 @@ export default function HomeCalcCaseStudy() {
                 marginBottom: 28,
               }}
             >
-              HomeCalc.ca accumulated over 1,100 AI citations across 15 pages in
-              under 30 days — on a financial site less than three months old.
-              The mortgage-qualifier-calculator page alone received 231
-              citations.
+              HomeCalc.ca accumulated 3,100+ AI citations across 20+ pages in
+              60 days — on a financial site less than three months old at the
+              time of the audit. The closing-cost-calculator page alone received
+              484 citations, and on the &ldquo;mortgage affordability calculator&rdquo;
+              query, HomeCalc now commands an 88% citation share — meaning
+              nearly nine out of every ten AI answers on that query cite
+              HomeCalc.
             </p>
           </RevealSection>
 
@@ -432,8 +438,10 @@ export default function HomeCalcCaseStudy() {
                   maxWidth: "62ch",
                 }}
               >
-                Citations began climbing around May 24, 2026 and accelerated
-                consistently — reaching peaks of roughly 200 citations per day.
+                Citations began climbing around May 24, 2026 and have
+                accelerated consistently — reaching peaks of 250+ citations per
+                day by mid-June, with total accumulation exceeding 3,100 across
+                20+ cited pages.
               </figcaption>
             </figure>
           </RevealSection>
@@ -453,7 +461,7 @@ export default function HomeCalcCaseStudy() {
             <DataTable
               headers={["Page", "AI Citations"]}
               rows={HOMECALC_CITED_PAGES.map((page) => ({
-                label: page.path,
+                label: page.label,
                 value: page.citations,
                 href: homecalcPageUrl(page.path),
               }))}
@@ -470,12 +478,46 @@ export default function HomeCalcCaseStudy() {
                 marginBottom: 16,
               }}
             >
-              Top grounding queries
+              Top grounding queries &amp; market share
             </h3>
+            <p
+              style={{
+                fontSize: 15,
+                color: "var(--muted)",
+                lineHeight: 1.65,
+                maxWidth: "62ch",
+                marginBottom: 16,
+              }}
+            >
+              &ldquo;Citation share&rdquo; is the percentage of all AI citations
+              for a given query that came from HomeCalc.ca. An 88% share means
+              that when AI engines answered this query, they cited HomeCalc
+              nearly nine times out of ten.
+            </p>
             <DataTable
               headers={["Query", "AI Citations"]}
               rows={TOP_QUERIES.map(([label, value]) => ({ label, value }))}
             />
+          </RevealSection>
+
+          <RevealSection delay={0.22}>
+            <p
+              style={{
+                marginTop: 40,
+                fontSize: "clamp(17px, 2vw, 19px)",
+                color: "var(--ink)",
+                lineHeight: 1.65,
+                maxWidth: "62ch",
+                paddingTop: 24,
+                borderTop: "1px solid var(--line)",
+                fontWeight: 500,
+              }}
+            >
+              Volume matters. Dominance matters more. HomeCalc is no longer just
+              cited by AI engines for Canadian financial calculations — for
+              several of the most important queries in the category, it is the
+              <em style={{ fontStyle: "italic" }}> default source</em>.
+            </p>
           </RevealSection>
         </div>
       </section>
