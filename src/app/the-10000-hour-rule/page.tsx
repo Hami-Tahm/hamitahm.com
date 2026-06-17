@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
 
 export const metadata: Metadata = {
   title: "The 10,000-Hour Rule — Hours to Reach 7/10 Mastery",
@@ -353,8 +354,8 @@ export default function Post() {
             >
               HomeCalc case study
             </Link>{" "}
-            (1,100+ AI citations in 30 days on a YMYL site under three months
-            old).
+            ({HOMECALC_CLAIMS.citationsInTimeframe} on a YMYL site under three
+            months old).
           </p>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
             <Link
