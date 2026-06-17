@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
-import { HOMECALC_PROOF } from "@/lib/homecalc-proof";
+import { HOMECALC_PROOF, HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const CASE_STUDY_URL = HOMECALC_PROOF.caseStudyPath;
@@ -127,7 +127,7 @@ const FAQ_ITEMS: {
   },
   {
     q: "How quickly can I see results?",
-    a: "HomeCalc.ca started seeing citations climb within 48 hours of implementing the audit's recommendations, with the full lift visible in 30 days. Timelines vary by clinic, but the audit identifies which changes produce results fastest.",
+    a: `HomeCalc.ca started seeing citations climb within 48 hours of implementing the audit's recommendations, with the ${HOMECALC_CLAIMS.fullLiftVisible}. Timelines vary by clinic, but the audit identifies which changes produce results fastest.`,
   },
   {
     q: "How much does the audit cost?",
@@ -147,7 +147,7 @@ const FAQ_ITEMS: {
 const RELATED_LINKS = [
   { label: "The full AI visibility audit", href: AUDIT_URL },
   {
-    label: "HomeCalc case study — 1,100 AI citations in 30 days",
+    label: HOMECALC_CLAIMS.caseStudyCardLabel,
     href: CASE_STUDY_URL,
   },
   { label: "What is AI visibility?", href: "/ai-visibility/" },

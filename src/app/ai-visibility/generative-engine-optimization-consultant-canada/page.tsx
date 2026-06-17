@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
-import { HOMECALC_PROOF } from "@/lib/homecalc-proof";
+import { HOMECALC_PROOF, HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const AEO_URL =
@@ -146,7 +146,7 @@ const FAQ_ITEMS: {
   },
   {
     q: "How quickly can I see GEO results?",
-    a: "HomeCalc.ca saw AI citations begin climbing within 48 hours of implementing the audit's recommendations, with the full 1,100-citation lift visible in 30 days. Timelines vary by existing entity signal strength, source diversity, and how much rebuilding is required.",
+    a: `HomeCalc.ca saw AI citations begin climbing within 48 hours of implementing the audit's recommendations, with the ${HOMECALC_CLAIMS.fullLiftVisible}. Timelines vary by existing entity signal strength, source diversity, and how much rebuilding is required.`,
   },
   {
     q: "What do I receive when working with a GEO consultant?",

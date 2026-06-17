@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
+import { HOMECALC_PROOF, HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
 
 const PORTRAIT_SRC = "/images/hami-tahm/hami-tahm-portrait.png";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
@@ -151,7 +152,7 @@ export default function AboutPage() {
           <RevealSection delay={0.24}>
             <div className="prose">
               <p className="big">
-                Hami Tahm is a Canadian AI visibility consultant who built HomeCalc.ca from zero to 1,100 AI citations in 30 days while the domain was under three months old.
+                Hami Tahm is a Canadian AI visibility consultant who built HomeCalc.ca from {HOMECALC_CLAIMS.zeroToCitations} while the domain was {HOMECALC_PROOF.domainAge}.
               </p>
               <p>
                 I&rsquo;m Hami Tahm, a tech entrepreneur focused on building and testing scalable digital products across multiple industries.

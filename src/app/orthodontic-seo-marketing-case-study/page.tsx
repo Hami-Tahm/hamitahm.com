@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
+import { HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const DENTAL_URL = "/ai-visibility/ai-visibility-for-dental-clinics/";
@@ -582,7 +583,7 @@ export default function OrthodonticSEOCaseStudy() {
                 href={CASE_STUDY_URL}
                 style={{ color: "var(--accent)", fontWeight: 500 }}
               >
-                HomeCalc.ca &mdash; 1,100+ AI citations in 30 days
+                HomeCalc.ca &mdash; {HOMECALC_CLAIMS.citationsInTimeframe}
               </Link>{" "}
               on a YMYL site under three months old.
             </p>

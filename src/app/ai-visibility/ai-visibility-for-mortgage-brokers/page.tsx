@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
-import { HOMECALC_PROOF } from "@/lib/homecalc-proof";
+import {
+  HOMECALC_PROOF,
+  HOMECALC_CLAIMS,
+  HOMECALC_CITED_PAGES,
+} from "@/lib/homecalc-proof";
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const CASE_STUDY_URL = HOMECALC_PROOF.caseStudyPath;
@@ -27,11 +31,13 @@ const MORTGAGE_RESEARCH_QUERIES = [
   { query: "Canada mortgage qualification rules", citations: "9" },
 ] as const;
 
-const MORTGAGE_TOP_PAGES = [
-  { path: "mortgage-qualifier-calculator", citations: "231" },
-  { path: "closing-cost-calculator", citations: "194" },
-  { path: "mortgage-affordability-calculator", citations: "74" },
-] as const;
+/**
+ * Mortgage-relevant subset of HomeCalc top cited pages. Auto-derives from the
+ * shared lib — update homecalc-proof.ts and this list refreshes automatically.
+ */
+const MORTGAGE_TOP_PAGES = HOMECALC_CITED_PAGES.filter(
+  (p) => p.path.includes("mortgage") || p.path.includes("closing"),
+);
 
 const BROKER_CHECKS = [
   "Whether your brokerage is mentioned when homebuyers ask for mortgage brokers in your city",
@@ -124,7 +130,7 @@ const FAQ_ITEMS: {
 }[] = [
   {
     q: "Do Canadian homebuyers really use AI for mortgage research?",
-    a: 'Yes. HomeCalc.ca, a Canadian mortgage calculator site, received over 1,100 AI citations in 30 days — across queries like "how much mortgage can I afford," "covering closing costs," and "Canada mortgage qualification rules." These are real questions Canadian homebuyers asked AI tools in May 2026. AI tools answered them. Brokerages who weren\'t cited weren\'t in the answer.',
+    a: `Yes. HomeCalc.ca, a Canadian mortgage calculator site, received ${HOMECALC_CLAIMS.overCitationsInTimeframe} — across queries like "how much mortgage can I afford," "covering closing costs," and "Canada mortgage qualification rules." These are real questions Canadian homebuyers asked AI tools. AI tools answered them. Brokerages who weren't cited weren't in the answer.`,
   },
   {
     q: "How is this different from my current SEO?",
@@ -136,7 +142,7 @@ const FAQ_ITEMS: {
   },
   {
     q: "How quickly can I see results?",
-    a: "HomeCalc.ca started seeing AI citations climb within 48 hours of implementing the audit's recommendations, with the full 1,100-citation lift visible in 30 days. Timelines vary by brokerage size, existing content footprint, and which gaps the audit identifies first.",
+    a: `HomeCalc.ca started seeing AI citations climb within 48 hours of implementing the audit's recommendations, with the ${HOMECALC_CLAIMS.fullLiftVisible}. Timelines vary by brokerage size, existing content footprint, and which gaps the audit identifies first.`,
   },
   {
     q: "What exactly do I receive?",
@@ -156,7 +162,7 @@ const FAQ_ITEMS: {
 const RELATED_LINKS = [
   { label: "The full AI visibility audit", href: AUDIT_URL },
   {
-    label: "HomeCalc case study — 1,100 AI citations in 30 days",
+    label: HOMECALC_CLAIMS.caseStudyCardLabel,
     href: CASE_STUDY_URL,
   },
   { label: "What is AI visibility?", href: "/ai-visibility/" },
@@ -535,7 +541,7 @@ export default function AIVisibilityMortgageBrokers() {
                 marginBottom: 24,
               }}
             >
-              A Mortgage Calculator Site. 1,100 AI Citations. 30 Days.
+              A Mortgage Calculator Site. {HOMECALC_CLAIMS.heroPunchLine}
             </h2>
           </RevealSection>
 
@@ -560,9 +566,9 @@ export default function AIVisibilityMortgageBrokers() {
                 HomeCalc.ca is a Canadian financial calculator platform — mortgage
                 qualifiers, closing-cost estimators, affordability tools. Under
                 three months old at the time of the audit. After an AI visibility
-                audit by Hami Tahm, HomeCalc went from near-zero AI citations to over{" "}
-                {HOMECALC_PROOF.citations} across {HOMECALC_PROOF.pagesCited} pages
-                in {HOMECALC_PROOF.timeframe}.
+                audit by Hami Tahm, HomeCalc went from{" "}
+                {HOMECALC_CLAIMS.zeroToCitations}, across{" "}
+                {HOMECALC_PROOF.pagesCited} pages.
               </p>
               <p
                 style={{
@@ -585,7 +591,7 @@ export default function AIVisibilityMortgageBrokers() {
                   gap: 8,
                 }}
               >
-                {MORTGAGE_TOP_PAGES.map(({ path, citations }) => (
+                {MORTGAGE_TOP_PAGES.map(({ label, path, citations }) => (
                   <li
                     key={path}
                     style={{
@@ -595,7 +601,7 @@ export default function AIVisibilityMortgageBrokers() {
                     }}
                   >
                     <strong style={{ color: "var(--ink)", fontWeight: 600 }}>
-                      {path}
+                      {label}
                     </strong>
                     {" — "}
                     {citations} citations

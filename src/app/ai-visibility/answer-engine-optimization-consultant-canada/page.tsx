@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
-import { HOMECALC_PROOF } from "@/lib/homecalc-proof";
+import { HOMECALC_PROOF, HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const GEO_URL = "/ai-visibility/generative-engine-optimization-consultant-canada/";
@@ -138,7 +138,7 @@ const FAQ_ITEMS: {
   },
   {
     q: "How long does AEO take to show results?",
-    a: "HomeCalc.ca saw citations climb within 48 hours of implementing the audit's recommendations, with the full lift visible in 30 days. Timelines vary by site, page count, and existing authority — but structural changes tend to produce measurable shifts within weeks, not months.",
+    a: `HomeCalc.ca saw citations climb within 48 hours of implementing the audit's recommendations, with the ${HOMECALC_CLAIMS.fullLiftVisible}. Timelines vary by site, page count, and existing authority — but structural changes tend to produce measurable shifts within weeks, not months.`,
   },
   {
     q: "Do I need AEO if I already rank on Google?",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
+import { HOMECALC_PROOF, HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const CONSULTANT_URL = "/ai-visibility/ai-visibility-consultant-canada/";
@@ -374,8 +375,8 @@ export default function SEOExpertTorontoPage() {
               HomeCalc.ca is a Canadian financial calculator site — under three
               months old at the time of the audit, in YMYL (Your Money or Your
               Life), one of Google&rsquo;s strictest content categories. After
-              an AI visibility audit, the site went from near-zero AI citations
-              to over 1,100 in 30 days, with 15 pages cited across ChatGPT,
+              an AI visibility audit, the site went from {HOMECALC_CLAIMS.zeroToCitations},
+              with {HOMECALC_PROOF.pagesCited} pages cited across ChatGPT,
               Perplexity, and Google AI Overviews.
             </p>
             <p

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
-import { HOMECALC_PROOF } from "@/lib/homecalc-proof";
+import { HOMECALC_PROOF, HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const WALKTHROUGH_MINUTES = 60;
@@ -32,7 +32,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "How quickly can I see results?",
-    a: "HomeCalc.ca started seeing AI citations climb within 48 hours of implementing the audit's recommendations, with the full 1,100-citation lift visible in 30 days. Timelines vary by business size, existing content, and which gaps the audit identifies first.",
+    a: `HomeCalc.ca started seeing AI citations climb within 48 hours of implementing the audit's recommendations, with the ${HOMECALC_CLAIMS.fullLiftVisible}. Timelines vary by business size, existing content, and which gaps the audit identifies first.`,
   },
 ] as const;
 
