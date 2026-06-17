@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { RevealSection } from "@/components/Reveal";
 import { buildBlogSchema } from "@/lib/blog-schema";
 import { HOMECALC_PROOF } from "@/lib/homecalc-proof";
@@ -167,13 +168,15 @@ export default function HowToGetCitedByPerplexityPost() {
                 borderTop: "1px solid var(--line)",
               }}
             >
-              <div
+              <Image
+                src="/images/hami-tahm/hami-tahm-portrait.png"
+                alt="Hami Tahm"
+                width={38}
+                height={38}
                 style={{
-                  width: 38,
-                  height: 38,
                   borderRadius: "50%",
                   border: "1px solid var(--line-strong)",
-                  background: "linear-gradient(145deg,#e8dfce,#fff)",
+                  objectFit: "cover",
                   flexShrink: 0,
                 }}
               />
