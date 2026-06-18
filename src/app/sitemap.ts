@@ -43,6 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/blog/best-ai-visibility-tools/", priority: 0.85 },
     { path: "/blog/ai-visibility-tools-vs-audit/", priority: 0.7 },
     { path: "/blog/peec-vs-profound-vs-airops/", priority: 0.65 },
+    { path: "/blog/faq-schema-accordion-bug/", priority: 0.75 },
 
     // ── Writing index ────────────────────────────────────────────────────
     { path: "/writing/", priority: 0.7, changeFrequency: "weekly" },

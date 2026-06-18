@@ -79,6 +79,13 @@ const posts = [
     excerpt:
       "Detailed comparison of the three leading AI visibility platforms — features, pricing, and fit.",
   },
+  {
+    href: "/blog/faq-schema-accordion-bug/",
+    cat: "Technical SEO",
+    title: "The Silent SEO Bug Hiding in Your React FAQ Accordion",
+    excerpt:
+      "If your React site uses SSG/SSR with a collapsible FAQ accordion and FAQPage schema, Google may be penalizing you right now.",
+  },
 ];
 
 const structuredData = {
