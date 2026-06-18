@@ -6,9 +6,9 @@ import { buildBlogSchema } from "@/lib/blog-schema";
 
 const SLUG = "best-ai-visibility-tools";
 const ARTICLE_TITLE =
-  "Best AI Visibility Tools in 2026: Ranked by an Independent Consultant";
+  "Best AI Visibility Tools & Checkers in 2026: Ranked by an Independent Consultant";
 const ARTICLE_DESCRIPTION =
-  "The tools that track AI search visibility — ranked, tested, and reviewed by an independent consultant who doesn't sell them. Includes trackers, analytics platforms, and LLM optimization tools.";
+  "The best AI visibility tools and checkers in 2026 — ranked, tested, and reviewed by an independent consultant who doesn't sell them. Covers trackers, free AI visibility checkers, analytics platforms, and LLM optimization tools.";
 const DATE_PUBLISHED = "2026-06-09";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const HUB_URL = "/ai-visibility/";
@@ -374,7 +374,7 @@ export default function BestAIVisibilityToolsPost() {
                 letterSpacing: "-.025em",
               }}
             >
-              Best AI visibility tools in 2026 —{" "}
+              Best AI visibility tools and checkers in 2026 —{" "}
               <em style={{ fontStyle: "italic", color: "var(--accent)" }}>
                 an independent consultant&rsquo;s rankings.
               </em>
@@ -392,8 +392,9 @@ export default function BestAIVisibilityToolsPost() {
                 lineHeight: 1.5,
               }}
             >
-              Ten platforms ranked on coverage, accuracy, and who they&rsquo;re
-              actually for — no affiliate links, no vendor relationships.
+              Ten AI visibility platforms and checkers ranked on coverage,
+              accuracy, and who they&rsquo;re actually for — no affiliate links,
+              no vendor relationships.
             </p>
           </RevealSection>
 
@@ -482,8 +483,52 @@ export default function BestAIVisibilityToolsPost() {
                 }}
               >
                 Profound leads for enterprise cross-platform tracking. Otterly.ai
-                is the best SMB entry point. Most SEO tools only cover Google AI
-                Overviews — know that before you buy.
+                is the best SMB entry point. Free AI visibility checkers cover
+                point-in-time spot-checks, not ongoing tracking. Most SEO tools
+                only cover Google AI Overviews — know that before you buy.
+              </p>
+            </div>
+          </RevealSection>
+
+          <RevealSection delay={0.05}>
+            <div
+              style={{
+                background: "var(--panel)",
+                border: "1px solid var(--line-strong)",
+                borderLeft: "3px solid var(--accent)",
+                borderRadius: 10,
+                padding: "20px 22px",
+                margin: "0 0 36px",
+                fontFamily: "var(--sans)",
+                fontSize: 15,
+                lineHeight: 1.6,
+                color: "var(--ink)",
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: "var(--mono)",
+                  fontSize: 11,
+                  letterSpacing: ".1em",
+                  textTransform: "uppercase",
+                  color: "var(--accent)",
+                  marginBottom: 10,
+                }}
+              >
+                From the author
+              </div>
+              <p style={{ margin: 0 }}>
+                An AI visibility checker tells you{" "}
+                <em style={{ fontStyle: "italic" }}>where</em> you stand. The
+                AI Visibility Audit I run for clients tells you{" "}
+                <em style={{ fontStyle: "italic" }}>why</em> &mdash; and gives
+                you a prioritized 7-day fix plan, $1,500 CAD flat.{" "}
+                <Link
+                  href={AUDIT_URL}
+                  style={{ color: "var(--accent)", fontWeight: 600 }}
+                >
+                  See the AI Visibility Audit &rarr;
+                </Link>
               </p>
             </div>
           </RevealSection>
@@ -494,9 +539,10 @@ export default function BestAIVisibilityToolsPost() {
               tools and I don&rsquo;t have affiliate relationships with any of
               them. This list is based on what I&rsquo;ve used with clients, what
               I&rsquo;ve evaluated independently, and what the data shows. AI
-              visibility software is a new category — most tools are less than two
-              years old. I&rsquo;ll tell you what each one measures, what it
-              misses, and who it&rsquo;s actually for.
+              visibility software (paid trackers, free checkers, and LLM
+              optimization tools) is a new category — most tools are less than
+              two years old. I&rsquo;ll tell you what each one measures, what
+              it misses, and who it&rsquo;s actually for.
             </p>
             <p
               style={{

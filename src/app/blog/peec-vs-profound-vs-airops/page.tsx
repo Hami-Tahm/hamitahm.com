@@ -301,6 +301,48 @@ export default function PeecVsProfoundVsAirOpsPost() {
             </div>
           </RevealSection>
 
+          <RevealSection delay={0.05}>
+            <div
+              style={{
+                background: "var(--panel)",
+                border: "1px solid var(--line-strong)",
+                borderLeft: "3px solid var(--accent)",
+                borderRadius: 10,
+                padding: "20px 22px",
+                margin: "0 0 36px",
+                fontFamily: "var(--sans)",
+                fontSize: 15,
+                lineHeight: 1.6,
+                color: "var(--ink)",
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: "var(--mono)",
+                  fontSize: 11,
+                  letterSpacing: ".1em",
+                  textTransform: "uppercase",
+                  color: "var(--accent)",
+                  marginBottom: 10,
+                }}
+              >
+                From the author
+              </div>
+              <p style={{ margin: 0 }}>
+                Tools track AI visibility &mdash; they don&rsquo;t fix it. The
+                AI Visibility Audit I run for clients identifies the structural
+                gaps a dashboard will never tell you about, and delivers a
+                prioritized fix plan in 7&nbsp;days.{" "}
+                <Link
+                  href={AUDIT_URL}
+                  style={{ color: "var(--accent)", fontWeight: 600 }}
+                >
+                  See the AI Visibility Audit &rarr;
+                </Link>
+              </p>
+            </div>
+          </RevealSection>
+
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
               Peec, Profound, and AirOps are three of the most-mentioned tools in
