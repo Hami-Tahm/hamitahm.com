@@ -152,25 +152,29 @@ export default function AboutPage() {
           <RevealSection delay={0.24}>
             <div className="prose">
               <p className="big">
-                Hami Tahm is a Canadian AI visibility consultant who built HomeCalc.ca from {HOMECALC_CLAIMS.zeroToCitations} while the domain was {HOMECALC_PROOF.domainAge}.
+                Hami Tahm is a Canadian founder and operator who builds the proof for AI visibility. He took HomeCalc.ca from near-zero to {HOMECALC_CLAIMS.zeroToCitations}, in a market dominated by banks and major finance brands. He now applies the same playbook to trust-based local businesses, where one customer can be worth thousands: real estate, mortgage, dental, legal, and home services.
               </p>
               <p>
-                I&rsquo;m Hami Tahm, a tech entrepreneur focused on building and testing scalable digital products across multiple industries.
+                I&rsquo;m Hami Tahm. For over a decade I&rsquo;ve built and scaled marketplaces and digital products, from Khedmatazma, which grew to 3M+ users across 80 cities, to ventures in proptech, healthtech, and on-demand services.
               </p>
               <p>
-                Over the past decade, I&rsquo;ve launched and operated ventures across marketplaces, marketing, and AI-driven platforms &mdash; with a focus on speed, iteration, and real-world validation.
+                I don&rsquo;t talk about AI visibility from slides. I prove it with real sites, real queries, and real businesses.
               </p>
               <p>
-                I don&rsquo;t chase ideas &mdash; I validate them. I&rsquo;ve learned that most ideas fail not because they&rsquo;re bad, but because they&rsquo;re not tested fast enough or killed early enough.
+                Search is changing. People used to ask Google and scroll. Now they ask ChatGPT, Perplexity, and Google&rsquo;s AI &ldquo;who&rsquo;s the best dentist, mortgage broker, or realtor near me,&rdquo; and an answer comes back. For most local businesses, that answer isn&rsquo;t them yet.
               </p>
               <p>
-                Now, I&rsquo;m focused on identifying one breakout opportunity &mdash; a product that can scale globally and become a category leader.
+                I&rsquo;m testing this in the open with HomeCalc.ca, a young Canadian real estate site I built. It crossed {HOMECALC_CLAIMS.zeroToCitations}, and I share exactly what&rsquo;s working: which content gets cited, which clusters drive it, and what doesn&rsquo;t move at all.
               </p>
-              <p>I&rsquo;m especially interested in:</p>
               <p>
-                <b>AI-driven products &middot; Platforms with strong distribution loops &middot; Businesses that can scale beyond geography</b>
+                Then I apply it where it pays: trust-based local businesses. The kind customers research, compare, and need to trust before they choose. The kind where one new client can be worth thousands.
               </p>
-              <p>If you&rsquo;re building something ambitious or thinking globally, let&rsquo;s connect.</p>
+              <p>
+                The next version of local SEO isn&rsquo;t only ranking on Google. It&rsquo;s being included in the answer.
+              </p>
+              <p>
+                If you run a trust-based local business, or you&rsquo;re building in this space, let&rsquo;s talk.
+              </p>
             </div>
           </RevealSection>
         </div>

@@ -86,6 +86,13 @@ const posts = [
     excerpt:
       "If your React site uses SSG/SSR with a collapsible FAQ accordion and FAQPage schema, Google may be penalizing you right now.",
   },
+  {
+    href: "/blog/spa-to-ssg-ai-visibility/",
+    cat: "Technical SEO",
+    title: "Your SPA Is Invisible to AI — How One Migration Gave Us 10× More Citations in 48 Hours",
+    excerpt:
+      "Single Page Apps serve an empty div to AI crawlers. We migrated HomeCalc.ca from SPA to SSG and watched citations jump 10× in two days.",
+  },
 ];
 
 const structuredData = {

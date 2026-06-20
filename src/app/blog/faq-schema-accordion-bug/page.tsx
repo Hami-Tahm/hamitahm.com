@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { RevealSection } from "@/components/Reveal";
 import { buildBlogSchema } from "@/lib/blog-schema";
+import { HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
 
 const SLUG = "faq-schema-accordion-bug";
 const ARTICLE_TITLE =
@@ -65,6 +66,9 @@ const structuredData = {
 export const metadata: Metadata = {
   title: ARTICLE_TITLE,
   description: ARTICLE_DESCRIPTION,
+  alternates: {
+    canonical: `https://hamitahm.com/blog/${SLUG}/`,
+  },
 };
 
 const linkStyle = {
@@ -278,6 +282,50 @@ export default function FaqSchemaAccordionBugPost() {
                   HomeCalc.ca
                 </Link>{" "}
                 — impressions went from 486 to 2,330 in 7 days after the fix.
+              </p>
+            </div>
+          </RevealSection>
+
+          {/* ── From the author bridge ── */}
+          <RevealSection delay={0.04}>
+            <div
+              style={{
+                background: "var(--panel)",
+                border: "1px solid var(--line-strong)",
+                borderLeft: "3px solid var(--accent)",
+                borderRadius: 10,
+                padding: "20px 22px",
+                margin: "0 0 40px",
+                fontFamily: "var(--sans)",
+                fontSize: 15,
+                lineHeight: 1.6,
+                color: "var(--ink)",
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: "var(--mono)",
+                  fontSize: 11,
+                  letterSpacing: ".1em",
+                  textTransform: "uppercase",
+                  color: "var(--accent)",
+                  marginBottom: 10,
+                }}
+              >
+                From the author
+              </div>
+              <p style={{ margin: 0 }}>
+                I found this bug on my own product (HomeCalc.ca) before any
+                tool flagged it. The AI Visibility Audit I run for clients
+                catches structural mismatches like this one &mdash; the kind no
+                dashboard alerts you to &mdash; and ships a prioritized 7-day
+                fix plan.{" "}
+                <Link
+                  href={AUDIT_URL}
+                  style={{ color: "var(--accent)", fontWeight: 600 }}
+                >
+                  See the AI Visibility Audit &rarr;
+                </Link>
               </p>
             </div>
           </RevealSection>
@@ -555,8 +603,8 @@ Select-String "your unique answer phrase" page.html`}
               <Link href={CASE_STUDY_URL} style={linkStyle}>
                 HomeCalc.ca
               </Link>{" "}
-              — a Canadian mortgage calculator that went from zero to over 1,100
-              AI citations in its first 30 days. The site uses Next.js with SSG
+              — a Canadian mortgage calculator that scaled from{" "}
+              {HOMECALC_CLAIMS.zeroToCitations}. The site uses Next.js with SSG
               and had FAQ sections on multiple calculator pages.
             </p>
             <p style={{ marginBottom: 26 }}>
