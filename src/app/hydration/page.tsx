@@ -42,7 +42,7 @@ export default function Post() {
         <div
           className="post-content"
           dangerouslySetInnerHTML={ { __html: `<span style="font-weight: 400;">Drinking enough water (<strong>at least 2-3 liters daily</strong>) helps with digestion, brain function, and energy levels. </span><span style="font-weight: 400;">Dehydration can cause <strong>headaches</strong>, <strong>fatigue</strong>, and <strong>poor concentration</strong>.</span></p><p>We will go over some key points in the discussion.
-<span style="font-weight: 400;">Drinking enough water is essential, but </span><b>hydration isn’t just about drinking plain water.</b><span style="font-weight: 400;"> Here are some additional </span>hacks, strategies, and science-backed tips<span style="font-weight: 400;"> to stay optimally hydrated:</span></p><p> </p><p><img class="aligncenter" src="https://hamitahm.com/wp-content/uploads/2025/02/Hydration.png" />
+<span style="font-weight: 400;">Drinking enough water is essential, but </span><b>hydration isn’t just about drinking plain water.</b><span style="font-weight: 400;"> Here are some additional </span>hacks, strategies, and science-backed tips<span style="font-weight: 400;"> to stay optimally hydrated:</span></p><p> </p><p><img class="aligncenter" src="https://hamitahm.com/wp-content/uploads/2025/02/Hydration.png" alt="Optimal hydration strategies infographic — water, electrolytes, foods, and timing for daily hydration" />
 <h2><b>1. Optimize Your Water Intake Throughout the Day</b></h2>
 <ul>
  	<li style="font-weight: 400;" aria-level="1">Morning: Start your day with 500ml (16-20 oz) of warm or room-temperature water. This jumpstarts digestion, metabolism, and brain function.</li>

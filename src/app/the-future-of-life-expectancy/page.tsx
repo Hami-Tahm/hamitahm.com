@@ -52,7 +52,7 @@ export default function Post() {
  	<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">It is shocking to read of life expectancy over a period of 100 years.</span></li>
 </ul>
 <h4><strong>Life Expectancy Over the Past 100 Years</strong></h4>
-<span style="font-weight: 400;">Here is a chart showing how much longer people are living compared to the past century:</span></p><p><strong><img src="https://hamitahm.com/wp-content/uploads/2025/02/output.png" /></strong></p><p><span style="font-weight: 400;">This chart shows that life expectancy at birth has been rising steadily for the last 100 years.</span>
+<span style="font-weight: 400;">Here is a chart showing how much longer people are living compared to the past century:</span></p><p><strong><img src="https://hamitahm.com/wp-content/uploads/2025/02/output.png" alt="Life expectancy at birth chart showing steady rise over the past 100 years" /></strong></p><p><span style="font-weight: 400;">This chart shows that life expectancy at birth has been rising steadily for the last 100 years.</span>
 <h3><strong>Wealth and Longevity: The Role of Wealth</strong></h3>
 <span style="font-weight: 400;">Studies consistently show that the wealthier members of the community live longer than the non-wealthy. Wealth provides access to:</span>
 <ul>

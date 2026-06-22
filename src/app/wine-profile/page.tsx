@@ -84,7 +84,7 @@ The finish is how long the flavor remains after swallowing.</p><p>Short finish: 
 Medium finish: lingers briefly
 Long finish: stays in your mouth for a long time</p><p>High-quality wines usually have a <strong>long finish</strong>, which is something I strongly enjoy.
 <h1>My Wine Taste Profile (Summary)</h1>
-<a href="https://hamitahm.com/wp-content/uploads/2026/03/infoghrapgy-wine.webp"><img class="alignnone wp-image-851" src="https://hamitahm.com/wp-content/uploads/2026/03/infoghrapgy-wine-300x164.webp" alt="" width="370" height="202" /></a></p><p>Putting all these characteristics together, my taste profile looks like this:
+<a href="https://hamitahm.com/wp-content/uploads/2026/03/infoghrapgy-wine.webp"><img class="alignnone wp-image-851" src="https://hamitahm.com/wp-content/uploads/2026/03/infoghrapgy-wine-300x164.webp" alt="Personal wine taste profile infographic mapping preferences across body, sweetness, tannin, and acidity" width="370" height="202" /></a></p><p>Putting all these characteristics together, my taste profile looks like this:
 <table>
 <thead>
 <tr>
@@ -129,7 +129,7 @@ Long finish: stays in your mouth for a long time</p><p>High-quality wines usuall
 </table>
 In simple terms:</p><p>I enjoy <strong>bold, powerful, full-bodied red wines with deep flavors and structure</strong>.</p><p> 
 <h1>Wines That Match This Profile</h1>
-Based on this taste profile, several famous wine styles fit very well.</p><p><img class="alignnone size-medium wp-image-847" src="https://hamitahm.com/wp-content/uploads/2026/03/fav-wine-300x164.webp" alt="" width="300" height="164" />
+Based on this taste profile, several famous wine styles fit very well.</p><p><img class="alignnone size-medium wp-image-847" src="https://hamitahm.com/wp-content/uploads/2026/03/fav-wine-300x164.webp" alt="Favorite wine styles matching personal taste profile — including Pinot Noir, Riesling, and Chablis" width="300" height="164" />
 <h1>Australia</h1>
 Australia produces some of the most powerful wines in the world.</p><p>Best matches:</p><p><strong>Barossa Valley Shiraz</strong>
 Very bold, high alcohol, dark fruit, pepper, and chocolate.</p><p><strong>McLaren Vale Shiraz</strong>
