@@ -3,10 +3,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { RevealSection } from "@/components/Reveal";
 import { buildBlogSchema } from "@/lib/blog-schema";
+import { HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
 
 const SLUG = "spa-to-ssg-ai-visibility";
 const ARTICLE_TITLE =
-  "Your SPA Is Invisible to AI — How One Migration Gave Us 10× More Citations in 48 Hours";
+  "Your SPA Is Invisible to AI: 10× Citations in 48 Hours";
 const ARTICLE_DESCRIPTION =
   "Single Page Apps serve an empty <div> to AI crawlers. We migrated HomeCalc.ca from SPA to SSG and watched Bing Copilot citations jump from 20/day to 200/day in two days. Here's exactly what we changed and why it matters.";
 const DATE_PUBLISHED = "2026-06-23";
@@ -67,6 +68,9 @@ const structuredData = {
 export const metadata: Metadata = {
   title: ARTICLE_TITLE,
   description: ARTICLE_DESCRIPTION,
+  alternates: {
+    canonical: `https://hamitahm.com/blog/${SLUG}/`,
+  },
 };
 
 const linkStyle = {
@@ -282,6 +286,50 @@ export default function SpaToSsgAiVisibilityPost() {
                 </Link>{" "}
                 from SPA to SSG in one commit and watched Bing Copilot citations
                 jump from ~20/day to ~200/day within 48 hours.
+              </p>
+            </div>
+          </RevealSection>
+
+          {/* ── From the author bridge ── */}
+          <RevealSection delay={0.04}>
+            <div
+              style={{
+                background: "var(--panel)",
+                border: "1px solid var(--line-strong)",
+                borderLeft: "3px solid var(--accent)",
+                borderRadius: 10,
+                padding: "20px 22px",
+                margin: "0 0 40px",
+                fontFamily: "var(--sans)",
+                fontSize: 15,
+                lineHeight: 1.6,
+                color: "var(--ink)",
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: "var(--mono)",
+                  fontSize: 11,
+                  letterSpacing: ".1em",
+                  textTransform: "uppercase",
+                  color: "var(--accent)",
+                  marginBottom: 10,
+                }}
+              >
+                From the author
+              </div>
+              <p style={{ margin: 0 }}>
+                I found this on my own product (HomeCalc.ca) before any
+                tool flagged it. The AI Visibility Audit I run for clients
+                catches structural issues like this &mdash; the kind a
+                dashboard will never tell you about &mdash; and ships a
+                prioritized 7-day fix plan.{" "}
+                <Link
+                  href={AUDIT_URL}
+                  style={{ color: "var(--accent)", fontWeight: 600 }}
+                >
+                  See the AI Visibility Audit &rarr;
+                </Link>
               </p>
             </div>
           </RevealSection>
@@ -822,8 +870,7 @@ export default function SpaToSsgAiVisibilityPost() {
                 marginBottom: 12,
               }}
             >
-              For the full HomeCalc story — from zero to 1,100+ AI citations
-              in 30 days — read the{" "}
+              For the full HomeCalc story — from {HOMECALC_CLAIMS.zeroToCitations} — read the{" "}
               <Link href={CASE_STUDY_URL} style={linkStyle}>
                 case study
               </Link>
