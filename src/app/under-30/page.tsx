@@ -44,7 +44,7 @@ export default function Post() {
         {/* Content */}
         <div
           className="post-content"
-          dangerouslySetInnerHTML={ { __html: `<h1>20 Minutes. 3 Times a Week. Full-Body Strength for Busy Founders.</h1>
+          dangerouslySetInnerHTML={ { __html: `<h2>20 Minutes. 3 Times a Week. Full-Body Strength for Busy Founders.</h2>
 If you work mostly at a desk and your calendar looks like a war zone, you don’t need a complicated gym routine.
 You need <strong>high-leverage movements</strong> that hit the biggest muscle groups, raise metabolism, and protect your posture — in just 20 minutes.</p><p>This is the exact minimalist structure I recommend for high-performing entrepreneurs who want energy, focus, and long-term metabolic health.</p><p><hr /></p><p><h2>The Structure (Simple & Ruthless)</h2>
 <ul>
@@ -67,7 +67,7 @@ No fluff. Just compound movements.</p><p><hr /></p><p><h2>1) Squats — The Foun
 <strong>Scale down:</strong> Shorten the time</p><p><hr /></p><p><h2>5) Lunges — Strength + Balance</h2>
 <img src="https://images.openai.com/static-rsc-3/hprieTNtXTFl49jphdWuXfpHRdcxzud2jj9mUxOYjJ0ssjhfHRLmYJZPefaWCfbla3ILuZiIyOahXZsP4dACG3oNIFRgR4so7W3Ri_vW7G0?purpose=fullsize&v=1" alt="Image" /></p><p><img src="https://hips.hearstapps.com/hmg-prod/images/muscular-man-training-his-legs-doing-lunges-with-royalty-free-image-1677586874.jpg?crop=1xw%3A0.84355xh%3Bcenter%2Ctop&resize=1200%3A%2A" alt="Image" /></p><p><img src="https://hips.hearstapps.com/hmg-prod/images/screen-shot-2019-06-27-at-10-14-46-am-1561645202.jpg?crop=0.750524109014675xw%3A1xh%3Bcenter%2Ctop&resize=1200%3A%2A" alt="Image" /></p><p><img src="https://res.cloudinary.com/peloton-cycle/image/fetch/f_auto%2Cc_limit%2Cw_3840%2Cq_90/https%3A//images.ctfassets.net/6ilvqec50fal/6ECvblywgDhiygiHRBUZmM/0c99d77e0869b85b8e029f09047e2bbc/Reverse-lunge-Jess-Sims.png" alt="Image" /></p><p><strong>What it trains:</strong> Glutes, quads, balance system
 <strong>Why it matters:</strong> Single-leg work improves symmetry and joint health</p><p>Lunges build real-world strength and athletic coordination.</p><p><strong>Upgrade:</strong> Add dumbbells
-<strong>Scale down:</strong> Static lunges</p><p><hr /></p><p><h1>Why This Works</h1>
+<strong>Scale down:</strong> Static lunges</p><p><hr /></p><p><h2>Why This Works</h2>
 For high-output professionals:
 <ul>
  	<li>Improves insulin sensitivity</li>
@@ -76,7 +76,7 @@ For high-output professionals:
  	<li>Protects joints and spine</li>
  	<li>Minimal time investment</li>
 </ul>
-Three sessions per week is enough to maintain and even build strength if intensity is consistent.</p><p><hr /></p><p><h1>Weekly Template</h1>
+Three sessions per week is enough to maintain and even build strength if intensity is consistent.</p><p><hr /></p><p><h2>Weekly Template</h2>
 <ul>
  	<li>Monday</li>
  	<li>Wednesday</li>

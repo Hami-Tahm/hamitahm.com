@@ -39,7 +39,7 @@ export default function Post() {
 <p data-start="694" data-end="769">Under-washing allows buildup → hair looks flat, greasy, and unprofessional.</p>
 <p data-start="771" data-end="810">The optimal routine sits in the middle.</p></p><p><h2 data-start="817" data-end="842">Quick Routine Overview</h2>
 <p data-start="844" data-end="1037">✔ Short daily shower (lukewarm water)<br data-start="881" data-end="884" />✔ Shampoo every 1–2 days<br data-start="908" data-end="911" />✔ Clean sweat zones daily<br data-start="936" data-end="939" />✔ Gentle face cleansing twice daily<br data-start="974" data-end="977" />✔ Use oil-free moisturizer<br data-start="1003" data-end="1006" />✔ Change pillowcase regularly</p></p><p>
-<hr data-start="1039" data-end="1042" /></p><p><h1 data-start="1044" data-end="1068">Daily Hygiene Strategy</h1>
+<hr data-start="1039" data-end="1042" /></p><p><h2 data-start="1044" data-end="1068">Daily Hygiene Strategy</h2>
 <h2 data-start="1070" data-end="1100">Shower & Hair Care Schedule</h2>
 <div class="TyagGW_tableContainer">
 <div class="group TyagGW_tableWrapper flex flex-col-reverse w-fit" tabindex="-1">
@@ -131,10 +131,10 @@ export default function Post() {
 </table>
 </div>
 </div>
-<h1 data-start="1921" data-end="1958">Hair Washing Frequency (Oily Scalp)</h1>
+<h2 data-start="1921" data-end="1958">Hair Washing Frequency (Oily Scalp)</h2>
 <p data-start="1960" data-end="1994"><strong data-start="1960" data-end="1975">Best range:</strong> every <strong data-start="1982" data-end="1994">1–2 days</strong></p></p><p><h3 data-start="1996" data-end="2014">Why not daily?</h3>
 <p data-start="2015" data-end="2065">Daily shampooing can overstimulate oil production.</p></p><p><h3 data-start="2067" data-end="2090">Why not less often?</h3>
-<p data-start="2091" data-end="2135">Oil buildup flattens hair and looks unkempt.</p></p><p><h1 data-start="2142" data-end="2175">Best Shampoo Type for Oily Hair</h1>
+<p data-start="2091" data-end="2135">Oil buildup flattens hair and looks unkempt.</p></p><p><h2 data-start="2142" data-end="2175">Best Shampoo Type for Oily Hair</h2>
 <p data-start="2177" data-end="2186">Look for:</p>
 <p data-start="2188" data-end="2312">✔ Zinc PCA (oil regulation)<br data-start="2215" data-end="2218" />✔ Salicylic acid (deep cleansing)<br data-start="2251" data-end="2254" />✔ Lightweight formulas<br data-start="2276" data-end="2279" />✔ Dermatologist-tested products</p>
 <p data-start="2314" data-end="2348">Avoid heavy moisturizing shampoos.</p></p><p><h2 data-start="2355" data-end="2386">Recommended Options (Canada)</h2>
@@ -188,9 +188,9 @@ export default function Post() {
 </table>
 </div>
 </div>
-<p data-start="2916" data-end="3034"><strong data-start="2916" data-end="2933">Best overall:</strong> Vichy Dercos Oil Correct<br data-start="2958" data-end="2961" /><strong data-start="2961" data-end="2977">Best budget:</strong> Head & Shoulders Citrus<br data-start="3001" data-end="3004" /><strong data-start="3004" data-end="3023">Best freshness:</strong> Tea Tree</p></p><p><h1 data-start="3041" data-end="3075">How Much Shampoo Should You Use?</h1>
+<p data-start="2916" data-end="3034"><strong data-start="2916" data-end="2933">Best overall:</strong> Vichy Dercos Oil Correct<br data-start="2958" data-end="2961" /><strong data-start="2961" data-end="2977">Best budget:</strong> Head & Shoulders Citrus<br data-start="3001" data-end="3004" /><strong data-start="3004" data-end="3023">Best freshness:</strong> Tea Tree</p></p><p><h2 data-start="3041" data-end="3075">How Much Shampoo Should You Use?</h2>
 <p data-start="3077" data-end="3099">Most men use too much.</p>
-<p data-start="3101" data-end="3237">✔ Short hair → dime-size<br data-start="3125" data-end="3128" />✔ Medium length → nickel-size<br data-start="3157" data-end="3160" />✔ Focus on scalp, not ends<br data-start="3186" data-end="3189" />✔ Leave for 30–60 seconds<br data-start="3214" data-end="3217" />✔ Rinse thoroughly</p></p><p><h1 data-start="3244" data-end="3267">Face Care (Oily Skin)</h1>
+<p data-start="3101" data-end="3237">✔ Short hair → dime-size<br data-start="3125" data-end="3128" />✔ Medium length → nickel-size<br data-start="3157" data-end="3160" />✔ Focus on scalp, not ends<br data-start="3186" data-end="3189" />✔ Leave for 30–60 seconds<br data-start="3214" data-end="3217" />✔ Rinse thoroughly</p></p><p><h2 data-start="3244" data-end="3267">Face Care (Oily Skin)</h2>
 <div class="TyagGW_tableContainer">
 <div class="group TyagGW_tableWrapper flex flex-col-reverse w-fit" tabindex="-1">
 <table class="w-fit min-w-(--thread-content-width)" data-start="3269" data-end="3415">
@@ -217,7 +217,7 @@ export default function Post() {
 </table>
 </div>
 </div>
-<p data-start="3417" data-end="3466">Skipping moisturizer can increase oil production.</p></p><p><h1 data-start="3473" data-end="3522">Founder Lifestyle Tips That Improve Skin & Hair</h1>
+<p data-start="3417" data-end="3466">Skipping moisturizer can increase oil production.</p></p><p><h2 data-start="3473" data-end="3522">Founder Lifestyle Tips That Improve Skin & Hair</h2>
 <h3 data-start="3524" data-end="3537">Hydration</h3>
 <p data-start="3538" data-end="3574">Dehydration thickens oil secretions.</p></p><p><h3 data-start="3576" data-end="3598">Pillowcase hygiene</h3>
 <p data-start="3599" data-end="3646">Change <strong data-start="3606" data-end="3624">twice per week</strong> to prevent breakouts.</p></p><p><h3 data-start="3648" data-end="3675">Screen fatigue & stress</h3>
@@ -225,8 +225,8 @@ export default function Post() {
 Every 20 minutes → look 20 feet away → for 20 seconds.</p>
 <p data-start="3759" data-end="3814">Lower stress improves hormonal balance and skin health.</p></p><p><h3 data-start="3816" data-end="3838">Shower temperature</h3>
 <p data-start="3839" data-end="3883">Hot water increases oil rebound and dryness.</p>
-<p data-start="3885" data-end="3908">Use <strong data-start="3889" data-end="3907">lukewarm water</strong>.</p></p><p><h1 data-start="3915" data-end="3941">Common Mistakes to Avoid</h1>
-<p data-start="3943" data-end="4077">❌ Very hot showers<br data-start="3961" data-end="3964" />❌ Strong soaps on full body daily<br data-start="3997" data-end="4000" />❌ Over-shampooing<br data-start="4017" data-end="4020" />❌ Skipping moisturizer<br data-start="4042" data-end="4045" />❌ Using heavy styling products</p></p><p><h1 data-start="4084" data-end="4123">The Professional Appearance Advantage</h1>
+<p data-start="3885" data-end="3908">Use <strong data-start="3889" data-end="3907">lukewarm water</strong>.</p></p><p><h2 data-start="3915" data-end="3941">Common Mistakes to Avoid</h2>
+<p data-start="3943" data-end="4077">❌ Very hot showers<br data-start="3961" data-end="3964" />❌ Strong soaps on full body daily<br data-start="3997" data-end="4000" />❌ Over-shampooing<br data-start="4017" data-end="4020" />❌ Skipping moisturizer<br data-start="4042" data-end="4045" />❌ Using heavy styling products</p></p><p><h2 data-start="4084" data-end="4123">The Professional Appearance Advantage</h2>
 <p data-start="4125" data-end="4162">Clean, balanced hair and skin signal:</p>
 <p data-start="4164" data-end="4246">✔ self-discipline<br data-start="4181" data-end="4184" />✔ attention to detail<br data-start="4205" data-end="4208" />✔ reliability<br data-start="4221" data-end="4224" />✔ executive presence</p>
 <p data-start="4248" data-end="4303">Small habits create a polished look without extra time.</p></p><p><h2 data-start="4310" data-end="4338">Final Routine (Optimized)</h2>
