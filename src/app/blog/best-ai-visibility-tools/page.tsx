@@ -6,7 +6,7 @@ import { buildBlogSchema } from "@/lib/blog-schema";
 
 const SLUG = "best-ai-visibility-tools";
 const ARTICLE_TITLE =
-  "Best AI Visibility Tools & Checkers in 2026: Ranked by an Independent Consultant";
+  "Best AI Visibility Tools & Checkers in 2026 (Ranked)";
 const ARTICLE_DESCRIPTION =
   "The best AI visibility tools and checkers in 2026 — ranked, tested, and reviewed by an independent consultant who doesn't sell them. Covers trackers, free AI visibility checkers, analytics platforms, and LLM optimization tools.";
 const DATE_PUBLISHED = "2026-06-09";

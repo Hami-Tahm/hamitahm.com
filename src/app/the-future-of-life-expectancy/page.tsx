@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Lifespan: The Role of Wealth and Technology in Extending Life Expectancy",
+  title: "Lifespan: How Wealth & Tech Extend Life Expectancy",
   description: "Lifespan: The Role of Wealth and Technology in Extending Life Expectancy — by Hami Tahm",
 };
 

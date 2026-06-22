@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "How to Invest Amid Inflation and the Weakening Canadian Dollar",
+  title: "Investing Through Inflation & a Weak Canadian Dollar",
   description: "How to Invest Amid Inflation and the Weakening Canadian Dollar — by Hami Tahm",
 };
 

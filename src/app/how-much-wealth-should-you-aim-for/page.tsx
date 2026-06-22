@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "How Much Wealth Should You Aim For? A Simple Guide to Matching Income and Net Worth",
+  title: "How Much Wealth Should You Aim For? Income vs Net Worth",
   description: "How Much Wealth Should You Aim For? A Simple Guide to Matching Income and Net Worth — by Hami Tahm",
 };
 

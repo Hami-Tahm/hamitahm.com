@@ -6,7 +6,7 @@ import { buildBlogSchema } from "@/lib/blog-schema";
 
 const SLUG = "aeo-vs-geo-vs-seo";
 const ARTICLE_TITLE =
-  "AEO vs GEO vs SEO: What's the Difference and Which Do You Need?";
+  "AEO vs GEO vs SEO: What's the Difference?";
 const ARTICLE_DESCRIPTION =
   "SEO optimizes for search rankings. AEO targets AI-generated answers. GEO optimizes for AI-generated content. Here's how they differ — and which one applies to your business.";
 const DATE_PUBLISHED = "2026-06-08";

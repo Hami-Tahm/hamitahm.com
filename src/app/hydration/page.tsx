@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Hydration for High Performers: Maximize Energy, Focus, and Productivity",
+  title: "Hydration for High Performers: Energy, Focus, Output",
   description: "Hydration for High Performers: Maximize Energy, Focus, and Productivity — by Hami Tahm",
 };
 

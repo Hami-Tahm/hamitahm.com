@@ -6,7 +6,7 @@ import { buildBlogSchema } from "@/lib/blog-schema";
 
 const SLUG = "what-is-ai-visibility";
 const ARTICLE_TITLE =
-  "What Is AI Visibility? Definition, Metrics, and How to Track It";
+  "What Is AI Visibility? Definition, Metrics, Tracking";
 const ARTICLE_DESCRIPTION =
   "AI visibility is how often — and how accurately — your brand appears in AI-generated search answers. Here's what it means, how to measure it, and why it's different from SEO.";
 const DATE_PUBLISHED = "2026-06-08";

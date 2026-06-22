@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Understanding REITs: Pros, Cons, and Building a Balanced Portfolio",
+  title: "REITs Explained: Pros, Cons, and Portfolio Strategy",
   description: "Understanding REITs: Pros, Cons, and Building a Balanced Portfolio — by Hami Tahm",
 };
 

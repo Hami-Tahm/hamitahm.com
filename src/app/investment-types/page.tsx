@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "A Comprehensive Guide to Investment Types: Understanding Returns, Risks, and Efforts",
+  title: "Investment Types Guide: Returns, Risks & Effort",
   description: "A Comprehensive Guide to Investment Types: Understanding Returns, Risks, and Efforts — by Hami Tahm",
 };
 

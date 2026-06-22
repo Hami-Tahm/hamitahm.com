@@ -6,7 +6,7 @@ import { buildBlogSchema } from "@/lib/blog-schema";
 
 const SLUG = "peec-vs-profound-vs-airops";
 const ARTICLE_TITLE =
-  "Peec vs Profound vs AirOps: Which AI Visibility Tool Is Right for You?";
+  "Peec vs Profound vs AirOps: AI Visibility Tools";
 const ARTICLE_DESCRIPTION =
   "Peec, Profound, and AirOps all track AI visibility — but they do different things. Here's an independent breakdown of what each measures, what each costs, and which one fits your use case.";
 const DATE_PUBLISHED = "2026-06-09";

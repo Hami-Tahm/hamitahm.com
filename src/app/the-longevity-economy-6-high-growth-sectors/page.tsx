@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "The Longevity Economy: 6 High-Growth Sectors Ranked by Market Size",
+  title: "The Longevity Economy: 6 High-Growth Sectors Ranked",
   description: "The Longevity Economy: 6 High-Growth Sectors Ranked by Market Size — by Hami Tahm",
 };
 

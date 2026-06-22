@@ -6,7 +6,7 @@ import { buildBlogSchema } from "@/lib/blog-schema";
 
 const SLUG = "ai-visibility-tools-vs-audit";
 const ARTICLE_TITLE =
-  "AI Visibility Tools vs. a Professional Audit: Which Do You Actually Need?";
+  "AI Visibility Tools vs Audit: Which Do You Need?";
 const ARTICLE_DESCRIPTION =
   "AI visibility tools give you dashboards. A professional audit gives you answers. Here's the difference — and how to know which one your business needs right now.";
 const DATE_PUBLISHED = "2026-06-09";

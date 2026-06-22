@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "The Complex Relationship Between Money, Happiness, and Satisfaction",
+  title: "Money, Happiness, and Satisfaction: A Complex Link",
   description: "The Complex Relationship Between Money, Happiness, and Satisfaction — by Hami Tahm",
 };
 

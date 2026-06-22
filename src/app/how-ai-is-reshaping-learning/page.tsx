@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "How AI Is Reshaping Learning: Your Shortcut to Mastering Skills Faster",
+  title: "How AI Is Reshaping Learning: Master Skills Faster",
   description: "How AI Is Reshaping Learning: Your Shortcut to Mastering Skills Faster — by Hami Tahm",
 };
 

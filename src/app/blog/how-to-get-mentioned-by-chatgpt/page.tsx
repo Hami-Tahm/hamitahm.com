@@ -7,7 +7,7 @@ import { HOMECALC_PROOF } from "@/lib/homecalc-proof";
 
 const SLUG = "how-to-get-mentioned-by-chatgpt";
 const ARTICLE_TITLE =
-  "How to Get Mentioned by ChatGPT: A Practical Guide for Businesses";
+  "How to Get Your Business Mentioned by ChatGPT";
 const ARTICLE_DESCRIPTION =
   "ChatGPT mentions brands that are authoritative, well-structured, and consistently cited across the web. Here's exactly how to improve your chances — with steps you can start this week.";
 const DATE_PUBLISHED = "2026-06-08";

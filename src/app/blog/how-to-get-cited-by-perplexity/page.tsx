@@ -7,7 +7,7 @@ import { HOMECALC_PROOF } from "@/lib/homecalc-proof";
 
 const SLUG = "how-to-get-cited-by-perplexity";
 const ARTICLE_TITLE =
-  "How to Get Cited by Perplexity AI: What Actually Drives Citations";
+  "How to Get Cited by Perplexity AI: What Drives It";
 const ARTICLE_DESCRIPTION =
   "Perplexity cites sources differently than Google — it actively retrieves, reads, and ranks pages in real time. Here's how to make your content one it chooses to cite.";
 const DATE_PUBLISHED = "2026-06-08";

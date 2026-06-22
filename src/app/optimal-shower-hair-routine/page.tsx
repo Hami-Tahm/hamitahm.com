@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "The Optimal Shower & Hair Routine for Busy Found­ers (Oily Skin & Sc­alp)",
+  title: "Optimal Shower & Hair Routine for Oily Skin & Scalp",
   description: "The Optimal Shower & Hair Routine for Busy Found­ers (Oily Skin & Sc­alp) — by Hami Tahm",
 };
 

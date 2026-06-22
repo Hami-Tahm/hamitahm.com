@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Exercise & Physical Activity: Your Guide to Smarter Workouts",
+  title: "Exercise & Physical Activity: Smarter Workouts Guide",
   description: "Exercise & Physical Activity: Your Guide to Smarter Workouts — by Hami Tahm",
 };
 

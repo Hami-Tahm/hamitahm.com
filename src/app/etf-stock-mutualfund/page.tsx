@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Understanding the Difference Between Stocks, ETFs, and Mutual Funds",
+  title: "Stocks vs ETFs vs Mutual Funds: Key Differences",
   description: "Understanding the Difference Between Stocks, ETFs, and Mutual Funds — by Hami Tahm",
 };
 

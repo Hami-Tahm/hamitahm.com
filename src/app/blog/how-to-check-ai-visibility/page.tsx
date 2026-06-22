@@ -6,7 +6,7 @@ import { buildBlogSchema } from "@/lib/blog-schema";
 
 const SLUG = "how-to-check-ai-visibility";
 const ARTICLE_TITLE =
-  "I Tested 8 Free AI Visibility Checkers — Here's What Each Actually Found";
+  "I Tested 8 Free AI Visibility Checkers — Results";
 const ARTICLE_DESCRIPTION =
   "Free AI visibility checkers exist — but they measure different things. I tested 8 of them on real sites to show you what each actually finds, what they miss, and when a professional audit is worth it instead.";
 const DATE_PUBLISHED = "2026-06-09";
