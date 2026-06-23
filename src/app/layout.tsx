@@ -52,6 +52,7 @@ const siteStructuredData = {
         "https://www.linkedin.com/in/hamitahm",
         "https://x.com/hamitahm",
         "https://www.crunchbase.com/person/hami-tahm",
+        "https://github.com/Hami-Tahm",
         "https://homecalc.ca",
         "https://houmse.com",
         "https://dimaht.com/",
