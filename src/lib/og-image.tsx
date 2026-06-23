@@ -3,29 +3,26 @@ import { ImageResponse } from "next/og";
 /**
  * Shared template for per-route Open Graph images.
  *
- * Each route folder that wants its own OG image creates an
- * `opengraph-image.tsx` file that calls `renderOgImage({ ... })`.
- * Next.js routes that file to `/<path>/opengraph-image` and registers it
- * as the page's `og:image` automatically.
+ * Each route folder creates an `opengraph-image.tsx` that calls
+ * `renderOgImage({ ... })`. Next.js routes that file to
+ * `/<path>/opengraph-image` and uses it for the page's og:image.
  *
- * Design language matches the site: warm cream background (#f4f1ea),
- * teal accent (#0f6e78), serif headline, monospace metadata strip.
+ * Design: warm cream background, teal accent, serif headline, mono strip.
+ * Implementation is deliberately defensive for Satori (the renderer used
+ * by next/og): every flex child has display:flex, all sizes are plain
+ * numbers (no negative values), no conditional `null` children.
  */
 
-export const OG_SIZE = { width: 1200, height: 630 } as const;
-export const OG_CONTENT_TYPE = "image/png" as const;
+export const OG_WIDTH = 1200;
+export const OG_HEIGHT = 630;
 
 export type OgConfig = {
-  /** Top-left chip — short context label (e.g. "Case Study", "Audit"). */
+  /** Top-right chip — short context label. */
   badge?: string;
-  /** Big serif headline — keep ≤ 60 chars for a single line of impact. */
+  /** Big serif headline. Keep ≤ 60 chars for a single line of impact. */
   title: string;
   /** Optional supporting line under the title. */
   subtitle?: string;
-  /** Bottom-left identifier. Override only for non-Hami contexts. */
-  footerLeft?: string;
-  /** Bottom-right location/tag. */
-  footerRight?: string;
 };
 
 const BG = "#f4f1ea";
@@ -34,14 +31,9 @@ const MUTED = "#5a5448";
 const ACCENT = "#0f6e78";
 const FAINT = "#998d76";
 
-export function renderOgImage(cfg: OgConfig): ImageResponse {
-  const {
-    badge = "AI VISIBILITY",
-    title,
-    subtitle,
-    footerLeft = "HAMI TAHM · AI VISIBILITY CONSULTANT",
-    footerRight = "TORONTO · CANADA",
-  } = cfg;
+export function renderOgImage(cfg: OgConfig) {
+  const badge = cfg.badge ?? "AI VISIBILITY";
+  const subtitle = cfg.subtitle ?? "";
 
   return new ImageResponse(
     (
@@ -53,25 +45,13 @@ export function renderOgImage(cfg: OgConfig): ImageResponse {
           flexDirection: "column",
           justifyContent: "space-between",
           background: BG,
-          padding: "72px 80px",
-          position: "relative",
+          paddingTop: 72,
+          paddingBottom: 72,
+          paddingLeft: 80,
+          paddingRight: 80,
         }}
       >
-        {/* Soft accent glow, top-right */}
-        <div
-          style={{
-            position: "absolute",
-            top: -180,
-            right: -120,
-            width: 520,
-            height: 520,
-            borderRadius: "50%",
-            background: "rgba(15,110,120,0.10)",
-            display: "flex",
-          }}
-        />
-
-        {/* Top strip */}
+        {/* Top strip — branded chip + section badge */}
         <div
           style={{
             display: "flex",
@@ -79,58 +59,61 @@ export function renderOgImage(cfg: OgConfig): ImageResponse {
             alignItems: "center",
             fontFamily: "monospace",
             fontSize: 22,
-            letterSpacing: 3,
             textTransform: "uppercase",
             color: ACCENT,
           }}
         >
-          <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+          <div style={{ display: "flex", alignItems: "center" }}>
             <div
               style={{
-                width: 10,
-                height: 10,
+                width: 12,
+                height: 12,
                 borderRadius: 999,
                 background: ACCENT,
                 display: "flex",
+                marginRight: 14,
               }}
             />
             <div style={{ display: "flex" }}>hamitahm.com</div>
           </div>
-          <div style={{ color: FAINT, display: "flex" }}>{badge}</div>
+          <div style={{ display: "flex", color: FAINT }}>{badge}</div>
         </div>
 
         {/* Headline block */}
-        <div style={{ display: "flex", flexDirection: "column", maxWidth: 1040 }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            maxWidth: 1040,
+          }}
+        >
           <div
             style={{
+              display: "flex",
               fontFamily: "serif",
               fontSize: 76,
               lineHeight: 1.06,
-              letterSpacing: -1.2,
               color: INK,
               fontWeight: 500,
-              display: "flex",
             }}
           >
-            {title}
+            {cfg.title}
           </div>
-          {subtitle ? (
-            <div
-              style={{
-                fontSize: 28,
-                lineHeight: 1.4,
-                color: MUTED,
-                marginTop: 28,
-                maxWidth: 940,
-                display: "flex",
-              }}
-            >
-              {subtitle}
-            </div>
-          ) : null}
+          <div
+            style={{
+              display: "flex",
+              fontSize: 28,
+              lineHeight: 1.4,
+              color: MUTED,
+              marginTop: subtitle ? 28 : 0,
+              maxWidth: 940,
+            }}
+          >
+            {subtitle}
+          </div>
         </div>
 
-        {/* Bottom strip */}
+        {/* Bottom strip — author + location */}
         <div
           style={{
             display: "flex",
@@ -138,15 +121,14 @@ export function renderOgImage(cfg: OgConfig): ImageResponse {
             alignItems: "flex-end",
             fontFamily: "monospace",
             fontSize: 18,
-            letterSpacing: 1.5,
             color: FAINT,
           }}
         >
-          <div style={{ display: "flex" }}>{footerLeft}</div>
-          <div style={{ display: "flex" }}>{footerRight}</div>
+          <div style={{ display: "flex" }}>HAMI TAHM · AI VISIBILITY CONSULTANT</div>
+          <div style={{ display: "flex" }}>TORONTO · CANADA</div>
         </div>
       </div>
     ),
-    OG_SIZE,
+    { width: OG_WIDTH, height: OG_HEIGHT },
   );
 }
