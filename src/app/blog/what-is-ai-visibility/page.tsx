@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { RevealSection } from "@/components/Reveal";
+import { AuthorByline } from "@/components/AuthorByline";
 import { buildBlogSchema } from "@/lib/blog-schema";
 
 const SLUG = "what-is-ai-visibility";
@@ -169,42 +170,7 @@ export default function WhatIsAIVisibilityPost() {
           </RevealSection>
 
           <RevealSection delay={0.18}>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: 14,
-                marginTop: 26,
-                paddingTop: 22,
-                borderTop: "1px solid var(--line)",
-              }}
-            >
-              <Image
-                src="/images/hami-tahm/hami-tahm-portrait.png"
-                alt="Hami Tahm"
-                width={38}
-                height={38}
-                style={{
-                  borderRadius: "50%",
-                  border: "1px solid var(--line-strong)",
-                  objectFit: "cover",
-                  flexShrink: 0,
-                }}
-              />
-              <div>
-                <div style={{ fontSize: 14, fontWeight: 600 }}>Hami Tahm</div>
-                <div
-                  style={{
-                    fontFamily: "var(--mono)",
-                    fontSize: "11.5px",
-                    color: "var(--faint)",
-                    marginTop: 1,
-                  }}
-                >
-                  June 8, 2026 &middot; 14 min read
-                </div>
-              </div>
-            </div>
+            <AuthorByline date="June 8, 2026" readTime="14 min read" />
           </RevealSection>
         </div>
       </header>

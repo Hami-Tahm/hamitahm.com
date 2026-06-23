@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { RevealSection } from "@/components/Reveal";
+import { AuthorByline } from "@/components/AuthorByline";
 import { buildBlogSchema } from "@/lib/blog-schema";
 import { HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
 
@@ -192,42 +193,7 @@ export default function SpaToSsgAiVisibilityPost() {
           </RevealSection>
 
           <RevealSection delay={0.18}>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: 14,
-                marginTop: 26,
-                paddingTop: 22,
-                borderTop: "1px solid var(--line)",
-              }}
-            >
-              <Image
-                src="/images/hami-tahm/hami-tahm-portrait.png"
-                alt="Hami Tahm"
-                width={38}
-                height={38}
-                style={{
-                  borderRadius: "50%",
-                  border: "1px solid var(--line-strong)",
-                  objectFit: "cover",
-                  flexShrink: 0,
-                }}
-              />
-              <div>
-                <div style={{ fontSize: 14, fontWeight: 600 }}>Hami Tahm</div>
-                <div
-                  style={{
-                    fontFamily: "var(--mono)",
-                    fontSize: "11.5px",
-                    color: "var(--faint)",
-                    marginTop: 1,
-                  }}
-                >
-                  June 23, 2026 &middot; 10 min read
-                </div>
-              </div>
-            </div>
+            <AuthorByline date="June 23, 2026" readTime="10 min read" />
           </RevealSection>
         </div>
       </header>
@@ -1018,80 +984,4 @@ function InlineAuditCTA() {
         margin: "42px 0",
         boxShadow:
           "0 1px 2px rgba(24,23,21,.04),0 12px 40px -26px rgba(24,23,21,.16)",
-      }}
-    >
-      <h3
-        style={{
-          fontFamily: "var(--serif)",
-          fontSize: 22,
-          fontWeight: 600,
-          letterSpacing: "-.01em",
-        }}
-      >
-        Is your site invisible to AI crawlers?
-      </h3>
-      <p
-        style={{
-          fontFamily: "var(--sans)",
-          fontSize: "14.5px",
-          color: "var(--muted)",
-          margin: "8px 0 18px",
-          lineHeight: 1.55,
-        }}
-      >
-        The audit checks what ChatGPT, Perplexity, Copilot, and Google AI
-        Overviews actually see when they crawl your site — including rendering
-        issues, schema mismatches, and content gaps competitors are exploiting.
-      </p>
-      <Link href={AUDIT_URL} className="btn btn-primary">
-        Book an AI Visibility Audit <span className="arr">&rarr;</span>
-      </Link>
-    </div>
-  );
-}
-
-function KeepReadingLink({
-  href,
-  title,
-  tag,
-}: {
-  href: string;
-  title: string;
-  tag: string;
-}) {
-  return (
-    <Link
-      href={href}
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "baseline",
-        gap: 20,
-        padding: "15px 0",
-        borderBottom: "1px solid var(--line)",
-        transition: "padding-left .2s",
-      }}
-    >
-      <span
-        style={{
-          fontFamily: "var(--serif)",
-          fontSize: 19,
-          fontWeight: 500,
-          color: "var(--ink)",
-        }}
-      >
-        {title}
-      </span>
-      <span
-        style={{
-          fontFamily: "var(--mono)",
-          fontSize: "11.5px",
-          color: "var(--faint)",
-          whiteSpace: "nowrap",
-        }}
-      >
-        {tag}
-      </span>
-    </Link>
-  );
-}
+ 

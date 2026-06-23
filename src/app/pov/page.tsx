@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AuthorByline } from "@/components/AuthorByline";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -26,9 +27,7 @@ export default function Post() {
         <h1 style={ { fontFamily: "var(--serif)", fontWeight: 500, fontSize: "clamp(32px, 5vw, 48px)", lineHeight: 1.1, letterSpacing: "-.02em", marginBottom: 16 } }>
           point of view
         </h1>
-        <div style={ { fontFamily: "var(--mono)", fontSize: 12, color: "var(--faint)", marginBottom: 48 } }>
-          Dec 02, 2024 &mdash; Hami Tahm
-        </div>
+        <AuthorByline date="Dec 02, 2024" />
 
         {/* Content */}
         <div

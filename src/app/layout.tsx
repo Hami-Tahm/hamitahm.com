@@ -51,6 +51,7 @@ const siteStructuredData = {
       sameAs: [
         "https://www.linkedin.com/in/hamitahm",
         "https://x.com/hamitahm",
+        "https://www.crunchbase.com/person/hami-tahm",
         "https://homecalc.ca",
         "https://houmse.com",
         "https://dimaht.com/",
@@ -89,6 +90,11 @@ export const metadata: Metadata = {
     locale: "en_CA",
     siteName: "Hami Tahm",
   },
+  twitter: {
+    card: "summary_large_image",
+    site: "@hamitahm",
+    creator: "@hamitahm",
+  },
 };
 
 export default function RootLayout({
@@ -97,7 +103,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${newsreader.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en-CA" className={`${newsreader.variable} ${jetbrainsMono.variable}`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AuthorByline } from "@/components/AuthorByline";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -27,9 +28,7 @@ export default function Post() {
         <h1 style={ { fontFamily: "var(--serif)", fontWeight: 500, fontSize: "clamp(32px, 5vw, 48px)", lineHeight: 1.1, letterSpacing: "-.02em", marginBottom: 16 } }>
           How to be under 30 (Bioage)
         </h1>
-        <div style={ { fontFamily: "var(--mono)", fontSize: 12, color: "var(--faint)", marginBottom: 48 } }>
-          Mar 02, 2026 &mdash; Hami Tahm
-        </div>
+        <AuthorByline date="Mar 02, 2026" />
 
         {/* Exercise Icons */}
         <div style={{ display: "flex", flexWrap: "wrap", gap: 16, justifyContent: "center", margin: "32px 0" }}>

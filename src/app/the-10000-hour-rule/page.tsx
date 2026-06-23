@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AuthorByline } from "@/components/AuthorByline";
 import Image from "next/image";
 import Link from "next/link";
 import { HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
@@ -36,9 +37,7 @@ export default function Post() {
         <h1 style={ { fontFamily: "var(--serif)", fontWeight: 500, fontSize: "clamp(32px, 5vw, 48px)", lineHeight: 1.1, letterSpacing: "-.02em", marginBottom: 16 } }>
           The 10,000-Hour Rule: How Many Hours Do You Need to Reach 7/10 Mastery?
         </h1>
-        <div style={ { fontFamily: "var(--mono)", fontSize: 12, color: "var(--faint)", marginBottom: 48 } }>
-          Feb 22, 2025 &mdash; Hami Tahm
-        </div>
+        <AuthorByline date="Feb 22, 2025" />
 
         {/* Author note — bridge from authority post to commercial */}
         <div
