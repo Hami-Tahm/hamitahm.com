@@ -11,6 +11,10 @@ const PORTRAIT_SRC = "/images/hami-tahm/hami-tahm-portrait.png";
 
 const FAQ_ITEMS = [
   {
+    q: "How do I get my business mentioned in AI answers?",
+    a: "Start with an audit of how AI engines currently describe and cite your business, then close the gaps it surfaces — website content, profiles, third-party mentions, and structured data. That is the path from invisible to mentioned in ChatGPT, Perplexity, and Google AI Overviews.",
+  },
+  {
     q: "Do you work with B2B companies?",
     a: "Yes. Most engagements are B2B Canadian businesses — professional services, SaaS, healthcare practices, multi-location operators. The audit format is built for organizations where buyers research via AI before any sales conversation.",
   },

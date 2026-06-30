@@ -9,6 +9,14 @@ const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 
 const HUB_FAQ = [
   {
+    q: "How do I get my business to show up in ChatGPT?",
+    a: "Audit first, then fix the gaps. AI engines cite businesses with clear, consistent, well-structured information across the web. The audit shows what ChatGPT and the other platforms are missing about you, and what to change so you appear in their answers.",
+  },
+  {
+    q: "How do I get recommended by AI?",
+    a: "Getting recommended means AI engines treat you as a credible, clearly-described option in your category. That comes from consistent signals across your site, your profiles, and third-party mentions — plus the structured data AI engines read. The audit maps which of these you are missing.",
+  },
+  {
     q: "What is the difference between AI visibility and SEO?",
     a: "SEO improves how your page ranks in classic search results. AI visibility covers how AI platforms describe, cite, and recommend your business when users ask questions. You can rank #1 on Google and still be invisible in ChatGPT, Perplexity, and Google AI Overviews.",
   },

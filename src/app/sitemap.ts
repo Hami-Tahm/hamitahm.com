@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // ── Case studies ─────────────────────────────────────────────────────
     { path: "/case-studies/homecalc-ai-visibility/", priority: 0.8 },
+    { path: "/case-studies/cited-by-ai-engines/", priority: 0.8 },
 
     // ── Person + brand pages ─────────────────────────────────────────────
     { path: "/hami-tahm/", priority: 0.85, changeFrequency: "monthly" },

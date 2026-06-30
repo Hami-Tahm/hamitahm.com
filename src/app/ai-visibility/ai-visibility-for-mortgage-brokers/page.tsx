@@ -129,6 +129,10 @@ const FAQ_ITEMS: {
   auditLink?: boolean;
 }[] = [
   {
+    q: "How do I get my mortgage brokerage mentioned in ChatGPT?",
+    a: "Homebuyers ask AI tools about qualification, rates, and closing costs before they pick a broker. To be in those answers, your brokerage needs consistent, well-structured information across your site, your profiles, and third-party sources. The audit identifies where your name should appear in AI answers and currently does not.",
+  },
+  {
     q: "Do Canadian homebuyers really use AI for mortgage research?",
     a: `Yes. HomeCalc.ca, a Canadian mortgage calculator site, received ${HOMECALC_CLAIMS.overCitationsInTimeframe} — across queries like "how much mortgage can I afford," "covering closing costs," and "Canada mortgage qualification rules." These are real questions Canadian homebuyers asked AI tools. AI tools answered them. Brokerages who weren't cited weren't in the answer.`,
   },

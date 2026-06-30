@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { HOMECALC_PROOF } from "@/lib/homecalc-proof";
+import { SNAPSHOT } from "@/lib/ai-citation-proof";
 
 const BOOKING_URL = "/contact/";
 const WALKTHROUGH_MINUTES = 60;
@@ -18,6 +19,14 @@ export const metadata: Metadata = {
 };
 
 const FAQ_ITEMS = [
+  {
+    q: "How do I get my business to show up in ChatGPT and AI search?",
+    a: "That is exactly what the audit addresses. It reviews how ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, and Bing Copilot currently see your business, then gives you a prioritized list of changes that make your brand citeable, trusted, and recommended in AI answers.",
+  },
+  {
+    q: "Why does AI recommend my competitor instead of me?",
+    a: "Usually because AI engines find clearer, more consistent, better-structured signals about your competitor across the web — not because they are a better business. The audit pinpoints which signals are missing or misrepresented for you, and what to change first to close the gap.",
+  },
   {
     q: "What is an AI visibility audit?",
     a: "An AI visibility audit is a structured review of how your business appears across AI platforms — ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, and Bing Copilot. The output is a written report and a prioritized action plan.",
@@ -507,6 +516,49 @@ export default function AIVisibilityAudit() {
                 title="Mortgage broker"
                 note="Case study publishing summer 2026"
               />
+            </div>
+          </RevealSection>
+
+          <RevealSection delay={0.16}>
+            <div
+              className="proof-card"
+              style={{
+                marginTop: 20,
+                display: "flex",
+                flexWrap: "wrap",
+                gap: 16,
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
+              <p
+                style={{
+                  margin: 0,
+                  fontSize: "clamp(16px, 1.9vw, 18px)",
+                  color: "var(--muted)",
+                  lineHeight: 1.6,
+                  maxWidth: "52ch",
+                }}
+              >
+                Proof on the category itself: ask ChatGPT, Perplexity, Google AI
+                Mode, or Grok who does AI visibility in Toronto, and they
+                recommend Hami Tahm by name.
+              </p>
+              <Link
+                href={SNAPSHOT.caseStudyPath}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  fontFamily: "var(--sans)",
+                  fontSize: 14,
+                  fontWeight: 600,
+                  color: "var(--accent)",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                See the snapshot <span>&rarr;</span>
+              </Link>
             </div>
           </RevealSection>
         </div>

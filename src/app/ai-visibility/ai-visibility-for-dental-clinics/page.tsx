@@ -114,6 +114,10 @@ const FAQ_ITEMS: {
   auditLink?: boolean;
 }[] = [
   {
+    q: "How do I get my dental clinic recommended by ChatGPT?",
+    a: 'Make your clinic the clearest, most consistent answer to the questions patients ask AI — "best dentist for implants in [city]," "Invisalign near me." That means aligned website content, Google Business Profile, directory listings, and structured data. The audit shows exactly which of these are keeping your clinic out of AI answers.',
+  },
+  {
     q: "Do AI tools actually recommend dental clinics to patients?",
     a: 'Yes. ChatGPT, Perplexity, Google AI Overviews, Gemini, and Bing Copilot all answer questions like "best dentist for implants in [city]" or "which clinic should I go to for Invisalign near me" with named clinic recommendations. Patients who ask these questions often call the named clinic directly — without ever opening Google search.',
   },
