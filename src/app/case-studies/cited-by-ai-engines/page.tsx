@@ -33,7 +33,7 @@ const structuredData = {
           "@type": "ListItem",
           position: 2,
           name: "Case Studies",
-          item: "https://hamitahm.com/case-studies/cited-by-ai-engines/",
+          item: "https://hamitahm.com/case-studies/",
         },
         {
           "@type": "ListItem",

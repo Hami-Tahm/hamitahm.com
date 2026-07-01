@@ -74,6 +74,7 @@ export function getAllPrimaryUrls(): string[] {
     `${base}/ai-visibility/ai-visibility-for-dental-clinics/`,
     `${base}/ai-visibility/ai-visibility-for-mortgage-brokers/`,
     `${base}/case-studies/homecalc-ai-visibility/`,
+    `${base}/case-studies/cited-by-ai-engines/`,
     `${base}/blog/`,
     `${base}/blog/what-is-ai-visibility/`,
     `${base}/blog/what-is-answer-engine-optimization/`,

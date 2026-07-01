@@ -11,7 +11,10 @@ const TURNAROUND = "7 business days";
 const PRICE_DISPLAY = "$1,500 CAD";
 
 export const metadata: Metadata = {
-  title: "Generative Engine Optimization Consultant",
+  title: {
+    absolute:
+      "Generative Engine Optimization (GEO) Consultant | Show Up in AI Answers",
+  },
   description:
     "GEO helps Canadian businesses get recognized by ChatGPT, Perplexity, and Google Gemini. Consultant-led by Hami Tahm — starts with a $1,500 audit.",
   alternates: {
@@ -273,7 +276,7 @@ export default function GEOConsultantCanada() {
                 maxWidth: "24ch",
               }}
             >
-              Generative Engine Optimization Consultant in Canada
+              Generative Engine Optimization: Get Found in AI-Generated Answers
             </h1>
           </RevealSection>
 

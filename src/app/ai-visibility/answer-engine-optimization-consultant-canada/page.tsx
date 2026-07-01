@@ -11,7 +11,10 @@ const TURNAROUND = "7 business days";
 const PRICE_DISPLAY = "$1,500 CAD";
 
 export const metadata: Metadata = {
-  title: "Answer Engine Optimization Consultant",
+  title: {
+    absolute:
+      "Answer Engine Optimization (AEO) Consultant | Get Found in ChatGPT and AI Search",
+  },
   description:
     "AEO helps Canadian businesses get cited by ChatGPT, Perplexity, and Google AI Overviews. Consultant-led by Hami Tahm — starts with a $1,500 audit.",
   alternates: {
@@ -267,7 +270,7 @@ export default function AEOConsultantCanada() {
                 maxWidth: "24ch",
               }}
             >
-              Answer Engine Optimization Consultant in Canada
+              Answer Engine Optimization: Get Found When Customers Ask AI
             </h1>
           </RevealSection>
 

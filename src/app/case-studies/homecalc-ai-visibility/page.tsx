@@ -83,7 +83,7 @@ const structuredData = {
           "@type": "ListItem",
           position: 2,
           name: "Case Studies",
-          item: "https://hamitahm.com/case-studies/homecalc-ai-visibility/",
+          item: "https://hamitahm.com/case-studies/",
         },
         {
           "@type": "ListItem",
@@ -95,7 +95,7 @@ const structuredData = {
     },
     {
       "@type": "Article",
-      headline: "HomeCalc.ca — AI Visibility Case Study",
+      headline: `How a brand-new Canadian site earned ${HOMECALC_PROOF.citations} AI citations in ${HOMECALC_PROOF.timeframe}`,
       datePublished: "2026-05-01",
       dateModified: "2026-06-17",
       author: {
@@ -161,8 +161,25 @@ export default function HomeCalcCaseStudy() {
                 maxWidth: "24ch",
               }}
             >
-              HomeCalc.ca — AI Visibility Case Study
+              How a brand-new Canadian site earned {HOMECALC_PROOF.citations} AI
+              citations in {HOMECALC_PROOF.timeframe}
             </h1>
+          </RevealSection>
+
+          <RevealSection delay={0.03}>
+            <p
+              style={{
+                marginTop: 18,
+                fontFamily: "var(--serif)",
+                fontSize: "clamp(19px, 2.4vw, 26px)",
+                color: "var(--ink)",
+                lineHeight: 1.4,
+                maxWidth: "40ch",
+              }}
+            >
+              Proof that AI search visibility can be built, not bought. The same
+              method we run for your business.
+            </p>
           </RevealSection>
 
           <RevealSection delay={0.04}>
@@ -192,14 +209,12 @@ export default function HomeCalcCaseStudy() {
                 lineHeight: 1.65,
               }}
             >
-              HomeCalc.ca is a Canadian financial calculator site — under three
-              months old at the time of the audit — operating in one of
-              Google&rsquo;s most scrutinized content categories: personal
-              finance. After an AI visibility audit by Hami Tahm, the site went
-              from near-zero AI citations to 3,100+ citations in 60 days, with
-              20+ pages cited across major AI search platforms — and now
-              commands up to 88% citation share on key Canadian financial
-              queries.
+              HomeCalc.ca launched into one of Canada&rsquo;s most competitive
+              niches — real estate and mortgage. With no ad budget and nothing
+              to buy its way in, it earned {HOMECALC_PROOF.citations} AI
+              citations in its first {HOMECALC_PROOF.timeframe}, in a market
+              dominated by banks/finance. Here is exactly what we did, and what
+              it means for your business.
             </p>
           </RevealSection>
 

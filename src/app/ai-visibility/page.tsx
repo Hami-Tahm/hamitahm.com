@@ -194,11 +194,11 @@ export default function AIVisibilityPage() {
                 maxWidth: "16ch",
               }}
             >
-              Get found when your customers{" "}
+              Get your business found in ChatGPT, Perplexity, and{" "}
               <em style={{ fontStyle: "italic", color: "var(--accent)" }}>
-                ask&nbsp;AI
+                Google AI results
               </em>
-              , not just when they Google.
+              .
             </h1>
           </RevealSection>
 
@@ -212,12 +212,8 @@ export default function AIVisibilityPage() {
                 lineHeight: 1.65,
               }}
             >
-              AI visibility is the practice of ensuring your business appears
-              &mdash; accurately and consistently &mdash; when people use AI
-              tools like ChatGPT, Perplexity, and Google AI Overviews to find
-              products, services, and answers. Hami Tahm is a Toronto-based AI
-              visibility consultant helping Canadian businesses build and
-              measure their presence across AI-powered search.
+              When customers ask AI for a business like yours, is it
+              recommending you or your competitor? Find out, then fix it.
             </p>
           </RevealSection>
 

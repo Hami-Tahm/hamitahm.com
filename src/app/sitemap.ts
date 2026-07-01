@@ -25,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/ai-visibility/ai-visibility-for-mortgage-brokers/", priority: 0.8 },
 
     // ── Case studies ─────────────────────────────────────────────────────
+    { path: "/case-studies/", priority: 0.8, changeFrequency: "monthly" },
     { path: "/case-studies/homecalc-ai-visibility/", priority: 0.8 },
     { path: "/case-studies/cited-by-ai-engines/", priority: 0.8 },
 
