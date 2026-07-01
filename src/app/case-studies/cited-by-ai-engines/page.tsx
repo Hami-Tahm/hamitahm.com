@@ -85,7 +85,9 @@ export default function CitedByAiEnginesCaseStudy() {
               AI Visibility
             </Link>
             <span>/</span>
-            <span>Case Study</span>
+            <Link href="/case-studies/" style={{ color: "var(--faint)" }}>
+              Case Study
+            </Link>
             <span>/</span>
             <span>Cited by AI Engines</span>
           </nav>

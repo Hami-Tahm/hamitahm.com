@@ -140,7 +140,9 @@ export default function HomeCalcCaseStudy() {
               AI Visibility
             </Link>
             <span>/</span>
-            <span>Case Study</span>
+            <Link href="/case-studies/" style={{ color: "var(--faint)" }}>
+              Case Study
+            </Link>
             <span>/</span>
             <span>HomeCalc.ca</span>
           </nav>

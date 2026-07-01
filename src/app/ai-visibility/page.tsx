@@ -1305,6 +1305,58 @@ export default function AIVisibilityPage() {
               </Link>
 
               <Link
+                href="/case-studies/cited-by-ai-engines/"
+                className="proof-card"
+              >
+                <div
+                  style={{
+                    fontFamily: "var(--mono)",
+                    fontSize: 11,
+                    letterSpacing: ".1em",
+                    textTransform: "uppercase",
+                    color: "var(--accent)",
+                    marginBottom: 10,
+                  }}
+                >
+                  Case Study
+                </div>
+                <h3
+                  style={{
+                    fontFamily: "var(--serif)",
+                    fontSize: 21,
+                    fontWeight: 500,
+                    lineHeight: 1.25,
+                    letterSpacing: "-.01em",
+                  }}
+                >
+                  AI Engines Already Recommend Me
+                </h3>
+                <p
+                  style={{
+                    fontSize: "13.5px",
+                    color: "var(--muted)",
+                    marginTop: 10,
+                    lineHeight: 1.55,
+                    maxWidth: "44ch",
+                  }}
+                >
+                  Ask ChatGPT, Perplexity, Google AI Mode, or Grok who does AI
+                  visibility in Toronto &mdash; and they name me. A dated
+                  snapshot of the outcome the audit produces.
+                </p>
+                <div
+                  style={{
+                    fontFamily: "var(--mono)",
+                    fontSize: 13,
+                    color: "var(--accent)",
+                    marginTop: 16,
+                  }}
+                >
+                  See the snapshot &rarr;
+                </div>
+              </Link>
+
+              <Link
                 href="/orthodontic-seo-marketing-case-study/"
                 className="proof-card"
               >
