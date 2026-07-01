@@ -217,6 +217,23 @@ export default function AIVisibilityPage() {
             </p>
           </RevealSection>
 
+          <RevealSection delay={0.16}>
+            <p
+              style={{
+                marginTop: 20,
+                fontSize: 15.5,
+                color: "var(--faint)",
+                maxWidth: "60ch",
+                lineHeight: 1.6,
+              }}
+            >
+              AI visibility is how your business appears &mdash; accurately and
+              consistently &mdash; when people use ChatGPT, Perplexity, and
+              Google AI Overviews to find products and services. Hami Tahm is a
+              Toronto-based AI visibility consultant for Canadian businesses.
+            </p>
+          </RevealSection>
+
           <RevealSection delay={0.18}>
             <div
               style={{
