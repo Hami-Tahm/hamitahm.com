@@ -985,12 +985,19 @@ export default function BestAIVisibilityToolsPost() {
                 tracking software. $1,500 CAD flat.
               </p>
               <Link
-                href={AUDIT_URL}
+                href="/ai-visibility/ai-visibility-checker/"
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
               >
-                Book Your AI Visibility Audit &mdash; $1,500 CAD{" "}
+                Run the free AI Visibility Check{" "}
                 <span className="arr">&rarr;</span>
+              </Link>
+              <Link
+                href={AUDIT_URL}
+                className="btn btn-ghost"
+                style={{ marginTop: 14, marginLeft: 12, position: "relative" }}
+              >
+                Or book the $1,500 audit
               </Link>
             </div>
           </RevealSection>

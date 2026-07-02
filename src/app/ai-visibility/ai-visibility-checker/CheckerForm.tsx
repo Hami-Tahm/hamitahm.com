@@ -60,6 +60,11 @@ export default function CheckerForm() {
         }),
       });
       if (!res.ok) throw new Error("bad status");
+      if (typeof window !== "undefined") {
+        const w = window as unknown as { dataLayer?: Record<string, unknown>[] };
+        w.dataLayer = w.dataLayer || [];
+        w.dataLayer.push({ event: "ai_checker_submit", engines, country });
+      }
       setStatus("done");
     } catch {
       setStatus("error");

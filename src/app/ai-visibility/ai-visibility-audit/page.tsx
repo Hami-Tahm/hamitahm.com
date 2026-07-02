@@ -252,6 +252,18 @@ export default function AIVisibilityAudit() {
               <Link href={BOOKING_URL} className="btn btn-primary">
                 Book Your AI Visibility Audit <span className="arr">&rarr;</span>
               </Link>
+              <div style={{ marginTop: 14 }}>
+                <Link
+                  href="/ai-visibility/ai-visibility-checker/"
+                  style={{
+                    fontFamily: "var(--mono)",
+                    fontSize: 13,
+                    color: "var(--faint)",
+                  }}
+                >
+                  Not ready? Run the free AI visibility check first &rarr;
+                </Link>
+              </div>
             </div>
           </RevealSection>
         </div>

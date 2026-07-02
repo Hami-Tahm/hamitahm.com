@@ -56,6 +56,7 @@ export function Nav() {
           <NavLink href="/writing">Writing</NavLink>
           <NavLink href="/hami-tahm">About</NavLink>
           <NavLink href="/case-studies">Case Studies</NavLink>
+          <NavLink href="/ai-visibility/ai-visibility-checker">Free Checker</NavLink>
           <Link
             href="/ai-visibility"
             style={{
@@ -99,6 +100,7 @@ export function Nav() {
           <NavLink href="/writing">Writing</NavLink>
           <NavLink href="/hami-tahm">About</NavLink>
           <NavLink href="/case-studies">Case Studies</NavLink>
+          <NavLink href="/ai-visibility/ai-visibility-checker">Free Checker</NavLink>
           <Link href="/ai-visibility" style={{ fontFamily: "var(--mono)", fontSize: "12.5px", letterSpacing: ".05em", color: "var(--accent)" }}>
             AI Visibility
           </Link>

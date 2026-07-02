@@ -244,13 +244,16 @@ export default function AIVisibilityPage() {
                 alignItems: "center",
               }}
             >
-              <Link href={AUDIT_URL} className="btn btn-primary">
-                Book Your AI Visibility Audit &mdash; $1,500 CAD{" "}
+              <Link
+                href="/ai-visibility/ai-visibility-checker"
+                className="btn btn-primary"
+              >
+                Run the free AI Visibility Check{" "}
                 <span className="arr">&rarr;</span>
               </Link>
-              <a href="#how" className="btn btn-ghost">
-                How it works
-              </a>
+              <Link href={AUDIT_URL} className="btn btn-ghost">
+                Or book the $1,500 audit
+              </Link>
             </div>
           </RevealSection>
         </div>
