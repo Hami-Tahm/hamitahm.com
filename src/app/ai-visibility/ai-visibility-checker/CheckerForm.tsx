@@ -85,9 +85,9 @@ export default function CheckerForm() {
           You&rsquo;re all set.
         </div>
         <p style={{ fontSize: 16, color: "var(--muted)", lineHeight: 1.6, maxWidth: "46ch", margin: "0 auto" }}>
-          Your detailed AI visibility report is on its way — it lands in your
-          inbox in under 24 hours. We check every engine and keyword you chose
-          and send back a precise, personalized breakdown.
+          Your AI visibility report is on its way. A real analyst checks every
+          engine and keyword you chose and sends back a precise, personalized
+          breakdown — in your inbox within one business day.
         </p>
       </div>
     );
@@ -206,7 +206,7 @@ export default function CheckerForm() {
         {status === "submitting" ? "Sending…" : "Get my AI visibility report →"}
       </button>
       <p style={{ fontSize: 12.5, color: "var(--faint)", marginTop: 12, textAlign: "center", lineHeight: 1.5 }}>
-        Free. Your report lands in your inbox in under 24 hours. We never share your details.
+        Free. A real analyst sends your report within one business day. We never share your details.
       </p>
     </form>
   );

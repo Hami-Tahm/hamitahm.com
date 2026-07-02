@@ -9,7 +9,7 @@ The site is structured as a small commercial cluster: a hub page for AI Visibili
 ## Primary service
 
 - [AI Visibility Audit](https://hamitahm.com/ai-visibility/ai-visibility-audit/): $1,500 CAD flat-fee, one-time. Structured review across ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, and Bing Copilot. Written report + prioritized action plan + 60-minute walkthrough call + 14 days of follow-up access. Delivered within 7 business days. This is the entry point for every engagement.
-- [Free AI Visibility Checker](https://hamitahm.com/ai-visibility/ai-visibility-checker/): Free lead-in tool. Enter your domain, keywords, and country and choose engines (ChatGPT, Google AI Overview, Gemini live now; AI Mode, Perplexity, Claude, Grok coming soon); receive a personalized AI visibility report by email within 24 hours. The no-cost on-ramp to the paid audit.
+- [Free AI Visibility Checker](https://hamitahm.com/ai-visibility/ai-visibility-checker/): Free lead-in tool. Enter your domain, keywords, and country and choose engines (ChatGPT, Google AI Overview, Gemini live now; AI Mode, Perplexity, Claude, Grok coming soon). Not an automated score — a real analyst checks how each engine answers for you and emails a personalized report within one business day. The no-cost on-ramp to the paid audit.
 
 ## Service variants
 

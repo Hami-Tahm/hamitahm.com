@@ -10,6 +10,6 @@ export default async function Image() {
     badge: "FREE TOOL",
     title: "Free AI Visibility Checker",
     subtitle:
-      "See how your brand shows up in ChatGPT, Google AI Overview, and Gemini. Personalized report in under 24 hours.",
+      "Does ChatGPT, Google AI Overview, or Gemini recommend you — or a competitor? A real analyst checks and emails your report, free.",
   });
 }
