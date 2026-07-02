@@ -518,19 +518,6 @@ export default function AIVisibilityAudit() {
             </div>
           </RevealSection>
 
-          <RevealSection delay={0.12}>
-            <div className="proof-grid" style={{ marginTop: 20 }}>
-              <PlaceholderProofCard
-                title="Dental clinic"
-                note="Case study publishing summer 2026"
-              />
-              <PlaceholderProofCard
-                title="Mortgage broker"
-                note="Case study publishing summer 2026"
-              />
-            </div>
-          </RevealSection>
-
           <RevealSection delay={0.16}>
             <div
               className="proof-card"
@@ -1194,51 +1181,3 @@ function ProcessStep({
   );
 }
 
-function PlaceholderProofCard({
-  title,
-  note,
-}: {
-  title: string;
-  note: string;
-}) {
-  return (
-    <div
-      className="proof-card"
-      style={{
-        opacity: 0.85,
-        borderStyle: "dashed",
-      }}
-    >
-      <div
-        style={{
-          fontFamily: "var(--mono)",
-          fontSize: 11,
-          color: "var(--faint)",
-          textTransform: "uppercase",
-          letterSpacing: ".08em",
-        }}
-      >
-        Placeholder
-      </div>
-      <div
-        style={{
-          fontFamily: "var(--sans)",
-          fontSize: 15,
-          fontWeight: 600,
-          marginTop: 8,
-        }}
-      >
-        {title}
-      </div>
-      <p
-        style={{
-          marginTop: 8,
-          fontSize: 13,
-          color: "var(--faint)",
-        }}
-      >
-        {note}
-      </p>
-    </div>
-  );
-}
