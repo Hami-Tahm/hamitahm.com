@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── AI Visibility cluster (hub + spokes) ─────────────────────────────
     { path: "/ai-visibility/", priority: 0.9, changeFrequency: "weekly" },
     { path: "/ai-visibility/ai-visibility-audit/", priority: 0.95 },
+    { path: "/ai-visibility/ai-visibility-checker/", priority: 0.9, changeFrequency: "weekly" },
     { path: "/ai-visibility/ai-visibility-consultant-canada/", priority: 0.9 },
     { path: "/ai-visibility/answer-engine-optimization-consultant-canada/", priority: 0.85 },
     { path: "/ai-visibility/generative-engine-optimization-consultant-canada/", priority: 0.85 },

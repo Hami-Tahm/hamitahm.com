@@ -522,12 +522,17 @@ export default function BestAIVisibilityToolsPost() {
               }}
             >
               <em>
-                Looking for free one-off AI visibility checkers rather than
-                ongoing tracking platforms? That&rsquo;s a different category — see{" "}
+                Looking for a free one-off AI visibility checker rather than an
+                ongoing tracking platform? Run the{" "}
+                <Link href="/ai-visibility/ai-visibility-checker/" style={linkStyle}>
+                  free AI visibility checker
+                </Link>{" "}
+                to see how you show up in ChatGPT, Google AI Overview, and
+                Gemini — or read{" "}
                 <Link href={CHECK_URL} style={linkStyle}>
                   how to check AI visibility for free
-                </Link>{" "}
-                instead.
+                </Link>
+                .
               </em>
             </p>
           </RevealSection>
