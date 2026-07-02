@@ -11,6 +11,7 @@ const ARTICLE_TITLE =
 const ARTICLE_DESCRIPTION =
   "The best AI visibility tools and checkers in 2026 — ranked, tested, and reviewed by an independent consultant who doesn't sell them. Covers trackers, free AI visibility checkers, analytics platforms, and LLM optimization tools.";
 const DATE_PUBLISHED = "2026-06-09";
+const DATE_MODIFIED = "2026-07-02";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const HUB_URL = "/ai-visibility/";
 const CONSULTANT_URL = "/ai-visibility/ai-visibility-consultant-canada/";
@@ -278,6 +279,7 @@ const blogGraph = buildBlogSchema({
   title: ARTICLE_TITLE,
   description: ARTICLE_DESCRIPTION,
   datePublished: DATE_PUBLISHED,
+  dateModified: DATE_MODIFIED,
 })["@graph"];
 
 const structuredData = {

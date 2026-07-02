@@ -37,6 +37,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# local secrets for the weekly performance review (service-account keys, API keys)
+.secrets/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

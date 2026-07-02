@@ -16,6 +16,7 @@ export const metadata: Metadata = {
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const HUB_URL = "/ai-visibility/";
 const CASE_STUDY_URL = "/case-studies/homecalc-ai-visibility/";
+const TOOLS_URL = "/blog/best-ai-visibility-tools/";
 
 export default function Post() {
   return (
@@ -354,7 +355,15 @@ export default function Post() {
               HomeCalc case study
             </Link>{" "}
             ({HOMECALC_CLAIMS.citationsInTimeframe} on a YMYL site under three
-            months old).
+            months old). Comparing your options first? See my ranked guide to
+            the{" "}
+            <Link
+              href={TOOLS_URL}
+              style={{ color: "var(--accent, #0f6e78)", fontWeight: 500 }}
+            >
+              best AI visibility tools and checkers
+            </Link>
+            .
           </p>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
             <Link
