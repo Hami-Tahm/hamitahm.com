@@ -68,7 +68,7 @@ export default function CheckerForm() {
       setStatus("done");
     } catch {
       setStatus("error");
-      setErr("Something went wrong. Please try again, or email TahmHami@gmail.com.");
+      setErr("Something went wrong. Please try again, or email hami@hamitahm.com.");
     }
   }
 

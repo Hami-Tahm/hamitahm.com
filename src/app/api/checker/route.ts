@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
  *
  * Receives an AI Visibility Checker submission, validates it, and forwards it
  * to the Google Apps Script webhook (env CHECKER_SHEET_WEBHOOK), which appends
- * a row to the leads Sheet AND emails TahmHami@gmail.com.
+ * a row to the leads Sheet AND emails hami@hamitahm.com.
  *
  * The webhook URL lives in .env.local / Vercel env only — never in the repo.
  */

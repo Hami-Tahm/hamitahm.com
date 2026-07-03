@@ -924,8 +924,8 @@ export default function AIVisibilityDentalClinics() {
                 }}
               >
                 Or email{" "}
-                <a href="mailto:TahmHami@gmail.com" style={{ color: "var(--ink)" }}>
-                  TahmHami@gmail.com
+                <a href="mailto:hami@hamitahm.com" style={{ color: "var(--ink)" }}>
+                  hami@hamitahm.com
                 </a>
               </p>
             </div>

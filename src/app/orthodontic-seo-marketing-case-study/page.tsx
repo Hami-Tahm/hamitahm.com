@@ -666,10 +666,10 @@ export default function OrthodonticSEOCaseStudy() {
               >
                 Or email{" "}
                 <a
-                  href="mailto:TahmHami@gmail.com"
+                  href="mailto:hami@hamitahm.com"
                   style={{ color: "var(--ink)" }}
                 >
-                  TahmHami@gmail.com
+                  hami@hamitahm.com
                 </a>
               </p>
             </div>

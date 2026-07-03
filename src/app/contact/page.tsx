@@ -178,7 +178,7 @@ export default function ContactPage() {
               </div>
 
               {/* Email */}
-              <a href="mailto:TahmHami@gmail.com" className="channel">
+              <a href="mailto:hami@hamitahm.com" className="channel">
                 <span className="ch-ic">@</span>
                 <div>
                   <div
@@ -199,7 +199,7 @@ export default function ContactPage() {
                       marginTop: 2,
                     }}
                   >
-                    TahmHami@gmail.com
+                    hami@hamitahm.com
                   </div>
                 </div>
               </a>
