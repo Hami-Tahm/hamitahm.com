@@ -195,6 +195,47 @@ export default function HowToCheckAIVisibilityPost() {
                 border: "1px solid var(--line-strong)",
                 borderLeft: "3px solid var(--accent)",
                 borderRadius: 10,
+                padding: "22px 24px",
+                marginBottom: 34,
+                display: "flex",
+                flexWrap: "wrap",
+                gap: 16,
+                alignItems: "center",
+                justifyContent: "space-between",
+                fontFamily: "var(--sans)",
+              }}
+            >
+              <p
+                style={{
+                  margin: 0,
+                  fontSize: 16,
+                  lineHeight: 1.55,
+                  color: "var(--ink)",
+                  maxWidth: "46ch",
+                }}
+              >
+                <strong>Rather not check by hand?</strong> Pick your engines and
+                keywords and a real analyst emails your AI visibility report &mdash;
+                free, within one business day.
+              </p>
+              <Link
+                href="/ai-visibility/ai-visibility-checker/"
+                className="btn btn-primary"
+                style={{ whiteSpace: "nowrap" }}
+              >
+                Run the free AI Visibility Check{" "}
+                <span className="arr">&rarr;</span>
+              </Link>
+            </div>
+          </RevealSection>
+
+          <RevealSection>
+            <div
+              style={{
+                background: "var(--panel)",
+                border: "1px solid var(--line-strong)",
+                borderLeft: "3px solid var(--accent)",
+                borderRadius: 10,
                 padding: "24px 26px",
                 margin: "6px 0 36px",
               }}
