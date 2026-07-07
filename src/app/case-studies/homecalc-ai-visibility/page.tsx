@@ -436,8 +436,8 @@ export default function HomeCalcCaseStudy() {
               <Image
                 src={CHART_SRC}
                 alt={CHART_ALT}
-                width={1024}
-                height={284}
+                width={1400}
+                height={532}
                 loading="lazy"
                 style={{
                   width: "100%",
