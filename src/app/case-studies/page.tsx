@@ -8,8 +8,7 @@ const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 
 export const metadata: Metadata = {
   title: "AI Visibility Case Studies",
-  description:
-    "Real results from AI visibility work: how a brand-new Canadian site earned 3,100+ AI citations in 60 days, and how ChatGPT, Perplexity, Google AI Mode, and Grok came to recommend Hami Tahm by name.",
+  description: `Real results from AI visibility work: how a brand-new Canadian site earned ${HOMECALC_PROOF.citations} AI citations in ${HOMECALC_PROOF.timeframe}, and how ChatGPT, Perplexity, Google AI Mode, and Grok came to recommend Hami Tahm by name.`,
   alternates: { canonical: "https://hamitahm.com/case-studies/" },
 };
 

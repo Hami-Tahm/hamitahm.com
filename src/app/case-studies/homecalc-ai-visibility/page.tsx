@@ -12,13 +12,11 @@ import {
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const TURNAROUND = "7 business days";
 const CHART_SRC = "/images/case-studies/homecalc-citation-chart.png";
-const CHART_ALT =
-  "HomeCalc.ca AI citation growth chart, May–June 2026 — citations climbing from May 24 through mid-June, reaching 3,100+ total across 20+ cited pages, with daily peaks of 250+.";
+const CHART_ALT = `HomeCalc.ca AI citation growth chart — citations climbing from May through early July 2026, reaching ${HOMECALC_PROOF.citations} total across ${HOMECALC_PROOF.pagesCited} cited pages, with daily peaks of ${HOMECALC_PROOF.peakPerDay}.`;
 
 export const metadata: Metadata = {
   title: "HomeCalc.ca AI Visibility Case Study",
-  description:
-    "How HomeCalc.ca went from near-zero to 3,100+ AI citations in 60 days on a YMYL financial site under three months old — now commanding up to 88% citation share on key queries. By Hami Tahm.",
+  description: `How HomeCalc.ca went from near-zero to ${HOMECALC_PROOF.citations} AI citations in ${HOMECALC_PROOF.timeframe} on a YMYL financial site under three months old — now commanding up to ${HOMECALC_PROOF.topCitationShare} citation share on key queries. By Hami Tahm.`,
   alternates: {
     canonical: "https://hamitahm.com/case-studies/homecalc-ai-visibility/",
   },
@@ -413,13 +411,15 @@ export default function HomeCalcCaseStudy() {
                 marginBottom: 28,
               }}
             >
-              HomeCalc.ca accumulated 3,100+ AI citations across 20+ pages in
-              60 days — on a financial site less than three months old at the
-              time of the audit. The closing-cost-calculator page alone received
-              484 citations, and on the &ldquo;mortgage affordability calculator&rdquo;
-              query, HomeCalc now commands an 88% citation share — meaning
-              nearly nine out of every ten AI answers on that query cite
-              HomeCalc.
+              HomeCalc.ca accumulated {HOMECALC_PROOF.citations} AI citations
+              across {HOMECALC_PROOF.pagesCited} pages in{" "}
+              {HOMECALC_PROOF.timeframe} — on a financial site less than three
+              months old at the time of the audit. The closing-cost-calculator
+              page alone received {HOMECALC_CITED_PAGES[0].citations} citations,
+              and on the &ldquo;mortgage affordability calculator&rdquo; query,
+              HomeCalc commands a {HOMECALC_PROOF.topCitationShare} citation
+              share — meaning roughly three out of every four AI answers on that
+              query cite HomeCalc.
             </p>
           </RevealSection>
 
@@ -455,10 +455,11 @@ export default function HomeCalcCaseStudy() {
                   maxWidth: "62ch",
                 }}
               >
-                Citations began climbing around May 24, 2026 and have
-                accelerated consistently — reaching peaks of 250+ citations per
-                day by mid-June, with total accumulation exceeding 3,100 across
-                20+ cited pages.
+                Citations began climbing in late May 2026 and have accelerated
+                consistently — reaching peaks of {HOMECALC_PROOF.peakPerDay}{" "}
+                citations per day, with total accumulation exceeding{" "}
+                {HOMECALC_PROOF.citations.replace("+", "")} across{" "}
+                {HOMECALC_PROOF.pagesCited} cited pages.
               </figcaption>
             </figure>
           </RevealSection>
@@ -507,9 +508,10 @@ export default function HomeCalcCaseStudy() {
               }}
             >
               &ldquo;Citation share&rdquo; is the percentage of all AI citations
-              for a given query that came from HomeCalc.ca. An 88% share means
-              that when AI engines answered this query, they cited HomeCalc
-              nearly nine times out of ten.
+              for a given query that came from HomeCalc.ca. A{" "}
+              {HOMECALC_PROOF.topCitationShare} share means that when AI engines
+              answered this query, they cited HomeCalc in roughly three of every
+              four answers.
             </p>
             <DataTable
               headers={["Query", "AI Citations"]}
