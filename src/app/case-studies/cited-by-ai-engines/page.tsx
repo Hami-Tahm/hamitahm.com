@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
-import { ENGINE_CITATIONS, SNAPSHOT } from "@/lib/ai-citation-proof";
+import { ENGINE_CITATIONS, HAMITAHM_CITATIONS, SNAPSHOT } from "@/lib/ai-citation-proof";
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const TURNAROUND = "7 business days";
@@ -337,6 +337,16 @@ export default function CitedByAiEnginesCaseStudy() {
                 ask Google. When the engine returns one name, that name gets the
                 first conversation — and often the only one. Being the recommended
                 answer is the whole game.
+              </p>
+              <p style={{ marginBottom: 20 }}>
+                And it isn&rsquo;t only recommendation: hamitahm.com itself has
+                earned{" "}
+                <strong style={{ color: "var(--ink)", fontWeight: 600 }}>
+                  {HAMITAHM_CITATIONS.total} AI citations in{" "}
+                  {HAMITAHM_CITATIONS.timeframe}
+                </strong>{" "}
+                (Microsoft Copilot). The practice runs on the same AI visibility
+                it sells.
               </p>
               <p style={{ marginBottom: 20 }}>
                 This is the same result the audit produces for clients, applied

@@ -33,6 +33,20 @@ export const SNAPSHOT = {
   caseStudyPath: "/case-studies/cited-by-ai-engines/",
 } as const;
 
+/**
+ * hamitahm.com's OWN Bing Copilot AI citation volume — a separate proof from the
+ * recommendation snapshot above. Source: Bing Webmaster AI Performance, 3-month
+ * window. Update total/timeframe/updated here when refreshed.
+ *
+ * Display the HEADLINE only. The per-page breakdown is heavily concentrated on a
+ * single non-commercial essay, so never publish the page-level table.
+ */
+export const HAMITAHM_CITATIONS = {
+  total: "7,100+",
+  timeframe: "3 months",
+  updated: "2026-07-05",
+} as const;
+
 export type EngineCitation = {
   /** Engine display name. VERIFY against the source screenshot. */
   engine: string;
