@@ -7,6 +7,8 @@ const BUILDING_SINCE = 2014;
 const buildingYears = new Date().getFullYear() - BUILDING_SINCE;
 
 export const metadata: Metadata = {
+  description:
+    "Hami Tahm is a Toronto-based AI Visibility Consultant helping Canadian businesses get cited and recommended across ChatGPT, Perplexity, Google AI Overviews, Gemini, and Copilot. Flat-fee audits, no retainer.",
   alternates: {
     canonical: "https://hamitahm.com/",
   },
