@@ -3,15 +3,40 @@ import { AuthorByline } from "@/components/AuthorByline";
 import Image from "next/image";
 import Link from "next/link";
 import { HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
+import { blogSchemaJson } from "@/lib/blog-schema";
+
+const ARTICLE_TITLE =
+  "The 10,000-Hour Rule: How Many Hours to Reach 7/10 Mastery?";
+const ARTICLE_DESCRIPTION =
+  "How many hours does it actually take to reach 7/10 mastery in any skill? A practical breakdown of the 10,000-hour rule, with hour estimates for digital marketing, software, languages, and more.";
+const DATE_PUBLISHED = "2025-02-22";
+const DATE_MODIFIED = "2026-07-11";
 
 export const metadata: Metadata = {
   title: "The 10,000-Hour Rule — Hours to Reach 7/10 Mastery",
-  description:
-    "How many hours does it actually take to reach 7/10 mastery in any skill? A practical breakdown of the 10,000-hour rule, with hour estimates for digital marketing, software, languages, and more.",
+  description: ARTICLE_DESCRIPTION,
   alternates: {
     canonical: "https://hamitahm.com/the-10000-hour-rule/",
   },
 };
+
+/**
+ * This evergreen essay is by some distance the most-cited page on the domain in AI
+ * answer engines, yet it previously emitted no structured data at all — so every
+ * citation taught machines nothing about who wrote it or what he does.
+ *
+ * Adding Article + author → #hami-tahm means each of those citations now reinforces
+ * the Person entity with the correct job title attached. Highest effort-to-payoff
+ * change on the site. Keep this schema in place.
+ */
+const schemaJson = blogSchemaJson({
+  slug: "the-10000-hour-rule",
+  title: ARTICLE_TITLE,
+  description: ARTICLE_DESCRIPTION,
+  datePublished: DATE_PUBLISHED,
+  dateModified: DATE_MODIFIED,
+  cluster: "writing",
+});
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const HUB_URL = "/ai-visibility/";
@@ -21,6 +46,10 @@ const TOOLS_URL = "/blog/best-ai-visibility-tools/";
 export default function Post() {
   return (
     <article style={ { padding: "80px 0" } }>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: schemaJson }}
+      />
       <div className="wrap" style={ { maxWidth: 720 } }>
         {/* Breadcrumb */}
         <div style={ { fontFamily: "var(--mono)", fontSize: 12, color: "var(--faint)", marginBottom: 40, display: "flex", gap: 8 } }>

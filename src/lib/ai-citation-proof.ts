@@ -34,18 +34,17 @@ export const SNAPSHOT = {
 } as const;
 
 /**
- * hamitahm.com's OWN Bing Copilot AI citation volume — a separate proof from the
- * recommendation snapshot above. Source: Bing Webmaster AI Performance, 3-month
- * window. Update total/timeframe/updated here when refreshed.
+ * NOTE — do not add a site-wide "hamitahm.com's own AI citation count" claim here.
  *
- * Display the HEADLINE only. The per-page breakdown is heavily concentrated on a
- * single non-commercial essay, so never publish the page-level table.
+ * A previous version published a headline citation figure for this domain as proof
+ * that the practice runs on the system it sells. On review, that framing did not hold:
+ * this domain's citation volume is concentrated on an older evergreen essay unrelated
+ * to the AEO work, and the trend is flat rather than a growth curve. Presenting it as
+ * evidence of the method would be an overclaim.
+ *
+ * Use HOMECALC_PROOF instead. That is the honest, verifiable proof: a real
+ * near-zero → 7,400 citation growth curve in 3 months on a purpose-built site.
  */
-export const HAMITAHM_CITATIONS = {
-  total: "7,100+",
-  timeframe: "3 months",
-  updated: "2026-07-05",
-} as const;
 
 export type EngineCitation = {
   /** Engine display name. VERIFY against the source screenshot. */

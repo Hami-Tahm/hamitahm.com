@@ -1,15 +1,37 @@
 import type { Metadata } from "next";
 import { AuthorByline } from "@/components/AuthorByline";
 import Link from "next/link";
+import { blogSchemaJson } from "@/lib/blog-schema";
+
+const ARTICLE_TITLE = "What I'm Actually Good At";
+const ARTICLE_DESCRIPTION =
+  "A decade of building, testing and shipping digital products across two markets — and an honest look at where I actually add value.";
 
 export const metadata: Metadata = {
   title: "What I’m Actually Good At",
-  description: "What I’m Actually Good At — by Hami Tahm",
+  description: ARTICLE_DESCRIPTION,
+  alternates: {
+    canonical: "https://hamitahm.com/service-business-growth/",
+  },
 };
+
+// Schema added 2026-07-11 — this legacy post had none.
+const schemaJson = blogSchemaJson({
+  slug: "service-business-growth",
+  title: ARTICLE_TITLE,
+  description: ARTICLE_DESCRIPTION,
+  datePublished: "2026-04-20",
+  dateModified: "2026-07-11",
+  cluster: "writing",
+});
 
 export default function Post() {
   return (
     <article style={ { padding: "80px 0" } }>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: schemaJson }}
+      />
       <div className="wrap" style={ { maxWidth: 720 } }>
         {/* Breadcrumb */}
         <div style={ { fontFamily: "var(--mono)", fontSize: 12, color: "var(--faint)", marginBottom: 40, display: "flex", gap: 8 } }>

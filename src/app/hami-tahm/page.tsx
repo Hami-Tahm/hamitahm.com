@@ -17,6 +17,14 @@ export const metadata: Metadata = {
   },
 };
 
+/**
+ * This page used to redefine the Person with the same @id already declared in
+ * layout.tsx, but with a different sameAs list — two conflicting definitions of one
+ * entity, which is exactly what an @id exists to prevent.
+ *
+ * The Person is now declared ONCE, in layout.tsx, and referenced here by @id.
+ * If you need to add a property to it, add it there — not here.
+ */
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
@@ -27,39 +35,6 @@ const structuredData = {
       name: "Hami Tahm — AI Visibility Consultant",
       mainEntity: { "@id": "https://hamitahm.com/#hami-tahm" },
       breadcrumb: { "@id": "https://hamitahm.com/hami-tahm/#breadcrumb" },
-    },
-    {
-      "@type": "Person",
-      "@id": "https://hamitahm.com/#hami-tahm",
-      name: "Hami Tahm",
-      jobTitle: "AI Visibility Consultant",
-      url: "https://hamitahm.com/hami-tahm/",
-      image: `https://hamitahm.com${PORTRAIT_SRC}`,
-      description:
-        "Hami Tahm is a Canadian AI visibility consultant and founder of HomeCalc.ca and HamiTahm.com.",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "111 Peter Street, 9th Floor, Suite 902",
-        addressLocality: "Toronto",
-        addressRegion: "ON",
-        postalCode: "M5V 2H1",
-        addressCountry: "CA",
-      },
-      knowsAbout: [
-        "AI Visibility",
-        "Answer Engine Optimization",
-        "Generative Engine Optimization",
-        "AI Search Optimization",
-        "SEO",
-        "Real estate technology",
-        "Canadian mortgage market",
-      ],
-      sameAs: [
-        "https://www.linkedin.com/in/hamitahm",
-        "https://x.com/hamitahm",
-        "https://homecalc.ca",
-        "https://houmse.com",
-      ],
     },
     {
       "@type": "BreadcrumbList",

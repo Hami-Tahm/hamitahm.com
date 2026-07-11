@@ -40,6 +40,18 @@ yarn-error.log*
 # local secrets for the weekly performance review (service-account keys, API keys)
 .secrets/
 
+# ── INTERNAL STRATEGY DOCS — NEVER COMMIT ──
+# This repository is PUBLIC. Anything committed here is indexed by Google and by AI
+# crawlers, and can be cited back when someone asks an AI engine "Who is Hami Tahm?".
+# Internal strategy notes contain traffic numbers, revenue gaps, competitive analysis
+# and identity decisions — none of which belong in a public repo attached to the brand.
+# Keep them locally; do not track them.
+ENTITY-AEO-MASTER-PLAN*.md
+AI-VISIBILITY-BASELINE-PANEL*.md
+*-INTERNAL.md
+/notes/
+/strategy/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

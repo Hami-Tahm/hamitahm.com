@@ -24,20 +24,45 @@ export function Footer() {
         </div>
         <div style={{ display: "flex", gap: 22 }}>
           <FooterLink href="https://x.com/hamitahm">X / Twitter</FooterLink>
-          <FooterLink href="https://linkedin.com/in/hamitahm">LinkedIn</FooterLink>
+          {/* Verify this URL if you ever change it — the previous one 404'd. */}
+          <FooterLink href="https://www.linkedin.com/in/hami-tahm/">LinkedIn</FooterLink>
           <FooterLink href="/contact">Contact</FooterLink>
         </div>
       </div>
       <div className="wrap">
+        {/*
+          The footer is sitewide, so crawlers and answer engines read it on every page
+          \u2014 and they do quote it back. These ~20 words carry the canonical descriptor.
+
+          Keep this sentence identical to the X bio, the LinkedIn headline and the
+          Linktree bio. The repetition across surfaces is the point: it is what tells
+          machines these profiles are one entity.
+        */}
+        <div
+          style={{
+            fontFamily: "var(--sans)",
+            fontSize: "13.5px",
+            color: "var(--muted)",
+            marginTop: 26,
+            maxWidth: "62ch",
+            lineHeight: 1.6,
+          }}
+        >
+          AI Visibility Consultant in Toronto &mdash; helping Canadian businesses get
+          cited in ChatGPT, Perplexity, and Google AI&nbsp;Overviews.
+        </div>
         <div
           style={{
             fontFamily: "var(--mono)",
             fontSize: "11.5px",
             color: "var(--faint)",
-            marginTop: 26,
+            marginTop: 14,
           }}
         >
-          {`\u00A9 2024\u2013${new Date().getFullYear()} Hami Tahm`} &mdash; Toronto, Canada. Building toward a unicorn.
+          {`\u00A9 2024\u2013${new Date().getFullYear()} Hami Tahm`} &middot; Toronto, Canada &middot;{" "}
+          <a href="mailto:hami@hamitahm.com" style={{ color: "inherit" }}>
+            hami@hamitahm.com
+          </a>
         </div>
       </div>
     </footer>

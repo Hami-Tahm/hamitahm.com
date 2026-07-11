@@ -44,4 +44,25 @@ export const writingPosts = [...posts].sort((a, b) =>
   b.sortDate.localeCompare(a.sortDate),
 );
 
-export const latestWritingPosts = writingPosts.slice(0, 3);
+/**
+ * Posts surfaced on the HOMEPAGE — an explicit allowlist, not `.slice(0, 3)`.
+ *
+ * This used to take the three most recent posts by date, which meant the homepage —
+ * the first page every crawler and answer engine reads, and the main signal for what
+ * this site is about — surfaced whatever happened to be newest, regardless of topic.
+ * Recency is the wrong sort key for a homepage. Curate deliberately, and keep the
+ * selection on-topic.
+ *
+ * /the-10000-hour-rule/ is included on purpose: it is the most-cited page on the
+ * domain in AI answer engines, so linking it from the homepage is cheap internal-link
+ * equity toward a page that is already earning.
+ */
+const HOMEPAGE_SLUGS = [
+  "/the-10000-hour-rule",
+  "/orthodontic-seo-marketing-case-study",
+  "/service-business-growth",
+] as const;
+
+export const latestWritingPosts = HOMEPAGE_SLUGS.map(
+  (slug) => writingPosts.find((p) => p.slug === slug)!,
+).filter(Boolean);

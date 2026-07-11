@@ -1,15 +1,39 @@
 import type { Metadata } from "next";
 import { AuthorByline } from "@/components/AuthorByline";
 import Link from "next/link";
+import { blogSchemaJson } from "@/lib/blog-schema";
+
+const ARTICLE_TITLE = "Real Estate Lawyer in Toronto";
+const ARTICLE_DESCRIPTION =
+  "What a real estate lawyer in Toronto actually does, what it costs, and when you need one — from someone who has bought, sold, and built in this market.";
 
 export const metadata: Metadata = {
   title: "Real estate lawyer in Toronto",
-  description: "Real estate lawyer in Toronto — by Hami Tahm",
+  description: ARTICLE_DESCRIPTION,
+  alternates: {
+    canonical: "https://hamitahm.com/real-estate-lawyer-in-toronto/",
+  },
 };
+
+// Schema added 2026-07-11 — this legacy post had none. Keeping it indexed (it
+// supports the real-estate / trust-based-local-business entity), so it should be
+// attributed to the Person entity like everything else we keep.
+const schemaJson = blogSchemaJson({
+  slug: "real-estate-lawyer-in-toronto",
+  title: ARTICLE_TITLE,
+  description: ARTICLE_DESCRIPTION,
+  datePublished: "2024-12-08",
+  dateModified: "2026-07-11",
+  cluster: "writing",
+});
 
 export default function Post() {
   return (
     <article style={ { padding: "80px 0" } }>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: schemaJson }}
+      />
       <div className="wrap" style={ { maxWidth: 720 } }>
         {/* Breadcrumb */}
         <div style={ { fontFamily: "var(--mono)", fontSize: 12, color: "var(--faint)", marginBottom: 40, display: "flex", gap: 8 } }>

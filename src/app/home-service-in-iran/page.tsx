@@ -6,6 +6,9 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "2024 Market Analysis: Home Services Industry in Iran",
   description: "2024 Market Analysis: Home Services Industry in Iran — by Hami Tahm",
+  // Noindexed and removed from the sitemap: off-topic for this site's focus.
+  // Kept live for anyone holding a direct link.
+  robots: { index: false, follow: true },
 };
 
 export default function Post() {

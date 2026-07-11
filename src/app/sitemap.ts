@@ -90,8 +90,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/optimal-shower-hair-routine/", priority: 0.5 },
     { path: "/happiness-and-satisfaction-in-2024/", priority: 0.5 },
 
-    // ── Older market-specific / archival ─────────────────────────────────
-    { path: "/home-service-in-iran/", priority: 0.4 },
+    // Older archival posts that are off-topic for this site's focus are intentionally
+    // not listed here, and are noindexed at the page level.
   ];
 
   return entries.map(({ path, priority, changeFrequency }) => ({

@@ -20,8 +20,17 @@ type BlogSchemaInput = {
   dateModified?: string;
   /** Optional OG image, absolute or site-relative */
   image?: string;
-  /** Breadcrumb cluster — defaults to AI Visibility cluster */
-  cluster?: "ai-visibility" | "blog";
+  /**
+   * Breadcrumb cluster — also decides where the post lives.
+   *
+   * "ai-visibility" | "blog"  → /blog/<slug>/
+   * "writing"                 → /<slug>/   (older root-level posts)
+   *
+   * The "writing" case exists because the older root-level essays carried no
+   * structured data, so nothing attributed them to the author entity. Any root-level
+   * post we keep indexed should use this so it feeds the Person entity like the rest.
+   */
+  cluster?: "ai-visibility" | "blog" | "writing";
 };
 
 export function buildBlogSchema(input: BlogSchemaInput) {
@@ -35,15 +44,26 @@ export function buildBlogSchema(input: BlogSchemaInput) {
     cluster = "ai-visibility",
   } = input;
 
-  const url = `${SITE}/blog/${slug}/`;
+  const isWriting = cluster === "writing";
+  const url = isWriting ? `${SITE}/${slug}/` : `${SITE}/blog/${slug}/`;
   const resolvedImage = image
     ? image.startsWith("http")
       ? image
       : `${SITE}${image}`
     : undefined;
 
-  const breadcrumbItems =
-    cluster === "ai-visibility"
+  const breadcrumbItems = isWriting
+    ? [
+        { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Writing",
+          item: `${SITE}/writing/`,
+        },
+        { "@type": "ListItem", position: 3, name: title, item: url },
+      ]
+    : cluster === "ai-visibility"
       ? [
           { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
           {

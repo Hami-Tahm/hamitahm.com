@@ -26,12 +26,18 @@ const jetbrainsMono = JetBrains_Mono({
 const siteStructuredData = {
   "@context": "https://schema.org",
   "@graph": [
+    // THE canonical Person. Defined here ONCE and referenced everywhere else by @id.
+    // (/hami-tahm/ used to redefine this same @id with a conflicting sameAs list —
+    // removed 2026-07-11. Add new properties HERE, never in a page.)
     {
       "@type": "Person",
       "@id": "https://hamitahm.com/#hami-tahm",
       name: "Hami Tahm",
-      url: "https://hamitahm.com/",
+      url: "https://hamitahm.com/hami-tahm/",
       jobTitle: "AI Visibility Consultant",
+      description:
+        "Hami Tahm is a Toronto-based AI visibility consultant helping Canadian businesses get cited in ChatGPT, Perplexity, and Google AI Overviews. Founder of HomeCalc.ca.",
+      image: "https://hamitahm.com/images/hami-tahm/hami-tahm-portrait.png",
       worksFor: { "@id": "https://hamitahm.com/#organization" },
       address: {
         "@type": "PostalAddress",
@@ -47,10 +53,20 @@ const siteStructuredData = {
         "Generative Engine Optimization",
         "AI Search Optimization",
         "SEO",
+        "Real estate technology",
+        "Canadian mortgage market",
       ],
+      // Every URL below was opened and confirmed to resolve (2026-07-11).
+      // The previous LinkedIn entry was a dead URL and had been declared site-wide,
+      // in both schema and footer. Verify any URL before adding it here — a broken
+      // sameAs is worse than no sameAs.
+      //
+      // TODO: the dimaht.com entry is under review — see internal notes (not in repo).
       sameAs: [
-        "https://www.linkedin.com/in/hamitahm",
+        "https://www.linkedin.com/in/hami-tahm/",
         "https://x.com/hamitahm",
+        "https://www.youtube.com/@HamiTahm",
+        "https://linktr.ee/Hami_Tahm",
         "https://www.crunchbase.com/person/hami-tahm",
         "https://github.com/Hami-Tahm",
         "https://homecalc.ca",
