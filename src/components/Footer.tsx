@@ -48,8 +48,9 @@ export function Footer() {
             lineHeight: 1.6,
           }}
         >
-          AI Visibility Consultant in Toronto &mdash; helping Canadian businesses get
-          cited in ChatGPT, Perplexity, and Google AI&nbsp;Overviews.
+          AI Visibility Consultant in Toronto &mdash; AEO &amp; GEO for Canadian
+          businesses that want to be cited in ChatGPT, Perplexity, and
+          Google AI&nbsp;Overviews.
         </div>
         <div
           style={{

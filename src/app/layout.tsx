@@ -35,8 +35,13 @@ const siteStructuredData = {
       name: "Hami Tahm",
       url: "https://hamitahm.com/hami-tahm/",
       jobTitle: "AI Visibility Consultant",
+      // CANONICAL DESCRIPTOR — keep this identical to the footer, the X bio, the
+      // LinkedIn headline, the Linktree bio and every other profile. The repetition
+      // of one exact sentence across surfaces is what tells machines these profiles
+      // are a single entity. If you change it, change it EVERYWHERE, or you rebuild
+      // the fragmentation this was written to fix.
       description:
-        "Hami Tahm is a Toronto-based AI visibility consultant helping Canadian businesses get cited in ChatGPT, Perplexity, and Google AI Overviews. Founder of HomeCalc.ca.",
+        "AI Visibility Consultant in Toronto — AEO & GEO for Canadian businesses that want to be cited in ChatGPT, Perplexity, and Google AI Overviews.",
       image: "https://hamitahm.com/images/hami-tahm/hami-tahm-portrait.png",
       worksFor: { "@id": "https://hamitahm.com/#organization" },
       address: {
