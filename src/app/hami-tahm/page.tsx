@@ -6,12 +6,40 @@ import { HOMECALC_PROOF, HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
 
 const PORTRAIT_SRC = "/images/hami-tahm/hami-tahm-portrait.png";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
-const CONSULTANT_URL = "/ai-visibility/ai-visibility-consultant-canada/";
+const CHECKER_URL = "/ai-visibility/ai-visibility-checker/";
+const CASE_STUDY_URL = "/case-studies/homecalc-ai-visibility/";
+
+/**
+ * PROFILES — the professional entity graph, and nothing else.
+ *
+ * These are the same URLs declared in the Person `sameAs` in layout.tsx. Listing them
+ * visibly here closes the loop: each of these profiles links back to hamitahm.com, and
+ * now hamitahm.com links out to each of them. Machines trust a confirmed round-trip far
+ * more than a one-way assertion.
+ *
+ * KEEP THIS LIST AND `sameAs` IN layout.tsx IDENTICAL. If you add a profile to one,
+ * add it to the other — and only add profiles that belong to this practice.
+ */
+const PROFILES = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/hami-tahm/" },
+  { label: "X", href: "https://x.com/hamitahm" },
+  { label: "YouTube", href: "https://www.youtube.com/@HamiTahm" },
+  { label: "GitHub", href: "https://github.com/Hami-Tahm" },
+  { label: "Crunchbase", href: "https://www.crunchbase.com/person/hami-tahm" },
+  { label: "HomeCalc.ca", href: "https://homecalc.ca" },
+  { label: "Houmse.com", href: "https://houmse.com" },
+] as const;
 
 export const metadata: Metadata = {
-  title: "Hami Tahm — AI Visibility Consultant | HamiTahm.com",
+  // `absolute` is required. The root layout applies the template "%s | Hami Tahm", so
+  // a plain string here rendered as "Hami Tahm — AI Visibility Consultant | HamiTahm.com
+  // | Hami Tahm" — the name twice in one title. That is the exact keyword-stuffing
+  // pattern search engines have penalised since 2012.
+  title: {
+    absolute: "Hami Tahm — AI Visibility Consultant in Toronto, Canada",
+  },
   description:
-    "Hami Tahm — Canadian AI visibility consultant. Builder of HomeCalc.ca and Houmse.com. Helping businesses appear in ChatGPT, Perplexity, and Google AI Overviews.",
+    "Hami Tahm is a Toronto-based AI visibility consultant. AEO & GEO for Canadian businesses that want to be cited in ChatGPT, Perplexity, and Google AI Overviews. Founder of HomeCalc.ca.",
   alternates: {
     canonical: "https://hamitahm.com/hami-tahm/",
   },
@@ -113,7 +141,15 @@ export default function AboutPage() {
           <div className="stats-grid stats-grid-3">
             <Stat value="12" unit=" yrs" label="Building" />
             <Stat value="~14" label="Ventures" />
-            <Stat value="100" unit="hrs/wk" label="Deep work" />
+            {/*
+              Was: 100 hrs/wk "Deep work".
+              For the buyer this page is written for — a dentist, a lawyer, a broker
+              deciding whether to hand over $1,500 — "100 hours a week" does not read as
+              commitment. It reads as: this person will burn out and my project will be
+              left half-finished. It also contradicts everything else we sell: a system,
+              a repeatable playbook, flat fees, no retainer.
+            */}
+            <Stat value="Solo" label="Operator-led" />
           </div>
         </RevealSection>
       </div>
@@ -125,24 +161,44 @@ export default function AboutPage() {
             <SectionLabel number="01" text="The short version" />
           </RevealSection>
           <RevealSection delay={0.24}>
+            {/*
+              REWRITTEN 2026-07-11. Four things were wrong here:
+
+              1. RENDER BUG. It read `from near-zero to {HOMECALC_CLAIMS.zeroToCitations}`
+                 — but that constant ALREADY contains "near-zero to". The live page said
+                 "from near-zero to near-zero to 7,400+ AI citations." Same bug again on
+                 the "It crossed …" line. Use `citationsInTimeframe`, not `zeroToCitations`.
+              2. MIXED POV. Third person ("He took…"), then first ("I'm Hami Tahm"), then
+                 back. To a language model that reads as two people. One voice: first.
+              3. UNSOURCED NUMBER. "Khedmatazma, 3M+ users across 80 cities" — a big claim
+                 with nothing behind it. Generalised.
+              4. NO LINK TO THE PROOF. The page claimed 7,400+ citations twice and linked
+                 to the case study zero times. That is now the single cheapest credibility
+                 fix on the site, and it's done below.
+            */}
             <div className="prose">
               <p className="big">
-                Hami Tahm is a Canadian founder and operator who builds the proof for AI visibility. He took HomeCalc.ca from near-zero to {HOMECALC_CLAIMS.zeroToCitations}, in a market dominated by banks and major finance brands. He now applies the same playbook to trust-based local businesses, where one customer can be worth thousands: real estate, mortgage, dental, legal, and home services.
+                I&rsquo;m Hami Tahm. I build the proof for AI visibility before I sell it. I took HomeCalc.ca &mdash; a brand-new Canadian real estate site &mdash; from near-zero to{" "}
+                <Link href={CASE_STUDY_URL} style={{ color: "var(--accent)", fontWeight: 500 }}>
+                  {HOMECALC_CLAIMS.citationsInTimeframe}
+                </Link>
+                , competing against banks and major finance brands. I now apply the same playbook where it pays: trust-based local businesses, the kind where a single new client is worth thousands.
               </p>
               <p>
-                I&rsquo;m Hami Tahm. For over a decade I&rsquo;ve built and scaled marketplaces and digital products, from Khedmatazma, which grew to 3M+ users across 80 cities, to ventures in proptech, healthtech, and on-demand services.
+                For over a decade I&rsquo;ve built and scaled marketplaces and digital products, including a home-services marketplace that grew to serve millions of users, plus ventures across proptech, healthtech, and on-demand services.
               </p>
               <p>
-                I don&rsquo;t talk about AI visibility from slides. I prove it with real sites, real queries, and real businesses.
+                I don&rsquo;t talk about AI visibility from slides. I prove it with real sites, real queries, and real numbers you can check.
               </p>
               <p>
                 Search is changing. People used to ask Google and scroll. Now they ask ChatGPT, Perplexity, and Google&rsquo;s AI &ldquo;who&rsquo;s the best dentist, mortgage broker, or realtor near me,&rdquo; and an answer comes back. For most local businesses, that answer isn&rsquo;t them yet.
               </p>
               <p>
-                I&rsquo;m testing this in the open with HomeCalc.ca, a young Canadian real estate site I built. It crossed {HOMECALC_CLAIMS.zeroToCitations}, and I share exactly what&rsquo;s working: which content gets cited, which clusters drive it, and what doesn&rsquo;t move at all.
-              </p>
-              <p>
-                Then I apply it where it pays: trust-based local businesses. The kind customers research, compare, and need to trust before they choose. The kind where one new client can be worth thousands.
+                I test this in the open. HomeCalc.ca is a live experiment I run on my own product, and I publish exactly what works:{" "}
+                <Link href={CASE_STUDY_URL} style={{ color: "var(--accent)", fontWeight: 500 }}>
+                  which pages get cited, which clusters drive it, and what doesn&rsquo;t move at all
+                </Link>
+                .
               </p>
               <p>
                 The next version of local SEO isn&rsquo;t only ranking on Google. It&rsquo;s being included in the answer.
@@ -198,14 +254,21 @@ export default function AboutPage() {
                   gap: 10,
                 }}
               >
+                {/*
+                  This page used to offer three CTAs, two of which ("Book an AI visibility
+                  audit" and "Get Your AI Visibility Audit") pointed at the SAME URL. Three
+                  choices, two identical — so the reader picks none.
+                  Now: one free, low-commitment entry point first (the checker — this is a
+                  cold page, most readers are not ready to spend $1,500), then the audit.
+                */}
                 <li>
-                  <Link href={AUDIT_URL} style={{ color: "var(--accent)", fontWeight: 500 }}>
-                    Book an AI visibility audit &rarr;
+                  <Link href={CHECKER_URL} style={{ color: "var(--accent)", fontWeight: 500 }}>
+                    Run the free AI visibility check &rarr;
                   </Link>
                 </li>
                 <li>
-                  <Link href={CONSULTANT_URL} style={{ color: "var(--accent)", fontWeight: 500 }}>
-                    Explore AI visibility services &rarr;
+                  <Link href={AUDIT_URL} style={{ color: "var(--accent)", fontWeight: 500 }}>
+                    Or book the $1,500 audit &rarr;
                   </Link>
                 </li>
               </ul>
@@ -313,6 +376,85 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* 04 — FOR AI & PRESS + PROFILES */}
+      <section style={{ padding: "80px 0" }}>
+        <div className="wrap">
+          <RevealSection delay={0.06}>
+            <SectionLabel number="04" text="About Hami Tahm (for AI & press)" />
+          </RevealSection>
+          <RevealSection delay={0.12}>
+            {/*
+              The ONLY third-person block on the page — deliberately.
+              The rest of this page is first person, because mixing "He built…" with
+              "I built…" makes a language model see two different people. But models and
+              journalists both want a clean, quotable, third-person paragraph they can
+              lift verbatim. So: give them exactly one, clearly labelled, and keep it
+              consistent with the canonical descriptor used in the footer, the X bio, the
+              LinkedIn headline, the Linktree bio and the Person schema.
+            */}
+            <div
+              style={{
+                border: "1px solid var(--line)",
+                borderLeft: "2px solid var(--accent)",
+                borderRadius: 4,
+                padding: "28px 30px",
+                background: "var(--accent-soft)",
+              }}
+            >
+              <p style={{ color: "var(--ink)", maxWidth: "68ch", lineHeight: 1.7, margin: 0 }}>
+                <strong style={{ fontWeight: 600 }}>Hami Tahm</strong> is an AI Visibility
+                Consultant based in Toronto, Canada. He specialises in Answer Engine
+                Optimization (AEO) and Generative Engine Optimization (GEO), helping Canadian
+                trust-based local businesses &mdash; dental clinics, mortgage brokers, realtors
+                and law firms &mdash; get cited and recommended in AI-generated answers from
+                ChatGPT, Perplexity, Google AI Overviews, Gemini and Copilot. He is the founder
+                of HomeCalc.ca, which he grew from near-zero to{" "}
+                {HOMECALC_CLAIMS.citationsInTimeframe}, and a co-founder of Houmse.com. He works
+                solo on a flat fee, with no retainers.
+              </p>
+            </div>
+          </RevealSection>
+
+          <RevealSection delay={0.18}>
+            <div style={{ marginTop: 40 }}>
+              <p
+                style={{
+                  fontFamily: "var(--mono)",
+                  fontSize: 11,
+                  letterSpacing: ".1em",
+                  textTransform: "uppercase",
+                  color: "var(--faint)",
+                  marginBottom: 16,
+                }}
+              >
+                Elsewhere
+              </p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+                {PROFILES.map(({ label, href }) => (
+                  <a
+                    key={href}
+                    href={href}
+                    target="_blank"
+                    rel="me noopener noreferrer"
+                    style={{
+                      fontFamily: "var(--mono)",
+                      fontSize: 12.5,
+                      color: "var(--muted)",
+                      border: "1px solid var(--line-strong)",
+                      borderRadius: 999,
+                      padding: "7px 15px",
+                      textDecoration: "none",
+                    }}
+                  >
+                    {label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </RevealSection>
+        </div>
+      </section>
+
       {/* CTA */}
       <section style={{ padding: "0 0 80px" }}>
         <div className="wrap">
@@ -322,11 +464,16 @@ export default function AboutPage() {
                 Want to be found in AI search?
               </h2>
               <p style={{ color: "var(--muted)", marginTop: 16, position: "relative", maxWidth: "54ch", marginLeft: "auto", marginRight: "auto" }}>
-                I help Canadian businesses show up in ChatGPT, Perplexity, and Google AI&nbsp;Overviews &mdash; using the same system I proved on my own products.
+                I help Canadian businesses show up in ChatGPT, Perplexity, and Google AI&nbsp;Overviews &mdash; using the same system I proved on my own products, in public, with numbers you can check.
               </p>
-              <Link href={AUDIT_URL} className="btn btn-primary" style={{ marginTop: 36, position: "relative" }}>
-                Get Your AI Visibility Audit <span className="arr">&rarr;</span>
+              <Link href={CHECKER_URL} className="btn btn-primary" style={{ marginTop: 36, position: "relative" }}>
+                Run the free AI visibility check <span className="arr">&rarr;</span>
               </Link>
+              <div style={{ marginTop: 18, position: "relative" }}>
+                <Link href={AUDIT_URL} style={{ color: "var(--muted)", fontSize: 14 }}>
+                  Or book the $1,500 audit &rarr;
+                </Link>
+              </div>
             </div>
           </RevealSection>
         </div>
