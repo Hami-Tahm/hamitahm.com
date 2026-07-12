@@ -63,10 +63,15 @@ const siteStructuredData = {
       ],
       // Every URL below was opened and confirmed to resolve (2026-07-11).
       // The previous LinkedIn entry was a dead URL and had been declared site-wide,
-      // in both schema and footer. Verify any URL before adding it here — a broken
+      // in both schema and footer. VERIFY ANY URL BEFORE ADDING IT HERE — a broken
       // sameAs is worse than no sameAs.
       //
-      // TODO: the dimaht.com entry is under review — see internal notes (not in repo).
+      // This list is deliberately SCOPED to the professional English-language entity.
+      // sameAs is an identity assertion, not a link: everything listed here is being
+      // declared, to every crawler and every model, as "this is the same person."
+      // So only list properties that belong to this practice. Personal, other-language
+      // and unrelated-venture properties are intentionally NOT declared — not hidden,
+      // just not asserted as part of this professional identity.
       sameAs: [
         "https://www.linkedin.com/in/hami-tahm/",
         "https://x.com/hamitahm",
@@ -76,7 +81,6 @@ const siteStructuredData = {
         "https://github.com/Hami-Tahm",
         "https://homecalc.ca",
         "https://houmse.com",
-        "https://dimaht.com/",
       ],
     },
     {
