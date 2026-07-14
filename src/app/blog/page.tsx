@@ -9,6 +9,15 @@ export const metadata: Metadata = {
 };
 
 const posts = [
+  // First on purpose. This is the only page here with original first-party data,
+  // and it is the asset the entire off-site link strategy is built around.
+  {
+    href: "/blog/ai-citation-study/",
+    cat: "Original research",
+    title: "What 14,400+ AI Citations Actually Taught Me",
+    excerpt:
+      "Two sites, three months, 14,400 citations from Microsoft Copilot. Which pages got cited, which got nothing, and the finding nobody publishes: citations are not customers.",
+  },
   {
     href: "/blog/what-is-ai-visibility/",
     cat: "Basics",

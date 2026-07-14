@@ -36,6 +36,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // ── AI Visibility blog ───────────────────────────────────────────────
     { path: "/blog/", priority: 0.75, changeFrequency: "weekly" },
+    // Original research — the linkable asset. Highest blog priority on purpose:
+    // this is the page the whole off-site strategy is built to earn links to.
+    { path: "/blog/ai-citation-study/", priority: 0.9, changeFrequency: "monthly" },
     { path: "/blog/what-is-ai-visibility/", priority: 0.7 },
     { path: "/blog/what-is-answer-engine-optimization/", priority: 0.65 },
     { path: "/blog/aeo-vs-geo-vs-seo/", priority: 0.7 },
