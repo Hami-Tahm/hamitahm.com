@@ -52,8 +52,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/blog/faq-schema-accordion-bug/", priority: 0.75 },
     { path: "/blog/spa-to-ssg-ai-visibility/", priority: 0.75 },
 
-    // ── Writing index ────────────────────────────────────────────────────
-    { path: "/writing/", priority: 0.7, changeFrequency: "weekly" },
+    // ── Writing index — REMOVED 2026-07-14 ───────────────────────────────
+    // Noindexed (see the page). It indexes the off-topic personal cluster, so it is
+    // delisted here too. The on-topic keeper essays below remain listed individually.
 
     // ── Older SEO-targeted posts ─────────────────────────────────────────
     { path: "/seo-expert-toronto/", priority: 0.6 },
@@ -61,40 +62,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/real-estate-lawyer-in-toronto/", priority: 0.6 },
     { path: "/service-business-growth/", priority: 0.55 },
 
-    // ── Long-form / evergreen posts ──────────────────────────────────────
+    // ── Long-form / evergreen — ON-TOPIC keepers only ────────────────────
+    // /the-10000-hour-rule/ stays: it earns ~6,500 AI citations (93% of the domain)
+    // and is now linked from the homepage. It is the one legacy essay that is an asset.
     { path: "/the-10000-hour-rule/", priority: 0.6 },
-    { path: "/the-longevity-economy-6-high-growth-sectors/", priority: 0.6 },
-    { path: "/the-future-of-life-expectancy/", priority: 0.55 },
-    { path: "/the-real-founder-dilemma/", priority: 0.55 },
-    { path: "/how-ai-is-reshaping-learning/", priority: 0.55 },
-    { path: "/pushing-boundaries/", priority: 0.5 },
-    { path: "/the-first-one/", priority: 0.5 },
-    { path: "/1-out-of-20/", priority: 0.5 },
-    { path: "/under-30/", priority: 0.5 },
-    { path: "/these-days/", priority: 0.5 },
-    { path: "/thriving/", priority: 0.5 },
-    { path: "/pov/", priority: 0.5 },
-    { path: "/after-product-launch/", priority: 0.5 },
-    { path: "/how-much-wealth-should-you-aim-for/", priority: 0.5 },
 
-    // ── Finance / investing posts ────────────────────────────────────────
-    { path: "/invest-amid-inflation-in-canada/", priority: 0.55 },
-    { path: "/investment-types/", priority: 0.5 },
-    { path: "/etf-stock-mutualfund/", priority: 0.5 },
-    { path: "/reit/", priority: 0.5 },
-
-    // ── Health / lifestyle posts ─────────────────────────────────────────
-    { path: "/wine-profile/", priority: 0.5 },
-    { path: "/how-many-diets-exist-in-the-world/", priority: 0.5 },
-    { path: "/sleep-quality-101/", priority: 0.5 },
-    { path: "/fitness-pyramid/", priority: 0.5 },
-    { path: "/exercise/", priority: 0.5 },
-    { path: "/hydration/", priority: 0.5 },
-    { path: "/optimal-shower-hair-routine/", priority: 0.5 },
-    { path: "/happiness-and-satisfaction-in-2024/", priority: 0.5 },
-
-    // Older archival posts that are off-topic for this site's focus are intentionally
-    // not listed here, and are noindexed at the page level.
+    // ── REMOVED FROM SITEMAP + NOINDEXED, 2026-07-14 (decision D2) ────────
+    // The health/lifestyle, finance and personal/mindset clusters were off-topic for
+    // an AI-visibility consultancy and were diluting the site's topical focus — and
+    // several carried broken WordPress-era image assets. They are now noindexed at the
+    // page level and delisted here. Still reachable by direct link; just not advertised
+    // to search engines or AI crawlers. Reversible: remove the `robots` block on the
+    // page and re-add it here.
+    // Delisted: the-longevity-economy, the-future-of-life-expectancy, the-real-founder-
+    // dilemma, how-ai-is-reshaping-learning, pushing-boundaries, the-first-one,
+    // 1-out-of-20, under-30, these-days, thriving, pov, after-product-launch,
+    // how-much-wealth-should-you-aim-for, invest-amid-inflation-in-canada,
+    // investment-types, etf-stock-mutualfund, reit, wine-profile,
+    // how-many-diets-exist-in-the-world, sleep-quality-101, fitness-pyramid, exercise,
+    // hydration, optimal-shower-hair-routine, happiness-and-satisfaction-in-2024.
   ];
 
   // lastmod — honesty fix (2026-07-14).

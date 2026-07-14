@@ -3,11 +3,8 @@ import { AuthorByline } from "@/components/AuthorByline";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  // NOINDEX 2026-07-14: off-topic for an AI-visibility consultancy. Kept live for
-  // anyone holding the link, removed from sitemap, excluded from search + AI corpus.
-  robots: { index: false, follow: true },
-  title: "point of view",
-  description: "point of view — by Hami Tahm",
+  title: "The Courage to Start",
+  description: "The Courage to Start — by Hami Tahm",
 };
 
 export default function Post() {
@@ -20,7 +17,7 @@ export default function Post() {
           <span>/</span>
           <Link href="/writing" style={ { color: "var(--accent)" } }>Writing</Link>
           <span>/</span>
-          <span>point of view</span>
+          <span>The Courage to Start</span>
         </div>
 
         {/* Header */}
@@ -28,16 +25,23 @@ export default function Post() {
           Mindset &amp; Growth
         </div>
         <h1 style={ { fontFamily: "var(--serif)", fontWeight: 500, fontSize: "clamp(32px, 5vw, 48px)", lineHeight: 1.1, letterSpacing: "-.02em", marginBottom: 16 } }>
-          point of view
+          The Courage to Start
         </h1>
-        <AuthorByline date="Dec 02, 2024" />
+        <AuthorByline date="Nov 13, 2024" />
 
         {/* Content */}
         <div
           className="post-content"
-          dangerouslySetInnerHTML={ { __html: `<p>It is so weird to me
-people want to have a good lifestyle and life, but they don't try different ways. They do the same.</p><p>The actual first step in learning is unlearning.
-We should distinguish which knowledge is useful and which ones are useless.</p><p>People need to guide them, <a href="https://hamitahm.com/the-first-one/">motivate them</a>, push them, and maybe one thing is the honest answer: force them.</p><p>In my experience, IQ is an essential indicator of success. The person who can motivate themselves can reach their target.</p><p>Last but not least, quantity is important. How much we dedicate to that task/job is critical.</p>` } }
+          dangerouslySetInnerHTML={ { __html: `<p>No post is harder than the first post, and no work is tougher than the first one.</p><p>There is no alternative on the path to success; there is only one way—success.</p><p>I’ve decided that my first post will specifically focus on wisdom in English, to honor the act of starting.
+<ol>
+ 	<li>Actions speak louder than words.</li>
+ 	<li>The journey of a thousand miles begins with a single step.</li>
+ 	<li>Fortune favors the bold.</li>
+ 	<li>The best way to get something done is to begin.</li>
+ 	<li>Feel the fear and do it anyway.</li>
+ 	<li>Don’t let the perfect be the enemy of the good.</li>
+ 	<li>Well begun is half done.</li>
+</ol></p>` } }
         />
 
         {/* Author box */}

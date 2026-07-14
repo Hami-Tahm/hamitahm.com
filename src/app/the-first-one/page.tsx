@@ -3,6 +3,9 @@ import { AuthorByline } from "@/components/AuthorByline";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  // NOINDEX 2026-07-14: off-topic for an AI-visibility consultancy. Kept live for
+  // anyone holding the link, removed from sitemap, excluded from search + AI corpus.
+  robots: { index: false, follow: true },
   title: "The Courage to Start",
   description: "The Courage to Start — by Hami Tahm",
 };

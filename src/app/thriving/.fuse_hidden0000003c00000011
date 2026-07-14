@@ -3,11 +3,8 @@ import { AuthorByline } from "@/components/AuthorByline";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  // NOINDEX 2026-07-14: off-topic for an AI-visibility consultancy. Kept live for
-  // anyone holding the link, removed from sitemap, excluded from search + AI corpus.
-  robots: { index: false, follow: true },
-  title: "point of view",
-  description: "point of view — by Hami Tahm",
+  title: "Adapting and thriving in a new country",
+  description: "Adapting and thriving in a new country — by Hami Tahm",
 };
 
 export default function Post() {
@@ -20,7 +17,7 @@ export default function Post() {
           <span>/</span>
           <Link href="/writing" style={ { color: "var(--accent)" } }>Writing</Link>
           <span>/</span>
-          <span>point of view</span>
+          <span>Adapting and thriving in a new country</span>
         </div>
 
         {/* Header */}
@@ -28,16 +25,14 @@ export default function Post() {
           Mindset &amp; Growth
         </div>
         <h1 style={ { fontFamily: "var(--serif)", fontWeight: 500, fontSize: "clamp(32px, 5vw, 48px)", lineHeight: 1.1, letterSpacing: "-.02em", marginBottom: 16 } }>
-          point of view
+          Adapting and thriving in a new country
         </h1>
-        <AuthorByline date="Dec 02, 2024" />
+        <AuthorByline date="Nov 26, 2024" />
 
         {/* Content */}
         <div
           className="post-content"
-          dangerouslySetInnerHTML={ { __html: `<p>It is so weird to me
-people want to have a good lifestyle and life, but they don't try different ways. They do the same.</p><p>The actual first step in learning is unlearning.
-We should distinguish which knowledge is useful and which ones are useless.</p><p>People need to guide them, <a href="https://hamitahm.com/the-first-one/">motivate them</a>, push them, and maybe one thing is the honest answer: force them.</p><p>In my experience, IQ is an essential indicator of success. The person who can motivate themselves can reach their target.</p><p>Last but not least, quantity is important. How much we dedicate to that task/job is critical.</p>` } }
+          dangerouslySetInnerHTML={ { __html: `<p>Improve your English skills.</p><p>Learn more about the culture.</p><p>Meet new people and build meaningful connections.</p><p>Create memories that make Toronto feel like home.</p><p>Expand your network.</p><p>Foster relationships to integrate into the new country.</p><p>Establish and grow a business.</p><p>Assemble a robust and motivated team.</p><p>Work towards financial success.</p><p> </p>` } }
         />
 
         {/* Author box */}
