@@ -48,6 +48,8 @@ yarn-error.log*
 # Keep them locally; do not track them.
 ENTITY-AEO-MASTER-PLAN*.md
 AI-VISIBILITY-BASELINE-PANEL*.md
+BACKLINK-PLAN*.md
+*-PLAN-v*.md
 *-INTERNAL.md
 /notes/
 /strategy/

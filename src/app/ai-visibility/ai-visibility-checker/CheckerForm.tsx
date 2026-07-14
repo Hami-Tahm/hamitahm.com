@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 const ENGINES = [
   { id: "chatgpt", label: "ChatGPT", active: true },
@@ -210,8 +211,38 @@ export default function CheckerForm() {
       >
         {status === "submitting" ? "Sending…" : "Get my AI visibility report →"}
       </button>
+      {/*
+        NOTICE AT THE POINT OF COLLECTION.
+
+        This form takes an email address, a domain and keywords from (mostly) Canadian
+        users, on behalf of a Canadian business. It was live with no privacy notice of
+        any kind. Under PIPEDA the purpose has to be identified and consent obtained at
+        the point of collection — which is here, not buried on another page.
+
+        Say what we take, what we do with it, and how to make it go away. In plain words.
+      */}
       <p style={{ fontSize: 12.5, color: "var(--faint)", marginTop: 12, textAlign: "center", lineHeight: 1.5 }}>
-        Free. A real analyst sends your report within one business day. We never share your details.
+        Free. A real analyst sends your report within one business day.
+      </p>
+      <p
+        style={{
+          fontSize: 12,
+          color: "var(--faint)",
+          marginTop: 10,
+          textAlign: "center",
+          lineHeight: 1.6,
+        }}
+      >
+        By submitting, you agree that I can use your email to send you this report and
+        follow up once. Your details are stored privately, never sold, never published,
+        and deleted the moment you ask.{" "}
+        <Link href="/privacy/" style={{ color: "var(--muted)", textDecoration: "underline" }}>
+          Privacy
+        </Link>
+        {" · "}
+        <Link href="/disclaimer/" style={{ color: "var(--muted)", textDecoration: "underline" }}>
+          What this check is and isn&rsquo;t
+        </Link>
       </p>
     </form>
   );

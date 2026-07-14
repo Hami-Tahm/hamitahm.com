@@ -22,11 +22,16 @@ export function Footer() {
         <div style={{ fontFamily: "var(--serif)", fontSize: 19, fontWeight: 500 }}>
           Hami Tahm<span style={{ color: "var(--accent)" }}>.</span>
         </div>
-        <div style={{ display: "flex", gap: 22 }}>
+        <div style={{ display: "flex", gap: 22, flexWrap: "wrap" }}>
           <FooterLink href="https://x.com/hamitahm">X / Twitter</FooterLink>
           {/* Verify this URL if you ever change it — the previous one 404'd. */}
           <FooterLink href="https://www.linkedin.com/in/hami-tahm/">LinkedIn</FooterLink>
           <FooterLink href="/contact">Contact</FooterLink>
+          {/* Legal pages are noindex, but they must be reachable from every page —
+              that's the point of them. A privacy policy nobody can find isn't one. */}
+          <FooterLink href="/privacy/">Privacy</FooterLink>
+          <FooterLink href="/terms/">Terms</FooterLink>
+          <FooterLink href="/disclaimer/">Disclaimer</FooterLink>
         </div>
       </div>
       <div className="wrap">
