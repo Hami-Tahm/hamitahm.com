@@ -23,7 +23,9 @@ const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const CASE_STUDY_URL = "/case-studies/homecalc-ai-visibility/";
 
 export const metadata: Metadata = {
-  title: { absolute: `${ARTICLE_TITLE} — AI Citation Study | Hami Tahm` },
+  // Kept well under 60 chars — ARTICLE_TITLE alone is long, so the metadata title is a
+  // tighter, keyword-forward variant rather than the full H1.
+  title: { absolute: "AI Citation Study: What 14,400 Citations Taught Me" },
   description: ARTICLE_DESCRIPTION,
   alternates: { canonical: `https://hamitahm.com/blog/${SLUG}/` },
 };

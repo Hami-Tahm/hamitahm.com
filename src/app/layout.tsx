@@ -111,6 +111,14 @@ export const metadata: Metadata = {
   description:
     "Hami Tahm \u2014 AI Visibility Consultant in Canada. Helping businesses appear in ChatGPT, Perplexity, and Google AI Overviews.",
   metadataBase: new URL("https://hamitahm.com"),
+  // SELF-REFERENCING CANONICAL FOR EVERY PAGE, from one place.
+  // Next resolves a relative `alternates.canonical` against metadataBase + the current
+  // route, so "./" yields the page's own URL. Previously only ~24 of 63 pages set a
+  // canonical explicitly; the other 39 had none. Pages that declare their own absolute
+  // canonical still override this. trailingSlash:true keeps the slash consistent.
+  alternates: {
+    canonical: "./",
+  },
   openGraph: {
     type: "website",
     locale: "en_CA",

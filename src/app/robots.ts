@@ -1,19 +1,21 @@
 import type { MetadataRoute } from "next";
 
 /**
- * Paths that should never be crawled or indexed:
- * - /_next/static/  → Next.js build artifacts (JS chunks, CSS, fonts, media).
- *                     Pure assets, not pages. Site is SSG/SSR so the rendered
- *                     HTML already contains all content — crawlers don't need
- *                     these for content understanding.
- * - /*?dpl=         → Vercel deploy-version query strings appended to static
- *                     assets. Cause duplicate-URL noise in GSC.
+ * Paths that should never be crawled or indexed.
+ *
+ * NOTE (2026-07-14): `/_next/static/` was REMOVED from this list.
+ * Blocking it stopped compliant crawlers from fetching the site's own CSS and JS.
+ * On an SSR site the HTML content is still readable, but Google renders pages to
+ * assess layout/mobile/experience, and blocking the assets it needs to render is a
+ * real risk for no real benefit. The thing we actually wanted to suppress — the
+ * Vercel `?dpl=` cache-busting query strings that created duplicate-URL noise in GSC
+ * — is handled precisely by `/*?dpl=` below, without blocking the assets themselves.
+ *
+ * - /*?dpl=   → Vercel deploy-version query strings. Duplicate-URL noise in GSC.
  * - /feed/, /*\/feed/, /comments/feed/, /category/
- *                  → WordPress legacy RSS endpoints. Site is on Next.js now,
- *                     these don't exist as real pages.
+ *             → WordPress legacy RSS endpoints. Site is on Next.js now; not real pages.
  */
 const DISALLOW = [
-  "/_next/static/",
   "/*?dpl=",
   "/feed/",
   "/*/feed/",

@@ -97,10 +97,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // not listed here, and are noindexed at the page level.
   ];
 
+  // lastmod — honesty fix (2026-07-14).
+  // Previously EVERY entry emitted the same sub-second build timestamp
+  // (…T14:30:00.259Z). Identical, precise-to-the-millisecond dates across a whole
+  // site are an obvious tell that the value is generated, not real, and Google
+  // discounts lastmod it doesn't trust.
+  //
+  // Rule now: only emit lastModified on pages that genuinely change on a schedule —
+  // the ones that carry a `changeFrequency`. Static evergreen pages get NO lastmod,
+  // which is perfectly valid and more trustworthy than a fabricated one. And we use a
+  // date, not a millisecond timestamp.
+  const today = now.toISOString().slice(0, 10); // YYYY-MM-DD, no fake precision
+
   return entries.map(({ path, priority, changeFrequency }) => ({
     url: `${base}${path}`,
-    lastModified: now,
     priority,
-    ...(changeFrequency ? { changeFrequency } : {}),
+    ...(changeFrequency
+      ? { changeFrequency, lastModified: today }
+      : {}),
   }));
 }
