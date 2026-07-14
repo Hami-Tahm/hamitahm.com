@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
 };
 
-// Schema added 2026-07-11 — this legacy post had none. Keeping it indexed (it
+// Schema added 2026-07-14 — this legacy post had none. Keeping it indexed (it
 // supports the real-estate / trust-based-local-business entity), so it should be
 // attributed to the Person entity like everything else we keep.
 const schemaJson = blogSchemaJson({
@@ -23,7 +23,7 @@ const schemaJson = blogSchemaJson({
   title: ARTICLE_TITLE,
   description: ARTICLE_DESCRIPTION,
   datePublished: "2024-12-08",
-  dateModified: "2026-07-11",
+  dateModified: "2026-07-14",
   cluster: "writing",
 });
 

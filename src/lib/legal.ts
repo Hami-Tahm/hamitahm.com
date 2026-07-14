@@ -22,8 +22,8 @@ export const LEGAL = {
   site: "hamitahm.com",
 
   /** Last substantive review of the legal pages. */
-  effectiveDate: "2026-07-11",
-  displayDate: "July 11, 2026",
+  effectiveDate: "2026-07-14",
+  displayDate: "July 14, 2026",
 } as const;
 
 /**

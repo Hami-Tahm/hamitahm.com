@@ -3,7 +3,7 @@
  *
  * ── PROVENANCE — read this before changing a single number ──
  * Every figure below was read directly from Bing Webmaster Tools → AI Performance
- * (Microsoft Copilot and partners) and Google Search Console, on 2026-07-11, with the
+ * (Microsoft Copilot and partners) and Google Search Console, on 2026-07-14, with the
  * site selector confirmed for each domain. Nothing here is modelled, estimated or
  * rounded up. If you cannot point at the console screen a number came from, it does
  * not belong in this file.
@@ -22,7 +22,7 @@ export const STUDY = {
   windowStart: "April 19, 2026",
   windowEnd: "July 8, 2026",
   windowLabel: "3 months",
-  pulledOn: "July 11, 2026",
+  pulledOn: "July 14, 2026",
   source: "Bing Webmaster Tools → AI Performance (Microsoft Copilot and partners)",
 
   /** 7,400 (HomeCalc) + 7,000 (hamitahm.com), both verified. */

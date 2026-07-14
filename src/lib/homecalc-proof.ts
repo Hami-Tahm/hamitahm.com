@@ -9,7 +9,7 @@
  * Outcome only. Never put the underlying mechanism in this file or anywhere
  * else on the public site — that is paid IP.
  *
- * Last updated: 2026-07-11 — read directly from Bing Webmaster → AI Performance,
+ * Last updated: 2026-07-14 — read directly from Bing Webmaster → AI Performance,
  * site selector confirmed as homecalc.ca, 3-month window (Apr 19 → Jul 8, 2026).
  *
  * ── WHY THE NUMBER MOVED ──

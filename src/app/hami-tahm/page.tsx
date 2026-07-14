@@ -162,7 +162,7 @@ export default function AboutPage() {
           </RevealSection>
           <RevealSection delay={0.24}>
             {/*
-              REWRITTEN 2026-07-11. Four things were wrong here:
+              REWRITTEN 2026-07-14. Four things were wrong here:
 
               1. RENDER BUG. It read `from near-zero to {HOMECALC_CLAIMS.zeroToCitations}`
                  — but that constant ALREADY contains "near-zero to". The live page said

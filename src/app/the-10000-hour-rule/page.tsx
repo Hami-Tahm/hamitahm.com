@@ -10,7 +10,7 @@ const ARTICLE_TITLE =
 const ARTICLE_DESCRIPTION =
   "How many hours does it actually take to reach 7/10 mastery in any skill? A practical breakdown of the 10,000-hour rule, with hour estimates for digital marketing, software, languages, and more.";
 const DATE_PUBLISHED = "2025-02-22";
-const DATE_MODIFIED = "2026-07-11";
+const DATE_MODIFIED = "2026-07-14";
 
 export const metadata: Metadata = {
   title: "The 10,000-Hour Rule — Hours to Reach 7/10 Mastery",

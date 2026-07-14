@@ -16,7 +16,7 @@ const SLUG = "ai-citation-study";
 const ARTICLE_TITLE = `What ${STUDY.totalCitations} AI Citations Actually Taught Me`;
 const ARTICLE_DESCRIPTION =
   "Two sites. Three months. 14,400 AI citations from Microsoft Copilot. Which pages got cited, which got nothing, and the finding nobody in this industry wants to publish: citations are not customers.";
-const DATE_PUBLISHED = "2026-07-11";
+const DATE_PUBLISHED = "2026-07-14";
 
 const CHECKER_URL = "/ai-visibility/ai-visibility-checker/";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
@@ -82,7 +82,7 @@ export default function Page() {
               me look bad.
             </p>
 
-            <AuthorByline date="July 11, 2026" readTime="9 min read" />
+            <AuthorByline date="July 14, 2026" readTime="9 min read" />
           </RevealSection>
 
           <RevealSection delay={0.08}>

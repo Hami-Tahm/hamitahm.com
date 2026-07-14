@@ -15,13 +15,13 @@ export const metadata: Metadata = {
   },
 };
 
-// Schema added 2026-07-11 — this legacy post had none.
+// Schema added 2026-07-14 — this legacy post had none.
 const schemaJson = blogSchemaJson({
   slug: "service-business-growth",
   title: ARTICLE_TITLE,
   description: ARTICLE_DESCRIPTION,
   datePublished: "2026-04-20",
-  dateModified: "2026-07-11",
+  dateModified: "2026-07-14",
   cluster: "writing",
 });
 

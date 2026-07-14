@@ -28,7 +28,7 @@ const siteStructuredData = {
   "@graph": [
     // THE canonical Person. Defined here ONCE and referenced everywhere else by @id.
     // (/hami-tahm/ used to redefine this same @id with a conflicting sameAs list —
-    // removed 2026-07-11. Add new properties HERE, never in a page.)
+    // removed 2026-07-14. Add new properties HERE, never in a page.)
     {
       "@type": "Person",
       "@id": "https://hamitahm.com/#hami-tahm",
@@ -61,7 +61,7 @@ const siteStructuredData = {
         "Real estate technology",
         "Canadian mortgage market",
       ],
-      // Every URL below was opened and confirmed to resolve (2026-07-11).
+      // Every URL below was opened and confirmed to resolve (2026-07-14).
       // The previous LinkedIn entry was a dead URL and had been declared site-wide,
       // in both schema and footer. VERIFY ANY URL BEFORE ADDING IT HERE — a broken
       // sameAs is worse than no sameAs.
