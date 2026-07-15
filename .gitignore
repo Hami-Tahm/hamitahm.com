@@ -23,6 +23,9 @@
 # misc
 .DS_Store
 *.pem
+# FUSE half-written temp files (appear when a tool edits a file in place on a
+# mounted/FUSE filesystem). These leaked into a commit once — never again.
+.fuse_hidden*
 
 # debug
 npm-debug.log*

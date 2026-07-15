@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AuthorByline } from "@/components/AuthorByline";
+import { ShortAnswer } from "@/components/ShortAnswer";
 import { RevealSection } from "@/components/Reveal";
 import { blogSchemaJson } from "@/lib/blog-schema";
 import {
@@ -38,12 +39,40 @@ const schemaJson = blogSchemaJson({
   cluster: "ai-visibility",
 });
 
+// Dataset schema — tells crawlers and answer engines that this page is backed by a
+// real, downloadable dataset, and where to get it. Original first-party data is the
+// most citation-worthy thing a GEO page can carry; marking it up as a Dataset makes
+// that legible to machines instead of leaving it as prose.
+const datasetSchema = {
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  name: "HomeCalc.ca AI Citation Study — raw data",
+  description:
+    "Per-page and per-query AI citation counts for HomeCalc.ca from Bing Webmaster AI Performance (Microsoft Copilot), April 19 – July 8, 2026.",
+  url: "https://hamitahm.com/blog/ai-citation-study/",
+  creator: { "@id": "https://hamitahm.com/#hami-tahm" },
+  license: "https://creativecommons.org/licenses/by/4.0/",
+  isAccessibleForFree: true,
+  temporalCoverage: "2026-04-19/2026-07-08",
+  distribution: [
+    {
+      "@type": "DataDownload",
+      encodingFormat: "text/csv",
+      contentUrl: "https://hamitahm.com/blog/ai-citation-study/dataset.csv",
+    },
+  ],
+};
+
 export default function Page() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: schemaJson }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetSchema) }}
       />
 
       <article style={{ padding: "72px 0" }}>
@@ -89,6 +118,18 @@ export default function Page() {
 
           <RevealSection delay={0.08}>
             <div className="prose" style={{ marginTop: 44 }}>
+              {/* Direct-answer block at the top — the one thing an answer engine can
+                  lift verbatim. Every other AEO post on this site has one; this page
+                  (added the same day) was the only one missing it. */}
+              <ShortAnswer>
+                Across two sites over three months, Microsoft Copilot generated{" "}
+                {STUDY.totalCitations} AI citations. The lesson wasn&rsquo;t the size of
+                the number &mdash; it was that citations concentrate on tools and
+                purpose-built pages, follow a winner-take-most pattern per query, and do
+                not, by themselves, produce traffic or customers. A citation count is a
+                vanity metric unless it lands on pages a buyer actually reaches.
+              </ShortAnswer>
+
               <Callout>
                 <strong style={{ color: "var(--ink)" }}>Where this comes from.</strong>{" "}
                 Every number below was read from {STUDY.source}, plus Google Search
@@ -341,6 +382,16 @@ export default function Page() {
                   If you are writing about AI search and need real numbers instead of
                   speculation, take them &mdash; charts, tables, figures. All I ask is a
                   link back to this page so people can check the source.
+                </p>
+                <p style={{ marginBottom: 14 }}>
+                  <a
+                    href="/blog/ai-citation-study/dataset.csv"
+                    download="homecalc-ai-citation-study.csv"
+                    style={{ color: "var(--accent)", fontWeight: 600 }}
+                  >
+                    &darr; Download the raw data (CSV)
+                  </a>{" "}
+                  &mdash; CC BY 4.0, free to reuse with attribution.
                 </p>
                 <p style={{ margin: 0 }}>
                   Questions about the method, or want the underlying screenshots?{" "}
