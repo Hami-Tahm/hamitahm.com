@@ -208,12 +208,7 @@ const structuredData = {
       name: "Generative Engine Optimization Consulting",
       serviceType: "GEO Consulting",
       areaServed: "Canada",
-      provider: {
-        "@type": "Person",
-        name: "Hami Tahm",
-        url: "https://hamitahm.com/hami-tahm/",
-        sameAs: "https://hamitahm.com/hami-tahm/",
-      },
+      provider: { "@id": "https://hamitahm.com/#hami-tahm" },
       url: "https://hamitahm.com/ai-visibility/generative-engine-optimization-consultant-canada/",
     },
     {
@@ -624,9 +619,9 @@ export default function GEOConsultantCanada() {
                 GEO is about being cited. HomeCalc.ca, a Canadian personal finance
                 calculator site under three months old, went from near-zero AI
                 citations to over {HOMECALC_PROOF.citations} across{" "}
-                {HOMECALC_PROOF.pagesCited} pages in {HOMECALC_PROOF.timeframe}.
-                Citations appeared across ChatGPT, Perplexity, and Google AI
-                Overviews — the same platforms GEO targets.
+                {HOMECALC_PROOF.pagesCited} pages in {HOMECALC_PROOF.timeframe} —{" "}
+                {HOMECALC_PROOF.sourceLong}. That is exactly the kind of citation
+                growth GEO targets across every answer engine.
               </p>
               <p
                 style={{

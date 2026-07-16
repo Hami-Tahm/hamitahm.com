@@ -187,12 +187,7 @@ const structuredData = {
       name: "AI Visibility Audit for Dental Clinics",
       serviceType: "AI Visibility Consulting for Dental Clinics",
       areaServed: "Canada",
-      provider: {
-        "@type": "Person",
-        name: "Hami Tahm",
-        url: "https://hamitahm.com/hami-tahm/",
-        sameAs: "https://hamitahm.com/hami-tahm/",
-      },
+      provider: { "@id": "https://hamitahm.com/#hami-tahm" },
       url: "https://hamitahm.com/ai-visibility/ai-visibility-for-dental-clinics/",
     },
     {

@@ -11,7 +11,7 @@ const ARTICLE_TITLE =
 const ARTICLE_DESCRIPTION =
   "The best AI visibility tools and checkers in 2026 — ranked, tested, and reviewed by an independent consultant who doesn't sell them. Covers trackers, free AI visibility checkers, analytics platforms, and LLM optimization tools.";
 const DATE_PUBLISHED = "2026-06-09";
-const DATE_MODIFIED = "2026-07-02";
+const DATE_MODIFIED = "2026-07-14";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const HUB_URL = "/ai-visibility/";
 const CONSULTANT_URL = "/ai-visibility/ai-visibility-consultant-canada/";
@@ -37,7 +37,7 @@ const COMPARISON_ROWS = [
   },
   {
     tool: "Semrush AI",
-    platforms: "Google AIO only",
+    platforms: "Google AIO + expanding",
     analytics: "✓",
     competitors: "Partial",
     price: "$$$",
@@ -138,7 +138,7 @@ const TOOL_REVIEWS = [
     tracks:
       "Semrush's Position Tracking tool includes AI Overviews detection — showing which tracked keywords trigger a Google AI Overview and whether your domain appears in it. Paired with Semrush's existing rank tracking, keyword research, and competitive analysis, it gives SEO teams a unified view of traditional and AIO performance.",
     found:
-      "For SEO teams already inside Semrush, this is the obvious choice for Google AIO tracking — no new tool, no new login, no new budget line. The AIO data layers directly onto keyword performance reports, which makes it easy to spot where you're ranking but not being cited. That correlation — strong ranking position with no AIO citation — is a clear signal for content restructuring work.\n\nThe significant limitation: Semrush tracks Google AI Overviews only. ChatGPT, Perplexity, Gemini standalone, and Bing Copilot are not in scope. If your buyers are using AI tools beyond Google, Semrush gives you a partial picture.",
+      "For SEO teams already inside Semrush, this is a convenient choice — no new tool, no new login, no new budget line. The AI data layers directly onto keyword performance reports, which makes it easy to spot where you're ranking but not being cited.\n\nOne caveat, and it matters: Semrush's AI visibility coverage has been expanding fast — beyond Google AI Overviews toward ChatGPT, Perplexity, Gemini and Google's AI Mode. Exactly which engines are covered in your plan changes often, so check Semrush's current AI visibility documentation before you buy; don't rely on any single-engine claim, including an older version of this one.",
     bestFor:
       "SEO teams with existing Semrush subscriptions who want Google AIO data without adding a new platform.",
     pricing:
@@ -209,12 +209,12 @@ const TOOL_REVIEWS = [
     tracks:
       "Ahrefs — known primarily for its backlink analysis and keyword research — has added AI overview detection to its rank tracking features. In Ahrefs' Rank Tracker, you can see whether tracked keywords trigger a Google AI Overview and whether your site appears in it.",
     found:
-      "Ahrefs' AI tracking is an extension of its existing rank tracking, not a dedicated AI visibility feature set. For Ahrefs users, it's a useful addition — it means you can see AIO presence alongside standard position data in a tool you're already using. The keyword database and competitive intelligence that make Ahrefs strong for SEO also apply here.\n\nThe limitation: like Semrush and SE Ranking, Ahrefs currently tracks Google AI Overviews. Cross-platform AI visibility (ChatGPT, Perplexity, Gemini) is not in scope. It's a one-platform tracker built into a primarily SEO-oriented tool.",
+      "For Ahrefs users, the AI tracking is a useful addition — you can see AI presence alongside standard position data in a tool you already pay for. The keyword database and competitive intelligence that make Ahrefs strong for SEO apply here too.\n\nCaveat: Ahrefs has been broadening its AI coverage (its Brand Radar product now spans several AI surfaces, not just Google AI Overviews). Feature sets in this category move monthly, so verify the current scope on Ahrefs' own site before choosing it for cross-platform tracking, rather than trusting a fixed claim here.",
     bestFor:
       "Existing Ahrefs users who want Google AIO tracking integrated into their current workflow.",
     pricing: "Ahrefs plans start at ~$100/month; AI overview features included.",
     misses:
-      "Google AIO only. The AI visibility feature is secondary to Ahrefs' core SEO use case.",
+      "The AI visibility feature is secondary to Ahrefs' core SEO use case. Check current engine coverage on Ahrefs' site before relying on it cross-platform.",
   },
   {
     rank: 9,
@@ -254,7 +254,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "What's the difference between AI visibility tools and SEO tools?",
-    a: "SEO tools track rankings, traffic, and backlinks in traditional search. AI visibility tools track brand citations, accuracy, and coverage in AI-generated answers. Some SEO platforms (Semrush, Ahrefs, SE Ranking) have added AI visibility features — but they typically cover Google AI Overviews only. Dedicated AI visibility platforms (Profound, Otterly.ai) track the broader AI search landscape.",
+    a: "SEO tools track rankings, traffic, and backlinks in traditional search. AI visibility tools track brand citations, accuracy, and coverage in AI-generated answers. Some SEO platforms (Semrush, Ahrefs, SE Ranking) have added AI visibility features and are expanding which engines they cover — historically Google AI Overviews first, increasingly ChatGPT, Perplexity and Gemini too. Coverage changes often, so verify each tool's current engine list before buying.",
   },
   {
     q: "Can AI visibility tools track Perplexity citations?",
@@ -403,6 +403,26 @@ export default function BestAIVisibilityToolsPost() {
 
           <RevealSection delay={0.18}>
             <AuthorByline date="June 9, 2026" readTime="18 min read" />
+          </RevealSection>
+
+          <RevealSection delay={0.2}>
+            {/* Freshness note added 2026-07-14. This category changes monthly; several
+                tools have broadened engine coverage since first publication. Rather than
+                assert a snapshot as permanent fact, tell readers to verify. */}
+            <p
+              style={{
+                marginTop: 22,
+                fontSize: 14,
+                lineHeight: 1.6,
+                color: "var(--faint)",
+                fontStyle: "italic",
+              }}
+            >
+              Last reviewed July 2026. AI visibility tools ship new engine coverage
+              and change pricing frequently &mdash; treat the specifics below as a
+              starting point and confirm current features and prices on each
+              vendor&rsquo;s own site before you buy.
+            </p>
           </RevealSection>
         </div>
       </header>

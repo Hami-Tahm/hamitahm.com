@@ -28,6 +28,17 @@ export const HOMECALC_PROOF = {
   siteUrl: "https://homecalc.ca/",
   peakPerDay: "280+",
   topCitationShare: "76%",
+
+  // ── PLATFORM PROVENANCE — the single most important honesty control ──
+  // This citation count comes from ONE source: Bing Webmaster Tools' AI Performance
+  // report, which measures Microsoft Copilot and its partners. It does NOT measure
+  // ChatGPT, Perplexity, Gemini or Google AI Overviews — none of which expose citation
+  // data to publishers. Do NOT attach this number to those platforms anywhere.
+  // Attribute the NUMBER with `sourceLabel`; only describe the audit *service* as
+  // covering ChatGPT/Perplexity/etc, because the audit genuinely reviews them.
+  sourceLabel: "Microsoft Copilot (Bing AI Performance)",
+  sourceLong:
+    "measured in Bing Webmaster Tools' AI Performance report (Microsoft Copilot and partners)",
 } as const;
 
 const CITATIONS_BARE = HOMECALC_PROOF.citations.replace("+", "");

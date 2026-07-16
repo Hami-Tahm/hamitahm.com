@@ -10,7 +10,7 @@ const SLUG = "faq-schema-accordion-bug";
 const ARTICLE_TITLE =
   "The Silent SEO Bug Hiding in Your React FAQ Accordion";
 const ARTICLE_DESCRIPTION =
-  "If your React site uses SSG/SSR with a collapsible FAQ accordion and FAQPage schema, Google may be penalizing you right now. Here's the bug, the proof, and the one-line fix.";
+  "If your React site uses SSG/SSR with a collapsible FAQ accordion, your FAQPage schema can contain answers that aren't in the rendered HTML. Here's the bug, what it does (and doesn't) cost you, and the one-line fix.";
 const DATE_PUBLISHED = "2026-06-18";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const HUB_URL = "/ai-visibility/";
@@ -30,11 +30,11 @@ const FAQ_ITEMS = [
   },
   {
     q: "Will Google penalize me for mismatched schema and visible content?",
-    a: "Google's structured data guidelines require that schema content matches what's visible on the page. When FAQPage schema contains answers that aren't in the rendered HTML, Google treats this as a structured data policy violation. The result is rich result removal and ranking demotion — not a manual action, but an algorithmic one that's harder to detect.",
+    a: "Not in the way people fear. Google's structured data guidelines require schema to match visible content, and a violation can make the page ineligible for rich results (and, if flagged, trigger a structured-data manual action against rich-result eligibility). Per Google's own documentation, that removes rich-result eligibility — it does not demote your normal ranking. And as of May 2026 Google no longer shows FAQ rich results for most sites at all, so the direct rich-result upside is gone regardless. Keep schema honest for consistency, not for a ranking boost.",
   },
   {
-    q: "How long does recovery take after fixing this bug?",
-    a: "Based on our data from HomeCalc.ca, recovery begins within 3–5 days of deploying the fix. Full recovery to pre-regression levels took approximately 7–10 days. Our 7-day impressions went from 486 to 2,330 after the fix — a 4.8× increase that exceeded the pre-bug baseline.",
+    q: "Did fixing this actually recover traffic?",
+    a: "On HomeCalc.ca, 7-day impressions rose from 486 to 2,330 in the weeks after the fix was deployed. To be precise about what that is and isn't: it is a correlation observed on one site over one window, not a controlled experiment. Other work was shipping at the same time, so we can't isolate the schema fix as the sole cause. We report it as what we saw, not as proof that mismatched schema costs you 4.8× your traffic.",
   },
   {
     q: "Does this affect AI visibility too, or just traditional SEO?",
@@ -185,13 +185,44 @@ export default function FaqSchemaAccordionBugPost() {
                 lineHeight: 1.5,
               }}
             >
-              Your UX looks fine. Your build passes. But Google is demoting you
-              because your FAQ answers aren&rsquo;t in the DOM.
+              Your UX looks fine. Your build passes. But your FAQ answers
+              aren&rsquo;t in the DOM &mdash; so your schema describes content
+              Google can&rsquo;t see.
             </p>
           </RevealSection>
 
           <RevealSection delay={0.18}>
             <AuthorByline date="June 18, 2026" readTime="9 min read" />
+          </RevealSection>
+
+          <RevealSection delay={0.2}>
+            {/* Honesty correction added 2026-07-14. The original version of this post
+                claimed a "ranking demotion / algorithmic penalty" and a "4.8x recovery"
+                caused by the schema fix. Per Google's own policy, a structured-data
+                violation removes rich-result eligibility but does not demote normal
+                ranking — and Google deprecated FAQ rich results in May 2026. The banner
+                states both facts up front rather than quietly editing the claims out. */}
+            <div
+              style={{
+                border: "1px solid var(--line-strong)",
+                borderLeft: "3px solid var(--accent)",
+                background: "var(--accent-soft)",
+                borderRadius: 6,
+                padding: "16px 20px",
+                marginTop: 24,
+                fontSize: 15,
+                lineHeight: 1.6,
+                color: "var(--muted)",
+              }}
+            >
+              <strong style={{ color: "var(--ink)" }}>Updated July 2026.</strong>{" "}
+              Two corrections to the original post. First: a schema/content mismatch
+              affects <em>rich-result eligibility</em>, not your normal ranking &mdash;
+              Google does not algorithmically demote a page for it. Second: Google
+              deprecated FAQ rich results in May 2026, so keep FAQ schema for semantic
+              consistency, not for a rich snippet. The impressions recovery below is a
+              correlation we observed, not a controlled result.
+            </div>
           </RevealSection>
         </div>
       </header>
@@ -362,9 +393,12 @@ export default function FaqSchemaAccordionBugPost() {
               structured data policy violation.
             </p>
             <p style={{ marginBottom: 26 }}>
-              The result: rich result removal, ranking demotion, and a drop in
-              impressions that looks like an algorithm update — but is actually
-              your own code.
+              The result: the page loses rich-result eligibility for that schema.
+              It does <strong>not</strong> demote your normal ranking &mdash;
+              Google&rsquo;s policy is explicit that structured-data issues affect
+              rich results, not ordinary rankings. (And since May 2026, Google no
+              longer shows FAQ rich results for most sites anyway.) So the real
+              cost here is a broken trust signal and wasted markup, not a penalty.
             </p>
           </RevealSection>
 
@@ -588,10 +622,12 @@ Select-String "your unique answer phrase" page.html`}
               maintain the visual collapse behavior.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>After the fix:</strong> 7-day
-              impressions went from 486 to 2,330 — a 4.8&times; increase.
-              Recovery started within 3 days. By day 7, impressions exceeded the
-              pre-regression peak. Rich Results returned in Search Console.
+              <strong style={labelStyle}>After the fix:</strong> over the following
+              weeks, 7-day impressions rose from 486 to 2,330, and FAQ rich results
+              returned in Search Console. Stated honestly: this is a correlation on
+              one site over one window, not a controlled experiment &mdash; other
+              content and technical work shipped in the same period, so we can&rsquo;t
+              attribute the whole change to this one fix. We report what we saw.
             </p>
 
             <div

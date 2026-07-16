@@ -59,7 +59,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── Older SEO-targeted posts ─────────────────────────────────────────
     { path: "/seo-expert-toronto/", priority: 0.6 },
     { path: "/orthodontic-seo-marketing-case-study/", priority: 0.6 },
-    { path: "/real-estate-lawyer-in-toronto/", priority: 0.6 },
+    // /real-estate-lawyer-in-toronto/ removed 2026-07-14 — noindexed (YMYL legal advice
+    // by a non-lawyer; E-E-A-T liability, off-topic).
     { path: "/service-business-growth/", priority: 0.55 },
 
     // ── Long-form / evergreen — ON-TOPIC keepers only ────────────────────

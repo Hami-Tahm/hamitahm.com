@@ -96,16 +96,8 @@ const structuredData = {
       headline: `How a brand-new Canadian site earned ${HOMECALC_PROOF.citations} AI citations in ${HOMECALC_PROOF.timeframe}`,
       datePublished: "2026-05-01",
       dateModified: "2026-06-17",
-      author: {
-        "@type": "Person",
-        name: "Hami Tahm",
-        url: "https://hamitahm.com/hami-tahm/",
-      },
-      publisher: {
-        "@type": "Person",
-        name: "Hami Tahm",
-        url: "https://hamitahm.com/hami-tahm/",
-      },
+      author: { "@id": "https://hamitahm.com/#hami-tahm" },
+      publisher: { "@id": "https://hamitahm.com/#organization" },
       about: {
         "@type": "WebSite",
         name: "HomeCalc.ca",
@@ -459,7 +451,13 @@ export default function HomeCalcCaseStudy() {
                 consistently — reaching peaks of {HOMECALC_PROOF.peakPerDay}{" "}
                 citations per day, with total accumulation exceeding{" "}
                 {HOMECALC_PROOF.citations.replace("+", "")} across{" "}
-                {HOMECALC_PROOF.pagesCited} cited pages.
+                {HOMECALC_PROOF.pagesCited} cited pages.{" "}
+                <strong style={{ color: "var(--ink)", fontWeight: 600 }}>
+                  Source:
+                </strong>{" "}
+                {HOMECALC_PROOF.sourceLong}. This is Copilot data; ChatGPT,
+                Perplexity, Gemini and Google AI Overviews do not report citation
+                counts to publishers.
               </figcaption>
             </figure>
           </RevealSection>

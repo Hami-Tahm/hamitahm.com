@@ -204,12 +204,7 @@ const structuredData = {
       name: "Answer Engine Optimization Consulting",
       serviceType: "AEO Consulting",
       areaServed: "Canada",
-      provider: {
-        "@type": "Person",
-        name: "Hami Tahm",
-        url: "https://hamitahm.com/hami-tahm/",
-        sameAs: "https://hamitahm.com/hami-tahm/",
-      },
+      provider: { "@id": "https://hamitahm.com/#hami-tahm" },
       url: "https://hamitahm.com/ai-visibility/answer-engine-optimization-consultant-canada/",
     },
     {

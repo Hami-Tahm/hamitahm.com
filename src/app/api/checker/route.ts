@@ -31,13 +31,28 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: "invalid json" }, { status: 400 });
   }
 
-  const domain = (body.domain || "").trim();
-  const email = (body.email || "").trim();
-  const country = (body.country || "").trim();
-  const engines = Array.isArray(body.engines) ? body.engines : [];
-  const keywords = Array.isArray(body.keywords)
-    ? body.keywords.map((k) => String(k).trim()).filter(Boolean)
-    : [];
+  // ── CSV / spreadsheet formula-injection defence ──
+  // This payload is appended to a Google Sheet. A value beginning with = + - @ (or a
+  // couple of control chars) is interpreted by Sheets/Excel as a FORMULA when the cell
+  // is later opened — a known injection vector that can exfiltrate data or run actions.
+  // Neutralise it by prefixing a single quote, which forces the cell to plain text.
+  // Also cap length so a giant payload can't be used to bloat the Sheet.
+  const MAX = 300;
+  const deFormula = (s: string) => {
+    const t = s.slice(0, MAX);
+    return /^[=+\-@\t\r]/.test(t) ? `'${t}` : t;
+  };
+
+  const domain = deFormula((body.domain || "").trim());
+  const email = (body.email || "").trim().slice(0, MAX);
+  const country = deFormula((body.country || "").trim());
+  const engines = (Array.isArray(body.engines) ? body.engines : [])
+    .slice(0, 10)
+    .map((e) => deFormula(String(e).trim()));
+  const keywords = (Array.isArray(body.keywords) ? body.keywords : [])
+    .slice(0, 10)
+    .map((k) => deFormula(String(k).trim()))
+    .filter(Boolean);
 
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   if (!domain || !country || keywords.length === 0 || engines.length === 0 || !emailOk) {
@@ -46,6 +61,7 @@ export async function POST(req: Request) {
 
   const payload = {
     submittedAt: new Date().toISOString(),
+    // email is validated by the strict regex above, so it can't start with a formula char
     domain,
     email,
     country,

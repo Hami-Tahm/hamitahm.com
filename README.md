@@ -27,9 +27,9 @@ This site is the consultancy. It's also the public lab where I document what's a
 
 The audit methodology was first proved on [HomeCalc.ca](https://homecalc.ca/), a Canadian financial-calculator platform under three months old at the time:
 
-- **3,100+ AI citations in 60 days** across the Microsoft Copilot ecosystem
-- **20+ pages cited**, peaking at 250+ citations per day
-- **88% citation share** on key Canadian financial queries (e.g. `mortgage affordability calculator`)
+- **7,400+ AI citations in 3 months**, measured in Bing Webmaster Tools' AI Performance report (Microsoft Copilot and partners)
+- **25+ pages cited**, peaking at 280+ citations per day
+- **up to 76% citation share** on key Canadian financial queries (e.g. `calculate land transfer tax ontario`)
 - A YMYL category — financial — which is the hardest category to gain authority in, on the youngest possible domain
 
 Full data, top pages, and grounding queries are in the [case study](https://hamitahm.com/case-studies/homecalc-ai-visibility/).

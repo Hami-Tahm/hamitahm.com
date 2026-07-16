@@ -72,6 +72,10 @@ const siteStructuredData = {
       // So only list properties that belong to this practice. Personal, other-language
       // and unrelated-venture properties are intentionally NOT declared — not hidden,
       // just not asserted as part of this professional identity.
+      // sameAs holds ALTER-EGO PROFILES only — other places that ARE this same person.
+      // homecalc.ca and houmse.com were removed 2026-07-14: they are companies Hami
+      // FOUNDED, not alternate identities of the person, so per schema.org semantics
+      // they belong in a `founder`/`owns` relationship (modelled below), not in sameAs.
       sameAs: [
         "https://www.linkedin.com/in/hami-tahm/",
         "https://x.com/hamitahm",
@@ -79,8 +83,11 @@ const siteStructuredData = {
         "https://linktr.ee/Hami_Tahm",
         "https://www.crunchbase.com/person/hami-tahm",
         "https://github.com/Hami-Tahm",
-        "https://homecalc.ca",
-        "https://houmse.com",
+      ],
+      // The companies he founded, modelled as a relationship rather than an identity.
+      owns: [
+        { "@id": "https://homecalc.ca/#organization" },
+        { "@id": "https://houmse.com/#organization" },
       ],
     },
     {
@@ -91,6 +98,25 @@ const siteStructuredData = {
       founder: { "@id": "https://hamitahm.com/#hami-tahm" },
       areaServed: { "@type": "Country", name: "Canada" },
       foundingDate: "2024",
+    },
+    // Companies Hami founded — declared as first-class entities with a founder link
+    // back to the Person, which is the schema.org-correct way to connect them.
+    {
+      "@type": "Organization",
+      "@id": "https://homecalc.ca/#organization",
+      name: "HomeCalc.ca",
+      url: "https://homecalc.ca/",
+      description:
+        "Canadian real-estate and personal-finance calculators. A live case study in AI citation growth.",
+      founder: { "@id": "https://hamitahm.com/#hami-tahm" },
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://houmse.com/#organization",
+      name: "Houmse",
+      url: "https://houmse.com/",
+      description: "Home services marketplace serving Toronto and the GTA.",
+      founder: { "@id": "https://hamitahm.com/#hami-tahm" },
     },
     {
       "@type": "WebSite",

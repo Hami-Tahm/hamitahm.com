@@ -48,16 +48,8 @@ const structuredData = {
       headline: "AI Engines Already Recommend Hami Tahm",
       datePublished: SNAPSHOT.isoDate,
       dateModified: SNAPSHOT.isoDate,
-      author: {
-        "@type": "Person",
-        name: "Hami Tahm",
-        url: "https://hamitahm.com/hami-tahm/",
-      },
-      publisher: {
-        "@type": "Person",
-        name: "Hami Tahm",
-        url: "https://hamitahm.com/hami-tahm/",
-      },
+      author: { "@id": "https://hamitahm.com/#hami-tahm" },
+      publisher: { "@id": "https://hamitahm.com/#organization" },
     },
   ],
 };

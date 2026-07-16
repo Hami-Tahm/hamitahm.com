@@ -16,7 +16,9 @@ import { STUDY, HOMECALC_PAGES, HOMECALC_QUERIES } from "@/lib/citation-study";
 export function GET() {
   const rows: string[] = [];
 
-  rows.push(`# AI Citation Study — HomeCalc.ca`);
+  rows.push(`# AI Citation Study — HomeCalc.ca — top cited pages & queries (selected sample)`);
+  rows.push(`# This is a selected sample (top pages + top queries), not the full per-page export.`);
+  rows.push(`# Full export available on request: hami@hamitahm.com`);
   rows.push(`# Source: ${STUDY.source}`);
   rows.push(`# Window: ${STUDY.windowStart} to ${STUDY.windowEnd}`);
   rows.push(`# Pulled: ${STUDY.pulledOn}`);

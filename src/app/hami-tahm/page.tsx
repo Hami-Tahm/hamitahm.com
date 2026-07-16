@@ -10,15 +10,16 @@ const CHECKER_URL = "/ai-visibility/ai-visibility-checker/";
 const CASE_STUDY_URL = "/case-studies/homecalc-ai-visibility/";
 
 /**
- * PROFILES — the professional entity graph, and nothing else.
+ * PROFILES — alter-ego profiles of the same person. Rendered with rel="me".
  *
- * These are the same URLs declared in the Person `sameAs` in layout.tsx. Listing them
- * visibly here closes the loop: each of these profiles links back to hamitahm.com, and
- * now hamitahm.com links out to each of them. Machines trust a confirmed round-trip far
- * more than a one-way assertion.
+ * These MUST stay identical to the Person `sameAs` in layout.tsx: both are identity
+ * assertions ("this is also me"). Listing them visibly here with rel="me" closes the
+ * round-trip — each profile links back to hamitahm.com, and now hamitahm.com links out
+ * to each. Machines trust a confirmed round-trip far more than a one-way claim.
  *
- * KEEP THIS LIST AND `sameAs` IN layout.tsx IDENTICAL. If you add a profile to one,
- * add it to the other — and only add profiles that belong to this practice.
+ * Companies Hami founded (HomeCalc, Houmse) are NOT here — they are not "him", they are
+ * ventures. They live in VENTURES below (no rel="me"), and are modelled in schema via
+ * `founder`/`owns`, not sameAs.
  */
 const PROFILES = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/hami-tahm/" },
@@ -26,9 +27,23 @@ const PROFILES = [
   { label: "YouTube", href: "https://www.youtube.com/@HamiTahm" },
   { label: "GitHub", href: "https://github.com/Hami-Tahm" },
   { label: "Crunchbase", href: "https://www.crunchbase.com/person/hami-tahm" },
+] as const;
+
+/** Ventures he founded — linked, but NOT asserted as his identity (no rel="me"). */
+const VENTURES = [
   { label: "HomeCalc.ca", href: "https://homecalc.ca" },
   { label: "Houmse.com", href: "https://houmse.com" },
 ] as const;
+
+const pillStyle: React.CSSProperties = {
+  fontFamily: "var(--mono)",
+  fontSize: 12.5,
+  color: "var(--muted)",
+  border: "1px solid var(--line-strong)",
+  borderRadius: 999,
+  padding: "7px 15px",
+  textDecoration: "none",
+};
 
 export const metadata: Metadata = {
   // `absolute` is required. The root layout applies the template "%s | Hami Tahm", so
@@ -436,15 +451,34 @@ export default function AboutPage() {
                     href={href}
                     target="_blank"
                     rel="me noopener noreferrer"
-                    style={{
-                      fontFamily: "var(--mono)",
-                      fontSize: 12.5,
-                      color: "var(--muted)",
-                      border: "1px solid var(--line-strong)",
-                      borderRadius: 999,
-                      padding: "7px 15px",
-                      textDecoration: "none",
-                    }}
+                    style={pillStyle}
+                  >
+                    {label}
+                  </a>
+                ))}
+              </div>
+
+              <p
+                style={{
+                  fontFamily: "var(--mono)",
+                  fontSize: 11,
+                  letterSpacing: ".1em",
+                  textTransform: "uppercase",
+                  color: "var(--faint)",
+                  margin: "26px 0 16px",
+                }}
+              >
+                Ventures
+              </p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+                {VENTURES.map(({ label, href }) => (
+                  // No rel="me" — these are companies he founded, not his identity.
+                  <a
+                    key={href}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={pillStyle}
                   >
                     {label}
                   </a>

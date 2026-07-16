@@ -422,8 +422,8 @@ export default function AIVisibilityConsultantCanada() {
                 site &mdash; went from near-zero AI citations to over{" "}
                 {HOMECALC_PROOF.citations} across {HOMECALC_PROOF.pagesCited}{" "}
                 pages in {HOMECALC_PROOF.timeframe} after an AI visibility audit.
-                The domain was under three months old. Citations appeared across
-                ChatGPT, Perplexity, and Google AI Overviews.
+                The domain was under three months old. This count is{" "}
+                {HOMECALC_PROOF.sourceLong}.
               </p>
               <blockquote
                 style={{

@@ -46,9 +46,9 @@ const schemaJson = blogSchemaJson({
 const datasetSchema = {
   "@context": "https://schema.org",
   "@type": "Dataset",
-  name: "HomeCalc.ca AI Citation Study — raw data",
+  name: "HomeCalc.ca AI Citation Study — top cited pages and queries",
   description:
-    "Per-page and per-query AI citation counts for HomeCalc.ca from Bing Webmaster AI Performance (Microsoft Copilot), April 19 – July 8, 2026.",
+    "Top cited pages and top grounding queries for HomeCalc.ca from Bing Webmaster AI Performance (Microsoft Copilot), April 19 – July 8, 2026. A selected sample; full per-page export available on request.",
   url: "https://hamitahm.com/blog/ai-citation-study/",
   creator: { "@id": "https://hamitahm.com/#hami-tahm" },
   license: "https://creativecommons.org/licenses/by/4.0/",
@@ -389,9 +389,10 @@ export default function Page() {
                     download="homecalc-ai-citation-study.csv"
                     style={{ color: "var(--accent)", fontWeight: 600 }}
                   >
-                    &darr; Download the raw data (CSV)
+                    &darr; Download the data (CSV)
                   </a>{" "}
-                  &mdash; CC BY 4.0, free to reuse with attribution.
+                  &mdash; the top cited pages and queries for HomeCalc, CC BY 4.0.
+                  Want the full per-page export, or the HamiTahm.com side? Email me.
                 </p>
                 <p style={{ margin: 0 }}>
                   Questions about the method, or want the underlying screenshots?{" "}

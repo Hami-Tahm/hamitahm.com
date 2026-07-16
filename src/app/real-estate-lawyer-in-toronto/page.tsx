@@ -13,11 +13,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://hamitahm.com/real-estate-lawyer-in-toronto/",
   },
+  // NOINDEX 2026-07-14 (reversed an earlier "keep" call). This is a YMYL legal-advice
+  // topic written by a non-lawyer, with no legal credentials, no qualified reviewer and
+  // no official Ontario sources — a genuine E-E-A-T/trust liability for a site whose
+  // whole positioning is AI-visibility consulting, not legal advice. Off-topic and
+  // higher-risk than it is worth. Kept live for direct links; out of search + sitemap.
+  robots: { index: false, follow: true },
 };
 
-// Schema added 2026-07-14 — this legacy post had none. Keeping it indexed (it
-// supports the real-estate / trust-based-local-business entity), so it should be
-// attributed to the Person entity like everything else we keep.
+// Schema retained but page is noindexed (see above).
 const schemaJson = blogSchemaJson({
   slug: "real-estate-lawyer-in-toronto",
   title: ARTICLE_TITLE,

@@ -36,7 +36,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "What's the fastest way to improve ChatGPT brand visibility?",
-    a: "Three moves in order: (1) unblock GPTBot in your robots.txt, (2) switch from SPA to SSR or SSG if applicable, (3) add Organization schema to your homepage. These changes can produce measurable Browse-mode visibility within weeks.",
+    a: "Three moves in order: (1) make sure OAI-SearchBot and ChatGPT-User are allowed in your robots.txt — these are the crawlers that let ChatGPT search find and cite you (GPTBot is a separate training crawler), (2) switch from SPA to SSR or SSG if applicable, (3) add Organization schema to your homepage. These changes can produce measurable ChatGPT-search visibility within weeks.",
   },
 ] as const;
 
@@ -485,10 +485,43 @@ export default function HowToGetMentionedByChatGPTPost() {
             </p>
             <p style={{ marginBottom: 16 }}>
               <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
-                Check your robots.txt.
+                Check your robots.txt — and know which bot does what.
               </strong>{" "}
-              OpenAI&rsquo;s crawler is called GPTBot. If your robots.txt
-              contains this:
+              OpenAI runs three separate crawlers, and they are not
+              interchangeable{" "}
+              <span style={{ color: "var(--faint)", fontSize: 14 }}>
+                (per OpenAI&rsquo;s crawler documentation, verified July 2026)
+              </span>
+              :
+            </p>
+            <ul style={{ marginBottom: 20 }}>
+              <li style={{ marginBottom: 8 }}>
+                <code style={{ fontFamily: "var(--mono)", fontSize: "0.9em" }}>
+                  OAI-SearchBot
+                </code>{" "}
+                &mdash; surfaces and links your pages inside ChatGPT search. This
+                is the one that controls whether you can appear in ChatGPT&rsquo;s
+                search answers. <strong>Allow it.</strong>
+              </li>
+              <li style={{ marginBottom: 8 }}>
+                <code style={{ fontFamily: "var(--mono)", fontSize: "0.9em" }}>
+                  ChatGPT-User
+                </code>{" "}
+                &mdash; fetches a page when a user&rsquo;s ChatGPT session visits
+                a link. Allow it too.
+              </li>
+              <li style={{ marginBottom: 8 }}>
+                <code style={{ fontFamily: "var(--mono)", fontSize: "0.9em" }}>
+                  GPTBot
+                </code>{" "}
+                &mdash; crawls content for model <em>training</em>. Blocking it
+                keeps you out of future training data; it does{" "}
+                <strong>not</strong> remove you from ChatGPT search.
+              </li>
+            </ul>
+            <p style={{ marginBottom: 16 }}>
+              So the common mistake is blocking the wrong bot. If your goal is to
+              appear in ChatGPT search, the block that actually hurts you is:
             </p>
             <pre
               style={{
@@ -504,11 +537,13 @@ export default function HowToGetMentionedByChatGPTPost() {
                 color: "var(--ink)",
               }}
             >
-              {`User-agent: GPTBot
+              {`User-agent: OAI-SearchBot
 Disallow: /`}
             </pre>
             <p style={{ marginBottom: 26 }}>
-              ChatGPT Browse cannot access your site. Remove the block.
+              If that is in your robots.txt, ChatGPT search cannot surface you.
+              Remove it. (Blocking only <code style={{ fontFamily: "var(--mono)", fontSize: "0.9em" }}>GPTBot</code>{" "}
+              is a training choice, not a search one.)
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={{ fontWeight: 600, color: "var(--ink)" }}>

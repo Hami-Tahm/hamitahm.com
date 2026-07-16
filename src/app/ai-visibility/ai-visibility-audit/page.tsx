@@ -142,17 +142,13 @@ const structuredData = {
       name: "AI Visibility Audit",
       serviceType: "AI Visibility Consulting",
       areaServed: "Canada",
-      provider: {
-        "@type": "Person",
-        name: "Hami Tahm",
-        url: "https://hamitahm.com/hami-tahm/",
-      },
+      provider: { "@id": "https://hamitahm.com/#hami-tahm" },
       offers: {
         "@type": "Offer",
         price: 1500,
         priceCurrency: "CAD",
         availability: "https://schema.org/InStock",
-        seller: { "@type": "Person", name: "Hami Tahm" },
+        seller: { "@id": "https://hamitahm.com/#hami-tahm" },
       },
     },
     {
@@ -478,9 +474,9 @@ export default function AIVisibilityAudit() {
                 >
                   HomeCalc.ca, a Canadian financial calculator site{" "}
                   {HOMECALC_PROOF.domainAge}, went from near-zero AI citations
-                  to {HOMECALC_PROOF.citations} in {HOMECALC_PROOF.timeframe} —
-                  with {HOMECALC_PROOF.pagesCited} pages cited across ChatGPT,
-                  Perplexity, and Google AI Overviews.
+                  to {HOMECALC_PROOF.citations} in {HOMECALC_PROOF.timeframe},
+                  across {HOMECALC_PROOF.pagesCited} pages —{" "}
+                  {HOMECALC_PROOF.sourceLong}.
                 </p>
                 <p
                   style={{

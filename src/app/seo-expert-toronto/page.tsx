@@ -376,8 +376,7 @@ export default function SEOExpertTorontoPage() {
               months old at the time of the audit, in YMYL (Your Money or Your
               Life), one of Google&rsquo;s strictest content categories. After
               an AI visibility audit, the site went from {HOMECALC_CLAIMS.zeroToCitations},
-              with {HOMECALC_PROOF.pagesCited} pages cited across ChatGPT,
-              Perplexity, and Google AI Overviews.
+              across {HOMECALC_PROOF.pagesCited} pages — {HOMECALC_PROOF.sourceLong}.
             </p>
             <p
               style={{

@@ -202,12 +202,7 @@ const structuredData = {
       name: "AI Visibility Audit for Mortgage Brokers",
       serviceType: "AI Visibility Consulting",
       areaServed: "Canada",
-      provider: {
-        "@type": "Person",
-        name: "Hami Tahm",
-        url: "https://hamitahm.com/hami-tahm/",
-        sameAs: "https://hamitahm.com/hami-tahm/",
-      },
+      provider: { "@id": "https://hamitahm.com/#hami-tahm" },
       url: "https://hamitahm.com/ai-visibility/ai-visibility-for-mortgage-brokers/",
     },
     {

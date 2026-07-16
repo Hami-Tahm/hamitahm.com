@@ -741,9 +741,8 @@ export default function AIVisibilityPage() {
               HomeCalc.ca &mdash; a Toronto-based Canadian financial calculator
               site &mdash; went from near-zero AI citations to over{" "}
               {HOMECALC_PROOF.citations} across {HOMECALC_PROOF.pagesCited}{" "}
-              pages in {HOMECALC_PROOF.timeframe}. The work covered ChatGPT,
-              Perplexity, and Google AI Overviews. The domain was{" "}
-              {HOMECALC_PROOF.domainAge} at the time.
+              pages in {HOMECALC_PROOF.timeframe}, {HOMECALC_PROOF.sourceLong}.
+              The domain was {HOMECALC_PROOF.domainAge} at the time.
             </p>
             <blockquote
               style={{
