@@ -104,6 +104,10 @@ const VERTICALS = [
 ] as const;
 
 const RELATED_LINKS = [
+  {
+    label: "Want it done for you? The Implementation Sprint",
+    href: "/ai-visibility/implementation/",
+  },
   { label: "What is AI visibility?", href: "/ai-visibility/" },
   {
     label: "Inside the HomeCalc audit (case study)",

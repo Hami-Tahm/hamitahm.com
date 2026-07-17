@@ -425,7 +425,7 @@ export default function AboutPage() {
                 ChatGPT, Perplexity, Google AI Overviews, Gemini and Copilot. He is the founder
                 of HomeCalc.ca, which he grew from near-zero to{" "}
                 {HOMECALC_CLAIMS.citationsInTimeframe}, and a co-founder of Houmse.com. He works
-                solo on a flat fee, with no retainers.
+                solo, on flat-fee, fixed-scope engagements rather than open-ended retainers.
               </p>
             </div>
           </RevealSection>

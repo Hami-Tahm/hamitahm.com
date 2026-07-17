@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { HOMECALC_PROOF } from "@/lib/homecalc-proof";
+import { OFFERS } from "@/lib/offers";
 
 const PORTRAIT_SRC = "/images/hami-tahm/hami-tahm-portrait.png";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
@@ -30,7 +31,7 @@ const HUB_FAQ = [
   },
   {
     q: "How much does AI visibility consulting cost?",
-    a: "Engagements start with a $1,500 CAD AI visibility audit — flat fee, one-time. Ongoing consulting is scoped per project after the audit. No retainer.",
+    a: "Engagements start with a $1,500 CAD AI visibility audit — flat fee, one-time, no retainer to get started. If you want the fixes done for you, the Implementation Sprint starts at $4,500 (the audit fee is credited toward it). Optional monitoring and advisory is available afterward on a fixed 6–12 month term — never required.",
   },
 ] as const;
 
@@ -421,6 +422,41 @@ export default function AIVisibilityPage() {
                 </div>
               </Link>
 
+              <Link href={OFFERS.implementation.href} className="inc">
+                <h3
+                  style={{
+                    fontFamily: "var(--serif)",
+                    fontSize: 19,
+                    fontWeight: 500,
+                    lineHeight: 1.25,
+                  }}
+                >
+                  AI Visibility Implementation Sprint
+                </h3>
+                <p
+                  style={{
+                    fontSize: "13.5px",
+                    color: "var(--muted)",
+                    marginTop: 10,
+                    lineHeight: 1.55,
+                  }}
+                >
+                  Done-for-you: I implement the fixes the audit identifies.{" "}
+                  {OFFERS.implementation.price} CAD, fixed scope &mdash; audit fee
+                  credited.
+                </p>
+                <div
+                  style={{
+                    fontFamily: "var(--mono)",
+                    fontSize: 12,
+                    color: "var(--accent)",
+                    marginTop: 14,
+                  }}
+                >
+                  See the Implementation Sprint &rarr;
+                </div>
+              </Link>
+
               <Link
                 href="/ai-visibility/ai-visibility-consultant-canada/"
                 className="inc"
@@ -455,6 +491,43 @@ export default function AIVisibilityPage() {
                   }}
                 >
                   AI Visibility Consultant Canada &rarr;
+                </div>
+              </Link>
+
+              <Link
+                href="/ai-visibility/ai-visibility-consultant-toronto/"
+                className="inc"
+              >
+                <h3
+                  style={{
+                    fontFamily: "var(--serif)",
+                    fontSize: 19,
+                    fontWeight: 500,
+                    lineHeight: 1.25,
+                  }}
+                >
+                  AI Visibility Consultant in Toronto
+                </h3>
+                <p
+                  style={{
+                    fontSize: "13.5px",
+                    color: "var(--muted)",
+                    marginTop: 10,
+                    lineHeight: 1.55,
+                  }}
+                >
+                  The local cornerstone &mdash; AEO and GEO for Toronto and GTA
+                  businesses. The consultant AI engines already name for Toronto.
+                </p>
+                <div
+                  style={{
+                    fontFamily: "var(--mono)",
+                    fontSize: 12,
+                    color: "var(--accent)",
+                    marginTop: 14,
+                  }}
+                >
+                  AI Visibility Consultant Toronto &rarr;
                 </div>
               </Link>
 
@@ -1194,10 +1267,11 @@ export default function AIVisibilityPage() {
                   style={{
                     fontFamily: "var(--mono)",
                     fontSize: 13,
+                    color: "var(--accent)",
                     marginTop: 8,
                   }}
                 >
-                  from $5,000
+                  {OFFERS.implementation.price} CAD
                 </div>
                 <p
                   style={{
@@ -1207,9 +1281,16 @@ export default function AIVisibilityPage() {
                     lineHeight: 1.55,
                   }}
                 >
-                  A focused implementation block &mdash; schema, content
-                  restructuring, entity work, and authority signals shipped in
-                  4&ndash;6&nbsp;weeks.
+                  A focused, done-for-you implementation block &mdash; schema,
+                  content restructuring, entity work, and authority signals
+                  shipped in {OFFERS.implementation.duration.toLowerCase()}. The
+                  audit fee is credited toward it.{" "}
+                  <Link
+                    href={OFFERS.implementation.href}
+                    style={{ color: "var(--accent)", fontWeight: 500 }}
+                  >
+                    Details &rarr;
+                  </Link>
                 </p>
               </div>
 
@@ -1233,16 +1314,17 @@ export default function AIVisibilityPage() {
                     lineHeight: 1.25,
                   }}
                 >
-                  Monthly System
+                  Monitoring &amp; Advisory
                 </h3>
                 <div
                   style={{
                     fontFamily: "var(--mono)",
                     fontSize: 13,
+                    color: "var(--accent)",
                     marginTop: 8,
                   }}
                 >
-                  from $2,500/mo
+                  {OFFERS.monitor.price} CAD &middot; optional
                 </div>
                 <p
                   style={{
@@ -1252,9 +1334,10 @@ export default function AIVisibilityPage() {
                     lineHeight: 1.55,
                   }}
                 >
-                  Ongoing monitoring, content expansion, and competitive
-                  tracking to keep you visible as AI models retrain and
-                  competitors catch on.
+                  Optional after the sprint, on a fixed{" "}
+                  {OFFERS.monitor.duration} term &mdash; never required to start.
+                  I monitor your citations, track competitors, and keep you
+                  visible as AI models retrain.
                 </p>
               </div>
             </div>
