@@ -12,15 +12,18 @@ import type { MetadataRoute } from "next";
  * — is handled precisely by `/*?dpl=` below, without blocking the assets themselves.
  *
  * - /*?dpl=   → Vercel deploy-version query strings. Duplicate-URL noise in GSC.
- * - /feed/, /*\/feed/, /comments/feed/, /category/
- *             → WordPress legacy RSS endpoints. Site is on Next.js now; not real pages.
+ *
+ * NOTE (2026-07-14): /category/, /feed/, /comments/feed/ were REMOVED from the block.
+ * These are dead WordPress-era URLs that now return 404, but Google had them cached in
+ * the index (they still showed for "Hami Tahm" searches with old longevity/Up-Diet
+ * titles). Google only DROPS a URL from the index when it can re-crawl it and see the
+ * 404 — and we were blocking exactly those paths in robots.txt, freezing the stale
+ * snapshot in place. Unblocking them lets Googlebot re-crawl, hit the 404, and evict
+ * them over the next few weeks. Same logic already applied to noindex pages: never
+ * block a URL you're trying to get de-indexed.
  */
 const DISALLOW = [
   "/*?dpl=",
-  "/feed/",
-  "/*/feed/",
-  "/comments/feed/",
-  "/category/",
 ];
 
 export default function robots(): MetadataRoute.Robots {

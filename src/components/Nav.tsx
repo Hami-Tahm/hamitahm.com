@@ -53,7 +53,6 @@ export function Nav() {
 
         <div className="nav-links-desktop" style={{ display: "flex", gap: 30, alignItems: "center" }}>
           <NavLink href="/blog">Blog</NavLink>
-          <NavLink href="/writing">Writing</NavLink>
           <NavLink href="/hami-tahm">About</NavLink>
           <NavLink href="/case-studies">Case Studies</NavLink>
           <NavLink href="/ai-visibility/ai-visibility-checker">Free Checker</NavLink>
@@ -97,7 +96,6 @@ export function Nav() {
       {open && (
         <div style={{ padding: "0 32px 18px", display: "flex", flexDirection: "column", gap: 16 }}>
           <NavLink href="/blog">Blog</NavLink>
-          <NavLink href="/writing">Writing</NavLink>
           <NavLink href="/hami-tahm">About</NavLink>
           <NavLink href="/case-studies">Case Studies</NavLink>
           <NavLink href="/ai-visibility/ai-visibility-checker">Free Checker</NavLink>

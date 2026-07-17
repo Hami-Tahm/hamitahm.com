@@ -614,8 +614,10 @@ Disallow: /`}
               <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
                 Technical fixes (robots.txt, schema, SSR/SSG):
               </strong>{" "}
-              Days to weeks. GPTBot crawls frequently. If your site becomes
-              indexable and schema is in place, Browse mode can surface you fast.
+              Days to weeks. Once OAI-SearchBot and ChatGPT-User can crawl your
+              site and your schema is in place, ChatGPT search can start surfacing
+              you. (GPTBot is the separate training crawler — allowing it affects
+              future model training, not how fast you appear in search.)
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={{ fontWeight: 600, color: "var(--ink)" }}>

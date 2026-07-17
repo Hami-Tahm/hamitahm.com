@@ -49,7 +49,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "What happens after I receive the report?",
-    a: "You have 14 days of follow-up access — questions, clarifications, prioritization help. After that, you can implement on your own or with your existing team.",
+    a: "You have 14 days of follow-up access — questions, clarifications, prioritization help. After that you have two options: implement the plan yourself (or with your team), or have me do it for you as a fixed-scope Implementation Sprint, where the audit fee is credited toward the work.",
   },
   {
     q: "Do you work with businesses outside Canada?",

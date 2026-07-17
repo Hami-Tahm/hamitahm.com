@@ -204,9 +204,10 @@ export default function ContactPage() {
                 </div>
               </a>
 
-              {/* LinkedIn */}
+              {/* LinkedIn — /in/hami-tahm is the real profile; /in/hamitahm 404s.
+                  Same dead URL was already fixed in Footer.tsx + layout.tsx sameAs. */}
               <a
-                href="https://www.linkedin.com/in/hamitahm/"
+                href="https://www.linkedin.com/in/hami-tahm/"
                 target="_blank"
                 rel="noopener"
                 className="channel"

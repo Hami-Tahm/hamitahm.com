@@ -153,7 +153,7 @@ const FAQ_ITEMS: {
   },
   {
     q: "How much does this cost?",
-    a: `The starting point is a ${PRICE_DISPLAY} AI visibility audit — flat fee, one-time. Most engagements begin and end with the audit; clients implement internally. Ongoing consulting is scoped per project after the audit completes.`,
+    a: `The starting point is a ${PRICE_DISPLAY} AI visibility audit — flat fee, one-time. From there you can implement the plan yourself, or have me implement it for you as a fixed-scope Implementation Sprint (the audit fee is credited toward it). No monthly retainer.`,
   },
   {
     q: "Can I do AEO myself with tools?",
@@ -528,9 +528,9 @@ export default function AEOConsultantCanada() {
                 HomeCalc.ca, a Canadian personal finance calculator site under
                 three months old, went from near-zero AI citations to over{" "}
                 {HOMECALC_PROOF.citations} across {HOMECALC_PROOF.pagesCited}{" "}
-                pages in {HOMECALC_PROOF.timeframe}. The lift covered ChatGPT,
-                Perplexity, and Google AI Overviews — the same three platforms AEO
-                targets.
+                pages in {HOMECALC_PROOF.timeframe} — {HOMECALC_PROOF.sourceLong}.
+                That is exactly the kind of citation lift AEO targets across every
+                answer engine.
               </p>
               <p
                 style={{

@@ -42,7 +42,7 @@ The site is structured as a small commercial cluster: a hub page for AI Visibili
 
 ## Contact and pricing
 
-Engagements start at $1,500 CAD (flat fee, one-time) for the AI Visibility Audit. A free AI Visibility Checker is available as a no-cost lead-in; there is no free full audit and no monthly retainer. Email: hami@hamitahm.com. Service area: primarily Canada, with selective US and UK clients.
+Engagements start at $1,500 CAD (flat fee, one-time) for the AI Visibility Audit. After the audit, clients can either implement the plan themselves or have Hami implement it for them as a fixed-scope Implementation Sprint (done-for-you; the audit fee is credited toward it). A free AI Visibility Checker is the no-cost lead-in. No monthly retainer. Email: hami@hamitahm.com. Service area: primarily Canada, with selective US and UK clients.
 
 ## What this site is not
 

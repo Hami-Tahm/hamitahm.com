@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { latestWritingPosts } from "@/lib/writing-posts";
-
-const BUILDING_SINCE = 2014;
-const buildingYears = new Date().getFullYear() - BUILDING_SINCE;
+import { HOMECALC_PROOF } from "@/lib/homecalc-proof";
 
 export const metadata: Metadata = {
   // Trimmed to ~150 chars (was ~207 and would truncate in the SERP). Leads with the
@@ -39,16 +37,11 @@ export default function Home() {
                 letterSpacing: "-.032em",
               }}
             >
-              Build fast.
-              <br />
-              Test hard.
-              <br />
-              Kill what doesn&rsquo;t work.
-              <br />
+              Get found inside{" "}
               <em style={{ fontStyle: "italic", color: "var(--accent)" }}>
-                Double down
+                ChatGPT, Perplexity,
               </em>{" "}
-              on what does.
+              and Google&nbsp;AI.
             </h1>
           </RevealSection>
 
@@ -58,45 +51,30 @@ export default function Home() {
                 marginTop: 30,
                 fontSize: "clamp(17px, 2vw, 20px)",
                 color: "var(--muted)",
-                maxWidth: "54ch",
+                maxWidth: "56ch",
                 lineHeight: 1.65,
               }}
             >
-              I&rsquo;m Hami Tahm &mdash; a serial founder who has spent over a decade launching, testing, and scaling digital products across two markets.{" "}
-              <b style={{ color: "var(--ink)", fontWeight: 500 }}>
-                Right now I&rsquo;m building{" "}
-                <a
-                  href="https://homecalc.ca"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: "var(--accent)" }}
-                >
-                  HomeCalc.ca
-                </a>
-                ,{" "}
-                <a
-                  href="https://houmse.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: "var(--accent)" }}
-                >
-                  Houmse.com
-                </a>
-              </b>{" "}
-              and helping Canadian businesses get found inside ChatGPT, Perplexity, and Google AI&nbsp;Overviews.
+              I&rsquo;m Hami Tahm, an AI Visibility Consultant in Toronto. I help
+              Canadian businesses get cited and recommended when buyers ask AI
+              engines &mdash; and I prove it on my own products first, in public,
+              with numbers you can check.
             </p>
           </RevealSection>
 
           <RevealSection delay={0.18}>
             <div style={{ marginTop: 42, display: "flex", gap: 14, flexWrap: "wrap", alignItems: "center" }}>
+              {/* Cold page → lead with the free, low-commitment entry point (the
+                  checker), audit second. Matches the funnel used on every other
+                  cold surface. */}
               <Link
-                href="/ai-visibility/ai-visibility-audit/"
+                href="/ai-visibility/ai-visibility-checker/"
                 className="btn btn-primary"
               >
-                Get Your AI Visibility Audit <span className="arr">&rarr;</span>
+                Run the free AI visibility check <span className="arr">&rarr;</span>
               </Link>
-              <Link href="/ai-visibility/" className="btn btn-ghost">
-                Explore AI visibility services
+              <Link href="/ai-visibility/ai-visibility-audit/" className="btn btn-ghost">
+                Or book the $1,500 audit
               </Link>
             </div>
           </RevealSection>
@@ -106,10 +84,19 @@ export default function Home() {
       {/* STATS */}
       <div className="wrap">
         <RevealSection>
+          {/*
+            Was: "12 yrs building", "~14 ventures", "Goal: a unicorn".
+            Those are founder-flex stats — and "a unicorn" is the exact burnout/
+            wrong-vertical signal we removed from the footer. For the buyer this page is
+            for (a dentist, a lawyer deciding on $1,500), the homepage should lead with
+            PROOF of the service, not a startup manifesto. The founder story lives on
+            /hami-tahm/. These three are buyer-facing: a real result, the price, and the
+            no-agency promise.
+          */}
           <div className="stats-grid stats-grid-centered stats-grid-3">
-            <Stat value={String(buildingYears)} unit="yrs" label="Building since 2014" />
-            <Stat value="~14" label="Ventures launched" />
-            <Stat value="1" accent="×" label="Goal: a unicorn" />
+            <Stat value={HOMECALC_PROOF.citations} label="AI citations earned (HomeCalc, 3 months)" />
+            <Stat value="$1,500" label="Flat-fee audit — no retainer" />
+            <Stat value="1" label="Consultant — no agency, no handoffs" />
           </div>
         </RevealSection>
       </div>

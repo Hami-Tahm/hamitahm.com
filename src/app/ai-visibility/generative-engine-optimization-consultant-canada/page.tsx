@@ -157,7 +157,7 @@ const FAQ_ITEMS: {
   },
   {
     q: "How much does this cost?",
-    a: `The starting point is a ${PRICE_DISPLAY} AI visibility audit — flat fee, one-time. Most engagements begin and end with the audit; clients implement internally. Ongoing consulting is scoped per project after the audit completes.`,
+    a: `The starting point is a ${PRICE_DISPLAY} AI visibility audit — flat fee, one-time. From there you can implement the plan yourself, or have me implement it for you as a fixed-scope Implementation Sprint (the audit fee is credited toward it). No monthly retainer.`,
   },
   {
     q: "Do I need both AEO and GEO?",

@@ -9,7 +9,10 @@ const SITE = "https://hamitahm.com";
 const URL = `${SITE}/ai-visibility/ai-visibility-checker/`;
 
 export const metadata: Metadata = {
-  title: "Free AI Visibility Check: Does ChatGPT Recommend You?",
+  // "Checker" (not "Check") on purpose: ~1,035 impressions/month of "free ai
+  // visibility checker" / "ai visibility checker" intent were landing on a blog post
+  // instead of this tool. The title now targets the exact query the tool answers.
+  title: "Free AI Visibility Checker — Does ChatGPT Recommend You?",
   description:
     "See whether ChatGPT, Google AI Overview, and Gemini recommend your business or a competitor. A real analyst checks your keywords and emails your report, free.",
   alternates: { canonical: URL },
@@ -90,6 +93,20 @@ export default function AiVisibilityCheckerPage() {
       <header style={{ padding: "30px 0 24px" }}>
         <div className="wrap">
           <RevealSection>
+            {/* Eyebrow carries the exact query term ("AI Visibility Checker") that this
+                page is built to rank for; the H1 keeps the emotional hook. */}
+            <div
+              style={{
+                fontFamily: "var(--mono)",
+                fontSize: "12.5px",
+                letterSpacing: ".18em",
+                color: "var(--accent)",
+                textTransform: "uppercase",
+                marginBottom: 20,
+              }}
+            >
+              Free AI Visibility Checker
+            </div>
             <h1
               style={{
                 fontFamily: "var(--serif)",

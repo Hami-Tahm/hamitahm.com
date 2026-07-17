@@ -529,9 +529,8 @@ export default function AIVisibilityDentalClinics() {
                 {HOMECALC_PROOF.domainAge} at the time of the audit. After an AI
                 visibility audit by Hami Tahm, the site went from near-zero AI
                 citations to over {HOMECALC_PROOF.citations} across{" "}
-                {HOMECALC_PROOF.pagesCited} pages in {HOMECALC_PROOF.timeframe},
-                with citations appearing in ChatGPT, Perplexity, and Google AI
-                Overviews.
+                {HOMECALC_PROOF.pagesCited} pages in {HOMECALC_PROOF.timeframe} —{" "}
+                {HOMECALC_PROOF.sourceLong}.
               </p>
               <p
                 style={{

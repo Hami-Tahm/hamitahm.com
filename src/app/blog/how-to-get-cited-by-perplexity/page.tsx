@@ -405,14 +405,17 @@ export default function HowToGetCitedByPerplexityPost() {
             </ul>
             <p style={{ marginBottom: 26 }}>
               HomeCalc.ca — a financial calculator site with no established
-              authority — went from near-zero Perplexity citations to being
-              regularly cited across mortgage and real estate queries. Perplexity
-              was one of the platforms tracked in the{" "}
+              authority — earned thousands of AI citations in three months after
+              an audit-driven rebuild. To be precise about the evidence: that
+              citation volume was measured in Bing&rsquo;s AI Performance report
+              (Microsoft Copilot), not Perplexity — Perplexity doesn&rsquo;t
+              expose citation counts to publishers, so I don&rsquo;t claim a
+              specific Perplexity number. The{" "}
               <Link href={CASE_STUDY_URL} style={linkStyle}>
-                original AI visibility audit
-              </Link>
-              . The authority-building phase was a core part of what drove that
-              shift.
+                case study
+              </Link>{" "}
+              documents the full result. The authority-building principles below
+              are what a live-retrieval engine like Perplexity rewards.
             </p>
           </RevealSection>
 

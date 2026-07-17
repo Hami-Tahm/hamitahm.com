@@ -144,7 +144,7 @@ const TOOL_REVIEWS = [
     pricing:
       "Semrush plans start at ~$130/month; AI Overviews tracking is included in Pro and above.",
     misses:
-      "Google AIO only. No ChatGPT, Perplexity, or Gemini tracking. Not a cross-platform AI visibility solution.",
+      "Historically strongest on Google AI Overviews; engine coverage is broadening. Verify which engines your plan includes before buying.",
   },
   {
     rank: 4,
