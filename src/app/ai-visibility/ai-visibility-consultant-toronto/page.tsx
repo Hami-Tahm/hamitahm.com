@@ -137,7 +137,7 @@ export const metadata: Metadata = {
     absolute: "AI Visibility Consultant in Toronto — AEO & GEO | Hami Tahm",
   },
   description:
-    "AI visibility consultant in Toronto. Get cited and recommended in ChatGPT, Perplexity, and Google AI Overviews. $1,500 flat-fee audit by Hami Tahm — the consultant AI engines already name for Toronto.",
+    "AI visibility consultant in Toronto — get cited in ChatGPT, Perplexity, and Google AI Overviews. $1,500 audit by Hami Tahm, the consultant AI engines already name.",
   alternates: { canonical: `https://hamitahm.com${SLUG}` },
 };
 

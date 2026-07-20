@@ -37,7 +37,7 @@ export default function Post() {
         <div style={ { fontFamily: "var(--mono)", fontSize: 12, color: "var(--faint)", marginBottom: 40, display: "flex", gap: 8 } }>
           <Link href="/" style={ { color: "var(--accent)" } }>Home</Link>
           <span>/</span>
-          <Link href="/writing" style={ { color: "var(--accent)" } }>Writing</Link>
+          <Link href="/blog" style={ { color: "var(--accent)" } }>Blog</Link>
           <span>/</span>
           <span>What I’m Actually Good At</span>
         </div>

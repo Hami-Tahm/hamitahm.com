@@ -10,7 +10,7 @@ const TURNAROUND = "7 business days";
 export const metadata: Metadata = {
   title: "AI Engines Already Recommend Hami Tahm — Case Study",
   description:
-    "Ask ChatGPT, Perplexity, Google AI Mode, or Grok who does AI visibility in Toronto and they recommend Hami Tahm. A dated snapshot of the exact outcome the AI Visibility Audit is built to produce.",
+    "Ask ChatGPT, Perplexity, Google AI Mode, or Grok who does AI visibility in Toronto — they name Hami Tahm. A dated snapshot of the outcome the audit is built to produce.",
   alternates: {
     canonical: "https://hamitahm.com/case-studies/cited-by-ai-engines/",
   },

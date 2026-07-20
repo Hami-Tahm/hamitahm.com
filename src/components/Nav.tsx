@@ -77,6 +77,8 @@ export function Nav() {
           className="burger"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
+          aria-expanded={open}
+          aria-controls="mobile-menu"
           style={{
             display: "none",
             background: "none",
@@ -94,7 +96,7 @@ export function Nav() {
       </div>
 
       {open && (
-        <div style={{ padding: "0 32px 18px", display: "flex", flexDirection: "column", gap: 16 }}>
+        <div id="mobile-menu" style={{ padding: "0 32px 18px", display: "flex", flexDirection: "column", gap: 16 }}>
           <NavLink href="/blog">Blog</NavLink>
           <NavLink href="/hami-tahm">About</NavLink>
           <NavLink href="/case-studies">Case Studies</NavLink>

@@ -123,8 +123,8 @@ export default function CheckerForm() {
     <form onSubmit={submit} className="proof-card" style={{ padding: "32px 30px" }}>
       {/* Engines */}
       <div style={{ marginBottom: 24 }}>
-        <span style={labelStyle}>Which AI engines should we check?</span>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+        <span id="cw-engines-label" style={labelStyle}>Which AI engines should we check?</span>
+        <div role="group" aria-labelledby="cw-engines-label" style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
           {ENGINES.map((eng) => {
             const on = engines.includes(eng.id);
             return (
@@ -132,6 +132,7 @@ export default function CheckerForm() {
                 key={eng.id}
                 type="button"
                 disabled={!eng.active}
+                aria-pressed={on}
                 onClick={() => eng.active && toggle(eng.id)}
                 style={{
                   fontFamily: "var(--sans)",
@@ -179,11 +180,11 @@ export default function CheckerForm() {
 
       {/* Keywords */}
       <div style={{ marginBottom: 18 }}>
-        <label style={labelStyle}>Keywords to check (up to 3)</label>
+        <span style={labelStyle}>Keywords to check (up to 3)</span>
         <div style={{ display: "grid", gap: 10 }}>
-          <input style={inputStyle} placeholder="Keyword 1 (required)" value={kw1} onChange={(e) => setKw1(e.target.value)} />
-          <input style={inputStyle} placeholder="Keyword 2 (optional)" value={kw2} onChange={(e) => setKw2(e.target.value)} />
-          <input style={inputStyle} placeholder="Keyword 3 (optional)" value={kw3} onChange={(e) => setKw3(e.target.value)} />
+          <input style={inputStyle} aria-label="Keyword 1 (required)" placeholder="Keyword 1 (required)" value={kw1} onChange={(e) => setKw1(e.target.value)} />
+          <input style={inputStyle} aria-label="Keyword 2 (optional)" placeholder="Keyword 2 (optional)" value={kw2} onChange={(e) => setKw2(e.target.value)} />
+          <input style={inputStyle} aria-label="Keyword 3 (optional)" placeholder="Keyword 3 (optional)" value={kw3} onChange={(e) => setKw3(e.target.value)} />
         </div>
       </div>
 
@@ -200,7 +201,7 @@ export default function CheckerForm() {
       </div>
 
       {err && (
-        <p style={{ color: "#b3261e", fontSize: 13.5, marginBottom: 14 }}>{err}</p>
+        <p role="alert" style={{ color: "#b3261e", fontSize: 13.5, marginBottom: 14 }}>{err}</p>
       )}
 
       <button

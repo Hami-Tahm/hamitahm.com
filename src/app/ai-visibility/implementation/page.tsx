@@ -9,10 +9,10 @@ const CONTACT_URL = "/contact/";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "AI Visibility Implementation — Done-for-You (Toronto, Canada)",
+    absolute: "AI Visibility Implementation — Done-for-You in Toronto",
   },
   description:
-    "Done-for-you AI visibility implementation. After the audit, I make the changes myself — schema, rendering, entity fixes, page rewrites — as a fixed-scope sprint. From $4,500 CAD, audit fee credited.",
+    "Done-for-you AI visibility implementation. After the audit, I make the changes — schema, rendering, entity fixes, page rewrites — as a fixed-scope sprint from $4,500 CAD.",
   alternates: { canonical: `https://hamitahm.com${SLUG}` },
 };
 

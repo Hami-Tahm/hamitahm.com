@@ -55,7 +55,7 @@ export default function Post() {
         <div style={ { fontFamily: "var(--mono)", fontSize: 12, color: "var(--faint)", marginBottom: 40, display: "flex", gap: 8 } }>
           <Link href="/" style={ { color: "var(--accent)" } }>Home</Link>
           <span>/</span>
-          <Link href="/writing" style={ { color: "var(--accent)" } }>Writing</Link>
+          <Link href="/blog" style={ { color: "var(--accent)" } }>Blog</Link>
           <span>/</span>
           <span>The 10,000-Hour Rule: How Many Hours Do You Need to Reach 7/10 Mastery?</span>
         </div>

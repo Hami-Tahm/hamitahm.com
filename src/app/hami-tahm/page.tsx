@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     absolute: "Hami Tahm — AI Visibility Consultant in Toronto, Canada",
   },
   description:
-    "Hami Tahm is a Toronto-based AI visibility consultant. AEO & GEO for Canadian businesses that want to be cited in ChatGPT, Perplexity, and Google AI Overviews. Founder of HomeCalc.ca.",
+    "Hami Tahm — Toronto AI visibility consultant. AEO & GEO to get Canadian businesses cited in ChatGPT, Perplexity, and Google AI Overviews. Founder of HomeCalc.ca.",
   alternates: {
     canonical: "https://hamitahm.com/hami-tahm/",
   },

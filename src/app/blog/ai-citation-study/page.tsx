@@ -16,7 +16,7 @@ import {
 const SLUG = "ai-citation-study";
 const ARTICLE_TITLE = `What ${STUDY.totalCitations} AI Citations Actually Taught Me`;
 const ARTICLE_DESCRIPTION =
-  "Two sites. Three months. 14,400 AI citations from Microsoft Copilot. Which pages got cited, which got nothing, and the finding nobody in this industry wants to publish: citations are not customers.";
+  "Two sites, three months, 14,400 Microsoft Copilot citations — which pages got cited, which got nothing, and why citations aren't customers.";
 const DATE_PUBLISHED = "2026-07-14";
 
 const CHECKER_URL = "/ai-visibility/ai-visibility-checker/";
