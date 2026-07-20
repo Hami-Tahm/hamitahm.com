@@ -11,9 +11,14 @@
   --accent: #0F6E78;
   --accent-dark: #0B5F68;
   --accent-soft: rgba(15,110,120,.10);
-  --serif: 'Newsreader', Georgia, serif;
-  --sans: 'Hanken Grotesk', -apple-system, sans-serif;
-  --mono: 'JetBrains Mono', monospace;
+  /* These MUST reference the next/font CSS variables. next/font self-hosts each
+     family under a hashed name (e.g. __Newsreader_36bd41) that is only exposed
+     through its variable — so asking for the literal 'Newsreader' silently never
+     matched, and the site rendered in the Georgia fallback while still paying to
+     download Newsreader on every page. Same for JetBrains Mono. Fixed 2026-07-19. */
+  --serif: var(--font-newsreader), Georgia, serif;
+  --sans: var(--font-hanken), 'Hanken Grotesk', -apple-system, sans-serif;
+  --mono: var(--font-jetbrains), 'JetBrains Mono', monospace;
 }
 
 @theme inline {
