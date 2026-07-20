@@ -428,7 +428,7 @@ export default function WhatIsAIVisibilityPost() {
               Which AI platforms include you — and which don&rsquo;t?
             </p>
             <p style={{ marginBottom: 26 }}>
-              A brand that appears in Perplexity but not in Google AI Overviews
+              A brand that appears in Perplexity but not in <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>Google AI Overviews</a>
               has a major gap. AIO has the highest query volume by a significant
               margin. Platform coverage tells you where to focus first. On Gemini
               specifically, the key metric is whether your brand appears in
@@ -482,7 +482,7 @@ export default function WhatIsAIVisibilityPost() {
                 Schema markup and entity clarity.
               </strong>{" "}
               The clearer you define your brand, category, and offerings in
-              structured data, the more confidently AI systems can represent you.
+              <a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>structured data</a>, the more confidently AI systems can represent you.
               FAQPage, Article, LocalBusiness, and Organization schema all
               contribute to this.
             </p>

@@ -513,8 +513,9 @@ export default function PeecVsProfoundVsAirOpsPost() {
               BrightEdge positions itself on data accuracy — it&rsquo;s one of the
               few enterprise SEO platforms with dedicated generative search
               tracking built into a mature analytics suite. The claim holds:
-              BrightEdge&rsquo;s data accuracy for Google AI Overviews and
-              generative search is among the strongest available. The honest
+              BrightEdge&rsquo;s data accuracy for{" "}
+              <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>Google AI Overviews</a>{" "}
+              and generative search is among the strongest available. The honest
               limitation is access. BrightEdge is enterprise-only custom pricing,
               typically $2,000+/month, and requires existing relationship or
               significant contract to access meaningfully. For most SMBs comparing

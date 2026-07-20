@@ -214,7 +214,8 @@ export default function HowToAppearInGoogleAIOverviewsPost() {
 
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
-              Google AI Overviews pull from pages that already rank in the top
+              <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>Google AI Overviews</a>{" "}
+              pull from pages that already rank in the top
               10 — but ranking is a floor, not a guarantee. To get cited, your
               content also needs to be structured for extraction: clear answers,
               strong schema, and content Google&rsquo;s AI can directly quote or
@@ -414,7 +415,8 @@ export default function HowToAppearInGoogleAIOverviewsPost() {
 
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
-              Schema markup doesn&rsquo;t guarantee AIO inclusion — but it removes
+              <a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>Schema markup</a>{" "}
+              doesn&rsquo;t guarantee AIO inclusion — but it removes
               ambiguity and reduces friction between your content and
               Google&rsquo;s extraction system. Well-structured schema is a
               signal that content is organized, authoritative, and

@@ -310,7 +310,7 @@ export default function AEOvsGEOvsSEOPost() {
               category, or your competitors.
             </p>
             <p style={{ marginBottom: 26 }}>
-              The signals: entity consistency across the web, structured data,
+              The signals: entity consistency across the web, <a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>structured data</a>,
               third-party mentions, training data coverage. The output: accurate
               brand mentions in AI-generated content, whether or not someone
               explicitly searched for you.
@@ -380,7 +380,7 @@ export default function AEOvsGEOvsSEOPost() {
               touchpoint, you&rsquo;ve lost a buyer you never knew you had.
             </p>
             <p style={{ marginBottom: 26 }}>
-              The best practice for AI optimization: start with AEO if
+              The best practice for <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>AI optimization</a>: start with AEO if
               you&rsquo;re in a high-intent, Q&amp;A-driven vertical — then
               layer GEO for brand accuracy across AI platforms — while
               maintaining your SEO foundation underneath.

@@ -397,7 +397,7 @@ export default function FaqSchemaAccordionBugPost() {
               It does <strong>not</strong> demote your normal ranking &mdash;
               Google&rsquo;s policy is explicit that structured-data issues affect
               rich results, not ordinary rankings. (And since May 2026, Google no
-              longer shows FAQ rich results for most sites anyway.) So the real
+              longer shows <a href="https://developers.google.com/search/docs/appearance/structured-data/faqpage" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>FAQ rich results</a> for most sites anyway.) So the real
               cost here is a broken trust signal and wasted markup, not a penalty.
             </p>
           </RevealSection>
@@ -427,7 +427,7 @@ export default function FaqSchemaAccordionBugPost() {
               <strong style={labelStyle}>
                 Google&rsquo;s Rich Results Test may still pass.
               </strong>{" "}
-              The test validates schema syntax, not content parity. Your FAQPage
+              The test validates schema syntax, not content parity. Your <a href="https://schema.org/FAQPage" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>FAQPage</a>
               schema is syntactically valid. The violation is semantic — the
               content it describes isn&rsquo;t in the DOM.
             </p>

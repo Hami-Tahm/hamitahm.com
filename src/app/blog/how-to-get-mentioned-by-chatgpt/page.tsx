@@ -293,7 +293,8 @@ export default function HowToGetMentionedByChatGPTPost() {
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
-                Add Organization schema
+                Add{" "}
+                <a href="https://developers.google.com/search/docs/appearance/structured-data/organization" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>Organization schema</a>
               </strong>{" "}
               to your homepage and about page. At minimum:{" "}
               <code
@@ -490,7 +491,8 @@ export default function HowToGetMentionedByChatGPTPost() {
               OpenAI runs three separate crawlers, and they are not
               interchangeable{" "}
               <span style={{ color: "var(--faint)", fontSize: 14 }}>
-                (per OpenAI&rsquo;s crawler documentation, verified July 2026)
+                (per{" "}
+                <a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>OpenAI&rsquo;s crawler documentation</a>, verified July 2026)
               </span>
               :
             </p>

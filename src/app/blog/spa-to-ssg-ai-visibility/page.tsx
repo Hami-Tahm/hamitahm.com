@@ -342,7 +342,7 @@ export default function SpaToSsgAiVisibilityPost() {
               rendered.
             </p>
             <p style={{ marginBottom: 26 }}>
-              Google is the exception — Googlebot has a full rendering pipeline
+              Google is the exception — Googlebot has a <a href="https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>full rendering pipeline</a>
               (Web Rendering Service) that executes JavaScript. But even Google
               queues JS rendering, which means your content is indexed with a
               delay. Every other major AI crawler? They get the empty div and

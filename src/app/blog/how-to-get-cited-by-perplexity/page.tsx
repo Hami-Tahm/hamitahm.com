@@ -305,8 +305,9 @@ export default function HowToGetCitedByPerplexityPost() {
               This is step zero.
             </p>
             <p style={{ marginBottom: 26 }}>
-              Check your robots.txt. Perplexity&rsquo;s crawler is PerplexityBot.
-              If you&rsquo;re blocking all crawlers with a blanket{" "}
+              Check your robots.txt.{" "}
+              <a href="https://docs.perplexity.ai/docs/resources/perplexity-crawlers" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>Perplexity&rsquo;s crawler is PerplexityBot</a>
+              . If you&rsquo;re blocking all crawlers with a blanket{" "}
               <code
                 style={{
                   fontFamily: "var(--mono)",

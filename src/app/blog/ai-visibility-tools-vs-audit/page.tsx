@@ -283,8 +283,9 @@ export default function ToolsVsAuditPost() {
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
               AI visibility tools are monitoring platforms. They run automated
-              queries across AI search platforms — ChatGPT, Perplexity, Google AI
-              Overviews, Gemini — and record how often your brand appears, on
+              queries across AI search platforms — ChatGPT, Perplexity,{" "}
+              <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>Google AI Overviews</a>
+              , Gemini — and record how often your brand appears, on
               which platforms, and how that changes over time.
             </p>
             <p style={{ marginBottom: 26 }}>

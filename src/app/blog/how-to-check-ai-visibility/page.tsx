@@ -310,7 +310,7 @@ export default function HowToCheckAIVisibilityPost() {
             <p style={{ marginBottom: 26 }}>
               AI visibility is how often — and how accurately — your brand appears
               in AI-generated answers across platforms like ChatGPT, Perplexity,
-              Google AI Overviews, and Gemini. It&rsquo;s not the same as SEO
+              <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>Google AI Overviews</a>, and Gemini. It&rsquo;s not the same as SEO
               rankings, and it can&rsquo;t be measured with the same tools. For a
               full definition, see{" "}
               <Link href={DEFINITION_URL} style={linkStyle}>
@@ -506,7 +506,7 @@ export default function HowToCheckAIVisibilityPost() {
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>Best for:</strong> Quick manual checks on
-              high-priority queries. Best combined with Google Search Console for
+              high-priority queries. Best combined with <a href="https://search.google.com/search-console/about" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>Google Search Console</a> for
               scale and historical data.
             </p>
 

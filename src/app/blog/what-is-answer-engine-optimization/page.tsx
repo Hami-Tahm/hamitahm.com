@@ -234,7 +234,7 @@ export default function WhatIsAnswerEngineOptimizationPost() {
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
               Answer Engine Optimization (AEO) is the practice of structuring
-              your content so that AI-powered search platforms — Perplexity,
+              your content so that <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>AI-powered search platforms</a> — Perplexity,
               Google AI Overviews, ChatGPT, and Gemini — cite it directly in
               their answers. Where SEO targets rankings, AEO targets citations.
               The goal is not to be ranked first, but to be the source AI
@@ -349,7 +349,7 @@ export default function WhatIsAnswerEngineOptimizationPost() {
 
             <h3 style={h3Style}>Schema markup</h3>
             <p style={{ marginBottom: 26 }}>
-              Schema markup removes ambiguity. FAQPage schema tells AI systems
+              <a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>Schema markup</a> removes ambiguity. FAQPage schema tells AI systems
               which questions your page answers. Article schema with author
               signals freshness and authority. HowTo schema makes step-based
               content directly parseable.
