@@ -93,7 +93,7 @@ const posts = [
     cat: "Technical SEO",
     title: "The Silent SEO Bug Hiding in Your React FAQ Accordion",
     excerpt:
-      "If your React site uses SSG/SSR with a collapsible FAQ accordion and FAQPage schema, Google may be penalizing you right now.",
+      "If your React site hides its FAQ answers inside a collapsible accordion, Google and AI crawlers may never see them — quietly costing you FAQ rich-result eligibility.",
   },
   {
     href: "/blog/spa-to-ssg-ai-visibility/",

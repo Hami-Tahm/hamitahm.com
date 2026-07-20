@@ -95,7 +95,7 @@ const structuredData = {
       "@type": "Article",
       headline: `How a brand-new Canadian site earned ${HOMECALC_PROOF.citations} AI citations in ${HOMECALC_PROOF.timeframe}`,
       datePublished: "2026-05-01",
-      dateModified: "2026-06-17",
+      dateModified: "2026-07-17",
       author: { "@id": "https://hamitahm.com/#hami-tahm" },
       publisher: { "@id": "https://hamitahm.com/#organization" },
       about: {
@@ -371,8 +371,9 @@ export default function HomeCalcCaseStudy() {
                 borderTop: "1px solid var(--line)",
               }}
             >
-              Pre-audit baseline: near-zero AI citations across ChatGPT,
-              Perplexity, and Google AI Overviews.
+              Pre-audit baseline: near-zero AI citations in Bing Webmaster
+              Tools&rsquo; AI Performance report &mdash; the same Microsoft
+              Copilot source the after-figures come from.
             </p>
           </RevealSection>
         </div>
@@ -457,7 +458,12 @@ export default function HomeCalcCaseStudy() {
                 </strong>{" "}
                 {HOMECALC_PROOF.sourceLong}. This is Copilot data; ChatGPT,
                 Perplexity, Gemini and Google AI Overviews do not report citation
-                counts to publishers.
+                counts to publishers. A selected-sample dataset behind this work
+                is published openly (CC BY 4.0) in the{" "}
+                <Link href="/blog/ai-citation-study/" style={{ color: "var(--accent)", fontWeight: 500 }}>
+                  AI Citation Study
+                </Link>
+                .
               </figcaption>
             </figure>
           </RevealSection>

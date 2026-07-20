@@ -11,7 +11,7 @@ const ARTICLE_TITLE =
 const ARTICLE_DESCRIPTION =
   "The best AI visibility tools and checkers in 2026 — ranked, tested, and reviewed by an independent consultant who doesn't sell them. Covers trackers, free AI visibility checkers, analytics platforms, and LLM optimization tools.";
 const DATE_PUBLISHED = "2026-06-09";
-const DATE_MODIFIED = "2026-07-14";
+const DATE_MODIFIED = "2026-07-17";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const HUB_URL = "/ai-visibility/";
 const CONSULTANT_URL = "/ai-visibility/ai-visibility-consultant-canada/";
@@ -37,7 +37,7 @@ const COMPARISON_ROWS = [
   },
   {
     tool: "Semrush AI",
-    platforms: "Google AIO + expanding",
+    platforms: "ChatGPT, Perplexity, Gemini, AIO",
     analytics: "✓",
     competitors: "Partial",
     price: "$$$",
@@ -77,7 +77,7 @@ const COMPARISON_ROWS = [
   },
   {
     tool: "Ahrefs",
-    platforms: "Google AIO (primary)",
+    platforms: "ChatGPT, Perplexity, Gemini, Copilot, AIO (Brand Radar)",
     analytics: "Partial",
     competitors: "Partial",
     price: "$$$",
@@ -181,7 +181,7 @@ const TOOL_REVIEWS = [
     tracks:
       "SE Ranking is a mid-market SEO platform with AI Overviews tracking built into its rank tracking suite. For tracked keywords, it shows whether a Google AI Overview appeared and pulls basic AIO presence data alongside standard position tracking.",
     found:
-      "SE Ranking is the most affordable way to get systematic Google AIO tracking alongside keyword rank monitoring. For businesses that want AIO visibility without the price of Semrush, it's a reasonable alternative. The interface is clean and the AIO data is accessible to non-technical users.\n\nThe limitation is the same as Semrush's AI features: Google AIO only. SE Ranking doesn't track ChatGPT, Perplexity, or Gemini. It's a solid one-platform tracker at an accessible price point.",
+      "SE Ranking is the most affordable way to get systematic Google AIO tracking alongside keyword rank monitoring. For businesses that want AIO visibility without the price of Semrush, it's a reasonable alternative. The interface is clean and the AIO data is accessible to non-technical users.\n\nThe limitation: SE Ranking's AI features focus on Google AI Overviews — it doesn't track ChatGPT, Perplexity, or Gemini the way Semrush's AI Visibility Toolkit or Ahrefs' Brand Radar now do. It's a solid AIO tracker at an accessible price point, but verify its current engine list before buying, since coverage in this category changes monthly.",
     bestFor:
       "Budget-conscious SEO teams who want Google AIO tracking without paying Semrush prices.",
     pricing: "~$50–150/month depending on plan.",
@@ -258,7 +258,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Can AI visibility tools track Perplexity citations?",
-    a: "Some can. Profound and Otterly.ai both track Perplexity citations. Semrush, SE Ranking, Ahrefs, and Wincher do not — they're limited to Google AI Overviews. If Perplexity citation tracking is a priority for your business, tool selection needs to account for this directly.",
+    a: "Yes — more every month. Profound and Otterly.ai track Perplexity citations, and Semrush's AI Visibility Toolkit and Ahrefs' Brand Radar have both added Perplexity (alongside ChatGPT and Gemini). Rank-tracker-style AI features — like SE Ranking's and Wincher's — still center on Google AI Overviews. Because coverage in this category changes monthly, verify a tool's current engine list before buying if Perplexity tracking is a priority.",
   },
   {
     q: "Do I need an AI visibility tool or a consultant?",
