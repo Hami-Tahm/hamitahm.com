@@ -15,16 +15,13 @@ export function RevealSection({
     const el = ref.current;
     if (!el) return;
 
-    // If already visible on mount, reveal immediately — prevents stuck-hidden
-    // content when JS hydrates after element is already in viewport.
-    const rect = el.getBoundingClientRect();
-    const viewportH =
-      window.innerHeight || document.documentElement.clientHeight;
-    if (rect.top < viewportH && rect.bottom > 0) {
-      el.classList.add("in");
-      return;
-    }
-
+    // NOTE: this used to call getBoundingClientRect() on mount to catch elements
+    // already in the viewport. That forced a synchronous layout for every
+    // RevealSection on the page (15+ on the homepage) during hydration, and showed
+    // up in Lighthouse as "Forced reflow". It was also redundant: IntersectionObserver
+    // queues an initial callback with the current intersection state as soon as you
+    // observe(), so an already-visible element still reveals immediately — without
+    // forcing layout. Removed 2026-07-19.
     const io = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
