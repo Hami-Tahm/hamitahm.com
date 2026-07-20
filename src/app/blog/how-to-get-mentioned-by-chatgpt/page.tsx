@@ -803,10 +803,11 @@ Disallow: /`}
 
 function SectionLabel({ number, text }: { number: string; text: string }) {
   return (
-    <div
+    <h2
       style={{
         fontFamily: "var(--mono)",
         fontSize: 12,
+        fontWeight: 400,
         letterSpacing: ".14em",
         color: "var(--faint)",
         textTransform: "uppercase",
@@ -818,7 +819,7 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
     >
       {number} &mdash; {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
-    </div>
+    </h2>
   );
 }
 

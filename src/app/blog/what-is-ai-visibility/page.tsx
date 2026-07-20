@@ -707,9 +707,10 @@ export default function WhatIsAIVisibilityPost() {
 
 function SectionLabel({ number, text }: { number: string; text: string }) {
   return (
-    <div
+    <h2
       style={{
         fontFamily: "var(--mono)",
+        fontWeight: 400,
         fontSize: 12,
         letterSpacing: ".14em",
         color: "var(--faint)",
@@ -722,7 +723,7 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
     >
       {number} &mdash; {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
-    </div>
+    </h2>
   );
 }
 
