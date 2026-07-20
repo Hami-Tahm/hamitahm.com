@@ -472,8 +472,9 @@ export default function BestAIVisibilityToolsPost() {
               >
                 Profound leads for enterprise cross-platform tracking. Otterly.ai
                 is the best SMB entry point. Free AI visibility checkers cover
-                point-in-time spot-checks, not ongoing tracking. Most SEO tools
-                only cover Google AI Overviews — know that before you buy.
+                point-in-time spot-checks, not ongoing tracking. Many SEO tools
+                still center on Google AI Overviews — check each tool&rsquo;s
+                current engine list before you buy.
               </p>
             </div>
           </RevealSection>

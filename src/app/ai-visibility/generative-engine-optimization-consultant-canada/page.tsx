@@ -157,7 +157,7 @@ const FAQ_ITEMS: {
   },
   {
     q: "How much does this cost?",
-    a: `The starting point is a ${PRICE_DISPLAY} AI visibility audit — flat fee, one-time. From there you can implement the plan yourself, or have me implement it for you as a fixed-scope Implementation Sprint (the audit fee is credited toward it). No monthly retainer.`,
+    a: `The starting point is a ${PRICE_DISPLAY} AI visibility audit — flat fee, one-time. From there you can implement the plan yourself, or have me implement it for you as a fixed-scope Implementation Sprint (the audit fee is credited toward it). Optional monthly monitoring is available afterward, on a fixed 6–12 month term — never required to get started.`,
   },
   {
     q: "Do I need both AEO and GEO?",
