@@ -34,7 +34,10 @@ const contentSecurityPolicy = [
   "font-src 'self'",
   "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.g.doubleclick.net",
   "frame-src 'self' https://www.googletagmanager.com",
-  "upgrade-insecure-requests",
+  // Note: no `upgrade-insecure-requests` — it's ignored in a report-only policy
+  // (browsers warn about it), and it's redundant once enforced because the site is
+  // HTTPS-only and Strict-Transport-Security already forces HTTPS. Add it to the
+  // enforced policy later only if a genuine mixed-content need appears.
 ].join("; ");
 
 const securityHeaders = [

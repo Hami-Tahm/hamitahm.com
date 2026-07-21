@@ -97,6 +97,7 @@ const siteStructuredData = {
         "https://linktr.ee/Hami_Tahm",
         "https://www.crunchbase.com/person/hami-tahm",
         "https://github.com/Hami-Tahm",
+        "https://www.producthunt.com/@hamitahm",
       ],
       // The companies he founded, modelled as a relationship rather than an identity.
       owns: [

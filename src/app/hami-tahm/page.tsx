@@ -27,6 +27,7 @@ const PROFILES = [
   { label: "YouTube", href: "https://www.youtube.com/@HamiTahm" },
   { label: "GitHub", href: "https://github.com/Hami-Tahm" },
   { label: "Crunchbase", href: "https://www.crunchbase.com/person/hami-tahm" },
+  { label: "Product Hunt", href: "https://www.producthunt.com/@hamitahm" },
 ] as const;
 
 /** Ventures he founded — linked, but NOT asserted as his identity (no rel="me"). */
