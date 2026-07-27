@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
+import { ShortAnswer } from "@/components/ShortAnswer";
 import { HOMECALC_PROOF } from "@/lib/homecalc-proof";
 import { OFFERS } from "@/lib/offers";
 
@@ -218,21 +219,32 @@ export default function AIVisibilityPage() {
             </p>
           </RevealSection>
 
+          {/*
+            EXTRACTABILITY FIX (2026-07-27) — this replaced a plain paragraph.
+
+            An incognito Google search for "who does AI visibility in Toronto" was
+            returning a snippet for this page stitched from three unrelated places:
+            the intro sentence, the fragment "are agencies." lifted mid-sentence out of
+            the "Why a Consultant, Not an Agency" section far below, and the venture
+            list. The result read as broken text — and it is the only thing a buyer
+            sees in the results.
+
+            The cause is that no single block on the page answered "what is this and
+            who runs it" completely, so the engine assembled one itself. A labelled,
+            self-contained answer near the top gives it something clean to lift whole.
+            This is the same extractability principle the audit sells.
+          */}
           <RevealSection delay={0.16}>
-            <p
-              style={{
-                marginTop: 20,
-                fontSize: 15.5,
-                color: "var(--faint)",
-                maxWidth: "60ch",
-                lineHeight: 1.6,
-              }}
-            >
-              AI visibility is how your business appears &mdash; accurately and
-              consistently &mdash; when people use ChatGPT, Perplexity, and
-              Google AI Overviews to find products and services. Hami Tahm is a
-              Toronto-based AI visibility consultant for Canadian businesses.
-            </p>
+            <div style={{ maxWidth: "62ch" }}>
+              <ShortAnswer>
+                AI visibility is how accurately and consistently your business appears
+                when people ask ChatGPT, Perplexity, Google AI Overviews, Claude,
+                Gemini or Copilot to recommend a product or service. Hami Tahm is a
+                Toronto-based AI visibility consultant who audits how those engines
+                describe, cite and recommend Canadian businesses &mdash; then fixes
+                the gaps.
+              </ShortAnswer>
+            </div>
           </RevealSection>
 
           <RevealSection delay={0.18}>
