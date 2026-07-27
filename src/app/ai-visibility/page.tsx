@@ -1443,7 +1443,7 @@ export default function AIVisibilityPage() {
                     letterSpacing: "-.01em",
                   }}
                 >
-                  AI Engines Already Recommend Me
+                  AI Engines Already Name Me
                 </h3>
                 <p
                   style={{
@@ -1454,9 +1454,10 @@ export default function AIVisibilityPage() {
                     maxWidth: "44ch",
                   }}
                 >
-                  Ask ChatGPT, Perplexity, Google AI Mode, or Grok who does AI
-                  visibility in Toronto &mdash; and they name me. A dated
-                  snapshot of the outcome the audit produces.
+                  Two independent, dated checks four weeks apart &mdash; ChatGPT,
+                  Perplexity, Google AI Mode, and Grok all name me when asked
+                  who does AI visibility in Toronto. Not a ranking claim, a
+                  repeated pattern.
                 </p>
                 <div
                   style={{

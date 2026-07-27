@@ -43,7 +43,7 @@ export default function DisclaimerPage() {
         Every result shown on this site is therefore a <strong>dated snapshot</strong>,
         not a permanent state. Where I show an AI answer that mentions me &mdash; see{" "}
         <Link href={ENGINES_URL} style={{ color: "var(--accent)" }}>
-          AI Engines Already Recommend Hami Tahm
+          AI Engines Already Name Hami Tahm
         </Link>{" "}
         &mdash; it is a capture from {SNAPSHOT.displayDate}. It is evidence that it
         happened. It is not a claim that it always happens, or that it happens for you.

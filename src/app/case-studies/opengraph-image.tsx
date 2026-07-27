@@ -10,6 +10,6 @@ export default async function Image() {
   return renderOgImage({
     badge: "CASE STUDIES",
     title: "AI Visibility, Proven — Not Promised",
-    subtitle: `Documented results: a brand-new site to ${HOMECALC_PROOF.citations} AI citations, and AI engines that recommend Hami Tahm by name.`,
+    subtitle: `Documented results: a brand-new site to ${HOMECALC_PROOF.citations} AI citations, and AI engines that name Hami Tahm directly.`,
   });
 }

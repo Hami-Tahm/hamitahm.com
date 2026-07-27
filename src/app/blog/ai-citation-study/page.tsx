@@ -189,14 +189,16 @@ export default function Page() {
                   label: p.label,
                   tag: p.type,
                   value: p.citations,
+                  display: p.display,
                 }))}
                 max={HOMECALC_PAGES[0].citations}
               />
 
               <p>
-                Five of the top six are <strong>calculators</strong>. Not essays, not
-                opinion pieces, not thought leadership. Things that compute a number a
-                person actually needed.
+                Four of the top six are <strong>calculators</strong>; the other two are
+                practical how-to guides. Not essays, not opinion pieces, not thought
+                leadership. Every one of them either computes a number or walks through
+                concrete steps a person actually needed.
               </p>
               <p>
                 An answer engine is trying to answer a question. A tool that produces the
@@ -585,6 +587,9 @@ function BarList({
     label: string;
     tag?: string;
     value: number;
+    /** Rendered instead of value.toLocaleString() when the source only gave a
+     *  rounded figure (e.g. "1.7K") — never show more precision than that. */
+    display?: string;
     danger?: boolean;
   }[];
   max: number;
@@ -635,7 +640,7 @@ function BarList({
                   whiteSpace: "nowrap",
                 }}
               >
-                {it.value.toLocaleString()}
+                {it.display ?? it.value.toLocaleString()}
               </span>
             </div>
             <div

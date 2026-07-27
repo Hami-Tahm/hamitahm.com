@@ -17,6 +17,16 @@
  * $1,500 audit. The dataset is the marketing; the method is the product.
  */
 
+import { HOMECALC_CITED_PAGES } from "@/lib/homecalc-proof";
+
+/** "1.7K" -> 1700, "876" -> 876. Used only for the bar chart's relative width —
+ *  never displayed directly, so it can't imply more precision than the console gave. */
+function citationsToNumber(v: string): number {
+  const cleaned = v.replace(/,/g, "");
+  if (cleaned.endsWith("K")) return Math.round(parseFloat(cleaned) * 1000);
+  return parseInt(cleaned, 10);
+}
+
 export const STUDY = {
   /** Bing Webmaster → AI Performance, 3-month window. */
   windowStart: "April 25, 2026",
@@ -66,15 +76,29 @@ export const SITES = {
   },
 } as const;
 
-/** HomeCalc — which pages actually earned the citations. */
-export const HOMECALC_PAGES = [
-  { label: "Closing Cost Calculator", type: "Tool", citations: 833 },
-  { label: "Mortgage Affordability Calculator", type: "Tool", citations: 542 },
-  { label: "Land Transfer Tax — Ontario", type: "Tool", citations: 523 },
-  { label: "How to Qualify for a Mortgage", type: "Guide", citations: 467 },
-  { label: "Land Transfer Tax — BC", type: "Tool", citations: 447 },
-  { label: "Mortgage Amortization Calculator", type: "Tool", citations: 393 },
-] as const;
+/**
+ * HomeCalc — which pages actually earned the citations.
+ *
+ * SOURCED FROM HOMECALC_CITED_PAGES in homecalc-proof.ts — do not hand-maintain a
+ * second copy of this table. An earlier version of this file kept its own July-14
+ * pull (833 / 542 / 523...) which drifted out of sync once the headline figure was
+ * refreshed to 14,600+ on July 25 — the exact kind of internal contradiction this
+ * study's credibility depends on not having. `citations` here is a parsed numeric
+ * estimate used only for the bar chart's relative width; `display` carries the
+ * console's own rounded string (e.g. "1.7K") so the rendered number never implies
+ * more precision than Bing actually showed.
+ */
+export const HOMECALC_PAGES: readonly {
+  label: string;
+  type: "Tool" | "Guide";
+  citations: number;
+  display: string;
+}[] = HOMECALC_CITED_PAGES.map((p) => ({
+  label: p.label,
+  type: p.path.startsWith("tools/") ? ("Tool" as const) : ("Guide" as const),
+  citations: citationsToNumber(p.citations),
+  display: p.citations,
+}));
 
 /**
  * HomeCalc — query-level citation share.

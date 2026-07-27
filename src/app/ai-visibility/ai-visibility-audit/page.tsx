@@ -556,8 +556,8 @@ export default function AIVisibilityAudit() {
                 }}
               >
                 Proof on the category itself: ask ChatGPT, Perplexity, Google AI
-                Mode, or Grok who does AI visibility in Toronto, and they
-                recommend Hami Tahm by name.
+                Mode, or Grok who does AI visibility in Toronto, and they name
+                Hami Tahm directly.
               </p>
               <Link
                 href={SNAPSHOT.caseStudyPath}

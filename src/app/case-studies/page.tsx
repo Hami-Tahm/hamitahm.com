@@ -8,7 +8,7 @@ const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 
 export const metadata: Metadata = {
   title: "AI Visibility Case Studies",
-  description: `Real results from AI visibility work: how a brand-new Canadian site earned ${HOMECALC_PROOF.citations} AI citations in ${HOMECALC_PROOF.timeframe}, and how ChatGPT, Perplexity, Google AI Mode, and Grok came to recommend Hami Tahm by name.`,
+  description: `Real results from AI visibility work: how a brand-new Canadian site earned ${HOMECALC_PROOF.citations} AI citations in ${HOMECALC_PROOF.timeframe}, and how ChatGPT, Perplexity, Google AI Mode, and Grok came to name Hami Tahm directly.`,
   alternates: { canonical: "https://hamitahm.com/case-studies/" },
 };
 
@@ -36,9 +36,9 @@ const CASE_STUDIES: readonly CaseStudy[] = [
   {
     href: "/case-studies/cited-by-ai-engines/",
     tag: "Proof on the category itself",
-    title: "AI Engines Already Recommend Hami Tahm",
+    title: "AI Engines Already Name Hami Tahm",
     excerpt:
-      "Ask ChatGPT, Perplexity, Google AI Mode, or Grok who does AI visibility in Toronto, and they recommend Hami Tahm by name — a dated snapshot of the exact outcome the audit produces.",
+      "Ask ChatGPT, Perplexity, Google AI Mode, or Grok who does AI visibility in Toronto, and they name Hami Tahm directly — a dated snapshot of the exact outcome the audit produces.",
     stats: [
       { value: String(SNAPSHOT.engineCount), label: "AI engines" },
       { value: "1", label: "Consultant named" },

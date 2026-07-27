@@ -11,7 +11,8 @@ import { STUDY, HOMECALC_PAGES, HOMECALC_QUERIES } from "@/lib/citation-study";
  * as the article, from the same single source of truth (citation-study.ts), so the CSV
  * can never drift from what the page claims.
  *
- * Every value is Bing Webmaster → AI Performance, window Apr 19 – Jul 8 2026.
+ * Every value is Bing Webmaster → AI Performance; window comes from STUDY.windowStart/
+ * windowEnd below so this comment can't go stale independently of the actual data again.
  */
 export function GET() {
   const rows: string[] = [];
@@ -28,7 +29,10 @@ export function GET() {
 
   rows.push(`section,label,type,citations,citation_share`);
   for (const p of HOMECALC_PAGES) {
-    rows.push(`most_cited_pages,"${p.label}",${p.type},${p.citations},`);
+    // p.display is the console's own rounded figure (e.g. "1.7K"); p.citations is a
+    // parsed estimate used only for the article's bar-chart width, so the CSV must
+    // export display, not citations, or it would publish false precision.
+    rows.push(`most_cited_pages,"${p.label}",${p.type},${p.display},`);
   }
   for (const q of HOMECALC_QUERIES) {
     rows.push(`top_queries,"${q.query}",,${q.citations},${q.share}`);

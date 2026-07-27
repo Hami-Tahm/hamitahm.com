@@ -1,5 +1,5 @@
 /**
- * Single source of truth for the "AI engines already recommend Hami Tahm"
+ * Single source of truth for the "AI engines already name Hami Tahm"
  * proof asset (the self-referential case study + the proof module on the
  * audit money page).
  *

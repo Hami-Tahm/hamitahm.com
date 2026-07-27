@@ -276,7 +276,7 @@ export default function AIVisibilityConsultantToronto() {
         </div>
       </header>
 
-      {/* ── Proof: AI engines already recommend Hami for Toronto ── */}
+      {/* ── Proof: AI engines already name Hami for Toronto ── */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>

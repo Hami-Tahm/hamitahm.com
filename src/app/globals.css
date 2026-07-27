@@ -88,6 +88,21 @@ a { color: inherit; text-decoration: none; }
 .btn .arr { transition: transform .2s; }
 .btn:hover .arr { transform: translateX(3px); }
 
+/* Work item rows (homepage "Currently building" list).
+   These were plain inline-style grids (140px 1fr auto + white-space:nowrap on the
+   CTA column). A CSS Grid column with content set to nowrap never shrinks below its
+   own content's width — it just overflows the row, and because inline styles beat
+   any CSS media query, there was no way to fix it responsively without moving the
+   grid layout here. Confirmed 72px of horizontal scroll on a 375px viewport before
+   this fix (2026-07-27). */
+.work-item-row { display: grid; grid-template-columns: 140px 1fr auto; gap: 28px; align-items: baseline; }
+.work-item-row .wi-body { min-width: 0; }
+.work-item-row .wi-cta { white-space: nowrap; }
+@media (max-width: 560px) {
+  .work-item-row { grid-template-columns: 1fr; gap: 4px; }
+  .work-item-row .wi-cta { white-space: normal; }
+}
+
 /* Stats */
 .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .stats-grid-centered .stat-cell { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 28px 16px; border-right: 1px solid var(--line); }

@@ -8,7 +8,7 @@ const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const TURNAROUND = "7 business days";
 
 export const metadata: Metadata = {
-  title: "AI Engines Already Recommend Hami Tahm",
+  title: "AI Engines Already Name Hami Tahm",
   description:
     "Ask ChatGPT, Perplexity, Google AI Mode, or Grok who does AI visibility in Toronto — they name Hami Tahm. A dated snapshot of the outcome the audit is built to produce.",
   alternates: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 const HERO_STATS = [
-  { value: String(SNAPSHOT.engineCount), label: "AI engines recommending" },
+  { value: String(SNAPSHOT.engineCount), label: "AI engines naming" },
   { value: "1", label: "Consultant named" },
   { value: SNAPSHOT.displayDate, label: "Snapshot" },
 ] as const;
@@ -38,14 +38,14 @@ const structuredData = {
         {
           "@type": "ListItem",
           position: 3,
-          name: "AI Engines Recommend Hami Tahm",
+          name: "AI Engines Name Hami Tahm",
           item: "https://hamitahm.com/case-studies/cited-by-ai-engines/",
         },
       ],
     },
     {
       "@type": "Article",
-      headline: "AI Engines Already Recommend Hami Tahm",
+      headline: "AI Engines Already Name Hami Tahm",
       datePublished: SNAPSHOT.isoDate,
       dateModified: SNAPSHOT.isoDate,
       author: { "@id": "https://hamitahm.com/#hami-tahm" },
@@ -100,7 +100,7 @@ export default function CitedByAiEnginesCaseStudy() {
                 maxWidth: "20ch",
               }}
             >
-              Ask AI Who Does AI Visibility in Toronto. It Recommends Hami Tahm.
+              Ask AI Who Does AI Visibility in Toronto. It Names Hami Tahm.
             </h1>
           </RevealSection>
 
@@ -132,11 +132,12 @@ export default function CitedByAiEnginesCaseStudy() {
                 lineHeight: 1.65,
               }}
             >
-              Getting recommended by AI engines is the exact outcome an AI
-              visibility audit is built to produce. So here is the most direct
-              proof I can offer: when buyers ask ChatGPT, Perplexity, Google AI
-              Mode, and Grok to name someone in Toronto or Canada for AI
-              visibility, they name me — by name, with my site cited.
+              Getting named by AI engines, when buyers ask for a shortlist, is
+              the exact outcome an AI visibility audit is built to produce. So
+              here is the most direct proof I can offer: when buyers ask
+              ChatGPT, Perplexity, Google AI Mode, and Grok who does AI
+              visibility in Toronto or Canada, they name me — by name, with my
+              site cited.
             </p>
           </RevealSection>
 
@@ -231,7 +232,7 @@ export default function CitedByAiEnginesCaseStudy() {
               Quotes below are the Hami Tahm portion of each answer, verbatim.
               Each engine also surfaced other firms; those are described
               generically and cropped out, because the point here is the named
-              recommendation, not a ranking.
+              mention, not a ranking.
             </p>
           </RevealSection>
 
@@ -292,7 +293,7 @@ export default function CitedByAiEnginesCaseStudy() {
                     }}
                   >
                     {c.engine}, captured {SNAPSHOT.displayDate}. Cropped to the
-                    Hami Tahm recommendation.
+                    Hami Tahm mention.
                   </figcaption>
                 </figure>
               </article>
@@ -437,7 +438,7 @@ export default function CitedByAiEnginesCaseStudy() {
               <p style={{ marginBottom: 20 }}>
                 Buyers increasingly ask an AI engine for a shortlist before they
                 ask Google. When the engine returns one name, that name gets the
-                first conversation — and often the only one. Being the recommended
+                first conversation — and often the only one. Being the named
                 answer is the whole game.
               </p>
               {/* A self-referential citation-count claim was removed here on review.
@@ -446,8 +447,8 @@ export default function CitedByAiEnginesCaseStudy() {
                 This is the same result the audit produces for clients, applied
                 to my own practice. HomeCalc.ca shows it on a YMYL financial site;
                 this page shows it on the AI-visibility category itself. If the
-                method earns the recommendation in my own market, it can earn it
-                in yours.
+                method earns that mention in my own market, it can earn it in
+                yours.
               </p>
               <p
                 style={{
@@ -492,7 +493,7 @@ export default function CitedByAiEnginesCaseStudy() {
                   position: "relative",
                 }}
               >
-                Get Your Brand Recommended by AI
+                Get Your Brand Named by AI
               </h2>
               <p
                 style={{

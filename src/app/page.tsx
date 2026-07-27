@@ -251,16 +251,7 @@ function WorkItemStatic({
   cta: string;
 }) {
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "140px 1fr auto",
-        gap: 28,
-        alignItems: "baseline",
-        padding: "26px 0",
-        borderTop: "1px solid var(--line)",
-      }}
-    >
+    <div className="work-item-row" style={{ padding: "26px 0", borderTop: "1px solid var(--line)" }}>
       <div style={{ fontFamily: "var(--mono)", fontSize: 12, letterSpacing: ".04em", color: "var(--faint)" }}>
         {live && (
           <>
@@ -270,13 +261,13 @@ function WorkItemStatic({
         )}
         {dates}
       </div>
-      <div>
+      <div className="wi-body">
         <div style={{ fontFamily: "var(--serif)", fontSize: 23, fontWeight: 500, letterSpacing: "-.01em" }}>
           {title}
         </div>
         <div style={{ color: "var(--muted)", fontSize: 15, marginTop: 5, maxWidth: "46ch" }}>{desc}</div>
       </div>
-      <div style={{ fontFamily: "var(--mono)", fontSize: 13, color: "var(--muted)", whiteSpace: "nowrap" }}>
+      <div className="wi-cta" style={{ fontFamily: "var(--mono)", fontSize: 13, color: "var(--muted)" }}>
         {cta}
       </div>
     </div>
@@ -297,15 +288,15 @@ function WorkItem({ href, external, live, dates, title, desc, cta }: { href: str
   const Tag = external ? "a" : Link;
   const extraProps = external ? { target: "_blank" as const, rel: "noopener noreferrer" } : {};
   return (
-    <Tag href={href} {...extraProps} style={{ display: "grid", gridTemplateColumns: "140px 1fr auto", gap: 28, alignItems: "baseline", padding: "26px 0", borderTop: "1px solid var(--line)", transition: "padding-left .25s" }}>
+    <Tag href={href} {...extraProps} className="work-item-row" style={{ padding: "26px 0", borderTop: "1px solid var(--line)", transition: "padding-left .25s" }}>
       <div style={{ fontFamily: "var(--mono)", fontSize: 12, letterSpacing: ".04em", color: "var(--faint)" }}>
         {live && <><span style={{ color: "var(--accent)" }}>● {live}</span><br /></>}{dates}
       </div>
-      <div>
+      <div className="wi-body">
         <div style={{ fontFamily: "var(--serif)", fontSize: 23, fontWeight: 500, letterSpacing: "-.01em" }}>{title}</div>
         <div style={{ color: "var(--muted)", fontSize: 15, marginTop: 5, maxWidth: "46ch" }}>{desc}</div>
       </div>
-      <div style={{ fontFamily: "var(--mono)", fontSize: 13, color: "var(--muted)", whiteSpace: "nowrap" }}>{cta}</div>
+      <div className="wi-cta" style={{ fontFamily: "var(--mono)", fontSize: 13, color: "var(--muted)" }}>{cta}</div>
     </Tag>
   );
 }

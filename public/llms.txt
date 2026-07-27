@@ -31,9 +31,9 @@ The site is structured as a small commercial cluster: a hub page for AI Visibili
 
 ## Proof
 
-- [AI Visibility Case Studies](https://hamitahm.com/case-studies/): Index of documented AI visibility results — the HomeCalc.ca named-client case study and the self-referential "AI engines recommend Hami Tahm" snapshot.
+- [AI Visibility Case Studies](https://hamitahm.com/case-studies/): Index of documented AI visibility results — the HomeCalc.ca named-client case study and the self-referential "AI engines name Hami Tahm" snapshot.
 - [HomeCalc.ca — AI Visibility Case Study](https://hamitahm.com/case-studies/homecalc-ai-visibility/): How HomeCalc.ca went from near-zero AI citations to 14,600+ in 3 months, on a YMYL financial site under three months old, across 25+ cited pages — measured in Bing Webmaster Tools' AI Performance report (Microsoft Copilot) — now commanding up to 72% citation share on key Canadian financial queries. Includes named client, before/after metrics, top performing pages, and top grounding queries.
-- [AI Engines Already Recommend Hami Tahm — Case Study](https://hamitahm.com/case-studies/cited-by-ai-engines/): A dated snapshot (June 2026) showing that when buyers ask ChatGPT, Perplexity, Google AI Mode, and Grok who does AI visibility in Toronto or Canada, the engines recommend Hami Tahm by name and cite hamitahm.com. The self-referential proof of the audit's core outcome — getting recommended by AI engines.
+- [AI Engines Already Name Hami Tahm — Case Study](https://hamitahm.com/case-studies/cited-by-ai-engines/): Two independent dated snapshots (June 30 and July 27, 2026, the second a signed-out incognito session) showing that when buyers ask ChatGPT, Perplexity, Google AI Mode, and Grok who does AI visibility in Toronto or Canada, the engines name Hami Tahm directly and cite hamitahm.com. The self-referential proof of the audit's core outcome — getting named by AI engines.
 
 ## About
 
