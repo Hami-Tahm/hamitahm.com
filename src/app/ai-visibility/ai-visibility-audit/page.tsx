@@ -10,9 +10,12 @@ const TURNAROUND = "7 business days";
 const PRICE_DISPLAY = "$1,500 CAD";
 
 export const metadata: Metadata = {
-  title: "AI Visibility Audit | $1,500 CAD Flat",
+  // Buyers search this deliverable as "ChatGPT visibility audit", "AI search audit"
+  // and "AEO audit" as often as "AI visibility audit" — title/description carry the
+  // aliases so one page ranks for the whole cluster.
+  title: "ChatGPT & AI Visibility Audit — $1,500 CAD Flat",
   description:
-    "Structured AI visibility audit across ChatGPT, Perplexity, and Google AI Overviews. $1,500 CAD flat. Report, plan, and walkthrough call by Hami Tahm.",
+    "AI visibility audit across ChatGPT, Perplexity, and Google AI Overviews — also called a ChatGPT visibility or AEO audit. $1,500 CAD flat, by Hami Tahm.",
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/ai-visibility-audit/",
   },
@@ -30,6 +33,11 @@ const FAQ_ITEMS = [
   {
     q: "What is an AI visibility audit?",
     a: "An AI visibility audit is a structured review of how your business appears across AI platforms — ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, and Bing Copilot. The output is a written report and a prioritized action plan.",
+  },
+  {
+    // Alias-capture FAQ: same deliverable, four search phrasings.
+    q: "Is this the same as a ChatGPT visibility audit or an AEO audit?",
+    a: "Yes. ChatGPT visibility audit, AI search audit, AEO audit, GEO audit — these are different names for the same deliverable. The difference here is coverage: this audit reviews six engines (ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, and Bing Copilot), so you get the full picture rather than a single-platform snapshot.",
   },
   {
     q: "How is this different from a traditional SEO audit?",

@@ -41,8 +41,9 @@ const contentSecurityPolicy = [
 ].join("; ");
 
 const securityHeaders = [
-  // CSP in report-only — see the note above. Flip the key to enforce.
-  { key: "Content-Security-Policy-Report-Only", value: contentSecurityPolicy },
+  // CSP enforced (flipped from report-only on 2026-07-26 after a clean
+  // observation window — see the note above).
+  { key: "Content-Security-Policy", value: contentSecurityPolicy },
   // Stop the browser from MIME-sniffing a response away from its declared type.
   { key: "X-Content-Type-Options", value: "nosniff" },
   // Send only the origin (not the full path/query) on cross-origin navigations.

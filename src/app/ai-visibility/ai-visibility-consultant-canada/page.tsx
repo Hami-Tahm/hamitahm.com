@@ -31,6 +31,12 @@ const FAQ_ITEMS = [
     a: "An SEO agency optimizes how you rank on Google search results. An AI visibility consultant focuses on how AI platforms describe, cite, and recommend you when users ask questions. You can rank #1 on Google and still be missing from the answer ChatGPT gives a buyer in your category.",
   },
   {
+    // Covers the "AI search optimization services Canada" / "ChatGPT optimization
+    // services" phrasings buyers use, and disambiguates the category's many names.
+    q: "Do you offer AI search optimization or ChatGPT optimization services?",
+    a: "Yes — those are two names for the same service. AI search optimization, ChatGPT optimization, AI SEO, AEO, GEO, and AI visibility all describe the same goal: getting your business cited and recommended when buyers ask an AI engine instead of Google. Every engagement starts with the $1,500 audit, which covers ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, and Bing Copilot.",
+  },
+  {
     q: "Do you serve businesses outside Toronto?",
     a: "Yes. I'm Toronto-based, but I serve Canadian businesses nationwide. US and UK clients accepted when the fit is clear — reach out before booking.",
   },
@@ -120,9 +126,11 @@ const structuredData = {
 };
 
 export const metadata: Metadata = {
-  title: "AI Visibility Consultant in Canada — Toronto",
+  // "AI search optimization" is the phrasing Canada-wide buyers use most; carrying it
+  // in the title lets this page cover that synonym without a separate thin page.
+  title: "AI Visibility & AI Search Optimization in Canada",
   description:
-    "AI visibility consultant in Canada. Hami Tahm offers a $1,500 flat-fee audit across ChatGPT, Perplexity, and Google AI Overviews. No agency, no retainer.",
+    "AI visibility and AI search optimization consultant in Canada. $1,500 flat-fee audit across ChatGPT, Perplexity, and Google AI Overviews — not an agency.",
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/ai-visibility-consultant-canada/",
   },

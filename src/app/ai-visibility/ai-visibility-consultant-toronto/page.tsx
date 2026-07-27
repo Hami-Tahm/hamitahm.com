@@ -29,6 +29,13 @@ const FAQ_ITEMS = [
     a: "A Toronto SEO agency optimizes how you rank in Google's blue links, usually on a monthly retainer with an account manager between you and the work. I focus on how AI engines cite and recommend you, work with you directly, and sell a fixed-scope audit — not an open-ended retainer. You can rank well on Google and still be absent from the AI answer a buyer actually reads.",
   },
   {
+    // Captures the "AEO agency Toronto" / "AI SEO agency Toronto" search intent —
+    // the phrasing buyers actually use — while reinforcing the consultant-not-agency
+    // wedge instead of contradicting it. Also disambiguates the category's five names.
+    q: "Are you an AEO agency or an AI SEO agency in Toronto?",
+    a: "This work goes by several names — AEO (answer engine optimization), GEO (generative engine optimization), AI SEO, LLMO, and AI visibility. They all describe the same goal: getting your business cited and recommended when buyers ask an AI engine. I do that work, but I'm not an agency. You work directly with me on a fixed-scope audit rather than a monthly retainer — no account manager, no junior team, no handoffs.",
+  },
+  {
     q: "How much does an AI visibility consultant cost in Toronto?",
     a: `The audit is ${PRICE_DISPLAY} flat — one-time, no retainer. If you want the fixes done for you afterward, the Implementation Sprint starts at ${OFFERS.implementation.price.replace(
       "From ",
@@ -134,10 +141,13 @@ const structuredData = {
 
 export const metadata: Metadata = {
   title: {
-    absolute: "AI Visibility Consultant in Toronto — AEO & GEO | Hami Tahm",
+    // Buyers search this category under five different names. The title carries the
+    // two highest-intent ones (AI visibility + AI SEO) plus AEO/GEO, so one page
+    // covers the synonym cluster instead of spawning thin per-synonym pages.
+    absolute: "AI Visibility & AI SEO Consultant in Toronto — AEO, GEO",
   },
   description:
-    "AI visibility consultant in Toronto — get cited in ChatGPT, Perplexity, and Google AI Overviews. $1,500 audit by Hami Tahm, the consultant AI engines already name.",
+    "AI visibility and AI SEO consultant in Toronto. Get cited in ChatGPT, Perplexity, and Google AI Overviews. $1,500 audit by Hami Tahm — AEO and GEO, not an agency.",
   alternates: { canonical: `https://hamitahm.com${SLUG}` },
 };
 
@@ -239,7 +249,8 @@ export default function AIVisibilityConsultantToronto() {
               <b style={{ color: "var(--ink)", fontWeight: 500 }}>
                 generative engine optimization (GEO)
               </b>
-              .
+              . You&rsquo;ll also see this work called AI SEO, ChatGPT SEO, or LLMO
+              &mdash; same discipline, different labels.
             </p>
           </RevealSection>
 
