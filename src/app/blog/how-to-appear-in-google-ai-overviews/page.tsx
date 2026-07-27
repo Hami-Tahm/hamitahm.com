@@ -7,7 +7,7 @@ import { buildBlogSchema } from "@/lib/blog-schema";
 
 const SLUG = "how-to-appear-in-google-ai-overviews";
 const ARTICLE_TITLE =
-  "How to Appear in Google AI Overviews: A Practical Guide";
+  "How to Appear in Google AI Overviews";
 const ARTICLE_DESCRIPTION =
   "Google AI Overviews pull from top-ranking pages — but ranking alone isn't enough. Here's what actually determines whether your content gets cited in an AI Overview.";
 const DATE_PUBLISHED = "2026-06-08";

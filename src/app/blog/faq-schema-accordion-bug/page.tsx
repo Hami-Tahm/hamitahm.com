@@ -8,7 +8,7 @@ import { HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
 
 const SLUG = "faq-schema-accordion-bug";
 const ARTICLE_TITLE =
-  "The Silent SEO Bug Hiding in Your React FAQ Accordion";
+  "The Silent SEO Bug in Your React FAQ Accordion";
 const ARTICLE_DESCRIPTION =
   "If your React site uses SSG/SSR with a collapsible FAQ accordion, your FAQPage schema can contain answers that aren't in the rendered HTML. Here's the bug, what it does (and doesn't) cost you, and the one-line fix.";
 const DATE_PUBLISHED = "2026-06-18";

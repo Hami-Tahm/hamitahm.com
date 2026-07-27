@@ -9,7 +9,7 @@ const CASE_STUDY_URL = "/case-studies/homecalc-ai-visibility/";
 const ABOUT_URL = "/hami-tahm/";
 
 export const metadata: Metadata = {
-  title: "SEO Expert in Toronto — Consultant-Led SEO + AI Search",
+  title: "SEO Expert in Toronto — SEO + AI Search",
   description:
     "SEO expert in Toronto who covers both Google SEO and the new AI-search layer (ChatGPT, Perplexity, Google AI Overviews). Consultant-led — not an agency. By Hami Tahm.",
   alternates: {

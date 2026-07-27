@@ -13,7 +13,7 @@ const DATE_PUBLISHED = "2025-02-22";
 const DATE_MODIFIED = "2026-07-14";
 
 export const metadata: Metadata = {
-  title: "The 10,000-Hour Rule — Hours to Reach 7/10 Mastery",
+  title: "The 10,000-Hour Rule — Hours to 7/10 Mastery",
   description: ARTICLE_DESCRIPTION,
   alternates: {
     canonical: "https://hamitahm.com/the-10000-hour-rule/",

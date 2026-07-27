@@ -8,7 +8,7 @@ import { HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
 
 const SLUG = "spa-to-ssg-ai-visibility";
 const ARTICLE_TITLE =
-  "Your SPA Is Invisible to AI: 10× Citations in 48 Hours";
+  "Your SPA Is Invisible to AI — 10× Citations";
 const ARTICLE_DESCRIPTION =
   "Single Page Apps serve an empty <div> to AI crawlers. We migrated HomeCalc.ca from SPA to SSG and watched Bing Copilot citations jump from 20/day to 200/day in two days. Here's exactly what we changed and why it matters.";
 const DATE_PUBLISHED = "2026-06-23";

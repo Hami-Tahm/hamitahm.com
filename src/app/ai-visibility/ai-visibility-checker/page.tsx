@@ -12,7 +12,10 @@ export const metadata: Metadata = {
   // "Checker" (not "Check") on purpose: ~1,035 impressions/month of "free ai
   // visibility checker" / "ai visibility checker" intent were landing on a blog post
   // instead of this tool. The title now targets the exact query the tool answers.
-  title: "Free AI Visibility Checker — Does ChatGPT Recommend You?",
+  // Kept under 48 chars: the root layout appends " | Hami Tahm" (12), and anything
+  // over ~60 rendered chars gets truncated in Google. Leads with the exact query
+  // ("free ai visibility checker") that drives most of this page's impressions.
+  title: "Free AI Visibility Checker — Test Your Brand",
   description:
     "See whether ChatGPT, Google AI Overview, and Gemini recommend your business or a competitor. A real analyst checks your keywords and emails your report, free.",
   alternates: { canonical: URL },
