@@ -27,7 +27,7 @@ This site is the consultancy. It's also the public lab where I document what's a
 
 The audit methodology was first proved on [HomeCalc.ca](https://homecalc.ca/), a Canadian financial-calculator platform under three months old at the time:
 
-- **7,400+ AI citations in 3 months**, measured in Bing Webmaster Tools' AI Performance report (Microsoft Copilot and partners)
+- **14,600+ AI citations in 3 months**, measured in Bing Webmaster Tools' AI Performance report (Microsoft Copilot and partners)
 - **25+ pages cited**, peaking at 280+ citations per day
 - **up to 76% citation share** on key Canadian financial queries (e.g. `calculate land transfer tax ontario`)
 - A YMYL category — financial — which is the hardest category to gain authority in, on the youngest possible domain
