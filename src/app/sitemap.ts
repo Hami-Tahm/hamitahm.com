@@ -18,6 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── AI Visibility cluster (hub + spokes) ─────────────────────────────
     { path: "/ai-visibility/", priority: 0.9, changeFrequency: "weekly" },
     { path: "/ai-visibility/ai-visibility-audit/", priority: 0.95, changeFrequency: "monthly" },
+    // Pricing is a BOFU entry point in its own right ("AI visibility audit cost").
+    { path: "/pricing/", priority: 0.9, changeFrequency: "monthly" },
     { path: "/ai-visibility/implementation/", priority: 0.9, changeFrequency: "monthly" },
     { path: "/ai-visibility/ai-visibility-checker/", priority: 0.9, changeFrequency: "weekly" },
     { path: "/ai-visibility/ai-visibility-consultant-canada/", priority: 0.9, changeFrequency: "monthly" },

@@ -116,6 +116,7 @@ const RELATED_LINKS = [
     label: "Want it done for you? The Implementation Sprint",
     href: "/ai-visibility/implementation/",
   },
+  { label: "Full pricing — every step, published", href: "/pricing/" },
   { label: "What is AI visibility?", href: "/ai-visibility/" },
   {
     label: "Inside the HomeCalc audit (case study)",

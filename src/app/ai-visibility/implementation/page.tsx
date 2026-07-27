@@ -198,7 +198,10 @@ export default function ImplementationPage() {
               Most people start at the checker or the audit. You only reach the Sprint
               if you want the fixes done for you &mdash; and the audit fee comes off the
               price when you do. Monitoring afterward is optional and term-limited,
-              never required to get started.
+              never required to get started.{" "}
+              <Link href="/pricing/" style={{ color: "var(--accent)", fontWeight: 500 }}>
+                See full pricing &rarr;
+              </Link>
             </p>
           </RevealSection>
         </div>
