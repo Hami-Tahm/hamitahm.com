@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
-import { ENGINE_CITATIONS, SNAPSHOT } from "@/lib/ai-citation-proof";
+import { ENGINE_CITATIONS, SNAPSHOT, SNAPSHOT_INCOGNITO } from "@/lib/ai-citation-proof";
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const TURNAROUND = "7 business days";
@@ -298,6 +298,116 @@ export default function CitedByAiEnginesCaseStudy() {
               </article>
             </RevealSection>
           ))}
+        </div>
+      </section>
+
+      {/* ── 3b — Second, independent check (2026-07-27) ──
+          Kept alongside the June snapshot rather than replacing it: one result can be
+          luck, a repeat four weeks later is a pattern. Wording is constrained by the
+          claim-discipline note on SNAPSHOT_INCOGNITO in lib/ai-citation-proof.ts —
+          "named", never "ranked #1", and the variability caveat always ships with it. */}
+      <section style={{ padding: "10px 0 46px" }}>
+        <div className="wrap" style={{ maxWidth: 740 }}>
+          <RevealSection>
+            <div
+              style={{
+                border: "1px solid var(--line)",
+                borderLeft: "3px solid var(--accent)",
+                borderRadius: 6,
+                padding: "26px 28px",
+                background: "var(--panel)",
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: "var(--mono)",
+                  fontSize: 11,
+                  letterSpacing: ".1em",
+                  textTransform: "uppercase",
+                  color: "var(--accent)",
+                  marginBottom: 10,
+                }}
+              >
+                Checked again &middot; {SNAPSHOT_INCOGNITO.displayDate}
+              </div>
+
+              <h2
+                style={{
+                  fontFamily: "var(--serif)",
+                  fontWeight: 500,
+                  fontSize: "clamp(22px, 2.8vw, 28px)",
+                  lineHeight: 1.2,
+                  letterSpacing: "-.015em",
+                }}
+              >
+                Four weeks later, in a signed-out session.
+              </h2>
+
+              <p
+                style={{
+                  marginTop: 14,
+                  fontSize: 16,
+                  color: "var(--muted)",
+                  lineHeight: 1.65,
+                }}
+              >
+                A different question &mdash;{" "}
+                <em style={{ color: "var(--ink)" }}>
+                  &ldquo;{SNAPSHOT_INCOGNITO.prompt}&rdquo;
+                </em>{" "}
+                &mdash; run in a {SNAPSHOT_INCOGNITO.condition.toLowerCase()}, with no
+                account history to personalise the answer:
+              </p>
+
+              <ul
+                style={{
+                  listStyle: "none",
+                  padding: 0,
+                  margin: "18px 0 0",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 12,
+                }}
+              >
+                {SNAPSHOT_INCOGNITO.results.map(({ surface, outcome }) => (
+                  <li
+                    key={surface}
+                    style={{ display: "flex", gap: 12, alignItems: "flex-start" }}
+                  >
+                    <span
+                      style={{
+                        fontFamily: "var(--mono)",
+                        fontSize: 13,
+                        color: "var(--accent)",
+                        flexShrink: 0,
+                      }}
+                    >
+                      &rarr;
+                    </span>
+                    <span style={{ fontSize: 15.5, lineHeight: 1.6 }}>
+                      <b style={{ color: "var(--ink)", fontWeight: 600 }}>{surface}</b>
+                      <span style={{ color: "var(--muted)" }}> &mdash; {outcome}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <p
+                style={{
+                  marginTop: 20,
+                  paddingTop: 16,
+                  borderTop: "1px solid var(--line)",
+                  fontSize: 13.5,
+                  color: "var(--faint)",
+                  lineHeight: 1.6,
+                }}
+              >
+                {SNAPSHOT_INCOGNITO.caveat} Source order inside an AI Overview is not a
+                ranking, and this is a point-in-time check rather than a permanent
+                position.
+              </p>
+            </div>
+          </RevealSection>
         </div>
       </section>
 

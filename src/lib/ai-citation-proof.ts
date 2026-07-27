@@ -60,6 +60,52 @@ export const SNAPSHOT = {
  * near-zero → 7,400 citation growth curve in 3 months on a purpose-built site.
  */
 
+/**
+ * SECOND, INDEPENDENT SNAPSHOT — 2026-07-27, signed-out incognito.
+ *
+ * Deliberately kept alongside the June 30 snapshot rather than replacing it. Two dated
+ * checks four weeks apart showing continued presence is materially stronger evidence
+ * than one: a single result can be luck, a repeat is a pattern.
+ *
+ * ── CLAIM DISCIPLINE ──
+ * What this supports, exactly:
+ *   • Google AI Overview  — NAMED among five providers, and hamitahm.com appears first
+ *                           in the AI Overview "Sources" panel.
+ *   • Google organic      — page one, position 4.
+ *   • ChatGPT             — NAMED in its list of Toronto AI-visibility specialists.
+ *
+ * What it does NOT support — do not write these:
+ *   ✗ "#1 AI visibility consultant in Toronto." Source order inside an AI Overview is
+ *     not a ranking, and in the bullet list he is listed last of the five.
+ *   ✗ "ChatGPT recommends me." It named and described him in a list; that is weaker
+ *     than a recommendation and must be worded as "named".
+ *   ✗ Any implication that this is stable. Incognito removes personal history, but IP,
+ *     location, language and time of day still shape the answer.
+ */
+export const SNAPSHOT_INCOGNITO = {
+  isoDate: "2026-07-27",
+  displayDate: "July 27, 2026",
+  prompt: "who does AI visibility in Toronto",
+  condition: "Signed-out incognito session, Toronto",
+  results: [
+    {
+      surface: "Google AI Overview",
+      outcome: "Named among five Toronto providers; hamitahm.com listed first in the Sources panel",
+    },
+    {
+      surface: "Google Search",
+      outcome: "Page one, position 4",
+    },
+    {
+      surface: "ChatGPT",
+      outcome: "Named among Toronto specialists focused on AI visibility",
+    },
+  ],
+  /** Required wherever this snapshot is shown. AI answers are not deterministic. */
+  caveat:
+    "Verified in a signed-out incognito session. AI answers vary by location, prompt wording, and date.",
+} as const;
+
 export type EngineCitation = {
   /** Engine display name. VERIFY against the source screenshot. */
   engine: string;
