@@ -48,3 +48,31 @@ export const OFFERS = {
     duration: "6–12 months",
   },
 } as const;
+
+/**
+ * Forward-looking price notice shown on the pricing page.
+ *
+ * SHAPE IS DELIBERATE — two things it is NOT, and why:
+ *
+ * 1. NOT "after the first N clients." A client-count trigger publicly advertises how
+ *    few clients there are. A date says the same thing about urgency without
+ *    disclosing the size of the practice.
+ *
+ * 2. NOT a struck-through or "official" price. Canada's Competition Act
+ *    (ordinary-selling-price rules) prohibits advertising a regular price the business
+ *    has not genuinely sold at, in order to make the current price look discounted —
+ *    the tests are a volume test (>50% of sales at that price) and a time test (offered
+ *    in good faith for a substantial period). Since these rates have not been sold at a
+ *    higher price, ANY "was $X, now $Y" framing would fail both. A statement about a
+ *    future increase is not an ordinary-selling-price claim at all, so it is clean.
+ *
+ * ⚠️ THE INCREASE MUST ACTUALLY HAPPEN.
+ * An increase notice that quietly slips becomes exactly the false-urgency claim this
+ * wording was built to avoid. When September 2026 arrives there are only two valid
+ * moves: raise the prices in OFFERS above, or set `active: false` and remove the
+ * notice. Do not leave it standing past the date.
+ */
+export const PRICING_NOTICE = {
+  active: true,
+  text: "Rates increase in September 2026. Engagements booked before then run at the prices shown here.",
+} as const;

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
-import { OFFERS } from "@/lib/offers";
+import { OFFERS, PRICING_NOTICE } from "@/lib/offers";
 
 const SLUG = "/pricing/";
 const CONTACT_URL = "/contact/";
@@ -367,6 +367,28 @@ export default function PricingPage() {
               </RevealSection>
             ))}
           </div>
+
+          {/* Forward-looking price notice — see PRICING_NOTICE in lib/offers.ts for
+              why this is date-based and carries no struck-through "regular" price. */}
+          {PRICING_NOTICE.active && (
+            <RevealSection delay={0.08}>
+              <p
+                style={{
+                  marginTop: 22,
+                  padding: "14px 18px",
+                  border: "1px solid var(--line)",
+                  borderLeft: "2px solid var(--accent)",
+                  borderRadius: 4,
+                  fontFamily: "var(--sans)",
+                  fontSize: 14.5,
+                  color: "var(--muted)",
+                  lineHeight: 1.6,
+                }}
+              >
+                {PRICING_NOTICE.text}
+              </p>
+            </RevealSection>
+          )}
         </div>
       </section>
 
