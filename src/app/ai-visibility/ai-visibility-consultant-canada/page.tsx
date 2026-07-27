@@ -596,8 +596,8 @@ export default function AIVisibilityConsultantCanada() {
                       lineHeight: 1.55,
                     }}
                   >
-                    <li>Not a retainer</li>
-                    <li>Not a subscription</li>
+                    <li>Not an open-ended retainer</li>
+                    <li>Not a subscription you have to remember to cancel</li>
                     <li>Not gated by a sales call</li>
                   </ul>
                 </div>
@@ -902,8 +902,8 @@ export default function AIVisibilityConsultantCanada() {
                 the walkthrough call
               </li>
               <li>
-                $1,500 flat fee, one-time &mdash; no retainer, no ongoing
-                commitment
+                $1,500 flat fee, one-time &mdash; no retainer to get started, and
+                nothing open-ended
               </li>
               <li>
                 Public, named case study (HomeCalc.ca) &mdash; verifiable proof

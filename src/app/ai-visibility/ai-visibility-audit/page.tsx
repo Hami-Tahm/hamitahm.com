@@ -904,8 +904,11 @@ export default function AIVisibilityAudit() {
                 </p>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                   {[
-                    "Not a retainer",
-                    "Not a subscription",
+                    // Reframed: the thing that's actually wrong with agency pricing is
+                    // that it's open-ended and vague, not that it recurs. Saying "not a
+                    // retainer" flatly contradicts the optional Monitoring tier.
+                    "Not an open-ended retainer",
+                    "Not a subscription you have to remember to cancel",
                     "Not gated by a sales call",
                   ].map((item) => (
                     <li

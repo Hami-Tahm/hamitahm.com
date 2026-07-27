@@ -28,7 +28,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "What is an AI visibility checker?",
-    a: "An AI visibility checker shows how your brand appears when people ask AI engines — ChatGPT, Google AI Overview, Gemini — about your category. Enter your domain and keywords, and you get a report on whether these engines mention, cite, or recommend you, and where you're missing.",
+    a: "An AI visibility checker shows how your brand appears when people ask AI engines — ChatGPT, Google AI Overview, Gemini — about your category. Enter your domain, your keywords, and optionally the competitors you want to be measured against, and you get a report on whether these engines mention, cite, or recommend you — and which of you they name first.",
   },
   {
     q: "Is this AI visibility checker free?",
@@ -133,10 +133,10 @@ export default function AiVisibilityCheckerPage() {
                 lineHeight: 1.6,
               }}
             >
-              Pick the AI engines, add your domain and keywords, and a real
-              analyst checks how ChatGPT, Google AI Overview, and Gemini answer
-              for you. Personalized report in your inbox, free, within one
-              business day.
+              Pick the AI engines, add your domain, your keywords, and the
+              competitors you want to be measured against &mdash; then a real
+              analyst checks how ChatGPT, Google AI Overview, and Gemini actually
+              answer. Free report in your inbox within one business day.
             </p>
           </RevealSection>
         </div>
@@ -192,8 +192,11 @@ export default function AiVisibilityCheckerPage() {
             </h2>
             <p style={{ fontSize: "clamp(16px, 2vw, 18px)", color: "var(--muted)", lineHeight: 1.7 }}>
               For each engine and keyword you select, the report shows whether AI
-              mentions your brand, what it says about you, and where a competitor
-              is being named instead. It&rsquo;s the same lens behind the full{" "}
+              mentions your brand, what it says about you, and &mdash; if you name
+              your competitors &mdash; which of you the engines actually recommend
+              on the same question. Every answer is recorded with the date and the
+              country it came from, so you can tell a real pattern from a one-off
+              result. It&rsquo;s the same lens behind the full{" "}
               <Link href={AUDIT_URL} style={{ color: "var(--accent)", fontWeight: 500 }}>
                 AI Visibility Audit
               </Link>
