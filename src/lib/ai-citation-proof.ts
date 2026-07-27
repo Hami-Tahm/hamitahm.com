@@ -42,6 +42,20 @@ export const SNAPSHOT = {
  * to the AEO work, and the trend is flat rather than a growth curve. Presenting it as
  * evidence of the method would be an overclaim.
  *
+ * ── CONFIRMED WITH HARD NUMBERS, 2026-07-27 ──
+ * Bing AI Performance for hamitahm.com, custom range Jul 2024 → Jul 2026:
+ *   Total citations ....... 17.3K   ← but over TWO YEARS, not three months
+ *   Avg. cited pages ...... 1       ← HomeCalc's equivalent figure is 16
+ *   Trend ................. flat and noisy, no growth curve
+ * A two-year total is not comparable to HomeCalc's three-month total, and an average
+ * of one cited page means the volume is essentially a single essay
+ * (/the-10000-hour-rule/, which took 416 of 421 citations in one sampled week).
+ *
+ * So: never headline this number, and never place it beside the HomeCalc figure as if
+ * they were the same class of evidence. It has exactly one honest use — as the
+ * contrast case for "citations are not customers", which is what COMMERCIAL_REALITY
+ * in citation-study.ts already argues.
+ *
  * Use HOMECALC_PROOF instead. That is the honest, verifiable proof: a real
  * near-zero → 7,400 citation growth curve in 3 months on a purpose-built site.
  */
