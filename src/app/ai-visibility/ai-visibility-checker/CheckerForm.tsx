@@ -25,6 +25,12 @@ export default function CheckerForm() {
   const [kw1, setKw1] = useState("");
   const [kw2, setKw2] = useState("");
   const [kw3, setKw3] = useState("");
+  // Competitors are what turn a vague "you're not very visible" report into the one
+  // sentence that actually sells: "for this query the engines named THEM, not you."
+  // Optional on purpose — requiring them adds friction, and a competitor can also be
+  // discovered from the category query alone.
+  const [comp1, setComp1] = useState("");
+  const [comp2, setComp2] = useState("");
   const [country, setCountry] = useState("");
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<Status>("idle");
@@ -56,6 +62,7 @@ export default function CheckerForm() {
           engines,
           domain: domain.trim(),
           keywords: [kw1, kw2, kw3].map((k) => k.trim()).filter(Boolean),
+          competitors: [comp1, comp2].map((c) => c.trim()).filter(Boolean),
           country: country.trim(),
           email: email.trim(),
         }),
@@ -90,10 +97,11 @@ export default function CheckerForm() {
         >
           You&rsquo;re all set.
         </div>
-        <p style={{ fontSize: 16, color: "var(--muted)", lineHeight: 1.6, maxWidth: "46ch", margin: "0 auto" }}>
-          Your AI visibility report is on its way. A real analyst checks every
-          engine and keyword you chose and sends back a precise, personalized
-          breakdown — in your inbox within one business day.
+        <p style={{ fontSize: 16, color: "var(--muted)", lineHeight: 1.6, maxWidth: "48ch", margin: "0 auto" }}>
+          Your report is on its way. I run your keywords on the engines you picked,
+          record the date and country each answer came from, and send you exactly
+          what came back &mdash; including which businesses the engines named
+          instead of you. In your inbox within one business day.
         </p>
       </div>
     );
@@ -186,6 +194,43 @@ export default function CheckerForm() {
           <input style={inputStyle} aria-label="Keyword 2 (optional)" placeholder="Keyword 2 (optional)" value={kw2} onChange={(e) => setKw2(e.target.value)} />
           <input style={inputStyle} aria-label="Keyword 3 (optional)" placeholder="Keyword 3 (optional)" value={kw3} onChange={(e) => setKw3(e.target.value)} />
         </div>
+      </div>
+
+      {/* Competitors — the field that makes the report specific rather than generic */}
+      <div style={{ marginBottom: 18 }}>
+        <span style={labelStyle}>
+          Competitors to compare against{" "}
+          <span style={{ fontWeight: 400, color: "var(--faint)" }}>
+            (optional, but this is what makes the report useful)
+          </span>
+        </span>
+        <div style={{ display: "grid", gap: 10, gridTemplateColumns: "1fr 1fr" }}>
+          <input
+            style={inputStyle}
+            aria-label="Competitor 1 (optional)"
+            placeholder="Competitor 1"
+            value={comp1}
+            onChange={(e) => setComp1(e.target.value)}
+          />
+          <input
+            style={inputStyle}
+            aria-label="Competitor 2 (optional)"
+            placeholder="Competitor 2"
+            value={comp2}
+            onChange={(e) => setComp2(e.target.value)}
+          />
+        </div>
+        <p
+          style={{
+            fontSize: 12.5,
+            color: "var(--faint)",
+            marginTop: 8,
+            lineHeight: 1.5,
+          }}
+        >
+          Name them and I&rsquo;ll show you which of you the AI engines actually
+          recommend &mdash; on the same question, at the same time.
+        </p>
       </div>
 
       {/* Country + Email */}

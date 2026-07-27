@@ -374,6 +374,12 @@ export default function AIVisibilityAudit() {
                   {[
                     "A written report covering each platform — where you appear, where you don't, and what AI engines say about you",
                     "A prioritized action plan ranked by impact and effort",
+                    // Genuinely differentiating: Bing's AI Performance report (public
+                    // preview since Feb 2026) is the only first-party source that shows
+                    // publishers which of their pages Copilot actually cited. Setting it
+                    // up on the CLIENT's own account also records a dated baseline, which
+                    // is what makes any later "before/after" claim defensible.
+                    "Bing AI Performance tracking set up on your own account — the one first-party report that shows which of your pages Microsoft Copilot cites, with today's baseline recorded",
                     `A ${WALKTHROUGH_MINUTES}-minute walkthrough call to review findings and next steps`,
                     "14 days of follow-up questions after delivery",
                   ].map((item) => (
@@ -867,6 +873,7 @@ export default function AIVisibilityAudit() {
                   {[
                     "Full audit across six AI platforms",
                     "Written report with prioritized action plan",
+                    "Bing AI Performance tracking + dated baseline, on your own account",
                     `${WALKTHROUGH_MINUTES}-minute walkthrough call`,
                     "14 days of follow-up questions",
                   ].map((item) => (

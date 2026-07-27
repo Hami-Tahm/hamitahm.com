@@ -22,6 +22,7 @@ export async function POST(req: Request) {
     engines?: string[];
     domain?: string;
     keywords?: string[];
+    competitors?: string[];
     country?: string;
     email?: string;
   };
@@ -53,6 +54,12 @@ export async function POST(req: Request) {
     .slice(0, 10)
     .map((k) => deFormula(String(k).trim()))
     .filter(Boolean);
+  // Optional — the report is still deliverable without them, so these are never
+  // part of the required-field check below.
+  const competitors = (Array.isArray(body.competitors) ? body.competitors : [])
+    .slice(0, 5)
+    .map((c) => deFormula(String(c).trim()))
+    .filter(Boolean);
 
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   if (!domain || !country || keywords.length === 0 || engines.length === 0 || !emailOk) {
@@ -67,6 +74,7 @@ export async function POST(req: Request) {
     country,
     engines,
     keywords,
+    competitors,
   };
 
   try {
