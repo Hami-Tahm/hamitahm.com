@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { CtaTracking } from "@/components/CtaTracking";
 
 const GA_ID = "G-Z1L4M2SD14";
 const GTM_ID = "GTM-P3HNG5HQ";
@@ -209,6 +210,8 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
+        {/* Single delegated listener that emits `cta_click` for every funnel CTA. */}
+        <CtaTracking />
         <Nav />
         <main>{children}</main>
         <Footer />

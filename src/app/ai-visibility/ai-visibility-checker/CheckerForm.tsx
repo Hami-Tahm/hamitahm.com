@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 
 const ENGINES = [
@@ -36,7 +36,23 @@ export default function CheckerForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [err, setErr] = useState("");
 
+  /**
+   * Fires once, on the visitor's first interaction with the form. The gap between
+   * `checker_start` and `ai_checker_submit` is the form's abandonment rate — the
+   * single most useful number for improving this step of the funnel, and one that
+   * submit-only tracking cannot show.
+   */
+  const startedRef = useRef(false);
+  function markStarted() {
+    if (startedRef.current) return;
+    startedRef.current = true;
+    const w = window as unknown as { dataLayer?: Record<string, unknown>[] };
+    w.dataLayer = w.dataLayer || [];
+    w.dataLayer.push({ event: "checker_start" });
+  }
+
   function toggle(id: string) {
+    markStarted();
     setEngines((cur) =>
       cur.includes(id) ? cur.filter((e) => e !== id) : [...cur, id],
     );
@@ -128,7 +144,14 @@ export default function CheckerForm() {
   };
 
   return (
-    <form onSubmit={submit} className="proof-card" style={{ padding: "32px 30px" }}>
+    <form
+      onSubmit={submit}
+      // onChange bubbles from every input inside the form, so one handler covers
+      // them all; the engine buttons call markStarted() directly since they aren't inputs.
+      onChange={markStarted}
+      className="proof-card"
+      style={{ padding: "32px 30px" }}
+    >
       {/* Engines */}
       <div style={{ marginBottom: 24 }}>
         <span id="cw-engines-label" style={labelStyle}>Which AI engines should we check?</span>
