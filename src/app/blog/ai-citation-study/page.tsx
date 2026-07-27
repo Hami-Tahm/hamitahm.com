@@ -16,7 +16,7 @@ import {
 const SLUG = "ai-citation-study";
 const ARTICLE_TITLE = `What ${STUDY.totalCitations} AI Citations Actually Taught Me`;
 const ARTICLE_DESCRIPTION =
-  "Two sites, three months, 14,400 Microsoft Copilot citations — which pages got cited, which got nothing, and why citations aren't customers.";
+  "Two sites, three months, 21,700 Microsoft Copilot citations — which pages got cited, which got nothing, and why citations aren't customers.";
 const DATE_PUBLISHED = "2026-07-14";
 
 const CHECKER_URL = "/ai-visibility/ai-visibility-checker/";
@@ -26,7 +26,7 @@ const CASE_STUDY_URL = "/case-studies/homecalc-ai-visibility/";
 export const metadata: Metadata = {
   // Kept well under 60 chars — ARTICLE_TITLE alone is long, so the metadata title is a
   // tighter, keyword-forward variant rather than the full H1.
-  title: { absolute: "AI Citation Study: What 14,400 Citations Taught Me" },
+  title: { absolute: "AI Citation Study: What 21,700 Citations Taught Me" },
   description: ARTICLE_DESCRIPTION,
   alternates: { canonical: `https://hamitahm.com/blog/${SLUG}/` },
 };
@@ -223,7 +223,7 @@ export default function Page() {
               <p>
                 On <em>calculate land transfer tax ontario</em>, HomeCalc is{" "}
                 <strong style={{ color: "var(--ink)" }}>72%</strong> of every citation the
-                query produces. On the affordability query, <strong>76%</strong>.
+                query produces. On the affordability query, <strong>63%</strong>.
               </p>
               <p>
                 This does not behave like the ten blue links, where positions two through

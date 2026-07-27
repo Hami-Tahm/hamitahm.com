@@ -100,7 +100,7 @@ export const HOMECALC_TOP_QUERIES = [
   { query: "land transfer tax ontario", citations: "160", share: "39%" },
   { query: "best rent increase calculator", citations: "123", share: "21%" },
   { query: "calculate land transfer tax ontario", citations: "102", share: "72%" },
-  { query: "mortgage affordability calculator (100K salary)", citations: "86", share: "76%" },
+  { query: "mortgage affordability calculator (100K salary)", citations: "86", share: "63%" },
 ] as const;
 
 export function homecalcPageUrl(path: string) {

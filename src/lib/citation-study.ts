@@ -19,14 +19,20 @@
 
 export const STUDY = {
   /** Bing Webmaster → AI Performance, 3-month window. */
-  windowStart: "April 19, 2026",
-  windowEnd: "July 8, 2026",
+  windowStart: "April 25, 2026",
+  windowEnd: "July 25, 2026",
   windowLabel: "3 months",
-  pulledOn: "July 14, 2026",
+  pulledOn: "July 27, 2026",
   source: "Bing Webmaster Tools → AI Performance (Microsoft Copilot and partners)",
 
-  /** 7,400 (HomeCalc) + 7,000 (hamitahm.com), both verified. */
-  totalCitations: "14,400+",
+  /**
+   * 14,600 (HomeCalc) + 7,100 (hamitahm.com), both read from the console on the same
+   * day, both on the trailing 3-month view.
+   *
+   * ⚠️ This can never be lower than HOMECALC_PROOF.citations — it contains it. If you
+   * raise the HomeCalc figure, raise this in the same commit.
+   */
+  totalCitations: "21,700+",
 } as const;
 
 /** The two sites in the study. Same owner, same window, opposite results. */
@@ -35,24 +41,27 @@ export const SITES = {
     name: "HomeCalc.ca",
     what: "Canadian real-estate calculators. Purpose-built, brand new.",
     ageAtStart: "under three months old",
-    citations: "7,400+",
-    citationsNum: 7400,
+    citations: "14,600+",
+    citationsNum: 14600,
     /** Distinct pages earning citations. */
     pagesCited: "25+",
-    /** Bing's "Avg. Cited Pages" metric. */
-    avgCitedPagesPerDay: 10,
-    peakPerDay: "280+",
+    /** Bing's "Avg. Cited Pages" metric. Refreshed 2026-07-27: 10 → 16. */
+    avgCitedPagesPerDay: 16,
+    peakPerDay: "420+",
     curve: "near-zero → steep, sustained growth",
   },
   hamitahm: {
     name: "HamiTahm.com",
     what: "A personal blog that later became a consultancy site.",
     ageAtStart: "about 18 months old",
-    citations: "7,000+",
-    citationsNum: 7000,
+    citations: "7,100+",
+    citationsNum: 7100,
     pagesCited: "effectively 1",
     avgCitedPagesPerDay: 2,
     peakPerDay: "—",
+    // This is the finding, stated as a fact rather than an opinion: across the SAME
+    // three months, under the SAME owner, HomeCalc went 7,400 → 14,600 while this
+    // domain went 7,000 → 7,100. One has a growth curve; one has a plateau.
     curve: "flat across the entire window — no growth at all",
   },
 } as const;
@@ -76,7 +85,10 @@ export const HOMECALC_QUERIES = [
   { query: "land transfer tax ontario", citations: 160, share: "39%" },
   { query: "best rent increase calculator", citations: 123, share: "21%" },
   { query: "calculate land transfer tax ontario", citations: 102, share: "72%" },
-  { query: "mortgage affordability calculator (100K salary)", citations: 86, share: "76%" },
+  // Share refreshed 2026-07-27: this query was 76% in the July 14 pull and reads
+  // 63.02% in the July 25 console. Citation counts in this table are still from the
+  // earlier pull — see the note on HOMECALC_TOP_QUERIES in homecalc-proof.ts.
+  { query: "mortgage affordability calculator (100K salary)", citations: 86, share: "63%" },
 ] as const;
 
 /**

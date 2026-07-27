@@ -14,9 +14,9 @@ const posts = [
   {
     href: "/blog/ai-citation-study/",
     cat: "Original research",
-    title: "What 14,400+ AI Citations Actually Taught Me",
+    title: "What 21,700+ AI Citations Actually Taught Me",
     excerpt:
-      "Two sites, three months, 14,400 citations from Microsoft Copilot. Which pages got cited, which got nothing, and the finding nobody publishes: citations are not customers.",
+      "Two sites, three months, 21,700 citations from Microsoft Copilot. Which pages got cited, which got nothing, and the finding nobody publishes: citations are not customers.",
   },
   {
     href: "/blog/what-is-ai-visibility/",

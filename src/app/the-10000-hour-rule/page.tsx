@@ -360,7 +360,12 @@ export default function Post() {
               marginRight: "auto",
             }}
           >
-            This article gets 7,000+ AI citations a quarter.
+            {/* Stated against the site total rather than as a standalone figure: this
+                page takes almost all of hamitahm.com's citations (416 of 421 in a
+                sampled week), so tying it to the verifiable 7,100 is safer than
+                claiming a per-page number the console doesn't report directly. */}
+            This one article takes nearly all of this site&rsquo;s 7,100 AI
+            citations a quarter.
           </h2>
           <p
             style={{
