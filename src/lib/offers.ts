@@ -30,6 +30,19 @@ export const OFFERS = {
     priceNote: "CAD, flat fee, one-time",
     href: "/ai-visibility/ai-visibility-audit/",
     role: "Diagnosis: exactly where AI engines cite you, where they don't, and what to change.",
+    /**
+     * Live Stripe Payment Link — self-serve checkout (added 2026-07-28).
+     *
+     * ⚠️ The Stripe account is HOUMSE INC, so that is the descriptor on the
+     * buyer's card statement, NOT "Hami Tahm". The Stripe confirmation message
+     * states this explicitly; that disclosure is what prevents "I don't
+     * recognise this charge" chargebacks. If the account name ever changes,
+     * update the Stripe confirmation message in the same session.
+     *
+     * The checkout collects the buyer's website URL and their target queries as
+     * required custom fields — without both, a paid order can't be started.
+     */
+    checkoutUrl: "https://buy.stripe.com/fZucN7fEFaYf3GAdrF00001",
   },
   implementation: {
     name: "AI Visibility Implementation Sprint",

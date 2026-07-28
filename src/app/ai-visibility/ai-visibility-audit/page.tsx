@@ -3,7 +3,16 @@ import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { HOMECALC_PROOF } from "@/lib/homecalc-proof";
 import { SNAPSHOT } from "@/lib/ai-citation-proof";
+import { OFFERS } from "@/lib/offers";
 
+/**
+ * Self-serve checkout, sourced from OFFERS so the URL lives in one place.
+ *
+ * WHY BOTH PATHS EXIST: at $1,500 some buyers pay immediately and some want to
+ * talk first. Removing either costs sales — the primary button pays, the
+ * secondary keeps the conversation route open. Do not "simplify" to one.
+ */
+const CHECKOUT_URL = OFFERS.audit.checkoutUrl;
 const BOOKING_URL = "/contact/";
 const WALKTHROUGH_MINUTES = 60;
 const TURNAROUND = "7 business days";
@@ -259,10 +268,24 @@ export default function AIVisibilityAudit() {
 
           <RevealSection delay={0.14}>
             <div style={{ marginTop: 32 }}>
-              <Link href={BOOKING_URL} className="btn btn-primary">
-                Book Your AI Visibility Audit <span className="arr">&rarr;</span>
-              </Link>
-              <div style={{ marginTop: 14 }}>
+              <a
+                href={CHECKOUT_URL}
+                className="btn btn-primary"
+                data-gtm="audit-checkout-hero"
+              >
+                Book &amp; pay &mdash; {PRICE_DISPLAY} <span className="arr">&rarr;</span>
+              </a>
+              <div style={{ marginTop: 14, display: "flex", gap: 18, flexWrap: "wrap" }}>
+                <Link
+                  href={BOOKING_URL}
+                  style={{
+                    fontFamily: "var(--mono)",
+                    fontSize: 13,
+                    color: "var(--faint)",
+                  }}
+                >
+                  Prefer to talk first? Get in touch &rarr;
+                </Link>
                 <Link
                   href="/ai-visibility/ai-visibility-checker/"
                   style={{
@@ -271,7 +294,7 @@ export default function AIVisibilityAudit() {
                     color: "var(--faint)",
                   }}
                 >
-                  Not ready? Run the free AI visibility check first &rarr;
+                  Or run the free check &rarr;
                 </Link>
               </div>
             </div>
@@ -927,13 +950,14 @@ export default function AIVisibilityAudit() {
                 </ul>
               </div>
 
-              <Link
-                href={BOOKING_URL}
+              <a
+                href={CHECKOUT_URL}
                 className="btn btn-primary"
                 style={{ marginTop: 36, position: "relative" }}
+                data-gtm="audit-checkout-included"
               >
-                Book Your Audit — $1,500 CAD <span className="arr">&rarr;</span>
-              </Link>
+                Book &amp; pay — {PRICE_DISPLAY} <span className="arr">&rarr;</span>
+              </a>
             </div>
           </RevealSection>
         </div>
@@ -1125,13 +1149,19 @@ export default function AIVisibilityAudit() {
                 $1,500 CAD. Flat fee. Report and walkthrough call within{" "}
                 {TURNAROUND}.
               </p>
-              <Link
-                href={BOOKING_URL}
+              <a
+                href={CHECKOUT_URL}
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
+                data-gtm="audit-checkout-final"
               >
-                Book Your AI Visibility Audit <span className="arr">&rarr;</span>
-              </Link>
+                Book &amp; pay — {PRICE_DISPLAY} <span className="arr">&rarr;</span>
+              </a>
+              <div style={{ marginTop: 16, position: "relative" }}>
+                <Link href={BOOKING_URL} style={{ color: "var(--muted)", fontSize: 14 }}>
+                  Prefer to talk it through first? &rarr;
+                </Link>
+              </div>
               <p
                 style={{
                   marginTop: 20,
