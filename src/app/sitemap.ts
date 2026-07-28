@@ -23,6 +23,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Methodology backs up the "transparent methodology" claim the money pages make,
     // and is the asset every off-site pitch links to.
     { path: "/methodology/", priority: 0.85, changeFrequency: "monthly" },
+    // The citable front door for the original dataset — the asset every off-site
+    // pitch, DOI record and journalist link is meant to point at.
+    { path: "/research/", priority: 0.85, changeFrequency: "monthly" },
     { path: "/ai-visibility/implementation/", priority: 0.9, changeFrequency: "monthly" },
     { path: "/ai-visibility/ai-visibility-checker/", priority: 0.9, changeFrequency: "weekly" },
     { path: "/ai-visibility/ai-visibility-consultant-canada/", priority: 0.9, changeFrequency: "monthly" },

@@ -29,6 +29,10 @@ The site is structured as a small commercial cluster: a hub page for AI Visibili
 
 - [AI Visibility](https://hamitahm.com/ai-visibility/): Cluster hub explaining AI visibility, the services on offer, and the relationship between SEO, AEO, and GEO. Routes to the audit and all service variants.
 
+## Research and open data
+
+- [Research & Data](https://hamitahm.com/research/): The citable front door for the original dataset. Two websites under common ownership (HomeCalc.ca and HamiTahm.com), measured over the same three-month window (April 25 – July 25, 2026) in Bing Webmaster Tools' AI Performance report: 21,700 AI citations between them, with opposite outcomes — one growing across 25+ pages, the other flat on a single page. Includes downloadable CSVs, a data dictionary, the measurement method, and six explicitly stated limitations (n=2, single-engine coverage, same-owner confound, citations ≠ customers). Licensed CC BY 4.0 — free to re-use commercially with attribution.
+
 ## Proof
 
 - [AI Visibility Case Studies](https://hamitahm.com/case-studies/): Index of documented AI visibility results — the HomeCalc.ca named-client case study and the self-referential "AI engines name Hami Tahm" snapshot.
