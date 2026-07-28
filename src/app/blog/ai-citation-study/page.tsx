@@ -18,6 +18,11 @@ const ARTICLE_TITLE = `What ${STUDY.totalCitations} AI Citations Actually Taught
 const ARTICLE_DESCRIPTION =
   "Two sites, three months, 21,700 Microsoft Copilot citations — which pages got cited, which got nothing, and why citations aren't customers.";
 const DATE_PUBLISHED = "2026-07-14";
+// The underlying figures were refreshed from the console on STUDY.pulledOn
+// (2026-07-27) — several numbers on this page changed after the original publish
+// date (see citation-study.ts). dateModified must track that, or the page's own
+// structured data understates how current the content actually is.
+const DATE_MODIFIED = STUDY.pulledOnISO;
 
 const CHECKER_URL = "/ai-visibility/ai-visibility-checker/";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
@@ -36,6 +41,7 @@ const schemaJson = blogSchemaJson({
   title: ARTICLE_TITLE,
   description: ARTICLE_DESCRIPTION,
   datePublished: DATE_PUBLISHED,
+  dateModified: DATE_MODIFIED,
   cluster: "ai-visibility",
 });
 
@@ -48,12 +54,15 @@ const datasetSchema = {
   "@type": "Dataset",
   name: "HomeCalc.ca AI Citation Study — top cited pages and queries",
   description:
-    "Top cited pages and top grounding queries for HomeCalc.ca from Bing Webmaster AI Performance (Microsoft Copilot), April 19 – July 8, 2026. A selected sample; full per-page export available on request.",
+    // Dates and window pulled from STUDY, not hand-typed — this exact field was the
+    // one that drifted silently for weeks after the window refreshed. See STUDY's
+    // windowStartISO/windowEndISO comment in citation-study.ts.
+    `Top cited pages and top grounding queries for HomeCalc.ca from Bing Webmaster AI Performance (Microsoft Copilot), ${STUDY.windowStart} – ${STUDY.windowEnd}. A selected sample; full per-page export available on request.`,
   url: "https://hamitahm.com/blog/ai-citation-study/",
   creator: { "@id": "https://hamitahm.com/#hami-tahm" },
   license: "https://creativecommons.org/licenses/by/4.0/",
   isAccessibleForFree: true,
-  temporalCoverage: "2026-04-19/2026-07-08",
+  temporalCoverage: `${STUDY.windowStartISO}/${STUDY.windowEndISO}`,
   distribution: [
     {
       "@type": "DataDownload",
@@ -160,8 +169,8 @@ export default function Page() {
 
               <p>
                 Roughly the same number of citations. One is spread across{" "}
-                {SITES.homecalc.pagesCited} pages and climbing. The other is one page and
-                flat.{" "}
+                {SITES.homecalc.pagesCited} pages and climbing. The other is dominated by
+                one page and flat.{" "}
                 <strong style={{ color: "var(--ink)" }}>
                   Total citation count, on its own, tells you almost nothing.
                 </strong>
@@ -255,8 +264,8 @@ export default function Page() {
 
               <p>
                 <strong style={{ color: "var(--ink)" }}>
-                  93% of this entire domain&rsquo;s AI citations land on one old essay
-                  about the 10,000-hour rule.
+                  Roughly 91% of this entire domain&rsquo;s AI citations land on one old
+                  essay about the 10,000-hour rule.
                 </strong>{" "}
                 It was written years ago, it is about skill mastery, and it has nothing to
                 do with what I sell.
@@ -284,7 +293,7 @@ export default function Page() {
                   My most-cited page in the world &mdash;{" "}
                   {COMMERCIAL_REALITY.aiCitations} AI citations &mdash; produced{" "}
                   <strong>{COMMERCIAL_REALITY.googleClicksPerQuarter} clicks</strong> from
-                  Google last quarter and{" "}
+                  Google over the same three months and{" "}
                   <strong>{COMMERCIAL_REALITY.leadsGenerated} leads.</strong> Zero.
                 </p>
                 <p style={{ margin: 0 }}>
@@ -391,10 +400,15 @@ export default function Page() {
                     download="homecalc-ai-citation-study.csv"
                     style={{ color: "var(--accent)", fontWeight: 600 }}
                   >
-                    &darr; Download the data (CSV)
+                    &darr; Download the HomeCalc sample (CSV)
                   </a>{" "}
-                  &mdash; the top cited pages and queries for HomeCalc, CC BY 4.0.
-                  Want the full per-page export, or the HamiTahm.com side? Email me.
+                  &mdash; the top cited pages and queries for HomeCalc only, CC BY 4.0.
+                  For the full two-site comparison (both domains, methodology,
+                  limitations), see{" "}
+                  <Link href="/research/" style={{ color: "var(--accent)", fontWeight: 600 }}>
+                    the published dataset
+                  </Link>
+                  . Want the full per-page export beyond that? Email me.
                 </p>
                 <p style={{ margin: 0 }}>
                   Questions about the method, or want the underlying screenshots?{" "}

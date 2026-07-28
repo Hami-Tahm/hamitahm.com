@@ -184,8 +184,8 @@ export default function ResearchPage() {
           <RevealSection delay={0.12}>
             <p style={pStyle}>
               Roughly comparable totals. One is spread across{" "}
-              {SITES.homecalc.pagesCited} pages and climbing; the other is a single
-              page and flat.{" "}
+              {SITES.homecalc.pagesCited} pages and climbing; the other is dominated
+              by a single page and flat.{" "}
               <b style={bStyle}>
                 A citation total, on its own, tells you almost nothing.
               </b>

@@ -74,7 +74,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/service-business-growth/", priority: 0.55 },
 
     // ── Long-form / evergreen — ON-TOPIC keepers only ────────────────────
-    // /the-10000-hour-rule/ stays: it earns ~6,500 AI citations (93% of the domain)
+    // /the-10000-hour-rule/ stays: it earns ~6,500 AI citations (~91% of the domain)
     // and is now linked from the homepage. It is the one legacy essay that is an asset.
     { path: "/the-10000-hour-rule/", priority: 0.6 },
 

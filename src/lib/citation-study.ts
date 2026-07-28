@@ -31,8 +31,21 @@ export const STUDY = {
   /** Bing Webmaster → AI Performance, 3-month window. */
   windowStart: "April 25, 2026",
   windowEnd: "July 25, 2026",
+  /**
+   * ISO copies of the same two dates above, for anything machine-readable (JSON-LD
+   * temporalCoverage, Zenodo metadata, etc.).
+   *
+   * ⚠️ This file previously only had human-readable dates, and a JSON-LD block on the
+   * blog page hardcoded its OWN separate ISO date string by hand. When the window got
+   * refreshed (April 19–July 8 → April 25–July 25), the hardcoded copy was never
+   * updated, so the page's structured data silently disagreed with its own visible
+   * content for weeks. Always read the window from here — never retype it.
+   */
+  windowStartISO: "2026-04-25",
+  windowEndISO: "2026-07-25",
   windowLabel: "3 months",
   pulledOn: "July 27, 2026",
+  pulledOnISO: "2026-07-27",
   source: "Bing Webmaster Tools → AI Performance (Microsoft Copilot and partners)",
 
   /**
@@ -66,13 +79,20 @@ export const SITES = {
     ageAtStart: "about 18 months old",
     citations: "7,100+",
     citationsNum: 7100,
-    pagesCited: "effectively 1",
+    // "6+" not "effectively 1" — the top-cited-pages table (HAMITAHM_PAGES below) lists
+    // 6 distinct pages that earned at least one citation, and this is a selected sample
+    // (see LIMITATIONS.md), so the true count may be higher still. "Effectively 1" was
+    // true in spirit (93%→~91% of volume concentrates on a single page) but false as a
+    // literal page count against this column's own definition ("distinct pages that
+    // earned at least one citation"). The concentration point belongs in `curve` below,
+    // not in a count field that a reader — or a dataset consumer — takes literally.
+    pagesCited: "6+",
     avgCitedPagesPerDay: 2,
     peakPerDay: "—",
     // This is the finding, stated as a fact rather than an opinion: across the SAME
     // three months, under the SAME owner, HomeCalc went 7,400 → 14,600 while this
     // domain went 7,000 → 7,100. One has a growth curve; one has a plateau.
-    curve: "flat across the entire window — no growth at all",
+    curve: "flat across the entire window — no growth, ~91% concentrated on a single page",
   },
 } as const;
 
@@ -117,11 +137,18 @@ export const HOMECALC_QUERIES = [
 
 /**
  * HamiTahm.com — the uncomfortable one.
- * 93% of an entire domain's AI citations land on one old essay about skill mastery,
- * while the page the business actually sells earns 12.
+ * Roughly 91% of an entire domain's AI citations land on one old essay about skill
+ * mastery, while the page the business actually sells earns 12.
+ *
+ * ⚠️ The "91%" below is 6,500 / 7,100 (SITES.hamitahm.citationsNum), rounded down and
+ * phrased as "roughly" on purpose — both figures are Bing's own rounded display
+ * values, not exact counts, so a bare "93%" (this file's earlier, stale figure,
+ * computed back when the domain total was still ~7,000) implied more precision than
+ * the source supports. If either number here changes, recompute this by hand — do not
+ * hand-type a percentage.
  */
 export const HAMITAHM_PAGES = [
-  { label: "The 10,000-Hour Rule (an old essay)", citations: 6500, note: "93% of the entire domain" },
+  { label: "The 10,000-Hour Rule (an old essay)", citations: 6500, note: "roughly 91% of the entire domain" },
   { label: "Blog — AI visibility tools comparison", citations: 302, note: "" },
   { label: "How Many Diets Exist in the World", citations: 61, note: "off-topic" },
   { label: "The Longevity Economy", citations: 26, note: "off-topic" },

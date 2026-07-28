@@ -95,10 +95,14 @@ export const RESEARCH_LIMITS = [
   },
   {
     head: "Citations are not customers",
-    body: "The most-cited page in the entire study produced zero leads in the same quarter. That file is included on purpose.",
+    body: "The most-cited page in the entire study produced zero leads over the same three-month window. That file is included on purpose.",
   },
   {
     head: "A selected sample, not a full export",
     body: "The tables show the leaders, not every page or query that received a citation. The complete per-page export is available on request.",
+  },
+  {
+    head: "Bing's own numbers are aggregated, not raw",
+    body: "Grounding queries are Bing's own aggregated groupings of prompt activity, not verbatim user prompts, and Bing itself describes AI Performance as sampled, aggregated reporting rather than a complete log. This dataset publishes those figures faithfully — it does not and cannot de-aggregate them.",
   },
 ] as const;
