@@ -48,7 +48,7 @@ const structuredData = {
       "@id": `https://hamitahm.com${SLUG}#dataset`,
       name: RESEARCH.title,
       description:
-        "Citation counts, most-cited pages, and query-level citation share for two websites under common ownership, measured over the same three-month window in Bing Webmaster Tools' AI Performance report (Microsoft Copilot and partners). Includes a file comparing citations against actual clicks and leads.",
+        "Citation counts, most-cited pages, and query-level citation share for two websites under common ownership, measured over the same three-month window in Bing Webmaster Tools' AI Performance report (Microsoft Copilot and partners). Includes a file comparing citations against actual Google clicks.",
       url: `https://hamitahm.com${SLUG}`,
       creator: { "@id": "https://hamitahm.com/#hami-tahm" },
       license: RESEARCH.licenseUrl,
@@ -63,7 +63,6 @@ const structuredData = {
         "Pages earning citations",
         "Citation share per query",
         "Organic clicks",
-        "Leads generated",
       ],
       // Only claim an identifier once one actually exists.
       ...(isPublished ? { identifier: `https://doi.org/${RESEARCH.doi}`, sameAs: RESEARCH.zenodoUrl } : {}),

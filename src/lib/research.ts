@@ -21,9 +21,9 @@ export const RESEARCH = {
   author: "Hami Tahm",
   version: "1.0",
   /** Fill in after the Zenodo record is published. Format: "10.5281/zenodo.XXXXXXX" */
-  doi: null as string | null,
+  doi: "10.5281/zenodo.21651568" as string | null,
   /** The Zenodo record page. Fill in with the DOI. */
-  zenodoUrl: null as string | null,
+  zenodoUrl: "https://zenodo.org/records/21651568" as string | null,
   /** Public GitHub mirror of the same files. Fill in once the repo exists. */
   githubUrl: null as string | null,
   license: "CC BY 4.0",
@@ -56,7 +56,7 @@ export const RESEARCH_FILES = [
   },
   {
     name: "05_commercial_reality.csv",
-    what: "Citations vs. actual clicks and leads for the single most-cited page.",
+    what: "Citations vs. actual Google clicks for the single most-cited page.",
   },
   {
     name: "METHODOLOGY.md",
@@ -95,7 +95,7 @@ export const RESEARCH_LIMITS = [
   },
   {
     head: "Citations are not customers",
-    body: "The most-cited page in the entire study produced zero leads over the same three-month window. That file is included on purpose.",
+    body: "The most-cited page in the entire study (6,500 AI citations) produced 24 Google clicks over the same three-month window. That file is included on purpose.",
   },
   {
     head: "A selected sample, not a full export",

@@ -293,8 +293,8 @@ export default function Page() {
                   My most-cited page in the world &mdash;{" "}
                   {COMMERCIAL_REALITY.aiCitations} AI citations &mdash; produced{" "}
                   <strong>{COMMERCIAL_REALITY.googleClicksPerQuarter} clicks</strong> from
-                  Google over the same three months and{" "}
-                  <strong>{COMMERCIAL_REALITY.leadsGenerated} leads.</strong> Zero.
+                  Google over the same three months. Twenty-four clicks, from an essay
+                  about skill mastery that has nothing to do with what I sell.
                 </p>
                 <p style={{ margin: 0 }}>
                   The whole site earned {COMMERCIAL_REALITY.siteClicksPerQuarter} clicks

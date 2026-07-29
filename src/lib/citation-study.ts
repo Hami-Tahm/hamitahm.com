@@ -156,12 +156,21 @@ export const HAMITAHM_PAGES = [
   { label: "/ai-visibility/ — the page the business sells", citations: 12, note: "the money page" },
 ] as const;
 
-/** Commercial reality of the most-cited page, from Google Search Console. */
+/**
+ * Commercial reality of the most-cited page, from Google Search Console.
+ *
+ * ⚠️ There is deliberately no `leadsGenerated` field here. An earlier version claimed
+ * "0 leads," but there was no traceable method behind that number — no CRM record, no
+ * analytics goal, nothing pointable the way every other figure in this file is. This
+ * file's own provenance rule (top of file) says a number that can't be sourced doesn't
+ * belong here. The clicks number alone (24 clicks from 6,500 citations) already makes
+ * the point — citations aren't traffic — without needing an unverifiable leads claim
+ * on top of it.
+ */
 export const COMMERCIAL_REALITY = {
   page: "The 10,000-Hour Rule",
   aiCitations: "6,500",
   googleClicksPerQuarter: 24,
-  leadsGenerated: 0,
   moneyPageCitations: 12,
   moneyPageImpressionsPerQuarter: 59,
   siteClicksPerQuarter: 44,
