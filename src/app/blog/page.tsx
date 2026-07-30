@@ -5,7 +5,7 @@ import { RevealSection } from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "AI Visibility Blog & Guides",
   description:
-    "Practical guides on how AI search works, how to get cited by ChatGPT, Perplexity, and Google AI Overviews, and what Canadian businesses need to do about it.",
+    "Practical guides on how AI search works, how to get cited by Google AI Overviews, ChatGPT, and Perplexity, and what Canadian businesses need to do about it.",
 };
 
 const posts = [
@@ -58,7 +58,7 @@ const posts = [
     cat: "Basics",
     title: "How to Check Your AI Visibility",
     excerpt:
-      "A simple way to see whether ChatGPT, Perplexity, and Google AI mention your business today.",
+      "A simple way to see whether Google AI, ChatGPT, and Perplexity mention your business today.",
   },
   {
     href: "/blog/what-is-answer-engine-optimization/",
@@ -113,7 +113,7 @@ const structuredData = {
       url: "https://hamitahm.com/blog/",
       name: "AI Visibility Blog",
       description:
-        "Practical guides on how AI search works, how to get cited by ChatGPT, Perplexity, and Google AI Overviews, and what Canadian businesses need to do about it.",
+        "Practical guides on how AI search works, how to get cited by Google AI Overviews, ChatGPT, and Perplexity, and what Canadian businesses need to do about it.",
       inLanguage: "en-CA",
       publisher: { "@id": "https://hamitahm.com/#organization" },
       author: { "@id": "https://hamitahm.com/#hami-tahm" },
@@ -217,7 +217,7 @@ export default function BlogIndexPage() {
               }}
             >
               Practical guides on how AI search works, how to get cited by
-              ChatGPT, Perplexity, and Google AI Overviews, and what Canadian
+              Google AI Overviews, ChatGPT, and Perplexity, and what Canadian
               businesses need to do about it.
             </p>
           </RevealSection>

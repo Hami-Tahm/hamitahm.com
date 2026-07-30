@@ -286,7 +286,7 @@ export default function MethodologyPage() {
               </b>{" "}
               Bing Webmaster Tools&rsquo; AI Performance report gives a first-party
               count: which of your pages were cited, how often, and the queries that
-              retrieved them. ChatGPT, Perplexity, Gemini and Google AI Overviews
+              retrieved them. Google AI Overviews, ChatGPT, Gemini and Perplexity
               expose no equivalent data to site owners.
             </p>
             <p style={pStyle}>

@@ -10,6 +10,6 @@ export default async function Image() {
     badge: "HUB",
     title: "AI Visibility",
     subtitle:
-      "Search is moving to ChatGPT, Perplexity, and Google AI Overviews. Show up where buyers ask.",
+      "Search is moving to Google AI Overviews, ChatGPT, and Perplexity. Show up where buyers ask.",
   });
 }

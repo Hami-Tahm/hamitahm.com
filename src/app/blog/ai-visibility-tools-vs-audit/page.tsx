@@ -755,7 +755,7 @@ function InlineAuditCTA() {
       >
         If you&rsquo;ve read this far and identified with &ldquo;I don&rsquo;t
         know why I&rsquo;m invisible and I need a plan&rdquo; — that&rsquo;s the
-        audit. Covers ChatGPT, Perplexity, Google AI Overviews, and Gemini.
+        audit. Covers Google AI Overviews, ChatGPT, and Gemini.
       </p>
       <Link href={AUDIT_URL} className="btn btn-primary">
         Book an AI Visibility Audit <span className="arr">&rarr;</span>

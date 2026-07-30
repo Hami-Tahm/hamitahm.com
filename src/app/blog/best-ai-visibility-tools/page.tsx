@@ -568,8 +568,7 @@ export default function BestAIVisibilityToolsPost() {
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>Platform coverage</strong> — Does it
-              track ChatGPT, Perplexity, Google AI Overviews, Gemini, and Bing
-              Copilot? Or only one or two? This matters more than any other
+              track Google AI Overviews, ChatGPT, Gemini, and Bing Copilot? Or only one or two? This matters more than any other
               factor because AI visibility is inherently cross-platform.
             </p>
             <p style={{ marginBottom: 26 }}>
@@ -1143,7 +1142,7 @@ function InlineAuditCTA() {
           lineHeight: 1.55,
         }}
       >
-        The audit covers ChatGPT, Perplexity, Google AI Overviews, and Gemini —
+        The audit covers Google AI Overviews, ChatGPT, and Gemini —
         with platform-specific citation analysis, accuracy review, competitor gap
         mapping, and a prioritized action plan.
       </p>

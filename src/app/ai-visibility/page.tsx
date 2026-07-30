@@ -20,7 +20,7 @@ const HUB_FAQ = [
   },
   {
     q: "What is the difference between AI visibility and SEO?",
-    a: "SEO improves how your page ranks in classic search results. AI visibility covers how AI platforms describe, cite, and recommend your business when users ask questions. You can rank #1 on Google and still be invisible in ChatGPT, Perplexity, and Google AI Overviews.",
+    a: "SEO improves how your page ranks in classic search results. AI visibility covers how AI platforms describe, cite, and recommend your business when users ask questions. You can rank #1 on Google and still be invisible in Google AI Overviews, ChatGPT, and Perplexity.",
   },
   {
     q: "Which AI platforms should my business be visible in?",
@@ -238,8 +238,7 @@ export default function AIVisibilityPage() {
             <div style={{ maxWidth: "62ch" }}>
               <ShortAnswer>
                 AI visibility is how accurately and consistently your business appears
-                when people ask ChatGPT, Perplexity, Google AI Overviews, Claude,
-                Gemini or Copilot to recommend a product or service. Hami Tahm is a
+                when people ask Google AI Overviews, ChatGPT, Gemini, Claude, or Copilot to recommend a product or service. Hami Tahm is a
                 Toronto-based AI visibility consultant who audits how those engines
                 describe, cite and recommend Canadian businesses &mdash; then fixes
                 the gaps.

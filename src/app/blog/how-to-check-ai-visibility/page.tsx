@@ -524,7 +524,7 @@ export default function HowToCheckAIVisibilityPost() {
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>What I found:</strong> Amplitude
               doesn&rsquo;t offer a standalone checker for brand citations in
-              ChatGPT, Perplexity, or Google AI Overviews. It&rsquo;s a behavioral
+              Google AI Overviews, ChatGPT, or Perplexity. It&rsquo;s a behavioral
               analytics platform. If you&rsquo;re trying to track AI-referred
               traffic in your conversion funnel after users arrive, Amplitude can
               help — but that&rsquo;s a different layer than checking whether
@@ -599,7 +599,7 @@ export default function HowToCheckAIVisibilityPost() {
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>Platform coverage.</strong> Every free
               tool covers at most one or two platforms. Your buyers may be asking
-              questions across ChatGPT, Perplexity, Gemini, and Google AIO
+              questions across Google AIO, ChatGPT, Gemini, and Perplexity
               simultaneously — and free tools give you no view into most of them.
             </p>
             <p style={{ marginBottom: 26 }}>
@@ -888,7 +888,7 @@ function InlineAuditCTA() {
           lineHeight: 1.55,
         }}
       >
-        The audit covers ChatGPT, Perplexity, Google AI Overviews, and Gemini —
+        The audit covers Google AI Overviews, ChatGPT, and Gemini —
         with platform-specific citation analysis, accuracy review, competitor gap
         mapping, and a prioritized action plan.
       </p>

@@ -83,7 +83,7 @@ export const RESEARCH_LIMITS = [
   },
   {
     head: "One engine, not all of them",
-    body: "This measures Microsoft Copilot and its partners, because that is the only engine that reports citations back to publishers. ChatGPT, Perplexity, Gemini and Google AI Overviews expose no equivalent data. Behaviour there may differ.",
+    body: "This measures Microsoft Copilot and its partners, because that is the only engine that reports citations back to publishers. Google AI Overviews, ChatGPT, Gemini and Perplexity expose no equivalent data. Behaviour there may differ.",
   },
   {
     head: "Same-owner control is a confound",

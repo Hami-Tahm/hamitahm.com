@@ -56,7 +56,7 @@ const siteStructuredData = {
       // are a single entity. If you change it, change it EVERYWHERE, or you rebuild
       // the fragmentation this was written to fix.
       description:
-        "AI Visibility Consultant in Toronto — AEO & GEO for Canadian businesses that want to be cited in ChatGPT, Perplexity, and Google AI Overviews.",
+        "AI Visibility Consultant in Toronto — AEO & GEO for Canadian businesses that want to be cited in Google AI Overviews, ChatGPT, and Perplexity.",
       image: "https://hamitahm.com/images/hami-tahm/hami-tahm-portrait.png",
       worksFor: { "@id": "https://hamitahm.com/#organization" },
       address: {
@@ -151,7 +151,7 @@ export const metadata: Metadata = {
     template: "%s | Hami Tahm",
   },
   description:
-    "Hami Tahm \u2014 AI Visibility Consultant in Canada. Helping businesses appear in ChatGPT, Perplexity, and Google AI Overviews.",
+    "Hami Tahm \u2014 AI Visibility Consultant in Canada. Helping businesses appear in Google AI Overviews, ChatGPT, and Perplexity.",
   metadataBase: new URL("https://hamitahm.com"),
   // SELF-REFERENCING CANONICAL FOR EVERY PAGE, from one place.
   // Next resolves a relative `alternates.canonical` against metadataBase + the current

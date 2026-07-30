@@ -24,7 +24,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "What platforms does AI visibility cover?",
-    a: "Primarily ChatGPT, Perplexity, Google AI Overviews, Gemini, and Bing Copilot. Each platform pulls from different sources and behaves differently, so coverage needs to be tracked per platform, not as a single number.",
+    a: "Primarily Google AI Overviews, ChatGPT, Gemini, and Bing Copilot. Each platform pulls from different sources and behaves differently, so coverage needs to be tracked per platform, not as a single number.",
   },
   {
     q: "How do I track my AI visibility on Gemini?",
@@ -220,8 +220,7 @@ export default function WhatIsAIVisibilityPost() {
               >
                 AI visibility is how often — and how accurately — your brand
                 appears in AI-generated answers. Unlike SEO, it measures
-                citations and coverage across ChatGPT, Perplexity, Google AI
-                Overviews, Gemini, and Bing Copilot — not rankings in blue
+                citations and coverage across Google AI Overviews, ChatGPT, Gemini, and Bing Copilot — not rankings in blue
                 links.
               </p>
             </div>
@@ -231,8 +230,7 @@ export default function WhatIsAIVisibilityPost() {
             <p style={{ marginBottom: 26 }}>
               AI visibility is the degree to which your brand, product, or
               content appears — accurately and prominently — in AI-generated
-              search results from platforms like ChatGPT, Perplexity, Google AI
-              Overviews, and Gemini. Unlike traditional SEO, which measures
+              search results from platforms like Google AI Overviews, ChatGPT, and Gemini. Unlike traditional SEO, which measures
               rankings and clicks, AI visibility measures whether AI systems know
               you exist, what they say about you, and how often they cite you
               when users ask relevant questions.

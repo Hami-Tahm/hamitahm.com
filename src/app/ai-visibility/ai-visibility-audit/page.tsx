@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   // aliases so one page ranks for the whole cluster.
   title: "ChatGPT & AI Visibility Audit — $1,500 CAD Flat",
   description:
-    "AI visibility audit across ChatGPT, Perplexity, and Google AI Overviews — also called a ChatGPT visibility or AEO audit. $1,500 CAD flat, by Hami Tahm.",
+    "AI visibility audit across Google AI Overviews, ChatGPT, and Perplexity — also called a ChatGPT visibility or AEO audit. $1,500 CAD flat, by Hami Tahm.",
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/ai-visibility-audit/",
   },
@@ -243,8 +243,7 @@ export default function AIVisibilityAudit() {
               }}
             >
               An AI visibility audit is a structured review of how your business
-              appears across AI platforms like ChatGPT, Perplexity, and Google AI
-              Overviews. Hami Tahm conducts each audit personally — identifying
+              appears across AI platforms like Google AI Overviews, ChatGPT, and Perplexity. Hami Tahm conducts each audit personally — identifying
               where your business is missing, misrepresented, or invisible in
               AI-generated answers — and delivers a prioritized action plan you
               can act on the same week.

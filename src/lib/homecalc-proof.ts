@@ -45,7 +45,7 @@ export const HOMECALC_PROOF = {
   // ── PLATFORM PROVENANCE — the single most important honesty control ──
   // This citation count comes from ONE source: Bing Webmaster Tools' AI Performance
   // report, which measures Microsoft Copilot and its partners. It does NOT measure
-  // ChatGPT, Perplexity, Gemini or Google AI Overviews — none of which expose citation
+  // Google AI Overviews, ChatGPT, Gemini or Perplexity — none of which expose citation
   // data to publishers. Do NOT attach this number to those platforms anywhere.
   // Attribute the NUMBER with `sourceLabel`; only describe the audit *service* as
   // covering ChatGPT/Perplexity/etc, because the audit genuinely reviews them.

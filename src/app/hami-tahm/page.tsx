@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     absolute: "Hami Tahm — AI Visibility Consultant in Toronto, Canada",
   },
   description:
-    "Hami Tahm — Toronto AI visibility consultant. AEO & GEO to get Canadian businesses cited in ChatGPT, Perplexity, and Google AI Overviews. Founder of HomeCalc.ca.",
+    "Hami Tahm — Toronto AI visibility consultant. AEO & GEO to get Canadian businesses cited in Google AI Overviews, ChatGPT, and Perplexity. Founder of HomeCalc.ca.",
   alternates: {
     canonical: "https://hamitahm.com/hami-tahm/",
   },
@@ -423,7 +423,7 @@ export default function AboutPage() {
                 Optimization (AEO) and Generative Engine Optimization (GEO), helping Canadian
                 trust-based local businesses &mdash; dental clinics, mortgage brokers, realtors
                 and law firms &mdash; get cited and recommended in AI-generated answers from
-                ChatGPT, Perplexity, Google AI Overviews, Gemini and Copilot. He is the founder
+                Google AI Overviews, ChatGPT, Gemini and Copilot. He is the founder
                 of HomeCalc.ca, which he grew from near-zero to{" "}
                 {HOMECALC_CLAIMS.citationsInTimeframe}, and a co-founder of Houmse.com. He works
                 solo, on flat-fee, fixed-scope engagements rather than open-ended retainers.
@@ -499,7 +499,7 @@ export default function AboutPage() {
                 Want to be found in AI search?
               </h2>
               <p style={{ color: "var(--muted)", marginTop: 16, position: "relative", maxWidth: "54ch", marginLeft: "auto", marginRight: "auto" }}>
-                I help Canadian businesses show up in ChatGPT, Perplexity, and Google AI&nbsp;Overviews &mdash; using the same system I proved on my own products, in public, with numbers you can check.
+                I help Canadian businesses show up in Google AI&nbsp;Overviews, ChatGPT, and Perplexity &mdash; using the same system I proved on my own products, in public, with numbers you can check.
               </p>
               <Link href={CHECKER_URL} className="btn btn-primary" style={{ marginTop: 36, position: "relative" }}>
                 Run the free AI visibility check <span className="arr">&rarr;</span>

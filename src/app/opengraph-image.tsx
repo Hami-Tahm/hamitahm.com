@@ -10,6 +10,6 @@ export default async function Image() {
     badge: "AI VISIBILITY",
     title: "AI Visibility Consultant",
     subtitle:
-      "Helping Canadian businesses get cited by ChatGPT, Perplexity, and Google AI Overviews.",
+      "Helping Canadian businesses get cited by Google AI Overviews, ChatGPT, and Perplexity.",
   });
 }

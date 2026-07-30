@@ -11,7 +11,7 @@ const ABOUT_URL = "/hami-tahm/";
 export const metadata: Metadata = {
   title: "SEO Expert in Toronto — SEO + AI Search",
   description:
-    "SEO expert in Toronto who covers both Google SEO and the new AI-search layer (ChatGPT, Perplexity, Google AI Overviews). Consultant-led — not an agency. By Hami Tahm.",
+    "SEO expert in Toronto who covers both Google SEO and the new AI-search layer (Google AI Overviews, ChatGPT, Perplexity). Consultant-led — not an agency. By Hami Tahm.",
   alternates: {
     canonical: "https://hamitahm.com/seo-expert-toronto/",
   },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const FAQ_ITEMS = [
   {
     q: "What does an SEO expert in Toronto actually do in 2026?",
-    a: "Two jobs now, not one. The first is the classic job — keyword research, on-page optimization, technical fixes, content strategy, and link building so your site ranks on Google. The second is new — getting your business cited and recommended inside ChatGPT, Perplexity, Google AI Overviews, Claude, and Bing Copilot. A Toronto SEO expert who only does the first job is solving half the problem in 2026.",
+    a: "Two jobs now, not one. The first is the classic job — keyword research, on-page optimization, technical fixes, content strategy, and link building so your site ranks on Google. The second is new — getting your business cited and recommended inside Google AI Overviews, ChatGPT, Claude, and Bing Copilot. A Toronto SEO expert who only does the first job is solving half the problem in 2026.",
   },
   {
     q: "How much does an SEO expert cost in Toronto?",
@@ -286,7 +286,7 @@ export default function SEOExpertTorontoPage() {
               n: "03",
               title: "Ask if they cover AI search, not just Google",
               body:
-                "In 2026, ranking on Google alone is no longer sufficient. ChatGPT, Perplexity, Google AI Overviews, Claude, and Bing Copilot collectively answer a meaningful share of search queries. An SEO expert who isn&rsquo;t auditing AI citations is missing half the picture.",
+                "In 2026, ranking on Google alone is no longer sufficient. Google AI Overviews, ChatGPT, Claude, and Bing Copilot collectively answer a meaningful share of search queries. An SEO expert who isn&rsquo;t auditing AI citations is missing half the picture.",
             },
             {
               n: "04",

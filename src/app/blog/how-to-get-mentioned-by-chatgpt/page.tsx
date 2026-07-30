@@ -784,8 +784,7 @@ Disallow: /`}
                   position: "relative",
                 }}
               >
-                The audit covers ChatGPT, Perplexity, Google AI Overviews, and
-                Gemini — with a prioritized action plan. $1,500 CAD flat.
+                The audit covers Google AI Overviews, ChatGPT, and Gemini — with a prioritized action plan. $1,500 CAD flat.
               </p>
               <Link
                 href={AUDIT_URL}
@@ -857,8 +856,7 @@ function InlineAuditCTA() {
           lineHeight: 1.55,
         }}
       >
-        An AI visibility audit covers ChatGPT, Perplexity, Google AI Overviews,
-        and Gemini — not just one platform. You&rsquo;ll know exactly where you
+        An AI visibility audit covers Google AI Overviews, ChatGPT, and Gemini — not just one platform. You&rsquo;ll know exactly where you
         stand and what to fix first.
       </p>
       <Link href={AUDIT_URL} className="btn btn-primary">

@@ -1006,8 +1006,7 @@ function InlineAuditCTA() {
           lineHeight: 1.55,
         }}
       >
-        The audit checks what ChatGPT, Perplexity, Copilot, and Google AI
-        Overviews actually see when they crawl your site — including rendering
+        The audit checks what Google AI Overviews, ChatGPT, Copilot, and Perplexity actually see when they crawl your site — including rendering
         issues, schema mismatches, and content gaps competitors are exploiting.
       </p>
       <Link href={AUDIT_URL} className="btn btn-primary">
