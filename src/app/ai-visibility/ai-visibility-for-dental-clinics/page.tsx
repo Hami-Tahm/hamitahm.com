@@ -59,7 +59,7 @@ const COMPARISON_ROWS = [
   ],
   [
     "Platforms covered",
-    "ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, Bing Copilot",
+    "Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, Perplexity",
     "Google search",
     "Google Maps + local pack",
   ],
@@ -698,7 +698,7 @@ export default function AIVisibilityDentalClinics() {
               <ProcessStep
                 n="2"
                 title="The audit runs."
-                body="I review your clinic across ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, and Bing Copilot."
+                body="I review your clinic across Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, and Perplexity."
               />
               <ProcessStep
                 n="3"

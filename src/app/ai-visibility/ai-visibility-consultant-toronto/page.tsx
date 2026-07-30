@@ -18,7 +18,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "What does an AI visibility consultant in Toronto actually do?",
-    a: "I audit how AI engines — ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, and Bing Copilot — currently describe, cite, and recommend your business, then fix the gaps. That means structured data, entity consistency, extractable content, and third-party signals, so that when a Toronto customer asks AI for a recommendation in your category, your name is in the answer.",
+    a: "I audit how AI engines — Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, and Perplexity — currently describe, cite, and recommend your business, then fix the gaps. That means structured data, entity consistency, extractable content, and third-party signals, so that when a Toronto customer asks AI for a recommendation in your category, your name is in the answer.",
   },
   {
     q: "Do you meet clients in person in Toronto?",

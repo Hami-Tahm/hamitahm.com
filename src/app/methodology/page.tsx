@@ -34,7 +34,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Which AI engines do you actually measure?",
-    a: "Six: ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, and Microsoft Copilot. They are not equivalent as data sources, which is the important part — only Copilot reports citations back to publishers, so it is the only engine where a first-party count exists. The rest are observed, not counted.",
+    a: "Six: Google AI Overviews, ChatGPT, Gemini, Claude, Microsoft Copilot, and Perplexity. They are not equivalent as data sources, which is the important part — only Copilot reports citations back to publishers, so it is the only engine where a first-party count exists. The rest are observed, not counted.",
   },
   {
     q: "Do you use an AI visibility score out of 100?",

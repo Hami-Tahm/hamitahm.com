@@ -751,7 +751,7 @@ export default function AIVisibilityMortgageBrokers() {
               <ProcessStep
                 n="2"
                 title="The audit runs."
-                body="I review your brokerage across ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, and Bing Copilot."
+                body="I review your brokerage across Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, and Perplexity."
               />
               <ProcessStep
                 n="3"

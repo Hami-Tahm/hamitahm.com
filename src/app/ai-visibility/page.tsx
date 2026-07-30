@@ -24,7 +24,7 @@ const HUB_FAQ = [
   },
   {
     q: "Which AI platforms should my business be visible in?",
-    a: "The six that drive most AI-generated answers today are ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, and Bing Copilot. Different platforms weight different signals — strategy is built per platform.",
+    a: "The six that drive most AI-generated answers today are Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, and Perplexity. Different platforms weight different signals — strategy is built per platform.",
   },
   {
     q: "How do I check my AI visibility?",

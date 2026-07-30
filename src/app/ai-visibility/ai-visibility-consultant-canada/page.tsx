@@ -34,7 +34,7 @@ const FAQ_ITEMS = [
     // Covers the "AI search optimization services Canada" / "ChatGPT optimization
     // services" phrasings buyers use, and disambiguates the category's many names.
     q: "Do you offer AI search optimization or ChatGPT optimization services?",
-    a: "Yes — those are two names for the same service. AI search optimization, ChatGPT optimization, AI SEO, AEO, GEO, and AI visibility all describe the same goal: getting your business cited and recommended when buyers ask an AI engine instead of Google. Every engagement starts with the $1,500 audit, which covers ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, and Bing Copilot.",
+    a: "Yes — those are two names for the same service. AI search optimization, ChatGPT optimization, AI SEO, AEO, GEO, and AI visibility all describe the same goal: getting your business cited and recommended when buyers ask an AI engine instead of Google. Every engagement starts with the $1,500 audit, which covers Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, and Perplexity.",
   },
   {
     q: "Do you serve businesses outside Toronto?",
@@ -1012,7 +1012,7 @@ export default function AIVisibilityConsultantCanada() {
               <EngagementStep
                 n="2"
                 title="The audit runs."
-                body="I review your business across ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, and Bing Copilot."
+                body="I review your business across Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, and Perplexity."
               />
               <EngagementStep
                 n="3"

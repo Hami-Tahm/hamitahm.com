@@ -45,7 +45,7 @@ const TIERS = [
     ctaLabel: "Book the audit",
     highlight: true,
     includes: [
-      "Written report across six AI platforms — ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, Bing Copilot",
+      "Written report across six AI platforms — Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, Perplexity",
       "A prioritized action plan ranked by impact and effort",
       "A 60-minute walkthrough call",
       "14 days of follow-up questions",

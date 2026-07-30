@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 const FAQ_ITEMS = [
   {
     q: "How do I get my business to show up in ChatGPT and AI search?",
-    a: "That is exactly what the audit addresses. It reviews how ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, and Bing Copilot currently see your business, then gives you a prioritized list of changes that make your brand citeable, trusted, and recommended in AI answers.",
+    a: "That is exactly what the audit addresses. It reviews how Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, and Perplexity currently see your business, then gives you a prioritized list of changes that make your brand citeable, trusted, and recommended in AI answers.",
   },
   {
     q: "Why does AI recommend my competitor instead of me?",
@@ -41,12 +41,12 @@ const FAQ_ITEMS = [
   },
   {
     q: "What is an AI visibility audit?",
-    a: "An AI visibility audit is a structured review of how your business appears across AI platforms — ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, and Bing Copilot. The output is a written report and a prioritized action plan.",
+    a: "An AI visibility audit is a structured review of how your business appears across AI platforms — Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, and Perplexity. The output is a written report and a prioritized action plan.",
   },
   {
     // Alias-capture FAQ: same deliverable, four search phrasings.
     q: "Is this the same as a ChatGPT visibility audit or an AEO audit?",
-    a: "Yes. ChatGPT visibility audit, AI search audit, AEO audit, GEO audit — these are different names for the same deliverable. The difference here is coverage: this audit reviews six engines (ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, and Bing Copilot), so you get the full picture rather than a single-platform snapshot.",
+    a: "Yes. ChatGPT visibility audit, AI search audit, AEO audit, GEO audit — these are different names for the same deliverable. The difference here is coverage: this audit reviews six engines (Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, and Perplexity), so you get the full picture rather than a single-platform snapshot.",
   },
   {
     q: "How is this different from a traditional SEO audit?",
@@ -58,7 +58,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Which AI platforms are included?",
-    a: "ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, and Bing Copilot.",
+    a: "Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, and Perplexity.",
   },
   {
     q: "Is there a free AI visibility audit?",
@@ -825,7 +825,7 @@ export default function AIVisibilityAudit() {
               <ProcessStep
                 n="2"
                 title="The audit runs."
-                body="I review your business across ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, and Bing Copilot."
+                body="I review your business across Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, and Perplexity."
               />
               <ProcessStep
                 n="3"
