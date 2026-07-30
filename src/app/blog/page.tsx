@@ -19,6 +19,13 @@ const posts = [
       "Two sites, three months, 21,700 citations from Microsoft Copilot. Which pages got cited, which got nothing, and the finding nobody publishes: citations are not customers.",
   },
   {
+    href: "/blog/which-ai-platform-matters-most/",
+    cat: "Strategy",
+    title: "Which AI Platform Actually Matters Most Right Now?",
+    excerpt:
+      "Google AI Overviews, ChatGPT, Gemini, Claude, Copilot, Perplexity — ranked by real traffic share, not assumptions. And why this changed my own site.",
+  },
+  {
     href: "/blog/what-is-ai-visibility/",
     cat: "Basics",
     title: "What Is AI Visibility (and Why It Matters Now)",
