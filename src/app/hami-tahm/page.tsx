@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     absolute: "Hami Tahm — AI Visibility Consultant in Toronto, Canada",
   },
   description:
-    "Hami Tahm — Toronto AI visibility consultant. AEO & GEO to get Canadian businesses cited in Google AI Overviews, ChatGPT, and Perplexity. Founder of HomeCalc.ca.",
+    "Hami Tahm — Toronto AI visibility consultant. AEO & GEO to get Canadian businesses cited in Google AI Overviews, ChatGPT, Gemini, and Claude. Founder of HomeCalc.ca.",
   alternates: {
     canonical: "https://hamitahm.com/hami-tahm/",
   },
@@ -499,7 +499,7 @@ export default function AboutPage() {
                 Want to be found in AI search?
               </h2>
               <p style={{ color: "var(--muted)", marginTop: 16, position: "relative", maxWidth: "54ch", marginLeft: "auto", marginRight: "auto" }}>
-                I help Canadian businesses show up in Google AI&nbsp;Overviews, ChatGPT, and Perplexity &mdash; using the same system I proved on my own products, in public, with numbers you can check.
+                I help Canadian businesses show up in Google AI&nbsp;Overviews, ChatGPT, Gemini, and Claude &mdash; using the same system I proved on my own products, in public, with numbers you can check.
               </p>
               <Link href={CHECKER_URL} className="btn btn-primary" style={{ marginTop: 36, position: "relative" }}>
                 Run the free AI visibility check <span className="arr">&rarr;</span>

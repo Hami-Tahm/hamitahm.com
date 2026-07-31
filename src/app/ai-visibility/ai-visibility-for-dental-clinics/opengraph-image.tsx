@@ -10,6 +10,6 @@ export default async function Image() {
     badge: "VERTICAL · DENTAL",
     title: "AI Visibility for Dental Clinics",
     subtitle:
-      "Get your clinic named when patients ask Google AI, ChatGPT, or Perplexity for a dentist.",
+      "Get your clinic named when patients ask Google AI, ChatGPT, Gemini, or Claude for a dentist.",
   });
 }

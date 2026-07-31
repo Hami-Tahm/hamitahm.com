@@ -599,7 +599,7 @@ export default function OrthodonticSEOCaseStudy() {
               high-ticket professional service in Canada or the US tired of
               agencies that promise rankings and disappear &mdash; the
               methodology is the same. I just apply it now to a market that
-              also includes Google AI Overviews, ChatGPT, and Perplexity.
+              also includes Google AI Overviews, ChatGPT, Gemini, Claude and others.
             </p>
           </RevealSection>
         </div>

@@ -16,7 +16,7 @@ const PRICE_DISPLAY = "$1,500 CAD";
 export const metadata: Metadata = {
   title: "AI Visibility for Mortgage Brokers",
   description:
-    "Ensure your mortgage brokerage appears when buyers ask Google AI Overviews, ChatGPT, or Perplexity. Audit by Hami Tahm — $1,500 CAD flat.",
+    "Ensure your mortgage brokerage appears when buyers ask Google AI Overviews, ChatGPT, Gemini, or Claude. Audit by Hami Tahm — $1,500 CAD flat.",
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/ai-visibility-for-mortgage-brokers/",
   },
@@ -279,7 +279,7 @@ export default function AIVisibilityMortgageBrokers() {
             >
               AI visibility for mortgage brokers is the practice of ensuring your
               brokerage appears — accurately and credibly — when homebuyers ask AI
-              tools like Google AI Overviews, ChatGPT, or Perplexity for mortgage
+              tools like Google AI Overviews, ChatGPT, Gemini, or Claude for mortgage
               guidance. Hami Tahm audits mortgage brokerages across these platforms
               to identify where your business is missing from AI-generated answers,
               and delivers a prioritized action plan to fix it.

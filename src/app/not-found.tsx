@@ -94,7 +94,7 @@ export default function NotFound() {
           >
             I'm <strong>Hami Tahm</strong> — I help businesses become the answer
             when AI talks about their industry. If your brand isn't showing up in
-            Google AI Overviews, ChatGPT, or Perplexity, that's the problem I
+            Google AI Overviews, ChatGPT, Gemini, or Claude, that's the problem I
             solve.
           </p>
         </div>

@@ -12,7 +12,7 @@ const PRICE_DISPLAY = "$1,500 CAD";
 export const metadata: Metadata = {
   title: "AI Visibility for Dental Clinics",
   description:
-    "Ensure your dental clinic appears when patients ask Google AI Overviews, ChatGPT, or Perplexity. Audit by Hami Tahm — $1,500 CAD flat.",
+    "Ensure your dental clinic appears when patients ask Google AI Overviews, ChatGPT, Gemini, or Claude. Audit by Hami Tahm — $1,500 CAD flat.",
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/ai-visibility-for-dental-clinics/",
   },
@@ -264,7 +264,7 @@ export default function AIVisibilityDentalClinics() {
             >
               AI visibility for dental clinics is the practice of ensuring your
               clinic appears — accurately and consistently — when patients ask AI
-              tools like Google AI Overviews, ChatGPT, or Perplexity for dentist
+              tools like Google AI Overviews, ChatGPT, Gemini, or Claude for dentist
               recommendations. Hami Tahm audits dental clinics across these
               platforms to identify where your clinic is missing, misrepresented,
               or invisible in AI-generated answers, and delivers a prioritized

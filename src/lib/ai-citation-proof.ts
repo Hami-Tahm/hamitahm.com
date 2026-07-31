@@ -121,7 +121,7 @@ export const ENGINE_CITATIONS: readonly EngineCitation[] = [
   {
     engine: "Google AI Mode",
     quote:
-      "A dedicated Toronto-based AI Visibility Consultant. He specializes specifically in building, auditing, and measuring a brand's presence across AI-powered search engines, helping Canadian businesses get cited accurately when users prompt tools like Google AI Overviews, ChatGPT, and Perplexity.",
+      "A dedicated Toronto-based AI Visibility Consultant. He specializes specifically in building, auditing, and measuring a brand's presence across AI-powered search engines, helping Canadian businesses get cited accurately when users prompt tools like Google AI Overviews, ChatGPT, Gemini, Claude and others.",
     image: "/images/case-studies/ai-rec-google-ai-mode.png",
     alt: "Google AI Mode answer recommending Hami Tahm as a specialized AI Visibility Consultant in Toronto, Canada, captured June 2026.",
   },

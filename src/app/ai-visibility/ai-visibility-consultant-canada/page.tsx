@@ -12,7 +12,7 @@ const PORTRAIT_SRC = "/images/hami-tahm/hami-tahm-portrait.png";
 const FAQ_ITEMS = [
   {
     q: "How do I get my business mentioned in AI answers?",
-    a: "Start with an audit of how AI engines currently describe and cite your business, then close the gaps it surfaces — website content, profiles, third-party mentions, and structured data. That is the path from invisible to mentioned in Google AI Overviews, ChatGPT, and Perplexity.",
+    a: "Start with an audit of how AI engines currently describe and cite your business, then close the gaps it surfaces — website content, profiles, third-party mentions, and structured data. That is the path from invisible to mentioned in Google AI Overviews, ChatGPT, Gemini, Claude and others.",
   },
   {
     q: "Do you work with B2B companies?",
@@ -130,7 +130,7 @@ export const metadata: Metadata = {
   // in the title lets this page cover that synonym without a separate thin page.
   title: "AI Visibility & AI Search Optimization in Canada",
   description:
-    "AI visibility and AI search optimization consultant in Canada. $1,500 flat-fee audit across Google AI Overviews, ChatGPT, and Perplexity — not an agency.",
+    "AI visibility and AI search optimization consultant in Canada. $1,500 flat-fee audit across Google AI Overviews, ChatGPT, Gemini, and Claude — not an agency.",
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/ai-visibility-consultant-canada/",
   },
@@ -225,7 +225,7 @@ export default function AIVisibilityConsultantCanada() {
               Hami Tahm is an AI visibility consultant based in Toronto, Canada
               &mdash; helping businesses identify and fix where they&rsquo;re
               missing, misrepresented, or invisible in AI-powered search platforms
-              like Google AI&nbsp;Overviews, ChatGPT, and Perplexity. Unlike
+              like Google AI&nbsp;Overviews, ChatGPT, Gemini, and Claude. Unlike
               agency-led services, every audit and strategy is built and
               delivered by Hami personally.
             </p>

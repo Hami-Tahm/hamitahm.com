@@ -5,7 +5,7 @@ import { RevealSection } from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "AI Visibility Blog & Guides",
   description:
-    "Practical guides on how AI search works, how to get cited by Google AI Overviews, ChatGPT, and Perplexity, and what Canadian businesses need to do about it.",
+    "Practical guides on how AI search works, how to get cited by Google AI Overviews, ChatGPT, Gemini, and Claude, and what Canadian businesses need to do about it.",
 };
 
 const posts = [
@@ -120,7 +120,7 @@ const structuredData = {
       url: "https://hamitahm.com/blog/",
       name: "AI Visibility Blog",
       description:
-        "Practical guides on how AI search works, how to get cited by Google AI Overviews, ChatGPT, and Perplexity, and what Canadian businesses need to do about it.",
+        "Practical guides on how AI search works, how to get cited by Google AI Overviews, ChatGPT, Gemini, and Claude, and what Canadian businesses need to do about it.",
       inLanguage: "en-CA",
       publisher: { "@id": "https://hamitahm.com/#organization" },
       author: { "@id": "https://hamitahm.com/#hami-tahm" },
@@ -223,8 +223,7 @@ export default function BlogIndexPage() {
                 lineHeight: 1.6,
               }}
             >
-              Practical guides on how AI search works, how to get cited by
-              Google AI Overviews, ChatGPT, and Perplexity, and what Canadian
+              Practical guides on how AI search works, how to get cited by Google AI Overviews, ChatGPT, Gemini, and Claude, and what Canadian
               businesses need to do about it.
             </p>
           </RevealSection>

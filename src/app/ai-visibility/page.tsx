@@ -20,7 +20,7 @@ const HUB_FAQ = [
   },
   {
     q: "What is the difference between AI visibility and SEO?",
-    a: "SEO improves how your page ranks in classic search results. AI visibility covers how AI platforms describe, cite, and recommend your business when users ask questions. You can rank #1 on Google and still be invisible in Google AI Overviews, ChatGPT, and Perplexity.",
+    a: "SEO improves how your page ranks in classic search results. AI visibility covers how AI platforms describe, cite, and recommend your business when users ask questions. You can rank #1 on Google and still be invisible in Google AI Overviews, ChatGPT, Gemini, Claude and others.",
   },
   {
     q: "Which AI platforms should my business be visible in?",

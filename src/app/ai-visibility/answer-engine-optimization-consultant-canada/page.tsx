@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       "Answer Engine Optimization (AEO) Consultant — Canada",
   },
   description:
-    "AEO helps Canadian businesses get cited by Google AI Overviews, ChatGPT, and Perplexity. Consultant-led by Hami Tahm — starts with a $1,500 audit.",
+    "AEO helps Canadian businesses get cited by Google AI Overviews, ChatGPT, Gemini, and Claude. Consultant-led by Hami Tahm — starts with a $1,500 audit.",
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/answer-engine-optimization-consultant-canada/",
   },
@@ -280,7 +280,7 @@ export default function AEOConsultantCanada() {
               }}
             >
               Answer engine optimization (AEO) is the practice of structuring your
-              content so AI-powered platforms — Google AI Overviews, ChatGPT, and Perplexity — can extract it as a direct answer to user questions. Hami
+              content so AI-powered platforms — Google AI Overviews, ChatGPT, Gemini, Claude and others — can extract it as a direct answer to user questions. Hami
               Tahm works with Canadian businesses as an answer engine optimization
               consultant to identify where their content is being ignored by AI
               engines and build a strategy to fix it.

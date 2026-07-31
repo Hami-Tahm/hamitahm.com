@@ -524,7 +524,7 @@ export default function HowToCheckAIVisibilityPost() {
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>What I found:</strong> Amplitude
               doesn&rsquo;t offer a standalone checker for brand citations in
-              Google AI Overviews, ChatGPT, or Perplexity. It&rsquo;s a behavioral
+              Google AI Overviews, ChatGPT, Gemini, or Claude. It&rsquo;s a behavioral
               analytics platform. If you&rsquo;re trying to track AI-referred
               traffic in your conversion funnel after users arrive, Amplitude can
               help — but that&rsquo;s a different layer than checking whether
