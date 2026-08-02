@@ -151,6 +151,63 @@ export default function AboutPage() {
         </div>
       </header>
 
+      {/* WHY — the belief underneath every venture below, stated once, plainly.
+          Placed right after the hero and before the facts/short-version sections
+          on purpose: the numbers and the products are evidence FOR this, not
+          the thing itself. Kept short — one sentence of belief, one of what it
+          means in practice — rather than turned into a mission-statement essay. */}
+      <div className="wrap">
+        <RevealSection delay={0.08}>
+          <div
+            style={{
+              borderLeft: "2px solid var(--accent)",
+              paddingLeft: 28,
+              maxWidth: "62ch",
+              marginBottom: 56,
+            }}
+          >
+            <p
+              style={{
+                fontFamily: "var(--mono)",
+                fontSize: 11,
+                letterSpacing: ".14em",
+                textTransform: "uppercase",
+                color: "var(--accent)",
+                marginBottom: 14,
+              }}
+            >
+              Why
+            </p>
+            <p
+              style={{
+                fontFamily: "var(--serif)",
+                fontSize: "clamp(22px, 2.6vw, 28px)",
+                fontWeight: 500,
+                lineHeight: 1.4,
+                letterSpacing: "-.01em",
+                color: "var(--ink)",
+              }}
+            >
+              The best answer should win &mdash; not the biggest brand.
+            </p>
+            <p
+              style={{
+                marginTop: 14,
+                fontSize: 16.5,
+                color: "var(--muted)",
+                lineHeight: 1.65,
+              }}
+            >
+              I build products and systems that make complex decisions
+              clearer, valuable businesses easier to discover, and better
+              choices easier to trust. HomeCalc proves it on a financial
+              decision; this practice applies the same belief to whether AI
+              recommends the business that actually deserves it.
+            </p>
+          </div>
+        </RevealSection>
+      </div>
+
       {/* FACTS STRIP */}
       <div className="wrap">
         <RevealSection delay={0.12}>
