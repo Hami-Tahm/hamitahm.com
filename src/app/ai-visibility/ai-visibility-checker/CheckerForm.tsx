@@ -129,7 +129,7 @@ export default function CheckerForm() {
             margin: "16px auto 0",
           }}
         >
-          You&rsquo;ll have it in your inbox within 24 hours.
+          You&rsquo;ll have it in your inbox within one business day.
         </p>
         {/*
           Deliverability note, not decoration. This report is a cold, automated-looking
@@ -329,7 +329,7 @@ export default function CheckerForm() {
         Say what we take, what we do with it, and how to make it go away. In plain words.
       */}
       <p style={{ fontSize: 12.5, color: "var(--faint)", marginTop: 12, textAlign: "center", lineHeight: 1.5 }}>
-        Free. A real analyst sends your report within 24 hours.
+        Free. A real analyst sends your report within one business day.
       </p>
       <p
         style={{
