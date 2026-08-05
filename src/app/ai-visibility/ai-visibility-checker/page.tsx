@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const FAQ_ITEMS = [
   {
     q: "Is this an automated tool or a human report?",
-    a: "A human report. Automated checkers give you a score; we give you a real analyst's read of what ChatGPT, Google AI Overview, and Gemini say about your business, which competitor is winning your keywords, and what to fix. That is why it arrives within one business day, not in 30 seconds.",
+    a: "A human report. Automated checkers give you a score; we give you a real analyst's read of what ChatGPT, Google AI Overview, and Gemini say about your business, which competitor is winning your keywords, and what to fix. That is why it arrives within 24 hours, not in 30 seconds.",
   },
   {
     q: "What is an AI visibility checker?",
@@ -40,7 +40,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "How long until I get my report?",
-    a: "Within one business day. A real analyst runs your searches by hand, so it isn't instant — but you get a considered read of each engine and keyword you selected for your country, not an automated score.",
+    a: "Within 24 hours. A real analyst runs your searches by hand, so it isn't instant — but you get a considered read of each engine and keyword you selected for your country, not an automated score.",
   },
 ];
 
@@ -136,7 +136,7 @@ export default function AiVisibilityCheckerPage() {
               Pick the AI engines, add your domain, your keywords, and the
               competitors you want to be measured against &mdash; then a real
               analyst checks how ChatGPT, Google AI Overview, and Gemini actually
-              answer. Free report in your inbox within one business day.
+              answer. Free report in your inbox within 24 hours.
             </p>
           </RevealSection>
         </div>

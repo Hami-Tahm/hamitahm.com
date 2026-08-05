@@ -117,7 +117,45 @@ export default function CheckerForm() {
           Your report is on its way. I run your keywords on the engines you picked,
           record the date and country each answer came from, and send you exactly
           what came back &mdash; including which businesses the engines named
-          instead of you. In your inbox within one business day.
+          instead of you.
+        </p>
+        <p
+          style={{
+            fontSize: 16,
+            color: "var(--ink)",
+            fontWeight: 600,
+            lineHeight: 1.6,
+            maxWidth: "48ch",
+            margin: "16px auto 0",
+          }}
+        >
+          You&rsquo;ll have it in your inbox within 24 hours.
+        </p>
+        {/*
+          Deliverability note, not decoration. This report is a cold, automated-looking
+          email sent to someone who just typed their address into a form — the exact
+          profile Gmail and Outlook are most likely to route to spam. Telling people to
+          check the spam folder here, while they are still on the page and still
+          expecting it, is the cheapest way to stop a delivered report from being
+          recorded as a non-response.
+        */}
+        <p
+          style={{
+            fontSize: 14,
+            color: "var(--muted)",
+            lineHeight: 1.6,
+            maxWidth: "48ch",
+            margin: "18px auto 0",
+            paddingTop: 16,
+            borderTop: "1px solid var(--line)",
+          }}
+        >
+          Please check your spam or promotions folder if you don&rsquo;t see it &mdash;
+          the report arrives from{" "}
+          <strong style={{ color: "var(--ink)", fontWeight: 600 }}>
+            hami@hamitahm.com
+          </strong>
+          . Adding that address to your contacts makes sure it lands in your inbox.
         </p>
       </div>
     );
@@ -291,7 +329,7 @@ export default function CheckerForm() {
         Say what we take, what we do with it, and how to make it go away. In plain words.
       */}
       <p style={{ fontSize: 12.5, color: "var(--faint)", marginTop: 12, textAlign: "center", lineHeight: 1.5 }}>
-        Free. A real analyst sends your report within one business day.
+        Free. A real analyst sends your report within 24 hours.
       </p>
       <p
         style={{
