@@ -98,65 +98,83 @@ export default function CheckerForm() {
 
   if (status === "done") {
     return (
-      <div
-        className="proof-card"
-        style={{ textAlign: "center", padding: "40px 32px" }}
-      >
+      <div className="proof-card" style={{ padding: "40px 32px" }}>
         <div
           style={{
             fontFamily: "var(--serif)",
             fontSize: "clamp(22px, 3vw, 28px)",
             fontWeight: 500,
             color: "var(--accent)",
-            marginBottom: 12,
+            marginBottom: 26,
+            textAlign: "center",
           }}
         >
           You&rsquo;re all set.
         </div>
-        <p style={{ fontSize: 16, color: "var(--muted)", lineHeight: 1.6, maxWidth: "48ch", margin: "0 auto" }}>
-          Your report is on its way. I run your keywords on the engines you picked,
-          record the date and country each answer came from, and send you exactly
-          what came back &mdash; including which businesses the engines named
-          instead of you.
-        </p>
-        <p
-          style={{
-            fontSize: 16,
-            color: "var(--ink)",
-            fontWeight: 600,
-            lineHeight: 1.6,
-            maxWidth: "48ch",
-            margin: "16px auto 0",
-          }}
-        >
-          You&rsquo;ll have it in your inbox within one business day.
-        </p>
+
         {/*
-          Deliverability note, not decoration. This report is a cold, automated-looking
-          email sent to someone who just typed their address into a form — the exact
-          profile Gmail and Outlook are most likely to route to spam. Telling people to
-          check the spam folder here, while they are still on the page and still
-          expecting it, is the cheapest way to stop a delivered report from being
-          recorded as a non-response.
+          Two steps, not one paragraph. Since the auto-confirmation went live, two
+          separate things happen on two different clocks — an email that is already
+          in their inbox, and a report that takes a day. Blurring those into one
+          block is what makes people think the report itself is late.
         */}
-        <p
+        <Step
+          marker="1"
+          when="Just now"
+          title="A confirmation email is already in your inbox"
+          body="It lists the exact domain, keywords, country and engines you asked me to check — so you can make sure I got it right. Reply to it if you want to add a keyword or a competitor before I start."
+        />
+        <Step
+          marker="2"
+          when="Within one business day"
+          title="Your report arrives"
+          body="I run each search by hand, record the date and country every answer came from, and send you exactly what came back — including which businesses the engines were recommending instead of you."
+        />
+
+        {/*
+          Deliverability note, deliberately the loudest element on this screen.
+          Both messages are cold mail to an address someone just typed into a form —
+          the exact profile Gmail and Outlook route to Promotions or Spam. Saying this
+          while they are still on the page, still expecting it, is the cheapest way to
+          stop a delivered report from being recorded as a non-response.
+        */}
+        <div
           style={{
-            fontSize: 14,
-            color: "var(--muted)",
-            lineHeight: 1.6,
-            maxWidth: "48ch",
-            margin: "18px auto 0",
-            paddingTop: 16,
-            borderTop: "1px solid var(--line)",
+            marginTop: 26,
+            padding: "18px 20px",
+            border: "1px solid var(--accent)",
+            borderRadius: 10,
+            background: "var(--accent-soft)",
           }}
         >
-          Please check your spam or promotions folder if you don&rsquo;t see it &mdash;
-          the report arrives from{" "}
-          <strong style={{ color: "var(--ink)", fontWeight: 600 }}>
-            hami@hamitahm.com
-          </strong>
-          . Adding that address to your contacts makes sure it lands in your inbox.
-        </p>
+          <p
+            style={{
+              margin: 0,
+              fontSize: 15,
+              fontWeight: 600,
+              color: "var(--ink)",
+              lineHeight: 1.5,
+            }}
+          >
+            Don&rsquo;t see the confirmation email? Check your spam or promotions
+            folder.
+          </p>
+          <p
+            style={{
+              margin: "8px 0 0",
+              fontSize: 14.5,
+              color: "var(--muted)",
+              lineHeight: 1.6,
+            }}
+          >
+            Both emails come from{" "}
+            <strong style={{ color: "var(--ink)", fontWeight: 600 }}>
+              hami@hamitahm.com
+            </strong>
+            . Add it to your contacts now and the report won&rsquo;t get filtered
+            tomorrow.
+          </p>
+        </div>
       </div>
     );
   }
@@ -352,5 +370,92 @@ export default function CheckerForm() {
         </Link>
       </p>
     </form>
+  );
+}
+
+/**
+ * One numbered step on the post-submit screen.
+ *
+ * The `when` label carries the weight here: the whole point of splitting this into
+ * steps is that the two things happen on different clocks, and the reader needs to
+ * see that at a glance rather than infer it from a paragraph.
+ */
+function Step({
+  marker,
+  when,
+  title,
+  body,
+}: {
+  marker: string;
+  when: string;
+  title: string;
+  body: string;
+}) {
+  return (
+    <div
+      style={{
+        display: "flex",
+        gap: 16,
+        alignItems: "flex-start",
+        padding: "16px 0",
+        borderTop: "1px solid var(--line)",
+      }}
+    >
+      <span
+        aria-hidden="true"
+        style={{
+          flexShrink: 0,
+          width: 26,
+          height: 26,
+          borderRadius: "50%",
+          background: "var(--accent)",
+          color: "#fff",
+          fontFamily: "var(--mono)",
+          fontSize: 12.5,
+          fontWeight: 600,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          marginTop: 2,
+        }}
+      >
+        {marker}
+      </span>
+      <div>
+        <div
+          style={{
+            fontFamily: "var(--mono)",
+            fontSize: 11,
+            letterSpacing: ".1em",
+            textTransform: "uppercase",
+            color: "var(--accent)",
+            marginBottom: 5,
+          }}
+        >
+          {when}
+        </div>
+        <div
+          style={{
+            fontSize: 16,
+            fontWeight: 600,
+            color: "var(--ink)",
+            lineHeight: 1.4,
+            marginBottom: 5,
+          }}
+        >
+          {title}
+        </div>
+        <p
+          style={{
+            margin: 0,
+            fontSize: 14.5,
+            color: "var(--muted)",
+            lineHeight: 1.6,
+          }}
+        >
+          {body}
+        </p>
+      </div>
+    </div>
   );
 }
