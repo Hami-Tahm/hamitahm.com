@@ -11,8 +11,17 @@ import {
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const TURNAROUND = "7 business days";
-const CHART_SRC = "/images/case-studies/homecalc-citation-chart.png";
-const CHART_ALT = `HomeCalc.ca AI citation growth chart — citations climbing from May through early July 2026, reaching ${HOMECALC_PROOF.citations} total across ${HOMECALC_PROOF.pagesCited} cited pages, with daily peaks of ${HOMECALC_PROOF.peakPerDay}.`;
+/**
+ * Screenshot of the Bing Webmaster Tools → AI Performance console for homecalc.ca,
+ * trailing 3-month view (May 9 – Aug 7, 2026), captured 2026-08-07.
+ *
+ * ⚠️ width/height below must match the file's real pixel dimensions (2368×1144).
+ * The previous values (1400×532) described a differently-cropped screenshot and no
+ * longer matched, which makes Next.js reserve the wrong aspect ratio and shifts the
+ * layout as the image loads. If the screenshot is ever re-cropped, re-measure it.
+ */
+const CHART_SRC = "/images/case-studies/homecalc-citation-chart.jpg";
+const CHART_ALT = `Bing Webmaster Tools AI Performance console for homecalc.ca, three-month view: AI citations climbing from near-zero in early May 2026 to ${HOMECALC_PROOF.citations} total across ${HOMECALC_PROOF.pagesCited} cited pages, with daily peaks of ${HOMECALC_PROOF.peakPerDay}.`;
 
 export const metadata: Metadata = {
   title: "HomeCalc.ca AI Visibility Case Study",
@@ -429,8 +438,8 @@ export default function HomeCalcCaseStudy() {
               <Image
                 src={CHART_SRC}
                 alt={CHART_ALT}
-                width={1400}
-                height={532}
+                width={2368}
+                height={1144}
                 loading="lazy"
                 style={{
                   width: "100%",
@@ -448,9 +457,10 @@ export default function HomeCalcCaseStudy() {
                   maxWidth: "62ch",
                 }}
               >
-                Citations began climbing in late May 2026 and have accelerated
-                consistently — reaching peaks of {HOMECALC_PROOF.peakPerDay}{" "}
-                citations per day, with total accumulation exceeding{" "}
+                The trailing three-month view, May 9 &ndash; August 7, 2026.
+                Citations start at effectively zero &mdash; the first days on this
+                chart read 3, 1, 0 &mdash; then climb to peaks of{" "}
+                {HOMECALC_PROOF.peakPerDay} citations per day, accumulating to{" "}
                 {HOMECALC_PROOF.citations.replace("+", "")} across{" "}
                 {HOMECALC_PROOF.pagesCited} cited pages.{" "}
                 <strong style={{ color: "var(--ink)", fontWeight: 600 }}>
