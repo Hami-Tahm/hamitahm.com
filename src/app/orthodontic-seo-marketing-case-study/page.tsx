@@ -585,7 +585,7 @@ export default function OrthodonticSEOCaseStudy() {
               >
                 HomeCalc.ca &mdash; {HOMECALC_CLAIMS.citationsInTimeframe}
               </Link>{" "}
-              on a YMYL site under three months old.
+              on a YMYL site that was under three months old when the audit began.
             </p>
             <p
               style={{

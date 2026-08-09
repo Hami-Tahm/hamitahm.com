@@ -16,7 +16,7 @@ const CHART_ALT = `HomeCalc.ca AI citation growth chart — citations climbing f
 
 export const metadata: Metadata = {
   title: "HomeCalc.ca AI Visibility Case Study",
-  description: `How HomeCalc.ca went from near-zero to ${HOMECALC_PROOF.citations} AI citations in ${HOMECALC_PROOF.timeframe} on a YMYL financial site under three months old — now commanding up to ${HOMECALC_PROOF.topCitationShare} citation share on key queries. By Hami Tahm.`,
+  description: `How HomeCalc.ca went from near-zero to ${HOMECALC_PROOF.citations} AI citations in ${HOMECALC_PROOF.timeframe} on a YMYL financial site that was under three months old when the audit began — now commanding up to ${HOMECALC_PROOF.topCitationShare} citation share on key queries. By Hami Tahm.`,
   alternates: {
     canonical: "https://hamitahm.com/case-studies/homecalc-ai-visibility/",
   },
@@ -655,7 +655,7 @@ export default function HomeCalcCaseStudy() {
               }}
             >
               <p style={{ marginBottom: 20 }}>
-                If this worked on a YMYL financial site under three months old
+                If this worked on a YMYL financial site {HOMECALC_PROOF.domainAge}
                 — the hardest category on the web, on one of the youngest domains
                 in market — it works on businesses with real authority,
                 established history, and clearer queries.

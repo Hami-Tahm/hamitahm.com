@@ -49,7 +49,15 @@ export const HOMECALC_PROOF = {
   // metrics; conflating them would overstate or understate by ~3x.
   pagesCited: "50+",
   timeframe: "3 months",
-  domainAge: "under three months old",
+  // ⚠️ TIME-ANCHORED ON PURPOSE. HomeCalc launched around March 2026, so by the END of
+  // the current measurement window (Aug 7, 2026) the domain is roughly five months old,
+  // not three. What is true — and verifiable in the console — is that it was under three
+  // months old and still at near-zero citations when the window OPENED on May 9, 2026:
+  // the first days of that chart read 3, 1, 0, 2 citations.
+  // Saying "a site under three months old" with no time reference would quietly imply the
+  // domain is still that young. It isn't. Keep the clause attached, and re-check this
+  // wording every time the window rolls forward.
+  domainAge: "under three months old when the audit began",
   caseStudyPath: "/case-studies/homecalc-ai-visibility/",
   siteUrl: "https://homecalc.ca/",
   // Highest single day in the May 9 – Aug 7 window was 575 (Jul 22). Rounded down.

@@ -826,7 +826,7 @@ export default function AIVisibilityPage() {
               site &mdash; went from near-zero AI citations to over{" "}
               {HOMECALC_PROOF.citations} across {HOMECALC_PROOF.pagesCited}{" "}
               pages in {HOMECALC_PROOF.timeframe}, {HOMECALC_PROOF.sourceLong}.
-              The domain was {HOMECALC_PROOF.domainAge} at the time.
+              The domain was {HOMECALC_PROOF.domainAge}.
             </p>
             <blockquote
               style={{

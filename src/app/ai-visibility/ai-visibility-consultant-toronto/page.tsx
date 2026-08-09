@@ -610,7 +610,7 @@ export default function AIVisibilityConsultantToronto() {
             >
               <p style={{ color: "var(--ink)", lineHeight: 1.7, margin: 0, fontSize: "clamp(16px, 1.9vw, 18px)" }}>
                 I proved the method on my own products before offering it. HomeCalc.ca,
-                a Toronto-based calculator site under three months old, went from
+                a Toronto-based calculator site {HOMECALC_PROOF.domainAge}, went from
                 near-zero to {HOMECALC_CLAIMS.citationsInTimeframe}, across{" "}
                 {HOMECALC_PROOF.pagesCited} pages &mdash; {HOMECALC_PROOF.sourceLong}.{" "}
                 <Link href={HOMECALC_PROOF.caseStudyPath} style={{ color: "var(--accent)", fontWeight: 500 }}>

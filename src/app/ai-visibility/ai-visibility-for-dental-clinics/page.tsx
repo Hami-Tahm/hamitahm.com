@@ -526,7 +526,7 @@ export default function AIVisibilityDentalClinics() {
                 }}
               >
                 HomeCalc.ca is a Canadian personal finance calculator site —{" "}
-                {HOMECALC_PROOF.domainAge} at the time of the audit. After an AI
+                {HOMECALC_PROOF.domainAge}. After an AI
                 visibility audit by Hami Tahm, the site went from near-zero AI
                 citations to over {HOMECALC_PROOF.citations} across{" "}
                 {HOMECALC_PROOF.pagesCited} pages in {HOMECALC_PROOF.timeframe} —{" "}

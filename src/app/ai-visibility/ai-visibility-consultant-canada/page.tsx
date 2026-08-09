@@ -430,7 +430,7 @@ export default function AIVisibilityConsultantCanada() {
                 site &mdash; went from near-zero AI citations to over{" "}
                 {HOMECALC_PROOF.citations} across {HOMECALC_PROOF.pagesCited}{" "}
                 pages in {HOMECALC_PROOF.timeframe} after an AI visibility audit.
-                The domain was under three months old. This count is{" "}
+                The domain was {HOMECALC_PROOF.domainAge}. This count is{" "}
                 {HOMECALC_PROOF.sourceLong}.
               </p>
               <blockquote

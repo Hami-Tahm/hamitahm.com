@@ -617,7 +617,7 @@ export default function GEOConsultantCanada() {
                 }}
               >
                 GEO is about being cited. HomeCalc.ca, a Canadian personal finance
-                calculator site under three months old, went from near-zero AI
+                calculator site {HOMECALC_PROOF.domainAge}, went from near-zero AI
                 citations to over {HOMECALC_PROOF.citations} across{" "}
                 {HOMECALC_PROOF.pagesCited} pages in {HOMECALC_PROOF.timeframe} —{" "}
                 {HOMECALC_PROOF.sourceLong}. That is exactly the kind of citation
