@@ -9,37 +9,60 @@
  * Outcome only. Never put the underlying mechanism in this file or anywhere
  * else on the public site — that is paid IP.
  *
- * Last updated: 2026-07-27 — read directly from Bing Webmaster → AI Performance,
- * site selector confirmed as homecalc.ca, trailing 3-month view ending Jul 25, 2026.
+ * Last updated: 2026-08-07 — read directly from Bing Webmaster → AI Performance,
+ * site selector confirmed as homecalc.ca (it defaults to another property — always
+ * check it before reading a number), trailing 3-month view, May 9 – Aug 7, 2026.
+ * The 91 daily values on that chart sum to 17,826, which is what the console rounds
+ * to "17.8K".
  *
  * ── WHY THE NUMBER MOVED ──
- * 6,500+ → 7,400+ (Jul 14) → 14,600+ (Jul 27). Verified in the console, not inferred.
- * The curve steepened rather than plateaued: peak/day went 280 → 424 (Jul 25), which
- * is why the total roughly doubled while the window only moved ~2.5 weeks.
+ * 6,500+ → 7,400+ (Jul 14) → 14,600+ (Jul 27) → 17,800+ (Aug 7). Verified in the
+ * console, not inferred. Growth is now coming from breadth rather than a steeper
+ * peak: distinct cited pages went 25 → 56, while peak/day moved only 424 → 575.
+ *
+ * ⚠️ DO NOT "SYNC" src/lib/citation-study.ts TO THIS FILE.
+ * They are different things and are supposed to disagree:
+ *   - THIS file  = the live, current proof number. It moves whenever the console does.
+ *   - citation-study.ts = a FIXED, PUBLISHED dataset (Apr 25 – Jul 25, 2026) with a
+ *     DOI: 10.5281/zenodo.21651568, licensed CC BY 4.0. It is citable and immutable.
+ *     Editing it to match this file would make the site contradict a published record
+ *     that other people can download — far worse than the two numbers differing.
+ * The study's total (21,700+) stays above this figure, so there is no contradiction;
+ * they simply describe different windows. If this figure ever exceeds the study total,
+ * that is the signal to publish a NEW dataset version, not to edit the old one.
  *
  * ⚠️ WHEN THIS NUMBER CHANGES, THESE MUST CHANGE WITH IT:
- *   - public/llms.txt (appears twice)
+ *   - public/llms.txt (lines 5 and 39 — but NOT the /research/ line, which correctly
+ *     describes the published dataset's own window)
  *   - README.md
- *   - src/lib/citation-study.ts → STUDY.totalCitations (it is HomeCalc + hamitahm.com,
- *     so it can never be lower than this figure)
  *   - the X / LinkedIn / Product Hunt bios, which are edited by hand
  * Several different citation figures across properties we own is exactly the kind of
  * contradiction an LLM cross-checks and downgrades us for.
  */
 export const HOMECALC_PROOF = {
-  citations: "14,600+",
-  pagesCited: "25+",
+  citations: "17,800+",
+  // Console lists 56 distinct cited pages (Aug 7). Stated as "50+" deliberately —
+  // conservative, still true if a few pages drop out next month, and consistent with
+  // how every other figure here rounds DOWN.
+  // ⚠️ Do not read this off the "Avg. Cited Pages" tile — that tile showed 19 on the
+  // same screen and is a per-DAY average, not a count of distinct pages. Two different
+  // metrics; conflating them would overstate or understate by ~3x.
+  pagesCited: "50+",
   timeframe: "3 months",
   domainAge: "under three months old",
   caseStudyPath: "/case-studies/homecalc-ai-visibility/",
   siteUrl: "https://homecalc.ca/",
-  peakPerDay: "420+",
-  // ⚠️ LOWERED from 76% on 2026-07-27, deliberately. The Jul 25 console shows the
-  // former 76% query ("mortgage affordability calculator 100000 salary") now sitting
-  // at 63.02%, and the highest share visible in the sorted-by-citations view is
-  // 71.83% ("calculate land transfer tax ontario"). 76% is therefore no longer
-  // supported. Confirm by sorting the grounding-query table by Citation Share — if a
-  // higher share exists further down, raise this back up. Never guess upward.
+  // Highest single day in the May 9 – Aug 7 window was 575 (Jul 22). Rounded down.
+  peakPerDay: "570+",
+  // ⚠️ HELD at 72% on 2026-08-07 even though a higher number exists, deliberately.
+  // Sorting the grounding-query table by Citation Share descending, the top row is
+  // "mortgage affordability second home calculator" at 80.00% — but that is 80% of
+  // FIVE citations. A headline claim resting on n=4 is exactly the kind of figure this
+  // file's provenance rule exists to keep out. The second row, "calculate land transfer
+  // tax ontario", is 71.83% on 102 citations, which is a real result.
+  // So: 72% stays. Raise this only when a higher share appears on a query with a
+  // meaningful citation count behind it. Never guess upward, and never round up off a
+  // tiny denominator.
   topCitationShare: "72%",
 
   // ── PLATFORM PROVENANCE — the single most important honesty control ──
@@ -82,25 +105,33 @@ export const HOMECALC_CLAIMS = {
 } as const;
 
 export const HOMECALC_CITED_PAGES = [
-  // Refreshed 2026-07-27 from the same trailing 3-month view as the headline figure.
-  // Values are shown exactly as the console renders them (1.7K, not "1,700") so the
-  // page never implies more precision than the source does. Note the order changed:
-  // the how-to-qualify guide overtook the calculators.
-  { label: "How to Qualify for a Mortgage", path: "blog/how-to-qualify-for-a-mortgage-in-canada", citations: "1.7K" },
-  { label: "Mortgage Affordability Calculator", path: "tools/mortgage-affordability-calculator", citations: "1.4K" },
-  { label: "Closing Cost Calculator", path: "tools/closing-cost-calculator", citations: "1.3K" },
-  { label: "Mortgage Amortization Calculator", path: "tools/mortgage-amortization-calculator", citations: "876" },
-  { label: "Mortgage Qualifier Calculator", path: "tools/mortgage-qualifier-calculator", citations: "656" },
-  { label: "Down Payment on a House in Canada", path: "blog/down-payment-of-a-house-canada", citations: "644" },
+  // Refreshed 2026-08-07 from the same trailing 3-month view as the headline figure.
+  // Values are shown exactly as the console renders them (1.8K, not "1,800") so the
+  // page never implies more precision than the source does.
+  // Change since Jul 27: the Ontario land-transfer-tax calculator entered the top six
+  // at 1.0K and pushed the down-payment guide (now 700) out of it.
+  { label: "How to Qualify for a Mortgage", path: "blog/how-to-qualify-for-a-mortgage-in-canada", citations: "1.8K" },
+  { label: "Mortgage Affordability Calculator", path: "tools/mortgage-affordability-calculator", citations: "1.5K" },
+  { label: "Closing Cost Calculator", path: "tools/closing-cost-calculator", citations: "1.4K" },
+  { label: "Mortgage Amortization Calculator", path: "tools/mortgage-amortization-calculator", citations: "1.3K" },
+  { label: "Ontario Land Transfer Tax Calculator", path: "tools/land-transfer-tax-calculator/ontario", citations: "1.0K" },
+  { label: "Mortgage Qualifier Calculator", path: "tools/mortgage-qualifier-calculator", citations: "831" },
 ] as const;
 
-/** Top grounding queries — query, citations, citation share (% of all AI citations for that query). */
+/**
+ * Top grounding queries — query, citations, citation share (% of all AI citations for
+ * that query). Sorted by CITATIONS, not by share, so this table shows where the volume
+ * actually is. The separate `topCitationShare` figure above comes from a different
+ * query ("calculate land transfer tax ontario", 102 citations at 71.83%) — the two are
+ * answering different questions and are not meant to match.
+ * Refreshed 2026-08-07, same window.
+ */
 export const HOMECALC_TOP_QUERIES = [
+  { query: "land transfer tax ontario", citations: "443", share: "39%" },
+  { query: "Canada mortgage qualification requirements", citations: "263", share: "39%" },
   { query: "property transfer tax bc", citations: "263", share: "29%" },
-  { query: "land transfer tax ontario", citations: "160", share: "39%" },
-  { query: "best rent increase calculator", citations: "123", share: "21%" },
-  { query: "calculate land transfer tax ontario", citations: "102", share: "72%" },
-  { query: "mortgage affordability calculator (100K salary)", citations: "86", share: "63%" },
+  { query: "closing costs", citations: "224", share: "18%" },
+  { query: "amortization period", citations: "206", share: "21%" },
 ] as const;
 
 export function homecalcPageUrl(path: string) {
