@@ -388,7 +388,7 @@ export default function Post() {
             >
               HomeCalc case study
             </Link>{" "}
-            ({HOMECALC_CLAIMS.citationsInTimeframe} on a YMYL site under three
+            ({HOMECALC_CLAIMS.appearancesInTimeframe} on a YMYL site under three
             months old). Comparing your options first? See my ranked guide to
             the{" "}
             <Link

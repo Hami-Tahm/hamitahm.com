@@ -55,17 +55,23 @@ export default function DisclaimerPage() {
         <Link href={CASE_STUDY_URL} style={{ color: "var(--accent)" }}>
           HomeCalc case study
         </Link>{" "}
-        reports <strong>{HOMECALC_CLAIMS.citationsInTimeframe}</strong>. To be precise
+        reports <strong>{HOMECALC_CLAIMS.appearancesInTimeframe}</strong>. To be precise
         about what that figure is and is not:
       </p>
       <ul>
         <li>
-          It is measured in <strong>Bing Webmaster Tools &rarr; AI Performance</strong>,
-          which reports citations across Microsoft Copilot and its partners. It is not a
-          measure of every AI engine.
+          It is counted across <strong>two consoles</strong>:{" "}
+          {HOMECALC_PROOF.citations} citations in Bing Webmaster Tools &rarr; AI
+          Performance (Microsoft Copilot and partners), plus{" "}
+          {HOMECALC_PROOF.googleImpressions} impressions in Google Search
+          Console&rsquo;s Generative AI features report. It is still not a measure of
+          every AI engine &mdash; ChatGPT, Gemini and Perplexity publish nothing at all.
         </li>
         <li>
-          It is a citation count &mdash; how often pages were used as a source. It is{" "}
+          It is a count of <strong>appearances</strong> &mdash; how often a page was
+          cited or shown as a source inside an AI answer. It is deliberately not called
+          a citation count, because {HOMECALC_PROOF.googleImpressions} of it is Google
+          impressions and Google publishes no citation figure. It is{" "}
           <strong>not</strong> a revenue figure, a traffic figure, or a lead figure.
         </li>
         <li>

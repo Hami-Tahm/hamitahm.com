@@ -515,10 +515,10 @@ export default function AIVisibilityAudit() {
                   }}
                 >
                   HomeCalc.ca, a Canadian financial calculator site{" "}
-                  {HOMECALC_PROOF.domainAge}, went from near-zero AI citations
-                  to {HOMECALC_PROOF.citations} in {HOMECALC_PROOF.timeframe},
-                  across {HOMECALC_PROOF.pagesCited} pages —{" "}
-                  {HOMECALC_PROOF.sourceLong}.
+                  {HOMECALC_PROOF.domainAge}, went from near-zero
+                  to {HOMECALC_PROOF.combinedAppearances} AI appearances in{" "}
+                  {HOMECALC_PROOF.timeframe} &mdash;{" "}
+                  {HOMECALC_PROOF.combinedSourceLong}.
                 </p>
                 <p
                   style={{

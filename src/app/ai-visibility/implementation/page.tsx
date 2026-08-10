@@ -161,7 +161,7 @@ export default function ImplementationPage() {
               is where I make those changes myself &mdash; schema, rendering, entity
               consistency, page rewrites, crawler config &mdash; on a fixed scope,
               fixed price, and a fixed timeline. It&rsquo;s the same work I did on my
-              own site to earn {HOMECALC_CLAIMS.citationsInTimeframe}.
+              own site to earn {HOMECALC_CLAIMS.appearancesInTimeframe}.
             </p>
           </RevealSection>
 
@@ -251,8 +251,8 @@ export default function ImplementationPage() {
               <p style={{ color: "var(--ink)", lineHeight: 1.7, margin: 0 }}>
                 I don&rsquo;t ask you to trust the method on faith. I ran this exact
                 implementation work on my own product, HomeCalc.ca, and took it from
-                near-zero to {HOMECALC_CLAIMS.citationsInTimeframe} &mdash;{" "}
-                {HOMECALC_PROOF.sourceLong}. The{" "}
+                near-zero to {HOMECALC_CLAIMS.appearancesInTimeframe} &mdash;{" "}
+                {HOMECALC_PROOF.combinedSourceLong}. The{" "}
                 <Link href={HOMECALC_PROOF.caseStudyPath} style={{ color: "var(--accent)" }}>
                   full case study
                 </Link>{" "}

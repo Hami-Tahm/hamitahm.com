@@ -109,9 +109,18 @@ export const HOMECALC_PROOF = {
   googleSourceLabel: "Google generative AI features (Search Console, Beta)",
   googleSourceLong:
     "measured in Google Search Console's Generative AI features report (Beta), which reports impressions only — no clicks, CTR, position or queries",
+
+  // Attribution that MUST travel with the combined figure. `sourceLong` above names
+  // Bing only and is now reserved for the Copilot-specific exhibits on the case study.
+  // Rendering the 32,800 number next to a Bing-only source line would attribute a
+  // two-console total to one console — a worse error than the label problem, because
+  // it is not just imprecise, it is false.
+  combinedSourceLong:
+    "counted across two consoles — Bing Webmaster Tools' AI Performance report (Microsoft Copilot) for citations, and Google Search Console's Generative AI features report for impressions",
+  combinedSourceLabel: "Microsoft Copilot + Google generative AI features",
 } as const;
 
-const CITATIONS_BARE = HOMECALC_PROOF.citations.replace("+", "");
+const COMBINED_BARE = HOMECALC_PROOF.combinedAppearances.replace("+", "");
 const TIMEFRAME_TITLE = HOMECALC_PROOF.timeframe
   .split(" ")
   .map((w) => (w[0] ? w[0].toUpperCase() + w.slice(1) : w))
@@ -120,22 +129,37 @@ const TIMEFRAME_TITLE = HOMECALC_PROOF.timeframe
 /**
  * Pre-formatted claim phrases. Use these on every page instead of hardcoding
  * the numbers. When HOMECALC_PROOF changes, all phrases update automatically.
+ *
+ * ⚠️ THESE SAY "APPEARANCES", NOT "CITATIONS" — 2026-08-10.
+ * The headline figure across the site is now the two-console total (32,800+), so the
+ * noun had to change with the number. 15,000 of that total is Google IMPRESSIONS;
+ * calling it a citation count would be false, and Google publishes no citation count
+ * at all. The keys were renamed too (citationsInTimeframe → appearancesInTimeframe)
+ * rather than left pointing at a different noun, because a constant named for one
+ * thing and returning another is how the next person reintroduces the error.
+ *
+ * ⚠️ ALWAYS render these next to `combinedSourceLong`, never `sourceLong` —
+ * the latter names Bing alone and would attribute a two-console total to one console.
+ * `sourceLong` / `sourceLabel` are now reserved for the Copilot-only exhibits on the
+ * case study (the Bing chart, the cited-pages table, the grounding-query table).
  */
 export const HOMECALC_CLAIMS = {
-  /** "6,500+ AI citations in 3 months" */
-  citationsInTimeframe: `${HOMECALC_PROOF.citations} AI citations in ${HOMECALC_PROOF.timeframe}`,
-  /** "over 6,500 AI citations in 3 months" */
-  overCitationsInTimeframe: `over ${CITATIONS_BARE} AI citations in ${HOMECALC_PROOF.timeframe}`,
-  /** "6,500-citation lift visible in 3 months" (compound, no plus sign) */
-  liftVisible: `${CITATIONS_BARE}-citation lift visible in ${HOMECALC_PROOF.timeframe}`,
-  /** "full 6,500-citation lift visible in 3 months" */
-  fullLiftVisible: `full ${CITATIONS_BARE}-citation lift visible in ${HOMECALC_PROOF.timeframe}`,
-  /** "near-zero to 6,500+ AI citations in 3 months" */
-  zeroToCitations: `near-zero to ${HOMECALC_PROOF.citations} AI citations in ${HOMECALC_PROOF.timeframe}`,
-  /** "HomeCalc case study — 6,500+ AI citations in 3 months" */
-  caseStudyCardLabel: `HomeCalc case study — ${HOMECALC_PROOF.citations} AI citations in ${HOMECALC_PROOF.timeframe}`,
-  /** "6,500+ AI Citations. 3 Months." (hero / H2 punch line) */
-  heroPunchLine: `${HOMECALC_PROOF.citations} AI Citations. ${TIMEFRAME_TITLE}.`,
+  /** "32,800+ AI appearances in 3 months" */
+  appearancesInTimeframe: `${HOMECALC_PROOF.combinedAppearances} AI appearances in ${HOMECALC_PROOF.timeframe}`,
+  /** "over 32,800 AI appearances in 3 months" */
+  overAppearancesInTimeframe: `over ${COMBINED_BARE} AI appearances in ${HOMECALC_PROOF.timeframe}`,
+  /** "32,800-appearance lift visible in 3 months" (compound, no plus sign) */
+  liftVisible: `${COMBINED_BARE}-appearance lift visible in ${HOMECALC_PROOF.timeframe}`,
+  /** "full 32,800-appearance lift visible in 3 months" */
+  fullLiftVisible: `full ${COMBINED_BARE}-appearance lift visible in ${HOMECALC_PROOF.timeframe}`,
+  /** "near-zero to 32,800+ AI appearances in 3 months" */
+  zeroToAppearances: `near-zero to ${HOMECALC_PROOF.combinedAppearances} AI appearances in ${HOMECALC_PROOF.timeframe}`,
+  /** "HomeCalc case study — 32,800+ AI appearances in 3 months" */
+  caseStudyCardLabel: `HomeCalc case study — ${HOMECALC_PROOF.combinedAppearances} AI appearances in ${HOMECALC_PROOF.timeframe}`,
+  /** "32,800+ AI Appearances. 3 Months." (hero / H2 punch line) */
+  heroPunchLine: `${HOMECALC_PROOF.combinedAppearances} AI Appearances. ${TIMEFRAME_TITLE}.`,
+  /** The breakdown, for anywhere the total appears without the two figures beside it. */
+  breakdown: `${HOMECALC_PROOF.citations} citations in ${HOMECALC_PROOF.sourceLabel} plus ${HOMECALC_PROOF.googleImpressions} impressions in ${HOMECALC_PROOF.googleSourceLabel}`,
 } as const;
 
 export const HOMECALC_CITED_PAGES = [

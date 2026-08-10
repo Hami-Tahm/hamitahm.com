@@ -131,7 +131,7 @@ const FAQ_ITEMS: {
   },
   {
     q: "How quickly can I see results?",
-    a: `HomeCalc.ca started seeing citations climb within 48 hours of implementing the audit's recommendations, with the ${HOMECALC_CLAIMS.fullLiftVisible}. Timelines vary by clinic, but the audit identifies which changes produce results fastest.`,
+    a: `HomeCalc.ca started seeing AI appearances climb within 48 hours of implementing the audit's recommendations, with the ${HOMECALC_CLAIMS.fullLiftVisible}. Timelines vary by clinic, but the audit identifies which changes produce results fastest.`,
   },
   {
     q: "How much does the audit cost?",
@@ -528,9 +528,9 @@ export default function AIVisibilityDentalClinics() {
                 HomeCalc.ca is a Canadian personal finance calculator site —{" "}
                 {HOMECALC_PROOF.domainAge}. After an AI
                 visibility audit by Hami Tahm, the site went from near-zero AI
-                citations to over {HOMECALC_PROOF.citations} across{" "}
-                {HOMECALC_PROOF.pagesCited} pages in {HOMECALC_PROOF.timeframe} —{" "}
-                {HOMECALC_PROOF.sourceLong}.
+                appearances to {HOMECALC_PROOF.combinedAppearances} in{" "}
+                {HOMECALC_PROOF.timeframe} &mdash;{" "}
+                {HOMECALC_PROOF.combinedSourceLong}.
               </p>
               <p
                 style={{

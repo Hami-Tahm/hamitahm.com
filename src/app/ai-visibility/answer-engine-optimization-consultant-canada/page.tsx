@@ -141,7 +141,7 @@ const FAQ_ITEMS: {
   },
   {
     q: "How long does AEO take to show results?",
-    a: `HomeCalc.ca saw citations climb within 48 hours of implementing the audit's recommendations, with the ${HOMECALC_CLAIMS.fullLiftVisible}. Timelines vary by site, page count, and existing authority — but structural changes tend to produce measurable shifts within weeks, not months.`,
+    a: `HomeCalc.ca saw AI appearances climb within 48 hours of implementing the audit's recommendations, with the ${HOMECALC_CLAIMS.fullLiftVisible}. Timelines vary by site, page count, and existing authority — but structural changes tend to produce measurable shifts within weeks, not months.`,
   },
   {
     q: "Do I need AEO if I already rank on Google?",
@@ -525,10 +525,10 @@ export default function AEOConsultantCanada() {
                 }}
               >
                 HomeCalc.ca, a Canadian personal finance calculator site under
-                three months old, went from near-zero AI citations to over{" "}
-                {HOMECALC_PROOF.citations} across {HOMECALC_PROOF.pagesCited}{" "}
-                pages in {HOMECALC_PROOF.timeframe} — {HOMECALC_PROOF.sourceLong}.
-                That is exactly the kind of citation lift AEO targets across every
+                three months old, went from near-zero to{" "}
+                {HOMECALC_CLAIMS.appearancesInTimeframe} &mdash;{" "}
+                {HOMECALC_PROOF.combinedSourceLong}.
+                That is exactly the kind of lift AEO targets across every
                 answer engine.
               </p>
               <p

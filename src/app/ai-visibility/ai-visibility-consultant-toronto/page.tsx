@@ -48,7 +48,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "How fast can a Toronto business see results?",
-    a: `It varies by your starting point, but AI visibility can move quickly. HomeCalc.ca, a Toronto-based site, went from near-zero to ${HOMECALC_CLAIMS.citationsInTimeframe} — ${HOMECALC_PROOF.sourceLong}. The audit tells you which changes come first and what to expect.`,
+    a: `It varies by your starting point, but AI visibility can move quickly. HomeCalc.ca, a Toronto-based site, went from near-zero to ${HOMECALC_CLAIMS.appearancesInTimeframe} — ${HOMECALC_PROOF.combinedSourceLong}. The audit tells you which changes come first and what to expect.`,
   },
 ];
 
@@ -611,8 +611,8 @@ export default function AIVisibilityConsultantToronto() {
               <p style={{ color: "var(--ink)", lineHeight: 1.7, margin: 0, fontSize: "clamp(16px, 1.9vw, 18px)" }}>
                 I proved the method on my own products before offering it. HomeCalc.ca,
                 a Toronto-based calculator site {HOMECALC_PROOF.domainAge}, went from
-                near-zero to {HOMECALC_CLAIMS.citationsInTimeframe}, across{" "}
-                {HOMECALC_PROOF.pagesCited} pages &mdash; {HOMECALC_PROOF.sourceLong}.{" "}
+                near-zero to {HOMECALC_CLAIMS.appearancesInTimeframe} &mdash;{" "}
+                {HOMECALC_PROOF.combinedSourceLong}.{" "}
                 <Link href={HOMECALC_PROOF.caseStudyPath} style={{ color: "var(--accent)", fontWeight: 500 }}>
                   Read the case study &rarr;
                 </Link>

@@ -237,7 +237,7 @@ export default function AboutPage() {
             {/*
               REWRITTEN 2026-07-14. Four things were wrong here:
 
-              1. RENDER BUG. It read `from near-zero to {HOMECALC_CLAIMS.zeroToCitations}`
+              1. RENDER BUG. It read `from near-zero to {HOMECALC_CLAIMS.zeroToAppearances}`
                  — but that constant ALREADY contains "near-zero to". The live page said
                  "from near-zero to near-zero to 7,400+ AI citations." Same bug again on
                  the "It crossed …" line. Use `citationsInTimeframe`, not `zeroToCitations`.
@@ -253,7 +253,7 @@ export default function AboutPage() {
               <p className="big">
                 I&rsquo;m Hami Tahm. I build the proof for AI visibility before I sell it. I took HomeCalc.ca &mdash; a brand-new Canadian real estate site &mdash; from near-zero to{" "}
                 <Link href={CASE_STUDY_URL} style={{ color: "var(--accent)", fontWeight: 500 }}>
-                  {HOMECALC_CLAIMS.citationsInTimeframe}
+                  {HOMECALC_CLAIMS.appearancesInTimeframe}
                 </Link>
                 , competing against banks and major finance brands. I now apply the same playbook where it pays: trust-based local businesses, the kind where a single new client is worth thousands.
               </p>
@@ -482,7 +482,7 @@ export default function AboutPage() {
                 and law firms &mdash; get cited and recommended in AI-generated answers from
                 Google AI Overviews, ChatGPT, Gemini and Copilot. He is the founder
                 of HomeCalc.ca, which he grew from near-zero to{" "}
-                {HOMECALC_CLAIMS.citationsInTimeframe}, and a co-founder of Houmse.com. He works
+                {HOMECALC_CLAIMS.appearancesInTimeframe}, and a co-founder of Houmse.com. He works
                 solo, on flat-fee, fixed-scope engagements rather than open-ended retainers.
               </p>
             </div>

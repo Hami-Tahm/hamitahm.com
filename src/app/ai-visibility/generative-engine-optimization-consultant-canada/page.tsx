@@ -149,7 +149,7 @@ const FAQ_ITEMS: {
   },
   {
     q: "How quickly can I see GEO results?",
-    a: `HomeCalc.ca saw AI citations begin climbing within 48 hours of implementing the audit's recommendations, with the ${HOMECALC_CLAIMS.fullLiftVisible}. Timelines vary by existing entity signal strength, source diversity, and how much rebuilding is required.`,
+    a: `HomeCalc.ca saw AI appearances begin climbing within 48 hours of implementing the audit's recommendations, with the ${HOMECALC_CLAIMS.fullLiftVisible}. Timelines vary by existing entity signal strength, source diversity, and how much rebuilding is required.`,
   },
   {
     q: "What do I receive when working with a GEO consultant?",
@@ -618,9 +618,9 @@ export default function GEOConsultantCanada() {
               >
                 GEO is about being cited. HomeCalc.ca, a Canadian personal finance
                 calculator site {HOMECALC_PROOF.domainAge}, went from near-zero AI
-                citations to over {HOMECALC_PROOF.citations} across{" "}
-                {HOMECALC_PROOF.pagesCited} pages in {HOMECALC_PROOF.timeframe} —{" "}
-                {HOMECALC_PROOF.sourceLong}. That is exactly the kind of citation
+                appearances to {HOMECALC_PROOF.combinedAppearances} in{" "}
+                {HOMECALC_PROOF.timeframe} &mdash;{" "}
+                {HOMECALC_PROOF.combinedSourceLong}. That is exactly the kind of
                 growth GEO targets across every answer engine.
               </p>
               <p

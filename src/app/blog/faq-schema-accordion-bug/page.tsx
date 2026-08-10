@@ -604,7 +604,7 @@ Select-String "your unique answer phrase" page.html`}
                 HomeCalc.ca
               </Link>{" "}
               — a Canadian mortgage calculator that scaled from{" "}
-              {HOMECALC_CLAIMS.zeroToCitations}. The site uses Next.js with SSG
+              {HOMECALC_CLAIMS.zeroToAppearances}. The site uses Next.js with SSG
               and had FAQ sections on multiple calculator pages.
             </p>
             <p style={{ marginBottom: 26 }}>

@@ -836,7 +836,7 @@ export default function SpaToSsgAiVisibilityPost() {
                 marginBottom: 12,
               }}
             >
-              For the full HomeCalc story — from {HOMECALC_CLAIMS.zeroToCitations} — read the{" "}
+              For the full HomeCalc story — from {HOMECALC_CLAIMS.zeroToAppearances} — read the{" "}
               <Link href={CASE_STUDY_URL} style={linkStyle}>
                 case study
               </Link>

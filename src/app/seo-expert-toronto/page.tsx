@@ -375,8 +375,8 @@ export default function SEOExpertTorontoPage() {
               HomeCalc.ca is a Canadian financial calculator site — under three
               months old at the time of the audit, in YMYL (Your Money or Your
               Life), one of Google&rsquo;s strictest content categories. After
-              an AI visibility audit, the site went from {HOMECALC_CLAIMS.zeroToCitations},
-              across {HOMECALC_PROOF.pagesCited} pages — {HOMECALC_PROOF.sourceLong}.
+              an AI visibility audit, the site went from {HOMECALC_CLAIMS.zeroToAppearances} &mdash;{" "}
+                {HOMECALC_PROOF.combinedSourceLong}.
             </p>
             <p
               style={{

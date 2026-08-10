@@ -134,7 +134,7 @@ const FAQ_ITEMS: {
   },
   {
     q: "Do Canadian homebuyers really use AI for mortgage research?",
-    a: `Yes. HomeCalc.ca, a Canadian mortgage calculator site, received ${HOMECALC_CLAIMS.overCitationsInTimeframe} — across queries like "how much mortgage can I afford," "covering closing costs," and "Canada mortgage qualification rules." These are real questions Canadian homebuyers asked AI tools. AI tools answered them. Brokerages who weren't cited weren't in the answer.`,
+    a: `Yes. HomeCalc.ca, a Canadian mortgage calculator site, received ${HOMECALC_CLAIMS.overAppearancesInTimeframe} — across queries like "how much mortgage can I afford," "covering closing costs," and "Canada mortgage qualification rules." These are real questions Canadian homebuyers asked AI tools. AI tools answered them. Brokerages who weren't cited weren't in the answer.`,
   },
   {
     q: "How is this different from my current SEO?",
@@ -146,7 +146,7 @@ const FAQ_ITEMS: {
   },
   {
     q: "How quickly can I see results?",
-    a: `HomeCalc.ca started seeing AI citations climb within 48 hours of implementing the audit's recommendations, with the ${HOMECALC_CLAIMS.fullLiftVisible}. Timelines vary by brokerage size, existing content footprint, and which gaps the audit identifies first.`,
+    a: `HomeCalc.ca started seeing AI appearances climb within 48 hours of implementing the audit's recommendations, with the ${HOMECALC_CLAIMS.fullLiftVisible}. Timelines vary by brokerage size, existing content footprint, and which gaps the audit identifies first.`,
   },
   {
     q: "What exactly do I receive?",
@@ -566,7 +566,7 @@ export default function AIVisibilityMortgageBrokers() {
                 qualifiers, closing-cost estimators, affordability tools. Under
                 three months old at the time of the audit. After an AI visibility
                 audit by Hami Tahm, HomeCalc went from{" "}
-                {HOMECALC_CLAIMS.zeroToCitations}, across{" "}
+                {HOMECALC_CLAIMS.zeroToAppearances}, across{" "}
                 {HOMECALC_PROOF.pagesCited} pages.
               </p>
               <p

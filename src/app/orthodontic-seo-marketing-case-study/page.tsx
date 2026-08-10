@@ -583,7 +583,7 @@ export default function OrthodonticSEOCaseStudy() {
                 href={CASE_STUDY_URL}
                 style={{ color: "var(--accent)", fontWeight: 500 }}
               >
-                HomeCalc.ca &mdash; {HOMECALC_CLAIMS.citationsInTimeframe}
+                HomeCalc.ca &mdash; {HOMECALC_CLAIMS.appearancesInTimeframe}
               </Link>{" "}
               on a YMYL site that was under three months old when the audit began.
             </p>

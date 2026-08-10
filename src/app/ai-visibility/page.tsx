@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { ShortAnswer } from "@/components/ShortAnswer";
-import { HOMECALC_PROOF } from "@/lib/homecalc-proof";
+import { HOMECALC_PROOF, HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
 import { OFFERS } from "@/lib/offers";
 
 const PORTRAIT_SRC = "/images/hami-tahm/hami-tahm-portrait.png";
@@ -823,9 +823,9 @@ export default function AIVisibilityPage() {
               }}
             >
               HomeCalc.ca &mdash; a Toronto-based Canadian financial calculator
-              site &mdash; went from near-zero AI citations to over{" "}
-              {HOMECALC_PROOF.citations} across {HOMECALC_PROOF.pagesCited}{" "}
-              pages in {HOMECALC_PROOF.timeframe}, {HOMECALC_PROOF.sourceLong}.
+              site &mdash; went from near-zero to{" "}
+              {HOMECALC_CLAIMS.appearancesInTimeframe},{" "}
+              {HOMECALC_PROOF.combinedSourceLong}.
               The domain was {HOMECALC_PROOF.domainAge}.
             </p>
             <blockquote

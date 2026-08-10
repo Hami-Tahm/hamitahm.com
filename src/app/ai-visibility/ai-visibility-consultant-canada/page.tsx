@@ -42,7 +42,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "How quickly can I see results?",
-    a: `HomeCalc.ca started seeing AI citations climb within 48 hours of implementing the audit's recommendations, with the ${HOMECALC_CLAIMS.fullLiftVisible}. Timelines vary by business size, existing content, and which gaps the audit identifies first.`,
+    a: `HomeCalc.ca started seeing AI appearances climb within 48 hours of implementing the audit's recommendations, with the ${HOMECALC_CLAIMS.fullLiftVisible}. Timelines vary by business size, existing content, and which gaps the audit identifies first.`,
   },
 ] as const;
 
@@ -431,7 +431,7 @@ export default function AIVisibilityConsultantCanada() {
                 {HOMECALC_PROOF.citations} across {HOMECALC_PROOF.pagesCited}{" "}
                 pages in {HOMECALC_PROOF.timeframe} after an AI visibility audit.
                 The domain was {HOMECALC_PROOF.domainAge}. This count is{" "}
-                {HOMECALC_PROOF.sourceLong}.
+                {HOMECALC_PROOF.combinedSourceLong}.
               </p>
               <blockquote
                 style={{
