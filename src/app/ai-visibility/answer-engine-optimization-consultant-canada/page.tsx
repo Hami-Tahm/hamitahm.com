@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
-import { HOMECALC_PROOF, HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
+import { HOMECALC_PROOF, HOMECALC_CLAIMS, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const GEO_URL = "/ai-visibility/generative-engine-optimization-consultant-canada/";
@@ -38,7 +38,7 @@ const CONSULTANT_WORK = [
 ] as const;
 
 const PROOF_STATS = [
-  { value: HOMECALC_PROOF.citations, label: "AI citations" },
+  { value: HOMECALC_HEADLINE_STAT.value, label: HOMECALC_HEADLINE_STAT.label },
   { value: HOMECALC_PROOF.timeframe, label: "Time to lift" },
   { value: "< 3 months", label: "Domain age" },
   { value: "YMYL", label: "Category" },

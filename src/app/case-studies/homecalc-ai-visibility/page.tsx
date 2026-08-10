@@ -4,6 +4,8 @@ import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import {
   HOMECALC_CITED_PAGES,
+  HOMECALC_CLAIMS,
+  HOMECALC_HEADLINE_STAT,
   HOMECALC_PROOF,
   HOMECALC_TOP_QUERIES,
   homecalcPageUrl,
@@ -37,21 +39,21 @@ const CHART_ALT = `Bing Webmaster Tools AI Performance console for homecalc.ca, 
 
 export const metadata: Metadata = {
   title: "HomeCalc.ca AI Visibility Case Study",
-  description: `How HomeCalc.ca went from near-zero to ${HOMECALC_PROOF.citations} AI citations in ${HOMECALC_PROOF.timeframe} on a YMYL financial site that was under three months old when the audit began — now commanding up to ${HOMECALC_PROOF.topCitationShare} citation share on key queries. By Hami Tahm.`,
+  description: `How HomeCalc.ca went from near-zero to ${HOMECALC_CLAIMS.appearancesInTimeframe} on a YMYL financial site that was under three months old when the audit began — now commanding up to ${HOMECALC_PROOF.topCitationShare} citation share on key queries. By Hami Tahm.`,
   alternates: {
     canonical: "https://hamitahm.com/case-studies/homecalc-ai-visibility/",
   },
 };
 
 const HERO_STATS = [
-  { value: HOMECALC_PROOF.citations, label: "Total AI Citations" },
+  { value: HOMECALC_HEADLINE_STAT.value, label: "Total AI Appearances" },
   { value: HOMECALC_PROOF.pagesCited, label: "Pages Cited" },
   { value: HOMECALC_PROOF.timeframe, label: "Timeframe" },
   { value: "< 3 months", label: "Domain Age" },
 ] as const;
 
 const RESULT_STATS = [
-  { value: HOMECALC_PROOF.citations, label: "Total citations" },
+  { value: HOMECALC_HEADLINE_STAT.value, label: "Total appearances" },
   { value: HOMECALC_PROOF.pagesCited, label: "Pages cited" },
   { value: `< ${HOMECALC_PROOF.timeframe}`, label: "Time to lift" },
 ] as const;
@@ -114,7 +116,7 @@ const structuredData = {
     },
     {
       "@type": "Article",
-      headline: `How a brand-new Canadian site earned ${HOMECALC_PROOF.citations} AI citations in ${HOMECALC_PROOF.timeframe}`,
+      headline: `How a brand-new Canadian site earned ${HOMECALC_CLAIMS.appearancesInTimeframe}`,
       datePublished: "2026-05-01",
       dateModified: "2026-07-17",
       author: { "@id": "https://hamitahm.com/#hami-tahm" },
@@ -174,8 +176,8 @@ export default function HomeCalcCaseStudy() {
                 maxWidth: "24ch",
               }}
             >
-              How a brand-new Canadian site earned {HOMECALC_PROOF.citations} AI
-              citations in {HOMECALC_PROOF.timeframe}
+              How a brand-new Canadian site earned {HOMECALC_PROOF.combinedAppearances} AI
+              appearances in {HOMECALC_PROOF.timeframe}
             </h1>
           </RevealSection>
 
@@ -224,8 +226,8 @@ export default function HomeCalcCaseStudy() {
             >
               HomeCalc.ca launched into one of Canada&rsquo;s most competitive
               niches — real estate and mortgage. With no ad budget and nothing
-              to buy its way in, it earned {HOMECALC_PROOF.citations} AI
-              citations in its first {HOMECALC_PROOF.timeframe}, in a market
+              to buy its way in, it earned {HOMECALC_PROOF.combinedAppearances} AI
+              appearances in its first {HOMECALC_PROOF.timeframe}, in a market
               dominated by banks/finance. Here is exactly what we did, and what
               it means for your business.
             </p>

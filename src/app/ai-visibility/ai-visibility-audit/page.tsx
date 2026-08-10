@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
-import { HOMECALC_PROOF } from "@/lib/homecalc-proof";
+import { HOMECALC_PROOF, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
 import { SNAPSHOT } from "@/lib/ai-citation-proof";
 import { OFFERS } from "@/lib/offers";
 
@@ -490,7 +490,7 @@ export default function AIVisibilityAudit() {
                         color: "var(--accent)",
                       }}
                     >
-                      {HOMECALC_PROOF.citations}
+                      {HOMECALC_HEADLINE_STAT.value}
                     </div>
                     <div
                       style={{

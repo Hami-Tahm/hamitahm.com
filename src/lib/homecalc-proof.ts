@@ -162,6 +162,40 @@ export const HOMECALC_CLAIMS = {
   breakdown: `${HOMECALC_PROOF.citations} citations in ${HOMECALC_PROOF.sourceLabel} plus ${HOMECALC_PROOF.googleImpressions} impressions in ${HOMECALC_PROOF.googleSourceLabel}`,
 } as const;
 
+/**
+ * READY-MADE STAT PAIRS. Use these instead of pairing a number with a hand-written
+ * label.
+ *
+ * ── WHY THIS EXISTS ──
+ * When the headline moved from citations to appearances, every sentence built from
+ * HOMECALC_CLAIMS updated itself. But six stat blocks were written as
+ * `{ value: HOMECALC_PROOF.citations, label: "AI citations" }` — the value came from
+ * the constant and the noun was typed by hand, so the homepage, /case-studies/ and
+ * /ai-visibility/ kept showing the old figure with the old word. A number and its
+ * unit must travel together or they drift apart. Pair them here, once.
+ */
+export const HOMECALC_HEADLINE_STAT = {
+  /** "32,800+" */
+  value: HOMECALC_PROOF.combinedAppearances,
+  /** "AI appearances" */
+  label: HOMECALC_PROOF.combinedLabel,
+  /** "AI appearances (HomeCalc, 3 months)" — for stat rails that need the context. */
+  labelLong: `${HOMECALC_PROOF.combinedLabel} (HomeCalc, ${HOMECALC_PROOF.timeframe})`,
+} as const;
+
+/**
+ * The Copilot-only figure. ONLY for exhibits that are genuinely Bing-specific — the
+ * citation chart, the cited-pages table, the grounding-query table, and the two pages
+ * (/methodology/, /disclaimer/) that deliberately explain the difference.
+ * Never use this as the site's headline number.
+ */
+export const HOMECALC_COPILOT_STAT = {
+  /** "17,800+" */
+  value: HOMECALC_PROOF.citations,
+  /** "Copilot citations" — never bare "AI citations", which now reads as the total. */
+  label: "Copilot citations",
+} as const;
+
 export const HOMECALC_CITED_PAGES = [
   // Refreshed 2026-08-07 from the same trailing 3-month view as the headline figure.
   // Values are shown exactly as the console renders them (1.8K, not "1,800") so the

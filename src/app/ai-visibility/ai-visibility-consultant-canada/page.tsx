@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
-import { HOMECALC_PROOF, HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
+import { HOMECALC_PROOF, HOMECALC_CLAIMS, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const WALKTHROUGH_MINUTES = 60;
@@ -327,7 +327,7 @@ export default function AIVisibilityConsultantCanada() {
                     color: "var(--accent)",
                   }}
                 >
-                  {HOMECALC_PROOF.citations}
+                  {HOMECALC_HEADLINE_STAT.value}
                 </div>
                 <div
                   style={{
@@ -339,7 +339,7 @@ export default function AIVisibilityConsultantCanada() {
                     letterSpacing: ".06em",
                   }}
                 >
-                  AI citations
+                  {HOMECALC_HEADLINE_STAT.label}
                 </div>
               </div>
               <div className="tier">
@@ -427,9 +427,8 @@ export default function AIVisibilityConsultantCanada() {
                 }}
               >
                 HomeCalc.ca &mdash; a Toronto-based Canadian financial calculator
-                site &mdash; went from near-zero AI citations to over{" "}
-                {HOMECALC_PROOF.citations} across {HOMECALC_PROOF.pagesCited}{" "}
-                pages in {HOMECALC_PROOF.timeframe} after an AI visibility audit.
+                site &mdash; went from near-zero to{" "}
+                {HOMECALC_CLAIMS.appearancesInTimeframe} after an AI visibility audit.
                 The domain was {HOMECALC_PROOF.domainAge}. This count is{" "}
                 {HOMECALC_PROOF.combinedSourceLong}.
               </p>

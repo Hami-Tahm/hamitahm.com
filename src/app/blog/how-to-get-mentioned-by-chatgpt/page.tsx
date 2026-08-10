@@ -236,7 +236,7 @@ export default function HowToGetMentionedByChatGPTPost() {
             </blockquote>
             <p style={{ marginBottom: 26 }}>
               This is the same framework that took a financial calculator site
-              with zero domain authority from invisible to {HOMECALC_PROOF.citations}{" "}
+              with zero domain authority from invisible to {HOMECALC_PROOF.combinedAppearances}{" "}
               AI citations in {HOMECALC_PROOF.timeframe}.{" "}
               <Link href={CASE_STUDY_URL} style={linkStyle}>
                 See how it worked &rarr;

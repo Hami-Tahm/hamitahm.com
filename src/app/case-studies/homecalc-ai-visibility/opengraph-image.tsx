@@ -1,5 +1,5 @@
 import { renderOgImage } from "@/lib/og-image";
-import { HOMECALC_PROOF } from "@/lib/homecalc-proof";
+import { HOMECALC_PROOF, HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
 
 export const runtime = "edge";
 export const alt = "HomeCalc.ca AI Visibility Case Study — Hami Tahm";
@@ -9,7 +9,7 @@ export const contentType = "image/png";
 export default async function Image() {
   return renderOgImage({
     badge: "CASE STUDY · HOMECALC",
-    title: `${HOMECALC_PROOF.citations} AI Citations in ${HOMECALC_PROOF.timeframe}`,
-    subtitle: `How HomeCalc.ca went from near-zero to ${HOMECALC_PROOF.citations} citations on a YMYL site ${HOMECALC_PROOF.domainAge}.`,
+    title: HOMECALC_CLAIMS.heroPunchLine,
+    subtitle: `How HomeCalc.ca went from near-zero to ${HOMECALC_PROOF.combinedAppearances} AI appearances on a YMYL site ${HOMECALC_PROOF.domainAge}.`,
   });
 }

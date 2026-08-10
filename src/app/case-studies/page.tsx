@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
-import { HOMECALC_PROOF } from "@/lib/homecalc-proof";
+import { HOMECALC_PROOF, HOMECALC_HEADLINE_STAT, HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
 import { SNAPSHOT } from "@/lib/ai-citation-proof";
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 
 export const metadata: Metadata = {
   title: "AI Visibility Case Studies",
-  description: `Real results from AI visibility work: how a brand-new Canadian site earned ${HOMECALC_PROOF.citations} AI citations in ${HOMECALC_PROOF.timeframe}, and how ChatGPT, Perplexity, Google AI Mode, and Grok came to name Hami Tahm directly.`,
+  description: `Real results from AI visibility work: how a brand-new Canadian site earned ${HOMECALC_CLAIMS.appearancesInTimeframe}, and how ChatGPT, Perplexity, Google AI Mode, and Grok came to name Hami Tahm directly.`,
   alternates: { canonical: "https://hamitahm.com/case-studies/" },
 };
 
@@ -24,11 +24,11 @@ const CASE_STUDIES: readonly CaseStudy[] = [
   {
     href: "/case-studies/homecalc-ai-visibility/",
     tag: "Named client · YMYL finance",
-    title: `How a brand-new Canadian site earned ${HOMECALC_PROOF.citations} AI citations in ${HOMECALC_PROOF.timeframe}`,
+    title: `How a brand-new Canadian site earned ${HOMECALC_CLAIMS.appearancesInTimeframe}`,
     excerpt:
       "HomeCalc.ca launched into real estate and mortgage — a market dominated by banks and finance — and became a default AI source without ad budget or domain authority.",
     stats: [
-      { value: HOMECALC_PROOF.citations, label: "AI citations" },
+      { value: HOMECALC_HEADLINE_STAT.value, label: HOMECALC_HEADLINE_STAT.label },
       { value: HOMECALC_PROOF.timeframe, label: "Timeframe" },
       { value: HOMECALC_PROOF.topCitationShare, label: "Peak citation share" },
     ],

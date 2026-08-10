@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { ShortAnswer } from "@/components/ShortAnswer";
-import { HOMECALC_PROOF, HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
+import { HOMECALC_PROOF, HOMECALC_CLAIMS, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
 import { OFFERS } from "@/lib/offers";
 
 const PORTRAIT_SRC = "/images/hami-tahm/hami-tahm-portrait.png";
@@ -722,7 +722,7 @@ export default function AIVisibilityPage() {
                     color: "var(--accent)",
                   }}
                 >
-                  {HOMECALC_PROOF.citations}
+                  {HOMECALC_HEADLINE_STAT.value}
                 </div>
                 <div
                   style={{
@@ -734,7 +734,7 @@ export default function AIVisibilityPage() {
                     letterSpacing: ".06em",
                   }}
                 >
-                  AI citations
+                  {HOMECALC_HEADLINE_STAT.label}
                 </div>
               </div>
               <div className="tier">

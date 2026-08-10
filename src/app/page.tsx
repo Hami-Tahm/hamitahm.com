@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { latestWritingPosts } from "@/lib/writing-posts";
-import { HOMECALC_PROOF } from "@/lib/homecalc-proof";
+import { HOMECALC_PROOF, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
 
 export const metadata: Metadata = {
   // Trimmed to ~150 chars (was ~207 and would truncate in the SERP). Leads with the
@@ -94,7 +94,7 @@ export default function Home() {
             no-agency promise.
           */}
           <div className="stats-grid stats-grid-centered stats-grid-3">
-            <Stat value={HOMECALC_PROOF.citations} label="AI citations earned (HomeCalc, 3 months)" />
+            <Stat value={HOMECALC_HEADLINE_STAT.value} label={HOMECALC_HEADLINE_STAT.labelLong} />
             <Stat value="$1,500" label="Flat-fee audit — no retainer" />
             <Stat value="1" label="Consultant — no agency, no handoffs" />
           </div>
