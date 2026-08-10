@@ -43,8 +43,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── Person + brand pages ─────────────────────────────────────────────
     { path: "/hami-tahm/", priority: 0.85, changeFrequency: "monthly" },
     { path: "/contact/", priority: 0.5, changeFrequency: "monthly" },
+    // ── Trust / legal ────────────────────────────────────────────────────
+    // Added 2026-08-10. All three are indexable and linked from the site, but had
+    // never been listed — an indexable, linked page missing from the sitemap is just
+    // an incomplete sitemap. /disclaimer/ sits highest of the three because it is
+    // real content, not boilerplate: it states exactly what the citation and
+    // appearance figures are and are not, and the checker form links to it.
+    { path: "/disclaimer/", priority: 0.4, changeFrequency: "monthly" },
+    { path: "/privacy/", priority: 0.3, changeFrequency: "yearly" },
+    { path: "/terms/", priority: 0.3, changeFrequency: "yearly" },
 
     // ── AI Visibility blog ───────────────────────────────────────────────
+    // ⚠️ A NEW POST NEEDS TWO EDITS: the `posts` array in src/app/blog/page.tsx
+    // (so it shows in the index) AND an entry here (so it is crawlable). The
+    // platform-priority post below shipped on 2026-08-10 with only the first,
+    // and was invisible to crawlers until this was noticed. Add both, or move the
+    // blog list into a shared constant and generate this section from it.
     { path: "/blog/", priority: 0.75, changeFrequency: "weekly" },
     // Original research — the linkable asset. Highest blog priority on purpose:
     // this is the page the whole off-site strategy is built to earn links to.
@@ -61,6 +75,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/blog/peec-vs-profound-vs-airops/", priority: 0.65 },
     { path: "/blog/faq-schema-accordion-bug/", priority: 0.75 },
     { path: "/blog/spa-to-ssg-ai-visibility/", priority: 0.75 },
+    // Original cross-platform comparison (Copilot vs Google generative AI) — the
+    // only place on the site that documents the two engines rewarding different pages.
+    { path: "/blog/which-ai-platform-matters-most/", priority: 0.8, changeFrequency: "monthly" },
 
     // ── Writing index — REMOVED 2026-07-14 ───────────────────────────────
     // Noindexed (see the page). It indexes the off-topic personal cluster, so it is
