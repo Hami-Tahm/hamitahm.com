@@ -445,6 +445,94 @@ export default function HomeCalcCaseStudy() {
             </div>
           </RevealSection>
 
+          {/*
+            HEADLINE COMBINED FIGURE. Deliberately labelled "AI appearances", not
+            "citations" — 15,000 of it is Google impressions, and calling that a
+            citation is the one move here that would be indefensible. The breakdown
+            sits directly underneath so the total is never load-bearing on its own.
+          */}
+          <RevealSection delay={0.08}>
+            <div
+              style={{
+                marginTop: 40,
+                padding: "34px 32px",
+                borderRadius: 14,
+                background: "var(--accent-soft)",
+                border: "1px solid var(--accent)",
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: "var(--serif)",
+                  fontSize: "clamp(46px, 9vw, 88px)",
+                  fontWeight: 600,
+                  lineHeight: 1,
+                  letterSpacing: "-.04em",
+                  color: "var(--accent)",
+                }}
+              >
+                {HOMECALC_PROOF.combinedAppearances}
+              </div>
+              <div
+                style={{
+                  fontFamily: "var(--serif)",
+                  fontSize: "clamp(19px, 2.6vw, 26px)",
+                  fontWeight: 500,
+                  color: "var(--ink)",
+                  marginTop: 8,
+                  letterSpacing: "-.01em",
+                }}
+              >
+                {HOMECALC_PROOF.combinedLabel} in {HOMECALC_PROOF.timeframe}
+              </div>
+
+              <div
+                style={{
+                  marginTop: 22,
+                  paddingTop: 20,
+                  borderTop: "1px solid var(--line-strong)",
+                  display: "grid",
+                  gap: 14,
+                }}
+              >
+                <div style={{ fontSize: 15.5, color: "var(--ink)", lineHeight: 1.55 }}>
+                  <strong style={{ fontWeight: 600 }}>
+                    {HOMECALC_PROOF.citations} citations
+                  </strong>{" "}
+                  <span style={{ color: "var(--muted)" }}>
+                    &mdash; {HOMECALC_PROOF.sourceLabel}
+                  </span>
+                </div>
+                <div style={{ fontSize: 15.5, color: "var(--ink)", lineHeight: 1.55 }}>
+                  <strong style={{ fontWeight: 600 }}>
+                    {HOMECALC_PROOF.googleImpressions} impressions
+                  </strong>{" "}
+                  <span style={{ color: "var(--muted)" }}>
+                    &mdash; {HOMECALC_PROOF.googleSourceLabel}
+                  </span>
+                </div>
+              </div>
+
+              <p
+                style={{
+                  marginTop: 20,
+                  fontSize: 14.5,
+                  color: "var(--muted)",
+                  lineHeight: 1.65,
+                  maxWidth: "64ch",
+                }}
+              >
+                Two companies&rsquo; consoles, two different metrics, added under the
+                one word that is honestly true of both: a link to this site appeared
+                inside an AI-generated answer. They are separate engines, so nothing is
+                counted twice. Deliberately <em style={{ fontStyle: "italic" }}>not</em>{" "}
+                called 32,800 citations &mdash; 15,000 of it is impressions, and Google
+                reports no citation count at all. Neither console shows the total; each
+                shows its own half, and both screenshots are below.
+              </p>
+            </div>
+          </RevealSection>
+
           <RevealSection delay={0.1}>
             <figure style={{ marginTop: 36 }}>
               <Image

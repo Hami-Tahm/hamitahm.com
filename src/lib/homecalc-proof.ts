@@ -74,21 +74,41 @@ export const HOMECALC_PROOF = {
   topCitationShare: "72%",
 
   // ── PLATFORM PROVENANCE — the single most important honesty control ──
-  // This citation count comes from ONE source: Bing Webmaster Tools' AI Performance
+  // `citations` above comes from ONE source: Bing Webmaster Tools' AI Performance
   // report, which measures Microsoft Copilot and its partners. It does NOT measure
-  // Google AI Overviews, ChatGPT, Gemini or Perplexity. Do NOT attach this number to
-  // those platforms anywhere.
-  // ⚠️ UPDATED 2026-08-10: Google Search Console now has a "Generative AI features"
-  // report (Beta) — homecalc.ca shows 15,000 IMPRESSIONS there over a similar window.
-  // That is a different measurement (impressions, not citations; no clicks, CTR,
-  // position or queries) and must NEVER be summed into this figure. It is shown as a
-  // separate exhibit on the case study. The old blanket line "no other engine reports
-  // anything" is no longer true and has been corrected across the site.
+  // Google AI Overviews, ChatGPT, Gemini or Perplexity. Never attach the CITATION
+  // number to those platforms.
   // Attribute the NUMBER with `sourceLabel`; only describe the audit *service* as
   // covering ChatGPT/Perplexity/etc, because the audit genuinely reviews them.
   sourceLabel: "Microsoft Copilot (Bing AI Performance)",
   sourceLong:
     "measured in Bing Webmaster Tools' AI Performance report (Microsoft Copilot and partners)",
+
+  // ── THE COMBINED FIGURE ──
+  // Added 2026-08-10, after Google Search Console shipped its "Generative AI features"
+  // report (Beta) and homecalc.ca showed 15,000 impressions there.
+  //
+  // THE RULE, stated precisely — an earlier version of this comment said "never sum",
+  // which was too blunt and would have made the site contradict Hami's own bios:
+  //
+  //   ✅ ALLOWED  — summing them under a label that is true of BOTH, with the two
+  //      components and their metrics shown alongside. "32,800+ AI appearances" is
+  //      honest: a Copilot citation and a Google AI impression are both "a link to
+  //      this page appeared inside an AI-generated answer", the two engines are
+  //      separate surfaces so nothing is double-counted, and every part is checkable.
+  //
+  //   ❌ FORBIDDEN — calling the total "citations". 15,000 of it is not citations.
+  //      Anyone opening Google Search Console would find no such number. That single
+  //      word is the difference between a defensible claim and a fabricated one.
+  //
+  // Also: Google renders its figure as a rounded "15K", so the combined number carries
+  // no more precision than that. Write 32,800+ — never 32,826.
+  combinedAppearances: "32,800+",
+  combinedLabel: "AI appearances",
+  googleImpressions: "15,000",
+  googleSourceLabel: "Google generative AI features (Search Console, Beta)",
+  googleSourceLong:
+    "measured in Google Search Console's Generative AI features report (Beta), which reports impressions only — no clicks, CTR, position or queries",
 } as const;
 
 const CITATIONS_BARE = HOMECALC_PROOF.citations.replace("+", "");
