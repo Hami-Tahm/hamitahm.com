@@ -21,6 +21,18 @@ const TURNAROUND = "7 business days";
  * layout as the image loads. If the screenshot is ever re-cropped, re-measure it.
  */
 const CHART_SRC = "/images/case-studies/homecalc-citation-chart.jpg";
+
+/**
+ * Google Search Console → Performance → Generative AI features (Beta), homecalc.ca,
+ * 3-month view, captured 2026-08-10. 1549×679.
+ *
+ * ⚠️ This report exposes IMPRESSIONS ONLY — no clicks, no CTR, no position, no query
+ * breakdown. It is not the same measurement as Bing's citation count and must never be
+ * added to it. See the figcaption, which says so to the reader as well.
+ */
+const GOOGLE_AI_SRC = "/images/case-studies/homecalc-google-ai-impressions.jpg";
+const GOOGLE_AI_ALT =
+  "Google Search Console Generative AI features report for homecalc.ca, three-month view: 15,000 total impressions in Google's generative AI surfaces.";
 const CHART_ALT = `Bing Webmaster Tools AI Performance console for homecalc.ca, three-month view: AI citations climbing from near-zero in early May 2026 to ${HOMECALC_PROOF.citations} total across ${HOMECALC_PROOF.pagesCited} cited pages, with daily peaks of ${HOMECALC_PROOF.peakPerDay}.`;
 
 export const metadata: Metadata = {
@@ -466,14 +478,72 @@ export default function HomeCalcCaseStudy() {
                 <strong style={{ color: "var(--ink)", fontWeight: 600 }}>
                   Source:
                 </strong>{" "}
-                {HOMECALC_PROOF.sourceLong}. This is Copilot data; ChatGPT,
-                Perplexity, Gemini and Google AI Overviews do not report citation
-                counts to publishers. A selected-sample dataset behind this work
-                is published openly (CC BY 4.0) in the{" "}
+                {HOMECALC_PROOF.sourceLong}. This is Copilot data. Google now
+                reports <em style={{ fontStyle: "italic" }}>impressions</em> in
+                generative AI features (below), but not citation counts; ChatGPT,
+                Gemini and Perplexity still report nothing to publishers. A
+                selected-sample dataset behind this work is published openly
+                (CC BY 4.0) in the{" "}
                 <Link href="/blog/ai-citation-study/" style={{ color: "var(--accent)", fontWeight: 500 }}>
                   AI Citation Study
                 </Link>
                 .
+              </figcaption>
+            </figure>
+          </RevealSection>
+
+          {/*
+            SECOND, INDEPENDENT PLATFORM — added 2026-08-10.
+            Deliberately a separate figure with its own number, not merged into the
+            Bing total. Bing reports CITATIONS (the page was cited in an answer);
+            this report gives IMPRESSIONS ONLY (the page appeared in a generative AI
+            feature) — no clicks, no CTR, no position. Adding 17,800 citations to
+            15,000 impressions would produce a figure that traces back to no console
+            screen anywhere, which is exactly what this site's provenance rule exists
+            to prevent. Two independent platforms agreeing is the stronger claim.
+          */}
+          <RevealSection delay={0.12}>
+            <figure style={{ marginTop: 44 }}>
+              <Image
+                src={GOOGLE_AI_SRC}
+                alt={GOOGLE_AI_ALT}
+                width={1549}
+                height={679}
+                loading="lazy"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  borderRadius: 12,
+                  border: "1px solid var(--line-strong)",
+                }}
+              />
+              <figcaption
+                style={{
+                  marginTop: 16,
+                  fontSize: 15,
+                  color: "var(--muted)",
+                  lineHeight: 1.6,
+                  maxWidth: "62ch",
+                }}
+              >
+                The same site, a different company&rsquo;s console. Google Search
+                Console&rsquo;s{" "}
+                <strong style={{ color: "var(--ink)", fontWeight: 600 }}>
+                  Generative AI features
+                </strong>{" "}
+                report (Beta) shows{" "}
+                <strong style={{ color: "var(--ink)", fontWeight: 600 }}>
+                  15,000 impressions
+                </strong>{" "}
+                over roughly the same three months.{" "}
+                <strong style={{ color: "var(--ink)", fontWeight: 600 }}>
+                  This is not added to the Copilot figure above, on purpose.
+                </strong>{" "}
+                Bing counts citations; this report counts impressions and exposes
+                no clicks, CTR or position at all. They are different measurements
+                from different companies, and summing them would invent a number
+                that neither console shows. Two platforms independently registering
+                the same site is the point &mdash; not a bigger total.
               </figcaption>
             </figure>
           </RevealSection>

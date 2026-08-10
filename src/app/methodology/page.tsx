@@ -286,8 +286,10 @@ export default function MethodologyPage() {
               </b>{" "}
               Bing Webmaster Tools&rsquo; AI Performance report gives a first-party
               count: which of your pages were cited, how often, and the queries that
-              retrieved them. Google AI Overviews, ChatGPT, Gemini and Perplexity
-              expose no equivalent data to site owners.
+              retrieved them. Google Search Console has since added a Generative AI
+              features report, but it exposes impressions only &mdash; no citation
+              counts, clicks or queries. ChatGPT, Gemini and Perplexity still expose
+              nothing to site owners.
             </p>
             <p style={pStyle}>
               So a citation <i>count</i> can only ever come from Copilot. Everything

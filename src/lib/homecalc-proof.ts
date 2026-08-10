@@ -76,8 +76,14 @@ export const HOMECALC_PROOF = {
   // ── PLATFORM PROVENANCE — the single most important honesty control ──
   // This citation count comes from ONE source: Bing Webmaster Tools' AI Performance
   // report, which measures Microsoft Copilot and its partners. It does NOT measure
-  // Google AI Overviews, ChatGPT, Gemini or Perplexity — none of which expose citation
-  // data to publishers. Do NOT attach this number to those platforms anywhere.
+  // Google AI Overviews, ChatGPT, Gemini or Perplexity. Do NOT attach this number to
+  // those platforms anywhere.
+  // ⚠️ UPDATED 2026-08-10: Google Search Console now has a "Generative AI features"
+  // report (Beta) — homecalc.ca shows 15,000 IMPRESSIONS there over a similar window.
+  // That is a different measurement (impressions, not citations; no clicks, CTR,
+  // position or queries) and must NEVER be summed into this figure. It is shown as a
+  // separate exhibit on the case study. The old blanket line "no other engine reports
+  // anything" is no longer true and has been corrected across the site.
   // Attribute the NUMBER with `sourceLabel`; only describe the audit *service* as
   // covering ChatGPT/Perplexity/etc, because the audit genuinely reviews them.
   sourceLabel: "Microsoft Copilot (Bing AI Performance)",
