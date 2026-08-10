@@ -548,6 +548,112 @@ export default function HomeCalcCaseStudy() {
             </figure>
           </RevealSection>
 
+          {/*
+            Cross-platform page comparison, added 2026-08-10.
+            NOTE ON METHOD: this deliberately compares WHICH pages appear and in what
+            ORDER — never the magnitudes. Bing counts citations, Google counts
+            impressions; the two numbers are not comparable, but "does this page show
+            up at all, and how high" is a fair question to ask of both.
+          */}
+          <RevealSection delay={0.13}>
+            <h3
+              style={{
+                fontFamily: "var(--sans)",
+                fontSize: 17,
+                fontWeight: 600,
+                marginTop: 48,
+                marginBottom: 12,
+              }}
+            >
+              The two platforms reward completely different pages
+            </h3>
+            <p style={{ fontSize: 16, color: "var(--muted)", lineHeight: 1.7, marginBottom: 20, maxWidth: "62ch" }}>
+              Having both consoles open at once surfaced something neither shows on
+              its own. Same site, same window &mdash; almost entirely different
+              winners.
+            </p>
+
+            <div style={{ overflowX: "auto", marginBottom: 18 }}>
+              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14.5 }}>
+                <thead>
+                  <tr>
+                    {["", "Copilot — most cited", "Google AI — most impressions"].map((h) => (
+                      <th
+                        key={h}
+                        style={{
+                          textAlign: "left",
+                          padding: "10px 12px 10px 0",
+                          borderBottom: "1px solid var(--line-strong)",
+                          fontFamily: "var(--mono)",
+                          fontSize: 11,
+                          letterSpacing: ".06em",
+                          textTransform: "uppercase",
+                          color: "var(--faint)",
+                          fontWeight: 400,
+                        }}
+                      >
+                        {h}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ["1", "How to Qualify for a Mortgage (guide)", "Income Tax Calculator"],
+                    ["2", "Mortgage Affordability Calculator", "Mortgage Prepayment Calculator"],
+                    ["3", "Closing Cost Calculator", "Mortgage Affordability Calculator"],
+                    ["4", "Mortgage Amortization Calculator", "Mortgage Payment Calculator"],
+                    ["5", "Ontario Land Transfer Tax Calculator", "Mortgage Qualifier Calculator"],
+                  ].map(([n, b, g]) => (
+                    <tr key={n}>
+                      <td style={{ padding: "11px 12px 11px 0", borderBottom: "1px solid var(--line)", color: "var(--faint)", fontFamily: "var(--mono)", fontSize: 12 }}>{n}</td>
+                      <td style={{ padding: "11px 12px 11px 0", borderBottom: "1px solid var(--line)", color: "var(--ink)" }}>{b}</td>
+                      <td style={{ padding: "11px 12px 11px 0", borderBottom: "1px solid var(--line)", color: "var(--ink)" }}>{g}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <p style={{ fontSize: 16, color: "var(--muted)", lineHeight: 1.7, marginBottom: 14, maxWidth: "62ch" }}>
+              Three things stand out, and all three are checkable in the two
+              screenshots above:
+            </p>
+            <ul style={{ fontSize: 16, color: "var(--muted)", lineHeight: 1.7, marginBottom: 16, paddingLeft: 20, maxWidth: "62ch" }}>
+              <li style={{ marginBottom: 8 }}>
+                <strong style={{ color: "var(--ink)" }}>
+                  Google&rsquo;s single biggest page does not appear in Copilot&rsquo;s
+                  top 25 at all.
+                </strong>{" "}
+                The income tax calculator draws 3,659 impressions &mdash; nearly
+                three times Google&rsquo;s second-place page &mdash; and Copilot
+                barely registers it.
+              </li>
+              <li style={{ marginBottom: 8 }}>
+                <strong style={{ color: "var(--ink)" }}>Copilot cites guides. Google&rsquo;s AI surfaces do not.</strong>{" "}
+                Seven of Copilot&rsquo;s top 25 are written guides, including the
+                single most-cited page on the site. Google&rsquo;s top ten are ten
+                calculators &mdash; not one article.
+              </li>
+              <li>
+                <strong style={{ color: "var(--ink)" }}>Rank does not transfer.</strong>{" "}
+                Google&rsquo;s number-two page sits at twenty-first on Copilot. Only
+                four pages are strong on both.
+              </li>
+            </ul>
+            <p style={{ fontSize: 15, color: "var(--faint)", lineHeight: 1.65, marginBottom: 8, maxWidth: "62ch" }}>
+              To be precise about method: the two columns are not the same
+              measurement, so the numbers are never compared against each other.
+              What is compared is which pages appear, and where &mdash; a fair
+              question to ask of either console.
+            </p>
+            <p style={{ fontSize: 16, color: "var(--muted)", lineHeight: 1.7, maxWidth: "62ch" }}>
+              The practical consequence: optimising for &ldquo;AI visibility&rdquo;
+              as one thing is a mistake. A page can own an answer on one platform
+              and be invisible on the other, on the same day, from the same site.
+            </p>
+          </RevealSection>
+
           <RevealSection delay={0.14}>
             <h3
               style={{
