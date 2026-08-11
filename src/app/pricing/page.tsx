@@ -199,7 +199,7 @@ export default function PricingPage() {
           <RevealSection delay={0.18}>
             <div style={{ marginTop: 34, display: "flex", gap: 14, flexWrap: "wrap" }}>
               <Link href={OFFERS.audit.href} className="btn btn-primary">
-                Book the {OFFERS.audit.price} audit <span className="arr">&rarr;</span>
+                Book the {OFFERS.audit.price}{" "}audit <span className="arr">&rarr;</span>
               </Link>
               <Link href={OFFERS.checker.href} className="btn btn-ghost">
                 Or start free
@@ -432,7 +432,7 @@ export default function PricingPage() {
                 lineHeight: 1.65,
               }}
             >
-              The diagnosis here is {OFFERS.audit.price} once. If you want the fixes
+              The diagnosis here is {OFFERS.audit.price}{" "}once. If you want the fixes
               done for you, that is a fixed scope quoted from the audit, and the audit
               fee comes off it. Monitoring afterward is optional and term-limited.{" "}
               <b style={{ color: "var(--ink)", fontWeight: 500 }}>
@@ -586,7 +586,7 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
         gap: 14,
       }}
     >
-      {number} &mdash; {text}
+      {number}{" "}&mdash; {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
     </div>
   );

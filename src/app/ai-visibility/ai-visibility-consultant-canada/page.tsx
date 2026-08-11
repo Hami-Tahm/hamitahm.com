@@ -422,7 +422,7 @@ export default function AIVisibilityConsultantCanada() {
               >
                 HomeCalc.ca &mdash; a Toronto-based Canadian financial calculator
                 site &mdash; went from near-zero to{" "}
-                {HOMECALC_CLAIMS.appearancesInTimeframe} after an AI visibility audit.
+                {HOMECALC_CLAIMS.appearancesInTimeframe}{" "}after an AI visibility audit.
                 The domain was {HOMECALC_PROOF.domainAge}. This count is{" "}
                 {HOMECALC_PROOF.combinedSourceLong}.
               </p>
@@ -1148,7 +1148,7 @@ export default function AIVisibilityConsultantCanada() {
                 }}
               >
                 Six platforms reviewed, written report, action plan, and
-                walkthrough call. {PRICE_DISPLAY} flat &mdash; no retainer.
+                walkthrough call. {PRICE_DISPLAY}{" "}flat &mdash; no retainer.
               </p>
               <Link
                 href={AUDIT_URL}
@@ -1183,7 +1183,7 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
         gap: 14,
       }}
     >
-      {number} &mdash; {text}
+      {number}{" "}&mdash; {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
     </div>
   );

@@ -516,8 +516,8 @@ export default function AIVisibilityAudit() {
                 >
                   HomeCalc.ca, a Canadian financial calculator site{" "}
                   {HOMECALC_PROOF.domainAge}, went from near-zero
-                  to {HOMECALC_PROOF.combinedAppearances} AI appearances in{" "}
-                  {HOMECALC_PROOF.timeframe} &mdash;{" "}
+                  to {HOMECALC_PROOF.combinedAppearances}{" "}AI appearances in{" "}
+                  {HOMECALC_PROOF.timeframe}{" "}&mdash;{" "}
                   {HOMECALC_PROOF.combinedSourceLong}.
                 </p>
                 <p

@@ -175,7 +175,7 @@ export default function ImplementationPage() {
               </Link>
             </div>
             <p style={{ marginTop: 16, fontFamily: "var(--mono)", fontSize: 13, color: "var(--faint)" }}>
-              {OFFERS.implementation.priceWithCurrency} &middot; fixed scope &middot; audit fee credited &middot; one-time
+              {OFFERS.implementation.priceWithCurrency}{" "}&middot; fixed scope &middot; audit fee credited &middot; one-time
             </p>
           </RevealSection>
         </div>
@@ -251,7 +251,7 @@ export default function ImplementationPage() {
               <p style={{ color: "var(--ink)", lineHeight: 1.7, margin: 0 }}>
                 I don&rsquo;t ask you to trust the method on faith. I ran this exact
                 implementation work on my own product, HomeCalc.ca, and took it from
-                near-zero to {HOMECALC_CLAIMS.appearancesInTimeframe} &mdash;{" "}
+                near-zero to {HOMECALC_CLAIMS.appearancesInTimeframe}{" "}&mdash;{" "}
                 {HOMECALC_PROOF.combinedSourceLong}. The{" "}
                 <Link href={HOMECALC_PROOF.caseStudyPath} style={{ color: "var(--accent)" }}>
                   full case study
@@ -339,7 +339,7 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
         gap: 14,
       }}
     >
-      {number} &mdash; {text}
+      {number}{" "}&mdash; {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
     </div>
   );

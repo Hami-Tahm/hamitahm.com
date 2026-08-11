@@ -82,14 +82,12 @@ const structuredData = {
      * Three pages each declared their own `ProfessionalService` with a street address
      * and, on the Toronto page, geo coordinates. Two problems with that:
      *
-     * 1. ProfessionalService is a LocalBusiness subtype. It asserts a place of
-     *    business a customer can visit. The Toronto working space is a dedicated desk
-     *    in an incubator — no permanent signage in the business's name, not staffed by
-     *    this business, clients are not received there. Google's Business Profile
-     *    rules do not treat that as an eligible location, and asserting it in schema
-     *    claims something the business cannot support.
-     * 2. Three separate LocalBusiness nodes with three @ids describe one practice as
+     * 1. Three separate LocalBusiness nodes with three @ids describe one practice as
      *    three businesses, which is the opposite of the entity clarity this site sells.
+     *    That is the real bug and it is independent of any address question.
+     * 2. A LocalBusiness subtype also duplicates the address, which now lives in
+     *    exactly one place: the Person node in layout.tsx. See the note there for why
+     *    the address is legitimate but `geo` and a GBP listing are not.
      *
      * `Service` with `provider` pointing at the single Person node says the true
      * thing: one practitioner, several services, serving an area — no storefront.
@@ -323,8 +321,8 @@ export default function AIVisibilityPage() {
                 maxWidth: "62ch",
               }}
             >
-              {HOMECALC_HEADLINE_STAT.value} measured AI appearances in{" "}
-              {HOMECALC_PROOF.timeframe} on a site I own &mdash; Copilot citations
+              {HOMECALC_HEADLINE_STAT.value}{" "}measured AI appearances in{" "}
+              {HOMECALC_PROOF.timeframe}{" "}on a site I own &mdash; Copilot citations
               plus Google generative-AI impressions &middot;{" "}
               <Link href="/methodology/" style={{ color: "var(--accent)" }}>
                 public methodology
@@ -1453,7 +1451,7 @@ export default function AIVisibilityPage() {
                     marginTop: 8,
                   }}
                 >
-                  {OFFERS.monitor.priceWithCurrency} &middot; optional
+                  {OFFERS.monitor.priceWithCurrency}{" "}&middot; optional
                 </div>
                 <p
                   style={{
@@ -1464,7 +1462,7 @@ export default function AIVisibilityPage() {
                   }}
                 >
                   Optional after the sprint, on{" "}
-                  {OFFERS.monitor.durationPhrase} &mdash; never required to start.
+                  {OFFERS.monitor.durationPhrase}{" "}&mdash; never required to start.
                   I monitor your citations, track competitors, and keep you
                   visible as AI models retrain.
                 </p>
@@ -2010,7 +2008,7 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
         gap: 14,
       }}
     >
-      {number} &mdash; {text}
+      {number}{" "}&mdash; {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
     </div>
   );

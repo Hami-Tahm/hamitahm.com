@@ -48,7 +48,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Do you work with businesses outside Toronto?",
-    a: "Primarily Canada-wide with selective US and UK clients. I'm based in downtown Toronto but work remote-first, so there's no office to visit. The technical foundations of search and AI visibility travel — they work the same whether you're in Toronto, Calgary or Austin — but local visibility is a different matter: it depends on location context, consistent business details across directories, reviews and local references, and those are specific to where you actually operate.",
+    a: "Primarily Canada-wide with selective US and UK clients. My office is at 111 Peter Street, Toronto — visits by appointment — but the work is remote-first. The technical foundations of search and AI visibility travel: they work the same whether you're in Toronto, Calgary or Austin. Local visibility is a different matter, though — it depends on location context, consistent business details across directories, reviews and local references, all specific to where you actually operate.",
   },
 ];
 
@@ -488,9 +488,9 @@ export default function SEOExpertTorontoPage() {
             >
               I&rsquo;ve been building on the web for over a decade — across
               roughly fourteen ventures, including a 7-year run as the SEO
-              expert behind a dental clinic network. I&rsquo;m based in downtown
-              Toronto and serve clients across Canada, with selective US and UK
-              work.
+              expert behind a dental clinic network. I&rsquo;m based at 111 Peter
+              Street in Toronto and serve clients across Canada, with selective US
+              and UK work.
             </p>
             <p
               style={{

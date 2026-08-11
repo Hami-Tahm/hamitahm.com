@@ -72,7 +72,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Do you meet clients in person in Toronto?",
-    a: "The work is remote-first: the delivery is a written report plus a walkthrough call, and you never need to be in the room for it. I work from a desk in a downtown Toronto incubator rather than a client-facing office, so there is no reception to walk into — if meeting in person matters for your project, we arrange somewhere to meet. To be clear about what being local does and doesn't buy you: the technical foundations of AI visibility are the same everywhere, but local recommendations depend on location context, consistent business information across directories, reviews, and local third-party references — and knowing the Canadian market is genuinely useful there.",
+    a: "Yes, by appointment. I work from an incubator office at 111 Peter Street in the Entertainment District and you're welcome to come in. That said, the delivery itself is remote-first — a written report plus a walkthrough call — so you never need to be in the room for the work to get done. On what being local actually buys you: the technical foundations of AI visibility are the same everywhere, but local recommendations depend on location context, consistent business information across directories, reviews and local third-party references, and knowing the Canadian market genuinely helps there.",
   },
   {
     q: "How is this different from a Toronto SEO agency?",
@@ -322,7 +322,7 @@ export default function AIVisibilityConsultantToronto() {
                 <span className="arr">&rarr;</span>
               </Link>
               <Link href={AUDIT_URL} className="btn btn-ghost">
-                See the {PRICE_DISPLAY} audit
+                See the {PRICE_DISPLAY}{" "}audit
               </Link>
             </div>
             <p
@@ -378,7 +378,7 @@ export default function AIVisibilityConsultantToronto() {
               <span style={{ fontStyle: "italic", color: "var(--ink)" }}>
                 &ldquo;{SNAPSHOT.prompt}&rdquo;
               </span>{" "}
-              &mdash; {SNAPSHOT.engineCount} major engines returned Hami Tahm by
+              &mdash; {SNAPSHOT.engineCount}{" "}major engines returned Hami Tahm by
               name, as of {SNAPSHOT.displayDate}.
             </p>
           </RevealSection>
@@ -565,13 +565,13 @@ export default function AIVisibilityConsultantToronto() {
                     marginBottom: 10,
                   }}
                 >
-                  {OFFERS.audit.price} &middot; Step 1
+                  {OFFERS.audit.price}{" "}&middot; Step 1
                 </div>
                 <h3 style={{ fontFamily: "var(--sans)", fontSize: 16, fontWeight: 600 }}>
                   {OFFERS.audit.name}
                 </h3>
                 <p style={{ fontSize: 15, color: "var(--muted)", marginTop: 10, lineHeight: 1.55 }}>
-                  {OFFERS.audit.role} Flat fee, one-time, delivered in 7 business days.
+                  {OFFERS.audit.role}{" "}Flat fee, one-time, delivered in 7 business days.
                 </p>
                 <span style={{ display: "inline-block", marginTop: 14, fontFamily: "var(--mono)", fontSize: 12, color: "var(--accent)" }}>
                   Book the audit &rarr;
@@ -589,13 +589,13 @@ export default function AIVisibilityConsultantToronto() {
                     marginBottom: 10,
                   }}
                 >
-                  {OFFERS.implementation.priceWithCurrency} &middot; Step 2
+                  {OFFERS.implementation.priceWithCurrency}{" "}&middot; Step 2
                 </div>
                 <h3 style={{ fontFamily: "var(--sans)", fontSize: 16, fontWeight: 600 }}>
                   {OFFERS.implementation.name}
                 </h3>
                 <p style={{ fontSize: 15, color: "var(--muted)", marginTop: 10, lineHeight: 1.55 }}>
-                  {OFFERS.implementation.role} The audit fee is credited toward it.
+                  {OFFERS.implementation.role}{" "}The audit fee is credited toward it.
                 </p>
                 <span style={{ display: "inline-block", marginTop: 14, fontFamily: "var(--mono)", fontSize: 12, color: "var(--accent)" }}>
                   See the Sprint &rarr;
@@ -613,13 +613,13 @@ export default function AIVisibilityConsultantToronto() {
                     marginBottom: 10,
                   }}
                 >
-                  {OFFERS.monitor.price} &middot; Optional
+                  {OFFERS.monitor.price}{" "}&middot; Optional
                 </div>
                 <h3 style={{ fontFamily: "var(--sans)", fontSize: 16, fontWeight: 600 }}>
                   {OFFERS.monitor.name}
                 </h3>
                 <p style={{ fontSize: 15, color: "var(--muted)", marginTop: 10, lineHeight: 1.55 }}>
-                  {OFFERS.monitor.role} On {OFFERS.monitor.durationPhrase}, only
+                  {OFFERS.monitor.role}{" "}On {OFFERS.monitor.durationPhrase}, only
                   after the sprint &mdash; never required to start.
                 </p>
                 <span style={{ display: "inline-block", marginTop: 14, fontFamily: "var(--mono)", fontSize: 12, color: "var(--accent)" }}>
@@ -712,7 +712,7 @@ export default function AIVisibilityConsultantToronto() {
               <p style={{ color: "var(--ink)", lineHeight: 1.7, margin: 0, fontSize: "clamp(16px, 1.9vw, 18px)" }}>
                 I proved the method on my own products before offering it. HomeCalc.ca,
                 a Toronto-based calculator site {HOMECALC_PROOF.domainAge}, went from
-                near-zero to {HOMECALC_CLAIMS.appearancesInTimeframe} &mdash;{" "}
+                near-zero to {HOMECALC_CLAIMS.appearancesInTimeframe}{" "}&mdash;{" "}
                 {HOMECALC_PROOF.combinedSourceLong}.{" "}
                 <Link href={HOMECALC_PROOF.caseStudyPath} style={{ color: "var(--accent)", fontWeight: 500 }}>
                   Read the case study &rarr;
@@ -751,8 +751,8 @@ export default function AIVisibilityConsultantToronto() {
                   position: "relative",
                 }}
               >
-                I work from a desk in a downtown Toronto incubator &mdash; not a
-                client-facing office &mdash; and the work itself is remote-first. I
+                My office is at 111 Peter Street in the Entertainment District &mdash;
+                visits by appointment &mdash; and the work itself is remote-first. I
                 serve businesses across Toronto, Mississauga, Vaughan, Markham and the
                 wider GTA, and Canada-wide. Over a decade in the Canadian search market
                 means I understand local intent, bilingual search nuance, and the YMYL
@@ -1001,7 +1001,7 @@ export default function AIVisibilityConsultantToronto() {
                 }}
               >
                 Six platforms reviewed, a written report, a prioritized action plan,
-                and a walkthrough call. {PRICE_DISPLAY_FLAT} &mdash; no retainer.
+                and a walkthrough call. {PRICE_DISPLAY_FLAT}{" "}&mdash; no retainer.
               </p>
               <Link
                 href={AUDIT_URL}
@@ -1047,7 +1047,7 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
         gap: 14,
       }}
     >
-      {number} &mdash; {text}
+      {number}{" "}&mdash; {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
     </div>
   );

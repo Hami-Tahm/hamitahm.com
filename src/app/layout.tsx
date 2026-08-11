@@ -59,16 +59,33 @@ const siteStructuredData = {
         "AI Visibility Consultant in Toronto — AEO & GEO for Canadian businesses that want to be cited in Google AI Overviews, ChatGPT, Gemini, and Claude.",
       image: "https://hamitahm.com/images/hami-tahm/hami-tahm-portrait.png",
       worksFor: { "@id": "https://hamitahm.com/#organization" },
-      // ⚠️ Street address removed 2026-08-11. The Toronto working space is a
-      // dedicated desk in an incubator: no signage in the business's name, not
-      // staffed by this business, clients are not received there. Declaring a suite
-      // number asserts a place a customer can turn up to, which isn't true. Locality
-      // is kept because it is true and is what the Toronto pages actually rely on.
-      // Do not re-add a street address unless the business genuinely has premises.
+      /*
+       * ADDRESS — corrected twice on 2026-08-11, so read this before touching it.
+       *
+       * The working space is a dedicated desk in an incubator at this address. Hami
+       * is there during stated hours and clients CAN be received, by appointment.
+       * So the address is true and belongs here.
+       *
+       * What it is NOT is a Google Business Profile location. GBP additionally
+       * requires permanent signage in the business's own name, and the signage there
+       * is the incubator's. No GBP listing is being pursued, which is the right call
+       * — an ineligible listing gets suspended later, usually at the worst moment.
+       *
+       * Two things therefore stay off, deliberately:
+       *   - `geo` coordinates. They imply a mappable storefront and buy nothing
+       *     without a GBP listing.
+       *   - `ProfessionalService` / any LocalBusiness subtype on the service pages.
+       *     That was a separate bug: three pages each declared their own business
+       *     entity. Services are `Service` with `provider` pointing here.
+       *
+       * This node is the ONE place the address is declared. Keep it that way.
+       */
       address: {
         "@type": "PostalAddress",
+        streetAddress: "111 Peter Street, 9th Floor, Suite 902",
         addressLocality: "Toronto",
         addressRegion: "ON",
+        postalCode: "M5V 2H1",
         addressCountry: "CA",
       },
       knowsAbout: [
