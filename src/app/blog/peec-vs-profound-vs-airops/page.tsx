@@ -7,10 +7,37 @@ import { buildBlogSchema } from "@/lib/blog-schema";
 
 const SLUG = "peec-vs-profound-vs-airops";
 const ARTICLE_TITLE =
-  "Peec vs Profound vs AirOps: AI Visibility Tools";
+  "Peec vs Profound vs AirOps (2026): Pricing & Best Fit";
 const ARTICLE_DESCRIPTION =
-  "Peec, Profound, and AirOps all track AI visibility — but they do different things. Here's an independent breakdown of what each measures, what each costs, and which one fits your use case.";
+  "Peec AI, Profound and AirOps compared on published pricing, AI-engine coverage and what each is actually built to do. Every figure read from the vendor's own page and linked, verified August 11, 2026.";
 const DATE_PUBLISHED = "2026-06-09";
+const DATE_MODIFIED = "2026-08-11";
+
+/**
+ * ── VERIFICATION RULE FOR THIS PAGE ──
+ *
+ * Every price and engine list below was read from the vendor's own pricing page on
+ * DATE_VERIFIED and carries a `source` URL. If you cannot open that URL and see the
+ * figure, change the figure — never the date.
+ *
+ * The first version of this post got the central claim wrong. It said Profound
+ * covers "10+ engines" and led the comparison with that. Profound's own pricing page
+ * says up to NINE, and only on Enterprise; the $399 Growth plan tracks three. A
+ * comparison post whose headline differentiator is wrong is worse than no post.
+ *
+ * Peec's prices do not appear in the page source — the site is Framer and renders
+ * them client-side. They were read from the rendered page in a browser. Anything
+ * fetched without JavaScript will show plan names and no numbers.
+ */
+const DATE_VERIFIED = "2026-08-11";
+const DATE_VERIFIED_HUMAN = "August 11, 2026";
+
+const SRC = {
+  peec: "https://peec.ai/pricing",
+  profound: "https://www.tryprofound.com/pricing",
+  airops: "https://www.airops.com/pricing",
+  semrush: "https://www.semrush.com/kb/1626-ai-visibility-features",
+} as const;
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const HUB_URL = "/ai-visibility/";
 const TOOLS_URL = "/blog/best-ai-visibility-tools/";
@@ -18,61 +45,59 @@ const TOOLS_VS_AUDIT_URL = "/blog/ai-visibility-tools-vs-audit/";
 
 const QUICK_COMPARISON_ROWS = [
   {
-    label: "Primary function",
-    peec: "Citation tracking + share-of-voice analytics",
-    profound: "Enterprise AI visibility + content automation",
-    airops: "AI search insights + content operations",
+    label: "Built to do",
+    peec: "Track citations and share of voice across AI answers",
+    profound: "Monitor answer engines, plus agents and AI-referral analytics",
+    airops: "Connect AI search insights to content production",
   },
   {
-    label: "Platforms covered",
-    peec: "ChatGPT, Gemini, Perplexity + others",
-    profound:
-      "ChatGPT, Claude, Perplexity, Google AIO, Gemini, Copilot, DeepSeek, Grok, Meta AI, Google AI Mode (10+)",
-    airops:
-      "ChatGPT only (Solo); ChatGPT, Gemini, Perplexity, Google (Pro)",
+    label: "Engines on the entry plan",
+    peec: "Any 3 of: ChatGPT, AI Mode, AI Overviews, Copilot, Perplexity, Gemini",
+    profound: "ChatGPT only",
+    airops: "ChatGPT only (Solo)",
   },
   {
-    label: "Best for",
-    peec: "Marketing teams tracking AI share of voice",
-    profound: "Enterprise brands at AI visibility scale",
-    airops: "Teams wanting tracking + content workflow in one",
+    label: "Engines at the top tier",
+    peec: "Up to 11 (adds Claude, GPT-5 Search, DeepSeek, Qwen, Mistral via API)",
+    profound: "Up to 9 (adds AI Mode, Gemini, Copilot, Grok, DeepSeek, Claude)",
+    airops: "ChatGPT, Google, Perplexity, Google AI Studio",
   },
   {
-    label: "Pricing",
-    peec: "$95–$505/month",
-    profound: "$399/month+ (custom enterprise)",
-    airops: "Free (limited); $200/month (Solo); $2,000/month (Pro)",
+    label: "Published price",
+    peec: "$95 / $245 / $495 per month, billed annually · Enterprise custom",
+    profound: "$99 Starter · $399 Growth (billed yearly) · Enterprise custom",
+    airops: "Not published — priced on task volume. Insights tier starts at $0",
   },
   {
-    label: "Data accuracy",
-    peec: "Strong for citation frequency",
-    profound: "Highest — real user-facing data from 10+ engines",
-    airops: "Good on Pro; ChatGPT-only on Solo",
+    label: "Prompts included",
+    peec: "50 / 150 / 350 by tier",
+    profound: "50 (Starter) / 100 (Growth) / custom",
+    airops: "100 (Solo) / 250 (Pro) / custom",
   },
   {
-    label: "Action plan?",
-    peec: "No",
-    profound: "Partial (Profound Agents draft content automatically)",
-    airops: "Partial (opportunity reports + content workflows)",
+    label: "Tells you what to fix?",
+    peec: "Reports citations and competitors; you decide what to do",
+    profound: "Agents can draft content from citation gaps",
+    airops: "Opportunity reports feed a content workflow",
   },
 ] as const;
 
 const FAQ_ITEMS = [
   {
     q: "Is Peec or Profound better for AI visibility tracking?",
-    a: "It depends on budget and scale. Peec is the better option for SMBs and agencies that need systematic multi-platform citation tracking at a mid-market price point ($95–505/month). Profound is the better option for enterprises that need the deepest platform coverage (10+ AI engines) and autonomous content generation capabilities — at $399+/month. For most growing businesses, Peec is the practical entry point; Profound is where you grow into.",
+    a: "On engine coverage per dollar, Peec. Every Peec self-serve tier lets you track three engines of your choosing, starting at $95/month billed annually; Profound's $99 Starter tracks ChatGPT and nothing else, and cross-engine coverage begins at the $399 Growth tier with three engines. Profound's advantages sit elsewhere: agents that draft content from citation gaps, and Agent Analytics for AI-referred traffic to your own domain. Peec's Enterprise tier reaches up to 11 models against Profound's nine. Figures read from both pricing pages on August 11, 2026.",
   },
   {
     q: "Does AirOps track AI citations?",
-    a: "Yes — through its Insights feature. However, multi-engine tracking (ChatGPT, Gemini, Perplexity, Google) is only available on the Pro plan at $2,000/month. The Solo plan ($200/month) tracks ChatGPT only. If your primary need is AI citation tracking rather than content operations, Peec or Profound offer more tracking depth for comparable or lower cost.",
+    a: "Yes, through Insights — but the split matters. Solo tracks 100 prompts on ChatGPT only, with monthly opportunity reports. Pro tracks 250 prompts across ChatGPT, Google, Perplexity and Google AI Studio, with weekly reports. AirOps does not publish a price for either: its FAQ states pricing is based on task volume and requirements, so the $200 and $2,000 figures this article previously quoted had no source and have been removed. If tracking is all you need, Peec and Profound publish their numbers and you can compare them.",
   },
   {
     q: "What's the cheapest AI visibility tool?",
-    a: "AirOps has a free Insights tier (1,000 tasks, single user, basic data). Peec starts at $95/month for structured tracking across multiple AI platforms. For Google AI Overviews specifically, Semrush's existing rank tracking includes AIO data at no additional cost if you're already a subscriber.",
+    a: "Of the three here, AirOps has a $0 Insights entry point and Peec starts at $95/month billed annually for three engines. Outside this comparison, Semrush's free plan shows AI mentions, citations and a visibility score, and its AI Visibility toolkit starts at $99/month. Cheapest and sufficient are different questions — check the engine list and prompt count on the specific tier you would buy, not the headline price.",
   },
   {
-    q: "Is Semrush good for LLM optimization?",
-    a: "Semrush's AI visibility toolkit covers Google AI Overviews well — it's reliable for AIO tracking integrated into an existing keyword workflow. For LLM optimization in the broader sense — optimizing for ChatGPT, Perplexity, Gemini, and Claude — Semrush's coverage is too narrow. Dedicated platforms like Profound or AirOps are better suited for multi-LLM optimization goals.",
+    q: "Is Semrush good for tracking AI visibility?",
+    a: "Better than this article used to say. It previously described Semrush as strong for Google AI Overviews but weak for ChatGPT, Perplexity and Gemini — that is out of date. Semrush's AI Visibility toolkit starts at $99/month and covers AI Overviews, AI Mode, ChatGPT, Perplexity and Gemini, with share-of-voice and sentiment tracking and competitor comparison. What decides it is packaging: Google and AI Overviews tracking is on any plan including the free one, while the other engines require Semrush One or the AI Visibility toolkit.",
   },
   {
     q: "Do I need a tool or a consultant for AI visibility?",
@@ -85,6 +110,7 @@ const blogGraph = buildBlogSchema({
   title: ARTICLE_TITLE,
   description: ARTICLE_DESCRIPTION,
   datePublished: DATE_PUBLISHED,
+  dateModified: DATE_MODIFIED,
 })["@graph"];
 
 const structuredData = {
@@ -212,6 +238,18 @@ export default function PeecVsProfoundVsAirOpsPost() {
 
           <RevealSection delay={0.18}>
             <AuthorByline date="June 9, 2026" readTime="14 min read" />
+            <p
+              style={{
+                marginTop: 18,
+                fontSize: 14,
+                lineHeight: 1.6,
+                color: "var(--faint)",
+                fontStyle: "italic",
+              }}
+            >
+              Published June 9, 2026 &middot; every price and engine list re-read
+              from the vendors&rsquo; own pages on {DATE_VERIFIED_HUMAN}.
+            </p>
           </RevealSection>
         </div>
       </header>
@@ -259,10 +297,13 @@ export default function PeecVsProfoundVsAirOpsPost() {
                   margin: 0,
                 }}
               >
-                Peec tracks share of voice. Profound is enterprise-grade across
-                10+ engines. AirOps combines insights with content workflows.
-                Pick based on budget, platform coverage, and whether you need
-                tracking alone or tracking plus execution.
+                Peec is share-of-voice and citation tracking at a published
+                self-serve price. Profound adds agents that act on what the
+                tracking finds, plus analytics on AI-referred traffic to your own
+                site. AirOps treats visibility as the front end of a content
+                production line and publishes no plan prices. Engine coverage is
+                tier-gated on all three &mdash; check the tier you would buy, not
+                the logo row.
               </p>
             </div>
           </RevealSection>
@@ -295,29 +336,33 @@ export default function PeecVsProfoundVsAirOpsPost() {
                 From the author
               </div>
               <p style={{ margin: 0 }}>
-                Tools track AI visibility &mdash; they don&rsquo;t fix it. The
-                AI Visibility Audit I run for clients identifies the structural
-                gaps a dashboard will never tell you about, and delivers a
-                prioritized fix plan in 7&nbsp;days.{" "}
-                <Link
-                  href={AUDIT_URL}
-                  style={{ color: "var(--accent)", fontWeight: 600 }}
-                >
-                  See the AI Visibility Audit &rarr;
-                </Link>
+                <strong>How this was checked.</strong> Prices, plan names, prompt
+                counts and engine lists come from each vendor&rsquo;s own pricing
+                page, read on {DATE_VERIFIED_HUMAN} and linked in each section. This
+                is a documentation-based comparison, not a controlled test: I have
+                not run the same prompt set through all three and measured the
+                results against each other, so nothing here ranks them on accuracy.
+              </p>
+              <p style={{ margin: "12px 0 0" }}>
+                <strong>Disclosure.</strong> I take no affiliate commission and no
+                payment from any of these companies. I sell an AI visibility audit,
+                which competes for the same budget &mdash; so the comparison sticks to
+                what their own pages state, and the recommendation at the end includes
+                the case for buying none of them.
               </p>
             </div>
           </RevealSection>
 
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
-              Peec, Profound, and AirOps are three of the most-mentioned tools in
-              AI visibility tracking — but they&rsquo;re not interchangeable. Peec
-              focuses on share-of-voice analytics and citation tracking. Profound
-              focuses on enterprise-grade visibility monitoring across 10+ AI
-              engines with autonomous content generation. AirOps combines an AI
-              search insights layer with full content operations workflows.
-              Choosing the wrong one means paying for data you can&rsquo;t act on.
+              Peec, Profound and AirOps get named together constantly, which
+              suggests they are alternatives to each other. They are not. Peec is
+              citation and share-of-voice tracking at a published, self-serve price.
+              Profound is monitoring plus agents that act on what the monitoring
+              finds, plus analytics on AI-referred traffic to your own site. AirOps
+              treats visibility as the front end of a content production line. The
+              expensive mistake is buying the one whose shape does not match the job
+              you actually have.
               Here&rsquo;s what each actually does, based on independent evaluation.
             </p>
             <p
@@ -404,35 +449,45 @@ export default function PeecVsProfoundVsAirOpsPost() {
 
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>What it tracks:</strong> Profound is
-              enterprise-grade AI visibility. It captures real user-facing data
-              from front-end interactions across 10+ AI engines: ChatGPT, Claude,
-              Perplexity, Google AI Overviews, Gemini, Microsoft Copilot,
-              DeepSeek, Grok, Meta AI, and Google AI Mode. Its standout features
-              include Query Fanouts Analysis (how answer engines transform user
-              prompts into multiple search queries), Shopping Analysis (how
-              products are cited in AI shopping experiences), and Profound Agents
-              — autonomous systems that handle the full AEO workflow: gathering
-              insights, analyzing citations, and drafting AI-ready content.
+              <strong style={labelStyle}>What it tracks:</strong> Profound runs a
+              prompt set on a daily schedule and reports mentions, citations,
+              sentiment and competitive presence. Its distinctive pieces are Agents
+              &mdash; which draft and optimise content from what the tracking finds
+              &mdash; Prompt Volumes, and Agent Analytics, which tracks AI-referred
+              traffic arriving at your own domain rather than what the engines say.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>What it doesn&rsquo;t track:</strong>{" "}
-              Nothing materially missing at the platform level. The limitation is
-              access: Profound&rsquo;s pricing starts at $399/month and scales to
-              custom enterprise. As of early 2026, it raised a $96M Series C at a
-              $1B valuation and works with companies like Ramp, Figma, Target, and
-              Walmart. It&rsquo;s built for that market.
+              <strong style={labelStyle}>A correction:</strong> this article
+              previously said Profound covers &ldquo;10+ engines&rdquo; and made that
+              its headline advantage. Profound&rsquo;s own pricing page says up to
+              nine, and only on Enterprise. The $99 Starter plan tracks ChatGPT
+              alone; the $399 Growth plan tracks three &mdash; ChatGPT, Perplexity
+              and Google AI Overviews. The full nine adds Google AI Mode, Gemini,
+              Copilot, Grok, DeepSeek and Claude. Price the tier you would actually
+              buy against the engines you actually need.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Data accuracy:</strong> The strongest in
-              this comparison. Profound collects real user-facing data — not
-              simulated queries — which means its citation data reflects what users
-              actually see, not what the API returns.
+              <strong style={labelStyle}>Where the gaps are:</strong> engine
+              coverage is tier-gated rather than complete, as above. Funding and
+              customer-logo claims that used to sit in this paragraph have been
+              removed &mdash; they were not sourced, and they were never a reason to
+              buy a tool.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Pricing:</strong> Growth plan at
-              $399/month; enterprise pricing is custom. Noted by multiple reviews as
-              48% more expensive than average for this category.
+              <strong style={labelStyle}>Data quality:</strong> I have no way to
+              rank these three on accuracy, and neither does anyone without running
+              the same prompt set through all three and comparing against a ground
+              truth that does not exist. The earlier version of this page called
+              Profound &ldquo;the strongest&rdquo; on accuracy; that was an
+              impression, not a measurement, so it is gone. What is checkable is on
+              the pricing pages: engines, prompt counts, refresh frequency.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              <strong style={labelStyle}>Pricing:</strong> Starter $99/month and
+              Growth $399/month, both billed yearly; Enterprise custom. The
+              &ldquo;48% more expensive than average&rdquo; line that used to be here
+              cited &ldquo;multiple reviews&rdquo; without naming one, and there is no
+              published average for this category to be 48% above.
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>Best for:</strong> Enterprise brands,
@@ -466,23 +521,32 @@ export default function PeecVsProfoundVsAirOpsPost() {
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>What it doesn&rsquo;t track:</strong> The
-              significant catch is the pricing cliff. Solo ($200/month) tracks
-              ChatGPT only and limits you to one user. Pro ($2,000/month) unlocks
-              multi-engine insights, CMS integrations, weekly opportunity reports,
-              and unlimited seats. There is nothing between $200 and $2,000. A
-              growing team that needs Perplexity or Gemini tracking — but
-              can&rsquo;t justify $2,000/month — has no middle option.
+              catch is the tier split, not a price cliff &mdash; AirOps publishes no
+              plan prices at all, and its FAQ says pricing is set by task volume and
+              requirements. Solo tracks ChatGPT only, 100 prompts, one user, monthly
+              reports. Pro unlocks
+              250 prompts across ChatGPT, Google, Perplexity and Google AI Studio,
+              plus weekly opportunity reports, CMS integrations and unlimited seats.
+              If you need Perplexity or Gemini tracking, Solo will not do it and Pro
+              is the next step &mdash; and since neither carries a published price,
+              you cannot size that step without talking to sales.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Data accuracy:</strong> Good on Pro
-              (multi-engine with Search Console integration). Solo-tier data is
-              ChatGPT-only and limited in scope.
-            </p>
-            <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Pricing:</strong> Free (1,000 tasks, basic
-              Insights) → $200/month Solo (20,000 tasks, ChatGPT only) →
-              $2,000/month Pro (75,000 tasks, multi-engine, unlimited seats) →
-              Enterprise custom.
+              <strong style={labelStyle}>Pricing:</strong> Not published. The Insights
+              tier starts at $0/month, and AirOps&rsquo; own FAQ states pricing is
+              based on task volume and requirements. Solo includes 20,000 tasks with
+              overage at $0.025 per task; Pro includes 75,000. The $200 and $2,000
+              figures this article previously quoted appear nowhere on AirOps&rsquo;
+              site and have been removed.{" "}
+              <a
+                href={SRC.airops}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={linkStyle}
+              >
+                AirOps pricing
+              </a>
+              , read {DATE_VERIFIED}.
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>Best for:</strong> Content teams that want
@@ -494,9 +558,11 @@ export default function PeecVsProfoundVsAirOpsPost() {
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>Verdict:</strong> AirOps is the right
               choice if you need both tracking and content operations in one
-              workflow. If you only need tracking, the $200 Solo plan is too narrow
-              (ChatGPT only), and the jump to $2,000 Pro is hard to justify without
-              also using the content workflow features.
+              workflow. If you only need tracking, Solo is too narrow at ChatGPT
+              alone, and Pro is hard to justify unless you are also using the content
+              workflow &mdash; you would be paying for a production system to get a
+              dashboard. Peec and Profound both publish what tracking costs; AirOps
+              asks you to negotiate for it.
             </p>
           </RevealSection>
 
@@ -516,41 +582,102 @@ export default function PeecVsProfoundVsAirOpsPost() {
               BrightEdge&rsquo;s data accuracy for{" "}
               <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>Google AI Overviews</a>{" "}
               and generative search is among the strongest available. The honest
-              limitation is access. BrightEdge is enterprise-only custom pricing,
-              typically $2,000+/month, and requires existing relationship or
-              significant contract to access meaningfully. For most SMBs comparing
-              Peec, Profound, and AirOps, BrightEdge is irrelevant by price.
+              limitation is access: BrightEdge publishes no pricing at all, so any
+              figure you see quoted for it &mdash; including the &ldquo;$2,000+/month&rdquo;
+              this page used to state &mdash; comes from someone other than BrightEdge.
+              It is an enterprise contract, which for most teams comparing the three
+              tools above puts it in a different category entirely.
             </p>
 
             <h3 style={h3Style}>Semrush AI Visibility Toolkit</h3>
             <p style={{ marginBottom: 26 }}>
-              Semrush has the familiarity advantage — most SEO teams are already in
-              the platform. Its AI visibility features track Google AI Overviews
-              specifically, with solid data for teams whose primary concern is AIO
-              presence. The limitation is scope: Semrush&rsquo;s AI toolkit is
-              strong for Google AI Overviews specifically — but weak for Perplexity,
-              ChatGPT, or Gemini coverage. If your buyers are asking questions
-              across multiple AI platforms, Semrush gives you a partial picture. For
-              LLM optimization in the true sense — optimizing for how LLMs represent
-              your brand — Semrush is not the right primary tool.
+              This section used to say Semrush was strong for Google AI Overviews
+              but &ldquo;weak for Perplexity, ChatGPT, or Gemini.&rdquo; That is no
+              longer true and the correction matters, because it was being used to
+              push readers toward the paid tools above. Semrush&rsquo;s AI Visibility
+              toolkit starts at $99/month and covers AI Overviews, AI Mode, ChatGPT,
+              Perplexity and Gemini, with share-of-voice and sentiment tracking,
+              competitor comparison against up to four rivals, and a prompt research
+              database. The free plan surfaces AI mentions, citations and a visibility
+              score.{" "}
+              <a
+                href={SRC.semrush}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={linkStyle}
+              >
+                Semrush&rsquo;s own documentation
+              </a>
+              , read {DATE_VERIFIED}. The real decision point is packaging: Google and
+              AI Overviews tracking is available on any plan including the free one,
+              while the other engines need Semrush One or the AI Visibility toolkit.
             </p>
 
             <h3 style={h3Style}>Gaio.tech</h3>
             <p style={{ marginBottom: 26 }}>
-              Gaio.tech is an emerging AI visibility platform positioned more as a
-              managed service than a self-serve SaaS. Its approach involves 120+
-              query variations per brand term, API integration with ChatGPT
-              Enterprise and Anthropic, and scraping 300+ industry sources. It
-              follows a four-phase methodology: Baseline → Priority Identification
-              → Content Optimization → Continuous Monitoring. For brands that want
-              a more hands-on, agency-style engagement rather than a dashboard to
-              manage themselves, Gaio.tech is worth evaluating — particularly for
-              its source authority mapping and semantic gap analysis features.
+              This entry has been removed. It carried specific figures &mdash; 120+
+              query variations per brand term, 300+ scraped industry sources, named
+              API integrations &mdash; that I could not trace to any source. Repeating
+              a vendor&rsquo;s own numbers as if they were findings is exactly what
+              the rest of this page is trying not to do.
             </p>
           </RevealSection>
 
           <RevealSection>
-            <SectionLabel number="06" text="Which tool should you choose?" />
+            <SectionLabel number="06" text="Head to head" />
+          </RevealSection>
+
+          <RevealSection delay={0.06}>
+            <h3 style={h3Style}>Peec vs Profound: which is better for tracking?</h3>
+            <p style={{ marginBottom: 26 }}>
+              For tracking alone, Peec gives you more engines per dollar at the
+              bottom of the range: three engines of your choosing from $95/month
+              billed annually, against Profound&rsquo;s $99 Starter which tracks
+              ChatGPT only. Cross-engine coverage on Profound starts at $399. At the
+              top, Peec&rsquo;s Enterprise reaches eleven models to Profound&rsquo;s
+              nine.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              Profound earns its price somewhere else: Agents that draft and optimise
+              content from what the tracking finds, and Agent Analytics, which
+              measures AI-referred traffic arriving at your own domain. That second
+              one is worth more than an extra engine to most businesses, because it
+              is the only number in this whole category that connects to revenue.
+            </p>
+
+            <h3 style={h3Style}>
+              Profound vs AirOps: monitoring platform or content operation?
+            </h3>
+            <p style={{ marginBottom: 26 }}>
+              Both go beyond reporting, in opposite directions. Profound starts from
+              monitoring and adds agents that produce content. AirOps starts from a
+              content production system and adds visibility insights to point it. If
+              you already have a content team and want to know what to brief them on,
+              Profound fits. If your bottleneck is producing the content at all,
+              AirOps is built for that and Profound is not.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              Practical difference when you go to buy: Profound publishes its prices,
+              AirOps does not. Budgeting for AirOps means a sales conversation about
+              task volume.
+            </p>
+
+            <h3 style={h3Style}>Peec vs AirOps: tracking only, or tracking plus execution?</h3>
+            <p style={{ marginBottom: 26 }}>
+              This is the cleanest comparison of the three, because the tools barely
+              overlap. Peec tells you where you stand across up to three engines on a
+              self-serve plan and stops there, deliberately. AirOps tracks a narrower
+              set on its entry tier &mdash; ChatGPT only on Solo &mdash; and spends
+              the rest of the product on producing and publishing content.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              Choose Peec if you have the content capability and need measurement.
+              Choose AirOps if measurement is not the constraint and output is.
+            </p>
+          </RevealSection>
+
+          <RevealSection>
+            <SectionLabel number="07" text="Which tool should you choose?" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
@@ -578,8 +705,8 @@ export default function PeecVsProfoundVsAirOpsPost() {
                 <strong style={labelStyle}>
                   You need citation tracking AND a content production workflow
                 </strong>{" "}
-                → AirOps Pro (if the $2,000/month is justified by the content
-                operations value)
+                → AirOps Pro, once you have a quote and can weigh it against the
+                content-operations value
               </li>
               <li style={{ marginBottom: 11 }}>
                 <strong style={labelStyle}>
@@ -612,7 +739,7 @@ export default function PeecVsProfoundVsAirOpsPost() {
           </RevealSection>
 
           <RevealSection>
-            <SectionLabel number="07" text="What none of these tools tell you" />
+            <SectionLabel number="08" text="What none of these tools tell you" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
@@ -638,13 +765,20 @@ export default function PeecVsProfoundVsAirOpsPost() {
               that diagnosis is where most of the leverage is.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>None give you a prioritized fix plan.</strong>{" "}
-              They give you data. A professional audit gives you direction:
-              here&rsquo;s what&rsquo;s broken, here&rsquo;s why, here&rsquo;s what
-              to fix first.
+              <strong style={labelStyle}>
+                What they recommend doesn&rsquo;t know your constraints.
+              </strong>{" "}
+              Profound Agents and AirOps opportunity reports both produce
+              recommendations, so &ldquo;tools only show you data&rdquo; is no longer
+              true and this page used to overstate it. The narrower and still-true
+              version: a list of forty suggested changes is not a plan until someone
+              knows which three you can actually ship this quarter, with the team and
+              budget you have.
             </p>
             <p style={{ marginBottom: 26 }}>
-              Tools show you the problem. An audit tells you how to fix it.
+              Which is also the honest case for buying one of these instead of hiring
+              anyone. If you know what your gap is and just need to watch it move,
+              buy the tool. The diagnosis is what is worth paying a person for.
             </p>
           </RevealSection>
 
@@ -653,7 +787,7 @@ export default function PeecVsProfoundVsAirOpsPost() {
           </RevealSection>
 
           <RevealSection>
-            <SectionLabel number="08" text="Frequently asked questions" />
+            <SectionLabel number="09" text="Frequently asked questions" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
