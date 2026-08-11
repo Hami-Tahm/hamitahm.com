@@ -3,6 +3,24 @@ import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { HOMECALC_PROOF, HOMECALC_CLAIMS, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
 
+/**
+ * ── CLAIM RULE FOR THIS PAGE (2026-08-11) ──
+ *
+ * Google's own AI-features documentation states that the same SEO fundamentals
+ * apply to AI Overviews and AI Mode, and that no special markup is required. Any
+ * sentence here claiming a specific engine "favours" a specific signal has to be
+ * traceable to a vendor document or a dated test on a real domain. Several were
+ * traceable to neither and have been removed.
+ *
+ * On the combined HomeCalc figure: summing Copilot citations and Google impressions
+ * under the superset label "AI appearances" is defensible ONLY while the components
+ * stay visible next to it. See the rule in src/lib/homecalc-proof.ts. Never label
+ * the total "citations", and never imply it covers engines that report nothing.
+ */
+const GOOGLE_AI_FEATURES_URL =
+  "https://developers.google.com/search/docs/appearance/ai-features";
+
+const CHECKER_URL = "/ai-visibility/ai-visibility-checker/";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const GEO_URL = "/ai-visibility/generative-engine-optimization-consultant-canada/";
 const CASE_STUDY_URL = HOMECALC_PROOF.caseStudyPath;
@@ -13,10 +31,10 @@ const PRICE_DISPLAY = "$1,500 CAD";
 export const metadata: Metadata = {
   title: {
     absolute:
-      "Answer Engine Optimization (AEO) Consultant — Canada",
+      "Answer Engine Optimization Consultant Canada | AEO Services",
   },
   description:
-    "AEO helps Canadian businesses get cited by Google AI Overviews, ChatGPT, Gemini, and Claude. Consultant-led by Hami Tahm — starts with a $1,500 audit.",
+    "Canada-based AEO consultant helping businesses make their content easier for Google AI Overviews, ChatGPT, Copilot and Perplexity to understand and cite. $1,500 CAD audit, delivered in 7 business days.",
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/answer-engine-optimization-consultant-canada/",
   },
@@ -33,7 +51,7 @@ const CONSULTANT_WORK = [
   },
   {
     title: "Platform-specific strategy",
-    body: "Different AI engines weight different signals. Google AI Overviews favors structured data and authority signals. ChatGPT favors clear definitions and answerable paragraphs. Perplexity favors source diversity and citation density. Strategy is built per platform, not as one-size-fits-all.",
+    body: "Engines differ in what they retrieve from, how they present sources and how much their answers vary between runs, so I test each one separately rather than assuming a fix transfers. What I do not do is tell you what each engine \'favours\' — those claims circulate widely and trace back to no vendor document. Google says plainly that no special structured data is needed for its AI features. Recommendations here come from dated, repeated observations on your own pages.",
   },
 ] as const;
 
@@ -44,24 +62,29 @@ const PROOF_STATS = [
   { value: "YMYL", label: "Category" },
 ] as const;
 
+// ⚠️ This table used to characterise agencies as "account manager and junior team"
+// with methodology "held internally, rarely shared", and tools as having "no proof".
+// I have no basis for any of that. A page arguing that claims should be checkable
+// cannot make unchecked ones about competitors. Each option now carries a genuine
+// strength and a genuine limitation, mine included.
 const COMPARISON_ROWS = [
   [
-    "Who does the work",
-    "Hami Tahm, personally",
-    "Account manager and junior team",
-    "Algorithm, no human review",
+    "Main strength",
+    "Direct access to one senior person; plan built for your pages",
+    "Larger team; multi-discipline execution",
+    "Continuous monitoring and fast data",
   ],
   [
-    "Methodology transparency",
-    "Documented and delivered to you",
-    "Held internally, rarely shared",
-    "Generic dashboard rules",
+    "Usual limitation",
+    "Limited delivery capacity — one person",
+    "Usually a retainer, and more handoffs",
+    "Needs someone in-house to interpret and act",
   ],
   [
-    "Content customization",
-    "Built per page for your business",
-    "Templated across clients",
-    "None — same recommendations for everyone",
+    "Best suited to",
+    "Teams wanting senior guidance on what to fix first",
+    "Large or multi-market programmes",
+    "Teams that already have SEO or content capability",
   ],
   [
     "Pricing model",
@@ -70,10 +93,10 @@ const COMPARISON_ROWS = [
     "Monthly subscription",
   ],
   [
-    "Proof available",
-    "Public, named case study (HomeCalc.ca)",
-    "Rarely public",
-    "None",
+    "Proof on this site",
+    "Public owned-property case study + published dataset",
+    "Varies by firm",
+    "Varies by vendor",
   ],
 ] as const;
 
@@ -115,16 +138,11 @@ const PERSONAS = [
   },
 ] as const;
 
-const PLACEHOLDER_CASE_STUDIES = [
-  {
-    label: "First AEO consulting case study",
-    note: "Coming summer 2026",
-  },
-  {
-    label: "High-ticket service client",
-    note: "Case study coming summer 2026",
-  },
-] as const;
+/*
+ * Two "Coming summer 2026" placeholder cards were deleted on 2026-08-11 — it was
+ * already August. A promise whose date has passed reads as an abandoned page.
+ * Add a case study when there is one; do not re-add placeholders.
+ */
 
 const FAQ_ITEMS: {
   q: string;
@@ -133,7 +151,7 @@ const FAQ_ITEMS: {
 }[] = [
   {
     q: "What is the difference between AEO and SEO?",
-    a: "SEO optimizes how your page ranks among search results — users click through to read it. AEO optimizes how AI engines extract content directly from your page and use it to generate an answer — users often never visit your site. The two share some signals but reward different content structures.",
+    a: "Less than the labels suggest. Google states that its AI features run on its core Search ranking systems, that optimizing for AI Overviews and AI Mode is still SEO, and that no special markup is required — so on Google's surfaces the foundations are the same work. AEO is a useful label for one emphasis within that: writing and structuring a page so a machine can lift a clean, correct answer from it. It is a difference of emphasis, not a separate discipline with its own ranking system.",
   },
   {
     q: "What is the difference between AEO and GEO?",
@@ -141,11 +159,11 @@ const FAQ_ITEMS: {
   },
   {
     q: "How long does AEO take to show results?",
-    a: `HomeCalc.ca saw AI appearances climb within 48 hours of implementing the audit's recommendations, with the ${HOMECALC_CLAIMS.fullLiftVisible}. Timelines vary by site, page count, and existing authority — but structural changes tend to produce measurable shifts within weeks, not months.`,
+    a: `On HomeCalc.ca — a site I own — appearances began climbing within 48 hours of the changes, with the ${HOMECALC_CLAIMS.fullLiftVisible}. That is one property and no control group, so treat it as an encouraging data point rather than a timeline to plan around. There is no published service level for this: Google's documentation says recrawling alone can take days to months and that indexing is never guaranteed. What is controllable is measuring on a fixed schedule so you can tell movement from noise.`,
   },
   {
     q: "Do I need AEO if I already rank on Google?",
-    a: "Often, yes. Most businesses ranking #1 on Google are still missing from AI-generated answers. AI engines pull from many more sources than Google search results and weight different signals. Strong SEO is helpful but not sufficient on its own.",
+    a: "Ranking well on Google is a genuine advantage on Google's own AI surfaces, since they draw on the same ranking systems. Where it stops helping is everywhere else: ChatGPT, Claude and Perplexity retrieve through their own crawlers and indexes, so a strong Google position tells you nothing about them. The other thing ranking cannot tell you is whether what an answer says about you is accurate — a position is never wrong about you, a generated sentence can be.",
   },
   {
     q: "What does an AEO consultant actually deliver?",
@@ -154,6 +172,10 @@ const FAQ_ITEMS: {
   {
     q: "How much does this cost?",
     a: `The starting point is a ${PRICE_DISPLAY} AI visibility audit — flat fee, one-time. From there you can implement the plan yourself, or have me implement it for you as a fixed-scope Implementation Sprint (the audit fee is credited toward it). Optional monthly monitoring is available afterward, on a fixed 6–12 month term — never required to get started.`,
+  },
+  {
+    q: "Do you guarantee AI citations?",
+    a: "No, and no consultant can. Citations and rankings are decided by systems nobody outside those companies controls, and Google's own documentation says indexing and serving are never guaranteed. What I commit to is a diagnosis you can check, a prioritized plan, and a measured baseline so you can tell whether anything moved. Treat any guarantee of AI placement as a reason to walk away.",
   },
   {
     q: "Can I do AEO myself with tools?",
@@ -201,11 +223,26 @@ const structuredData = {
     },
     {
       "@type": "Service",
+      "@id":
+        "https://hamitahm.com/ai-visibility/answer-engine-optimization-consultant-canada/#service",
       name: "Answer Engine Optimization Consulting",
       serviceType: "AEO Consulting",
-      areaServed: "Canada",
+      description:
+        "Consultant-led answer engine optimization for Canadian businesses: structuring pages so Google AI Overviews, ChatGPT, Copilot and Perplexity can extract and cite them accurately. Starts with a fixed-fee audit delivered in 7 business days.",
+      areaServed: { "@type": "Country", name: "Canada" },
       provider: { "@id": "https://hamitahm.com/#hami-tahm" },
       url: "https://hamitahm.com/ai-visibility/answer-engine-optimization-consultant-canada/",
+      offers: {
+        "@type": "Offer",
+        price: "1500",
+        priceCurrency: "CAD",
+        availability: "https://schema.org/InStock",
+        itemOffered: {
+          "@type": "Service",
+          name: "AI Visibility Audit",
+          url: `https://hamitahm.com${AUDIT_URL}`,
+        },
+      },
     },
     {
       "@type": "FAQPage",
@@ -265,7 +302,7 @@ export default function AEOConsultantCanada() {
                 maxWidth: "24ch",
               }}
             >
-              Answer Engine Optimization: Get Found When Customers Ask AI
+              Answer Engine Optimization Consultant for Canadian Businesses
             </h1>
           </RevealSection>
 
@@ -279,11 +316,11 @@ export default function AEOConsultantCanada() {
                 lineHeight: 1.65,
               }}
             >
-              Answer engine optimization (AEO) is the practice of structuring your
-              content so AI-powered platforms — Google AI Overviews, ChatGPT, Gemini, Claude and others — can extract it as a direct answer to user questions. Hami
-              Tahm works with Canadian businesses as an answer engine optimization
-              consultant to identify where their content is being ignored by AI
-              engines and build a strategy to fix it.
+              I help Canadian service businesses and B2B teams make their content
+              easier for Google AI Overviews, ChatGPT, Perplexity and Copilot to
+              understand, cite and recommend. Engagements start with a{" "}
+              {PRICE_DISPLAY} audit delivered in {TURNAROUND}, including a written
+              roadmap and a walkthrough call.
             </p>
           </RevealSection>
 
@@ -291,23 +328,33 @@ export default function AEOConsultantCanada() {
             <p
               style={{
                 marginTop: 16,
-                fontSize: 14,
+                fontFamily: "var(--mono)",
+                fontSize: "12.5px",
                 color: "var(--faint)",
-                maxWidth: "52ch",
-                lineHeight: 1.55,
+                maxWidth: "56ch",
+                lineHeight: 1.7,
               }}
             >
-              Also offer{" "}
-              <Link href={GEO_URL} style={{ color: "var(--accent)" }}>
-                GEO consulting &rarr;
-              </Link>
+              Toronto-based &middot; serving businesses across Canada &middot;{" "}
+              {PRICE_DISPLAY} flat &middot; no retainer to start
             </p>
           </RevealSection>
 
           <RevealSection delay={0.14}>
-            <div style={{ marginTop: 32 }}>
+            <div
+              style={{
+                marginTop: 32,
+                display: "flex",
+                gap: 14,
+                flexWrap: "wrap",
+                alignItems: "center",
+              }}
+            >
+              <Link href={CHECKER_URL} className="btn btn-ghost">
+                Run the free AI visibility check
+              </Link>
               <Link href={AUDIT_URL} className="btn btn-primary">
-                Start With an AI Visibility Audit{" "}
+                Book the {PRICE_DISPLAY} AEO audit{" "}
                 <span className="arr">&rarr;</span>
               </Link>
             </div>
@@ -340,11 +387,23 @@ export default function AEOConsultantCanada() {
                   position: "relative",
                 }}
               >
-                Answer engine optimization is what determines whether AI platforms
-                summarize your content — or skip it entirely. SEO optimizes for
-                ranking. AEO optimizes for citation. The page that wins on Google
-                isn&rsquo;t always the page AI engines quote when a user asks a
-                question.
+                Answer engine optimization is the practice of making web content
+                easier for search and AI systems to understand, retrieve and present
+                as a direct answer. It builds on technical SEO, genuinely useful
+                content and authority signals &mdash; it does not replace them.
+                Google states that the same SEO fundamentals apply to its AI
+                Overviews and AI Mode, and that{" "}
+                <a
+                  href={GOOGLE_AI_FEATURES_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "var(--accent)", textDecoration: "underline" }}
+                >
+                  no special markup is required
+                </a>
+                . What AEO adds is attention to a specific question SEO never had to
+                ask: can a machine lift a clean, correct answer off this page without
+                a human reading around it?
               </p>
             </div>
           </RevealSection>
@@ -524,12 +583,32 @@ export default function AEOConsultantCanada() {
                   marginBottom: 20,
                 }}
               >
-                HomeCalc.ca, a Canadian personal finance calculator site under
-                three months old, went from near-zero to{" "}
-                {HOMECALC_CLAIMS.appearancesInTimeframe} &mdash;{" "}
+                <strong style={{ color: "var(--ink)", fontWeight: 600 }}>
+                  Owned-property case study.
+                </strong>{" "}
+                HomeCalc.ca is a Canadian personal-finance calculator site that I own
+                &mdash; not a client engagement, which is why the underlying data can
+                be published in full. Under three months old, it went from near-zero
+                to {HOMECALC_CLAIMS.appearancesInTimeframe} &mdash;{" "}
                 {HOMECALC_PROOF.combinedSourceLong}.
-                That is exactly the kind of lift AEO targets across every
-                answer engine.
+              </p>
+              <p
+                style={{
+                  fontSize: 15,
+                  color: "var(--faint)",
+                  lineHeight: 1.7,
+                  marginBottom: 20,
+                }}
+              >
+                Read that number carefully, because it is two different things added
+                together: {HOMECALC_PROOF.citations} Copilot citations and{" "}
+                {HOMECALC_PROOF.googleImpressions} Google generative-AI impressions.
+                A citation and an impression are not the same event, the two are not
+                deduplicated against each other, and the total covers Microsoft and
+                Google only &mdash; ChatGPT, Gemini, Claude and Perplexity publish
+                nothing, so no figure here speaks for them. The lift{" "}
+                <em>followed</em> a specific technical change; with one property and
+                no control, that is a sequence rather than a proven cause.
               </p>
               <p
                 style={{
@@ -596,13 +675,6 @@ export default function AEOConsultantCanada() {
             </div>
           </RevealSection>
 
-          <RevealSection delay={0.14}>
-            <div className="proof-grid" style={{ marginTop: 24 }}>
-              {PLACEHOLDER_CASE_STUDIES.map(({ label, note }) => (
-                <PlaceholderCard key={label} label={label} note={note} />
-              ))}
-            </div>
-          </RevealSection>
         </div>
       </section>
 
@@ -1192,42 +1264,3 @@ function ComparisonTable({
   );
 }
 
-function PlaceholderCard({ label, note }: { label: string; note: string }) {
-  return (
-    <div className="proof-card" style={{ borderStyle: "dashed", opacity: 0.9 }}>
-      <div
-        style={{
-          fontFamily: "var(--mono)",
-          fontSize: 11,
-          color: "var(--accent)",
-          textTransform: "uppercase",
-          letterSpacing: ".08em",
-        }}
-      >
-        Coming soon
-      </div>
-      <div
-        style={{
-          marginTop: 10,
-          fontFamily: "var(--sans)",
-          fontSize: 15,
-          fontWeight: 600,
-          color: "var(--ink)",
-        }}
-      >
-        {label}
-      </div>
-      <p
-        style={{
-          marginTop: 8,
-          fontFamily: "var(--sans)",
-          fontSize: 14,
-          color: "var(--muted)",
-          lineHeight: 1.5,
-        }}
-      >
-        {note}
-      </p>
-    </div>
-  );
-}
