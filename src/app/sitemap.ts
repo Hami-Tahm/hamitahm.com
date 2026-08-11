@@ -2,7 +2,6 @@ import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://hamitahm.com";
-  const now = new Date();
 
   type Entry = {
     path: string;
@@ -121,13 +120,33 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // the ones that carry a `changeFrequency`. Static evergreen pages get NO lastmod,
   // which is perfectly valid and more trustworthy than a fabricated one. And we use a
   // date, not a millisecond timestamp.
-  const today = now.toISOString().slice(0, 10); // YYYY-MM-DD, no fake precision
+  // ⚠️ SECOND FIX (2026-08-11). The rule above was still wrong in the way that
+  // matters. It emitted TODAY'S DATE on every page with a changeFrequency, on every
+  // deploy — so a CSS tweak re-dated forty pages as if their content had changed.
+  // That is the same fabrication as the millisecond timestamp, just less obvious,
+  // and it is exactly what makes Google stop trusting lastmod for a domain.
+  //
+  // lastmod now comes only from LAST_MODIFIED below: a real date, set by hand when
+  // the content of that page actually changes. A page absent from that map emits no
+  // lastmod at all, which is valid and honest.
+  //
+  // `priority` and `changeFrequency` are kept for other consumers (Bing/IndexNow),
+  // but note Google ignores both — they are not worth arguing about.
+  const LAST_MODIFIED: Record<string, string> = {
+    "/ai-visibility/": "2026-08-11",
+    "/blog/what-is-ai-visibility/": "2026-08-11",
+    "/blog/best-ai-visibility-tools/": "2026-08-11",
+    "/blog/how-to-check-ai-visibility/": "2026-08-11",
+    "/blog/which-ai-platform-matters-most/": "2026-08-10",
+    "/case-studies/homecalc-ai-visibility/": "2026-08-10",
+    "/research/": "2026-08-09",
+    "/methodology/": "2026-08-09",
+  };
 
   return entries.map(({ path, priority, changeFrequency }) => ({
     url: `${base}${path}`,
     priority,
-    ...(changeFrequency
-      ? { changeFrequency, lastModified: today }
-      : {}),
+    ...(changeFrequency ? { changeFrequency } : {}),
+    ...(LAST_MODIFIED[path] ? { lastModified: LAST_MODIFIED[path] } : {}),
   }));
 }

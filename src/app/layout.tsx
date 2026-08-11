@@ -165,6 +165,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_CA",
     siteName: "Hami Tahm",
+    // Root default. Next resolves this against each page's own canonical/metadataBase,
+    // so per-page og:url comes out correct rather than every page claiming the root.
+    url: "https://hamitahm.com/",
   },
   twitter: {
     card: "summary_large_image",

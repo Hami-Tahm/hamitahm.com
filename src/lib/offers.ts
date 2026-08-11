@@ -47,6 +47,8 @@ export const OFFERS = {
   implementation: {
     name: "AI Visibility Implementation Sprint",
     price: "From $4,500",
+    /** Use this in prose. See PRICE DISPLAY RULE below. */
+    priceWithCurrency: "From $4,500 CAD",
     priceNote: "CAD, fixed scope — the $1,500 audit fee is credited toward it",
     href: "/ai-visibility/implementation/",
     role: "Done-for-you: I make the changes the audit identified.",
@@ -55,12 +57,39 @@ export const OFFERS = {
   monitor: {
     name: "AI Visibility Monitoring & Advisory",
     price: "From $2,500/mo",
+    /** Use this in prose. See PRICE DISPLAY RULE below. */
+    priceWithCurrency: "From $2,500/mo CAD",
     priceNote: "CAD, optional — a fixed 6–12 month term, only after the sprint",
     href: "/contact/",
     role: "Optional and ongoing: I track your citations, watch competitors, and keep you visible as models retrain.",
     duration: "6–12 months",
+    /** Use this in prose instead of `${duration} term` — see the rule below. */
+    durationPhrase: "a fixed 6–12 month term",
   },
 } as const;
+
+/**
+ * ── PRICE DISPLAY RULE — read before writing `{OFFERS.x.price} CAD` ──
+ *
+ * On the live hub page these rendered with the space missing:
+ *
+ *     From $4,500CAD, fixed scope
+ *     From $2,500/moCAD · optional
+ *     on a fixed 6–12 monthsterm
+ *
+ * The JSX source looked correct — `{OFFERS.implementation.price} CAD` with a space.
+ * The cause is that an expression and the text beside it are two ADJACENT TEXT NODES,
+ * and the separating space survives or dies depending on how the boundary between
+ * them is serialised and re-read downstream. A price is the last thing on the site
+ * that should depend on that.
+ *
+ * So: never concatenate a unit onto a price across a JSX expression boundary.
+ * Render ONE node — `{OFFERS.implementation.priceWithCurrency}` — and keep the unit
+ * inside the constant, where it also stays consistent site-wide.
+ *
+ * Same reasoning for `durationPhrase`. `{OFFERS.monitor.duration} term` is the same
+ * shape of bug.
+ */
 
 /**
  * Forward-looking price notice shown on the pricing page.

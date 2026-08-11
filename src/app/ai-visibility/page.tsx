@@ -4,10 +4,47 @@ import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { ShortAnswer } from "@/components/ShortAnswer";
 import { HOMECALC_PROOF, HOMECALC_CLAIMS, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
+import { COMMERCIAL_REALITY } from "@/lib/citation-study";
 import { OFFERS } from "@/lib/offers";
 
 const PORTRAIT_SRC = "/images/hami-tahm/hami-tahm-portrait.png";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
+
+/**
+ * The Resources section used to be an empty promise ending in "New posts ship in
+ * Sprint S4" — an internal sprint label, shown to buyers, on a page selling
+ * transparency. These four are the pages that actually back the claims made above.
+ */
+const RESOURCES = [
+  {
+    href: "/research/",
+    tag: "Data",
+    title: "AI Citation Study",
+    blurb:
+      "The original dataset behind the numbers on this page — raw CSVs, methodology, stated limitations, published under a DOI.",
+  },
+  {
+    href: "/case-studies/homecalc-ai-visibility/",
+    tag: "Case study",
+    title: "HomeCalc.ca AI Visibility",
+    blurb:
+      "What a new domain earned across Copilot and Google's AI surfaces in three months, with the console screenshots.",
+  },
+  {
+    href: "/blog/how-to-check-ai-visibility/",
+    tag: "Guide",
+    title: "How to Check AI Visibility",
+    blurb:
+      "Seven free and freemium ways to see where you stand — including the one commonly recommended tool that doesn't do this at all.",
+  },
+  {
+    href: "/methodology/",
+    tag: "Method",
+    title: "Methodology",
+    blurb:
+      "How every figure on this site is measured, which console it came from, and what it is explicitly not claiming.",
+  },
+] as const;
 
 const HUB_FAQ = [
   {
@@ -16,11 +53,11 @@ const HUB_FAQ = [
   },
   {
     q: "How do I get recommended by AI?",
-    a: "Getting recommended means AI engines treat you as a credible, clearly-described option in your category. That comes from consistent signals across your site, your profiles, and third-party mentions — plus the structured data AI engines read. The audit maps which of these you are missing.",
+    a: "Being recommended means engines can tell what you do, for whom, and where — and find that description agreeing with itself across your site, your profiles, and third-party sources. There is no markup that buys this; Google says plainly that no special schema is required for generative AI search. The audit shows which of those signals are missing, wrong, or contradicting each other.",
   },
   {
     q: "What is the difference between AI visibility and SEO?",
-    a: "SEO improves how your page ranks in classic search results. AI visibility covers how AI platforms describe, cite, and recommend your business when users ask questions. You can rank #1 on Google and still be invisible in Google AI Overviews, ChatGPT, Gemini, Claude and others.",
+    a: "They overlap more than the labels suggest. Google states that its AI features are rooted in its core Search ranking systems and that no special optimization is required for AI Overviews or AI Mode — so on Google's surfaces, this is largely SEO. Three things stay separate: the engines that don't use Google's index (ChatGPT, Claude, Perplexity) and have their own crawlers and rules; whether what an answer says about you is accurate, which no ranking system addresses; and measurement, since most engines report nothing back to you.",
   },
   {
     q: "Which AI platforms should my business be visible in?",
@@ -196,11 +233,11 @@ export default function AIVisibilityPage() {
                 maxWidth: "16ch",
               }}
             >
-              Get your business found in ChatGPT, Perplexity, and{" "}
+              Get found when buyers ask{" "}
               <em style={{ fontStyle: "italic", color: "var(--accent)" }}>
-                Google AI results
+                AI
               </em>
-              .
+              , not just Google.
             </h1>
           </RevealSection>
 
@@ -235,7 +272,59 @@ export default function AIVisibilityPage() {
             This is the same extractability principle the audit sells.
           */}
           <RevealSection delay={0.16}>
-            <div style={{ maxWidth: "62ch" }}>
+            <div
+              style={{
+                marginTop: 34,
+                display: "flex",
+                gap: 14,
+                flexWrap: "wrap",
+                alignItems: "center",
+              }}
+            >
+              <Link
+                href="/ai-visibility/ai-visibility-checker/"
+                className="btn btn-primary"
+              >
+                Check my AI visibility &mdash; free{" "}
+                <span className="arr">&rarr;</span>
+              </Link>
+              <Link href={AUDIT_URL} className="btn btn-ghost">
+                See the $1,500 CAD audit
+              </Link>
+            </div>
+          </RevealSection>
+
+          {/*
+            MICRO-PROOF (2026-08-11). Deliberately says "a site I own".
+
+            HomeCalc.ca is my own property, not a client engagement, and a proof line
+            that lets a buyer assume otherwise is the kind of thing that only ever
+            gets found out later. The number is also a sum of two different metrics,
+            so the components are named rather than collapsed into "citations".
+          */}
+          <RevealSection delay={0.18}>
+            <p
+              style={{
+                marginTop: 20,
+                fontFamily: "var(--mono)",
+                fontSize: "12.5px",
+                color: "var(--faint)",
+                lineHeight: 1.7,
+                maxWidth: "62ch",
+              }}
+            >
+              {HOMECALC_HEADLINE_STAT.value} measured AI appearances in{" "}
+              {HOMECALC_PROOF.timeframe} on a site I own &mdash; Copilot citations
+              plus Google generative-AI impressions &middot;{" "}
+              <Link href="/methodology/" style={{ color: "var(--accent)" }}>
+                public methodology
+              </Link>{" "}
+              &middot; no retainer to start
+            </p>
+          </RevealSection>
+
+          <RevealSection delay={0.2}>
+            <div style={{ maxWidth: "62ch", marginTop: 34 }}>
               <ShortAnswer>
                 AI visibility is how accurately and consistently your business appears
                 when people ask Google AI Overviews, ChatGPT, Gemini, Claude, or Copilot to recommend a product or service. Hami Tahm is a
@@ -246,28 +335,6 @@ export default function AIVisibilityPage() {
             </div>
           </RevealSection>
 
-          <RevealSection delay={0.18}>
-            <div
-              style={{
-                marginTop: 42,
-                display: "flex",
-                gap: 14,
-                flexWrap: "wrap",
-                alignItems: "center",
-              }}
-            >
-              <Link
-                href="/ai-visibility/ai-visibility-checker"
-                className="btn btn-primary"
-              >
-                Run the free AI Visibility Check{" "}
-                <span className="arr">&rarr;</span>
-              </Link>
-              <Link href={AUDIT_URL} className="btn btn-ghost">
-                Or book the $1,500 audit
-              </Link>
-            </div>
-          </RevealSection>
         </div>
       </header>
 
@@ -322,6 +389,13 @@ export default function AIVisibilityPage() {
                   position: "relative",
                 }}
               >
+                {/*
+                  The "~30% of AI Overview sources don't rank on page one" stat that
+                  used to sit here had no source anywhere in this repo. On a site whose
+                  entire pitch is that its numbers can be checked, an unattributed
+                  third-party statistic is the worst possible thing to lead with.
+                  Replaced with two figures from my own published dataset.
+                */}
                 <div>
                   <div
                     style={{
@@ -331,7 +405,7 @@ export default function AIVisibilityPage() {
                       color: "var(--accent)",
                     }}
                   >
-                    ~30%
+                    {COMMERCIAL_REALITY.aiCitations}
                   </div>
                   <div
                     style={{
@@ -344,8 +418,7 @@ export default function AIVisibilityPage() {
                       maxWidth: "26ch",
                     }}
                   >
-                    of sources cited in AI Overviews don&rsquo;t rank on page
-                    one of organic results
+                    AI citations earned by one page of mine in a quarter
                   </div>
                 </div>
                 <div>
@@ -357,7 +430,7 @@ export default function AIVisibilityPage() {
                       color: "var(--accent)",
                     }}
                   >
-                    New
+                    {COMMERCIAL_REALITY.googleClicksPerQuarter}
                   </div>
                   <div
                     style={{
@@ -370,8 +443,8 @@ export default function AIVisibilityPage() {
                       maxWidth: "26ch",
                     }}
                   >
-                    surface, new rules &mdash; and a real opening for businesses
-                    that move early
+                    Google clicks that same page earned &mdash; why citations get
+                    measured separately
                   </div>
                 </div>
               </div>
@@ -453,8 +526,8 @@ export default function AIVisibilityPage() {
                   }}
                 >
                   Done-for-you: I implement the fixes the audit identifies.{" "}
-                  {OFFERS.implementation.price} CAD, fixed scope &mdash; audit fee
-                  credited.
+                  {OFFERS.implementation.priceWithCurrency}, fixed scope
+                  &mdash; audit fee credited.
                 </p>
                 <div
                   style={{
@@ -601,8 +674,8 @@ export default function AIVisibilityPage() {
                     lineHeight: 1.55,
                   }}
                 >
-                  Building the entity signals and citation authority that cause
-                  AI models to recognize and cite your brand.
+                  Making your brand legible to generative engines &mdash;
+                  consistent entity information and credible third-party sources.
                 </p>
                 <div
                   style={{
@@ -707,7 +780,7 @@ export default function AIVisibilityPage() {
                 letterSpacing: "-.01em",
               }}
             >
-              Proof &mdash; HomeCalc.ca Case Study
+              Proof &mdash; HomeCalc.ca, a site I own
             </h2>
           </RevealSection>
 
@@ -822,8 +895,10 @@ export default function AIVisibilityPage() {
                 lineHeight: 1.65,
               }}
             >
-              HomeCalc.ca &mdash; a Toronto-based Canadian financial calculator
-              site &mdash; went from near-zero to{" "}
+              HomeCalc.ca is a Toronto-based Canadian financial calculator site.
+              I own it &mdash; this is an owned-property case study, not a client
+              engagement, which is why the raw data can be published in full. It went
+              from near-zero to{" "}
               {HOMECALC_CLAIMS.appearancesInTimeframe},{" "}
               {HOMECALC_PROOF.combinedSourceLong}.
               The domain was {HOMECALC_PROOF.domainAge}.
@@ -984,6 +1059,22 @@ export default function AIVisibilityPage() {
             <SectionLabel number="01" text="What AI visibility work covers" />
           </RevealSection>
 
+          <RevealSection delay={0.04}>
+            <h2
+              style={{
+                fontFamily: "var(--serif)",
+                fontWeight: 500,
+                fontSize: "clamp(24px,3vw,34px)",
+                lineHeight: 1.2,
+                letterSpacing: "-.01em",
+                marginTop: -8,
+                marginBottom: 30,
+              }}
+            >
+              What AI visibility work covers
+            </h2>
+          </RevealSection>
+
           <RevealSection delay={0.06}>
             <div className="inc-grid">
               <div className="inc">
@@ -1049,8 +1140,9 @@ export default function AIVisibilityPage() {
                     lineHeight: 1.55,
                   }}
                 >
-                  Optimize for the models themselves &mdash; citations,
-                  authority signals, and structured data that LLMs trust.
+                  Improve how retrieval-enabled AI systems discover,
+                  understand and cite your pages &mdash; crawlable content,
+                  original evidence, and consistent entity information.
                 </p>
               </div>
 
@@ -1151,8 +1243,8 @@ export default function AIVisibilityPage() {
                     lineHeight: 1.55,
                   }}
                 >
-                  Build a clear knowledge-graph identity so AI models know
-                  exactly who you are and what you do.
+                  State who you are, what you sell and where, consistently
+                  enough that a machine doesn&rsquo;t have to guess.
                 </p>
               </div>
 
@@ -1185,8 +1277,8 @@ export default function AIVisibilityPage() {
                     lineHeight: 1.55,
                   }}
                 >
-                  Earn the mentions, backlinks, and third-party signals that make
-                  AI models treat you as a trusted source.
+                  Get the facts about you right on the third-party sources
+                  engines actually read. Earned, not manufactured.
                 </p>
               </div>
             </div>
@@ -1202,6 +1294,22 @@ export default function AIVisibilityPage() {
               number="02"
               text="A productized path, not an open-ended retainer"
             />
+          </RevealSection>
+
+          <RevealSection delay={0.04}>
+            <h2
+              style={{
+                fontFamily: "var(--serif)",
+                fontWeight: 500,
+                fontSize: "clamp(24px,3vw,34px)",
+                lineHeight: 1.2,
+                letterSpacing: "-.01em",
+                marginTop: -8,
+                marginBottom: 30,
+              }}
+            >
+              A productized path, not an open-ended retainer
+            </h2>
           </RevealSection>
 
           <RevealSection delay={0.06}>
@@ -1282,7 +1390,7 @@ export default function AIVisibilityPage() {
                     marginTop: 8,
                   }}
                 >
-                  {OFFERS.implementation.price} CAD
+                  {OFFERS.implementation.priceWithCurrency}
                 </div>
                 <p
                   style={{
@@ -1335,7 +1443,7 @@ export default function AIVisibilityPage() {
                     marginTop: 8,
                   }}
                 >
-                  {OFFERS.monitor.price} CAD &middot; optional
+                  {OFFERS.monitor.priceWithCurrency} &middot; optional
                 </div>
                 <p
                   style={{
@@ -1345,8 +1453,8 @@ export default function AIVisibilityPage() {
                     lineHeight: 1.55,
                   }}
                 >
-                  Optional after the sprint, on a fixed{" "}
-                  {OFFERS.monitor.duration} term &mdash; never required to start.
+                  Optional after the sprint, on{" "}
+                  {OFFERS.monitor.durationPhrase} &mdash; never required to start.
                   I monitor your citations, track competitors, and keep you
                   visible as AI models retrain.
                 </p>
@@ -1361,6 +1469,22 @@ export default function AIVisibilityPage() {
         <div className="wrap">
           <RevealSection>
             <SectionLabel number="03" text="Proof, not promises" />
+          </RevealSection>
+
+          <RevealSection delay={0.04}>
+            <h2
+              style={{
+                fontFamily: "var(--serif)",
+                fontWeight: 500,
+                fontSize: "clamp(24px,3vw,34px)",
+                lineHeight: 1.2,
+                letterSpacing: "-.01em",
+                marginTop: -8,
+                marginBottom: 30,
+              }}
+            >
+              Proof, not promises
+            </h2>
           </RevealSection>
 
           <RevealSection delay={0.06}>
@@ -1533,6 +1657,22 @@ export default function AIVisibilityPage() {
             <SectionLabel number="04" text="Who I work with" />
           </RevealSection>
 
+          <RevealSection delay={0.04}>
+            <h2
+              style={{
+                fontFamily: "var(--serif)",
+                fontWeight: 500,
+                fontSize: "clamp(24px,3vw,34px)",
+                lineHeight: 1.2,
+                letterSpacing: "-.01em",
+                marginTop: -8,
+                marginBottom: 30,
+              }}
+            >
+              Who I work with
+            </h2>
+          </RevealSection>
+
           <RevealSection delay={0.06}>
             <div className="verts">
               <Link
@@ -1681,13 +1821,54 @@ export default function AIVisibilityPage() {
                 marginTop: 16,
                 fontSize: 17,
                 color: "var(--muted)",
-                maxWidth: "52ch",
+                maxWidth: "56ch",
                 lineHeight: 1.65,
               }}
             >
-              Deep guides, comparisons, and analysis. New posts ship in Sprint
-              S4.
+              The original data, the method behind it, and the free way to check
+              yourself. All of it is public &mdash; none of it is gated.
             </p>
+          </RevealSection>
+
+          <RevealSection delay={0.1}>
+            <div className="inc-grid" style={{ marginTop: 30 }}>
+              {RESOURCES.map((r) => (
+                <Link key={r.href} href={r.href} className="inc">
+                  <div
+                    style={{
+                      fontFamily: "var(--mono)",
+                      fontSize: 11,
+                      letterSpacing: ".1em",
+                      textTransform: "uppercase",
+                      color: "var(--accent)",
+                      marginBottom: 10,
+                    }}
+                  >
+                    {r.tag}
+                  </div>
+                  <h3
+                    style={{
+                      fontFamily: "var(--serif)",
+                      fontSize: 19,
+                      fontWeight: 500,
+                      lineHeight: 1.25,
+                    }}
+                  >
+                    {r.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: "13.5px",
+                      color: "var(--muted)",
+                      marginTop: 10,
+                      lineHeight: 1.55,
+                    }}
+                  >
+                    {r.blurb}
+                  </p>
+                </Link>
+              ))}
+            </div>
           </RevealSection>
         </div>
       </section>

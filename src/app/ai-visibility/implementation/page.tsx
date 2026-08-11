@@ -175,7 +175,7 @@ export default function ImplementationPage() {
               </Link>
             </div>
             <p style={{ marginTop: 16, fontFamily: "var(--mono)", fontSize: 13, color: "var(--faint)" }}>
-              {OFFERS.implementation.price} CAD &middot; fixed scope &middot; audit fee credited &middot; one-time
+              {OFFERS.implementation.priceWithCurrency} &middot; fixed scope &middot; audit fee credited &middot; one-time
             </p>
           </RevealSection>
         </div>

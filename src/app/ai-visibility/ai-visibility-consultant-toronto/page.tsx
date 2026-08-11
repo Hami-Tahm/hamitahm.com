@@ -10,6 +10,13 @@ const AUDIT_URL = OFFERS.audit.href;
 const CHECKER_URL = OFFERS.checker.href;
 const PORTRAIT_SRC = "/images/hami-tahm/hami-tahm-portrait.png";
 const PRICE_DISPLAY = "$1,500 CAD";
+/**
+ * `{PRICE_DISPLAY} flat` rendered live as "$1,500 CADflat" — the space between a JSX
+ * expression and the text beside it does not reliably survive. Never build a price
+ * phrase across an expression boundary; render one node.
+ * See the PRICE DISPLAY RULE in src/lib/offers.ts.
+ */
+const PRICE_DISPLAY_FLAT = "$1,500 CAD flat";
 
 const FAQ_ITEMS = [
   {
@@ -503,7 +510,7 @@ export default function AIVisibilityConsultantToronto() {
                     marginBottom: 10,
                   }}
                 >
-                  {OFFERS.implementation.price} &middot; Step 2
+                  {OFFERS.implementation.priceWithCurrency} &middot; Step 2
                 </div>
                 <h3 style={{ fontFamily: "var(--sans)", fontSize: 16, fontWeight: 600 }}>
                   {OFFERS.implementation.name}
@@ -533,7 +540,7 @@ export default function AIVisibilityConsultantToronto() {
                   {OFFERS.monitor.name}
                 </h3>
                 <p style={{ fontSize: 15, color: "var(--muted)", marginTop: 10, lineHeight: 1.55 }}>
-                  {OFFERS.monitor.role} A fixed {OFFERS.monitor.duration} term, only
+                  {OFFERS.monitor.role} On {OFFERS.monitor.durationPhrase}, only
                   after the sprint &mdash; never required to start.
                 </p>
                 <span style={{ display: "inline-block", marginTop: 14, fontFamily: "var(--mono)", fontSize: 12, color: "var(--accent)" }}>
@@ -757,7 +764,7 @@ export default function AIVisibilityConsultantToronto() {
                 }}
               >
                 Six platforms reviewed, a written report, a prioritized action plan,
-                and a walkthrough call. {PRICE_DISPLAY} flat &mdash; no retainer.
+                and a walkthrough call. {PRICE_DISPLAY_FLAT} &mdash; no retainer.
               </p>
               <Link
                 href={AUDIT_URL}
