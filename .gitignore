@@ -57,6 +57,7 @@ BACKLINK-PLAN*.md
 *-INTERNAL.md
 /notes/
 /strategy/
+/reports/
 
 # typescript
 *.tsbuildinfo
