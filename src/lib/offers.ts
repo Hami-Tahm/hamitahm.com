@@ -89,3 +89,26 @@ export const PRICING_NOTICE = {
   active: true,
   text: "Rates increase in September 2026. Engagements booked before then run at the prices shown here.",
 } as const;
+
+/**
+ * The platforms every audit covers. Single source of truth.
+ *
+ * ⚠️ WHY THIS EXISTS. Roughly a dozen pages said "six AI platforms" while only a
+ * couple actually named all six, and /blog/what-is-ai-visibility/ listed five in the
+ * body while its own CTA promised six — a reader could count the gap. The count and
+ * the names must come from the same place or they drift again.
+ *
+ * If the audit scope changes, change it HERE and nowhere else. Use
+ * `AUDIT_PLATFORM_COUNT_WORD` for prose rather than typing "six".
+ */
+export const AUDIT_PLATFORMS = [
+  "Google AI Overviews",
+  "ChatGPT",
+  "Gemini",
+  "Claude",
+  "Microsoft Copilot",
+  "Perplexity",
+] as const;
+
+export const AUDIT_PLATFORM_COUNT = AUDIT_PLATFORMS.length;
+export const AUDIT_PLATFORM_COUNT_WORD = "six";
