@@ -68,7 +68,7 @@ const MEASUREMENT_STAGES = [
   {
     stage: "Business outcome",
     metric:
-      "Referral traffic, qualified enquiries, closed work. No AI platform reports this — it comes from your own analytics, and it is the only row that pays for anything.",
+      "Referral traffic, qualified enquiries, closed work. No AI platform reports this; it comes from your own analytics. It is also the only row that pays for anything.",
   },
 ] as const;
 const PRICE_DISPLAY = "$1,500 CAD";
@@ -88,11 +88,11 @@ export const metadata: Metadata = {
 const CONSULTANT_WORK = [
   {
     title: "Entity signal building",
-    body: "Making it unambiguous who you are, what you sell and where — consistent organization details, authoritative profiles, structured information on your own site, and independently verifiable references. Inconsistent entity information is one visibility gap among several, not the single explanation for absence; the audit is what tells you whether it is yours. Wikidata gets considered only where an entity genuinely meets its notability requirements, not as a default tactic.",
+    body: "Making it unambiguous who you are, what you sell and where — consistent organization details, authoritative profiles, structured information on your own site, and independently verifiable references. Inconsistent entity information is one of several reasons a brand goes missing from answers; the audit tells you whether it is yours. Wikidata only comes into it where an entity genuinely meets the notability bar.",
   },
   {
     title: "Citation authority development",
-    body: "Earning coverage on sources you do not control. Independent references can improve corroboration, discovery and credibility — that is a reasonable expectation rather than a proven weighting rule, and I will not tell you engines apply a fixed multiplier to third-party sources, because no one has shown that. What is clear is that a claim only you make is weaker evidence than one others repeat.",
+    body: "Earning coverage on sources you do not control. A claim only you make is weaker evidence than one others repeat, and independent references improve corroboration, discovery and credibility. Treat that as sound reasoning rather than a measured weighting — no engine publishes how it scores third-party sources.",
   },
   {
     title: "Content structure for generative AI",
@@ -100,7 +100,7 @@ const CONSULTANT_WORK = [
   },
   {
     title: "Platform-specific strategy",
-    body: "Platforms differ in when they search at all, what they retrieve from, how fresh their sources are, how they present citations, and how much their answers vary between runs. That is why I test each one separately instead of assuming a tactic transfers. What I will not do is tell you each engine has a known preference — claims like \'ChatGPT favours brand recognition\' circulate widely and have no published basis. Recommendations come from repeated, dated observations on your domain.",
+    body: "Platforms differ in when they search at all, what they retrieve from, how fresh their sources are, how they present citations, and how much their answers vary between runs. So I test each one separately rather than assuming a tactic transfers. You will see confident claims elsewhere about what each engine \'favours\' — those are folklore, not findings. My recommendations come from repeated, dated observations on your own domain.",
   },
 ] as const;
 
@@ -311,7 +311,7 @@ const structuredData = {
           text: aeoLink
             ? q === "What is the difference between GEO and AEO?"
               ? "They are overlapping industry labels rather than two standardised disciplines, and no body defines the boundary. In practice AEO emphasises making a page's content extractable as a direct answer, and GEO emphasises whether your brand is represented and cited at all. The underlying work — crawlable content, genuine usefulness, consistent entity information, credible outside references — is largely shared."
-              : "That framing assumes the answer is 'both', which is how this gets sold rather than how it gets diagnosed. The audit exists to find out where your actual gap is: technical discovery, content usefulness, answer extraction, entity consistency, or external authority. It is often one of them, not all five."
+              : "Usually you need one of them more than the other, and which one is a question for the audit rather than the sales page. The candidates are technical discovery, content usefulness, answer extraction, entity consistency and external authority — and for most businesses the gap sits in one or two of those, not all five."
             : a!,
         },
       })),
@@ -380,9 +380,9 @@ export default function GEOConsultantCanada() {
               across Google&rsquo;s AI features, Microsoft Copilot, ChatGPT,
               Perplexity, Gemini and Claude. The work combines technical SEO, original
               evidence, consistent entity information and credible third-party
-              references. No placement is guaranteed by anyone, including me; every
-              engagement starts with a measured baseline so you can tell whether
-              anything actually changed.
+              references. Every engagement starts with a measured baseline, so you
+              can tell whether anything actually changed &mdash; and no one, including
+              me, can guarantee placement in an AI answer.
             </p>
           </RevealSection>
 
@@ -454,9 +454,9 @@ export default function GEOConsultantCanada() {
                 >
                   A 2026 survey of 45 studies
                 </a>{" "}
-                describes it as a stochastic, partially observable pipeline &mdash;
-                which is a precise way of saying that anyone promising you a lever is
-                overselling.
+                describes it as a stochastic, partially observable pipeline. In
+                practice that means the work is about improving odds across a chain of
+                steps, and measuring whether the odds moved.
               </p>
               <p
                 style={{
@@ -467,7 +467,7 @@ export default function GEOConsultantCanada() {
                   position: "relative",
                 }}
               >
-                Worth knowing if you are being sold this: the term comes from{" "}
+                The term comes from{" "}
                 <a
                   href={GEO_PAPER_URL}
                   target="_blank"
@@ -476,12 +476,12 @@ export default function GEOConsultantCanada() {
                 >
                   a 2023 paper
                 </a>{" "}
-                that reported visibility gains of up to 40%. That figure gets quoted
-                constantly, almost always without its condition &mdash; the 2026 survey
-                notes it holds for content already present in a fixed context, and
-                establishes neither discoverability nor durable traffic. The same
-                survey found that citation-oriented rewrites can actually impair
-                retrieval. I would rather you hear that from me than find it later.
+                reporting visibility gains of up to 40% &mdash; a figure you will see
+                quoted often, and usually without its condition. It applies to content
+                already present in the model&rsquo;s context, so it says nothing about
+                getting found in the first place. The same 2026 survey also found that
+                rewriting purely to win citations can hurt retrieval, which is why I
+                start by measuring rather than rewriting.
               </p>
             </div>
           </RevealSection>
@@ -532,10 +532,9 @@ export default function GEOConsultantCanada() {
                 What generative visibility adds on top: it applies to engines that do
                 not use Google&rsquo;s index at all, and the outcome is not a position
                 but a spectrum. You can be retrieved, mentioned, cited, paraphrased
-                without attribution, or left out entirely &mdash; and those need
-                different responses. &ldquo;Either you&rsquo;re cited or you&rsquo;re
-                not&rdquo; is the version of this I used to have here, and it collapses
-                four distinct outcomes into two.
+                without attribution, or left out entirely. Those are five different
+                situations with five different fixes, and treating them as one is the
+                most common reason this work gets misdiagnosed.
               </p>
 
               <h3
@@ -789,12 +788,10 @@ export default function GEOConsultantCanada() {
                 }}
               >
                 HomeCalc launched with no backlink portfolio, no years of indexed
-                content and no brand recognition, which is what makes the numbers
-                interesting: they were not inherited. What produced them is a specific
-                technical change, which is the honest attribution &mdash; an earlier
-                version of this page credited &ldquo;authority signals&rdquo; in the
-                same breath as claiming one technical change, and those cannot both be
-                the explanation.
+                content and no brand recognition. That is what makes the numbers worth
+                showing &mdash; they were not inherited from an established domain. A
+                specific technical change produced them, and identifying that change on
+                your site is what the audit is for.
               </p>
               <blockquote
                 style={{
@@ -873,9 +870,9 @@ export default function GEOConsultantCanada() {
                 lineHeight: 1.65,
               }}
             >
-              &ldquo;Visibility&rdquo; is five different things, and most of the
-              industry reports them as one number. Separating them is what makes a
-              result checkable.
+              &ldquo;Visibility&rdquo; is five different things, and reporting them
+              as one number hides which one actually moved. Separating them is what
+              makes a result checkable.
             </p>
           </RevealSection>
 
@@ -943,9 +940,9 @@ export default function GEOConsultantCanada() {
               }}
             >
               One prompt is not a measurement. AI answers vary by engine, wording,
-              location, date and run, so anything I report to you comes from repeated
-              prompts, query variants, dated captures, and first-party console data
-              where a console exists. The{" "}
+              location, date and run, so what I report comes from repeated prompts,
+              query variants, dated captures, and first-party console data wherever a
+              console exists. The{" "}
               <Link href="/methodology/" style={SRC_LINK}>
                 methodology
               </Link>{" "}
