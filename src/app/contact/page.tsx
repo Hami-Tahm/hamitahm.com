@@ -286,7 +286,7 @@ export default function ContactPage() {
                       color: "var(--ink)",
                     }}
                   >
-                    Office
+                    Based in
                   </div>
                   <div
                     style={{
@@ -297,9 +297,9 @@ export default function ContactPage() {
                       lineHeight: 1.5,
                     }}
                   >
-                    111 Peter Street, 9th Floor, Suite 902
+                    Downtown Toronto, ON &middot; Canada
                     <br />
-                    Toronto, ON M5V 2H1 &middot; Canada
+                    Remote-first &mdash; no drop-in office
                   </div>
                 </div>
               </a>

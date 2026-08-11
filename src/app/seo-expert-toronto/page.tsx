@@ -48,7 +48,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Do you work with businesses outside Toronto?",
-    a: "Primarily Canada-wide with selective US and UK clients. My office is at 111 Peter Street, Toronto, but the work is remote-first. AI search visibility especially doesn't care about geography — the signals work the same whether you're in Toronto, Calgary, or Austin.",
+    a: "Primarily Canada-wide with selective US and UK clients. I'm based in downtown Toronto but work remote-first, so there's no office to visit. The technical foundations of search and AI visibility travel — they work the same whether you're in Toronto, Calgary or Austin — but local visibility is a different matter: it depends on location context, consistent business details across directories, reviews and local references, and those are specific to where you actually operate.",
   },
 ];
 
@@ -79,14 +79,8 @@ const structuredData = {
         { "@type": "Country", name: "Canada" },
         { "@type": "City", name: "Toronto" },
       ],
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "111 Peter Street, 9th Floor, Suite 902",
-        addressLocality: "Toronto",
-        addressRegion: "ON",
-        postalCode: "M5V 2H1",
-        addressCountry: "CA",
-      },
+      // Street address removed 2026-08-11 — see the note in
+      // src/app/ai-visibility/page.tsx. areaServed carries the geography honestly.
     },
     {
       "@type": "FAQPage",
@@ -494,9 +488,9 @@ export default function SEOExpertTorontoPage() {
             >
               I&rsquo;ve been building on the web for over a decade — across
               roughly fourteen ventures, including a 7-year run as the SEO
-              expert behind a dental clinic network. I&rsquo;m based at 111 Peter
-              Street in Toronto and serve clients across Canada, with selective
-              US and UK work.
+              expert behind a dental clinic network. I&rsquo;m based in downtown
+              Toronto and serve clients across Canada, with selective US and UK
+              work.
             </p>
             <p
               style={{

@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { HOMECALC_PROOF, HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
-import { SNAPSHOT, ENGINE_CITATIONS } from "@/lib/ai-citation-proof";
+import {
+  SNAPSHOT,
+  SNAPSHOT_INCOGNITO,
+  ENGINE_CITATIONS,
+} from "@/lib/ai-citation-proof";
 import { OFFERS } from "@/lib/offers";
 
 const SLUG = "/ai-visibility/ai-visibility-consultant-toronto/";
@@ -18,10 +22,49 @@ const PRICE_DISPLAY = "$1,500 CAD";
  */
 const PRICE_DISPLAY_FLAT = "$1,500 CAD flat";
 
+const LINK = {
+  color: "var(--accent)",
+  textDecoration: "underline",
+  textUnderlineOffset: 3,
+} as const;
+
+/**
+ * What each layer genuinely reports. The blank-looking rows are deliberate and are
+ * the reason this table exists: three of the six engines this practice covers hand
+ * back nothing at all, so any figure for them is a sample, not a measurement.
+ */
+const MEASUREMENT_LAYERS = [
+  {
+    layer: "Google Search",
+    reports:
+      "Impressions, clicks, average position and queries — including for AI Overviews and AI Mode, which are folded into the standard Performance report.",
+  },
+  {
+    layer: "Google generative AI",
+    reports:
+      "Total impressions only, in the separate Generative AI features report. No clicks, no position, no query-level data.",
+  },
+  {
+    layer: "Microsoft Copilot",
+    reports:
+      "Citation counts, cited pages, citation share and grounding queries via Bing Webmaster Tools — the only engine that reports citations back to publishers, and its figures are aggregated and sampled rather than a full log.",
+  },
+  {
+    layer: "ChatGPT, Gemini, Claude, Perplexity",
+    reports:
+      "Nothing. There is no publisher console. Visibility here is established by running dated prompt samples under fixed conditions and repeating them — a sample, and labelled as one.",
+  },
+  {
+    layer: "Your business",
+    reports:
+      "Checker submissions, calls, and audit purchases. This is the only layer that measures money, and it is the one no AI platform reports on.",
+  },
+] as const;
+
 const FAQ_ITEMS = [
   {
-    q: "Who is the best AI visibility consultant in Toronto?",
-    a: "You don't have to take my word for it. As of June 2026, when you ask ChatGPT, Perplexity, Google AI Mode, and Grok to recommend someone in Toronto for AI visibility, all four name Hami Tahm. That's the category working exactly as it should — the answer engines themselves surface the consultant, by name, for a Toronto query.",
+    q: "How do I choose an AI visibility consultant in Toronto?",
+    a: `Ask for the things that can be checked: a published methodology, dated measurements rather than undated screenshots, first-party console data, a fixed deliverable, and language that keeps citations, impressions, rankings and leads as separate numbers instead of blending them into one score. Anyone can claim a lift; far fewer will show you which console it came from and what it excludes. Applying that standard to me: the methodology, the pricing and the underlying dataset are all public, and the case study is a property I own — stated as such, because that is a weaker form of evidence than an independent client result. On the specific question of whether engines name me: they do, in two independent captures dated ${SNAPSHOT.displayDate} and ${SNAPSHOT_INCOGNITO.displayDate}, the second signed-out and incognito. AI answers vary by wording, location and date, so treat that as a repeated observation, not a ranking.`,
   },
   {
     q: "What does an AI visibility consultant in Toronto actually do?",
@@ -29,7 +72,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Do you meet clients in person in Toronto?",
-    a: "The work is remote-first — AI visibility signals don't depend on geography, and most of the delivery is a written report plus a walkthrough call. I'm based in Toronto's Entertainment District (111 Peter Street) and can meet locally when a project genuinely calls for it, but you never need to be in the room for the work to get done.",
+    a: "The work is remote-first: the delivery is a written report plus a walkthrough call, and you never need to be in the room for it. I work from a desk in a downtown Toronto incubator rather than a client-facing office, so there is no reception to walk into — if meeting in person matters for your project, we arrange somewhere to meet. To be clear about what being local does and doesn't buy you: the technical foundations of AI visibility are the same everywhere, but local recommendations depend on location context, consistent business information across directories, reviews, and local third-party references — and knowing the Canadian market is genuinely useful there.",
   },
   {
     q: "How is this different from a Toronto SEO agency?",
@@ -63,25 +106,15 @@ const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "ProfessionalService",
+      // See the note in src/app/ai-visibility/page.tsx for why this is `Service`
+      // and no longer carries a street address or geo coordinates. Short version:
+      // a dedicated desk in an incubator is not a location customers can visit, and
+      // `geo` on a LocalBusiness subtype claims exactly that.
+      "@type": "Service",
       "@id": `https://hamitahm.com${SLUG}#service`,
       name: "Hami Tahm — AI Visibility Consultant in Toronto",
       url: `https://hamitahm.com${SLUG}`,
       image: `https://hamitahm.com${PORTRAIT_SRC}`,
-      priceRange: "$$$",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "111 Peter Street, 9th Floor, Suite 902",
-        addressLocality: "Toronto",
-        addressRegion: "ON",
-        postalCode: "M5V 2H1",
-        addressCountry: "CA",
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: 43.6469,
-        longitude: -79.3924,
-      },
       provider: { "@id": "https://hamitahm.com/#hami-tahm" },
       areaServed: [
         { "@type": "City", name: "Toronto" },
@@ -151,10 +184,10 @@ export const metadata: Metadata = {
     // Buyers search this category under five different names. The title carries the
     // two highest-intent ones (AI visibility + AI SEO) plus AEO/GEO, so one page
     // covers the synonym cluster instead of spawning thin per-synonym pages.
-    absolute: "AI Visibility & AI SEO Consultant in Toronto — AEO, GEO",
+    absolute: "AI Visibility Consultant Toronto | AI SEO, AEO & GEO",
   },
   description:
-    "AI visibility and AI SEO consultant in Toronto. Get cited in Google AI Overviews, ChatGPT, Gemini, and Claude. $1,500 audit by Hami Tahm — AEO and GEO, not an agency.",
+    "Toronto AI visibility consultant helping businesses get cited in Google AI Overviews, ChatGPT, Gemini, Claude, Copilot and Perplexity. Flat-fee audit, $1,500 CAD. Hami Tahm — a consultant, not an agency.",
   alternates: { canonical: `https://hamitahm.com${SLUG}` },
 };
 
@@ -244,23 +277,36 @@ export default function AIVisibilityConsultantToronto() {
                 lineHeight: 1.65,
               }}
             >
-              When a customer asks ChatGPT, Perplexity, or Google&rsquo;s AI for a
-              recommendation in your category, you want your business to be the name
-              it gives. I&rsquo;m Hami Tahm, a Toronto-based AI visibility consultant
-              &mdash; I find where AI engines miss, misrepresent, or ignore your
-              business, and fix it, so you get cited and recommended across{" "}
-              <b style={{ color: "var(--ink)", fontWeight: 500 }}>
-                answer engine optimization (AEO)
-              </b>{" "}
-              and{" "}
-              <b style={{ color: "var(--ink)", fontWeight: 500 }}>
-                generative engine optimization (GEO)
-              </b>
-              . You&rsquo;ll also see this work called AI SEO, ChatGPT SEO, or LLMO
-              &mdash; same discipline, different labels.
+              I help Toronto clinics, professional-services firms and SaaS
+              companies find out why they&rsquo;re missing from Google AI Overviews,
+              ChatGPT, Gemini, Claude, Copilot and Perplexity &mdash; then hand them a
+              prioritized plan to fix it. Every audit is delivered by me personally,
+              not by an agency team.
+            </p>
+            <p
+              style={{
+                marginTop: 16,
+                fontSize: "clamp(15px, 1.7vw, 17px)",
+                color: "var(--faint)",
+                maxWidth: "56ch",
+                lineHeight: 1.6,
+              }}
+            >
+              The work combines technical SEO, answer optimization (AEO) and
+              generative-search visibility (GEO). You&rsquo;ll also see it called AI
+              SEO, ChatGPT SEO or LLMO &mdash; same discipline, different labels.
             </p>
           </RevealSection>
 
+          {/*
+            CTA ORDER (2026-08-11). The paid audit used to be the primary button on
+            a page that mostly receives cold traffic. Free check first, audit second.
+
+            The fit call is deliberately third, small, and labelled optional. The site
+            says elsewhere that the audit is "not gated behind a sales call" — if a
+            call ever reads as a required step, that claim becomes false and has to
+            come off every page that makes it.
+          */}
           <RevealSection delay={0.18}>
             <div
               style={{
@@ -271,14 +317,29 @@ export default function AIVisibilityConsultantToronto() {
                 alignItems: "center",
               }}
             >
-              <Link href={AUDIT_URL} className="btn btn-primary">
-                Book Your AI Visibility Audit &mdash; {PRICE_DISPLAY}{" "}
+              <Link href={CHECKER_URL} className="btn btn-primary">
+                Get a free Toronto AI visibility check{" "}
                 <span className="arr">&rarr;</span>
               </Link>
-              <Link href={CHECKER_URL} className="btn btn-ghost">
-                Run the free checker first
+              <Link href={AUDIT_URL} className="btn btn-ghost">
+                See the {PRICE_DISPLAY} audit
               </Link>
             </div>
+            <p
+              style={{
+                marginTop: 16,
+                fontFamily: "var(--mono)",
+                fontSize: "12.5px",
+                color: "var(--faint)",
+                lineHeight: 1.6,
+              }}
+            >
+              Prefer to talk first?{" "}
+              <Link href="/contact/" style={{ color: "var(--accent)" }}>
+                Book a 16-minute fit call
+              </Link>{" "}
+              &mdash; optional, and never required to buy anything.
+            </p>
           </RevealSection>
         </div>
       </header>
@@ -405,7 +466,7 @@ export default function AIVisibilityConsultantToronto() {
                 letterSpacing: "-.015em",
               }}
             >
-              Toronto buyers are asking AI before they ask Google.
+              Toronto buyers now research you in both places.
             </h2>
             <p
               style={{
@@ -417,9 +478,12 @@ export default function AIVisibilityConsultantToronto() {
             >
               &ldquo;Best dental clinic near me,&rdquo; &ldquo;a good mortgage broker
               in Toronto,&rdquo; &ldquo;an accountant for my startup downtown&rdquo;
-              &mdash; a growing share of these high-intent local questions now end
-              inside ChatGPT, Perplexity, Gemini, and Google&rsquo;s AI Overviews,
-              which name a few businesses and link to almost nothing else.{" "}
+              &mdash; questions like these are increasingly asked of ChatGPT,
+              Perplexity, Gemini and Google&rsquo;s AI Overviews as well as of classic
+              search. I don&rsquo;t have a figure for how the split is moving in
+              Toronto specifically, and I&rsquo;m not going to invent one. What is
+              observable is the shape of the answer: it names a few businesses and
+              links to little else.{" "}
               <b style={{ color: "var(--ink)", fontWeight: 500 }}>
                 If a competitor is named and you aren&rsquo;t, the customer never
                 learns you exist.
@@ -447,6 +511,21 @@ export default function AIVisibilityConsultantToronto() {
         <div className="wrap">
           <RevealSection>
             <SectionLabel number="03" text="How to work with me" />
+          </RevealSection>
+
+          <RevealSection delay={0.04}>
+            <h2
+              style={{
+                fontFamily: "var(--serif)",
+                fontWeight: 500,
+                fontSize: "clamp(26px, 3.6vw, 40px)",
+                lineHeight: 1.12,
+                letterSpacing: "-.015em",
+                marginBottom: 26,
+              }}
+            >
+              How the audit works
+            </h2>
           </RevealSection>
 
           <RevealSection delay={0.06}>
@@ -559,6 +638,21 @@ export default function AIVisibilityConsultantToronto() {
             <SectionLabel number="04" text="Toronto businesses I work with" />
           </RevealSection>
 
+          <RevealSection delay={0.04}>
+            <h2
+              style={{
+                fontFamily: "var(--serif)",
+                fontWeight: 500,
+                fontSize: "clamp(26px, 3.6vw, 40px)",
+                lineHeight: 1.12,
+                letterSpacing: "-.015em",
+                marginBottom: 26,
+              }}
+            >
+              Industries I work with in Toronto
+            </h2>
+          </RevealSection>
+
           <RevealSection delay={0.06}>
             <div className="inc-grid">
               <Link href="/ai-visibility/ai-visibility-for-dental-clinics/" className="inc">
@@ -657,14 +751,142 @@ export default function AIVisibilityConsultantToronto() {
                   position: "relative",
                 }}
               >
-                My office is at 111 Peter Street in downtown Toronto, but the work is
-                remote-first &mdash; I serve businesses across Toronto, Mississauga,
-                Vaughan, Markham, and the wider GTA, and Canada-wide. Over a decade in
-                the Canadian search market means I understand local intent, bilingual
-                search nuance, and the YMYL scrutiny that governs finance, health, and
-                real-estate queries here.
+                I work from a desk in a downtown Toronto incubator &mdash; not a
+                client-facing office &mdash; and the work itself is remote-first. I
+                serve businesses across Toronto, Mississauga, Vaughan, Markham and the
+                wider GTA, and Canada-wide. Over a decade in the Canadian search market
+                means I understand local intent, bilingual search nuance, and the YMYL
+                scrutiny that governs finance, health and real-estate queries here.
               </p>
             </div>
+          </RevealSection>
+        </div>
+      </section>
+
+
+      {/*
+        MEASUREMENT SECTION (2026-08-11).
+
+        Added because the page asked buyers to trust numbers without ever showing
+        where numbers come from — or admitting how little most engines report. The
+        honest version of this table is a better trust signal than another FAQ,
+        because the empty cells are the interesting part.
+      */}
+      <section style={{ padding: "60px 0" }}>
+        <div className="wrap">
+          <RevealSection>
+            <SectionLabel number="05" text="How this gets measured" />
+          </RevealSection>
+
+          <RevealSection delay={0.04}>
+            <h2
+              style={{
+                fontFamily: "var(--serif)",
+                fontWeight: 500,
+                fontSize: "clamp(26px, 3.6vw, 40px)",
+                lineHeight: 1.12,
+                letterSpacing: "-.015em",
+                marginBottom: 20,
+              }}
+            >
+              What can actually be measured &mdash; and what can&rsquo;t.
+            </h2>
+            <p
+              style={{
+                fontSize: "clamp(16px, 1.9vw, 18px)",
+                color: "var(--muted)",
+                maxWidth: "62ch",
+                lineHeight: 1.65,
+                marginBottom: 28,
+              }}
+            >
+              Every layer reports something different, and two of them report almost
+              nothing. Anyone offering you a single &ldquo;AI visibility score&rdquo;
+              across all of these is blending numbers that don&rsquo;t share a
+              definition.
+            </p>
+          </RevealSection>
+
+          <RevealSection delay={0.08}>
+            <div
+              style={{
+                background: "var(--panel)",
+                border: "1px solid var(--line-strong)",
+                borderRadius: 10,
+                padding: "22px 20px",
+                fontFamily: "var(--sans)",
+                overflowX: "auto",
+              }}
+            >
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1.6fr",
+                  gap: 16,
+                  minWidth: 520,
+                  fontFamily: "var(--mono)",
+                  fontSize: 10,
+                  letterSpacing: ".08em",
+                  textTransform: "uppercase",
+                  color: "var(--faint)",
+                  paddingBottom: 12,
+                  borderBottom: "1px solid var(--line)",
+                }}
+              >
+                <span>Layer</span>
+                <span>What it actually reports back to you</span>
+              </div>
+              {MEASUREMENT_LAYERS.map((row) => (
+                <div
+                  key={row.layer}
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "1fr 1.6fr",
+                    gap: 16,
+                    minWidth: 520,
+                    padding: "13px 0",
+                    borderBottom: "1px solid var(--line)",
+                    fontSize: 14,
+                    lineHeight: 1.55,
+                  }}
+                >
+                  <span style={{ fontWeight: 600, color: "var(--ink)" }}>
+                    {row.layer}
+                  </span>
+                  <span style={{ color: "var(--muted)" }}>{row.reports}</span>
+                </div>
+              ))}
+            </div>
+          </RevealSection>
+
+          <RevealSection delay={0.12}>
+            <p
+              style={{
+                marginTop: 24,
+                fontSize: 15,
+                color: "var(--muted)",
+                lineHeight: 1.7,
+                maxWidth: "62ch",
+              }}
+            >
+              All of it is published rather than described:{" "}
+              <Link href="/methodology/" style={LINK}>
+                the methodology
+              </Link>
+              ,{" "}
+              <Link href="/research/" style={LINK}>
+                the raw dataset
+              </Link>{" "}
+              under a DOI,{" "}
+              <Link href="/case-studies/homecalc-ai-visibility/" style={LINK}>
+                the HomeCalc case study
+              </Link>{" "}
+              with the console screenshots, and{" "}
+              <Link href="/case-studies/cited-by-ai-engines/" style={LINK}>
+                the dated engine snapshots
+              </Link>
+              . You can check the claims on this page before you pay for anything.
+            </p>
           </RevealSection>
         </div>
       </section>
@@ -673,7 +895,22 @@ export default function AIVisibilityConsultantToronto() {
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 760 }}>
           <RevealSection>
-            <SectionLabel number="05" text="Questions" />
+            <SectionLabel number="06" text="Questions" />
+          </RevealSection>
+
+          <RevealSection delay={0.04}>
+            <h2
+              style={{
+                fontFamily: "var(--serif)",
+                fontWeight: 500,
+                fontSize: "clamp(26px, 3.6vw, 40px)",
+                lineHeight: 1.12,
+                letterSpacing: "-.015em",
+                marginBottom: 26,
+              }}
+            >
+              Frequently asked questions
+            </h2>
           </RevealSection>
 
           <RevealSection delay={0.06}>

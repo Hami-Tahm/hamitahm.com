@@ -76,21 +76,31 @@ const HUB_FAQ = [
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
+    /*
+     * ⚠️ WHY THIS IS `Service` AND NOT `ProfessionalService` (changed 2026-08-11).
+     *
+     * Three pages each declared their own `ProfessionalService` with a street address
+     * and, on the Toronto page, geo coordinates. Two problems with that:
+     *
+     * 1. ProfessionalService is a LocalBusiness subtype. It asserts a place of
+     *    business a customer can visit. The Toronto working space is a dedicated desk
+     *    in an incubator — no permanent signage in the business's name, not staffed by
+     *    this business, clients are not received there. Google's Business Profile
+     *    rules do not treat that as an eligible location, and asserting it in schema
+     *    claims something the business cannot support.
+     * 2. Three separate LocalBusiness nodes with three @ids describe one practice as
+     *    three businesses, which is the opposite of the entity clarity this site sells.
+     *
+     * `Service` with `provider` pointing at the single Person node says the true
+     * thing: one practitioner, several services, serving an area — no storefront.
+     * `priceRange` went with it; it is a LocalBusiness property.
+     */
     {
-      "@type": "ProfessionalService",
+      "@type": "Service",
       "@id": "https://hamitahm.com/ai-visibility/#service",
       name: "Hami Tahm AI Visibility Consulting",
       url: "https://hamitahm.com/ai-visibility/",
       image: `https://hamitahm.com${PORTRAIT_SRC}`,
-      priceRange: "$$$",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "111 Peter Street, 9th Floor, Suite 902",
-        addressLocality: "Toronto",
-        addressRegion: "ON",
-        postalCode: "M5V 2H1",
-        addressCountry: "CA",
-      },
       provider: { "@id": "https://hamitahm.com/#hami-tahm" },
       areaServed: [
         { "@type": "Country", name: "Canada" },

@@ -50,21 +50,15 @@ const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "ProfessionalService",
+      // See the note in src/app/ai-visibility/page.tsx: `Service`, not a
+      // LocalBusiness subtype, and no street address — there is no location
+      // customers visit.
+      "@type": "Service",
       "@id":
         "https://hamitahm.com/ai-visibility/ai-visibility-consultant-canada/#service",
       name: "Hami Tahm — AI Visibility Consultant",
       url: "https://hamitahm.com/ai-visibility/ai-visibility-consultant-canada/",
       image: `https://hamitahm.com${PORTRAIT_SRC}`,
-      priceRange: "$$$",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "111 Peter Street, 9th Floor, Suite 902",
-        addressLocality: "Toronto",
-        addressRegion: "ON",
-        postalCode: "M5V 2H1",
-        addressCountry: "CA",
-      },
       provider: { "@id": "https://hamitahm.com/#hami-tahm" },
       areaServed: [
         { "@type": "Country", name: "Canada" },

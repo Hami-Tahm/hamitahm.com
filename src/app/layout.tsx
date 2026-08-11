@@ -59,12 +59,16 @@ const siteStructuredData = {
         "AI Visibility Consultant in Toronto — AEO & GEO for Canadian businesses that want to be cited in Google AI Overviews, ChatGPT, Gemini, and Claude.",
       image: "https://hamitahm.com/images/hami-tahm/hami-tahm-portrait.png",
       worksFor: { "@id": "https://hamitahm.com/#organization" },
+      // ⚠️ Street address removed 2026-08-11. The Toronto working space is a
+      // dedicated desk in an incubator: no signage in the business's name, not
+      // staffed by this business, clients are not received there. Declaring a suite
+      // number asserts a place a customer can turn up to, which isn't true. Locality
+      // is kept because it is true and is what the Toronto pages actually rely on.
+      // Do not re-add a street address unless the business genuinely has premises.
       address: {
         "@type": "PostalAddress",
-        streetAddress: "111 Peter Street, 9th Floor, Suite 902",
         addressLocality: "Toronto",
         addressRegion: "ON",
-        postalCode: "M5V 2H1",
         addressCountry: "CA",
       },
       knowsAbout: [
