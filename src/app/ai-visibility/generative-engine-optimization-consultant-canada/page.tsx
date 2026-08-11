@@ -3,20 +3,83 @@ import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { HOMECALC_PROOF, HOMECALC_CLAIMS, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
 
+/**
+ * ── WHY THIS PAGE READS MORE CAUTIOUSLY THAN MOST GEO PAGES (2026-08-11) ──
+ *
+ * The previous version made mechanism claims with nothing behind them: that GEO
+ * "determines" whether models cite you, that ChatGPT "favors brand recognition",
+ * that Perplexity "favors citation density", that missing entity data is "the most
+ * common reason" engines skip a brand. None of that is established anywhere.
+ *
+ * The two papers below are the actual literature. The 2026 survey reviewed 45
+ * studies and concluded, in its own words, that "no reviewed technique shows a
+ * stable, longitudinal, cross-platform causal effect on organic discoverability or
+ * downstream behavior" — and, worth noting for anyone selling this work, that
+ * "citation-oriented rewrites can impair retrieval". Confident mechanism claims on
+ * this page were not just unsupported; some of them describe tactics the evidence
+ * says can backfire.
+ *
+ * RULE: on this page, describe what is measured and what is uncertain. Selling a
+ * developing practice honestly is a stronger position than pretending it is solved
+ * — every competitor's page pretends.
+ */
+const GEO_PAPER_URL = "https://arxiv.org/abs/2311.09735";
+const GEO_SURVEY_URL = "https://arxiv.org/abs/2607.14035";
+const GOOGLE_AI_GUIDE_URL =
+  "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide";
+
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const AEO_URL =
   "/ai-visibility/answer-engine-optimization-consultant-canada/";
 const CASE_STUDY_URL = HOMECALC_PROOF.caseStudyPath;
 const TURNAROUND = "7 business days";
+
+const SRC_LINK = {
+  color: "var(--accent)",
+  textDecoration: "underline",
+  textUnderlineOffset: 3,
+} as const;
+
+/**
+ * Separating these stages is the single most useful thing on this page. Almost every
+ * GEO pitch collapses them into one "visibility score", which hides the fact that
+ * the last row — the only one that pays for anything — is never reported by any AI
+ * platform.
+ */
+const MEASUREMENT_STAGES = [
+  {
+    stage: "Discoverability",
+    metric:
+      "Indexed URLs, crawlability, whether each engine's fetcher can reach the page at all.",
+  },
+  {
+    stage: "Mentions",
+    metric: "How often the brand or entity is named in an answer, with or without a link.",
+  },
+  {
+    stage: "Citations",
+    metric:
+      "Which specific URLs are cited, and how often. Only Bing Webmaster Tools reports this directly; Google reports impressions only.",
+  },
+  {
+    stage: "Prominence",
+    metric: "Where in the answer you appear, and how much of it is yours versus a competitor's.",
+  },
+  {
+    stage: "Business outcome",
+    metric:
+      "Referral traffic, qualified enquiries, closed work. No AI platform reports this — it comes from your own analytics, and it is the only row that pays for anything.",
+  },
+] as const;
 const PRICE_DISPLAY = "$1,500 CAD";
 
 export const metadata: Metadata = {
   title: {
     absolute:
-      "Generative Engine Optimization (GEO) Consultant — Canada",
+      "Generative Engine Optimization Consultant Canada | Hami Tahm",
   },
   description:
-    "GEO helps Canadian businesses get recognized by ChatGPT, Perplexity, and Google Gemini. Consultant-led by Hami Tahm — starts with a $1,500 audit.",
+    "Canadian GEO consultant helping businesses measure and improve how they are retrieved, mentioned and cited across Google AI, Copilot, ChatGPT, Perplexity, Gemini and Claude. Flat-fee audit, $1,500 CAD. No placement guaranteed.",
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/generative-engine-optimization-consultant-canada/",
   },
@@ -25,11 +88,11 @@ export const metadata: Metadata = {
 const CONSULTANT_WORK = [
   {
     title: "Entity signal building",
-    body: "Establishing your business as a clearly identified entity across the web — Wikidata, third-party directories, structured data, consistent naming across sources. AI models build their understanding of who you are from these signals. Inconsistent or missing entity data is the most common reason AI engines skip a brand even when its content is strong.",
+    body: "Making it unambiguous who you are, what you sell and where — consistent organization details, authoritative profiles, structured information on your own site, and independently verifiable references. Inconsistent entity information is one visibility gap among several, not the single explanation for absence; the audit is what tells you whether it is yours. Wikidata gets considered only where an entity genuinely meets its notability requirements, not as a default tactic.",
   },
   {
     title: "Citation authority development",
-    body: "Building the source diversity that causes AI models to treat your brand as trustworthy. This means earning mentions across high-trust third-party sites — not just publishing on your own domain. AI engines weight citations from sources outside your control more heavily than what you say about yourself.",
+    body: "Earning coverage on sources you do not control. Independent references can improve corroboration, discovery and credibility — that is a reasonable expectation rather than a proven weighting rule, and I will not tell you engines apply a fixed multiplier to third-party sources, because no one has shown that. What is clear is that a claim only you make is weaker evidence than one others repeat.",
   },
   {
     title: "Content structure for generative AI",
@@ -37,7 +100,7 @@ const CONSULTANT_WORK = [
   },
   {
     title: "Platform-specific strategy",
-    body: "ChatGPT, Perplexity, Gemini, and Claude each compose responses differently. ChatGPT favors brand recognition and clear positioning. Perplexity favors source citation density. Gemini weights Google's broader entity graph. Claude favors content depth and source attribution. Strategy is built per platform — not as one campaign.",
+    body: "Platforms differ in when they search at all, what they retrieve from, how fresh their sources are, how they present citations, and how much their answers vary between runs. That is why I test each one separately instead of assuming a tactic transfers. What I will not do is tell you each engine has a known preference — claims like \'ChatGPT favours brand recognition\' circulate widely and have no published basis. Recommendations come from repeated, dated observations on your domain.",
   },
 ] as const;
 
@@ -45,7 +108,10 @@ const PROOF_STATS = [
   { value: HOMECALC_HEADLINE_STAT.value, label: HOMECALC_HEADLINE_STAT.label },
   { value: HOMECALC_PROOF.timeframe, label: "Time to lift" },
   { value: "< 3 months", label: "Domain age" },
-  { value: "None", label: "Domain authority" },
+  // "Domain authority: None" was removed 2026-08-11. Domain Authority is a
+  // third-party vendor score, not a Google metric, so "none" was asserting a
+  // number that has no official existence. Replaced with something first-party.
+  { value: "Owned", label: "Property type" },
 ] as const;
 
 const COMPARISON_ROWS = [
@@ -55,23 +121,34 @@ const COMPARISON_ROWS = [
     "Account manager and team",
     "No one — software shows data only",
   ],
+  // ⚠️ This table used to assert that agencies "rarely publish proof", use a
+  // "templated approach", and that software companies have "no case studies".
+  // I have no basis for any of that, and a page arguing for careful claims cannot
+  // make careless ones about competitors. Each column now states a real trade-off,
+  // including mine.
   [
-    "Methodology",
-    "Custom entity and citation strategy",
-    "Templated approach across clients",
-    "Automated tracking, no strategy",
+    "Best suited to",
+    "Direct access to one senior person, fixed scope",
+    "Multi-discipline execution and larger programmes",
+    "Repeated monitoring and trend analysis",
   ],
   [
     "Deliverable",
-    "GEO action plan + implementation support",
-    "Periodic report",
+    "Written audit, action plan, implementation support",
+    "Ongoing programme of work",
     "Dashboard and alerts",
   ],
   [
-    "Proof available",
-    "Public, named case study (HomeCalc.ca)",
-    "Rarely public",
-    "Customer metrics, no case studies",
+    "Usual limitation",
+    "Limited delivery capacity — one person",
+    "Higher cost and more handoffs",
+    "Still needs someone to interpret and act on it",
+  ],
+  [
+    "Proof on this site",
+    "Public owned-property case study + published dataset",
+    "Varies by firm",
+    "Varies by vendor",
   ],
   [
     "Pricing model",
@@ -119,16 +196,14 @@ const PERSONAS = [
   },
 ] as const;
 
-const PLACEHOLDER_CASE_STUDIES = [
-  {
-    label: "First GEO consulting case study",
-    note: "Coming summer 2026",
-  },
-  {
-    label: "High-ticket service client",
-    note: "Case study coming summer 2026",
-  },
-] as const;
+/*
+ * The two "Coming summer 2026" placeholder cards were deleted on 2026-08-11.
+ * It was already August. A promise with a date that has passed is worse than an
+ * empty space — it tells a buyer the page is unmaintained, on a page whose entire
+ * argument is that this practitioner is careful with claims.
+ *
+ * Do not re-add placeholders. Add a case study when there is one.
+ */
 
 const FAQ_ITEMS: {
   q: string;
@@ -137,7 +212,7 @@ const FAQ_ITEMS: {
 }[] = [
   {
     q: "What is the difference between GEO and SEO?",
-    a: "SEO improves where your page ranks among search results — the user still chooses what to click. GEO improves whether AI models reference your brand at all when they generate an answer. SEO rewards relevance and backlinks; GEO rewards entity recognition and citation density across reputable sources.",
+    a: "They overlap heavily. Google states that its AI features run on its core Search ranking systems and that optimizing for AI Overviews and AI Mode is still SEO, with no special markup required — so on Google's surfaces, SEO foundations are the work. What generative visibility adds is the engines that do not use Google's index at all, and an outcome that is a spectrum rather than a position: you can be retrieved, mentioned, cited, paraphrased without attribution, or omitted. Nobody has shown that either discipline 'rewards' a specific fixed factor.",
   },
   {
     q: "What is the difference between GEO and AEO?",
@@ -149,7 +224,7 @@ const FAQ_ITEMS: {
   },
   {
     q: "How quickly can I see GEO results?",
-    a: `HomeCalc.ca saw AI appearances begin climbing within 48 hours of implementing the audit's recommendations, with the ${HOMECALC_CLAIMS.fullLiftVisible}. Timelines vary by existing entity signal strength, source diversity, and how much rebuilding is required.`,
+    a: `On HomeCalc.ca — a site I own — appearances began climbing within 48 hours of the changes, with the ${HOMECALC_CLAIMS.fullLiftVisible}. That is one property, and one observation is not a timeline you should plan around. There is no published service level for this: Google's own documentation says recrawling alone can take days to months and that indexing is never guaranteed. What you can control is measuring on a fixed schedule so you can tell movement from noise.`,
   },
   {
     q: "What do I receive when working with a GEO consultant?",
@@ -205,11 +280,26 @@ const structuredData = {
     },
     {
       "@type": "Service",
+      "@id":
+        "https://hamitahm.com/ai-visibility/generative-engine-optimization-consultant-canada/#service",
       name: "Generative Engine Optimization Consulting",
       serviceType: "GEO Consulting",
-      areaServed: "Canada",
+      description:
+        "Consultant-led generative engine optimization for Canadian businesses: measuring and improving how a brand is retrieved, mentioned and cited in AI-generated answers across Google AI features, Microsoft Copilot, ChatGPT, Perplexity, Gemini and Claude. Starts with a fixed-fee audit.",
+      areaServed: { "@type": "Country", name: "Canada" },
       provider: { "@id": "https://hamitahm.com/#hami-tahm" },
       url: "https://hamitahm.com/ai-visibility/generative-engine-optimization-consultant-canada/",
+      offers: {
+        "@type": "Offer",
+        price: "1500",
+        priceCurrency: "CAD",
+        availability: "https://schema.org/InStock",
+        itemOffered: {
+          "@type": "Service",
+          name: "AI Visibility Audit",
+          url: `https://hamitahm.com${AUDIT_URL}`,
+        },
+      },
     },
     {
       "@type": "FAQPage",
@@ -220,8 +310,8 @@ const structuredData = {
           "@type": "Answer",
           text: aeoLink
             ? q === "What is the difference between GEO and AEO?"
-              ? "GEO addresses whether AI models trust and recognize your brand enough to cite it — entity-level work. AEO addresses how your existing content is formatted so AI engines can extract a direct answer from it — page-level work. GEO is about being represented; AEO is about being extractable. Most businesses need both."
-              : "Often, yes. AEO and GEO solve different problems — extraction vs recognition — and most businesses have gaps in both. The audit reveals which gap is bigger for your specific situation."
+              ? "They are overlapping industry labels rather than two standardised disciplines, and no body defines the boundary. In practice AEO emphasises making a page's content extractable as a direct answer, and GEO emphasises whether your brand is represented and cited at all. The underlying work — crawlable content, genuine usefulness, consistent entity information, credible outside references — is largely shared."
+              : "That framing assumes the answer is 'both', which is how this gets sold rather than how it gets diagnosed. The audit exists to find out where your actual gap is: technical discovery, content usefulness, answer extraction, entity consistency, or external authority. It is often one of them, not all five."
             : a!,
         },
       })),
@@ -271,7 +361,7 @@ export default function GEOConsultantCanada() {
                 maxWidth: "24ch",
               }}
             >
-              Generative Engine Optimization: Get Found in AI-Generated Answers
+              Generative Engine Optimization (GEO) Consultant in Canada
             </h1>
           </RevealSection>
 
@@ -285,13 +375,14 @@ export default function GEOConsultantCanada() {
                 lineHeight: 1.65,
               }}
             >
-              Generative engine optimization (GEO) is the practice of building the
-              authority, entity signals, and content structure that cause AI models
-              — ChatGPT, Perplexity, and Google Gemini — to recognize, trust, and
-              cite your business in their generated responses. As a generative
-              engine optimization consultant, Hami Tahm works with Canadian
-              businesses to identify why AI models are overlooking their brand and
-              build a strategy to change that.
+              I help Canadian businesses measure and improve how their pages and
+              brand are retrieved, mentioned and cited in AI-generated answers &mdash;
+              across Google&rsquo;s AI features, Microsoft Copilot, ChatGPT,
+              Perplexity, Gemini and Claude. The work combines technical SEO, original
+              evidence, consistent entity information and credible third-party
+              references. No placement is guaranteed by anyone, including me; every
+              engagement starts with a measured baseline so you can tell whether
+              anything actually changed.
             </p>
           </RevealSection>
 
@@ -348,12 +439,49 @@ export default function GEOConsultantCanada() {
                   position: "relative",
                 }}
               >
-                Generative engine optimization is what determines whether AI
-                models cite your business as a source — or generate responses that
-                leave you out entirely. GEO is about being recognized as authoritative
-                across the web, not just being readable on a single page. AI models
-                build their answers from what they trust; GEO is the work of becoming
-                trusted.
+                Generative engine optimization is a developing practice focused on
+                improving the likelihood that a source is discovered, retrieved, used,
+                mentioned or cited in AI-generated answers. It is not a single ranking
+                system. Visibility depends on whether the engine searches at all, what
+                it crawls and indexes, what it retrieves, the wording and context of
+                the query, the platform, the location, the date, and how much the
+                answer varies between runs.{" "}
+                <a
+                  href={GEO_SURVEY_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={SRC_LINK}
+                >
+                  A 2026 survey of 45 studies
+                </a>{" "}
+                describes it as a stochastic, partially observable pipeline &mdash;
+                which is a precise way of saying that anyone promising you a lever is
+                overselling.
+              </p>
+              <p
+                style={{
+                  fontSize: 15,
+                  color: "var(--faint)",
+                  lineHeight: 1.7,
+                  marginTop: 16,
+                  position: "relative",
+                }}
+              >
+                Worth knowing if you are being sold this: the term comes from{" "}
+                <a
+                  href={GEO_PAPER_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={SRC_LINK}
+                >
+                  a 2023 paper
+                </a>{" "}
+                that reported visibility gains of up to 40%. That figure gets quoted
+                constantly, almost always without its condition &mdash; the 2026 survey
+                notes it holds for content already present in a fixed context, and
+                establishes neither discoverability nor durable traffic. The same
+                survey found that citation-oriented rewrites can actually impair
+                retrieval. I would rather you hear that from me than find it later.
               </p>
             </div>
           </RevealSection>
@@ -378,13 +506,36 @@ export default function GEOConsultantCanada() {
                   marginBottom: 32,
                 }}
               >
-                SEO improves where your page sits in a list of search results — the
-                user still chooses what to click. GEO improves whether AI models
-                reference your brand at all when they compose an answer — there&rsquo;s
-                no list to rank on. Either you&rsquo;re cited, or you&rsquo;re not. SEO
-                rewards relevance and backlinks; GEO rewards entity recognition,
-                citation density across reputable sources, and clarity of what your
-                business represents.
+                Less than the labels imply, and the honest version is worth stating
+                because it is unusual to see on a page like this. Google says its AI
+                features are{" "}
+                <a
+                  href={GOOGLE_AI_GUIDE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={SRC_LINK}
+                >
+                  rooted in its core Search ranking systems
+                </a>
+                , that optimizing for them is &ldquo;still SEO,&rdquo; and that no
+                special markup is required. So on Google&rsquo;s surfaces, SEO
+                foundations are the work.
+              </p>
+              <p
+                style={{
+                  fontSize: "clamp(17px, 2vw, 19px)",
+                  color: "var(--muted)",
+                  lineHeight: 1.65,
+                  marginBottom: 32,
+                }}
+              >
+                What generative visibility adds on top: it applies to engines that do
+                not use Google&rsquo;s index at all, and the outcome is not a position
+                but a spectrum. You can be retrieved, mentioned, cited, paraphrased
+                without attribution, or left out entirely &mdash; and those need
+                different responses. &ldquo;Either you&rsquo;re cited or you&rsquo;re
+                not&rdquo; is the version of this I used to have here, and it collapses
+                four distinct outcomes into two.
               </p>
 
               <h3
@@ -395,7 +546,7 @@ export default function GEOConsultantCanada() {
                   marginBottom: 12,
                 }}
               >
-                GEO vs AEO — two distinct disciplines
+                GEO vs AEO — overlapping labels, different emphasis
               </h3>
               <p
                 style={{
@@ -616,12 +767,18 @@ export default function GEOConsultantCanada() {
                   marginBottom: 20,
                 }}
               >
-                GEO is about being cited. HomeCalc.ca, a Canadian personal finance
-                calculator site {HOMECALC_PROOF.domainAge}, went from near-zero AI
-                appearances to {HOMECALC_PROOF.combinedAppearances} in{" "}
-                {HOMECALC_PROOF.timeframe} &mdash;{" "}
-                {HOMECALC_PROOF.combinedSourceLong}. That is exactly the kind of
-                growth GEO targets across every answer engine.
+                <strong style={{ color: "var(--ink)", fontWeight: 600 }}>
+                  Owned-property case study.
+                </strong>{" "}
+                HomeCalc.ca is a Canadian personal-finance calculator site that I own
+                &mdash; not a client engagement, which is why the raw data can be
+                published in full. Over {HOMECALC_PROOF.timeframe} it recorded{" "}
+                {HOMECALC_PROOF.combinedAppearances} measured AI appearances across two
+                publisher reports: {HOMECALC_PROOF.citations} Copilot citations in Bing
+                Webmaster Tools and {HOMECALC_PROOF.googleImpressions} impressions in
+                Google&rsquo;s Generative AI features report. That is measurable growth
+                on those two surfaces. It does not establish equivalent results on
+                engines that report nothing, and appearances are not customers.
               </p>
               <p
                 style={{
@@ -631,10 +788,13 @@ export default function GEOConsultantCanada() {
                   marginBottom: 24,
                 }}
               >
-                HomeCalc launched with no traditional domain authority. No backlink
-                portfolio. No years of indexed content. No brand recognition. The
-                lift came from building the right authority signals — exactly the work
-                GEO is built on.
+                HomeCalc launched with no backlink portfolio, no years of indexed
+                content and no brand recognition, which is what makes the numbers
+                interesting: they were not inherited. What produced them is a specific
+                technical change, which is the honest attribution &mdash; an earlier
+                version of this page credited &ldquo;authority signals&rdquo; in the
+                same breath as claiming one technical change, and those cannot both be
+                the explanation.
               </p>
               <blockquote
                 style={{
@@ -686,12 +846,116 @@ export default function GEOConsultantCanada() {
             </div>
           </RevealSection>
 
-          <RevealSection delay={0.14}>
-            <div className="proof-grid" style={{ marginTop: 24 }}>
-              {PLACEHOLDER_CASE_STUDIES.map(({ label, note }) => (
-                <PlaceholderCard key={label} label={label} note={note} />
+        </div>
+      </section>
+
+      {/* ── 4b — How GEO visibility is measured ── */}
+      <section style={{ padding: "60px 0" }}>
+        <div className="wrap">
+          <RevealSection>
+            <h2
+              style={{
+                fontFamily: "var(--serif)",
+                fontWeight: 500,
+                fontSize: "clamp(27px, 3.6vw, 40px)",
+                lineHeight: 1.12,
+                letterSpacing: "-.015em",
+              }}
+            >
+              How GEO visibility is measured
+            </h2>
+            <p
+              style={{
+                marginTop: 16,
+                fontSize: "clamp(17px, 2vw, 19px)",
+                color: "var(--muted)",
+                maxWidth: "60ch",
+                lineHeight: 1.65,
+              }}
+            >
+              &ldquo;Visibility&rdquo; is five different things, and most of the
+              industry reports them as one number. Separating them is what makes a
+              result checkable.
+            </p>
+          </RevealSection>
+
+          <RevealSection delay={0.08}>
+            <div
+              style={{
+                marginTop: 30,
+                background: "var(--panel)",
+                border: "1px solid var(--line-strong)",
+                borderRadius: 10,
+                padding: "22px 20px",
+                fontFamily: "var(--sans)",
+                overflowX: "auto",
+              }}
+            >
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "0.8fr 2fr",
+                  gap: 16,
+                  minWidth: 520,
+                  fontFamily: "var(--mono)",
+                  fontSize: 10,
+                  letterSpacing: ".08em",
+                  textTransform: "uppercase",
+                  color: "var(--faint)",
+                  paddingBottom: 12,
+                  borderBottom: "1px solid var(--line)",
+                }}
+              >
+                <span>Stage</span>
+                <span>What gets measured</span>
+              </div>
+              {MEASUREMENT_STAGES.map((row) => (
+                <div
+                  key={row.stage}
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "0.8fr 2fr",
+                    gap: 16,
+                    minWidth: 520,
+                    padding: "13px 0",
+                    borderBottom: "1px solid var(--line)",
+                    fontSize: 14,
+                    lineHeight: 1.55,
+                  }}
+                >
+                  <span style={{ fontWeight: 600, color: "var(--ink)" }}>
+                    {row.stage}
+                  </span>
+                  <span style={{ color: "var(--muted)" }}>{row.metric}</span>
+                </div>
               ))}
             </div>
+          </RevealSection>
+
+          <RevealSection delay={0.12}>
+            <p
+              style={{
+                marginTop: 24,
+                fontSize: 15,
+                color: "var(--muted)",
+                lineHeight: 1.7,
+                maxWidth: "60ch",
+              }}
+            >
+              One prompt is not a measurement. AI answers vary by engine, wording,
+              location, date and run, so anything I report to you comes from repeated
+              prompts, query variants, dated captures, and first-party console data
+              where a console exists. The{" "}
+              <Link href="/methodology/" style={SRC_LINK}>
+                methodology
+              </Link>{" "}
+              and the{" "}
+              <Link href="/research/" style={SRC_LINK}>
+                underlying dataset
+              </Link>{" "}
+              are both public, so you can check how the figures on this page were
+              produced before you buy anything.
+            </p>
           </RevealSection>
         </div>
       </section>
@@ -1294,42 +1558,3 @@ function ComparisonTable({
   );
 }
 
-function PlaceholderCard({ label, note }: { label: string; note: string }) {
-  return (
-    <div className="proof-card" style={{ borderStyle: "dashed", opacity: 0.9 }}>
-      <div
-        style={{
-          fontFamily: "var(--mono)",
-          fontSize: 11,
-          color: "var(--accent)",
-          textTransform: "uppercase",
-          letterSpacing: ".08em",
-        }}
-      >
-        Coming soon
-      </div>
-      <div
-        style={{
-          marginTop: 10,
-          fontFamily: "var(--sans)",
-          fontSize: 15,
-          fontWeight: 600,
-          color: "var(--ink)",
-        }}
-      >
-        {label}
-      </div>
-      <p
-        style={{
-          marginTop: 8,
-          fontFamily: "var(--sans)",
-          fontSize: 14,
-          color: "var(--muted)",
-          lineHeight: 1.5,
-        }}
-      >
-        {note}
-      </p>
-    </div>
-  );
-}
