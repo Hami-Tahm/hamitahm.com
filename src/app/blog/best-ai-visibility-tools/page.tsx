@@ -1,264 +1,229 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { RevealSection } from "@/components/Reveal";
 import { AuthorByline } from "@/components/AuthorByline";
 import { buildBlogSchema } from "@/lib/blog-schema";
 
 const SLUG = "best-ai-visibility-tools";
-const ARTICLE_TITLE =
-  "Best AI Visibility Tools & Checkers (2026)";
+const ARTICLE_TITLE = "Best AI Visibility Tools & Checkers (2026)";
 const ARTICLE_DESCRIPTION =
-  "The best AI visibility tools and checkers in 2026 — ranked, tested, and reviewed by an independent consultant who doesn't sell them. Covers trackers, free AI visibility checkers, analytics platforms, and LLM optimization tools.";
+  "AI visibility tools and checkers in 2026 — engine coverage and entry pricing taken from each vendor's own documentation, with the source linked for every claim. By an independent consultant with no affiliate relationships.";
 const DATE_PUBLISHED = "2026-06-09";
-const DATE_MODIFIED = "2026-07-17";
+const DATE_MODIFIED = "2026-08-11";
+
+/**
+ * ── WHY THIS FILE LOOKS LIKE THIS ──
+ *
+ * The first version of this post carried star ratings (4.5/5), a rank order,
+ * and a "Last reviewed July 2026" line. None of it was reproducible: there was
+ * no scoring rubric, no prompt count, no test dates, no per-criterion score.
+ * A number like "4.5/5" reads as measurement and was actually opinion.
+ *
+ * So the ratings and the rank order are gone. What replaced them is narrower
+ * and checkable: for each tool, the engines the vendor documents and the entry
+ * price the vendor publishes, each with the URL it came from and the date it
+ * was read. Where a vendor publishes no price, this page says so rather than
+ * guessing a range.
+ *
+ * RULE FOR FUTURE EDITS: every `engines` and `entryPrice` value below must be
+ * traceable to the `sourceUrl` on the same object, as read on
+ * DATE_FACT_CHECKED. If you cannot open that URL and see the claim, change the
+ * claim — do not change the date.
+ */
+const DATE_FACT_CHECKED = "2026-08-11";
+const DATE_FACT_CHECKED_HUMAN = "August 11, 2026";
+
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const HUB_URL = "/ai-visibility/";
 const CONSULTANT_URL = "/ai-visibility/ai-visibility-consultant-canada/";
 const CHECK_URL = "/blog/how-to-check-ai-visibility/";
 const TOOLS_VS_AUDIT_URL = "/blog/ai-visibility-tools-vs-audit/";
 
-const COMPARISON_ROWS = [
-  {
-    tool: "Profound",
-    platforms: "ChatGPT, Perplexity, Gemini, Claude, Copilot",
-    analytics: "✓",
-    competitors: "✓",
-    price: "$$$$",
-    bestFor: "Enterprise",
-  },
-  {
-    tool: "Otterly.ai",
-    platforms: "ChatGPT, Perplexity, Gemini",
-    analytics: "Partial",
-    competitors: "✓",
-    price: "$$",
-    bestFor: "SMB / Growing teams",
-  },
-  {
-    tool: "Semrush AI",
-    platforms: "ChatGPT, Perplexity, Gemini, AIO",
-    analytics: "✓",
-    competitors: "Partial",
-    price: "$$$",
-    bestFor: "SEO teams on Semrush",
-  },
-  {
-    tool: "Brandwatch",
-    platforms: "Web + social + AI mentions",
-    analytics: "✓",
-    competitors: "✓",
-    price: "$$$$",
-    bestFor: "Enterprise brand monitoring",
-  },
-  {
-    tool: "BrightEdge",
-    platforms: "Google AIO, generative search",
-    analytics: "✓",
-    competitors: "✓",
-    price: "$$$$",
-    bestFor: "Enterprise SEO",
-  },
-  {
-    tool: "SE Ranking",
-    platforms: "Google AIO",
-    analytics: "Partial",
-    competitors: "✗",
-    price: "$",
-    bestFor: "Budget-conscious SEO teams",
-  },
-  {
-    tool: "Mention",
-    platforms: "Web + social + AI (partial)",
-    analytics: "Partial",
-    competitors: "Partial",
-    price: "$$",
-    bestFor: "SMB brand monitoring",
-  },
-  {
-    tool: "Ahrefs",
-    platforms: "ChatGPT, Perplexity, Gemini, Copilot, AIO (Brand Radar)",
-    analytics: "Partial",
-    competitors: "Partial",
-    price: "$$$",
-    bestFor: "SEO-first teams",
-  },
-  {
-    tool: "Wincher",
-    platforms: "Google AIO",
-    analytics: "Basic",
-    competitors: "✗",
-    price: "$",
-    bestFor: "Rank tracking with AIO layer",
-  },
-  {
-    tool: "Yext",
-    platforms: "Multi-platform AI search",
-    analytics: "✓",
-    competitors: "Partial",
-    price: "$$$$",
-    bestFor: "Multi-location / enterprise",
-  },
-] as const;
+type Tool = {
+  name: string;
+  category: "dedicated" | "seo-platform" | "enterprise";
+  /** Engines the vendor documents. Must be traceable to sourceUrl. */
+  engines: string;
+  /** Lowest published price, or an explicit "not published" note. */
+  entryPrice: string;
+  sourceUrl: string;
+  sourceLabel: string;
+  what: string;
+  whoFor: string;
+  /** The thing a buyer would get wrong if they only read the marketing page. */
+  watchOut: string;
+};
 
-const TOOL_REVIEWS = [
+const TOOLS: readonly Tool[] = [
   {
-    rank: 1,
     name: "Profound",
-    rating: "4.5/5",
-    tracks:
-      "Profound is currently the most purpose-built AI visibility tracking platform available. It tracks brand mentions and citations across ChatGPT, Perplexity, Gemini, Claude, and Bing Copilot — with structured reporting on citation frequency, sentiment, accuracy, and competitor comparison.",
-    found:
-      "Profound's cross-platform coverage is the clearest advantage — and the reason it sits at the top of this category. Most competitors track one or two platforms. Profound tracks five, with query-level data and the ability to see not just whether you're cited but what the AI actually said. The competitor gap view — showing which queries your competitors own that you don't — is the most actionable feature in the entire AI visibility tool market.\n\nThe honest caveat: Profound is built for enterprise. The pricing reflects that. A small business or solo consultant running a lean budget will find it difficult to justify. But for a business running serious AI visibility operations across multiple markets, it's the clearest choice.",
-    bestFor:
-      "Enterprise brands, agencies managing multiple client AI presence campaigns, B2B companies in competitive AI-indexed categories.",
-    pricing:
-      "Enterprise custom pricing — expect $1,000+/month for meaningful usage.",
-    misses:
-      "The platform is strong on data; it's lighter on the \"what to do about it\" side. You get the diagnosis. The fix plan is still on you.",
+    category: "dedicated",
+    engines:
+      "Starter: ChatGPT only. Growth: 3 answer engines (ChatGPT, Perplexity, Google AI Overviews). Enterprise: up to 9, adding Google AI Mode, Gemini, Copilot, Grok, DeepSeek and Claude.",
+    entryPrice:
+      "$99/mo (Starter, billed yearly, 50 prompts, 1 seat) · $399/mo (Growth, 100 prompts, 3 seats) · Enterprise custom",
+    sourceUrl: "https://www.tryprofound.com/pricing",
+    sourceLabel: "Profound pricing page",
+    what:
+      "A purpose-built answer-engine monitoring platform. It runs a prompt set on a daily schedule and reports mentions, citations, sentiment and competitive presence, plus a separate Agent Analytics product that tracks AI-referred traffic to your own domains.",
+    whoFor:
+      "Teams that want cross-engine tracking as the primary job of the tool, not a feature bolted onto something else.",
+    watchOut:
+      "The commonly repeated line that Profound is enterprise-only is out of date — but so is the opposite reading. The $99 tier tracks ChatGPT and nothing else. Cross-engine coverage starts at the $399 tier, and the full nine engines are Enterprise. Price the plan against the engines you actually need, not the logo list on the homepage.",
   },
   {
-    rank: 2,
     name: "Otterly.ai",
-    rating: "4/5",
-    tracks:
-      "Otterly.ai tracks brand and competitor mentions in AI-generated answers across ChatGPT, Perplexity, and Gemini. It's one of the few tools designed specifically for SMB and growing teams who can't justify enterprise pricing — with a query monitoring dashboard, citation frequency tracking, and basic competitor comparison.",
-    found:
-      "Otterly is the most accessible dedicated AI visibility tracker in this list. Setup is straightforward: you define your brand, competitors, and core queries, and the tool runs them automatically on a schedule. The citation frequency data is useful; the competitor view shows you which queries competitors are appearing in that you're not.\n\nThe limitation is depth. Compared to Profound, Otterly's analytics are less granular — you can see you're cited, but detailed accuracy analysis and response text extraction are more limited. For businesses just getting started with AI visibility tracking, that's an acceptable trade-off for the price.",
-    bestFor:
-      "SMBs, early-stage startups, and teams new to AI visibility who want systematic tracking without enterprise overhead.",
-    pricing: "~$100–400/month depending on query volume and competitors tracked.",
-    misses:
-      "Less platform breadth than Profound. Accuracy analysis (what exactly AI is saying about you) is limited in the base tier.",
+    category: "dedicated",
+    engines:
+      "Included on every plan: ChatGPT, Google AI Overviews, Perplexity, Microsoft Copilot. Gemini, Google AI Mode and Claude are paid add-ons.",
+    entryPrice:
+      "$29/mo (Lite, 15 prompts) · $189/mo (Standard, 100 prompts) · $489/mo (Premium, 400 prompts) · Enterprise from $1,000/mo",
+    sourceUrl: "https://otterly.ai/pricing",
+    sourceLabel: "Otterly.ai pricing page",
+    what:
+      "Daily prompt tracking with brand visibility scoring, link citation analysis, competitor comparison and a GEO audit, across 50+ countries. API, MCP access and Looker Studio reporting start at the Standard tier.",
+    whoFor:
+      "Small teams and agencies that want systematic multi-engine tracking at a price that does not require a procurement process.",
+    watchOut:
+      "The engine list is the thing to read carefully. Copilot and AI Overviews are included; Gemini and Claude are not. Adding Gemini costs $9–$149/mo depending on plan, and Claude $29–$439/mo. A quoted base price can understate the real cost by a wide margin if Gemini or Claude matter to you.",
   },
   {
-    rank: 3,
-    name: "Semrush AI Search Visibility",
-    rating: "3.5/5",
-    tracks:
-      "Semrush's Position Tracking tool includes AI Overviews detection — showing which tracked keywords trigger a Google AI Overview and whether your domain appears in it. Paired with Semrush's existing rank tracking, keyword research, and competitive analysis, it gives SEO teams a unified view of traditional and AIO performance.",
-    found:
-      "For SEO teams already inside Semrush, this is a convenient choice — no new tool, no new login, no new budget line. The AI data layers directly onto keyword performance reports, which makes it easy to spot where you're ranking but not being cited.\n\nOne caveat, and it matters: Semrush's AI visibility coverage has been expanding fast — beyond Google AI Overviews toward ChatGPT, Perplexity, Gemini and Google's AI Mode. Exactly which engines are covered in your plan changes often, so check Semrush's current AI visibility documentation before you buy; don't rely on any single-engine claim, including an older version of this one.",
-    bestFor:
-      "SEO teams with existing Semrush subscriptions who want Google AIO data without adding a new platform.",
-    pricing:
-      "Semrush plans start at ~$130/month; AI Overviews tracking is included in Pro and above.",
-    misses:
-      "Historically strongest on Google AI Overviews; engine coverage is broadening. Verify which engines your plan includes before buying.",
+    name: "SE Visible (SE Ranking)",
+    category: "dedicated",
+    engines: "ChatGPT, Gemini, Google AI Mode, Perplexity, Google AI Overviews — on every tier.",
+    entryPrice:
+      "$99/mo (Basic, 200 prompts) · $189/mo (Core, 450 prompts) · $355/mo (Plus, 1,000 prompts)",
+    sourceUrl: "https://visible.seranking.com/for-product-marketers/",
+    sourceLabel: "SE Visible product page",
+    what:
+      "SE Ranking's dedicated AI visibility product — a separate app from its SEO suite, not a checkbox inside rank tracking. Covers visibility, sentiment, cited sources and competitor benchmarking with weekly updates across 7 countries and 5 languages.",
+    whoFor:
+      "Teams that want the same five engines on the cheapest tier rather than an add-on ladder.",
+    watchOut:
+      "Do not confuse SE Visible with SE Ranking's classic rank tracker. They are separately priced products, and older comparisons (including an earlier version of this page) described the rank tracker's AI Overviews flag as if it were the whole AI offering. Coverage is 7 countries and 5 languages — narrow if you sell outside them.",
   },
   {
-    rank: 4,
+    name: "Frase",
+    category: "dedicated",
+    engines: "ChatGPT, Perplexity, Claude, Gemini, Google AI.",
+    entryPrice: "Plans from $39/mo billed yearly; AI visibility tracking is part of the platform.",
+    sourceUrl: "https://www.frase.io/features/ai-tracking",
+    sourceLabel: "Frase AI visibility feature page",
+    what:
+      "Daily prompt tracking with share of voice against competitors you nominate, the full response text behind each citation, alerts when visibility moves, and a log of which AI crawlers are actually reaching your pages.",
+    whoFor:
+      "Content teams that want the tracking and the content work in the same place — a gap you spot hands off to the editor rather than to a separate tool.",
+    watchOut:
+      "Frase is usually filed under content optimization, and this page filed it that way too until this revision. That is now wrong: it does daily multi-engine tracking. The trade-off is depth of the tracking analytics compared with a tool that does only tracking.",
+  },
+  {
+    name: "Semrush",
+    category: "seo-platform",
+    engines:
+      "Google AI Overviews, Google AI Mode, ChatGPT, Perplexity, Gemini — tracked weekly in Brand Performance.",
+    entryPrice:
+      "AI Visibility toolkit from $99/mo · Semrush One (SEO + AI visibility) from $199/mo · free plan shows AI mentions, citations and a visibility score",
+    sourceUrl: "https://www.semrush.com/kb/1626-ai-visibility-features",
+    sourceLabel: "Semrush AI visibility documentation",
+    what:
+      "A full AI visibility toolkit rather than an AI Overviews flag: share of voice and sentiment tracking, competitor benchmarking against up to four rivals, a prompt research database, and a site audit that flags which AI crawlers you are blocking.",
+    whoFor:
+      "SEO teams already inside Semrush, and anyone who wants one bill covering both classic search and AI answers.",
+    watchOut:
+      "Which toolkit you are on determines what you see. Google and AI Overviews tracking is on any plan including the free one; tracking on ChatGPT, Perplexity and Gemini requires Semrush One or the AI Visibility toolkit. Brand Performance runs on Semrush-generated synthetic prompts based on your domain and location — useful, but not your customers' actual wording.",
+  },
+  {
+    name: "Ahrefs Brand Radar",
+    category: "seo-platform",
+    engines:
+      "Seven AI platforms: Google AI Overviews & AI Mode, ChatGPT, Perplexity, Gemini, Copilot, Grok (data collection currently paused), and Claude (custom prompts only). Plus SEO, YouTube, Reddit and TikTok indexes.",
+    entryPrice:
+      "AI indexes are a paid add-on on any plan: $199/mo per single platform, or $699/mo for all platforms. Custom prompt tracking is separate: $50 / $100 / $250 per month by volume.",
+    sourceUrl: "https://help.ahrefs.com/en/articles/11064852-what-is-brand-radar-and-how-to-use-it",
+    sourceLabel: "Ahrefs Brand Radar documentation",
+    what:
+      "A discovery-first tool. Instead of only running prompts you define, it queries a standing index of 405M+ search-backed prompts derived from People Also Ask questions, so there is history to look at from the moment you get access — back to May 2025 for chatbot sources and August 2024 for AI Overviews.",
+    whoFor:
+      "Teams that want breadth and back-history rather than a small, hand-picked prompt set, and that already live in Ahrefs.",
+    watchOut:
+      "Two things the pricing page does not put up front. The AI indexes are an add-on, not something included with a standard Ahrefs plan — describing Brand Radar as bundled at $100/mo is wrong. And the AI chatbot index refreshes once a month; only AI Overviews and your own custom prompts move faster than that.",
+  },
+  {
+    name: "BrightEdge",
+    category: "enterprise",
+    engines:
+      "AI Hyper Cube covers ChatGPT, Gemini and other generative engines; AI Agent Insights reports which AI bots are hitting your own site.",
+    entryPrice: "No public pricing. BrightEdge does not publish rate cards; figures elsewhere are third-party guesses.",
+    sourceUrl:
+      "https://www.brightedge.com/news/press-releases/brightedge-ai-hypercube-brands-ai-search-visibility",
+    sourceLabel: "BrightEdge AI Hyper Cube announcement (March 10, 2026)",
+    what:
+      "Enterprise SEO platform with a dedicated AI search layer. AI Hyper Cube maps which prompts mention you, which sources the engines lean on, how competitors appear alongside you, and whether the narrative is positive or negative. AI Agent Insights covers the other direction — blocked pages and broken paths that stop AI systems reaching you.",
+    whoFor: "Enterprises with an existing BrightEdge relationship and a search team to run it.",
+    watchOut:
+      "\"Generative Parser\" is the name older comparisons still use, including an earlier version of this page. The current product is AI Hyper Cube, launched March 2026, and it is not AI-Overviews-only. Any figure you see quoted for BrightEdge pricing — including the $2,000+/mo this page previously carried — is not from BrightEdge.",
+  },
+  {
+    name: "Yext Scout",
+    category: "enterprise",
+    engines:
+      "Google Search, Google Maps and Google AI Overviews, plus ChatGPT, Gemini, Claude and Perplexity.",
+    entryPrice: "No public pricing. A free Scout scan is available without a contract.",
+    sourceUrl: "https://www.yext.com/platform/scout",
+    sourceLabel: "Yext Scout product page",
+    what:
+      "Visibility measured location by location rather than only at brand level, head-to-head win rates against your 20 closest competitors, sentiment themes (Yext's own example: \"long wait times\"), citation-source tracking, and an Action Center where agents update listings, correct business data and respond to reviews.",
+    whoFor: "Multi-location brands — the per-location view is the reason to choose it over a brand-level tracker.",
+    watchOut:
+      "Scout is the clearest counter-example to the claim that AI visibility tools only diagnose. It prioritises fixes and executes some of them. The trade-off is the Yext ecosystem: the execution side runs on Yext's listings and Knowledge Graph products, so the value depends on committing to those.",
+  },
+  {
     name: "Brandwatch",
-    rating: "3.5/5",
-    tracks:
-      "Brandwatch is an established brand intelligence platform that has evolved to include AI-generated content monitoring alongside its traditional social listening and web mention tracking. It tracks brand mentions across social media, news, forums, and increasingly, AI-generated responses.",
-    found:
-      "Brandwatch's strength is the breadth of its data sources. If you need to track brand presence across social, news, and AI simultaneously — within one platform — it's a strong choice. The AI mention tracking is a newer addition, and while it's functional, it's less purpose-built for AI visibility than Profound or Otterly.\n\nThe tradeoff: Brandwatch is powerful and expensive, and AI visibility is one feature among many. For a business whose primary concern is AI search citation tracking specifically, you're paying for a lot of capability you may not use.",
-    bestFor:
-      "Enterprise brand teams who already need comprehensive brand monitoring across social, news, and web — and want AI coverage included.",
-    pricing: "Enterprise pricing — typically $1,000+/month for full access.",
-    misses:
-      "AI tracking is not the core product. Less granular on query-level AI citation analysis than purpose-built tools.",
+    category: "enterprise",
+    engines:
+      "GenAI engines including ChatGPT, alongside Google, Amazon, TikTok and Baidu search data, across 150+ countries.",
+    entryPrice: "No public pricing.",
+    sourceUrl: "https://www.brandwatch.com/suite/search-intelligence/",
+    sourceLabel: "Brandwatch Search Intelligence",
+    what:
+      "Brandwatch's AI coverage sits in a named Search Intelligence and GenAI Monitoring product, powered by Trajaan — not as an afterthought inside social listening. It monitors how leading LLMs cite your brand and competitors across thousands of prompts, surfaces sentiment shifts, identifies which media domains and pages the LLMs trust, and flags high-risk narratives early.",
+    whoFor:
+      "Enterprise brand and comms teams who need social, news and AI in one place and would otherwise buy two platforms. The early-warning framing — catching a reputational problem in LLM answers before it surfaces in social — is the distinctive part.",
+    watchOut:
+      "This page previously described Brandwatch as social listening \"with some AI\" and quoted $1,000+/month. The first understated the product badly and the second had no public source. Brandwatch publishes no pricing; treat any number you read as someone's estimate.",
   },
+];
+
+/** Tools that turn up on lists like this one — including an earlier version of this one — without a documented AI answer-tracking product. */
+const NOT_AI_TRACKERS = [
   {
-    rank: 5,
-    name: "BrightEdge Generative Parser",
-    rating: "4/5",
-    tracks:
-      "BrightEdge — an enterprise SEO platform — has built dedicated functionality for tracking AI-generated search, branded \"Generative Parser.\" It tracks appearances in Google AI Overviews and generative AI answers, with competitive benchmarking and integration into BrightEdge's existing content and performance reporting.",
-    found:
-      "BrightEdge's advantage is enterprise integration depth. If your organization is already running BrightEdge for enterprise SEO, the Generative Parser adds AI visibility tracking without a new platform. The competitive benchmarking against peer domains is genuinely useful — it quantifies your AI presence gap relative to named competitors.\n\nThe honest limitation: BrightEdge is expensive and complex. For a mid-market business that doesn't have an existing BrightEdge relationship, it's difficult to justify as an AI visibility entry point. This is a platform for enterprise SEO teams with existing infrastructure.",
-    bestFor:
-      "Enterprise SEO teams with existing BrightEdge contracts who want AI search tracking integrated into their current reporting.",
-    pricing: "Custom enterprise — typically $2,000+/month for meaningful access.",
-    misses:
-      "Not a standalone AI visibility solution for most businesses. Coverage outside Google AIO is less robust than Profound.",
-  },
-  {
-    rank: 6,
-    name: "SE Ranking",
-    rating: "3/5",
-    tracks:
-      "SE Ranking is a mid-market SEO platform with AI Overviews tracking built into its rank tracking suite. For tracked keywords, it shows whether a Google AI Overview appeared and pulls basic AIO presence data alongside standard position tracking.",
-    found:
-      "SE Ranking is the most affordable way to get systematic Google AIO tracking alongside keyword rank monitoring. For businesses that want AIO visibility without the price of Semrush, it's a reasonable alternative. The interface is clean and the AIO data is accessible to non-technical users.\n\nThe limitation: SE Ranking's AI features focus on Google AI Overviews — it doesn't track ChatGPT, Perplexity, or Gemini the way Semrush's AI Visibility Toolkit or Ahrefs' Brand Radar now do. It's a solid AIO tracker at an accessible price point, but verify its current engine list before buying, since coverage in this category changes monthly.",
-    bestFor:
-      "Budget-conscious SEO teams who want Google AIO tracking without paying Semrush prices.",
-    pricing: "~$50–150/month depending on plan.",
-    misses:
-      "Google AIO only. No multi-platform AI visibility. Competitor gap analysis is limited in base plans.",
-  },
-  {
-    rank: 7,
     name: "Mention",
-    rating: "2.5/5",
-    tracks:
-      "Mention is a brand monitoring platform that tracks mentions across web, social, news, and increasingly, AI-generated content. It's one of the more affordable general-purpose brand monitoring tools with some AI mention capability.",
-    found:
-      "Mention is better understood as a brand monitoring tool that includes some AI coverage rather than an AI visibility tracker. For businesses that primarily need web and social mention monitoring — and want basic AI coverage as a bonus — it's useful and accessible. For businesses whose primary concern is AI search citation tracking, it's underpowered relative to dedicated tools.\n\nThe AI monitoring component is not Mention's core product, and it shows in the depth of the data. You can see AI-attributed mentions, but the platform isn't built to track query-level citation frequency the way Profound or Otterly is.",
-    bestFor:
-      "SMBs that primarily need web and social brand monitoring and want basic AI mention tracking as part of a single affordable package.",
-    pricing: "~$50–300/month depending on volume and team size.",
-    misses:
-      "Not purpose-built for AI visibility. Limited query-level granularity. Fewer AI platforms covered than dedicated tools.",
+    finding:
+      "Mention's own site describes three products — Monitor, Analyze and Engage — across web and social sources. There is no AI answer monitoring in the product navigation, the feature pages or the source list. Mention has AI features in the sense that it uses AI to summarise and classify mentions, which is a different thing from monitoring what ChatGPT or Perplexity says about you. Mention was acquired by Agorapulse.",
+    sourceUrl: "https://mention.com/en/",
+    sourceLabel: "Mention product site",
   },
   {
-    rank: 8,
-    name: "Ahrefs",
-    rating: "3/5",
-    tracks:
-      "Ahrefs — known primarily for its backlink analysis and keyword research — has added AI overview detection to its rank tracking features. In Ahrefs' Rank Tracker, you can see whether tracked keywords trigger a Google AI Overview and whether your site appears in it.",
-    found:
-      "For Ahrefs users, the AI tracking is a useful addition — you can see AI presence alongside standard position data in a tool you already pay for. The keyword database and competitive intelligence that make Ahrefs strong for SEO apply here too.\n\nCaveat: Ahrefs has been broadening its AI coverage (its Brand Radar product now spans several AI surfaces, not just Google AI Overviews). Feature sets in this category move monthly, so verify the current scope on Ahrefs' own site before choosing it for cross-platform tracking, rather than trusting a fixed claim here.",
-    bestFor:
-      "Existing Ahrefs users who want Google AIO tracking integrated into their current workflow.",
-    pricing: "Ahrefs plans start at ~$100/month; AI overview features included.",
-    misses:
-      "The AI visibility feature is secondary to Ahrefs' core SEO use case. Check current engine coverage on Ahrefs' site before relying on it cross-platform.",
-  },
-  {
-    rank: 9,
     name: "Wincher",
-    rating: "2.5/5",
-    tracks:
-      "Wincher is a clean, straightforward rank tracking tool that has added Google AI Overviews detection to its core feature set. For each tracked keyword, Wincher shows whether an AI Overview appeared and whether your site was featured in it.",
-    found:
-      "Wincher is the simplest AI-adjacent tool in this list — which is its advantage and its limitation. If you run a small business or manage a lean SEO operation, Wincher's interface is easy to navigate and the AIO detection is accurate. There's minimal setup and no steep learning curve.\n\nThe honest assessment: Wincher's AI features are basic. No competitor analysis for AIO, no cross-platform coverage, no citation accuracy checking. It tells you whether you appeared in an AIO — nothing more. For businesses that need a lightweight, affordable AIO detector as a supplement to manual checks, it does that job cleanly.",
-    bestFor:
-      "Solo operators and small businesses that want a simple, affordable way to monitor Google AIO appearances alongside basic rank tracking.",
-    pricing: "~$30–100/month.",
-    misses:
-      "Basic feature set. Google AIO only. Not suitable as a primary AI visibility tracking solution for businesses with serious AI search exposure.",
-  },
-  {
-    rank: 10,
-    name: "Yext",
-    rating: "3.5/5",
-    tracks:
-      "Yext has made significant investment in AI search presence — it's one of the few platforms built around the idea that business information needs to be optimized for AI-generated answers across multiple platforms. Yext tracks brand presence in AI-generated answers and provides tools to optimize business listings and structured data for AI retrieval.",
-    found:
-      "Yext's approach is different from the other tools in this list — it's not just a tracker, it's an optimization and data management platform. The analytics include AI-generated answer appearance data, and the platform's core product (business listings management) directly feeds the entity clarity signals that drive AI citations.\n\nThe limitation: Yext is enterprise-priced and involves platform lock-in. The optimization features require commitment to the Yext ecosystem, and the analytics, while useful, are less granular on citation analysis than Profound. For multi-location businesses or enterprise brands managing structured data at scale, it makes sense. For most businesses, it's more than needed.",
-    bestFor:
-      "Multi-location businesses, enterprise brands, and companies that need structured data management at scale alongside AI visibility analytics.",
-    pricing:
-      "Enterprise custom — typically $500–2,000+/month depending on location count and features.",
-    misses:
-      "Expensive. The tracker component is secondary to the listings management product. Less citation-level granularity than dedicated AI visibility platforms.",
+    finding:
+      "Wincher documents a rank tracker, local rank tracker, keyword explorer and on-page checker. Its feature list mentions SERP features generically. There is no documented AI Overviews product and no AI answer tracking. An earlier version of this page said Wincher's AI Overview detection was accurate — there is no public evidence for that, and no product page to check it against.",
+    sourceUrl: "https://www.wincher.com/",
+    sourceLabel: "Wincher product site",
   },
 ] as const;
 
 const FAQ_ITEMS = [
   {
     q: "Is there a free AI visibility tracker?",
-    a: "Not a fully free dedicated tracker. Free methods include manual ChatGPT and Perplexity query testing, Google Search Console's AIO performance data, and limited free tiers from platforms like Semrush and SE Ranking. These cover one or two platforms and require manual effort. For ongoing tracking across multiple platforms, paid tools are the only systematic option.",
+    a: "There are free entry points, but no free tool that tracks multiple engines on a schedule. Semrush's free plan shows AI mentions, citations and a visibility score in Domain Overview, and audits 100 pages for AI readiness. Yext offers a free Scout scan. Google Search Console's Generative AI features report shows impressions from Google's AI surfaces for your own site. Beyond that, free means manual: you run the prompts yourself. For ongoing multi-engine tracking, paid tools are the only systematic option.",
   },
   {
     q: "What's the difference between AI visibility tools and SEO tools?",
-    a: "SEO tools track rankings, traffic, and backlinks in traditional search. AI visibility tools track brand citations, accuracy, and coverage in AI-generated answers. Some SEO platforms (Semrush, Ahrefs, SE Ranking) have added AI visibility features and are expanding which engines they cover — historically Google AI Overviews first, increasingly ChatGPT, Perplexity and Gemini too. Coverage changes often, so verify each tool's current engine list before buying.",
+    a: "SEO tools track rankings, traffic and backlinks in traditional search. AI visibility tools track whether you are mentioned and cited in AI-generated answers, and what those answers say. The line has blurred: Semrush, Ahrefs and SE Ranking all now sell AI visibility products covering ChatGPT, Gemini and Perplexity as well as Google's AI surfaces. The practical difference is usually packaging and price — in Ahrefs the AI indexes are a paid add-on, in Semrush they are a separate toolkit, and in SE Ranking's case an entirely separate product called SE Visible.",
   },
   {
     q: "Can AI visibility tools track Perplexity citations?",
-    a: "Yes — more every month. Profound and Otterly.ai track Perplexity citations, and Semrush's AI Visibility Toolkit and Ahrefs' Brand Radar have both added Perplexity (alongside ChatGPT and Gemini). Rank-tracker-style AI features — like SE Ranking's and Wincher's — still center on Google AI Overviews. Because coverage in this category changes monthly, verify a tool's current engine list before buying if Perplexity tracking is a priority.",
+    a: "Yes, and this is now the normal case rather than the exception. Profound (from the Growth tier), Otterly.ai, SE Visible, Frase, Semrush's AI Visibility toolkit, Ahrefs Brand Radar and Yext Scout all document Perplexity coverage. If a tool does not cover Perplexity in 2026, that is the unusual thing.",
   },
   {
     q: "Do I need an AI visibility tool or a consultant?",
@@ -266,11 +231,11 @@ const FAQ_ITEMS = [
   },
   {
     q: "How accurate are AI visibility tracking tools?",
-    a: "Accuracy varies by platform and feature. AIO tracking (Google AI Overviews) from tools like Semrush and Ahrefs is generally reliable — Google's data is more structured. ChatGPT and Perplexity tracking is harder to automate accurately because responses vary by session and query framing. Treat AI visibility data as directionally accurate rather than precisely reliable. Manual verification of important queries is always worth doing.",
+    a: "Directionally accurate rather than precise, and for a structural reason: AI answers vary between sessions, models, phrasings and locations, so any single reading is a sample. Refresh rates differ too — Otterly, Frase and Profound track daily, Semrush's Brand Performance updates weekly, and Ahrefs' AI chatbot index refreshes monthly. Two tools reporting different numbers for the same brand are not necessarily contradicting each other. Manual verification of the queries that matter commercially is always worth doing.",
   },
   {
     q: "What is Profound AI visibility?",
-    a: "Profound is an enterprise AI visibility tracking platform that monitors brand citations across ChatGPT, Perplexity, Gemini, Claude, and Bing Copilot. It's currently one of the most comprehensive dedicated AI visibility platforms available, with competitive benchmarking and query-level citation analysis. It's the market reference for what a purpose-built AI visibility tracker looks like — and the benchmark I used when evaluating every other tool in this list.",
+    a: "Profound is a dedicated answer-engine monitoring platform. It runs a prompt set daily and reports mentions, citations, sentiment, ranking and competitive presence, plus AI-referred traffic through a separate Agent Analytics product. Self-serve plans start at $99/month for ChatGPT-only tracking, $399/month for three answer engines, and Enterprise plans cover up to nine.",
   },
 ] as const;
 
@@ -314,9 +279,23 @@ const labelStyle = {
   color: "var(--ink)",
 } as const;
 
-function splitParagraphs(text: string) {
-  return text.split("\n\n");
-}
+const CATEGORY_HEADS: Record<Tool["category"], { title: string; blurb: string }> = {
+  dedicated: {
+    title: "Dedicated AI visibility platforms",
+    blurb:
+      "Built for this job first. Tracking AI answers is the product, not a feature added to something else.",
+  },
+  "seo-platform": {
+    title: "SEO platforms with AI visibility products",
+    blurb:
+      "You may already be paying for the base platform. The AI coverage is real, but it is packaged and priced separately in every case below.",
+  },
+  enterprise: {
+    title: "Enterprise brand and search platforms",
+    blurb:
+      "Broad platforms where AI visibility is one capability among many. None of the three publishes pricing.",
+  },
+};
 
 export default function BestAIVisibilityToolsPost() {
   return (
@@ -377,9 +356,9 @@ export default function BestAIVisibilityToolsPost() {
                 letterSpacing: "-.025em",
               }}
             >
-              Best AI visibility tools and checkers in 2026 —{" "}
+              AI visibility tools in 2026 —{" "}
               <em style={{ fontStyle: "italic", color: "var(--accent)" }}>
-                an independent consultant&rsquo;s rankings.
+                what each one actually covers, and what it costs.
               </em>
             </h1>
           </RevealSection>
@@ -395,20 +374,17 @@ export default function BestAIVisibilityToolsPost() {
                 lineHeight: 1.5,
               }}
             >
-              Ten AI visibility platforms and checkers ranked on coverage,
-              accuracy, and who they&rsquo;re actually for — no affiliate links,
-              no vendor relationships.
+              Engine coverage and entry pricing taken from each vendor&rsquo;s own
+              documentation, with the source linked for every claim. No affiliate
+              links, no vendor relationships, no star ratings I can&rsquo;t defend.
             </p>
           </RevealSection>
 
           <RevealSection delay={0.18}>
-            <AuthorByline date="June 9, 2026" readTime="18 min read" />
+            <AuthorByline date="June 9, 2026" readTime="16 min read" />
           </RevealSection>
 
           <RevealSection delay={0.2}>
-            {/* Freshness note added 2026-07-14. This category changes monthly; several
-                tools have broadened engine coverage since first publication. Rather than
-                assert a snapshot as permanent fact, tell readers to verify. */}
             <p
               style={{
                 marginTop: 22,
@@ -418,10 +394,10 @@ export default function BestAIVisibilityToolsPost() {
                 fontStyle: "italic",
               }}
             >
-              Last reviewed July 2026. AI visibility tools ship new engine coverage
-              and change pricing frequently &mdash; treat the specifics below as a
-              starting point and confirm current features and prices on each
-              vendor&rsquo;s own site before you buy.
+              Last fact-checked: {DATE_FACT_CHECKED_HUMAN}. Every engine list and
+              price below was read on that date from the linked vendor page. This
+              category changes monthly &mdash; if you are reading this well after
+              that date, open the source link before you buy.
             </p>
           </RevealSection>
         </div>
@@ -470,11 +446,12 @@ export default function BestAIVisibilityToolsPost() {
                   margin: 0,
                 }}
               >
-                Profound leads for enterprise cross-platform tracking. Otterly.ai
-                is the best SMB entry point. Free AI visibility checkers cover
-                point-in-time spot-checks, not ongoing tracking. Many SEO tools
-                still center on Google AI Overviews — check each tool&rsquo;s
-                current engine list before you buy.
+                Multi-engine coverage is no longer the differentiator &mdash; nearly
+                every tool here covers ChatGPT, Gemini and Perplexity. What separates
+                them now is packaging: whether the engines you need are included or
+                sold as add-ons, how often the data refreshes, and whether the tool
+                stops at reporting or also prioritises fixes. Read the plan you would
+                actually buy, not the logo row on the homepage.
               </p>
             </div>
           </RevealSection>
@@ -507,11 +484,10 @@ export default function BestAIVisibilityToolsPost() {
                 From the author
               </div>
               <p style={{ margin: 0 }}>
-                An AI visibility checker tells you{" "}
-                <em style={{ fontStyle: "italic" }}>where</em> you stand. The
-                AI Visibility Audit I run for clients tells you{" "}
-                <em style={{ fontStyle: "italic" }}>why</em> &mdash; and gives
-                you a prioritized 7-day fix plan, $1,500 CAD flat.{" "}
+                A tool tells you <em style={{ fontStyle: "italic" }}>where</em> you
+                stand. The AI Visibility Audit I run for clients tells you{" "}
+                <em style={{ fontStyle: "italic" }}>why</em> &mdash; and gives you a
+                prioritized 7-day fix plan, $1,500 CAD flat.{" "}
                 <Link
                   href={AUDIT_URL}
                   style={{ color: "var(--accent)", fontWeight: 600 }}
@@ -522,78 +498,91 @@ export default function BestAIVisibilityToolsPost() {
             </div>
           </RevealSection>
 
-          <RevealSection delay={0.06}>
-            <p style={{ marginBottom: 26 }}>
-              I&rsquo;m an AI visibility consultant — I don&rsquo;t sell these
-              tools and I don&rsquo;t have affiliate relationships with any of
-              them. This list is based on what I&rsquo;ve used with clients, what
-              I&rsquo;ve evaluated independently, and what the data shows. AI
-              visibility software (paid trackers, free checkers, and LLM
-              optimization tools) is a new category — most tools are less than
-              two years old. I&rsquo;ll tell you what each one measures, what
-              it misses, and who it&rsquo;s actually for.
-            </p>
-            <p
-              style={{
-                fontFamily: "var(--sans)",
-                fontSize: 16,
-                color: "var(--muted)",
-                lineHeight: 1.65,
-                marginBottom: 26,
-              }}
-            >
-              <em>
-                Looking for a free one-off AI visibility checker rather than an
-                ongoing tracking platform? Run the{" "}
-                <Link href="/ai-visibility/ai-visibility-checker/" style={linkStyle}>
-                  free AI visibility checker
-                </Link>{" "}
-                to see how you show up in ChatGPT, Google AI Overview, and
-                Gemini — or read{" "}
-                <Link href={CHECK_URL} style={linkStyle}>
-                  how to check AI visibility for free
-                </Link>
-                .
-              </em>
-            </p>
-          </RevealSection>
-
           <RevealSection>
-            <SectionLabel number="01" text="How I evaluated these tools" />
+            <SectionLabel number="01" text="How this list was put together" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
-              Every tool in this list was assessed against five criteria:
+              I&rsquo;m an AI visibility consultant. I don&rsquo;t sell these tools
+              and I have no affiliate relationship with any of them.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Platform coverage</strong> — Does it
-              track Google AI Overviews, ChatGPT, Gemini, and Bing Copilot? Or only one or two? This matters more than any other
-              factor because AI visibility is inherently cross-platform.
+              This page used to carry star ratings &mdash; 4.5/5, 3/5, and so on
+              &mdash; and a rank order running from 1 to 10. I have removed them, and
+              the reason matters more than the ratings did. There was no published
+              rubric behind those numbers: no weighting across the five criteria, no
+              count of prompts run, no test dates, no per-tool subscores. A reader
+              could not reproduce them, and neither could I. A number like
+              &ldquo;4.5/5&rdquo; reads as measurement when it was opinion, which
+              makes it the wrong kind of wrong for a page about accuracy.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Data accuracy</strong> — Does the tool
-              show what&rsquo;s actually happening in AI responses, or is it
-              estimating? There&rsquo;s a significant difference.
+              What replaced them is narrower and checkable. For each tool below you
+              get two things I can point at a source for: the{" "}
+              <strong style={labelStyle}>engines the vendor documents</strong> and
+              the <strong style={labelStyle}>entry price the vendor publishes</strong>
+              , each linked to the page it came from, all read on{" "}
+              {DATE_FACT_CHECKED_HUMAN}. Where a vendor publishes no pricing, this
+              page says so instead of inventing a range &mdash; three of the nine
+              tools here fall into that bucket, and the dollar figures this page used
+              to quote for them came from nowhere.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Reporting quality</strong> — Can you
-              extract actionable insight from the dashboard, or does it give you
-              data without context?
-            </p>
-            <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Pricing</strong> — Is the price
-              justified by the value for the use case it targets?
-            </p>
-            <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Ease of use</strong> — Can a
-              non-technical marketing team run this without ongoing setup
-              support?
+              The judgement calls &mdash; who a tool suits, what a buyer would get
+              wrong &mdash; are labelled as judgement, not scored. Where I have used a
+              tool with clients I say so in the entry; where I am reading
+              documentation, that is what the source link represents.
             </p>
           </RevealSection>
 
           <RevealSection>
-            <SectionLabel number="02" text="Quick comparison table" />
+            <SectionLabel number="02" text="What changed since the first version" />
+          </RevealSection>
+
+          <RevealSection delay={0.06}>
+            <p style={{ marginBottom: 26 }}>
+              This post first ran in June 2026. Enough of it was wrong by August that
+              a quiet edit would have been dishonest, so here is what changed and why.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              <strong style={labelStyle}>
+                &ldquo;Most SEO tools only cover Google AI Overviews.&rdquo;
+              </strong>{" "}
+              This was the organising claim of the original piece and it is no longer
+              true. Semrush covers AI Overviews, AI Mode, ChatGPT, Perplexity and
+              Gemini. Ahrefs&rsquo; Brand Radar covers seven AI platforms. SE Ranking
+              spun its AI coverage out into a separate product, SE Visible, covering
+              five. The AI-Overviews-only framing described the market of a year ago.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              <strong style={labelStyle}>Two tools should not have been here.</strong>{" "}
+              The original list included Mention and Wincher as AI visibility tools.
+              Checking their own documentation, neither has a documented AI
+              answer-tracking product. That section is below, kept rather than
+              deleted, because the same two names appear on other lists.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              <strong style={labelStyle}>
+                &ldquo;Every tool gives you a dashboard; none gives you a prioritized
+                fix list.&rdquo;
+              </strong>{" "}
+              Too strong. Yext Scout recommends actions and executes some of them
+              through its Action Center. Semrush&rsquo;s Content Toolkit generates
+              optimization recommendations. Otterly ships weekly recommendations, and
+              Frase hands a losing prompt to its editor as optimization insights. The
+              honest version of this point is further down, and it is narrower.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              <strong style={labelStyle}>Prices and product names moved.</strong>{" "}
+              Profound now sells self-serve from $99. Otterly starts at $29, not $100.
+              BrightEdge&rsquo;s AI product is AI Hyper Cube, not Generative Parser.
+              Details are in each entry.
+            </p>
+          </RevealSection>
+
+          <RevealSection>
+            <SectionLabel number="03" text="Coverage and pricing at a glance" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
@@ -608,138 +597,241 @@ export default function BestAIVisibilityToolsPost() {
               }}
             >
               <em>
-                Pricing key: $ = under $100/month, $$ = $100–500/month, $$$ =
-                $500–1,500/month, $$$$ = custom/enterprise
+                Every row was read from the linked vendor page on{" "}
+                {DATE_FACT_CHECKED_HUMAN}. &ldquo;Not published&rdquo; means the
+                vendor does not disclose pricing publicly &mdash; not that it is
+                expensive, though in practice these are enterprise contracts.
               </em>
             </p>
           </RevealSection>
 
           <RevealSection>
-            <SectionLabel
-              number="03"
-              text="The best AI visibility tools — full reviews"
-            />
+            <SectionLabel number="04" text="The tools, by category" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
-            {TOOL_REVIEWS.map((tool) => (
-              <div key={tool.name}>
+            {(["dedicated", "seo-platform", "enterprise"] as const).map((category) => (
+              <div key={category}>
                 <h3
                   style={{
                     fontFamily: "var(--serif)",
                     fontWeight: 600,
-                    fontSize: 23,
-                    letterSpacing: "-.01em",
-                    margin: "34px 0 8px",
+                    fontSize: 26,
+                    letterSpacing: "-.015em",
+                    margin: "44px 0 6px",
                     color: "var(--ink)",
                   }}
                 >
-                  {tool.rank}. {tool.name}
+                  {CATEGORY_HEADS[category].title}
                 </h3>
                 <p
                   style={{
-                    fontFamily: "var(--mono)",
-                    fontSize: 12,
-                    color: "var(--accent)",
-                    marginBottom: 14,
+                    fontFamily: "var(--sans)",
+                    fontSize: 15.5,
+                    color: "var(--muted)",
+                    lineHeight: 1.6,
+                    marginBottom: 8,
                   }}
                 >
-                  Rating: {tool.rating}
+                  {CATEGORY_HEADS[category].blurb}
                 </p>
-                <p style={{ marginBottom: 26 }}>
-                  <strong style={labelStyle}>What it tracks:</strong>{" "}
-                  {tool.tracks}
-                </p>
-                <p style={{ marginBottom: 12 }}>
-                  <strong style={labelStyle}>What I found:</strong>
-                </p>
-                {splitParagraphs(tool.found).map((paragraph) => (
-                  <p key={paragraph.slice(0, 40)} style={{ marginBottom: 26 }}>
-                    {paragraph}
-                  </p>
+
+                {TOOLS.filter((tool) => tool.category === category).map((tool) => (
+                  <div key={tool.name}>
+                    <h4
+                      style={{
+                        fontFamily: "var(--serif)",
+                        fontWeight: 600,
+                        fontSize: 22,
+                        letterSpacing: "-.01em",
+                        margin: "34px 0 14px",
+                        color: "var(--ink)",
+                      }}
+                    >
+                      {tool.name}
+                    </h4>
+                    <p style={{ marginBottom: 26 }}>{tool.what}</p>
+                    <p style={{ marginBottom: 26 }}>
+                      <strong style={labelStyle}>Engines covered:</strong>{" "}
+                      {tool.engines}
+                    </p>
+                    <p style={{ marginBottom: 26 }}>
+                      <strong style={labelStyle}>Published pricing:</strong>{" "}
+                      {tool.entryPrice}
+                    </p>
+                    <p style={{ marginBottom: 26 }}>
+                      <strong style={labelStyle}>Who it fits:</strong> {tool.whoFor}
+                    </p>
+                    <p style={{ marginBottom: 14 }}>
+                      <strong style={labelStyle}>What to watch for:</strong>{" "}
+                      {tool.watchOut}
+                    </p>
+                    <p
+                      style={{
+                        fontFamily: "var(--mono)",
+                        fontSize: 12,
+                        color: "var(--faint)",
+                        lineHeight: 1.6,
+                        marginBottom: 26,
+                      }}
+                    >
+                      Source:{" "}
+                      <a
+                        href={tool.sourceUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={linkStyle}
+                      >
+                        {tool.sourceLabel}
+                      </a>
+                      , read {DATE_FACT_CHECKED}
+                    </p>
+                  </div>
                 ))}
-                <p style={{ marginBottom: 26 }}>
-                  <strong style={labelStyle}>Best for:</strong> {tool.bestFor}
-                </p>
-                <p style={{ marginBottom: 26 }}>
-                  <strong style={labelStyle}>Pricing:</strong> {tool.pricing}
-                </p>
-                <p style={{ marginBottom: 26 }}>
-                  <strong style={labelStyle}>What it misses:</strong>{" "}
-                  {tool.misses}
-                </p>
               </div>
             ))}
           </RevealSection>
 
           <RevealSection>
-            <SectionLabel number="04" text="LLM optimization tools" />
+            <SectionLabel
+              number="05"
+              text="Two tools that are often listed here and shouldn't be"
+            />
           </RevealSection>
 
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
-              AI visibility trackers measure where you appear. LLM optimization
-              tools help you improve your content and schema so you appear more
-              often — they&rsquo;re a different category.
+              Both of these appeared in the first version of this post. Neither has a
+              documented product that monitors AI-generated answers. They are good at
+              what they do &mdash; that is a separate thing.
             </p>
+            {NOT_AI_TRACKERS.map((tool) => (
+              <div key={tool.name}>
+                <h3
+                  style={{
+                    fontFamily: "var(--serif)",
+                    fontWeight: 600,
+                    fontSize: 22,
+                    letterSpacing: "-.01em",
+                    margin: "30px 0 12px",
+                    color: "var(--ink)",
+                  }}
+                >
+                  {tool.name}
+                </h3>
+                <p style={{ marginBottom: 14 }}>{tool.finding}</p>
+                <p
+                  style={{
+                    fontFamily: "var(--mono)",
+                    fontSize: 12,
+                    color: "var(--faint)",
+                    lineHeight: 1.6,
+                    marginBottom: 26,
+                  }}
+                >
+                  Source:{" "}
+                  <a
+                    href={tool.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={linkStyle}
+                  >
+                    {tool.sourceLabel}
+                  </a>
+                  , read {DATE_FACT_CHECKED}
+                </p>
+              </div>
+            ))}
             <p style={{ marginBottom: 26 }}>
-              The distinction matters: <strong style={labelStyle}>trackers</strong>{" "}
-              are analytics tools (you observe).{" "}
-              <strong style={labelStyle}>Optimization tools</strong> are workflow
-              tools (you improve).
-            </p>
-            <p style={{ marginBottom: 26 }}>Tools in this category worth knowing:</p>
-            <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Frase.io</strong> — Content optimization
-              platform that structures content around questions your buyers are
-              asking. Strong for building the direct-answer content patterns that
-              AI systems extract.
-            </p>
-            <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Clearscope</strong> — Content
-              intelligence tool that scores content against topical depth. Helps
-              ensure your pages have the entity coverage and completeness that AI
-              systems reward.
-            </p>
-            <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>MarketMuse</strong> — Topical authority
-              platform. Identifies gaps in your content coverage that reduce AI
-              citation probability.
-            </p>
-            <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Schema markup generators</strong> —
-              Merkle&rsquo;s Schema Generator, Schema.org tools, and
-              Google&rsquo;s Rich Results Test are free tools for building and
-              validating FAQPage, HowTo, Article, and Organization schema. These
-              are non-negotiable for AEO.
-            </p>
-            <p style={{ marginBottom: 26 }}>
-              LLM optimization tools don&rsquo;t replace AI visibility trackers.
-              They work upstream: optimization improves your citation probability;
-              tracking measures whether it worked.
+              The general lesson is worth more than the two names: &ldquo;uses
+              AI&rdquo; and &ldquo;monitors AI answers&rdquo; are different claims,
+              and vendor marketing blurs them. A tool that summarises your mentions
+              with an LLM is not tracking what ChatGPT says about you. Before you buy,
+              find the page that names the engines. If there isn&rsquo;t one, that is
+              your answer.
             </p>
           </RevealSection>
 
           <RevealSection>
-            <SectionLabel number="05" text="Free vs paid AI visibility tools" />
+            <SectionLabel number="06" text="Content and schema tools" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
-              If you&rsquo;re not ready to commit to ongoing paid tracking, free
-              methods are a legitimate starting point. Google Search Console&rsquo;s
-              AI Overviews data, manual ChatGPT and Perplexity queries, and
-              Semrush&rsquo;s limited free tier all provide signal without a paid
-              subscription.
+              Trackers measure where you appear. Content tools help you earn the
+              appearance. The two categories overlap more than they used to &mdash;
+              Frase does both, and Semrush&rsquo;s Content Toolkit scores drafts
+              against factors it correlates with citation rates.
             </p>
             <p style={{ marginBottom: 26 }}>
-              The constraint: free tools are narrow (one or two platforms) and
-              manual (you run the queries, not a system). At any serious scale,
-              they don&rsquo;t substitute for a dedicated platform.
+              <strong style={labelStyle}>Clearscope</strong> and{" "}
+              <strong style={labelStyle}>MarketMuse</strong> remain the established
+              options for topical depth and coverage gaps. Neither markets itself as
+              an AI visibility tool, and neither should be bought as one.
             </p>
             <p style={{ marginBottom: 26 }}>
-              For the full breakdown of what free checkers actually show and where
-              they fall short, see{" "}
+              <strong style={labelStyle}>
+                On schema, this page was giving bad advice.
+              </strong>{" "}
+              It previously said FAQPage and HowTo schema were
+              &ldquo;non-negotiable for AEO.&rdquo; That is wrong on both counts.
+              Google&rsquo;s own documentation now carries a deprecation notice: as of
+              May 7, 2026, FAQ rich results no longer appear in Google Search, and
+              even before that they were restricted to well-known, authoritative
+              government and health sites. HowTo rich results were removed earlier.
+              And no published evidence shows either schema type is a condition of
+              being cited by an LLM.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              Structured data still earns its place &mdash;{" "}
+              <strong style={labelStyle}>Organization</strong>,{" "}
+              <strong style={labelStyle}>Article</strong>,{" "}
+              <strong style={labelStyle}>LocalBusiness</strong> and{" "}
+              <strong style={labelStyle}>Product</strong> markup describe entities in
+              a form machines read reliably. But the honest framing is that schema
+              helps machines parse a page that was already clear, not that a
+              particular schema type buys you a citation. See{" "}
+              <a
+                href="https://developers.google.com/search/docs/appearance/structured-data/faqpage"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={linkStyle}
+              >
+                Google&rsquo;s FAQPage documentation
+              </a>{" "}
+              for the deprecation notice.
+            </p>
+          </RevealSection>
+
+          <RevealSection>
+            <SectionLabel number="07" text="Free vs paid" />
+          </RevealSection>
+
+          <RevealSection delay={0.06}>
+            <p style={{ marginBottom: 26 }}>
+              Free methods are a legitimate starting point, and there are more of them
+              than there were: Semrush&rsquo;s free plan surfaces AI mentions,
+              citations and a visibility score; Yext offers a free Scout scan; several
+              vendors run free one-off checkers.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              One correction on Google. This page previously referred to Search
+              Console&rsquo;s &ldquo;AI Overviews data.&rdquo; The report is called{" "}
+              <strong style={labelStyle}>Generative AI features</strong>, it is in
+              Beta, it covers Google&rsquo;s AI surfaces together rather than AI
+              Overviews alone, and it reports{" "}
+              <strong style={labelStyle}>total impressions only</strong> &mdash; no
+              clicks, no CTR, no position, and no query-level breakdown. I use it on my
+              own properties; that is what is in it.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              The real constraint on free methods is not breadth any more, it is
+              repetition. Free tiers give you a reading. Tracking is what tells you
+              whether a change worked, and that is what you are paying for.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              For the full breakdown of what free checkers show and where they fall
+              short, see{" "}
               <Link href={CHECK_URL} style={linkStyle}>
                 how to check AI visibility for free
               </Link>
@@ -748,57 +840,61 @@ export default function BestAIVisibilityToolsPost() {
           </RevealSection>
 
           <RevealSection>
-            <SectionLabel
-              number="06"
-              text="How to choose the right AI visibility tool for your business"
-            />
+            <SectionLabel number="08" text="How to choose" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Start here:</strong>
+              Coverage lists have converged, so choose on the things that still
+              differ:
             </p>
             <ul style={{ margin: "0 0 26px 22px" }}>
               <li style={{ marginBottom: 11 }}>
-                If you&rsquo;re on Semrush or Ahrefs already → use their built-in
-                AIO tracking before adding a new tool
+                <strong style={labelStyle}>Which engines are included, not listed.</strong>{" "}
+                Otterly bundles Copilot and AI Overviews but charges extra for Gemini
+                and Claude. Profound&rsquo;s cheapest tier is ChatGPT-only.
+                Ahrefs&rsquo; AI indexes are an add-on. SE Visible and Semrush include
+                five engines from the entry tier.
               </li>
               <li style={{ marginBottom: 11 }}>
-                If you&rsquo;re an SMB and want dedicated multi-platform tracking
-                → Otterly.ai
+                <strong style={labelStyle}>How often it refreshes.</strong> Daily
+                (Otterly, Frase, Profound), weekly (Semrush Brand Performance,
+                SE Visible), or monthly for the standing chatbot index (Ahrefs). If
+                you are shipping changes and want to see movement, monthly is too
+                slow.
               </li>
               <li style={{ marginBottom: 11 }}>
-                If you&rsquo;re enterprise with serious AI search exposure →
-                Profound or BrightEdge depending on your existing stack
+                <strong style={labelStyle}>Whose prompts.</strong> Some tools run the
+                prompts you write; Semrush generates synthetic prompts from your
+                domain and location; Ahrefs queries a standing index built from People
+                Also Ask data. Each answers a slightly different question.
               </li>
               <li style={{ marginBottom: 11 }}>
-                If you need brand monitoring across social AND AI → Brandwatch or
-                Mention, depending on budget
+                <strong style={labelStyle}>Whether it stops at reporting.</strong>{" "}
+                Yext Scout prioritises and executes. Frase and Semrush hand you
+                content recommendations. Profound is deliberately strong on data and
+                lighter on prescription.
               </li>
               <li style={{ marginBottom: 11 }}>
-                If you need entity/structured data management at scale → Yext
+                <strong style={labelStyle}>Geography and language.</strong> SE Visible
+                covers 7 countries and 5 languages. Otterly covers 50+ countries. If
+                you sell in more than one language, check this before anything else.
               </li>
             </ul>
-            <p style={{ marginBottom: 26 }}>
-              The key question isn&rsquo;t &ldquo;which tool is best&rdquo; —
-              it&rsquo;s which platforms your buyers are using. A tool that tracks
-              only Google AIO is useless if your buyers are asking questions on
-              Perplexity.
-            </p>
             <p style={{ marginBottom: 26 }}>
               An{" "}
               <Link href={AUDIT_URL} style={linkStyle}>
                 AI visibility audit
               </Link>{" "}
-              is often the right starting point before committing to ongoing
-              tracking software — it tells you which platforms you have exposure on
-              and which to prioritize, so you don&rsquo;t buy a platform that
-              tracks the wrong thing.
+              is often the right starting point before committing to ongoing tracking
+              software &mdash; it tells you which platforms you have exposure on and
+              which to prioritise, so you don&rsquo;t buy a platform that tracks the
+              wrong thing.
             </p>
           </RevealSection>
 
           <RevealSection>
-            <SectionLabel number="07" text="What tools can't tell you" />
+            <SectionLabel number="09" text="What tools still don't do" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
@@ -811,43 +907,44 @@ export default function BestAIVisibilityToolsPost() {
                 color: "var(--muted)",
               }}
             >
-              AI visibility tracking software shows you data. It doesn&rsquo;t
-              tell you what to do with it.
+              The gap is no longer that tools only report. It is that what they
+              recommend is generic to the platform, not specific to your business.
             </blockquote>
             <p style={{ marginBottom: 26 }}>
-              Four specific gaps that every tool in this list has:
-            </p>
-            <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Whether your citations are accurate.</strong>{" "}
-              Most tools show citation presence — they don&rsquo;t analyze what the
-              AI actually said about you. An inaccurate citation is worse than no
-              citation. You need manual review to catch this.
-            </p>
-            <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Why you&rsquo;re absent.</strong> Knowing
-              you&rsquo;re not cited on a query is useful. Knowing whether the
-              problem is technical (robots.txt block, SPA rendering), structural
-              (poor content extraction), or authority-based requires analysis that
-              no tool currently automates reliably.
+              The original version of this section claimed every tool lacked accuracy
+              review, competitor explanation and a prioritized action plan. Several
+              now do some of that. The narrower version that survives scrutiny:
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>
-                Where competitors are beating you and why.
+                Whether a citation helps you is a commercial judgement.
               </strong>{" "}
-              Tools show competitor citation volume. They don&rsquo;t explain the
-              content or technical factors driving the gap — that analysis requires
-              human judgment.
+              Sentiment analysis tells you an answer was positive. It cannot tell you
+              that being cited as the cheap option is bad for a premium
+              positioning &mdash; that requires knowing what you sell and to whom.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>An action plan.</strong> Every tool in
-              this list gives you a dashboard. None gives you a prioritized fix list
-              with specific changes ranked by expected impact.
+              <strong style={labelStyle}>Diagnosing absence is still manual.</strong>{" "}
+              Ahrefs, Semrush, BrightEdge and Frase all log AI crawler activity now,
+              which covers the technical layer. Whether the real problem is content
+              extraction, entity ambiguity or plain authority still takes someone
+              looking at the pages.
             </p>
             <p style={{ marginBottom: 26 }}>
-              An AI visibility audit combines platform data with manual analysis to
-              give you a complete picture: what the AI is saying about you (not just
-              whether it cites you), where you&rsquo;re losing to competitors, and
-              what to fix first.
+              <strong style={labelStyle}>
+                Recommendations don&rsquo;t know your constraints.
+              </strong>{" "}
+              A tool that recommends 40 fixes has not told you which three you can
+              ship this quarter with the team you have. Prioritisation that ignores
+              cost is a list, not a plan.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              <strong style={labelStyle}>Citations are not customers.</strong> No tool
+              in this list connects citation volume to revenue, because the platforms
+              don&rsquo;t expose the data to connect it with. On one of my own sites,
+              the single most-cited page earned 6,500 AI citations and 24 Google
+              clicks in the same three months. A dashboard showing 6,500 would have
+              looked like a win.
             </p>
           </RevealSection>
 
@@ -856,7 +953,7 @@ export default function BestAIVisibilityToolsPost() {
           </RevealSection>
 
           <RevealSection>
-            <SectionLabel number="08" text="Frequently asked questions" />
+            <SectionLabel number="10" text="Frequently asked questions" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
@@ -891,42 +988,66 @@ export default function BestAIVisibilityToolsPost() {
           </RevealSection>
 
           <RevealSection>
-            <p
+            <div
               style={{
-                fontFamily: "var(--sans)",
-                fontSize: 15,
-                color: "var(--muted)",
-                lineHeight: 1.65,
-                marginBottom: 12,
+                borderTop: "1px solid var(--line)",
+                paddingTop: 26,
+                marginTop: 10,
               }}
             >
-              For the full{" "}
-              <Link href={HUB_URL} style={linkStyle}>
-                AI visibility
-              </Link>{" "}
-              strategy framework and how tools fit into it, see the hub. For free
-              one-off AI visibility checkers, see{" "}
-              <Link href={CHECK_URL} style={linkStyle}>
-                how to check AI visibility for free
-              </Link>
-              .
-            </p>
-            <p
-              style={{
-                fontFamily: "var(--sans)",
-                fontSize: 15,
-                color: "var(--muted)",
-                lineHeight: 1.65,
-              }}
-            >
-              <em>
-                Hami Tahm is an{" "}
-                <Link href={CONSULTANT_URL} style={linkStyle}>
-                  independent AI visibility consultant
+              <p
+                style={{
+                  fontFamily: "var(--sans)",
+                  fontSize: 14,
+                  color: "var(--faint)",
+                  lineHeight: 1.65,
+                  marginBottom: 12,
+                }}
+              >
+                <strong style={{ color: "var(--muted)" }}>Disclosure.</strong> I have
+                no affiliate relationship with, and receive no compensation from, any
+                tool named on this page. I sell an AI visibility audit, which competes
+                for the same budget as some of them. Engine lists and prices were read
+                from the linked vendor pages on {DATE_FACT_CHECKED_HUMAN}; the
+                judgements about fit are mine and are not scored.
+              </p>
+              <p
+                style={{
+                  fontFamily: "var(--sans)",
+                  fontSize: 15,
+                  color: "var(--muted)",
+                  lineHeight: 1.65,
+                  marginBottom: 12,
+                }}
+              >
+                For the full{" "}
+                <Link href={HUB_URL} style={linkStyle}>
+                  AI visibility
                 </Link>{" "}
-                based in Toronto.
-              </em>
-            </p>
+                strategy framework and how tools fit into it, see the hub. For free
+                one-off checks, see{" "}
+                <Link href={CHECK_URL} style={linkStyle}>
+                  how to check AI visibility for free
+                </Link>
+                .
+              </p>
+              <p
+                style={{
+                  fontFamily: "var(--sans)",
+                  fontSize: 15,
+                  color: "var(--muted)",
+                  lineHeight: 1.65,
+                }}
+              >
+                <em>
+                  Hami Tahm is an{" "}
+                  <Link href={CONSULTANT_URL} style={linkStyle}>
+                    independent AI visibility consultant
+                  </Link>{" "}
+                  based in Toronto.
+                </em>
+              </p>
+            </div>
           </RevealSection>
         </div>
 
@@ -1000,9 +1121,9 @@ export default function BestAIVisibilityToolsPost() {
                   position: "relative",
                 }}
               >
-                Start with platform-specific citation analysis, accuracy review,
-                and a prioritized action plan before committing to ongoing
-                tracking software. $1,500 CAD flat.
+                Start with platform-specific citation analysis, accuracy review, and a
+                prioritized action plan before committing to ongoing tracking
+                software. $1,500 CAD flat.
               </p>
               <Link
                 href="/ai-visibility/ai-visibility-checker/"
@@ -1049,6 +1170,8 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
   );
 }
 
+const TABLE_COLUMNS = "0.9fr 1.7fr 1.4fr 0.8fr";
+
 function ComparisonTable() {
   return (
     <div
@@ -1066,9 +1189,9 @@ function ComparisonTable() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "0.9fr 1.4fr 0.6fr 0.8fr 0.5fr 1fr",
-          gap: 12,
-          minWidth: 720,
+          gridTemplateColumns: TABLE_COLUMNS,
+          gap: 14,
+          minWidth: 700,
           fontFamily: "var(--mono)",
           fontSize: 10,
           letterSpacing: ".06em",
@@ -1079,31 +1202,40 @@ function ComparisonTable() {
         }}
       >
         <span>Tool</span>
-        <span>Platforms</span>
-        <span>Analytics</span>
-        <span>Competitors</span>
-        <span>Price</span>
-        <span>Best For</span>
+        <span>Engines (per vendor docs)</span>
+        <span>Entry price</span>
+        <span>Source</span>
       </div>
-      {COMPARISON_ROWS.map((row) => (
+      {TOOLS.map((tool) => (
         <div
-          key={row.tool}
+          key={tool.name}
           style={{
             display: "grid",
-            gridTemplateColumns: "0.9fr 1.4fr 0.6fr 0.8fr 0.5fr 1fr",
-            gap: 12,
-            minWidth: 720,
-            padding: "11px 0",
+            gridTemplateColumns: TABLE_COLUMNS,
+            gap: 14,
+            minWidth: 700,
+            padding: "12px 0",
             borderBottom: "1px solid var(--line)",
-            lineHeight: 1.45,
+            lineHeight: 1.5,
           }}
         >
-          <span style={{ fontWeight: 600, color: "var(--ink)" }}>{row.tool}</span>
-          <span style={{ color: "var(--muted)" }}>{row.platforms}</span>
-          <span style={{ color: "var(--muted)" }}>{row.analytics}</span>
-          <span style={{ color: "var(--muted)" }}>{row.competitors}</span>
-          <span style={{ color: "var(--muted)" }}>{row.price}</span>
-          <span style={{ color: "var(--muted)" }}>{row.bestFor}</span>
+          <span style={{ fontWeight: 600, color: "var(--ink)" }}>{tool.name}</span>
+          <span style={{ color: "var(--muted)" }}>{tool.engines}</span>
+          <span style={{ color: "var(--muted)" }}>{tool.entryPrice}</span>
+          <span>
+            <a
+              href={tool.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: "var(--accent)",
+                textDecoration: "underline",
+                textUnderlineOffset: 3,
+              }}
+            >
+              Vendor page
+            </a>
+          </span>
         </div>
       ))}
     </div>
@@ -1142,9 +1274,9 @@ function InlineAuditCTA() {
           lineHeight: 1.55,
         }}
       >
-        The audit covers Google AI Overviews, ChatGPT, and Gemini —
-        with platform-specific citation analysis, accuracy review, competitor gap
-        mapping, and a prioritized action plan.
+        The audit covers ChatGPT, Google AI Overviews and Gemini &mdash; with
+        platform-specific citation analysis, accuracy review, competitor gap mapping,
+        and a prioritized action plan.
       </p>
       <Link href={AUDIT_URL} className="btn btn-primary">
         Book an AI Visibility Audit <span className="arr">&rarr;</span>
