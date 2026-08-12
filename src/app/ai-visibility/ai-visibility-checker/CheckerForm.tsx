@@ -11,6 +11,7 @@ const ENGINES = [
   { id: "perplexity", label: "Perplexity", active: false },
   { id: "claude", label: "Claude", active: false },
   { id: "grok", label: "Grok", active: false },
+  { id: "meta-ai", label: "Meta AI", active: false },
 ] as const;
 
 type Status = "idle" | "submitting" | "done" | "error";
