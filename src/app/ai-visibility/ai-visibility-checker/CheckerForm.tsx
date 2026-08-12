@@ -23,12 +23,19 @@ import Link from "next/link";
  * and better positioning: the disabled buttons now show what $1,500 adds instead of
  * implying the free tier will eventually cover everything.
  *
- * Grok and Meta AI genuinely are neither — outside the audit six, and not offered.
- * They stay listed because people ask about them, and "not covered" is an answer.
+ * Grok and Meta AI are labelled "on request" rather than "in the audit" on purpose.
+ * AUDIT_PLATFORMS is six, and the word "six" is hardcoded in 15 places across the
+ * site. Saying "in the audit" here without changing all of that would promise a
+ * scope the audit pages contradict on the very next click — the exact class of bug
+ * this file's other comments exist to prevent.
+ *
+ * If the audit ever moves to eight platforms: change AUDIT_PLATFORMS, then use
+ * AUDIT_PLATFORM_COUNT_WORD everywhere instead of the literal "six", then flip these
+ * two to tier "audit".
  */
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 
-type Tier = "free" | "audit" | "none";
+type Tier = "free" | "audit" | "request";
 
 const ENGINES: readonly { id: string; label: string; tier: Tier }[] = [
   { id: "chatgpt", label: "ChatGPT", tier: "free" },
@@ -37,8 +44,8 @@ const ENGINES: readonly { id: string; label: string; tier: Tier }[] = [
   { id: "perplexity", label: "Perplexity", tier: "audit" },
   { id: "claude", label: "Claude", tier: "audit" },
   { id: "copilot", label: "Microsoft Copilot", tier: "audit" },
-  { id: "grok", label: "Grok", tier: "none" },
-  { id: "meta-ai", label: "Meta AI", tier: "none" },
+  { id: "grok", label: "Grok", tier: "request" },
+  { id: "meta-ai", label: "Meta AI", tier: "request" },
 ];
 
 type Status = "idle" | "submitting" | "done" | "error";
@@ -54,19 +61,18 @@ export default function CheckerForm() {
   const [kw2, setKw2] = useState("");
   const [kw3, setKw3] = useState("");
   /*
-   * ⚠️ COMPETITOR INPUTS REMOVED 2026-08-11 — read before adding them back.
+   * COMPETITORS ARE SHOWN BUT LOCKED (2026-08-11).
    *
-   * They used to be collected here, and the note that stood in their place said they
-   * were "what makes the report useful". That was true, and it is exactly why they
-   * moved: naming who the engines recommend instead of you is the highest-value part
-   * of the analysis, and it was being done by hand, for free, for every submission.
+   * Naming who the engines recommend instead of you is the most persuasive line in
+   * any report, and it was being produced by hand, free, on every submission. So it
+   * is audit-only now.
    *
-   * The free report still says that other businesses were named — it just doesn't say
-   * which ones. That keeps the finding that creates urgency without giving away the
-   * work that answers it.
+   * Deliberately still VISIBLE rather than deleted: a disabled field labelled "in the
+   * audit" tells a visitor what they are not getting, which is worth more than a gap
+   * they never notice. Deleting it removed the pitch along with the work.
    *
-   * The API and the Apps Script still accept a `competitors` array, so nothing
-   * downstream breaks; it now arrives empty from this form.
+   * The API and Apps Script still accept a `competitors` array, so the sheet's
+   * columns are unaffected; it arrives empty from this form.
    */
   const [country, setCountry] = useState("");
   const [email, setEmail] = useState("");
@@ -263,8 +269,8 @@ export default function CheckerForm() {
                 title={
                   eng.tier === "audit"
                     ? "Included in the $1,500 AI Visibility Audit"
-                    : eng.tier === "none"
-                      ? "Not covered — ask me if you need it"
+                    : eng.tier === "request"
+                      ? "Available on request — email me before booking"
                       : undefined
                 }
                 onClick={() => free && toggle(eng.id)}
@@ -290,9 +296,9 @@ export default function CheckerForm() {
                     &middot; in the audit
                   </span>
                 )}
-                {eng.tier === "none" && (
+                {eng.tier === "request" && (
                   <span style={{ fontSize: 10, marginInlineStart: 6, opacity: 0.85 }}>
-                    &middot; not covered
+                    &middot; on request
                   </span>
                 )}
               </button>
@@ -312,7 +318,8 @@ export default function CheckerForm() {
           <Link href={AUDIT_URL} style={{ color: "var(--accent)", fontWeight: 500 }}>
             $1,500 AI Visibility Audit
           </Link>{" "}
-          &mdash; six platforms, 25 prompts, each run three times.
+          &mdash; six platforms, 25 prompts, each run three times. Grok and Meta AI
+          can be added on request.
         </p>
       </div>
 
@@ -338,6 +345,49 @@ export default function CheckerForm() {
         </div>
       </div>
 
+
+      {/* Competitors — visible, locked, and labelled as a paid feature */}
+      <div style={{ marginBottom: 18 }}>
+        <span style={labelStyle}>
+          Competitors to compare against{" "}
+          <span style={{ fontWeight: 400, color: "var(--accent)" }}>
+            &middot; in the audit
+          </span>
+        </span>
+        <div style={{ display: "grid", gap: 10, gridTemplateColumns: "1fr 1fr" }}>
+          {["Competitor 1", "Competitor 2"].map((ph) => (
+            <input
+              key={ph}
+              style={{
+                ...inputStyle,
+                cursor: "not-allowed",
+                background: "var(--panel)",
+                color: "var(--faint)",
+              }}
+              aria-label={`${ph} — available in the paid audit`}
+              placeholder={ph}
+              value=""
+              readOnly
+              disabled
+              onChange={() => {}}
+            />
+          ))}
+        </div>
+        <p
+          style={{
+            fontSize: 12.5,
+            color: "var(--faint)",
+            marginTop: 8,
+            lineHeight: 1.5,
+          }}
+        >
+          The free check tells you whether the engines named someone else. The{" "}
+          <Link href={AUDIT_URL} style={{ color: "var(--accent)", fontWeight: 500 }}>
+            audit
+          </Link>{" "}
+          tells you who, on which questions, and why they were chosen over you.
+        </p>
+      </div>
 
       {/* Country + Email */}
       <div style={{ display: "grid", gap: 18, gridTemplateColumns: "1fr 1fr", marginBottom: 22 }}>
