@@ -16,17 +16,30 @@ import Link from "next/link";
  * Keep this list a subset of AUDIT_PLATFORMS plus clearly-extra engines. A free
  * checker that covers surfaces the audit doesn't is a support ticket waiting to
  * happen.
+ *
+ * `tier` replaced the old `active` flag on 2026-08-11. The inactive engines used to
+ * say "· soon", which promises a free upgrade that isn't coming — the other three
+ * platforms are part of the paid audit, not a roadmap item. Saying so is both true
+ * and better positioning: the disabled buttons now show what $1,500 adds instead of
+ * implying the free tier will eventually cover everything.
+ *
+ * Grok and Meta AI genuinely are neither — outside the audit six, and not offered.
+ * They stay listed because people ask about them, and "not covered" is an answer.
  */
-const ENGINES = [
-  { id: "chatgpt", label: "ChatGPT", active: true },
-  { id: "ai-overview", label: "Google AI Overview", active: true },
-  { id: "gemini", label: "Gemini", active: true },
-  { id: "perplexity", label: "Perplexity", active: false },
-  { id: "claude", label: "Claude", active: false },
-  { id: "copilot", label: "Microsoft Copilot", active: false },
-  { id: "grok", label: "Grok", active: false },
-  { id: "meta-ai", label: "Meta AI", active: false },
-] as const;
+const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
+
+type Tier = "free" | "audit" | "none";
+
+const ENGINES: readonly { id: string; label: string; tier: Tier }[] = [
+  { id: "chatgpt", label: "ChatGPT", tier: "free" },
+  { id: "ai-overview", label: "Google AI Overview", tier: "free" },
+  { id: "gemini", label: "Gemini", tier: "free" },
+  { id: "perplexity", label: "Perplexity", tier: "audit" },
+  { id: "claude", label: "Claude", tier: "audit" },
+  { id: "copilot", label: "Microsoft Copilot", tier: "audit" },
+  { id: "grok", label: "Grok", tier: "none" },
+  { id: "meta-ai", label: "Meta AI", tier: "none" },
+];
 
 type Status = "idle" | "submitting" | "done" | "error";
 
@@ -40,12 +53,21 @@ export default function CheckerForm() {
   const [kw1, setKw1] = useState("");
   const [kw2, setKw2] = useState("");
   const [kw3, setKw3] = useState("");
-  // Competitors are what turn a vague "you're not very visible" report into the one
-  // sentence that actually sells: "for this query the engines named THEM, not you."
-  // Optional on purpose — requiring them adds friction, and a competitor can also be
-  // discovered from the category query alone.
-  const [comp1, setComp1] = useState("");
-  const [comp2, setComp2] = useState("");
+  /*
+   * ⚠️ COMPETITOR INPUTS REMOVED 2026-08-11 — read before adding them back.
+   *
+   * They used to be collected here, and the note that stood in their place said they
+   * were "what makes the report useful". That was true, and it is exactly why they
+   * moved: naming who the engines recommend instead of you is the highest-value part
+   * of the analysis, and it was being done by hand, for free, for every submission.
+   *
+   * The free report still says that other businesses were named — it just doesn't say
+   * which ones. That keeps the finding that creates urgency without giving away the
+   * work that answers it.
+   *
+   * The API and the Apps Script still accept a `competitors` array, so nothing
+   * downstream breaks; it now arrives empty from this form.
+   */
   const [country, setCountry] = useState("");
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<Status>("idle");
@@ -93,7 +115,9 @@ export default function CheckerForm() {
           engines,
           domain: domain.trim(),
           keywords: [kw1, kw2, kw3].map((k) => k.trim()).filter(Boolean),
-          competitors: [comp1, comp2].map((c) => c.trim()).filter(Boolean),
+          // Kept in the payload for the sheet's column layout; the free form no
+          // longer collects competitors. See the note above.
+          competitors: [] as string[],
           country: country.trim(),
           email: email.trim(),
         }),
@@ -137,7 +161,7 @@ export default function CheckerForm() {
           marker="1"
           when="Just now"
           title="A confirmation email is already in your inbox"
-          body="It lists the exact domain, keywords, country and engines you asked me to check — so you can make sure I got it right. Reply to it if you want to add a keyword or a competitor before I start."
+          body="It lists the exact domain, keywords, country and engines you asked me to check — so you can make sure I got it right. Reply to it if you want to change a keyword before I start."
         />
         <Step
           marker="2"
@@ -229,43 +253,67 @@ export default function CheckerForm() {
         <div role="group" aria-labelledby="cw-engines-label" style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
           {ENGINES.map((eng) => {
             const on = engines.includes(eng.id);
+            const free = eng.tier === "free";
             return (
               <button
                 key={eng.id}
                 type="button"
-                disabled={!eng.active}
+                disabled={!free}
                 aria-pressed={on}
-                onClick={() => eng.active && toggle(eng.id)}
+                title={
+                  eng.tier === "audit"
+                    ? "Included in the $1,500 AI Visibility Audit"
+                    : eng.tier === "none"
+                      ? "Not covered — ask me if you need it"
+                      : undefined
+                }
+                onClick={() => free && toggle(eng.id)}
                 style={{
                   fontFamily: "var(--sans)",
                   fontSize: 13.5,
                   fontWeight: 500,
                   padding: "9px 15px",
                   borderRadius: 999,
-                  cursor: eng.active ? "pointer" : "not-allowed",
+                  cursor: free ? "pointer" : "not-allowed",
                   border: on
                     ? "1px solid var(--accent)"
                     : "1px solid var(--line-strong)",
                   background: on ? "var(--accent)" : "transparent",
-                  color: on
-                    ? "#fff"
-                    : eng.active
-                      ? "var(--ink)"
-                      : "var(--faint)",
-                  opacity: eng.active ? 1 : 0.55,
+                  color: on ? "#fff" : free ? "var(--ink)" : "var(--faint)",
+                  opacity: free ? 1 : 0.6,
                   transition: "all .15s",
                 }}
               >
                 {eng.label}
-                {!eng.active && (
-                  <span style={{ fontSize: 10, marginInlineStart: 6, opacity: 0.8 }}>
-                    · soon
+                {eng.tier === "audit" && (
+                  <span style={{ fontSize: 10, marginInlineStart: 6, opacity: 0.85 }}>
+                    &middot; in the audit
+                  </span>
+                )}
+                {eng.tier === "none" && (
+                  <span style={{ fontSize: 10, marginInlineStart: 6, opacity: 0.85 }}>
+                    &middot; not covered
                   </span>
                 )}
               </button>
             );
           })}
         </div>
+        <p
+          style={{
+            fontSize: 12.5,
+            color: "var(--faint)",
+            marginTop: 10,
+            lineHeight: 1.5,
+          }}
+        >
+          The free check covers the three above. Perplexity, Claude and Microsoft
+          Copilot are part of the{" "}
+          <Link href={AUDIT_URL} style={{ color: "var(--accent)", fontWeight: 500 }}>
+            $1,500 AI Visibility Audit
+          </Link>{" "}
+          &mdash; six platforms, 25 prompts, each run three times.
+        </p>
       </div>
 
       {/* Domain */}
@@ -290,42 +338,6 @@ export default function CheckerForm() {
         </div>
       </div>
 
-      {/* Competitors — the field that makes the report specific rather than generic */}
-      <div style={{ marginBottom: 18 }}>
-        <span style={labelStyle}>
-          Competitors to compare against{" "}
-          <span style={{ fontWeight: 400, color: "var(--faint)" }}>
-            (optional, but this is what makes the report useful)
-          </span>
-        </span>
-        <div style={{ display: "grid", gap: 10, gridTemplateColumns: "1fr 1fr" }}>
-          <input
-            style={inputStyle}
-            aria-label="Competitor 1 (optional)"
-            placeholder="Competitor 1"
-            value={comp1}
-            onChange={(e) => setComp1(e.target.value)}
-          />
-          <input
-            style={inputStyle}
-            aria-label="Competitor 2 (optional)"
-            placeholder="Competitor 2"
-            value={comp2}
-            onChange={(e) => setComp2(e.target.value)}
-          />
-        </div>
-        <p
-          style={{
-            fontSize: 12.5,
-            color: "var(--faint)",
-            marginTop: 8,
-            lineHeight: 1.5,
-          }}
-        >
-          Name them and I&rsquo;ll show you which of you the AI engines actually
-          recommend &mdash; on the same question, at the same time.
-        </p>
-      </div>
 
       {/* Country + Email */}
       <div style={{ display: "grid", gap: 18, gridTemplateColumns: "1fr 1fr", marginBottom: 22 }}>
