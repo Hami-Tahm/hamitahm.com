@@ -3,13 +3,27 @@
 import { useRef, useState } from "react";
 import Link from "next/link";
 
+/**
+ * The engine list, ordered: live first, then the rest of the paid-audit six, then
+ * engines outside the audit scope.
+ *
+ * ⚠️ Google AI Mode was removed 2026-08-11. Not because it is the same thing as AI
+ * Overviews — Google states they may use different models and return different links,
+ * and every tracking vendor lists them separately — but because it is not one of the
+ * six platforms AUDIT_PLATFORMS commits to, so offering it here promised a scope the
+ * paid product doesn't cover. If AI Mode is ever added to the audit, add it back.
+ *
+ * Keep this list a subset of AUDIT_PLATFORMS plus clearly-extra engines. A free
+ * checker that covers surfaces the audit doesn't is a support ticket waiting to
+ * happen.
+ */
 const ENGINES = [
   { id: "chatgpt", label: "ChatGPT", active: true },
   { id: "ai-overview", label: "Google AI Overview", active: true },
   { id: "gemini", label: "Gemini", active: true },
-  { id: "ai-mode", label: "Google AI Mode", active: false },
   { id: "perplexity", label: "Perplexity", active: false },
   { id: "claude", label: "Claude", active: false },
+  { id: "copilot", label: "Microsoft Copilot", active: false },
   { id: "grok", label: "Grok", active: false },
   { id: "meta-ai", label: "Meta AI", active: false },
 ] as const;
