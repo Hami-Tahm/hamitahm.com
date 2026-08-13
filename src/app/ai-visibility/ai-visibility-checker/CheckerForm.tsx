@@ -318,8 +318,13 @@ export default function CheckerForm() {
           <Link href={AUDIT_URL} style={{ color: "var(--accent)", fontWeight: 500 }}>
             $1,500 AI Visibility Audit
           </Link>{" "}
-          &mdash; six platforms, 25 prompts, each run three times. Grok and Meta AI
-          can be added on request.
+          {/*
+            Deliberately does NOT state prompt counts or how many times each is run.
+            That is the method, and the method is the product — same rule as the one
+            in citation-study.ts: publish the outcome, never the mechanism.
+          */}
+          &mdash; six platforms, a full prompt set, and competitor comparison. Grok
+          and Meta AI can be added on request.
         </p>
       </div>
 
