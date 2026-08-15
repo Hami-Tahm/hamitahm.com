@@ -60,7 +60,7 @@ const siteStructuredData = {
       image: "https://hamitahm.com/images/hami-tahm/hami-tahm-portrait.png",
       worksFor: { "@id": "https://hamitahm.com/#organization" },
       /*
-       * ADDRESS — corrected twice on 2026-08-11, so read this before touching it.
+       * ADDRESS — corrected three times now, so read this before touching it.
        *
        * The working space is a dedicated desk in an incubator at this address. Hami
        * is there during stated hours and clients CAN be received, by appointment.
@@ -71,12 +71,18 @@ const siteStructuredData = {
        * is the incubator's. No GBP listing is being pursued, which is the right call
        * — an ineligible listing gets suspended later, usually at the worst moment.
        *
-       * Two things therefore stay off, deliberately:
-       *   - `geo` coordinates. They imply a mappable storefront and buy nothing
-       *     without a GBP listing.
-       *   - `ProfessionalService` / any LocalBusiness subtype on the service pages.
-       *     That was a separate bug: three pages each declared their own business
-       *     entity. Services are `Service` with `provider` pointing here.
+       * `geo` was removed on 2026-08-11 and RESTORED on 2026-08-14. The removal was
+       * wrong. It rested on two bad premises: that clients could not visit (they
+       * can), and that markup with no rich result attached is worth deleting. Per
+       * AGENTS.md §5 the test is "is it true and is it free", not "does Google admit
+       * to using it". These coordinates are the real location. They stay.
+       *
+       * One thing does stay off, for a reason that still holds:
+       *   - `ProfessionalService` / any LocalBusiness subtype ON THE SERVICE PAGES.
+       *     That was a real bug, not a deprecation: three pages each declared their
+       *     own business entity and fragmented the identity graph. Services are
+       *     `Service` with `provider` pointing here. Declaring a LocalBusiness type
+       *     ONCE, on this node, would not have that problem — see AGENTS.md §5.
        *
        * This node is the ONE place the address is declared. Keep it that way.
        */
@@ -87,6 +93,11 @@ const siteStructuredData = {
         addressRegion: "ON",
         postalCode: "M5V 2H1",
         addressCountry: "CA",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 43.6469,
+        longitude: -79.3924,
       },
       knowsAbout: [
         "AI Visibility",
