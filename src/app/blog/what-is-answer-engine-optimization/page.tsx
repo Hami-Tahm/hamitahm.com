@@ -10,6 +10,32 @@ const ARTICLE_TITLE = "What Is Answer Engine Optimization (AEO)?";
 const ARTICLE_DESCRIPTION =
   "Answer Engine Optimization (AEO) is the practice of structuring content so AI-powered search engines cite it directly. Here's what it is, how it works, and why it's different from SEO.";
 const DATE_PUBLISHED = "2026-06-09";
+const DATE_MODIFIED = "2026-08-11";
+
+/**
+ * ── CORRECTED 2026-08-11 ──
+ *
+ * This page was missed in the site-wide schema pass and still recommended two
+ * things Google has withdrawn:
+ *
+ *   - FAQPage schema "tells AI systems which questions your page answers".
+ *     Google's own FAQ documentation now carries a deprecation notice: as of
+ *     7 May 2026 FAQ rich results no longer appear in Search, and before that they
+ *     were restricted to well-known government and health sites.
+ *   - "HowTo schema makes step-based content directly parseable." Google removed
+ *     the HowTo documentation and the rich result earlier still.
+ *
+ * Neither was ever shown to be a condition of being cited by an LLM, and Google
+ * states plainly that no special markup is required for generative AI search.
+ *
+ * RULE: schema on this site is described as a way of stating facts unambiguously,
+ * never as a lever that buys citations.
+ */
+const DATE_FACT_CHECKED_HUMAN = "August 11, 2026";
+const GOOGLE_FAQ_DOC_URL =
+  "https://developers.google.com/search/docs/appearance/structured-data/faqpage";
+const GOOGLE_AI_GUIDE_URL =
+  "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const HUB_URL = "/ai-visibility/";
 const AEO_URL =
@@ -29,11 +55,11 @@ const FAQ_ITEMS = [
   },
   {
     q: "How long does AEO take to show results?",
-    a: "It depends on the platform and what's being changed. Structural and technical changes produce visible lift in Perplexity and Google AIO within weeks. Training data improvements in ChatGPT operate on a longer cycle. Most businesses see measurable movement within one to three months of focused work.",
+    a: "There is no published timeline for this and nobody can promise one. Google's own documentation says recrawling a page can take anywhere from days to months, and that indexing and serving are never guaranteed. Retrieval-based surfaces like Perplexity and Google AI Overviews reflect changes sooner than models that only see your content when they are retrained. The practical answer is to measure on a fixed schedule so you can tell real movement from normal week-to-week variation.",
   },
   {
     q: "Can I do AEO myself or do I need a consultant?",
-    a: "Some elements are accessible without a consultant — schema markup tools, content restructuring, FAQ additions. The harder parts — entity mapping, cross-platform citation strategy, competitor gap analysis — benefit from expertise. Most businesses start with a professional audit to understand where they stand before deciding how much to implement themselves.",
+    a: "Some of it is accessible without a consultant — restructuring pages so the answer comes first, tightening titles and headings, and adding basic Organization and Article markup. The harder parts — entity mapping, cross-platform citation strategy, competitor gap analysis — benefit from expertise. Most businesses start with a professional audit to understand where they stand before deciding how much to implement themselves.",
   },
   {
     q: "What's the difference between AEO and GEO?",
@@ -50,6 +76,7 @@ const blogGraph = buildBlogSchema({
   title: ARTICLE_TITLE,
   description: ARTICLE_DESCRIPTION,
   datePublished: DATE_PUBLISHED,
+  dateModified: DATE_MODIFIED,
 })["@graph"];
 
 const structuredData = {
@@ -349,15 +376,52 @@ export default function WhatIsAnswerEngineOptimizationPost() {
 
             <h3 style={h3Style}>Schema markup</h3>
             <p style={{ marginBottom: 26 }}>
-              <a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>Schema markup</a> removes ambiguity. FAQPage schema tells AI systems
-              which questions your page answers. Article schema with author
-              signals freshness and authority. HowTo schema makes step-based
-              content directly parseable.
+              <a
+                href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "var(--accent)", fontWeight: 500 }}
+              >
+                Schema markup
+              </a>{" "}
+              removes ambiguity about who you are and what a page is. Organization,
+              Article and LocalBusiness markup describe entities in a form machines
+              read the same way every time.
             </p>
             <p style={{ marginBottom: 26 }}>
-              Schema doesn&rsquo;t guarantee citation — but it reduces friction
-              between your content and the AI&rsquo;s extraction process. It also
-              breaks quietly:{" "}
+              <strong style={labelStyle}>
+                A correction, as of {DATE_FACT_CHECKED_HUMAN}.
+              </strong>{" "}
+              This section used to recommend FAQPage and HowTo schema for AI
+              visibility. Both recommendations are wrong now.{" "}
+              <a
+                href={GOOGLE_FAQ_DOC_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "var(--accent)", fontWeight: 500 }}
+              >
+                Google&rsquo;s own FAQ documentation
+              </a>{" "}
+              carries a deprecation notice: FAQ rich results stopped appearing in
+              Search on 7 May 2026, and even before that they were limited to
+              well-known government and health sites. HowTo rich results were
+              removed earlier still. Neither has been shown to be a condition of
+              being cited by an LLM, and Google states that{" "}
+              <a
+                href={GOOGLE_AI_GUIDE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "var(--accent)", fontWeight: 500 }}
+              >
+                no special markup is required for generative AI search
+              </a>
+              .
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              So the honest framing is narrower than it used to be here: schema
+              helps a machine parse a page that was already clear. It does not make
+              an unclear page citable, and no schema type buys you a citation. It
+              also breaks quietly:{" "}
               <Link href="/blog/faq-schema-accordion-bug/" style={linkStyle}>
                 a common accordion pattern hides the answer text from crawlers
               </Link>{" "}
@@ -477,17 +541,22 @@ export default function WhatIsAnswerEngineOptimizationPost() {
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>AEO is not just adding FAQ pages.</strong>{" "}
-              FAQPage schema is one tactic inside a broader practice. Businesses
-              that add a single FAQ section and expect AI citation are missing
-              most of what drives it — content structure, authority, entity
-              clarity, and third-party signals. FAQ is a tool, not the strategy.
+              This is truer than when it was first written. Adding an FAQ section and
+              expecting AI citation was always thin, and now the rich result that
+              used to reward it is gone. What still helps is answering a real
+              question clearly and early on the page — a question-and-answer shape is
+              useful because it is readable, not because of the markup around it.
+              Content structure, authority, entity clarity and third-party signals
+              are what actually move this.
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>AEO is not an overnight result.</strong>{" "}
-              Structural changes can produce visible lift within weeks on
-              retrieval-based platforms like Perplexity and Google AIO. Training
-              data improvements take longer — months. AEO is a compounding
-              practice, not a one-time fix.
+              There is no published service level for any of this. Google&rsquo;s
+              documentation says recrawling alone can take days to months and that
+              indexing and serving are never guaranteed, and engines refresh at
+              different rates. Treat any specific timeline — including one from me —
+              as an estimate, and measure on a fixed schedule so you can tell
+              movement from noise.
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>AEO is not only for ChatGPT.</strong> AEO
