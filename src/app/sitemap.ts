@@ -141,6 +141,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog/what-is-ai-visibility/": "2026-08-11",
     "/blog/best-ai-visibility-tools/": "2026-08-11",
     "/blog/how-to-check-ai-visibility/": "2026-08-11",
+    "/blog/what-is-answer-engine-optimization/": "2026-08-15",
     "/blog/which-ai-platform-matters-most/": "2026-08-10",
     "/case-studies/homecalc-ai-visibility/": "2026-08-10",
     "/research/": "2026-08-09",

@@ -71,7 +71,7 @@ const siteStructuredData = {
        * is the incubator's. No GBP listing is being pursued, which is the right call
        * — an ineligible listing gets suspended later, usually at the worst moment.
        *
-       * `geo` was removed on 2026-08-11 and RESTORED on 2026-08-14. The removal was
+       * `geo` was removed on 2026-08-11 and RESTORED on 2026-08-15. The removal was
        * wrong. It rested on two bad premises: that clients could not visit (they
        * can), and that markup with no rich result attached is worth deleting. Per
        * AGENTS.md §5 the test is "is it true and is it free", not "does Google admit
