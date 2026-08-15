@@ -28,7 +28,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "What is an AI visibility checker?",
-    a: "An AI visibility checker shows how your brand appears when people ask AI engines — ChatGPT, Google AI Overview, Gemini — about your category. Enter your domain, your keywords, and optionally the competitors you want to be measured against, and you get a report on whether these engines mention, cite, or recommend you — and which of you they name first.",
+    a: "An AI visibility checker shows how your brand appears when people ask AI engines — ChatGPT, Google AI Overview, Gemini — about your category. Enter your domain and your keywords, and you get a report on whether these engines mention, cite or recommend you, and whether they named someone else instead. Naming which competitors were chosen over you, and why, is part of the paid audit.",
   },
   {
     q: "Is this AI visibility checker free?",
@@ -36,7 +36,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Which AI engines does it check?",
-    a: "Right now: ChatGPT, Google AI Overview, and Gemini. Google AI Mode, Perplexity, Claude, and Grok are being added — you'll see them in the selector marked as coming soon.",
+    a: "The free check covers ChatGPT, Google AI Overview and Gemini. Perplexity, Claude and Microsoft Copilot are part of the paid AI Visibility Audit, which covers all six. Grok and Meta AI aren't in either, but can be added on request.",
   },
   {
     q: "How long until I get my report?",
@@ -133,10 +133,10 @@ export default function AiVisibilityCheckerPage() {
                 lineHeight: 1.6,
               }}
             >
-              Pick the AI engines, add your domain, your keywords, and the
-              competitors you want to be measured against &mdash; then a real
-              analyst checks how ChatGPT, Google AI Overview, and Gemini actually
-              answer. Free report in your inbox within one business day.
+              Add your domain and the questions your buyers actually ask &mdash;
+              then a real analyst checks how ChatGPT, Google AI Overview and
+              Gemini answer, and whether they name someone else instead. Free
+              report in your inbox within one business day.
             </p>
           </RevealSection>
         </div>
