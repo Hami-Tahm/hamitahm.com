@@ -8,6 +8,8 @@
  * Override the default key via the INDEXNOW_KEY env var if you rotate it.
  */
 
+import sitemap from "@/app/sitemap";
+
 export const INDEXNOW_KEY =
   process.env.INDEXNOW_KEY || "4f8a9b2c1d3e6f7a5b8c2d1e9f6a3b7c";
 
@@ -60,31 +62,25 @@ export async function submitToIndexNow(
   };
 }
 
-/** All known commercial + cluster URLs — useful for a full resubmit. */
+/**
+ * Every canonical URL on the site — derived from the sitemap, not retyped.
+ *
+ * ⚠️ THIS USED TO BE A HAND-WRITTEN LIST and it had silently drifted. It was
+ * missing eleven live pages, including /ai-visibility/ai-visibility-consultant-toronto/,
+ * /ai-visibility/ai-visibility-checker/, /ai-visibility/implementation/, /pricing/,
+ * /methodology/, /research/ and three blog posts — so every "full resubmit" quietly
+ * skipped them.
+ *
+ * Reading from the sitemap means the two can never disagree again: add a page to
+ * src/app/sitemap.ts and it is automatically submitted here.
+ *
+ * The trailing-slash form matters. The site serves `/path/` (trailingSlash: true)
+ * and redirects `/path` → `/path/`. Submitting the slash-less form would hand Bing
+ * a URL that 308s, which is exactly the fragmentation this file should be fixing.
+ * The sitemap already emits the correct form, which is another reason to read it.
+ */
 export function getAllPrimaryUrls(): string[] {
-  const base = `https://${INDEXNOW_HOST}`;
-  return [
-    `${base}/`,
-    `${base}/hami-tahm/`,
-    `${base}/ai-visibility/`,
-    `${base}/ai-visibility/ai-visibility-audit/`,
-    `${base}/ai-visibility/ai-visibility-consultant-canada/`,
-    `${base}/ai-visibility/answer-engine-optimization-consultant-canada/`,
-    `${base}/ai-visibility/generative-engine-optimization-consultant-canada/`,
-    `${base}/ai-visibility/ai-visibility-for-dental-clinics/`,
-    `${base}/ai-visibility/ai-visibility-for-mortgage-brokers/`,
-    `${base}/case-studies/homecalc-ai-visibility/`,
-    `${base}/case-studies/cited-by-ai-engines/`,
-    `${base}/blog/`,
-    `${base}/blog/what-is-ai-visibility/`,
-    `${base}/blog/what-is-answer-engine-optimization/`,
-    `${base}/blog/aeo-vs-geo-vs-seo/`,
-    `${base}/blog/how-to-check-ai-visibility/`,
-    `${base}/blog/how-to-get-mentioned-by-chatgpt/`,
-    `${base}/blog/how-to-get-cited-by-perplexity/`,
-    `${base}/blog/how-to-appear-in-google-ai-overviews/`,
-    `${base}/blog/best-ai-visibility-tools/`,
-    `${base}/blog/ai-visibility-tools-vs-audit/`,
-    `${base}/blog/peec-vs-profound-vs-airops/`,
-  ];
+  return sitemap()
+    .map((entry) => entry.url)
+    .filter((url) => url.startsWith(`https://${INDEXNOW_HOST}/`));
 }
