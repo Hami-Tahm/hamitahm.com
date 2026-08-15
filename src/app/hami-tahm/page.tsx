@@ -128,7 +128,7 @@ export default function AboutPage() {
                   on what works.
                 </h1>
                 <p style={{ marginTop: 28, fontSize: "clamp(17px, 2vw, 20px)", color: "var(--muted)", maxWidth: "54ch", lineHeight: 1.65 }}>
-                  Hami Tahm is a Canadian AI visibility consultant and founder — building tools and practices that help businesses appear in AI-powered search. Based in Toronto, Hami runs HamiTahm.com as his AI visibility practice and HomeCalc.ca as a live case study in AI citation growth.
+                  Hami Tahm is a Canadian AI visibility consultant and founder — building tools and practices that help businesses appear in AI-powered search. Based in Toronto, Hami runs HamiTahm.com as his AI visibility practice and HomeCalc.ca as a live case study in AI citation growth. He works with <Link href="/ai-visibility/ai-visibility-consultant-toronto/" style={{ color: "var(--accent)", fontWeight: 500 }}>businesses across Toronto and the GTA</Link>, and takes on <Link href="/seo-expert-toronto/" style={{ color: "var(--accent)", fontWeight: 500 }}>traditional SEO engagements</Link> where the two overlap. Every result he publishes is traceable to a <Link href="/case-studies/" style={{ color: "var(--accent)", fontWeight: 500 }}>case study</Link>.
                 </p>
               </div>
               <div className="portrait">

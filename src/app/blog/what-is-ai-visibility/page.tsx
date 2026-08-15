@@ -512,7 +512,11 @@ export default function WhatIsAIVisibilityPost() {
             <p style={{ marginBottom: 26 }}>
               Being well-cited on one doesn&rsquo;t guarantee anything on the
               others. They retrieve from different indexes, refresh on different
-              schedules, and weigh sources differently.
+              schedules, and weigh sources differently &mdash; which is why{" "}
+              <Link href="/blog/which-ai-platform-matters-most/" style={linkStyle}>
+                deciding which platform to prioritise
+              </Link>{" "}
+              matters more than trying to win all of them at once.
             </p>
             <p style={{ marginBottom: 26 }}>
               For what it takes to get cited on each, see my work on{" "}

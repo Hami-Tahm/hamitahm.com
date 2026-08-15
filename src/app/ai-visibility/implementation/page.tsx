@@ -158,9 +158,12 @@ export default function ImplementationPage() {
               }}
             >
               The audit tells you exactly what to change. The Implementation Sprint
-              is where I make those changes myself &mdash; schema, rendering, entity
-              consistency, page rewrites, crawler config &mdash; on a fixed scope,
-              fixed price, and a fixed timeline. It&rsquo;s the same work I did on my
+              is where I make those changes myself &mdash; schema,{" "}
+              <Link href="/blog/spa-to-ssg-ai-visibility/" style={{ color: "var(--accent)", fontWeight: 500 }}>
+                rendering
+              </Link>
+              , entity consistency, page rewrites, crawler config &mdash; on a fixed
+              scope, fixed price, and a fixed timeline. It&rsquo;s the same work I did on my
               own site to earn {HOMECALC_CLAIMS.appearancesInTimeframe}.
             </p>
           </RevealSection>

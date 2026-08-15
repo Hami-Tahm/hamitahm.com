@@ -126,6 +126,7 @@ const RELATED_LINKS = [
     href: "/ai-visibility/implementation/",
   },
   { label: "Full pricing — every step, published", href: "/pricing/" },
+  { label: "Case studies — the results behind the method", href: "/case-studies/" },
   { label: "How I measure AI visibility (methodology)", href: "/methodology/" },
   { label: "What is AI visibility?", href: "/ai-visibility/" },
   {

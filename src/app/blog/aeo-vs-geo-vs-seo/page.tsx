@@ -358,7 +358,12 @@ export default function AEOvsGEOvsSEOPost() {
               Prioritize AEO. A buyer who asks Perplexity &ldquo;what&rsquo;s the
               best mortgage broker in Vancouver&rdquo; isn&rsquo;t clicking
               through to page two. If you&rsquo;re not cited in the answer block,
-              you don&rsquo;t exist for that buyer. AEO is what puts you there.
+              you don&rsquo;t exist for that buyer. AEO is what puts you there
+              &mdash;{" "}
+              <Link href="/blog/what-is-answer-engine-optimization/" style={linkStyle}>
+                the full definition and what it actually involves
+              </Link>{" "}
+              is a longer read.
             </p>
 
             <h3 style={h3Style}>

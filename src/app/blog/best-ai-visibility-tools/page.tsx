@@ -876,7 +876,16 @@ export default function BestAIVisibilityToolsPost() {
                 lighter on prescription.
               </li>
               <li style={{ marginBottom: 11 }}>
-                <strong style={labelStyle}>Geography and language.</strong> SE Visible
+                <strong style={labelStyle}>Which platforms you actually need.</strong>{" "}
+                Coverage costs money, and not every engine is worth the same to every
+                business &mdash;{" "}
+                <Link href="/blog/which-ai-platform-matters-most/" style={linkStyle}>
+                  the traffic split between them
+                </Link>{" "}
+                is the cheapest way to narrow this before you buy.
+              </li>
+              <li style={{ marginBottom: 11 }}>
+              <strong style={labelStyle}>Geography and language.</strong> SE Visible
                 covers 7 countries and 5 languages. Otterly covers 50+ countries. If
                 you sell in more than one language, check this before anything else.
               </li>

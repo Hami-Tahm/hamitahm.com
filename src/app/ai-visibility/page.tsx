@@ -44,6 +44,13 @@ const RESOURCES = [
     blurb:
       "How every figure on this site is measured, which console it came from, and what it is explicitly not claiming.",
   },
+  {
+    href: "/case-studies/",
+    tag: "Results",
+    title: "All case studies",
+    blurb:
+      "Every published result in one place — what changed, over what window, and which console reported it.",
+  },
 ] as const;
 
 const HUB_FAQ = [
@@ -1462,7 +1469,10 @@ export default function AIVisibilityPage() {
                   }}
                 >
                   Optional after the sprint, on{" "}
-                  {OFFERS.monitor.durationPhrase}{" "}&mdash; never required to start.
+                  {OFFERS.monitor.durationPhrase}{" "}&mdash; never required to start.{" "}
+                  <Link href="/pricing/" style={{ color: "var(--accent)", fontWeight: 500 }}>
+                    Every step, priced &rarr;
+                  </Link>
                   I monitor your citations, track competitors, and keep you
                   visible as AI models retrain.
                 </p>

@@ -168,7 +168,14 @@ export default function SEOExpertTorontoPage() {
                 lineHeight: 1.5,
               }}
             >
-              Engagements start at $1,500 CAD for an AI Visibility Audit.
+              Engagements start at $1,500 CAD for an AI Visibility Audit
+              &mdash; see{" "}
+              <Link href="/pricing/" style={{ color: "var(--accent)", fontWeight: 500 }}>what each step costs</Link>, or
+              the{" "}
+              <Link href="/ai-visibility/ai-visibility-consultant-toronto/" style={{ color: "var(--accent)", fontWeight: 500 }}>
+                Toronto AI visibility practice
+              </Link>{" "}
+              if that&rsquo;s the side you need.
             </p>
           </RevealSection>
 

@@ -356,7 +356,12 @@ export default function WhatIsAnswerEngineOptimizationPost() {
             </p>
             <p style={{ marginBottom: 26 }}>
               Schema doesn&rsquo;t guarantee citation — but it reduces friction
-              between your content and the AI&rsquo;s extraction process.
+              between your content and the AI&rsquo;s extraction process. It also
+              breaks quietly:{" "}
+              <Link href="/blog/faq-schema-accordion-bug/" style={linkStyle}>
+                a common accordion pattern hides the answer text from crawlers
+              </Link>{" "}
+              while the markup still validates.
             </p>
 
             <h3 style={h3Style}>Authority signals</h3>

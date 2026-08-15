@@ -216,9 +216,13 @@ export default function AIVisibilityConsultantCanada() {
                 lineHeight: 1.65,
               }}
             >
-              Hami Tahm is an AI visibility consultant based in Toronto, Canada
-              &mdash; helping businesses identify and fix where they&rsquo;re
-              missing, misrepresented, or invisible in AI-powered search platforms
+              Hami Tahm is an{" "}
+              <Link href="/ai-visibility/ai-visibility-consultant-toronto/" style={{ color: "var(--accent)", fontWeight: 500 }}>
+                AI visibility consultant based in Toronto
+              </Link>
+              , Canada &mdash; helping businesses identify and fix where
+              they&rsquo;re missing, misrepresented, or invisible in AI-powered
+              search platforms
               like Google AI&nbsp;Overviews, ChatGPT, Gemini, and Claude. Unlike
               agency-led services, every audit and strategy is built and
               delivered by Hami personally.
