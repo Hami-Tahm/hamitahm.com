@@ -92,13 +92,22 @@ const structuredData = {
      * 1. Three separate LocalBusiness nodes with three @ids describe one practice as
      *    three businesses, which is the opposite of the entity clarity this site sells.
      *    That is the real bug and it is independent of any address question.
-     * 2. A LocalBusiness subtype also duplicates the address, which now lives in
-     *    exactly one place: the Person node in layout.tsx. See the note there for why
-     *    the address is legitimate but `geo` and a GBP listing are not.
+     * 2. A LocalBusiness subtype also duplicates the address, which lives in exactly
+     *    one place. UPDATED 2026-08-16: that place is now the #organization node in
+     *    layout.tsx, not the Person — the address moved so it could sit with the geo
+     *    coordinates, which are not valid on a Person.
+     *
+     * ⚠️ layout.tsx NOW DECLARES `ProfessionalService` ON #organization, so this
+     * heading looks contradictory at a glance. It is not, and the distinction is the
+     * whole point: the business is declared ONCE, in the file that owns the graph.
+     * The bug was never the type — it was three PAGES each minting their own business
+     * entity with its own @id. That must not come back. Pages describe services;
+     * layout.tsx describes the business.
      *
      * `Service` with `provider` pointing at the single Person node says the true
-     * thing: one practitioner, several services, serving an area — no storefront.
-     * `priceRange` went with it; it is a LocalBusiness property.
+     * thing: one practitioner, several services, serving an area. `priceRange` went
+     * with it, and now lives on #organization where it is valid. A GBP listing is
+     * still deliberately not pursued — see the note in layout.tsx.
      */
     {
       "@type": "Service",

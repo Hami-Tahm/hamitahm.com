@@ -60,53 +60,23 @@ const siteStructuredData = {
       image: "https://hamitahm.com/images/hami-tahm/hami-tahm-portrait.png",
       worksFor: { "@id": "https://hamitahm.com/#organization" },
       /*
-       * ADDRESS — corrected three times now, so read this before touching it.
+       * WHERE THE ADDRESS LIVES — moved to #organization on 2026-08-16.
        *
-       * The working space is a dedicated desk in an incubator at this address. Hami
-       * is there during stated hours and clients CAN be received, by appointment.
-       * So the address is true and belongs here.
+       * It used to be declared here, on the Person. That was valid (Person accepts
+       * `address`) but it was the wrong home, because the coordinates that belong
+       * WITH it are not valid on a Person. Splitting a location across two nodes —
+       * street address on one, coordinates nowhere — is how the geo property ended up
+       * homeless through three separate edits.
        *
-       * What it is NOT is a Google Business Profile location. GBP additionally
-       * requires permanent signage in the business's own name, and the signage there
-       * is the incubator's. No GBP listing is being pursued, which is the right call
-       * — an ineligible listing gets suspended later, usually at the worst moment.
+       * So the whole location now sits on the business node below, which is typed
+       * `ProfessionalService` and can legally carry address AND geo together. This
+       * Person points at it with `workLocation`, which is valid because
+       * ProfessionalService inherits from Place.
        *
-       * `geo` has been off, on, and off again. The full history is in the comment
-       * where it used to sit, just below the address. Short version: it is TRUE but
-       * it is not VALID on a Person, so it needs a Place node before it comes back.
-       *
-       * Two things stay off, each for its own reason:
-       *   - `ProfessionalService` / any LocalBusiness subtype ON THE SERVICE PAGES.
-       *     That was a real bug, not a deprecation: three pages each declared their
-       *     own business entity and fragmented the identity graph. Services are
-       *     `Service` with `provider` pointing here. Declaring a LocalBusiness type
-       *     ONCE, on this node, would not have that problem — see AGENTS.md §5.
-       *
-       * This node is the ONE place the address is declared. Keep it that way.
+       * The invariant is unchanged and still matters: the address is declared in
+       * exactly ONE place. That place is now #organization, not here.
        */
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "111 Peter Street, 9th Floor, Suite 902",
-        addressLocality: "Toronto",
-        addressRegion: "ON",
-        postalCode: "M5V 2H1",
-        addressCountry: "CA",
-      },
-      /*
-       * `geo` REMOVED AGAIN 2026-08-16 — and this time for a DIFFERENT reason than
-       * the 08-11 removal, so read both before touching it.
-       *
-       * 08-11: removed because "no rich result" was treated as grounds for deletion.
-       * That reasoning was wrong and AGENTS.md §5 now forbids it.
-       *
-       * 08-16: removed because Ahrefs reports "Unexpected property for Person" on all
-       * 69 pages. `geo` belongs to Place / LocalBusiness, never to Person. So the
-       * coordinates were true but sat on a node that cannot carry them.
-       *
-       * The coordinates are 43.6469, -79.3924 and they are correct. They are parked
-       * here in a comment rather than deleted, so that whoever declares a Place or
-       * LocalBusiness node does not have to look them up again. See AGENTS.md §5.
-       */
+      workLocation: { "@id": "https://hamitahm.com/#organization" },
       knowsAbout: [
         "AI Visibility",
         "Answer Engine Optimization",
@@ -162,14 +132,67 @@ const siteStructuredData = {
        * says it doesn't use this".
        */
     },
+    /*
+     * THE BUSINESS. Typed `ProfessionalService` as of 2026-08-16.
+     *
+     * WHY THE TYPE CHANGED. ProfessionalService is a subtype of LocalBusiness, which
+     * inherits from BOTH Organization and Place. That inheritance is the entire point:
+     * it is what makes `address`, `geo` and `priceRange` valid on this node. A plain
+     * Organization accepts none of them, and a Person accepts only `address` — which
+     * is why the coordinates had no legal home anywhere in this graph until now.
+     *
+     * ⚠️ THIS DOES NOT REOPEN THE 2026-08-11 BUG. That bug was three SERVICE PAGES
+     * each minting their own business entity, which fragmented the identity graph.
+     * The fix was one entity, declared once. This is that one entity, declared once,
+     * in the one file where the graph is defined. The service pages stay `Service`
+     * with `provider` pointing here, and must never declare a business type again.
+     *
+     * WHAT THIS DOES NOT BUY. Map and local-pack results come from Google Business
+     * Profile, not from markup. No GBP listing is being pursued, deliberately: GBP
+     * wants permanent signage in the business's own name, and the signage at the
+     * incubator is the incubator's. So expect no local rich result from this. Per
+     * AGENTS.md §5 that is not a reason to leave true, free, valid markup out.
+     *
+     * ⚠️ `openingHours` IS DELIBERATELY ABSENT. It is valid on this type, so it will
+     * look like an omission to the next person. It is not. Published hours are a
+     * promise that someone can show up and find you, and the arrangement here is a
+     * desk in an incubator with clients received BY APPOINTMENT. Declaring hours
+     * would be the one thing on this node that isn't true. Do not add it unless the
+     * hours become real and reliable — §5 protects true markup, not all markup.
+     */
     {
-      "@type": "Organization",
+      "@type": "ProfessionalService",
       "@id": "https://hamitahm.com/#organization",
       name: "HamiTahm.com",
       url: "https://hamitahm.com/",
       founder: { "@id": "https://hamitahm.com/#hami-tahm" },
       areaServed: { "@type": "Country", name: "Canada" },
       foundingDate: "2024",
+      /*
+       * The working space is a dedicated desk in an incubator at this address. Hami
+       * is there during stated hours and clients CAN be received, by appointment, so
+       * the address and the coordinates are both true.
+       *
+       * `geo` history, because it has been off, on, and off again: removed 08-11 on
+       * the bad reasoning that markup without a rich result is worth deleting;
+       * restored 08-16 under AGENTS.md §5; removed again the same day because Ahrefs
+       * reported "Unexpected property for Person" — true coordinates on a node that
+       * could not carry them. It is back now, on a node that can.
+       */
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "111 Peter Street, 9th Floor, Suite 902",
+        addressLocality: "Toronto",
+        addressRegion: "ON",
+        postalCode: "M5V 2H1",
+        addressCountry: "CA",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 43.6469,
+        longitude: -79.3924,
+      },
+      priceRange: "$$$",
     },
     // Companies Hami founded — declared as first-class entities with a founder link
     // back to the Person, which is the schema.org-correct way to connect them.
