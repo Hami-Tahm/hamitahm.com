@@ -24,6 +24,7 @@ export async function POST(req: Request) {
     keywords?: string[];
     competitors?: string[];
     country?: string;
+    scope?: string;
     email?: string;
   };
   try {
@@ -47,6 +48,19 @@ export async function POST(req: Request) {
   const domain = deFormula((body.domain || "").trim());
   const email = (body.email || "").trim().slice(0, MAX);
   const country = deFormula((body.country || "").trim());
+  /*
+   * Which confirmation email the Apps Script webhook should send.
+   *
+   * "canada"   → the report is coming, within one business day.
+   * "waitlist" → the market isn't covered; thank them and record the demand.
+   *
+   * ⚠️ ALLOW-LISTED, NOT PASSED THROUGH. This value selects a message template on
+   * the other side, so an arbitrary string from the client must never reach it.
+   * Anything unrecognised falls back to "waitlist", which is the safe direction:
+   * the failure mode is someone hearing "no report" and replying, not someone
+   * waiting a day for a report that was never queued.
+   */
+  const scope = body.scope === "canada" ? "canada" : "waitlist";
   const engines = (Array.isArray(body.engines) ? body.engines : [])
     .slice(0, 10)
     .map((e) => deFormula(String(e).trim()));
@@ -72,6 +86,7 @@ export async function POST(req: Request) {
     domain,
     email,
     country,
+    scope,
     engines,
     keywords,
     competitors,

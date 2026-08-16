@@ -44,21 +44,29 @@ const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
  * different answers depending on where the search runs from, so the country decides
  * how the check is actually performed. A typo silently produces a wrong report.
  *
- * The list is deliberately short. These are the three markets the check is run for,
- * and offering a country the report can't honestly cover is the same failure mode as
- * the engine buttons above: promising a scope the delivery contradicts.
+ * Canada only. That matches the rest of the site — `areaServed` in layout.tsx and
+ * the "Canadian businesses" line repeated across ~25 places — so the form no longer
+ * accepts a market the site does not claim to serve.
  *
- * ⚠️ "Other" is a live option ON PURPOSE — do not delete it to "enforce" the list.
- * A three-option dropdown with no escape is a dead end: a visitor from Australia
- * finds nothing that matches, abandons, and we never learn they existed. Selecting
- * Other blocks the submit (the report would be wrong) but hands them an email
- * address, which converts a silent loss into a conversation.
+ * ⚠️ TWO OUTCOMES, NOT ONE. Do not "simplify" this back to a single path.
  *
- * These strings go straight into the sheet and the confirmation email, so keep them
- * in full, readable form. Don't switch to ISO codes without changing both.
+ * Somewhere-else submissions are ACCEPTED, not blocked. They are a waitlist: the
+ * visitor is told plainly that the service isn't available for their market yet and
+ * that they'll hear when it is. A blocked form loses that person silently; an
+ * accepted one turns an unservable lead into a record of demand, which is the only
+ * evidence that would ever justify opening a second market.
+ *
+ * Which is why the free-text country box appears when they pick it. A waitlist you
+ * can't segment by market is not a waitlist — without the actual country there is no
+ * way to know who to write to when a market opens, and the promise becomes empty.
+ *
+ * `scope` in the payload is what the Apps Script webhook branches on to decide WHICH
+ * confirmation email to send. If you rename these two values, change the webhook in
+ * the same sitting or half the senders get the wrong email.
  */
-const COUNTRIES = ["Canada", "United States", "United Kingdom"] as const;
+const COUNTRIES = ["Canada"] as const;
 const COUNTRY_OTHER = "Other";
+type Scope = "canada" | "waitlist";
 
 type Tier = "free" | "audit" | "request";
 
@@ -100,6 +108,8 @@ export default function CheckerForm() {
    * columns are unaffected; it arrives empty from this form.
    */
   const [country, setCountry] = useState("");
+  /** Only used when `country === COUNTRY_OTHER`. See the waitlist note above. */
+  const [otherCountry, setOtherCountry] = useState("");
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [err, setErr] = useState("");
@@ -110,6 +120,8 @@ export default function CheckerForm() {
    * single most useful number for improving this step of the funnel, and one that
    * submit-only tracking cannot show.
    */
+  const isWaitlist = country === COUNTRY_OTHER;
+
   const startedRef = useRef(false);
   function markStarted() {
     if (startedRef.current) return;
@@ -133,18 +145,19 @@ export default function CheckerForm() {
       setErr("Please fill in your domain, at least one keyword, country, and email.");
       return;
     }
-    // Belt-and-braces: the submit button is already disabled for Other. This stops a
-    // form that gets submitted by Enter key or by an autofill extension.
-    if (country === COUNTRY_OTHER) {
-      setErr(
-        "The free check currently runs for Canada, the United States and the United Kingdom. Email hami@hamitahm.com and I'll tell you whether I can cover yours.",
-      );
+    if (isWaitlist && !otherCountry.trim()) {
+      setErr("Please tell me which country, so I can let you know when it opens.");
       return;
     }
     if (engines.length === 0) {
       setErr("Select at least one AI engine to check.");
       return;
     }
+    // The country that actually gets recorded. For a waitlist entry that is the
+    // market they typed, never the literal string "Other" — an unsegmentable
+    // waitlist can't be acted on, which would make the promise in the email empty.
+    const resolvedCountry = isWaitlist ? otherCountry.trim() : country.trim();
+    const scope: Scope = isWaitlist ? "waitlist" : "canada";
     setStatus("submitting");
     try {
       const res = await fetch("/api/checker", {
@@ -157,7 +170,9 @@ export default function CheckerForm() {
           // Kept in the payload for the sheet's column layout; the free form no
           // longer collects competitors. See the note above.
           competitors: [] as string[],
-          country: country.trim(),
+          country: resolvedCountry,
+          // Tells the webhook which confirmation email to send. See the note above.
+          scope,
           email: email.trim(),
         }),
       });
@@ -165,13 +180,71 @@ export default function CheckerForm() {
       if (typeof window !== "undefined") {
         const w = window as unknown as { dataLayer?: Record<string, unknown>[] };
         w.dataLayer = w.dataLayer || [];
-        w.dataLayer.push({ event: "ai_checker_submit", engines, country });
+        w.dataLayer.push({
+          event: "ai_checker_submit",
+          engines,
+          country: resolvedCountry,
+          // Keep these separable in GA4 — a waitlist signup is demand for a market
+          // that doesn't exist yet, not a delivered report. Counting them as one
+          // number would overstate the funnel.
+          scope,
+        });
       }
       setStatus("done");
     } catch {
       setStatus("error");
       setErr("Something went wrong. Please try again, or email hami@hamitahm.com.");
     }
+  }
+
+  /*
+   * WAITLIST CONFIRMATION — deliberately promises nothing on a clock.
+   *
+   * The Canada screen below commits to a report within one business day. Reusing it
+   * here would be the worst possible outcome: someone waits a day for a report that
+   * is never coming. So this screen says the service isn't available, thanks them,
+   * and states the only thing that is actually true — that they'll hear if it opens.
+   *
+   * "if" and not "when". There is no dated plan to open another market, and a
+   * confirmation screen is not the place to invent one.
+   */
+  if (status === "done" && isWaitlist) {
+    return (
+      <div className="proof-card" style={{ padding: "40px 32px" }}>
+        <div
+          style={{
+            fontFamily: "var(--serif)",
+            fontSize: "clamp(22px, 3vw, 28px)",
+            fontWeight: 500,
+            color: "var(--accent)",
+            marginBottom: 20,
+            textAlign: "center",
+          }}
+        >
+          Thank you — you&rsquo;re on the list.
+        </div>
+        <p style={{ fontSize: 16, color: "var(--muted)", lineHeight: 1.7, margin: "0 0 14px" }}>
+          I&rsquo;m sorry — the free check doesn&rsquo;t cover{" "}
+          <strong style={{ color: "var(--ink)" }}>{otherCountry.trim()}</strong> yet.
+          These engines answer differently depending on the country the search runs
+          from, and I only run this for Canada right now. Sending you a report from
+          the wrong market would tell you the wrong thing, so I&rsquo;d rather say so.
+        </p>
+        <p style={{ fontSize: 16, color: "var(--muted)", lineHeight: 1.7, margin: "0 0 14px" }}>
+          Your details are saved. If I open{" "}
+          <strong style={{ color: "var(--ink)" }}>{otherCountry.trim()}</strong>,
+          you&rsquo;ll be among the first to hear — and a confirmation of this is on
+          its way to your inbox now.
+        </p>
+        <p style={{ fontSize: 16, color: "var(--muted)", lineHeight: 1.7, margin: 0 }}>
+          In the meantime the writing below applies anywhere: how these engines pick
+          who to cite doesn&rsquo;t change at the border.{" "}
+          <Link href="/blog/" style={{ color: "var(--accent)", fontWeight: 600 }}>
+            Read the guides →
+          </Link>
+        </p>
+      </div>
+    );
   }
 
   if (status === "done") {
@@ -453,11 +526,11 @@ export default function CheckerForm() {
       </div>
 
       {/*
-        The out-of-scope path. Says why rather than just refusing — "the answer
-        depends on where the search runs from" is a true reason a visitor can act on,
-        and it quietly explains why the country field exists at all.
+        The out-of-scope path. Tells them BEFORE they submit that no report is
+        coming, so the button they press matches what they get. Saying it here rather
+        than only in the email is what keeps this from feeling like a bait.
       */}
-      {country === COUNTRY_OTHER && (
+      {isWaitlist && (
         <div
           style={{
             marginBottom: 18,
@@ -467,19 +540,22 @@ export default function CheckerForm() {
             background: "var(--accent-soft)",
           }}
         >
-          <p style={{ margin: 0, fontSize: 14.5, color: "var(--ink)", lineHeight: 1.6 }}>
-            The free check runs for <strong>Canada, the United States and the United
-            Kingdom</strong> right now. These engines answer differently depending on
-            where the search runs from, so a report from the wrong market would tell
-            you the wrong thing.
+          <p style={{ margin: "0 0 12px", fontSize: 14.5, color: "var(--ink)", lineHeight: 1.6 }}>
+            The free check currently runs for <strong>Canada</strong> only — these
+            engines answer differently depending on where the search runs from. I
+            won&rsquo;t send you a report from the wrong market, but I&rsquo;ll add
+            you to the list and tell you if yours opens.
           </p>
-          <p style={{ margin: "8px 0 0", fontSize: 14.5, color: "var(--muted)", lineHeight: 1.6 }}>
-            Email{" "}
-            <a href="mailto:hami@hamitahm.com?subject=AI%20visibility%20check%20outside%20CA%2FUS%2FUK" style={{ color: "var(--accent)", fontWeight: 600 }}>
-              hami@hamitahm.com
-            </a>{" "}
-            with your market and I&rsquo;ll tell you whether I can cover it.
-          </p>
+          <label style={labelStyle} htmlFor="cw-other-country">
+            Which country?
+          </label>
+          <input
+            id="cw-other-country"
+            style={inputStyle}
+            placeholder="e.g. Australia"
+            value={otherCountry}
+            onChange={(e) => setOtherCountry(e.target.value)}
+          />
         </div>
       )}
 
@@ -490,15 +566,14 @@ export default function CheckerForm() {
       <button
         type="submit"
         className="btn btn-primary"
-        disabled={status === "submitting" || country === COUNTRY_OTHER}
-        style={{
-          width: "100%",
-          justifyContent: "center",
-          opacity: status === "submitting" || country === COUNTRY_OTHER ? 0.7 : 1,
-          cursor: country === COUNTRY_OTHER ? "not-allowed" : undefined,
-        }}
+        disabled={status === "submitting"}
+        style={{ width: "100%", justifyContent: "center", opacity: status === "submitting" ? 0.7 : 1 }}
       >
-        {status === "submitting" ? "Sending…" : "Get my AI visibility report →"}
+        {status === "submitting"
+          ? "Sending…"
+          : isWaitlist
+            ? "Add me to the list →"
+            : "Get my AI visibility report →"}
       </button>
       {/*
         NOTICE AT THE POINT OF COLLECTION.
@@ -511,7 +586,9 @@ export default function CheckerForm() {
         Say what we take, what we do with it, and how to make it go away. In plain words.
       */}
       <p style={{ fontSize: 12.5, color: "var(--faint)", marginTop: 12, textAlign: "center", lineHeight: 1.5 }}>
-        Free. A real analyst sends your report within one business day.
+        {isWaitlist
+          ? "Free. No report is sent for markets outside Canada — you're joining the list."
+          : "Free. A real analyst sends your report within one business day."}
       </p>
       <p
         style={{
@@ -522,9 +599,18 @@ export default function CheckerForm() {
           lineHeight: 1.6,
         }}
       >
-        By submitting, you agree that I can use your email to send you this report and
-        follow up once. Your details are stored privately, never sold, never published,
-        and deleted the moment you ask.{" "}
+        {/*
+          ⚠️ THE WAITLIST WORDING IS A CASL REQUIREMENT, NOT A STYLE CHOICE.
+          The Canada path asks consent for a report plus ONE follow-up — a bounded,
+          near-term exchange. A waitlist message is a commercial electronic message
+          sent at an unknown future date, which is exactly what CASL requires express
+          consent for, and "send you this report" plainly does not cover it. So the
+          notice has to name that future message at the point of collection, and the
+          unsubscribe route has to be stated. Don't collapse these back into one line.
+        */}
+        {isWaitlist
+          ? "By submitting, you agree that I can email you if the free check opens for your country, and confirm that now. No report is sent in the meantime. Unsubscribe any time by replying — your details are stored privately, never sold, never published, and deleted the moment you ask. "
+          : "By submitting, you agree that I can use your email to send you this report and follow up once. Your details are stored privately, never sold, never published, and deleted the moment you ask. "}
         <Link href="/privacy/" style={{ color: "var(--muted)", textDecoration: "underline" }}>
           Privacy
         </Link>
