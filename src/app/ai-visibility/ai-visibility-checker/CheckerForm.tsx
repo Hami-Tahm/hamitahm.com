@@ -35,6 +35,31 @@ import Link from "next/link";
  */
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 
+/**
+ * COUNTRY IS A FIXED LIST, NOT FREE TEXT (2026-08-15).
+ *
+ * It was already required, but as an open input with "Canada" as the placeholder.
+ * That produced unusable values — "USA", "us", "United States of America", blank
+ * variants — for a field that is not decoration: every one of these engines returns
+ * different answers depending on where the search runs from, so the country decides
+ * how the check is actually performed. A typo silently produces a wrong report.
+ *
+ * The list is deliberately short. These are the three markets the check is run for,
+ * and offering a country the report can't honestly cover is the same failure mode as
+ * the engine buttons above: promising a scope the delivery contradicts.
+ *
+ * ⚠️ "Other" is a live option ON PURPOSE — do not delete it to "enforce" the list.
+ * A three-option dropdown with no escape is a dead end: a visitor from Australia
+ * finds nothing that matches, abandons, and we never learn they existed. Selecting
+ * Other blocks the submit (the report would be wrong) but hands them an email
+ * address, which converts a silent loss into a conversation.
+ *
+ * These strings go straight into the sheet and the confirmation email, so keep them
+ * in full, readable form. Don't switch to ISO codes without changing both.
+ */
+const COUNTRIES = ["Canada", "United States", "United Kingdom"] as const;
+const COUNTRY_OTHER = "Other";
+
 type Tier = "free" | "audit" | "request";
 
 const ENGINES: readonly { id: string; label: string; tier: Tier }[] = [
@@ -106,6 +131,14 @@ export default function CheckerForm() {
     setErr("");
     if (!domain.trim() || !kw1.trim() || !country.trim() || !email.trim()) {
       setErr("Please fill in your domain, at least one keyword, country, and email.");
+      return;
+    }
+    // Belt-and-braces: the submit button is already disabled for Other. This stops a
+    // form that gets submitted by Enter key or by an autofill extension.
+    if (country === COUNTRY_OTHER) {
+      setErr(
+        "The free check currently runs for Canada, the United States and the United Kingdom. Email hami@hamitahm.com and I'll tell you whether I can cover yours.",
+      );
       return;
     }
     if (engines.length === 0) {
@@ -397,14 +430,58 @@ export default function CheckerForm() {
       {/* Country + Email */}
       <div style={{ display: "grid", gap: 18, gridTemplateColumns: "1fr 1fr", marginBottom: 22 }}>
         <div>
-          <label style={labelStyle} htmlFor="cw-country">Main country</label>
-          <input id="cw-country" style={inputStyle} placeholder="Canada" value={country} onChange={(e) => setCountry(e.target.value)} />
+          <label style={labelStyle} htmlFor="cw-country">Main market</label>
+          <select
+            id="cw-country"
+            style={{ ...inputStyle, appearance: "auto", cursor: "pointer" }}
+            value={country}
+            onChange={(e) => setCountry(e.target.value)}
+          >
+            <option value="">Select a country…</option>
+            {COUNTRIES.map((c) => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+            ))}
+            <option value={COUNTRY_OTHER}>Somewhere else</option>
+          </select>
         </div>
         <div>
           <label style={labelStyle} htmlFor="cw-email">Email (for your report)</label>
           <input id="cw-email" type="email" style={inputStyle} placeholder="you@yourbrand.com" value={email} onChange={(e) => setEmail(e.target.value)} />
         </div>
       </div>
+
+      {/*
+        The out-of-scope path. Says why rather than just refusing — "the answer
+        depends on where the search runs from" is a true reason a visitor can act on,
+        and it quietly explains why the country field exists at all.
+      */}
+      {country === COUNTRY_OTHER && (
+        <div
+          style={{
+            marginBottom: 18,
+            padding: "16px 18px",
+            border: "1px solid var(--accent)",
+            borderRadius: 10,
+            background: "var(--accent-soft)",
+          }}
+        >
+          <p style={{ margin: 0, fontSize: 14.5, color: "var(--ink)", lineHeight: 1.6 }}>
+            The free check runs for <strong>Canada, the United States and the United
+            Kingdom</strong> right now. These engines answer differently depending on
+            where the search runs from, so a report from the wrong market would tell
+            you the wrong thing.
+          </p>
+          <p style={{ margin: "8px 0 0", fontSize: 14.5, color: "var(--muted)", lineHeight: 1.6 }}>
+            Email{" "}
+            <a href="mailto:hami@hamitahm.com?subject=AI%20visibility%20check%20outside%20CA%2FUS%2FUK" style={{ color: "var(--accent)", fontWeight: 600 }}>
+              hami@hamitahm.com
+            </a>{" "}
+            with your market and I&rsquo;ll tell you whether I can cover it.
+          </p>
+        </div>
+      )}
 
       {err && (
         <p role="alert" style={{ color: "#b3261e", fontSize: 13.5, marginBottom: 14 }}>{err}</p>
@@ -413,8 +490,13 @@ export default function CheckerForm() {
       <button
         type="submit"
         className="btn btn-primary"
-        disabled={status === "submitting"}
-        style={{ width: "100%", justifyContent: "center", opacity: status === "submitting" ? 0.7 : 1 }}
+        disabled={status === "submitting" || country === COUNTRY_OTHER}
+        style={{
+          width: "100%",
+          justifyContent: "center",
+          opacity: status === "submitting" || country === COUNTRY_OTHER ? 0.7 : 1,
+          cursor: country === COUNTRY_OTHER ? "not-allowed" : undefined,
+        }}
       >
         {status === "submitting" ? "Sending…" : "Get my AI visibility report →"}
       </button>
