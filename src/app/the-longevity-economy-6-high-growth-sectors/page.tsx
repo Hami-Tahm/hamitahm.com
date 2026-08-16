@@ -44,7 +44,7 @@ export default function Post() {
         <div
           className="post-content"
           dangerouslySetInnerHTML={ { __html: `<p>As global life expectancy increases, the focus has shifted from simply living longer to living <strong>better</strong>. This shift has birthed a massive new opportunity: the <strong>longevity economy</strong>.</p><p>Whether it's through gene therapy, personalized diets, or AI-powered wearables, the future of aging is being rewritten by science, technology, and wellness. In this post, we explore the <strong>six key longevity sectors</strong> — now sorted by their projected <strong>market size by 2030</strong>, to help you understand where the biggest opportunities lie.
-<h3><img class="aligncenter" src="https://hamitahm.com/wp-content/uploads/2025/05/Longivity-1.png" alt="longevity sectors" width="646" height="647" /></h3>
+<h3><img class="aligncenter" src="/images/writing/the-longevity-economy-6-high-growth-sectors/Longivity-1.png" alt="longevity sectors" width="646" height="647" /></h3>
 <h3>Longevity Market Share by 2030 (TAM – Total Addressable Market)</h3>
 <h3>1. Precision & Preventive Medicine</h3>
 <strong>Estimated TAM (2030): $314.0B</strong></p><p>The largest and fastest-growing segment uses genetic, microbiome, and lifestyle data to create proactive, personalized health plans.</p><p><strong>Key Areas:</strong></p><p>1. Gut microbiome testing (Viome, ZOE)</p><p>2. Genetic sequencing and risk profiling</p><p>3. Blood biomarker tracking</p><p>Common Longevity Biomarkers:

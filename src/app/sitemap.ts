@@ -42,15 +42,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── Person + brand pages ─────────────────────────────────────────────
     { path: "/hami-tahm/", priority: 0.85, changeFrequency: "monthly" },
     { path: "/contact/", priority: 0.5, changeFrequency: "monthly" },
-    // ── Trust / legal ────────────────────────────────────────────────────
-    // Added 2026-08-10. All three are indexable and linked from the site, but had
-    // never been listed — an indexable, linked page missing from the sitemap is just
-    // an incomplete sitemap. /disclaimer/ sits highest of the three because it is
-    // real content, not boilerplate: it states exactly what the citation and
-    // appearance figures are and are not, and the checker form links to it.
-    { path: "/disclaimer/", priority: 0.4, changeFrequency: "monthly" },
-    { path: "/privacy/", priority: 0.3, changeFrequency: "yearly" },
-    { path: "/terms/", priority: 0.3, changeFrequency: "yearly" },
+    // ── Trust / legal — DELISTED 2026-08-16 ──────────────────────────────
+    // These three were added 2026-08-10 on the stated grounds that "all three are
+    // indexable". They are not. /disclaimer/, /privacy/ and /terms/ each declare
+    // `robots: { index: false, follow: true }`, and have for longer than the sitemap
+    // entry existed. The entry was written from an assumption, not from the files.
+    //
+    // Ahrefs reports it as "Noindex page in sitemap" x3: the sitemap asks a crawler
+    // to index a page the page itself refuses. Contradictory instructions cost trust
+    // in every OTHER url in the file, which is the real damage.
+    //
+    // Resolved in favour of the pages, because their directive is the deliberate one.
+    //
+    // ⚠️ OPEN QUESTION on /disclaimer/ specifically. The deleted note argued it is
+    // "real content, not boilerplate: it states exactly what the citation and
+    // appearance figures are and are not, and the checker form links to it." That is
+    // a good argument for making the PAGE indexable and relisting it here — not for
+    // leaving the contradiction in place. If that call gets made, flip the page's
+    // robots first, then restore the line below. Never the other way round.
+    //   { path: "/disclaimer/", priority: 0.4, changeFrequency: "monthly" },
 
     // ── AI Visibility blog ───────────────────────────────────────────────
     // ⚠️ A NEW POST NEEDS TWO EDITS: the `posts` array in src/app/blog/page.tsx

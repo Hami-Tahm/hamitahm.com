@@ -71,13 +71,11 @@ const siteStructuredData = {
        * is the incubator's. No GBP listing is being pursued, which is the right call
        * — an ineligible listing gets suspended later, usually at the worst moment.
        *
-       * `geo` was removed on 2026-08-11 and RESTORED on 2026-08-16. The removal was
-       * wrong. It rested on two bad premises: that clients could not visit (they
-       * can), and that markup with no rich result attached is worth deleting. Per
-       * AGENTS.md §5 the test is "is it true and is it free", not "does Google admit
-       * to using it". These coordinates are the real location. They stay.
+       * `geo` has been off, on, and off again. The full history is in the comment
+       * where it used to sit, just below the address. Short version: it is TRUE but
+       * it is not VALID on a Person, so it needs a Place node before it comes back.
        *
-       * One thing does stay off, for a reason that still holds:
+       * Two things stay off, each for its own reason:
        *   - `ProfessionalService` / any LocalBusiness subtype ON THE SERVICE PAGES.
        *     That was a real bug, not a deprecation: three pages each declared their
        *     own business entity and fragmented the identity graph. Services are
@@ -94,11 +92,21 @@ const siteStructuredData = {
         postalCode: "M5V 2H1",
         addressCountry: "CA",
       },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: 43.6469,
-        longitude: -79.3924,
-      },
+      /*
+       * `geo` REMOVED AGAIN 2026-08-16 — and this time for a DIFFERENT reason than
+       * the 08-11 removal, so read both before touching it.
+       *
+       * 08-11: removed because "no rich result" was treated as grounds for deletion.
+       * That reasoning was wrong and AGENTS.md §5 now forbids it.
+       *
+       * 08-16: removed because Ahrefs reports "Unexpected property for Person" on all
+       * 69 pages. `geo` belongs to Place / LocalBusiness, never to Person. So the
+       * coordinates were true but sat on a node that cannot carry them.
+       *
+       * The coordinates are 43.6469, -79.3924 and they are correct. They are parked
+       * here in a comment rather than deleted, so that whoever declares a Place or
+       * LocalBusiness node does not have to look them up again. See AGENTS.md §5.
+       */
       knowsAbout: [
         "AI Visibility",
         "Answer Engine Optimization",
@@ -121,8 +129,11 @@ const siteStructuredData = {
       // just not asserted as part of this professional identity.
       // sameAs holds ALTER-EGO PROFILES only — other places that ARE this same person.
       // homecalc.ca and houmse.com were removed 2026-07-14: they are companies Hami
-      // FOUNDED, not alternate identities of the person, so per schema.org semantics
-      // they belong in a `founder`/`owns` relationship (modelled below), not in sameAs.
+      // FOUNDED, not alternate identities of the person, so they do not belong here.
+      // That call was right; the `owns` array it originally pointed to was not, and is
+      // gone as of 2026-08-16 (see the note below it). The founder relationship now
+      // lives where it is valid: `founder` on each Organization node, pointing back
+      // at this Person.
       sameAs: [
         "https://www.linkedin.com/in/hami-tahm/",
         "https://x.com/hamitahm",
@@ -132,11 +143,24 @@ const siteStructuredData = {
         "https://github.com/Hami-Tahm",
         "https://www.producthunt.com/@hamitahm",
       ],
-      // The companies he founded, modelled as a relationship rather than an identity.
-      owns: [
-        { "@id": "https://homecalc.ca/#organization" },
-        { "@id": "https://houmse.com/#organization" },
-      ],
+      /*
+       * `owns` WAS HERE AND WAS INVALID — removed 2026-08-16. Do not re-add it.
+       *
+       * Ahrefs flagged this on all 69 crawled pages: "Unexpected type for owns.
+       * Expected types: OwnershipInfo, Product." schema.org's `owns` does not accept
+       * an Organization, so pointing it at homecalc.ca and houmse.com was never valid
+       * — the note that used to sit here claimed it was the schema.org-correct
+       * modelling, and that claim was simply wrong.
+       *
+       * Nothing is lost by deleting it. The relationship is ALREADY expressed, and
+       * expressed validly, by `founder` on each Organization node below pointing back
+       * at this Person. That is the canonical direction for this link.
+       *
+       * Note for AGENTS.md §5: this removal does not contradict the rule. §5 protects
+       * markup that is TRUE and FREE. Invalid markup is not free — a validator error
+       * can cost the parse of the whole node, which is a real price, unlike "Google
+       * says it doesn't use this".
+       */
     },
     {
       "@type": "Organization",
