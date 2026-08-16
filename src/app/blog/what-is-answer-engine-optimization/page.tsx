@@ -10,10 +10,10 @@ const ARTICLE_TITLE = "What Is Answer Engine Optimization (AEO)?";
 const ARTICLE_DESCRIPTION =
   "Answer Engine Optimization (AEO) is the practice of structuring content so AI-powered search engines cite it directly. Here's what it is, how it works, and why it's different from SEO.";
 const DATE_PUBLISHED = "2026-06-09";
-const DATE_MODIFIED = "2026-08-15";
+const DATE_MODIFIED = "2026-08-16";
 
 /**
- * ── CORRECTED 2026-08-15 ──
+ * ── CORRECTED 2026-08-16 ──
  *
  * The site-wide schema pass ran on 2026-08-11 and missed this page, so the
  * correction below is dated four days later than the rest. It still recommended
@@ -32,7 +32,7 @@ const DATE_MODIFIED = "2026-08-15";
  * RULE: schema on this site is described as a way of stating facts unambiguously,
  * never as a lever that buys citations.
  */
-const DATE_FACT_CHECKED_HUMAN = "August 15, 2026";
+const DATE_FACT_CHECKED_HUMAN = "August 16, 2026";
 const GOOGLE_FAQ_DOC_URL =
   "https://developers.google.com/search/docs/appearance/structured-data/faqpage";
 const GOOGLE_AI_GUIDE_URL =

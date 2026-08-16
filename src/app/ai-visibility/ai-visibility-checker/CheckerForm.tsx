@@ -36,7 +36,7 @@ import Link from "next/link";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 
 /**
- * COUNTRY IS A FIXED LIST, NOT FREE TEXT (2026-08-15).
+ * COUNTRY IS A FIXED LIST, NOT FREE TEXT (2026-08-16).
  *
  * It was already required, but as an open input with "Canada" as the placeholder.
  * That produced unusable values — "USA", "us", "United States of America", blank
