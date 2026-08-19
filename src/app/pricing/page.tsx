@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   // Rendered length must stay under ~60 including the " | Hami Tahm" template.
   title: "AI Visibility Pricing & Audit Cost",
   description:
-    "What AI visibility work costs in Canada: a free checker, a $1,500 flat-fee audit, an action plan and roadmap from $4,500, and optional monitoring. Prices published.",
+    "What AI visibility work costs in Canada: a free checker, a $1,500 flat-fee audit, and an action plan and roadmap from $4,500 — published, not gated behind a sales call. Optional monitoring is quoted to scope.",
   alternates: { canonical: `https://hamitahm.com${SLUG}` },
 };
 
@@ -63,9 +63,9 @@ const TIERS = [
     highlight: false,
     includes: [
       "Scoped in writing from your audit before anything starts",
-      "Schema and structured-data corrections",
-      "Rendering fixes (SPA → SSR/SSG where needed)",
-      "Entity and profile consistency, page rewrites, internal linking",
+      "Prioritized against your own Search Console and Bing Webmaster data",
+      "Page-level recommendations: content structure, entities, structured data, rendering",
+      "A roadmap sequencing the work, plus a walkthrough call with whoever will ship it",
       `Typically ${OFFERS.actionPlan.duration.toLowerCase()}`,
     ],
   },
@@ -98,11 +98,11 @@ const FAQ_ITEMS = [
   },
   {
     q: "Do you charge a monthly retainer?",
-    a: `No retainer is required to get started, and most engagements never become monthly. Ongoing Monitoring & Advisory exists (${OFFERS.monitor.price} CAD) but it is optional, offered only after the action plan, and runs on a fixed ${OFFERS.monitor.duration} term rather than open-ended.`,
+    a: `No retainer is required to get started, and most engagements never become monthly. Ongoing Monitoring & Advisory exists but it is optional, offered only after the action plan, and runs on a fixed ${OFFERS.monitor.duration} term rather than open-ended. It is the one thing here without a published price, because its cost depends on how many engines, prompts and competitors you want tracked — quoted once your scope is known.`,
   },
   {
     q: "Why are your prices published when most agencies hide theirs?",
-    a: "Because hiding the price is a sales tactic, not a service decision. If you have to sit through a discovery call to learn whether something costs $1,500 or $15,000, the call is the product. Publishing the numbers means you can decide whether this is worth your time before you ever contact me.",
+    a: "Because hiding the price is a sales tactic, not a service decision. If you have to sit through a discovery call to learn whether something costs $1,500 or $15,000, the call is the product. Publishing the numbers means you can decide whether this is worth your time before you ever contact me. One exception, so this page doesn't contradict itself: ongoing monitoring is quoted rather than listed, because its cost genuinely depends on how many engines, prompts and competitors you want tracked. Everything you'd buy first — the checker, the audit, the action plan — has its number on this page.",
   },
   {
     q: "Is there a free option?",

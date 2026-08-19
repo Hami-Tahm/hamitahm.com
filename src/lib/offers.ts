@@ -89,12 +89,29 @@ export const OFFERS = {
     role: "Recommendations, a prioritized action plan and a roadmap — built for your team to ship.",
     duration: "Up to 30 days",
   },
+  /*
+   * ⚠️ MONITORING IS DELIBERATELY UNPRICED — changed 2026-08-16. Do not "fix" this
+   * by putting a number back without being asked.
+   *
+   * It used to publish "From $2,500/mo". That number was wrong for this ladder and
+   * was quietly costing conversions: a buyer whose whole engagement is $1,500 plus
+   * $4,500 reads $2,500/month as a different product for a different company, and
+   * stops reading. It is also the one tier whose real cost genuinely varies with the
+   * number of engines, prompts and competitors tracked, so a single "From" figure
+   * was never going to be honest across cases.
+   *
+   * Every OTHER price on this site stays published — that is a deliberate position
+   * and this is the single exception, not a softening of it. The audit and the
+   * action plan are the things a stranger needs to price without talking to anyone.
+   * Monitoring only ever gets discussed with someone who has already worked with us
+   * and whose scope is therefore known.
+   */
   monitor: {
     name: "AI Visibility Monitoring & Advisory",
-    price: "From $2,500/mo",
-    /** Use this in prose. See PRICE DISPLAY RULE below. */
-    priceWithCurrency: "From $2,500/mo CAD",
-    priceNote: "CAD, optional — a fixed 6–12 month term, only after the sprint",
+    price: "Contact us",
+    /** Kept for API symmetry with the other tiers — no currency to append. */
+    priceWithCurrency: "Contact us",
+    priceNote: "Optional — a fixed 6–12 month term, only after the action plan",
     href: "/contact/",
     role: "Optional and ongoing: I track your citations, watch competitors, and keep you visible as models retrain.",
     duration: "6–12 months",
