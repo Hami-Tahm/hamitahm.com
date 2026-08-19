@@ -4,14 +4,25 @@
  * Every page that shows a price reads from here so the numbers can never drift.
  * If a price changes, change it ONCE, here.
  *
- * The ladder (added 2026-07-14) exists because the site previously sold only the
- * $1,500 audit and explicitly told buyers "implement it yourself" — which contradicted
- * the goal of being hired to DO the implementation. The Implementation Sprint is the
- * done-for-you tier that closes that gap. IP rule still holds: the Sprint IS the
- * mechanism, so its existence is public but its method stays private.
+ * ⚠️ THE LADDER CHANGED ON 2026-08-16. READ THIS BEFORE RE-ADDING ANYTHING.
+ *
+ * From 2026-07-14 to 2026-08-16 the second tier was an "Implementation Sprint",
+ * sold as done-for-you: "I make the changes the audit identified." That tier is
+ * GONE, and it is not coming back. Hami does not take execution work — not as a
+ * pricing decision but as a business one. Execution carries unbounded scope, makes
+ * revenue a function of his own hours, and is the thing that stops this practice
+ * from serving ten clients a month instead of two.
+ *
+ * It is also unnecessary. Anyone who has a website already has someone who edits
+ * it. The product is therefore not "I will change your site" but "here is a
+ * change list your developer can ship without asking a single question."
+ *
+ * ⚠️ SO: NEVER let copy anywhere say done-for-you, "I implement", "I make the
+ * changes", or "have me do it for you". That is a promise the practice will not
+ * keep, and a client who pays $4,500 expecting execution is entitled to it.
  *
  * The `monitor` tier (added 2026-07-17) is the OPTIONAL ongoing step: monthly
- * monitoring + advisory on a fixed 6–12 month term, offered only AFTER the sprint.
+ * monitoring + advisory on a fixed 6–12 month term, offered only AFTER the plan.
  * Positioning rule: it is never required to get started, and it is term-limited (not
  * open-ended). Copy must say "no retainer to get started / optional ongoing monitoring"
  * — NOT the old absolute "no retainer, not a subscription," which now contradicts it.
@@ -31,6 +42,21 @@ export const OFFERS = {
     href: "/ai-visibility/ai-visibility-audit/",
     role: "Diagnosis: exactly where AI engines cite you, where they don't, and what to change.",
     /**
+     * What the audit covers, in the buyer's words. Kept here so the pages can't drift
+     * from each other the way the platform count once did.
+     *
+     * ⚠️ THE PROMPT COUNT IS PUBLISHABLE, THE METHOD IS NOT. "30 prompts" is scope —
+     * it tells a buyer what they are getting. How those 30 are chosen, and how many
+     * times each is re-run to separate a real pattern from model variance, is the
+     * mechanism and stays private. Same rule as citation-study.ts: publish the
+     * outcome, never the mechanism.
+     */
+    scope: {
+      promptCount: 30,
+      promptCountWord: "thirty",
+      contentGap: true,
+    },
+    /**
      * Live Stripe Payment Link — self-serve checkout (added 2026-07-28).
      *
      * ⚠️ The Stripe account is HOUMSE INC, so that is the descriptor on the
@@ -44,14 +70,23 @@ export const OFFERS = {
      */
     checkoutUrl: "https://buy.stripe.com/fZucN7fEFaYf3GAdrF00001",
   },
-  implementation: {
-    name: "AI Visibility Implementation Sprint",
+  /*
+   * Renamed from `implementation` on 2026-08-16 — the key too, deliberately. A key
+   * called `implementation` on a product that contains no implementation is exactly
+   * the drift the rest of this file exists to prevent, and TypeScript catches every
+   * missed reference at build time, so the rename is cheap.
+   *
+   * The URL stays /ai-visibility/implementation/ on purpose. It has inbound links and
+   * crawl history, and changing it would trade a real asset for a tidier slug.
+   */
+  actionPlan: {
+    name: "AI Visibility Action Plan",
     price: "From $4,500",
     /** Use this in prose. See PRICE DISPLAY RULE below. */
     priceWithCurrency: "From $4,500 CAD",
     priceNote: "CAD, fixed scope — the $1,500 audit fee is credited toward it",
     href: "/ai-visibility/implementation/",
-    role: "Done-for-you: I make the changes the audit identified.",
+    role: "Recommendations, a prioritized action plan and a roadmap — built for your team to ship.",
     duration: "Up to 30 days",
   },
   monitor: {

@@ -76,7 +76,7 @@ const HUB_FAQ = [
   },
   {
     q: "How much does AI visibility consulting cost?",
-    a: "Engagements start with a $1,500 CAD AI visibility audit — flat fee, one-time, no retainer to get started. If you want the fixes done for you, the Implementation Sprint starts at $4,500 (the audit fee is credited toward it). Optional monitoring and advisory is available afterward on a fixed 6–12 month term — never required.",
+    a: "Engagements start with a $1,500 CAD AI visibility audit — flat fee, one-time, no retainer to get started. If you want the findings turned into a prioritized action plan and roadmap for your team to ship, that starts at $4,500 (the audit fee is credited toward it). I don't take execution work; your developer or agency implements it. Optional monitoring and advisory is available afterward on a fixed 6–12 month term — never required.",
   },
 ] as const;
 
@@ -530,7 +530,7 @@ export default function AIVisibilityPage() {
                 </div>
               </Link>
 
-              <Link href={OFFERS.implementation.href} className="inc">
+              <Link href={OFFERS.actionPlan.href} className="inc">
                 <h3
                   style={{
                     fontFamily: "var(--serif)",
@@ -539,7 +539,7 @@ export default function AIVisibilityPage() {
                     lineHeight: 1.25,
                   }}
                 >
-                  AI Visibility Implementation Sprint
+                  AI Visibility Action Plan
                 </h3>
                 <p
                   style={{
@@ -549,8 +549,8 @@ export default function AIVisibilityPage() {
                     lineHeight: 1.55,
                   }}
                 >
-                  Done-for-you: I implement the fixes the audit identifies.{" "}
-                  {OFFERS.implementation.priceWithCurrency}, fixed scope
+                  What to change and in what order, written for your team to
+                  ship. {OFFERS.actionPlan.priceWithCurrency}, fixed scope
                   &mdash; audit fee credited.
                 </p>
                 <div
@@ -561,7 +561,7 @@ export default function AIVisibilityPage() {
                     marginTop: 14,
                   }}
                 >
-                  See the Implementation Sprint &rarr;
+                  See the Action Plan &rarr;
                 </div>
               </Link>
 
@@ -1414,7 +1414,7 @@ export default function AIVisibilityPage() {
                     marginTop: 8,
                   }}
                 >
-                  {OFFERS.implementation.priceWithCurrency}
+                  {OFFERS.actionPlan.priceWithCurrency}
                 </div>
                 <p
                   style={{
@@ -1424,12 +1424,14 @@ export default function AIVisibilityPage() {
                     lineHeight: 1.55,
                   }}
                 >
-                  A focused, done-for-you implementation block &mdash; schema,
-                  content restructuring, entity work, and authority signals
-                  shipped in {OFFERS.implementation.duration.toLowerCase()}. The
-                  audit fee is credited toward it.{" "}
+                  Recommendations, a page-level action plan and a roadmap
+                  &mdash; content structure, entity work, structured data and
+                  authority signals &mdash; prioritized against your own Search
+                  Console and Bing data and delivered in{" "}
+                  {OFFERS.actionPlan.duration.toLowerCase()}. Your team ships it;
+                  the audit fee is credited toward it.{" "}
                   <Link
-                    href={OFFERS.implementation.href}
+                    href={OFFERS.actionPlan.href}
                     style={{ color: "var(--accent)", fontWeight: 500 }}
                   >
                     Details &rarr;
@@ -1477,7 +1479,7 @@ export default function AIVisibilityPage() {
                     lineHeight: 1.55,
                   }}
                 >
-                  Optional after the sprint, on{" "}
+                  Optional after the action plan, on{" "}
                   {OFFERS.monitor.durationPhrase}{" "}&mdash; never required to start.{" "}
                   <Link href="/pricing/" style={{ color: "var(--accent)", fontWeight: 500 }}>
                     Every step, priced &rarr;

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   // Rendered length must stay under ~60 including the " | Hami Tahm" template.
   title: "AI Visibility Pricing & Audit Cost",
   description:
-    "What AI visibility work costs in Canada: a free checker, a $1,500 flat-fee audit, an implementation sprint from $4,500, and optional monitoring. Prices published.",
+    "What AI visibility work costs in Canada: a free checker, a $1,500 flat-fee audit, an action plan and roadmap from $4,500, and optional monitoring. Prices published.",
   alternates: { canonical: `https://hamitahm.com${SLUG}` },
 };
 
@@ -54,19 +54,19 @@ const TIERS = [
   },
   {
     step: "Step 2 (optional)",
-    name: OFFERS.implementation.name,
-    price: OFFERS.implementation.price,
-    priceNote: OFFERS.implementation.priceNote,
-    href: OFFERS.implementation.href,
-    role: OFFERS.implementation.role,
-    ctaLabel: "See the Sprint",
+    name: OFFERS.actionPlan.name,
+    price: OFFERS.actionPlan.price,
+    priceNote: OFFERS.actionPlan.priceNote,
+    href: OFFERS.actionPlan.href,
+    role: OFFERS.actionPlan.role,
+    ctaLabel: "See the Action Plan",
     highlight: false,
     includes: [
       "Scoped in writing from your audit before anything starts",
       "Schema and structured-data corrections",
       "Rendering fixes (SPA → SSR/SSG where needed)",
       "Entity and profile consistency, page rewrites, internal linking",
-      `Typically ${OFFERS.implementation.duration.toLowerCase()}`,
+      `Typically ${OFFERS.actionPlan.duration.toLowerCase()}`,
     ],
   },
   {
@@ -94,11 +94,11 @@ const FAQ_ITEMS = [
   },
   {
     q: "What does AI SEO or AEO work cost in Canada?",
-    a: `It depends who you ask, because the category has several names — AI SEO, AEO, GEO, LLMO, AI visibility — and pricing models vary widely. Agency retainers for this work in Canada typically run $2,000–$5,000 per month, ongoing. My structure is different: a ${OFFERS.audit.price} one-time audit, then optional fixed-scope implementation from ${OFFERS.implementation.price.replace("From ", "")} CAD. You can stop after the audit.`,
+    a: `It depends who you ask, because the category has several names — AI SEO, AEO, GEO, LLMO, AI visibility — and pricing models vary widely. Agency retainers for this work in Canada typically run $2,000–$5,000 per month, ongoing. My structure is different: a ${OFFERS.audit.price} one-time audit, then an optional fixed-scope action plan from ${OFFERS.actionPlan.price.replace("From ", "")} CAD. You can stop after the audit.`,
   },
   {
     q: "Do you charge a monthly retainer?",
-    a: `No retainer is required to get started, and most engagements never become monthly. Ongoing Monitoring & Advisory exists (${OFFERS.monitor.price} CAD) but it is optional, offered only after an implementation sprint, and runs on a fixed ${OFFERS.monitor.duration} term rather than open-ended.`,
+    a: `No retainer is required to get started, and most engagements never become monthly. Ongoing Monitoring & Advisory exists (${OFFERS.monitor.price} CAD) but it is optional, offered only after the action plan, and runs on a fixed ${OFFERS.monitor.duration} term rather than open-ended.`,
   },
   {
     q: "Why are your prices published when most agencies hide theirs?",
@@ -109,12 +109,12 @@ const FAQ_ITEMS = [
     a: `Yes — the ${OFFERS.checker.name} is free and there is no card and no call. It is a genuine first read, not a teaser: a real analyst checks how the engines you pick answer for your domain and emails you a personalized report within one business day.`,
   },
   {
-    q: "Do I have to buy the implementation sprint after the audit?",
-    a: `No. The audit is a complete deliverable on its own — the report and action plan are yours to hand to your own team or developer. The Sprint exists for people who would rather I make the changes myself, and if you do choose it the ${OFFERS.audit.price} audit fee is credited toward the price.`,
+    q: "Do I have to buy the action plan after the audit?",
+    a: `No. The audit is a complete deliverable on its own — the report and action plan are yours to hand to your own team or developer. The Action Plan exists for people who want the findings turned into page-level work their team can pick up without interpreting it, and if you choose it the ${OFFERS.audit.price} audit fee is credited toward the price.`,
   },
   {
     q: "Do you guarantee results for the price?",
-    a: "No, and be careful with anyone who does. AI engines are not under any consultant's control, so a guaranteed citation or ranking is not a promise anyone can honestly make. What is guaranteed is the deliverable: the audit you paid for, on the timeline quoted, and — in a Sprint — the changes implemented correctly.",
+    a: "No, and be careful with anyone who does. AI engines are not under any consultant's control, so a guaranteed citation or ranking is not a promise anyone can honestly make. What is guaranteed is the deliverable: the audit you paid for, on the timeline quoted, and — in the Action Plan — recommendations specific enough for your team to act on without interpreting them.",
   },
 ];
 
@@ -432,9 +432,10 @@ export default function PricingPage() {
                 lineHeight: 1.65,
               }}
             >
-              The diagnosis here is {OFFERS.audit.price}{" "}once. If you want the fixes
-              done for you, that is a fixed scope quoted from the audit, and the audit
-              fee comes off it. Monitoring afterward is optional and term-limited.{" "}
+              The diagnosis here is {OFFERS.audit.price}{" "}once. If you want it turned
+              into a plan your team can ship, that is a fixed scope quoted from the
+              audit, and the audit fee comes off it. Monitoring afterward is optional
+              and term-limited.{" "}
               <b style={{ color: "var(--ink)", fontWeight: 500 }}>
                 You are never signing something open-ended.
               </b>

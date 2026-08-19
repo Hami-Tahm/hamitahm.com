@@ -66,7 +66,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "What happens after I receive the report?",
-    a: "You have 14 days of follow-up access — questions, clarifications, prioritization help. After that you have two options: implement the plan yourself (or with your team), or have me do it for you as a fixed-scope Implementation Sprint, where the audit fee is credited toward the work.",
+    a: "You have 14 days of follow-up access — questions, clarifications, prioritization help. After that, if you want the findings turned into a page-level action plan and roadmap your team can work from, that's the fixed-scope Action Plan, and the audit fee is credited toward it. I don't take execution work — the people who already maintain your site do the shipping.",
   },
   {
     q: "Do you work with businesses outside Canada?",
@@ -122,7 +122,7 @@ const VERTICALS = [
 
 const RELATED_LINKS = [
   {
-    label: "Want it done for you? The Implementation Sprint",
+    label: "Want the plan to act on it? The Action Plan",
     href: "/ai-visibility/implementation/",
   },
   { label: "Full pricing — every step, published", href: "/pricing/" },

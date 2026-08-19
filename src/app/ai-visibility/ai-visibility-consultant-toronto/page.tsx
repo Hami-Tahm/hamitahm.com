@@ -87,7 +87,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "How much does an AI visibility consultant cost in Toronto?",
-    a: `The audit is ${PRICE_DISPLAY} flat — one-time, no retainer. If you want the fixes done for you afterward, the Implementation Sprint starts at ${OFFERS.implementation.price.replace(
+    a: `The audit is ${PRICE_DISPLAY} flat — one-time, no retainer. If you want the findings turned into a prioritized plan your own team can ship, the Action Plan starts at ${OFFERS.actionPlan.price.replace(
       "From ",
       ""
     )} CAD and the audit fee is credited toward it. Ongoing monitoring and advisory is optional afterward, on a fixed 6–12 month term. There's also a free AI visibility checker if you just want a first read.`,
@@ -147,8 +147,8 @@ const structuredData = {
             availability: "https://schema.org/InStock",
             itemOffered: {
               "@type": "Service",
-              name: "AI Visibility Implementation Sprint",
-              url: `https://hamitahm.com${OFFERS.implementation.href}`,
+              name: "AI Visibility Action Plan",
+              url: `https://hamitahm.com${OFFERS.actionPlan.href}`,
             },
           },
         ],
@@ -578,7 +578,7 @@ export default function AIVisibilityConsultantToronto() {
                 </span>
               </Link>
 
-              <Link href={OFFERS.implementation.href} className="inc">
+              <Link href={OFFERS.actionPlan.href} className="inc">
                 <div
                   style={{
                     fontFamily: "var(--mono)",
@@ -589,16 +589,16 @@ export default function AIVisibilityConsultantToronto() {
                     marginBottom: 10,
                   }}
                 >
-                  {OFFERS.implementation.priceWithCurrency}{" "}&middot; Step 2
+                  {OFFERS.actionPlan.priceWithCurrency}{" "}&middot; Step 2
                 </div>
                 <h3 style={{ fontFamily: "var(--sans)", fontSize: 16, fontWeight: 600 }}>
-                  {OFFERS.implementation.name}
+                  {OFFERS.actionPlan.name}
                 </h3>
                 <p style={{ fontSize: 15, color: "var(--muted)", marginTop: 10, lineHeight: 1.55 }}>
-                  {OFFERS.implementation.role}{" "}The audit fee is credited toward it.
+                  {OFFERS.actionPlan.role}{" "}The audit fee is credited toward it.
                 </p>
                 <span style={{ display: "inline-block", marginTop: 14, fontFamily: "var(--mono)", fontSize: 12, color: "var(--accent)" }}>
-                  See the Sprint &rarr;
+                  See the Action Plan &rarr;
                 </span>
               </Link>
 
@@ -620,7 +620,7 @@ export default function AIVisibilityConsultantToronto() {
                 </h3>
                 <p style={{ fontSize: 15, color: "var(--muted)", marginTop: 10, lineHeight: 1.55 }}>
                   {OFFERS.monitor.role}{" "}On {OFFERS.monitor.durationPhrase}, only
-                  after the sprint &mdash; never required to start.
+                  after the action plan &mdash; never required to start.
                 </p>
                 <span style={{ display: "inline-block", marginTop: 14, fontFamily: "var(--mono)", fontSize: 12, color: "var(--accent)" }}>
                   Talk about monitoring &rarr;

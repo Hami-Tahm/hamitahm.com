@@ -4,65 +4,91 @@ import { RevealSection } from "@/components/Reveal";
 import { OFFERS } from "@/lib/offers";
 import { HOMECALC_PROOF, HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
 
+/*
+ * ⚠️ THIS PAGE SOLD DONE-FOR-YOU WORK UNTIL 2026-08-16. IT NO LONGER DOES.
+ *
+ * It used to be the "Implementation Sprint" — "I make the changes myself." That
+ * tier no longer exists. Hami does not take execution work: it carries unbounded
+ * scope, ties revenue to his own hours, and is the single thing that stops this
+ * practice from serving ten clients a month. See the note in lib/offers.ts.
+ *
+ * The product is now the plan itself — recommendations, a prioritized action list
+ * and a roadmap, written so the developer who already maintains the site can ship
+ * it without asking a question. Anyone with a website already has that person.
+ *
+ * ⚠️ THE URL DELIBERATELY STILL SAYS /implementation/. It has inbound links and
+ * crawl history; renaming the slug would trade a real asset for a tidier one. The
+ * word is also not wrong — it is the client's implementation, specified here.
+ *
+ * ⚠️ NEVER reintroduce "done-for-you", "I implement", "I make the changes" or
+ * "have me do it for you" on this page. Someone paying $4,500 on that wording is
+ * entitled to execution, and they will not get it.
+ */
 const SLUG = "/ai-visibility/implementation/";
 const CONTACT_URL = "/contact/";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "AI Visibility Implementation — Done-for-You in Toronto",
+    absolute: "AI Visibility Action Plan — Recommendations & Roadmap | Toronto",
   },
   description:
-    "Done-for-you AI visibility implementation. After the audit, I make the changes — schema, rendering, entity fixes, page rewrites — as a fixed-scope sprint from $4,500 CAD.",
+    "After the audit: prioritized recommendations, a page-level action plan and a roadmap your team can ship — grounded in your own Search Console and Bing data. From $4,500 CAD.",
   alternates: { canonical: `https://hamitahm.com${SLUG}` },
 };
 
 const FAQ_ITEMS = [
   {
-    q: "What is the Implementation Sprint?",
-    a: "It is the done-for-you version of the audit. After the AI Visibility Audit identifies exactly what to change, I make those changes myself — instead of handing you a plan to execute. Fixed scope, fixed timeline, fixed price.",
+    q: "What is the AI Visibility Action Plan?",
+    a: "It is the step after the audit. The audit tells you where AI engines cite you and where they don't; the Action Plan tells you what to change about it — page by page, in priority order, with the reasoning and the acceptance criteria written down. It is built so the developer or agency who already maintains your site can ship it without coming back to me with questions.",
+  },
+  {
+    q: "Do you make the changes yourself?",
+    a: "No, and that is deliberate rather than a limitation. I don't take execution work. Anyone who has a website already has someone who edits it, and that person will always be faster inside your codebase and your deploy process than an outside consultant would be. What is usually missing is not hands — it is knowing exactly what to change and in what order. That is what you are buying here.",
   },
   {
     q: "How is this different from the audit?",
-    a: "The audit is the diagnosis: where AI engines cite you, where they don't, and the prioritized list of fixes. The Implementation Sprint is the treatment: I do the fixes. Most people start with the audit; the audit fee is then credited toward the Sprint if you decide to have me implement.",
+    a: "The audit is the diagnosis: thirty prompts across six AI platforms, where you appear, where competitors appear instead, and the content gaps between you. The Action Plan is the prescription: the specific changes, ordered by expected impact, written as work your team can pick up. Most people start with the audit, and its fee is credited toward the plan.",
   },
   {
-    q: "What does the Sprint actually include?",
-    a: "The work the audit surfaced as highest-impact — typically some mix of: structured-data and schema corrections, rendering fixes (SPA→SSR/SSG where needed), entity and profile consistency, page and answer-block rewrites for extractability, internal linking, and llms.txt / crawler configuration. The exact scope is set from your audit, in writing, before we start.",
+    q: "What does the Action Plan include?",
+    a: "Prioritized recommendations tied to the audit's findings; page-level specifics rather than general advice; a roadmap that sequences the work over the coming weeks; and a walkthrough call with whoever will be doing the work. Typical areas: content structure and answer blocks, entity and profile consistency, structured data, rendering, internal linking and crawler configuration. Exact scope is set from your audit, in writing, before we start.",
+  },
+  {
+    q: "Why do you need Search Console and Bing Webmaster Tools access?",
+    a: "So the plan is prioritized on your real data instead of my assumptions. Read-only access shows which queries already bring you impressions, which pages Google and Bing actually consider relevant, and where you are close enough to move. Without it I would be ordering the work by guesswork. If you don't have these set up, I'll send you documentation so your team can create them — read-only access is enough.",
   },
   {
     q: "How much does it cost and how long does it take?",
-    a: "From $4,500 CAD, fixed scope, and the $1,500 audit fee is credited toward it. Most sprints run up to 30 days. Larger or multi-site scopes are quoted from the audit. The Sprint is a one-time, fixed-scope engagement — optional monitoring and advisory is available afterward on a 6–12 month term, but it's never required.",
+    a: "From $4,500 CAD, fixed scope, and the $1,500 audit fee is credited toward it. Most run up to 30 days. Larger or multi-language scopes are quoted from the audit. It is a one-time, fixed-scope engagement — optional monitoring and advisory is available afterward, but it's never required.",
   },
   {
     q: "Do you guarantee I'll get cited by AI?",
-    a: "No — and anyone who guarantees a specific AI result is either mistaken or selling you something. AI engines aren't under anyone's control. What I guarantee is that the changes the audit identified get implemented correctly. See the disclaimer for the honest version.",
+    a: "No — and anyone who guarantees a specific AI result is either mistaken or selling you something. AI engines aren't under anyone's control, and I don't control your deployment either. What I commit to is that the plan is specific enough to act on and grounded in what the audit actually measured. See the disclaimer for the honest version.",
   },
   {
     q: "Do you work with agencies?",
-    a: "Yes. If you're a web or marketing agency whose clients need AI visibility work you don't do in-house, the audit and Sprint can be delivered as a white-label supplier arrangement. Email me.",
+    a: "Yes, and it's the arrangement this fits best. If you're a web or marketing agency, your team already has the implementers — what you may not have in-house is the AI visibility measurement and the plan. The audit and Action Plan can be delivered as a white-label supplier arrangement. Email me.",
   },
-];
-
-const STEPS = [
+];const STEPS = [
   {
     n: "01",
     title: "Start with the audit",
-    body: "Every Sprint begins from a completed AI Visibility Audit — so the work is scoped from evidence, not guesswork. If you've already had the audit, we go straight to scoping.",
+    body: "Every plan is built from a completed AI Visibility Audit, so the work is ordered from evidence rather than opinion. If you've already had the audit, we go straight to scoping.",
   },
   {
     n: "02",
-    title: "Fixed-scope proposal",
-    body: "I turn the audit's priority list into a concrete statement of work: exactly what I'll change, the timeline, and the fixed price. You approve it before anything starts.",
+    title: "Your own data comes in",
+    body: "I take read-only access to your Search Console and Bing Webmaster Tools — and send documentation for your team to create them if they don't exist yet. This is what lets the plan be prioritized on the queries and pages you already have traction on, instead of on assumptions.",
   },
   {
     n: "03",
-    title: "I implement",
-    body: "I make the changes — schema, rendering, entity, content structure, crawler config — directly, or hand your developers exact, ready-to-ship specs where I can't push to your codebase.",
+    title: "The plan is written",
+    body: "Prioritized recommendations, page by page, each with what to change, why it matters for AI citation, and how to tell it worked. Written to be handed to a developer, not to be interpreted.",
   },
   {
     n: "04",
-    title: "Verify and hand off",
-    body: "Each change is verified live. You get a short record of what changed and why, so any future team can maintain it — and you can re-run the checks yourself.",
+    title: "Roadmap and walkthrough",
+    body: "The work sequenced over the coming weeks, plus a call with whoever is going to do it — so the people implementing hear the reasoning directly rather than reading it second-hand.",
   },
 ];
 
@@ -71,13 +97,13 @@ const structuredData = {
   "@graph": [
     {
       "@type": "Service",
-      name: "AI Visibility Implementation Sprint",
-      serviceType: "AI visibility implementation (done-for-you)",
+      name: "AI Visibility Action Plan",
+      serviceType: "AI visibility recommendations, action plan and roadmap",
       areaServed: { "@type": "Country", name: "Canada" },
       provider: { "@id": "https://hamitahm.com/#hami-tahm" },
       url: `https://hamitahm.com${SLUG}`,
       description:
-        "Done-for-you implementation of AI visibility fixes identified by the AI Visibility Audit: schema, rendering, entity consistency, page rewrites and crawler configuration. Fixed scope, from $4,500 CAD.",
+        "Prioritized recommendations, a page-level action plan and a roadmap based on the AI Visibility Audit and on the client's own Search Console and Bing Webmaster Tools data. Built for the client's own team to implement. Fixed scope, from $4,500 CAD.",
       offers: {
         "@type": "Offer",
         price: "4500",
@@ -97,7 +123,7 @@ const structuredData = {
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: "https://hamitahm.com/" },
         { "@type": "ListItem", position: 2, name: "AI Visibility", item: "https://hamitahm.com/ai-visibility/" },
-        { "@type": "ListItem", position: 3, name: "Implementation", item: `https://hamitahm.com${SLUG}` },
+        { "@type": "ListItem", position: 3, name: "Action Plan", item: `https://hamitahm.com${SLUG}` },
       ],
     },
     {
@@ -125,7 +151,7 @@ export default function ImplementationPage() {
           <RevealSection>
             <div style={eyebrow}>
               <span style={eyebrowLine} />
-              AI Visibility Implementation &middot; Toronto, Canada
+              AI Visibility Action Plan &middot; Toronto, Canada
             </div>
           </RevealSection>
 
@@ -140,9 +166,9 @@ export default function ImplementationPage() {
                 marginTop: 26,
               }}
             >
-              Don&rsquo;t just find out what&rsquo;s wrong.{" "}
+              Knowing what&rsquo;s wrong is half of it.{" "}
               <em style={{ fontStyle: "italic", color: "var(--accent)" }}>
-                Have me fix it.
+                This is the other half.
               </em>
             </h1>
           </RevealSection>
@@ -157,28 +183,30 @@ export default function ImplementationPage() {
                 lineHeight: 1.65,
               }}
             >
-              The audit tells you exactly what to change. The Implementation Sprint
-              is where I make those changes myself &mdash; schema,{" "}
+              The audit measures where you stand. This is where that becomes a list
+              your team can actually ship &mdash; content structure, entity
+              consistency,{" "}
               <Link href="/blog/spa-to-ssg-ai-visibility/" style={{ color: "var(--accent)", fontWeight: 500 }}>
                 rendering
               </Link>
-              , entity consistency, page rewrites, crawler config &mdash; on a fixed
-              scope, fixed price, and a fixed timeline. It&rsquo;s the same work I did on my
-              own site to earn {HOMECALC_CLAIMS.appearancesInTimeframe}.
+              , structured data, crawler config &mdash; page by page, in priority
+              order, and prioritized against your own Search Console and Bing data
+              rather than my assumptions. It&rsquo;s the same sequence I ran on my own
+              site to earn {HOMECALC_CLAIMS.appearancesInTimeframe}.
             </p>
           </RevealSection>
 
           <RevealSection delay={0.18}>
             <div style={{ marginTop: 36, display: "flex", gap: 14, flexWrap: "wrap", alignItems: "center" }}>
               <Link href={CONTACT_URL} className="btn btn-primary">
-                Talk about a Sprint <span className="arr">&rarr;</span>
+                Talk about your plan <span className="arr">&rarr;</span>
               </Link>
               <Link href={OFFERS.audit.href} className="btn btn-ghost">
                 Or start with the ${"1,500"} audit
               </Link>
             </div>
             <p style={{ marginTop: 16, fontFamily: "var(--mono)", fontSize: 13, color: "var(--faint)" }}>
-              {OFFERS.implementation.priceWithCurrency}{" "}&middot; fixed scope &middot; audit fee credited &middot; one-time
+              {OFFERS.actionPlan.priceWithCurrency}{" "}&middot; fixed scope &middot; audit fee credited &middot; one-time
             </p>
           </RevealSection>
         </div>
@@ -194,14 +222,14 @@ export default function ImplementationPage() {
             <div style={{ display: "grid", gap: 14 }}>
               <LadderRow o={OFFERS.checker} step="Step 0" />
               <LadderRow o={OFFERS.audit} step="Step 1" />
-              <LadderRow o={OFFERS.implementation} step="Step 2" highlight />
+              <LadderRow o={OFFERS.actionPlan} step="Step 2" highlight />
               <LadderRow o={OFFERS.monitor} step="Step 3 (optional)" />
             </div>
             <p style={{ marginTop: 18, fontSize: 15, color: "var(--muted)", lineHeight: 1.6, maxWidth: "62ch" }}>
-              Most people start at the checker or the audit. You only reach the Sprint
-              if you want the fixes done for you &mdash; and the audit fee comes off the
-              price when you do. Monitoring afterward is optional and term-limited,
-              never required to get started.{" "}
+              Most people start at the checker or the audit. You reach step 2 when you
+              want the findings turned into work your team can pick up &mdash; and the
+              audit fee comes off the price when you do. Monitoring afterward is
+              optional and term-limited, never required to get started.{" "}
               <Link href="/pricing/" style={{ color: "var(--accent)", fontWeight: 500 }}>
                 See full pricing &rarr;
               </Link>
@@ -214,7 +242,7 @@ export default function ImplementationPage() {
       <section style={{ padding: "56px 0" }}>
         <div className="wrap" style={{ maxWidth: 820 }}>
           <RevealSection>
-            <SectionLabel number="02" text="How a Sprint runs" />
+            <SectionLabel number="02" text="How it runs" />
           </RevealSection>
           <RevealSection delay={0.08}>
             <div style={{ display: "grid", gap: 22 }}>
@@ -253,8 +281,9 @@ export default function ImplementationPage() {
             >
               <p style={{ color: "var(--ink)", lineHeight: 1.7, margin: 0 }}>
                 I don&rsquo;t ask you to trust the method on faith. I ran this exact
-                implementation work on my own product, HomeCalc.ca, and took it from
-                near-zero to {HOMECALC_CLAIMS.appearancesInTimeframe}{" "}&mdash;{" "}
+                sequence on my own product, HomeCalc.ca &mdash; where I was also the one
+                implementing it &mdash; and took it from near-zero to{" "}
+                {HOMECALC_CLAIMS.appearancesInTimeframe}{" "}&mdash;{" "}
                 {HOMECALC_PROOF.combinedSourceLong}. The{" "}
                 <Link href={HOMECALC_PROOF.caseStudyPath} style={{ color: "var(--accent)" }}>
                   full case study
@@ -291,14 +320,14 @@ export default function ImplementationPage() {
           <RevealSection>
             <div className="cta-box">
               <h2 style={{ fontFamily: "var(--serif)", fontSize: 30, fontWeight: 500, position: "relative" }}>
-                Ready to have it done?
+                Ready to know what to change?
               </h2>
               <p style={{ color: "var(--muted)", marginTop: 16, position: "relative", maxWidth: "54ch", marginLeft: "auto", marginRight: "auto" }}>
                 Tell me about your site. If you haven&rsquo;t had the audit yet,
-                we&rsquo;ll start there &mdash; and its fee comes off the Sprint.
+                we&rsquo;ll start there &mdash; and its fee comes off this.
               </p>
               <Link href={CONTACT_URL} className="btn btn-primary" style={{ marginTop: 34, position: "relative" }}>
-                Talk about a Sprint <span className="arr">&rarr;</span>
+                Talk about your plan <span className="arr">&rarr;</span>
               </Link>
             </div>
           </RevealSection>
