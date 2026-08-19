@@ -244,9 +244,19 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_CA",
     siteName: "Hami Tahm",
-    // Root default. Next resolves this against each page's own canonical/metadataBase,
-    // so per-page og:url comes out correct rather than every page claiming the root.
-    url: "https://hamitahm.com/",
+    /*
+     * ⚠️ THIS MUST STAY RELATIVE. It was "https://hamitahm.com/" until 2026-08-16,
+     * with a comment claiming Next resolved it per page. It does not — an ABSOLUTE
+     * url here is inherited literally, so all 37 crawled pages emitted
+     * og:url = the homepage. Ahrefs reported it as "Open Graph URL not matching
+     * canonical" and I confirmed it live on /blog/peec-vs-profound-vs-airops/.
+     *
+     * "./" is resolved against metadataBase plus the current route, exactly the way
+     * alternates.canonical above already works — so each page now declares itself.
+     * That matters here more than on most sites: og:url is one of the signals a
+     * social or AI crawler uses to decide which URL a share belongs to.
+     */
+    url: "./",
   },
   twitter: {
     card: "summary_large_image",

@@ -83,6 +83,22 @@ const nextConfig: NextConfig = {
         destination: "https://hamitahm.com/:path*",
         permanent: true,
       },
+      /*
+       * WORDPRESS-ERA URLS — added 2026-08-16 from Search Console data.
+       *
+       * These are not hypothetical. Over the last three months Google recorded ~126
+       * impressions on URLs from the old WordPress install that now return 404:
+       * /page/2/ and /page/3/ (the old blog pagination) and nine /category/* archives.
+       * An impression on a 404 is a person who searched, saw the site, clicked, and
+       * hit nothing.
+       *
+       * All of them map to the same place — the current index of written work — so
+       * there is no per-slug mapping to maintain. `:slug*` also catches the ones the
+       * report hasn't surfaced yet, including /category/unicorn-🦄/, which is
+       * percent-encoded in the wild and would be miserable to enumerate by hand.
+       */
+      { source: "/page/:n", destination: "/blog/", permanent: true },
+      { source: "/category/:slug*", destination: "/blog/", permanent: true },
     ];
   },
 
