@@ -127,8 +127,9 @@ export default function PrivacyPage() {
 
       <H2>Cookies</H2>
       <p>
-        This site uses Google Analytics via Google Tag Manager, which sets cookies to
-        measure usage. It does not use advertising cookies. You can block cookies in your
+        This site uses Google Analytics via Google Tag Manager, and Microsoft Clarity
+        for heatmaps and session replay. Both set cookies to measure usage. It does not
+        use advertising cookies. You can block cookies in your
         browser and the site will still work normally.
       </p>
 

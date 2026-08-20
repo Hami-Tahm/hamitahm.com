@@ -48,6 +48,24 @@ export const DATA_COLLECTED = [
       "Google Analytics 4, loaded via Google Tag Manager. This site does not use advertising or retargeting pixels.",
   },
   {
+    /*
+     * ⚠️ ADDED 2026-08-16 WITH THE CLARITY TAG, IN THE SAME COMMIT. Session replay
+     * is a materially different kind of processing from page analytics — it records
+     * the interaction itself — so it gets its own entry rather than being folded
+     * into the Analytics one above. Under PIPEDA the purpose has to be identified;
+     * "we use analytics" does not cover recording someone's session.
+     *
+     * If the masking settings in Clarity are ever loosened, this text stops being
+     * true. Re-read it before touching them.
+     */
+    what: "Session replay and heatmaps",
+    fields:
+      "How you moved through a page — scrolling, clicks, and which parts of a page get attention — plus device type and approximate location. Text you type into forms is masked and not recorded.",
+    why: "To see where pages confuse people, which is hard to learn from page-view counts alone.",
+    where:
+      "Microsoft Clarity. It records interactions with this website only — never your screen, other tabs, or anything outside this site.",
+  },
+  {
     what: "Server logs",
     fields:
       "Standard request logs kept by the hosting provider, which can include IP address and browser user-agent.",
@@ -61,6 +79,10 @@ export const THIRD_PARTIES = [
   {
     name: "Google (Analytics & Tag Manager)",
     role: "Website analytics.",
+  },
+  {
+    name: "Microsoft Clarity",
+    role: "Heatmaps and session replay — how people scroll and click through pages. Recordings are of page interactions, not your screen or camera, and Clarity masks text input by default.",
   },
   {
     name: "Google (Sheets & Apps Script)",

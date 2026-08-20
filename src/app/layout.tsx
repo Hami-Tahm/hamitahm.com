@@ -8,6 +8,23 @@ import { CtaTracking } from "@/components/CtaTracking";
 
 const GA_ID = "G-Z1L4M2SD14";
 const GTM_ID = "GTM-P3HNG5HQ";
+/*
+ * Microsoft Clarity — added 2026-08-16. Heatmaps and session recordings, free.
+ *
+ * Loaded DIRECTLY rather than through GTM, even though Clarity's setup screen
+ * detected GTM and offered it. Two reasons: this file already owns the other tags
+ * so all of them stay visible in one place, and routing it through GTM would make
+ * the site's analytics depend on a container whose state isn't in this repo.
+ *
+ * ⚠️ The CSP in next.config.ts must allow www.clarity.ms and *.clarity.ms in BOTH
+ * script-src and connect-src. If either is missing, sessions are dropped silently —
+ * an empty dashboard with no error anyone would think to look for.
+ *
+ * Clarity masks sensitive content by default. The checker form takes an email and a
+ * domain; if masking is ever loosened in the Clarity settings, re-read what the
+ * privacy page promises before changing it.
+ */
+const CLARITY_ID = "y5ek0m5t31";
 
 const newsreader = Newsreader({
   variable: "--font-newsreader",
@@ -283,6 +300,9 @@ export default function RootLayout({
             so a visitor who bounces in well under a second may go uncounted. */}
         <Script id="gtm-init" strategy="lazyOnload">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`}
+        </Script>
+        <Script id="ms-clarity" strategy="lazyOnload">
+          {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${CLARITY_ID}");`}
         </Script>
         {/* GA4 now fires via GTM — no standalone gtag needed */}
         <script

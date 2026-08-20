@@ -28,11 +28,15 @@ const contentSecurityPolicy = [
   "object-src 'none'",
   "frame-ancestors 'self'",
   "form-action 'self'",
-  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com",
+  // www.clarity.ms serves the tag; the wildcard covers the regional ingest
+  // subdomains Clarity rotates through (a.clarity.ms, b.clarity.ms, ...). Without
+  // both, the CSP silently drops every session — the failure mode is an empty
+  // dashboard with no console error the user would ever look for.
+  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://*.clarity.ms",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: https:",
   "font-src 'self'",
-  "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.g.doubleclick.net",
+  "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.g.doubleclick.net https://*.clarity.ms",
   "frame-src 'self' https://www.googletagmanager.com",
   // Note: no `upgrade-insecure-requests` — it's ignored in a report-only policy
   // (browsers warn about it), and it's redundant once enforced because the site is
