@@ -17,14 +17,29 @@ export const metadata: Metadata = {
   },
 };
 
+/*
+ * ⚠️ THIS PAGE TARGETS THE SEO KEYWORD BUT SELLS THE AI VISIBILITY AUDIT.
+ * That is deliberate and it is why the page survives — plenty of buyers who need
+ * AEO have never heard the word, and "SEO expert Toronto" is how they search.
+ *
+ * What is NOT allowed here, corrected 2026-08-20: promising SEO delivery. This page
+ * answered "Do you do link building?" with "Yes", described technical SEO work as
+ * scoped per project, and declared serviceType "SEO Consulting" in its schema. None
+ * of that is true — the ladder is Audit -> Action Plan -> optional Monitoring, and no
+ * tier includes execution. It also contradicted llms.txt, which states plainly that
+ * this is not an SEO agency and that no tier changes the client's site.
+ *
+ * So: describe SEO accurately, say what the practice measures and plans, and never
+ * offer to perform the work. Same rule that retired the Implementation Sprint.
+ */
 const FAQ_ITEMS = [
   {
     q: "What does an SEO expert in Toronto actually do in 2026?",
-    a: "Two jobs now, not one. The first is the classic job — keyword research, on-page optimization, technical fixes, content strategy, and link building so your site ranks on Google. The second is new — getting your business cited and recommended inside Google AI Overviews, ChatGPT, Claude, and Bing Copilot. A Toronto SEO expert who only does the first job is solving half the problem in 2026.",
+    a: "Two jobs now, not one. The first is the classic job — keyword research, on-page optimization, technical fixes, content strategy and link building, so your site ranks on Google. The second is new — getting your business cited and recommended inside Google AI Overviews, ChatGPT, Claude and Bing Copilot. Anyone doing only the first is solving half the problem in 2026. To be clear about my own role: I work on the second job. I measure where AI engines cite you and write the plan for changing it — I don't take on the delivery work in either column.",
   },
   {
     q: "How much does an SEO expert cost in Toronto?",
-    a: "Hourly: $100–$250 for experienced freelancers and consultants, lower for juniors. Monthly retainer: $1,500–$5,000 for small businesses, $5,000–$15,000 for mid-market. Project-based audits: $1,500–$5,000 depending on scope. My own AI Visibility Audit is $1,500 CAD flat — one-time, no retainer, delivered in 7 business days.",
+    a: "For the market generally: $100–$250 an hour for experienced freelancers, monthly retainers of $1,500–$5,000 for small businesses and $5,000–$15,000 for mid-market, and project audits from $1,500–$5,000. Those are what other people charge, not what I sell. What I sell is one thing — the AI Visibility Audit at $1,500 CAD flat, one-time, no retainer, delivered in 7 business days, with an optional action plan afterward.",
   },
   {
     q: "How long does SEO take to produce results in Toronto?",
@@ -32,7 +47,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Should I hire an agency or a freelance SEO expert in Toronto?",
-    a: "Depends on what you need delivered and how complex your stack is. Agencies bring breadth — content team, link builders, technical SEO — but you usually work with an account manager, not the person doing the work. A consultant gives you direct access to the person making the calls, faster decisions, no overhead. For an audit or strategic project, a consultant is almost always the right call. For ongoing execution at scale, an agency can be cheaper per hour but slower per decision.",
+    a: "Depends on what you need delivered and how complex your stack is. Agencies bring breadth — content team, link builders, technical SEO — but you usually work with an account manager, not the person doing the work. A consultant gives you direct access to the person making the calls, faster decisions, no overhead. For an audit or strategic project, a consultant is almost always the right call. For ongoing execution — someone actually shipping the changes month after month — you want an agency or an in-house developer, and that is genuinely not what I do.",
   },
   {
     q: "Can any SEO expert guarantee first-page rankings on Google?",
@@ -44,11 +59,11 @@ const FAQ_ITEMS = [
   },
   {
     q: "Do you do link building?",
-    a: "Yes — but only natural, editorial links from sites that actually make sense for your industry. No PBNs, no paid link networks, no link farms. The most durable links come from being genuinely useful — case studies, original research, tools, expert commentary. That's the kind of link building I do.",
+    a: "No. I don't sell link building or outreach, and I'd be wary of anyone in this category who does — durable links come from being genuinely useful, not from being bought. What the audit does cover is where third-party sources already mention you, because those citations are part of what AI engines read when deciding whether to name you. If the plan says you need more of them, it says which kinds and why. Earning them is your team's work or your agency's, not mine.",
   },
   {
     q: "Do you work with businesses outside Toronto?",
-    a: "Primarily Canada-wide with selective US and UK clients. My office is at 111 Peter Street, Toronto — visits by appointment — but the work is remote-first. The technical foundations of search and AI visibility travel: they work the same whether you're in Toronto, Calgary or Austin. Local visibility is a different matter, though — it depends on location context, consistent business details across directories, reviews and local references, all specific to where you actually operate.",
+    a: "Canada. My office is at 111 Peter Street, Toronto — visits by appointment — but the work is remote-first. The technical foundations of search and AI visibility travel: they work the same whether you're in Toronto, Calgary or Austin. Local visibility is a different matter, though — it depends on location context, consistent business details across directories, reviews and local references, all specific to where you actually operate.",
   },
 ];
 
@@ -71,9 +86,12 @@ const structuredData = {
     {
       "@type": "Service",
       "@id": "https://hamitahm.com/seo-expert-toronto/#service",
-      name: "SEO Consulting — Toronto",
+      // Renamed 2026-08-20. It said "SEO Consulting" with serviceType "SEO Consulting",
+      // declaring a service this practice does not sell. The page may target the SEO
+      // query; the schema has to state what is actually for sale.
+      name: "AI Visibility Audit — Toronto",
       url: "https://hamitahm.com/seo-expert-toronto/",
-      serviceType: "SEO Consulting",
+      serviceType: "AI visibility, AEO and GEO consulting",
       provider: { "@id": "https://hamitahm.com/#hami-tahm" },
       areaServed: [
         { "@type": "Country", name: "Canada" },
@@ -149,11 +167,13 @@ export default function SEOExpertTorontoPage() {
                 lineHeight: 1.65,
               }}
             >
-              I&rsquo;m Hami Tahm — a Toronto-based SEO consultant focused on the
-              two layers of search that matter now: how your business ranks on
-              Google, and how it appears inside ChatGPT, Perplexity, and Google
-              AI Overviews. Consultant-led, no agency overhead, with a public case
-              study you can verify.
+              I&rsquo;m Hami Tahm — a Toronto-based consultant working on the newer
+              half of search: whether your business gets cited inside ChatGPT,
+              Perplexity and Google AI Overviews, and what to change when it
+              doesn&rsquo;t. If you came here looking for classic SEO delivery, this
+              page explains how the two differ and where each still matters.
+              Consultant-led, no agency overhead, with a public case study you can
+              verify.
             </p>
           </RevealSection>
 
@@ -448,11 +468,12 @@ export default function SEOExpertTorontoPage() {
                 marginBottom: 24,
               }}
             >
-              Most engagements begin and end with the audit. Clients implement
-              internally with the action plan. Ongoing consulting, content
-              strategy, and technical SEO work is scoped per project after the
-              audit completes — only when it&rsquo;s the right next move, not
-              by default.
+              Most engagements begin and end with the audit. You implement
+              internally with the action plan, or your agency does. I don&rsquo;t
+              take execution work — no retainers, no content production, no
+              technical delivery. What can follow the audit is the action plan, and
+              after that optional monitoring, and only when it&rsquo;s the right
+              next move rather than by default.
             </p>
             <p
               style={{
