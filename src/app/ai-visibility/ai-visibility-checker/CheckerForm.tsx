@@ -36,7 +36,7 @@ import Link from "next/link";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 
 /**
- * COUNTRY IS A FIXED LIST, NOT FREE TEXT (2026-08-16).
+ * COUNTRY IS A FIXED LIST, NOT FREE TEXT (2026-08-20).
  *
  * It was already required, but as an open input with "Canada" as the placeholder.
  * That produced unusable values — "USA", "us", "United States of America", blank
@@ -44,9 +44,14 @@ const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
  * different answers depending on where the search runs from, so the country decides
  * how the check is actually performed. A typo silently produces a wrong report.
  *
- * Canada only. That matches the rest of the site — `areaServed` in layout.tsx and
- * the "Canadian businesses" line repeated across ~25 places — so the form no longer
- * accepts a market the site does not claim to serve.
+ * Canada and the United States — both markets the check is actually run for.
+ *
+ * ⚠️ ADDING A MARKET IS A MULTI-PLACE CHANGE, and the copy is what gets forgotten.
+ * Add the country to COUNTRIES below, then fix every sentence that names the served
+ * markets: the notice beside the country box, the waitlist confirmation screen, the
+ * line under the submit button, the "Is this free?" answer on the page around this
+ * form, and public/llms.txt. A form that accepts a country while the copy still says
+ * it doesn't is the exact contradiction this file's other comments exist to stop.
  *
  * ⚠️ TWO OUTCOMES, NOT ONE. Do not "simplify" this back to a single path.
  *
@@ -61,12 +66,21 @@ const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
  * way to know who to write to when a market opens, and the promise becomes empty.
  *
  * `scope` in the payload is what the Apps Script webhook branches on to decide WHICH
- * confirmation email to send. If you rename these two values, change the webhook in
- * the same sitting or half the senders get the wrong email.
+ * confirmation email to send. See the note on the Scope type below for what is and
+ * isn't safe to rename.
  */
-const COUNTRIES = ["Canada"] as const;
+const COUNTRIES = ["Canada", "United States"] as const;
 const COUNTRY_OTHER = "Other";
-type Scope = "canada" | "waitlist";
+/*
+ * Renamed from "canada" on 2026-08-20, when the United States was added. A value
+ * named after one country stops being true the moment a second one is served, and
+ * this string is what the Apps Script webhook branches on.
+ *
+ * ⚠️ THE WEBHOOK ONLY TESTS FOR "waitlist" — everything else falls through to the
+ * report email — so renaming this side needs no Apps Script change. The API route
+ * allow-lists the value though, and that DOES have to match. See api/checker.
+ */
+type Scope = "served" | "waitlist";
 
 type Tier = "free" | "audit" | "request";
 
@@ -157,7 +171,7 @@ export default function CheckerForm() {
     // market they typed, never the literal string "Other" — an unsegmentable
     // waitlist can't be acted on, which would make the promise in the email empty.
     const resolvedCountry = isWaitlist ? otherCountry.trim() : country.trim();
-    const scope: Scope = isWaitlist ? "waitlist" : "canada";
+    const scope: Scope = isWaitlist ? "waitlist" : "served";
     setStatus("submitting");
     try {
       const res = await fetch("/api/checker", {
@@ -200,7 +214,7 @@ export default function CheckerForm() {
   /*
    * WAITLIST CONFIRMATION — deliberately promises nothing on a clock.
    *
-   * The Canada screen below commits to a report within one business day. Reusing it
+   * The served-market screen below commits to a report within one business day. Reusing it
    * here would be the worst possible outcome: someone waits a day for a report that
    * is never coming. So this screen says the service isn't available, thanks them,
    * and states the only thing that is actually true — that they'll hear if it opens.
@@ -227,7 +241,7 @@ export default function CheckerForm() {
           I&rsquo;m sorry — the free check doesn&rsquo;t cover{" "}
           <strong style={{ color: "var(--ink)" }}>{otherCountry.trim()}</strong> yet.
           These engines answer differently depending on the country the search runs
-          from, and I only run this for Canada right now. Sending you a report from
+          from, and I run this for Canada and the United States right now. Sending you a report from
           the wrong market would tell you the wrong thing, so I&rsquo;d rather say so.
         </p>
         <p style={{ fontSize: 16, color: "var(--muted)", lineHeight: 1.7, margin: "0 0 14px" }}>
@@ -541,7 +555,8 @@ export default function CheckerForm() {
           }}
         >
           <p style={{ margin: "0 0 12px", fontSize: 14.5, color: "var(--ink)", lineHeight: 1.6 }}>
-            The free check currently runs for <strong>Canada</strong> only — these
+            The free check currently runs for <strong>Canada and the United
+            States</strong> — these
             engines answer differently depending on where the search runs from. I
             won&rsquo;t send you a report from the wrong market, but I&rsquo;ll add
             you to the list and tell you if yours opens.
@@ -587,7 +602,7 @@ export default function CheckerForm() {
       */}
       <p style={{ fontSize: 12.5, color: "var(--faint)", marginTop: 12, textAlign: "center", lineHeight: 1.5 }}>
         {isWaitlist
-          ? "Free. No report is sent for markets outside Canada — you're joining the list."
+          ? "Free. No report is sent for markets outside Canada and the US — you're joining the list."
           : "Free. A real analyst sends your report within one business day."}
       </p>
       <p
@@ -601,7 +616,7 @@ export default function CheckerForm() {
       >
         {/*
           ⚠️ THE WAITLIST WORDING IS A CASL REQUIREMENT, NOT A STYLE CHOICE.
-          The Canada path asks consent for a report plus ONE follow-up — a bounded,
+          The served-market path asks consent for a report plus ONE follow-up — a bounded,
           near-term exchange. A waitlist message is a commercial electronic message
           sent at an unknown future date, which is exactly what CASL requires express
           consent for, and "send you this report" plainly does not cover it. So the

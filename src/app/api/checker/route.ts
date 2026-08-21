@@ -51,7 +51,7 @@ export async function POST(req: Request) {
   /*
    * Which confirmation email the Apps Script webhook should send.
    *
-   * "canada"   → the report is coming, within one business day.
+   * "served"   → the report is coming, within one business day.
    * "waitlist" → the market isn't covered; thank them and record the demand.
    *
    * ⚠️ ALLOW-LISTED, NOT PASSED THROUGH. This value selects a message template on
@@ -60,7 +60,7 @@ export async function POST(req: Request) {
    * the failure mode is someone hearing "no report" and replying, not someone
    * waiting a day for a report that was never queued.
    */
-  const scope = body.scope === "canada" ? "canada" : "waitlist";
+  const scope = body.scope === "served" ? "served" : "waitlist";
   const engines = (Array.isArray(body.engines) ? body.engines : [])
     .slice(0, 10)
     .map((e) => deFormula(String(e).trim()));
