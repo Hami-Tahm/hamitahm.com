@@ -9,22 +9,35 @@ import { CtaTracking } from "@/components/CtaTracking";
 const GA_ID = "G-Z1L4M2SD14";
 const GTM_ID = "GTM-P3HNG5HQ";
 /*
- * Microsoft Clarity — added 2026-08-16. Heatmaps and session recordings, free.
+ * ⚠️ MICROSOFT CLARITY IS NOT LOADED FROM THIS FILE. DO NOT RE-ADD IT HERE.
  *
- * Loaded DIRECTLY rather than through GTM, even though Clarity's setup screen
- * detected GTM and offered it. Two reasons: this file already owns the other tags
- * so all of them stay visible in one place, and routing it through GTM would make
- * the site's analytics depend on a container whose state isn't in this repo.
+ * It lives in the GTM container (GTM-P3HNG5HQ) as the tag "Microsoft Clarity -
+ * Official", firing on All Pages, project id y5ek0m5t31.
  *
- * ⚠️ The CSP in next.config.ts must allow www.clarity.ms and *.clarity.ms in BOTH
- * script-src and connect-src. If either is missing, sessions are dropped silently —
- * an empty dashboard with no error anyone would think to look for.
+ * ── HISTORY, so this doesn't get reverted ──
+ * 2026-08-16 it WAS added here, deliberately, on the reasoning that this file
+ * should own every tag and that routing it through GTM would make analytics
+ * depend on container state outside the repo. That reasoning was fine in
+ * isolation and wrong in fact: Clarity's own dashboard had ALSO been connected
+ * to the GTM account, which installed its official tag in the container. From
+ * that point the script was on every page twice.
  *
- * Clarity masks sensitive content by default. The checker form takes an email and a
- * domain; if masking is ever loosened in the Clarity settings, re-read what the
- * privacy page promises before changing it.
+ * Removed from here rather than from GTM on 2026-08-22, because the two installs
+ * are NOT equivalent. The GTM tag passes {{Analytics Client ID}} and
+ * {{Analytics Session ID}} into Clarity, which is what stitches a Clarity
+ * recording to a GA4 session — the whole point of the Clarity↔GA4 link that is
+ * live in Clarity's settings. The inline snippet passed neither. Deleting the
+ * GTM tag would have removed the capability and kept the weaker copy.
+ *
+ * ⚠️ STILL TRUE EVEN THOUGH THE TAG MOVED — do not "clean these up":
+ *   - next.config.ts CSP must allow www.clarity.ms and *.clarity.ms in BOTH
+ *     script-src and connect-src. The script is still loaded on every page; only
+ *     the thing injecting it changed. Removing either directive drops sessions
+ *     silently — an empty dashboard with no error anyone would think to look for.
+ *   - src/lib/legal.ts and /privacy/ must keep the Clarity third-party entry and
+ *     the session-replay disclosure. Under PIPEDA the obligation follows the
+ *     recording, not the injection method.
  */
-const CLARITY_ID = "y5ek0m5t31";
 
 const newsreader = Newsreader({
   variable: "--font-newsreader",
@@ -301,10 +314,9 @@ export default function RootLayout({
         <Script id="gtm-init" strategy="lazyOnload">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`}
         </Script>
-        <Script id="ms-clarity" strategy="lazyOnload">
-          {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${CLARITY_ID}");`}
-        </Script>
-        {/* GA4 now fires via GTM — no standalone gtag needed */}
+        {/* GA4 and Microsoft Clarity both fire via GTM — no standalone gtag or
+            clarity snippet here. See the Clarity note at the top of this file
+            before adding either back. */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
