@@ -946,6 +946,77 @@ export default function HomeCalcCaseStudy() {
             </div>
           </RevealSection>
 
+          {/*
+            ── THE TWO-SIDED FINDING — added 2026-08-24 ──
+
+            Deliberately carries NO NUMBERS, and that is the point.
+
+            It came out of a third-party AI-visibility report on homecalc.ca
+            (Otterly, 22 prompts, 14 days) which is NOT published and should not
+            be. Two reasons it stays private:
+
+              1. Its "citation share" figure (3.2%, sixth of ten domains) means
+                 something completely different from the "up to 72%" this page
+                 already states from Bing Webmaster Tools — the first is share of
+                 all citations across a prompt set, the second is share on one
+                 query. Same words, different instruments. Publishing both on one
+                 site invites a cross-check that reads as a contradiction.
+
+              2. Its most interesting claim (that OAI-SearchBot had never reached
+                 the domain, so ChatGPT visibility was zero) is unverified. This
+                 site does not publish load-bearing claims it has not checked.
+
+            What survived is the conclusion itself, which needs neither figure to
+            be true and is corroborated by this site's OWN uncomfortable data:
+            hamitahm.com earns thousands of Copilot citations while the page it
+            sells earns 12. Placement and discovery are different problems.
+
+            ⚠️ If a number is ever added to this block, the reasoning above stops
+            applying — check it against homecalc-proof.ts first.
+          */}
+          <RevealSection delay={0.04}>
+            <div
+              style={{
+                maxWidth: 740,
+                marginBottom: 32,
+                padding: "24px 26px",
+                borderLeft: "3px solid var(--accent)",
+                background: "var(--panel)",
+                borderRadius: 4,
+              }}
+            >
+              <p
+                style={{
+                  fontFamily: "var(--serif)",
+                  fontSize: "clamp(19px, 2.4vw, 23px)",
+                  lineHeight: 1.5,
+                  letterSpacing: "-.01em",
+                  color: "var(--ink)",
+                  marginBottom: 16,
+                }}
+              >
+                Content quality determines where you are placed when you appear.
+                Distribution determines whether you appear at all.
+              </p>
+              <p
+                style={{
+                  fontSize: "clamp(16px, 2vw, 17.5px)",
+                  color: "var(--muted)",
+                  lineHeight: 1.72,
+                }}
+              >
+                Neither one substitutes for the other, and most sites are only
+                working on one of them. That is the finding underneath every
+                figure on this page &mdash; and it cuts both ways. This site,
+                hamitahm.com, has the opposite problem to HomeCalc: it earns
+                thousands of AI citations while the page it actually sells earns
+                twelve. Being cited is not the same as being cited where it
+                matters, and an audit that only counts citations would have
+                missed it entirely.
+              </p>
+            </div>
+          </RevealSection>
+
           <RevealSection delay={0.08}>
             <div className="cs-verts-row">
               {VERTICALS.map(({ label, href }) => (
