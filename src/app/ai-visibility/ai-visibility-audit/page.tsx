@@ -317,6 +317,24 @@ export default function AIVisibilityAudit() {
             >
               What&rsquo;s Included in Your Audit
             </h2>
+            {/* The strongest objection on this page is "I can't see what I'm buying."
+                Answer it at the top of the includes section rather than in the FAQ —
+                the sample report is a real deliverable, not a brochure, and it does
+                more selling than another paragraph of description would. */}
+            <p
+              style={{
+                marginTop: 16,
+                fontFamily: "var(--mono)",
+                fontSize: 13.5,
+                color: "var(--muted)",
+              }}
+            >
+              Prefer to see it first?{" "}
+              <Link href="/ai-visibility/sample-report/" style={{ color: "var(--accent)", fontWeight: 500 }}>
+                Read a full sample report
+              </Link>
+              {" "}&mdash; real data, every section.
+            </p>
             <p
               style={{
                 marginTop: 20,

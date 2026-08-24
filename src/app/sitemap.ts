@@ -27,6 +27,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/research/", priority: 0.85, changeFrequency: "monthly" },
     { path: "/ai-visibility/implementation/", priority: 0.9, changeFrequency: "monthly" },
     { path: "/ai-visibility/ai-visibility-checker/", priority: 0.9, changeFrequency: "weekly" },
+    // The sample report is a BOFU page in its own right: "what does an AI
+    // visibility audit look like" is a real pre-purchase query, and this is the
+    // only page on the site that answers it with the deliverable itself.
+    { path: "/ai-visibility/sample-report/", priority: 0.9, changeFrequency: "monthly" },
     { path: "/ai-visibility/ai-visibility-consultant-canada/", priority: 0.9, changeFrequency: "monthly" },
     { path: "/ai-visibility/ai-visibility-consultant-toronto/", priority: 0.9, changeFrequency: "monthly" },
     { path: "/ai-visibility/answer-engine-optimization-consultant-canada/", priority: 0.85, changeFrequency: "monthly" },
