@@ -392,13 +392,13 @@ export default function SpaToSsgAiVisibilityPost() {
               }}
             >
               <div style={{ fontFamily: "var(--sans)", fontSize: 15, lineHeight: 1.75, color: "var(--ink)" }}>
-                <strong style={labelStyle}>Bing Copilot citations:</strong> 5–20 per day
+                <strong style={labelStyle}>Bing Copilot citations:</strong>{" "}5–20 per day
                 <br />
-                <strong style={labelStyle}>Bing impressions:</strong> 0–10 per day baseline
+                <strong style={labelStyle}>Bing impressions:</strong>{" "}0–10 per day baseline
                 <br />
-                <strong style={labelStyle}>Pages cited by AI:</strong> 4 out of 68
+                <strong style={labelStyle}>Pages cited by AI:</strong>{" "}4 out of 68
                 <br />
-                <strong style={labelStyle}>Content visible to crawlers:</strong> None (empty body)
+                <strong style={labelStyle}>Content visible to crawlers:</strong>{" "}None (empty body)
               </div>
             </div>
           </RevealSection>
@@ -657,13 +657,13 @@ export default function SpaToSsgAiVisibilityPost() {
                 Same principle, different symptoms
               </div>
               <div style={{ fontFamily: "var(--sans)", fontSize: 15, lineHeight: 1.75, color: "var(--ink)" }}>
-                <strong style={labelStyle}>SPA → SSG fix:</strong> Page body was
+                <strong style={labelStyle}>SPA → SSG fix:</strong>{" "}Page body was
                 empty. Inline the body in HTML.
                 <br />
-                <strong style={labelStyle}>Accordion forceMount fix:</strong> FAQ
+                <strong style={labelStyle}>Accordion forceMount fix:</strong>{" "}FAQ
                 answers were empty. Inline the answers in HTML.
                 <br />
-                <strong style={labelStyle}>API-dependent content:</strong> Data
+                <strong style={labelStyle}>API-dependent content:</strong>{" "}Data
                 loads after JS. Fetch at build time and inline in HTML.
               </div>
             </div>
@@ -694,7 +694,7 @@ export default function SpaToSsgAiVisibilityPost() {
 
             <h3 style={h3Style}>Step 2: Pick your migration path</h3>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>React + Vite (our case):</strong> Use{" "}
+              <strong style={labelStyle}>React + Vite (our case):</strong>{" "}Use{" "}
               <code style={{ fontFamily: "var(--mono)", fontSize: "0.9em" }}>
                 vite-react-ssg
               </code>{" "}
@@ -706,7 +706,7 @@ export default function SpaToSsgAiVisibilityPost() {
               a single commit.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Create React App:</strong> Migrate to
+              <strong style={labelStyle}>Create React App:</strong>{" "}Migrate to
               Next.js (SSG/SSR by default) or add{" "}
               <code style={{ fontFamily: "var(--mono)", fontSize: "0.9em" }}>
                 react-snap
@@ -720,7 +720,7 @@ export default function SpaToSsgAiVisibilityPost() {
               test above. If your pages render full HTML, you&rsquo;re fine.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Vue / Svelte / Angular:</strong> Same
+              <strong style={labelStyle}>Vue / Svelte / Angular:</strong>{" "}Same
               principle applies. Nuxt (Vue), SvelteKit (Svelte), and Angular
               Universal all provide SSG/SSR. The framework doesn&rsquo;t matter
               — what matters is that the HTML contains content before JS runs.

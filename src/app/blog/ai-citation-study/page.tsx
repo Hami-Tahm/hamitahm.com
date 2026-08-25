@@ -152,7 +152,7 @@ export default function Page() {
               <p>
                 I run two sites. Same owner, same three months, same measurement. They
                 produced almost identical citation totals and{" "}
-                <strong>completely opposite results.</strong> That accident is the whole
+                <strong>completely opposite results.</strong>{" "}That accident is the whole
                 study.
               </p>
 
@@ -292,7 +292,7 @@ export default function Page() {
                 <p style={{ marginBottom: 10 }}>
                   My most-cited page in the world &mdash;{" "}
                   {COMMERCIAL_REALITY.aiCitations} AI citations &mdash; produced{" "}
-                  <strong>{COMMERCIAL_REALITY.googleClicksPerQuarter} clicks</strong> from
+                  <strong>{COMMERCIAL_REALITY.googleClicksPerQuarter} clicks</strong>{" "}from
                   Google over the same three months. Twenty-four clicks, from an essay
                   about skill mastery that has nothing to do with what I sell.
                 </p>
@@ -309,7 +309,7 @@ export default function Page() {
                 have been impressed. It would also have been close to meaningless.
               </p>
               <p>
-                A citation count is a <strong>vanity metric</strong> unless the citations
+                A citation count is a <strong>vanity metric</strong>{" "}unless the citations
                 land on pages that sell something, for queries a buyer actually types. Mine
                 mostly didn&rsquo;t. That is not a reason to ignore AI visibility &mdash;
                 HomeCalc proves the opposite. It is a reason to be extremely suspicious of
@@ -326,16 +326,16 @@ export default function Page() {
               <p>Also true, and rarely published:</p>
               <ul>
                 <li>
-                  <strong>Opinion and mindset posts:</strong> essentially zero citations.
+                  <strong>Opinion and mindset posts:</strong>{" "}essentially zero citations.
                 </li>
                 <li>
-                  <strong>Off-topic content:</strong> a post about diets earned 61
+                  <strong>Off-topic content:</strong>{" "}a post about diets earned 61
                   citations on a site that sells AI visibility consulting. Useless
                   citations are worse than none &mdash; they teach the model the wrong
                   thing about who you are.
                 </li>
                 <li>
-                  <strong>My own commercial pages:</strong> 12 citations. The thing I most
+                  <strong>My own commercial pages:</strong>{" "}12 citations. The thing I most
                   wanted cited was cited least.
                 </li>
               </ul>
@@ -343,19 +343,19 @@ export default function Page() {
               <H2>What I would tell you to do with this</H2>
               <ol>
                 <li>
-                  <strong>Build the tool, not the take.</strong> If your page computes,
+                  <strong>Build the tool, not the take.</strong>{" "}If your page computes,
                   compares, or resolves something concrete, it is a candidate for citation.
                   If it merely has a view, it probably isn&rsquo;t.
                 </li>
                 <li>
-                  <strong>Chase the query, not the count.</strong> One citation on a query
+                  <strong>Chase the query, not the count.</strong>{" "}One citation on a query
                   your buyer types beats a thousand on a query they never will.
                 </li>
                 <li>
                   <strong>Give it three weeks before you judge it.</strong>
                 </li>
                 <li>
-                  <strong>Measure what happens after the citation.</strong> If it produces
+                  <strong>Measure what happens after the citation.</strong>{" "}If it produces
                   no clicks and no customers, you have a trophy, not a channel.
                 </li>
               </ol>
@@ -368,13 +368,13 @@ export default function Page() {
                   window.
                 </li>
                 <li>
-                  <strong>This measures Copilot and its partners</strong> &mdash; not
+                  <strong>This measures Copilot and its partners</strong>{" "}&mdash; not
                   ChatGPT, Perplexity, Gemini or Grok, none of which publish citation data
                   to publishers. Behaviour may differ on those engines. Anyone claiming
                   otherwise with confidence is guessing.
                 </li>
                 <li>
-                  <strong>n = 2 sites, one owner, one market.</strong> This is a strong
+                  <strong>n = 2 sites, one owner, one market.</strong>{" "}This is a strong
                   signal, not a law. Both sites are mine, which means I had total control
                   and no stakeholders &mdash; advantages your business will not have.
                 </li>

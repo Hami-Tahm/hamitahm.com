@@ -320,12 +320,12 @@ export default function PeecVsProfoundVsAirOpsPost() {
                   margin: 0,
                 }}
               >
-                <strong>Profound</strong> if you want monitoring plus agents that
+                <strong>Profound</strong>{" "}if you want monitoring plus agents that
                 act on what the tracking finds, and analytics on AI-referred
-                traffic to your own site. <strong>AirOps</strong> if visibility is
+                traffic to your own site. <strong>AirOps</strong>{" "}if visibility is
                 the front end of a content production line &mdash; it publishes no
                 plan prices, so budget for a conversation.{" "}
-                <strong>Peec</strong> if you want citation and share-of-voice
+                <strong>Peec</strong>{" "}if you want citation and share-of-voice
                 tracking at the cheapest published self-serve price, and you are
                 content to decide what to do about it yourself.
                 <br />
@@ -366,7 +366,7 @@ export default function PeecVsProfoundVsAirOpsPost() {
                 From the author
               </div>
               <p style={{ margin: 0 }}>
-                <strong>How this was checked.</strong> Prices, plan names, prompt
+                <strong>How this was checked.</strong>{" "}Prices, plan names, prompt
                 counts and engine lists come from each vendor&rsquo;s own pricing
                 page, read on {DATE_VERIFIED_HUMAN} and linked in each section. This
                 is a documentation-based comparison, not a controlled test: I have
@@ -374,7 +374,7 @@ export default function PeecVsProfoundVsAirOpsPost() {
                 results against each other, so nothing here ranks them on accuracy.
               </p>
               <p style={{ margin: "12px 0 0" }}>
-                <strong>Disclosure.</strong> I take no affiliate commission and no
+                <strong>Disclosure.</strong>{" "}I take no affiliate commission and no
                 payment from any of these companies. I sell an AI visibility audit,
                 which competes for the same budget &mdash; so the comparison sticks to
                 what their own pages state, and the recommendation at the end includes
@@ -426,7 +426,7 @@ export default function PeecVsProfoundVsAirOpsPost() {
 
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>What it tracks:</strong> Peec is an AI
+              <strong style={labelStyle}>What it tracks:</strong>{" "}Peec is an AI
               search analytics platform built for marketing teams and SEO agencies.
               It tracks how often your brand is cited when AI systems answer buyer
               questions — measuring citation rate and share of voice across
@@ -435,20 +435,20 @@ export default function PeecVsProfoundVsAirOpsPost() {
               against named competitors.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Standout feature:</strong> Peec shows you
+              <strong style={labelStyle}>Standout feature:</strong>{" "}Peec shows you
               that a competitor appears in 62% of buyer prompts in your category
               while you appear in 8%. That&rsquo;s a clear, actionable metric that
               most tools don&rsquo;t surface cleanly.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>What it doesn&rsquo;t track:</strong> Peec
+              <strong style={labelStyle}>What it doesn&rsquo;t track:</strong>{" "}Peec
               is strong at diagnosis. It&rsquo;s explicit about not being strong at
               treatment — the platform tells you the gap exists, but doesn&rsquo;t
               explain why or tell you what to change. Per multiple reviews, it
               shows the problem, not the fix.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Data accuracy:</strong> Solid for citation
+              <strong style={labelStyle}>Data accuracy:</strong>{" "}Solid for citation
               frequency tracking. The Starter plan includes 50 prompts across 3 AI
               models; Pro and Enterprise scale from there.
             </p>
@@ -459,13 +459,13 @@ export default function PeecVsProfoundVsAirOpsPost() {
               team as a differentiator — rare at this price tier.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Best for:</strong> Marketing teams and SEO
+              <strong style={labelStyle}>Best for:</strong>{" "}Marketing teams and SEO
               agencies that want systematic AI share-of-voice tracking and
               competitor benchmarking without enterprise overhead. Good starting
               point for teams new to dedicated AI visibility monitoring.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Verdict:</strong> Peec is the clearest
+              <strong style={labelStyle}>Verdict:</strong>{" "}Peec is the clearest
               option for teams that want to understand{" "}
               <em>how visible they are</em> in AI search. If you want to understand{" "}
               <em>why</em> and <em>what to fix</em> — that&rsquo;s a different
@@ -479,7 +479,7 @@ export default function PeecVsProfoundVsAirOpsPost() {
 
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>What it tracks:</strong> Profound runs a
+              <strong style={labelStyle}>What it tracks:</strong>{" "}Profound runs a
               prompt set on a daily schedule and reports mentions, citations,
               sentiment and competitive presence. Its distinctive pieces are Agents
               &mdash; which draft and optimise content from what the tracking finds
@@ -487,7 +487,7 @@ export default function PeecVsProfoundVsAirOpsPost() {
               traffic arriving at your own domain rather than what the engines say.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>A correction:</strong> this article
+              <strong style={labelStyle}>A correction:</strong>{" "}this article
               previously said Profound covers &ldquo;10+ engines&rdquo; and made that
               its headline advantage. Profound&rsquo;s own pricing page says up to
               nine, and only on Enterprise. The $99 Starter plan tracks ChatGPT
@@ -497,14 +497,14 @@ export default function PeecVsProfoundVsAirOpsPost() {
               buy against the engines you actually need.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Where the gaps are:</strong> engine
+              <strong style={labelStyle}>Where the gaps are:</strong>{" "}engine
               coverage is tier-gated rather than complete, as above. Funding and
               customer-logo claims that used to sit in this paragraph have been
               removed &mdash; they were not sourced, and they were never a reason to
               buy a tool.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Data quality:</strong> I have no way to
+              <strong style={labelStyle}>Data quality:</strong>{" "}I have no way to
               rank these three on accuracy, and neither does anyone without running
               the same prompt set through all three and comparing against a ground
               truth that does not exist. The earlier version of this page called
@@ -513,21 +513,21 @@ export default function PeecVsProfoundVsAirOpsPost() {
               the pricing pages: engines, prompt counts, refresh frequency.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Pricing:</strong> Starter $99/month and
+              <strong style={labelStyle}>Pricing:</strong>{" "}Starter $99/month and
               Growth $399/month, both billed yearly; Enterprise custom. The
               &ldquo;48% more expensive than average&rdquo; line that used to be here
               cited &ldquo;multiple reviews&rdquo; without naming one, and there is no
               published average for this category to be 48% above.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Best for:</strong> Enterprise brands,
+              <strong style={labelStyle}>Best for:</strong>{" "}Enterprise brands,
               agencies managing multi-client AI visibility, and B2B companies with
               serious AI search exposure across multiple platforms and markets. If
               you&rsquo;re a fast-growing company that can&rsquo;t afford to guess
               where you stand in AI search, Profound is the reference-class tool.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Verdict:</strong> Profound is the most
+              <strong style={labelStyle}>Verdict:</strong>{" "}Profound is the most
               complete AI visibility platform available. The cost reflects that.
               For SMBs or consultants running lean operations, the price is
               difficult to justify. For enterprise, it&rsquo;s the clearest choice.
@@ -540,7 +540,7 @@ export default function PeecVsProfoundVsAirOpsPost() {
 
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>What it tracks:</strong> AirOps calls
+              <strong style={labelStyle}>What it tracks:</strong>{" "}AirOps calls
               itself a &ldquo;growth platform for AI search and AEO.&rdquo; It
               combines two functions that most tools treat separately: visibility
               tracking (called Insights) and content operations (AI-powered content
@@ -550,7 +550,7 @@ export default function PeecVsProfoundVsAirOpsPost() {
               citations, Search Console, and GA4 traffic.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>What it doesn&rsquo;t track:</strong> The
+              <strong style={labelStyle}>What it doesn&rsquo;t track:</strong>{" "}The
               catch is the tier split, not a price cliff &mdash; AirOps publishes no
               plan prices at all, and its FAQ says pricing is set by task volume and
               requirements. Solo tracks ChatGPT only, 100 prompts, one user, monthly
@@ -562,7 +562,7 @@ export default function PeecVsProfoundVsAirOpsPost() {
               you cannot size that step without talking to sales.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Pricing:</strong> Not published. The Insights
+              <strong style={labelStyle}>Pricing:</strong>{" "}Not published. The Insights
               tier starts at $0/month, and AirOps&rsquo; own FAQ states pricing is
               based on task volume and requirements. Solo includes 20,000 tasks with
               overage at $0.025 per task; Pro includes 75,000. The $200 and $2,000
@@ -579,14 +579,14 @@ export default function PeecVsProfoundVsAirOpsPost() {
               , read {DATE_VERIFIED}.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Best for:</strong> Content teams that want
+              <strong style={labelStyle}>Best for:</strong>{" "}Content teams that want
               to track AI search visibility <em>and</em> use that data to drive
               content production in one platform. AirOps makes the most sense when
               you&rsquo;re already running a structured content operation and want
               to align it with AI search performance — not just see a dashboard.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Verdict:</strong> AirOps is the right
+              <strong style={labelStyle}>Verdict:</strong>{" "}AirOps is the right
               choice if you need both tracking and content operations in one
               workflow. If you only need tracking, Solo is too narrow at ChatGPT
               alone, and Pro is hard to justify unless you are also using the content

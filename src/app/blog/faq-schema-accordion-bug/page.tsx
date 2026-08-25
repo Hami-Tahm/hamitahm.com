@@ -342,7 +342,7 @@ export default function FaqSchemaAccordionBugPost() {
               Here&rsquo;s the chain of events:
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>1. You add an FAQ section</strong> with
+              <strong style={labelStyle}>1. You add an FAQ section</strong>{" "}with
               a collapsible accordion — Radix UI, Headless UI, Shadcn, or any
               component that toggles visibility. Users click a question, the
               answer expands. Standard UX pattern.
@@ -394,7 +394,7 @@ export default function FaqSchemaAccordionBugPost() {
             </p>
             <p style={{ marginBottom: 26 }}>
               The result: the page loses rich-result eligibility for that schema.
-              It does <strong>not</strong> demote your normal ranking &mdash;
+              It does <strong>not</strong>{" "}demote your normal ranking &mdash;
               Google&rsquo;s policy is explicit that structured-data issues affect
               rich results, not ordinary rankings. (And since May 2026, Google no
               longer shows <a href="https://developers.google.com/search/docs/appearance/structured-data/faqpage" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>FAQ rich results</a> for most sites anyway.) So the real
@@ -412,13 +412,13 @@ export default function FaqSchemaAccordionBugPost() {
               This bug is dangerous because every signal says everything is fine:
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>The UX is perfect.</strong> Users click
+              <strong style={labelStyle}>The UX is perfect.</strong>{" "}Users click
               a question, the answer expands. JavaScript hydrates and the
               accordion works exactly as designed. No user will ever report this
               as a bug.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>The build passes.</strong> No TypeScript
+              <strong style={labelStyle}>The build passes.</strong>{" "}No TypeScript
               errors, no lint failures, no broken tests. The component is
               functioning correctly by its own definition — the default state is
               closed, and closed means unmounted.
@@ -608,13 +608,13 @@ Select-String "your unique answer phrase" page.html`}
               and had FAQ sections on multiple calculator pages.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Before the fix:</strong> 7-day
+              <strong style={labelStyle}>Before the fix:</strong>{" "}7-day
               impressions had dropped to 486. Average position was degrading.
               FAQ-heavy calculator pages were hit hardest. Rich Results for
               FAQPage had disappeared from Search Console.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>The fix:</strong> One prop change —{" "}
+              <strong style={labelStyle}>The fix:</strong>{" "}One prop change —{" "}
               <code style={{ fontFamily: "var(--mono)", fontSize: "0.9em" }}>
                 forceMount
               </code>{" "}
@@ -622,7 +622,7 @@ Select-String "your unique answer phrase" page.html`}
               maintain the visual collapse behavior.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>After the fix:</strong> over the following
+              <strong style={labelStyle}>After the fix:</strong>{" "}over the following
               weeks, 7-day impressions rose from 486 to 2,330, and FAQ rich results
               returned in Search Console. Stated honestly: this is a correlation on
               one site over one window, not a controlled experiment &mdash; other
@@ -652,14 +652,14 @@ Select-String "your unique answer phrase" page.html`}
                 Recovery timeline
               </div>
               <div style={{ fontFamily: "var(--sans)", fontSize: 15, lineHeight: 1.75, color: "var(--ink)" }}>
-                <strong style={labelStyle}>Day 1–3:</strong> Google re-crawls
+                <strong style={labelStyle}>Day 1–3:</strong>{" "}Google re-crawls
                 pages with fix deployed. New HTML with FAQ answers in DOM gets
                 indexed.
                 <br />
-                <strong style={labelStyle}>Day 4–7:</strong> Impressions begin
+                <strong style={labelStyle}>Day 4–7:</strong>{" "}Impressions begin
                 ramping. Rich Results return in Search Console validation.
                 <br />
-                <strong style={labelStyle}>Day 7–10:</strong> Full recovery. In
+                <strong style={labelStyle}>Day 7–10:</strong>{" "}Full recovery. In
                 our case, impressions surpassed the pre-bug baseline.
               </div>
             </div>
@@ -675,18 +675,18 @@ Select-String "your unique answer phrase" page.html`}
               You&rsquo;re at risk if all three of these are true:
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>1.</strong> Your site uses SSG or SSR
+              <strong style={labelStyle}>1.</strong>{" "}Your site uses SSG or SSR
               (Next.js, Gatsby, Remix, Astro, Nuxt, SvelteKit — any framework
               that pre-renders HTML on the server).
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>2.</strong> You have FAQ sections using
+              <strong style={labelStyle}>2.</strong>{" "}You have FAQ sections using
               a collapsible accordion or disclosure component (Radix UI, Headless
               UI, Shadcn/ui, Chakra UI, MUI Accordion, or any custom
               implementation that unmounts children when collapsed).
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>3.</strong> You have FAQPage JSON-LD
+              <strong style={labelStyle}>3.</strong>{" "}You have FAQPage JSON-LD
               schema on those same pages.
             </p>
             <p style={{ marginBottom: 26 }}>

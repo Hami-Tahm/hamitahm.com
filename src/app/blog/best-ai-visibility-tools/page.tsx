@@ -549,7 +549,7 @@ export default function BestAIVisibilityToolsPost() {
             <p style={{ marginBottom: 26 }}>
               What replaced them is narrower and checkable. For each tool below you
               get two things I can point at a source for: the{" "}
-              <strong style={labelStyle}>engines the vendor documents</strong> and
+              <strong style={labelStyle}>engines the vendor documents</strong>{" "}and
               the <strong style={labelStyle}>entry price the vendor publishes</strong>
               , each linked to the page it came from, all read on{" "}
               {DATE_FACT_CHECKED_HUMAN}. Where a vendor publishes no pricing, this
@@ -793,8 +793,8 @@ export default function BestAIVisibilityToolsPost() {
               against factors it correlates with citation rates.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Clearscope</strong> and{" "}
-              <strong style={labelStyle}>MarketMuse</strong> remain the established
+              <strong style={labelStyle}>Clearscope</strong>{" "}and{" "}
+              <strong style={labelStyle}>MarketMuse</strong>{" "}remain the established
               options for topical depth and coverage gaps. Neither markets itself as
               an AI visibility tool, and neither should be bought as one.
             </p>
@@ -815,8 +815,8 @@ export default function BestAIVisibilityToolsPost() {
               Structured data still earns its place &mdash;{" "}
               <strong style={labelStyle}>Organization</strong>,{" "}
               <strong style={labelStyle}>Article</strong>,{" "}
-              <strong style={labelStyle}>LocalBusiness</strong> and{" "}
-              <strong style={labelStyle}>Product</strong> markup describe entities in
+              <strong style={labelStyle}>LocalBusiness</strong>{" "}and{" "}
+              <strong style={labelStyle}>Product</strong>{" "}markup describe entities in
               a form machines read reliably. But the honest framing is that schema
               helps machines parse a page that was already clear, not that a
               particular schema type buys you a citation. See{" "}
@@ -849,7 +849,7 @@ export default function BestAIVisibilityToolsPost() {
               <strong style={labelStyle}>Generative AI features</strong>, it is in
               Beta, it covers Google&rsquo;s AI surfaces together rather than AI
               Overviews alone, and it reports{" "}
-              <strong style={labelStyle}>total impressions only</strong> &mdash; no
+              <strong style={labelStyle}>total impressions only</strong>{" "}&mdash; no
               clicks, no CTR, no position, and no query-level breakdown. I use it on my
               own properties; that is what is in it.
             </p>
@@ -886,14 +886,14 @@ export default function BestAIVisibilityToolsPost() {
                 five engines from the entry tier.
               </li>
               <li style={{ marginBottom: 11 }}>
-                <strong style={labelStyle}>How often it refreshes.</strong> Daily
+                <strong style={labelStyle}>How often it refreshes.</strong>{" "}Daily
                 (Otterly, Frase, Profound), weekly (Semrush Brand Performance,
                 SE Visible), or monthly for the standing chatbot index (Ahrefs). If
                 you are shipping changes and want to see movement, monthly is too
                 slow.
               </li>
               <li style={{ marginBottom: 11 }}>
-                <strong style={labelStyle}>Whose prompts.</strong> Some tools run the
+                <strong style={labelStyle}>Whose prompts.</strong>{" "}Some tools run the
                 prompts you write; Semrush generates synthetic prompts from your
                 domain and location; Ahrefs queries a standing index built from People
                 Also Ask data. Each answers a slightly different question.
@@ -914,7 +914,7 @@ export default function BestAIVisibilityToolsPost() {
                 is the cheapest way to narrow this before you buy.
               </li>
               <li style={{ marginBottom: 11 }}>
-              <strong style={labelStyle}>Geography and language.</strong> SE Visible
+              <strong style={labelStyle}>Geography and language.</strong>{" "}SE Visible
                 covers 7 countries and 5 languages. Otterly covers 50+ countries. If
                 you sell in more than one language, check this before anything else.
               </li>
@@ -977,7 +977,7 @@ export default function BestAIVisibilityToolsPost() {
               cost is a list, not a plan.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Citations are not customers.</strong> No tool
+              <strong style={labelStyle}>Citations are not customers.</strong>{" "}No tool
               in this list connects citation volume to revenue, because the platforms
               don&rsquo;t expose the data to connect it with. On one of my own sites,
               the single most-cited page earned 6,500 AI citations and 24 Google

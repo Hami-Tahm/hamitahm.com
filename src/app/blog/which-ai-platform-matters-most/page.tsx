@@ -301,13 +301,13 @@ export default function Page() {
                   platform before assuming the global ranking applies to you.
                 </li>
                 <li>
-                  <strong>This is a snapshot, not a law.</strong> The
+                  <strong>This is a snapshot, not a law.</strong>{" "}The
                   ChatGPT-to-Gemini shift happened inside twelve months. A
                   ranking this volatile will likely look different again by
                   next year.
                 </li>
                 <li>
-                  <strong>Geography matters.</strong> The AI Overviews figure
+                  <strong>Geography matters.</strong>{" "}The AI Overviews figure
                   is specifically a US measurement; Canadian and other-market
                   behavior may differ.
                 </li>
