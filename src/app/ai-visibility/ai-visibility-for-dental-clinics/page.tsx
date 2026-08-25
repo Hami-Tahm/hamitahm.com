@@ -170,7 +170,7 @@ const FAQ_ITEMS: {
      * searcher may not have known to ask for is the entire point of this entry.
      */
     q: "Do you do orthodontic SEO?",
-    a: "No — I don't take SEO or execution work of any kind. What I do sits on top of it: measuring how ChatGPT, Google AI Overviews, Gemini, Claude, Copilot and Perplexity actually describe and recommend your practice, then handing your existing marketing team or agency a prioritized list of what to change. If you are searching for orthodontic SEO because new patients aren't finding you, it is worth checking whether ranking is the problem at all. You can sit at #1 on Google for \u201Corthodontist in [city]\u201D and still be absent from the answer an AI gives a parent who never opens Google.",
+    a: "No — I don't take SEO or execution work of any kind. What I do sits on top of it: measuring how ChatGPT, Google AI Overviews, Gemini, Claude, Copilot and Perplexity actually describe and recommend your practice, then handing your existing marketing team or agency a prioritized list of what to change. If you are searching for orthodontic SEO because new patients aren't finding you, it is worth checking whether ranking is the problem at all. You can sit at #1 on Google for “orthodontist in [city]” and still be absent from the answer an AI gives a parent who never opens Google.",
   },
   {
     q: "Do you work with orthodontists, or only general dentists?",
