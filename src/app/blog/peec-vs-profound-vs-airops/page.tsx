@@ -6,12 +6,35 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { buildBlogSchema } from "@/lib/blog-schema";
 
 const SLUG = "peec-vs-profound-vs-airops";
+/*
+ * ── TITLE ORDER IS A SEARCH DECISION, NOT A STYLE ONE — changed 2026-08-24 ──
+ *
+ * This page was called "Peec vs Profound vs AirOps" for two and a half months and
+ * earned, in the last 28 days: 2,832 impressions and ZERO clicks, at positions
+ * between 5.5 and 9.8. Search Console shows what people actually type:
+ *
+ *   profound vs airops                     437 impressions, position 9.8
+ *   airops vs profound which is better     position 5.5
+ *   does airops outperform profound        position 6.3
+ *
+ * Nobody searches "peec vs". The page led with the one brand the query does not
+ * contain, so the title never matched the search and the result was never clicked.
+ * Ranking on page one and taking no clicks is a title problem, not a content one.
+ *
+ * Bing's AI Performance report says the same thing independently: the grounding
+ * queries citing this domain are "Profound vs Share of Model", "Profound vs AirOps",
+ * "AirOps AI visibility products competitors" — Profound leads every one.
+ *
+ * ⚠️ Peec stays IN the title and in the comparison. It is the cheapest published
+ * entry point of the three and dropping it would make the page less useful. It just
+ * does not go first.
+ */
 const ARTICLE_TITLE =
-  "Peec vs Profound vs AirOps (2026): Pricing & Best Fit";
+  "Profound vs AirOps vs Peec (2026): Pricing & Best Fit";
 const ARTICLE_DESCRIPTION =
-  "Peec AI, Profound and AirOps compared on published pricing, AI-engine coverage and what each is actually built to do. Every figure read from the vendor's own page and linked, verified August 11, 2026.";
+  "Profound, AirOps and Peec AI compared on published pricing, AI-engine coverage and what each is actually built to do. Every figure read from the vendor's own page and linked, verified August 11, 2026.";
 const DATE_PUBLISHED = "2026-06-09";
-const DATE_MODIFIED = "2026-08-11";
+const DATE_MODIFIED = "2026-08-24";
 
 /**
  * ── VERIFICATION RULE FOR THIS PAGE ──
@@ -181,7 +204,7 @@ export default function PeecVsProfoundVsAirOpsPost() {
               Blog
             </Link>
             <span>/</span>
-            <span>Peec vs Profound vs AirOps</span>
+            <span>Profound vs AirOps vs Peec</span>
           </nav>
         </RevealSection>
       </div>
@@ -213,9 +236,9 @@ export default function PeecVsProfoundVsAirOpsPost() {
                 letterSpacing: "-.025em",
               }}
             >
-              Peec vs Profound vs AirOps —{" "}
+              Profound vs AirOps —{" "}
               <em style={{ fontStyle: "italic", color: "var(--accent)" }}>
-                an independent comparison.
+                and where Peec fits.
               </em>
             </h1>
           </RevealSection>
@@ -231,8 +254,8 @@ export default function PeecVsProfoundVsAirOpsPost() {
                 lineHeight: 1.5,
               }}
             >
-              Share-of-voice analytics, enterprise monitoring, and content
-              operations — what each tool actually measures and who it fits.
+              The two tools buyers compare most, plus the cheapest published
+              alternative — what each one actually measures, and who it fits.
             </p>
           </RevealSection>
 
@@ -297,13 +320,20 @@ export default function PeecVsProfoundVsAirOpsPost() {
                   margin: 0,
                 }}
               >
-                Peec is share-of-voice and citation tracking at a published
-                self-serve price. Profound adds agents that act on what the
-                tracking finds, plus analytics on AI-referred traffic to your own
-                site. AirOps treats visibility as the front end of a content
-                production line and publishes no plan prices. Engine coverage is
-                tier-gated on all three &mdash; check the tier you would buy, not
-                the logo row.
+                <strong>Profound</strong> if you want monitoring plus agents that
+                act on what the tracking finds, and analytics on AI-referred
+                traffic to your own site. <strong>AirOps</strong> if visibility is
+                the front end of a content production line &mdash; it publishes no
+                plan prices, so budget for a conversation.{" "}
+                <strong>Peec</strong> if you want citation and share-of-voice
+                tracking at the cheapest published self-serve price, and you are
+                content to decide what to do about it yourself.
+                <br />
+                <br />
+                Engine coverage is tier-gated on all three, and the gap between the
+                logo row and the plan you would actually buy is the single most
+                expensive detail on this page &mdash; Profound&rsquo;s entry plan
+                tracks ChatGPT only.
               </p>
             </div>
           </RevealSection>
@@ -383,7 +413,7 @@ export default function PeecVsProfoundVsAirOpsPost() {
           </RevealSection>
 
           <RevealSection>
-            <SectionLabel number="01" text="Quick comparison — Peec vs Profound vs AirOps" />
+            <SectionLabel number="01" text="Quick comparison — Profound vs AirOps vs Peec" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
@@ -628,7 +658,7 @@ export default function PeecVsProfoundVsAirOpsPost() {
           </RevealSection>
 
           <RevealSection delay={0.06}>
-            <h3 style={h3Style}>Peec vs Profound: which is better for tracking?</h3>
+            <h3 style={h3Style}>Profound vs AirOps: which is better?</h3>
             <p style={{ marginBottom: 26 }}>
               For tracking alone, Peec gives you more engines per dollar at the
               bottom of the range: three engines of your choosing from $95/month

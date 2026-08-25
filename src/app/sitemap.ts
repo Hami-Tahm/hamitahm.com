@@ -151,7 +151,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/ai-visibility/ai-visibility-consultant-toronto/": "2026-08-11",
     "/ai-visibility/answer-engine-optimization-consultant-canada/": "2026-08-11",
     "/ai-visibility/generative-engine-optimization-consultant-canada/": "2026-08-11",
-    "/blog/peec-vs-profound-vs-airops/": "2026-08-11",
+    "/blog/peec-vs-profound-vs-airops/": "2026-08-24",
     "/blog/what-is-ai-visibility/": "2026-08-11",
     "/blog/best-ai-visibility-tools/": "2026-08-11",
     "/blog/how-to-check-ai-visibility/": "2026-08-11",

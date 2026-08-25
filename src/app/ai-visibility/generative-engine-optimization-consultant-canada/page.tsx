@@ -246,7 +246,7 @@ const RELATED_LINKS = [
     href: "/blog/aeo-vs-geo-vs-seo/",
   },
   {
-    label: "Peec vs Profound vs AirOps — generative AI visibility software compared",
+    label: "Profound vs AirOps vs Peec — generative AI visibility software compared",
     href: "/blog/peec-vs-profound-vs-airops/",
   },
   {
@@ -1007,7 +1007,7 @@ export default function GEOConsultantCanada() {
                 href="/blog/peec-vs-profound-vs-airops/"
                 style={{ color: "var(--accent)", fontWeight: 500 }}
               >
-                Peec vs Profound vs AirOps &rarr;
+                Profound vs AirOps vs Peec &rarr;
               </Link>
             </p>
           </RevealSection>

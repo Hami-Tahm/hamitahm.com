@@ -1094,7 +1094,7 @@ export default function BestAIVisibilityToolsPost() {
               />
               <KeepReadingLink
                 href="/blog/peec-vs-profound-vs-airops/"
-                title="Peec vs Profound vs AirOps"
+                title="Profound vs AirOps vs Peec"
                 tag="Comparison"
               />
             </div>
