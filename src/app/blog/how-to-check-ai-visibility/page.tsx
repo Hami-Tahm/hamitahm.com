@@ -6,8 +6,24 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { buildBlogSchema } from "@/lib/blog-schema";
 
 const SLUG = "how-to-check-ai-visibility";
+/*
+ * ── TITLE SHORTENED — 2026-08-24 ──
+ *
+ * It was 84 characters, and the root layout appends " | Hami Tahm" on top of that.
+ * Google truncates around 60 rendered characters, so "— Plus One That Doesn't Work"
+ * — the only interesting part — was never visible to anyone. A hook nobody reads is
+ * not a hook. It has moved into the description, which has room for it.
+ *
+ * This page sits at position 22.5 on 7,706 impressions with 3 clicks. At that
+ * position the title is doing almost all of the work, and a truncated one does none.
+ *
+ * ⚠️ This page owns the "how to check" phrasing ONLY. Singular checker intent
+ * belongs to /ai-visibility/ai-visibility-checker/ (position 19.9, and it captures
+ * the lead); "best tools / software" belongs to /blog/best-ai-visibility-tools/.
+ * See the note at the top of that file for the three-way split and why it exists.
+ */
 const ARTICLE_TITLE =
-  "How to Check AI Visibility: 7 Free and Freemium Methods — Plus One That Doesn't Work";
+  "How to Check AI Visibility: 7 Free Methods";
 const ARTICLE_DESCRIPTION =
   "Seven free and freemium ways to check whether AI engines mention your brand — what each one actually measures, where each falls short, and one widely confused analytics tool that does not do this job at all.";
 const DATE_PUBLISHED = "2026-06-09";
@@ -15,7 +31,7 @@ const DATE_PUBLISHED = "2026-06-09";
 // This is the date every product description below was last checked against the
 // vendor's own documentation. Bump it whenever you re-verify, not when you edit prose.
 const DATE_FACT_CHECKED = "2026-08-11";
-const DATE_MODIFIED = "2026-08-11";
+const DATE_MODIFIED = "2026-08-24";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const HUB_URL = "/ai-visibility/";
 const DEFINITION_URL = "/blog/what-is-ai-visibility/";

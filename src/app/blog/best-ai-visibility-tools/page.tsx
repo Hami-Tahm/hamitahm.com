@@ -5,11 +5,40 @@ import { AuthorByline } from "@/components/AuthorByline";
 import { buildBlogSchema } from "@/lib/blog-schema";
 
 const SLUG = "best-ai-visibility-tools";
-const ARTICLE_TITLE = "Best AI Visibility Tools & Checkers (2026)";
+/*
+ * ── "CHECKERS" REMOVED FROM THE TITLE — 2026-08-24 ──
+ *
+ * Three pages on this site were competing for "checker" queries, and this one was
+ * the worst placed of the three. Search Console, trailing 3 months:
+ *
+ *   /blog/best-ai-visibility-tools/          15,391 impressions   position 70.4
+ *   /blog/how-to-check-ai-visibility/         7,706 impressions   position 22.5
+ *   /ai-visibility/ai-visibility-checker/         —               position 19.9
+ *
+ * This page has by far the most impressions on the site and by far the worst
+ * position. It is being shown on page seven for a very large number of queries it
+ * cannot win, which produces impressions and nothing else - one click in 15,391.
+ *
+ * The word "Checkers" is what pulled it into that fight. The free checker TOOL is
+ * the page that should own singular checker intent (it captures the lead, and it is
+ * already the best-placed of the three), and /blog/how-to-check-ai-visibility/ owns
+ * the "how to" phrasing.
+ *
+ * So this page is being pointed at the cluster it has a real claim to and currently
+ * has no title match for - "best ai visibility analysis tools" (380 impressions,
+ * position 81.0), "best ai visibility analysis software" (347, 86.6), "most accurate
+ * ai visibility metrics software" (346, 91.3), "best ai visibility analysis tool"
+ * (300, 85.9). Roughly 1,400 impressions where the page ranks in the eighties
+ * precisely because nothing in its title says "software".
+ *
+ * ⚠️ Do not put "checker" back in this title without moving the tool page off it
+ * first. Two pages on one intent is how this started.
+ */
+const ARTICLE_TITLE = "Best AI Visibility Tools & Software (2026)";
 const ARTICLE_DESCRIPTION =
-  "AI visibility tools and checkers in 2026 — engine coverage and entry pricing taken from each vendor's own documentation, with the source linked for every claim. By an independent consultant with no affiliate relationships.";
+  "AI visibility tools and software in 2026 — engine coverage and entry pricing taken from each vendor's own documentation, with the source linked for every claim. By an independent consultant with no affiliate relationships.";
 const DATE_PUBLISHED = "2026-06-09";
-const DATE_MODIFIED = "2026-08-11";
+const DATE_MODIFIED = "2026-08-24";
 
 /**
  * ── WHY THIS FILE LOOKS LIKE THIS ──
