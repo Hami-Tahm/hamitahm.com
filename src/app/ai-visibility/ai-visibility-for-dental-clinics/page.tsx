@@ -9,10 +9,30 @@ const WALKTHROUGH_MINUTES = 60;
 const TURNAROUND = "7 business days";
 const PRICE_DISPLAY = "$1,500 CAD";
 
+/*
+ * ── ORTHODONTICS FOLDED IN HERE, NOT GIVEN ITS OWN PAGE — 2026-08-24 ──
+ *
+ * Search Console shows a small but genuinely commercial cluster over three
+ * months: "orthodontic seo", "orthodontic seo expert", "orthodontic seo company",
+ * "seo for orthodontists" — 334 impressions between them. Small, but the person
+ * typing it owns a practice and has a budget, which is more than can be said for
+ * the 15,000 impressions sitting on "best ai visibility software".
+ *
+ * ⚠️ A dedicated "Orthodontic SEO Services" page was considered and rejected.
+ * This practice does not sell SEO or any execution work, and /seo-expert-toronto/
+ * was rewritten on 2026-08-16 specifically to stop implying otherwise. Building a
+ * page that sells the thing we just stopped selling, for 334 impressions, would
+ * trade a positioning we defended for traffic we cannot serve.
+ *
+ * So the queries are captured here instead, on a page that already covers dental
+ * specialties, and the FAQ answers the SEO question honestly rather than posing as
+ * the service the searcher had in mind. Redirecting the intent is the correct move;
+ * matching it would be a lie.
+ */
 export const metadata: Metadata = {
-  title: "AI Visibility for Dental Clinics",
+  title: "AI Visibility for Dental & Orthodontic Clinics",
   description:
-    "Ensure your dental clinic appears when patients ask Google AI Overviews, ChatGPT, Gemini, or Claude. Audit by Hami Tahm — $1,500 CAD flat.",
+    "Ensure your dental or orthodontic practice appears when patients ask Google AI Overviews, ChatGPT, Gemini, or Claude. Audit by Hami Tahm — $1,500 CAD flat.",
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/ai-visibility-for-dental-clinics/",
   },
@@ -20,7 +40,7 @@ export const metadata: Metadata = {
 
 const DENTAL_CHECKS = [
   "Whether your clinic is mentioned when patients ask for dentists in your city",
-  "Which procedures AI engines associate with your practice — implants, Invisalign, pediatric, cosmetic, emergency, sedation",
+  "Which procedures AI engines associate with your practice — implants, Invisalign, braces and clear aligners, pediatric, cosmetic, emergency, sedation",
   "Accuracy of your address, hours, phone number, and accepted insurance in AI-generated answers",
   "How patient reviews are summarized and represented across platforms",
   "Whether competitors are being recommended in queries your clinic should own",
@@ -143,6 +163,20 @@ const FAQ_ITEMS: {
     a: `A written report covering each AI platform, a prioritized action plan, a ${WALKTHROUGH_MINUTES}-minute walkthrough call, and 14 days of follow-up questions.`,
   },
   {
+    /*
+     * Answers the "orthodontic seo" cluster head-on, and has to say NO first —
+     * because the honest answer is no, and because implying otherwise would undo
+     * the /seo-expert-toronto/ rewrite. Saying no and then naming the thing the
+     * searcher may not have known to ask for is the entire point of this entry.
+     */
+    q: "Do you do orthodontic SEO?",
+    a: "No — I don't take SEO or execution work of any kind. What I do sits on top of it: measuring how ChatGPT, Google AI Overviews, Gemini, Claude, Copilot and Perplexity actually describe and recommend your practice, then handing your existing marketing team or agency a prioritized list of what to change. If you are searching for orthodontic SEO because new patients aren't finding you, it is worth checking whether ranking is the problem at all. You can sit at #1 on Google for \u201Corthodontist in [city]\u201D and still be absent from the answer an AI gives a parent who never opens Google.",
+  },
+  {
+    q: "Do you work with orthodontists, or only general dentists?",
+    a: "Both, and the audit is the same. Orthodontic queries tend to be more specific than general dental ones — patients compare clear aligners against braces, and ask about treatment length and cost, before they ask for a practice by name — so the prompts differ. What gets measured, and what you receive, does not.",
+  },
+  {
     q: "Do you work with clinics outside major cities?",
     a: "Yes. Clinics in smaller markets often see the largest AI visibility wins, because AI engines tend to default to clinics in nearby larger cities — leaving local practices missing from answers their own patients are asking.",
   },
@@ -158,6 +192,10 @@ const RELATED_LINKS = [
   {
     label: "AI visibility for mortgage brokers",
     href: "/ai-visibility/ai-visibility-for-mortgage-brokers/",
+  },
+  {
+    label: "Top 10 to #1 — a 7-year dental SEO case study",
+    href: "/orthodontic-seo-marketing-case-study/",
   },
 ] as const;
 
