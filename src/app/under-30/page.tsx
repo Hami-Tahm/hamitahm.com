@@ -87,17 +87,6 @@ Three sessions per week is enough to maintain and even build strength if intensi
 Or any non-consecutive days.</p><p>Consistency beats complexity.</p><p> ` } }
         />
 
-        {/* Related reading */}
-        <div style={ { marginTop: 48, paddingTop: 32, borderTop: "1px solid var(--line)" } }>
-          <div style={ { fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--faint)", marginBottom: 16 } }>
-            Related reading
-          </div>
-          <div style={ { display: "flex", flexDirection: "column", gap: 8 } }>
-            <Link href="/fitness-pyramid/" style={ { color: "var(--accent)" } }>Fitness Pyramid (Beginner → Advanced) →</Link>
-            <Link href="/optimal-shower-hair-routine/" style={ { color: "var(--accent)" } }>The Optimal Shower & Hair Routine for Busy Founders →</Link>
-          </div>
-        </div>
-
         {/* Author box */}
         <div style={ { marginTop: 60, padding: "24px 0", borderTop: "1px solid var(--line)", display: "flex", gap: 16, alignItems: "center" } }>
           <div>

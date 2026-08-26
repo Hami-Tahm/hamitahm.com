@@ -38,17 +38,6 @@ export default function Post() {
           dangerouslySetInnerHTML={ { __html: `<p>These days I feel like I’m living in two timelines. Part of me is still that 27-year-old in Iran, and yet today I’m 36. I’ve always believed that under 30 is the time to build, and after 30 is the time to manage. I’m still not sure what the focus should be after 40.</p><p>Right now, everything feels tough. Competing in North America means going up against the whole world—it's exciting, but it’s also hard. I’m just trying to stay in the game and keep moving forward. That’s what matters.</p><p>I’m pushing on sales, growing my network, and at the same time managing two businesses in Iran across a completely different time zone.</p><p>No pain, no gain.</p>` } }
         />
 
-        {/* Related reading */}
-        <div style={ { marginTop: 48, paddingTop: 32, borderTop: "1px solid var(--line)" } }>
-          <div style={ { fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--faint)", marginBottom: 16 } }>
-            Related reading
-          </div>
-          <div style={ { display: "flex", flexDirection: "column", gap: 8 } }>
-            <Link href="/thriving/" style={ { color: "var(--accent)" } }>Adapting and thriving in a new country →</Link>
-            <Link href="/the-real-founder-dilemma/" style={ { color: "var(--accent)" } }>The Real Founder Dilemma (Not About Shares) →</Link>
-          </div>
-        </div>
-
         {/* Author box */}
         <div style={ { marginTop: 60, padding: "24px 0", borderTop: "1px solid var(--line)", display: "flex", gap: 16, alignItems: "center" } }>
           <div>

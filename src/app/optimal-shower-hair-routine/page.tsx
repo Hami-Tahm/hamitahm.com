@@ -236,17 +236,6 @@ Every 20 minutes → look 20 feet away → for 20 seconds.</p>
 <p data-start="4521" data-end="4648">If you maintain this routine, you’ll look fresh, professional, and put-together — without spending extra time or mental energy.</p>` } }
         />
 
-        {/* Related reading */}
-        <div style={ { marginTop: 48, paddingTop: 32, borderTop: "1px solid var(--line)" } }>
-          <div style={ { fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--faint)", marginBottom: 16 } }>
-            Related reading
-          </div>
-          <div style={ { display: "flex", flexDirection: "column", gap: 8 } }>
-            <Link href="/under-30/" style={ { color: "var(--accent)" } }>How to be under 30 (Bioage) →</Link>
-            <Link href="/hydration/" style={ { color: "var(--accent)" } }>Hydration for High Performers →</Link>
-          </div>
-        </div>
-
         {/* Author box */}
         <div style={ { marginTop: 60, padding: "24px 0", borderTop: "1px solid var(--line)", display: "flex", gap: 16, alignItems: "center" } }>
           <div>

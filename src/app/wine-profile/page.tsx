@@ -165,17 +165,6 @@ If we simplify everything:</p><p>The wines that best match my taste profile are 
 • <strong>Brunello</strong></p><p>These wines share the same characteristics:</p><p>bold structure, deep flavors, high complexity, and long finishes.</p><p>They sit on the <strong>powerful end of the wine spectrum</strong> — exactly where my preferences lie. 🍷</p>` } }
         />
 
-        {/* Related reading */}
-        <div style={ { marginTop: 48, paddingTop: 32, borderTop: "1px solid var(--line)" } }>
-          <div style={ { fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--faint)", marginBottom: 16 } }>
-            Related reading
-          </div>
-          <div style={ { display: "flex", flexDirection: "column", gap: 8 } }>
-            <Link href="/these-days/" style={ { color: "var(--accent)" } }>These days ... →</Link>
-            <Link href="/thriving/" style={ { color: "var(--accent)" } }>Adapting and thriving in a new country →</Link>
-          </div>
-        </div>
-
         {/* Author box */}
         <div style={ { marginTop: 60, padding: "24px 0", borderTop: "1px solid var(--line)", display: "flex", gap: 16, alignItems: "center" } }>
           <div>

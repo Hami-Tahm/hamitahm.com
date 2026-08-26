@@ -121,17 +121,6 @@ export default function Post() {
 ✅ Personalized Approach:<span style="font-weight: 400;"> Adjust water intake based on weight, activity level, and climate.</span></p><p><b>Ultimate Rule:</b><span style="font-weight: 400;"> If you feel </span><b>tired, hungry, or sluggish</b><span style="font-weight: 400;">, drink water first—it might fix the problem!</span></p><p><strong>P.S: Stop drinking water two hours before sleep to avoid waking up to urinate.</strong>` } }
         />
 
-        {/* Related reading */}
-        <div style={ { marginTop: 48, paddingTop: 32, borderTop: "1px solid var(--line)" } }>
-          <div style={ { fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--faint)", marginBottom: 16 } }>
-            Related reading
-          </div>
-          <div style={ { display: "flex", flexDirection: "column", gap: 8 } }>
-            <Link href="/sleep-quality-101/" style={ { color: "var(--accent)" } }>Sleep Quality 101: Unlock the Secrets to Better Rest →</Link>
-            <Link href="/exercise/" style={ { color: "var(--accent)" } }>Exercise & Physical Activity: Your Guide to Smarter Workouts →</Link>
-          </div>
-        </div>
-
         {/* Author box */}
         <div style={ { marginTop: 60, padding: "24px 0", borderTop: "1px solid var(--line)", display: "flex", gap: 16, alignItems: "center" } }>
           <div>

@@ -239,16 +239,6 @@ Choosing the right investment depends on your financial goals, risk tolerance, a
 By analyzing this table, you can make more informed decisions and design a strategy tailored to your unique financial needs. Let me know if you need further guidance in choosing the right investments!</p><p><strong>P.S.:</strong> If you're in a higher tax bracket, investing in REITs might not be the most tax-efficient choice due to the higher taxes on dividends than capital gains. Instead, consider direct real estate ownership, which can offer significant tax advantages if managed properly.</p><p><strong>This is not financial advice.</strong>` } }
         />
 
-        {/* Related reading */}
-        <div style={ { marginTop: 48, paddingTop: 32, borderTop: "1px solid var(--line)" } }>
-          <div style={ { fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--faint)", marginBottom: 16 } }>
-            Related reading
-          </div>
-          <div style={ { display: "flex", flexDirection: "column", gap: 8 } }>
-            <Link href="/how-much-wealth-should-you-aim-for/" style={ { color: "var(--accent)" } }>How Much Wealth Should You Aim For? →</Link>
-          </div>
-        </div>
-
         {/* Author box */}
         <div style={ { marginTop: 60, padding: "24px 0", borderTop: "1px solid var(--line)", display: "flex", gap: 16, alignItems: "center" } }>
           <div>

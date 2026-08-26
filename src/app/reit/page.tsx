@@ -143,17 +143,6 @@ Allocate investments based on risk tolerance. For example:
 REITs are a powerful tool for investors looking to diversify their portfolios, generate passive income, and gain exposure to the real estate market without direct property ownership. By understanding the pros and cons and building a well-diversified portfolio across Canadian and U.S. markets, you can harness the potential of REITs while managing risks effectively.</p><p>Whether you’re a seasoned investor or just starting, REITs offer a blend of stability and growth potential that can fit well into any investment strategy.</p><p><strong>This is not financial advice.</strong>` } }
         />
 
-        {/* Related reading */}
-        <div style={ { marginTop: 48, paddingTop: 32, borderTop: "1px solid var(--line)" } }>
-          <div style={ { fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--faint)", marginBottom: 16 } }>
-            Related reading
-          </div>
-          <div style={ { display: "flex", flexDirection: "column", gap: 8 } }>
-            <Link href="/investment-types/" style={ { color: "var(--accent)" } }>A Comprehensive Guide to Investment Types →</Link>
-            <Link href="/etf-stock-mutualfund/" style={ { color: "var(--accent)" } }>Understanding the Difference Between Stocks, ETFs, and Mutual Funds →</Link>
-          </div>
-        </div>
-
         {/* Author box */}
         <div style={ { marginTop: 60, padding: "24px 0", borderTop: "1px solid var(--line)", display: "flex", gap: 16, alignItems: "center" } }>
           <div>

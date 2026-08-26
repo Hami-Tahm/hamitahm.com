@@ -45,17 +45,6 @@ Our solution helps them keep their customers more active and loyal.</p><p>I also
 They can recommend our service to their clients, and we share the earnings. Later, I plan to build a <strong>marketplace</strong> where nutritionists and biohackers in the longevity space can connect with users.</p><p>Right now, I am <strong>team building in marketing</strong>. I never give up, but I stay flexible with pivots when needed. I set a sales target for myself last Monday that will last for two weeks. Now it’s Tuesday, and I still don’t have any sales. That’s a bummer—but I will keep working on it.</p><p>For me, <strong>entrepreneurship is not just work; it’s a lifestyle.</strong> And this lifestyle fits me well.</p><p>Recently, I applied to two incubators: <strong>Johnson & Johnson</strong> and <strong>MaRS</strong>. Both rejected me. Johnson & Johnson said my product was not in their path, and MaRS said I didn’t have enough traction. Still, I’m happy because three other companies replied to me, and two of them want to set up meetings now.</p><p>This is only the beginning.</p><p>P.S.: I want to reach <strong>10,000 US dollars</strong>. This is my first goal for this year.</p>` } }
         />
 
-        {/* Related reading */}
-        <div style={ { marginTop: 48, paddingTop: 32, borderTop: "1px solid var(--line)" } }>
-          <div style={ { fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--faint)", marginBottom: 16 } }>
-            Related reading
-          </div>
-          <div style={ { display: "flex", flexDirection: "column", gap: 8 } }>
-            <Link href="/1-out-of-20/" style={ { color: "var(--accent)" } }>From Zero to Unicorn: Can an Ordinary Founder Make It? →</Link>
-            <Link href="/service-business-growth/" style={ { color: "var(--accent)" } }>What I'm Actually Good At →</Link>
-          </div>
-        </div>
-
         {/* Author box */}
         <div style={ { marginTop: 60, padding: "24px 0", borderTop: "1px solid var(--line)", display: "flex", gap: 16, alignItems: "center" } }>
           <div>

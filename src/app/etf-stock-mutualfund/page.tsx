@@ -112,17 +112,6 @@ export default function Post() {
 Understanding these differences can help you align your investment strategy with your financial goals. Whether you're a risk-taker or prefer a more balanced approach, there's a product out there to suit your needs!</p>` } }
         />
 
-        {/* Related reading */}
-        <div style={ { marginTop: 48, paddingTop: 32, borderTop: "1px solid var(--line)" } }>
-          <div style={ { fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--faint)", marginBottom: 16 } }>
-            Related reading
-          </div>
-          <div style={ { display: "flex", flexDirection: "column", gap: 8 } }>
-            <Link href="/reit/" style={ { color: "var(--accent)" } }>Understanding REITs: Pros, Cons, and Building a Balanced Portfolio →</Link>
-            <Link href="/investment-types/" style={ { color: "var(--accent)" } }>A Comprehensive Guide to Investment Types →</Link>
-          </div>
-        </div>
-
         {/* Author box */}
         <div style={ { marginTop: 60, padding: "24px 0", borderTop: "1px solid var(--line)", display: "flex", gap: 16, alignItems: "center" } }>
           <div>

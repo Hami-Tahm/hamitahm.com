@@ -38,17 +38,6 @@ export default function Post() {
           dangerouslySetInnerHTML={ { __html: `<p>Improve your English skills.</p><p>Learn more about the culture.</p><p>Meet new people and build meaningful connections.</p><p>Create memories that make Toronto feel like home.</p><p>Expand your network.</p><p>Foster relationships to integrate into the new country.</p><p>Establish and grow a business.</p><p>Assemble a robust and motivated team.</p><p>Work towards financial success.</p><p> </p>` } }
         />
 
-        {/* Related reading */}
-        <div style={ { marginTop: 48, paddingTop: 32, borderTop: "1px solid var(--line)" } }>
-          <div style={ { fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--faint)", marginBottom: 16 } }>
-            Related reading
-          </div>
-          <div style={ { display: "flex", flexDirection: "column", gap: 8 } }>
-            <Link href="/these-days/" style={ { color: "var(--accent)" } }>These days ... →</Link>
-            <Link href="/pov/" style={ { color: "var(--accent)" } }>point of view →</Link>
-          </div>
-        </div>
-
         {/* Author box */}
         <div style={ { marginTop: 60, padding: "24px 0", borderTop: "1px solid var(--line)", display: "flex", gap: 16, alignItems: "center" } }>
           <div>
