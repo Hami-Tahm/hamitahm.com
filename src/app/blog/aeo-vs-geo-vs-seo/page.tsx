@@ -11,6 +11,12 @@ const ARTICLE_TITLE =
 const ARTICLE_DESCRIPTION =
   "SEO optimizes for search rankings. AEO targets AI-generated answers. GEO optimizes for AI-generated content. Here's how they differ — and which one applies to your business.";
 const DATE_PUBLISHED = "2026-06-08";
+// Added a worked "concrete example" section (dentist/SEO-AEO-GEO scenario) —
+// the one piece the prior version lacked (comparison table and the direct
+// "is AEO the same as GEO" FAQ answer already existed). Title/H1 left as-is:
+// no prior dated Search Console decision exists for this page either way, and
+// "AEO vs GEO vs SEO: What's the Difference?" already matches query intent.
+const DATE_MODIFIED = "2026-08-26";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const HUB_URL = "/ai-visibility/";
 const AEO_URL = "/ai-visibility/answer-engine-optimization-consultant-canada/";
@@ -50,6 +56,7 @@ const blogGraph = buildBlogSchema({
   title: ARTICLE_TITLE,
   description: ARTICLE_DESCRIPTION,
   datePublished: DATE_PUBLISHED,
+  dateModified: DATE_MODIFIED,
 })["@graph"];
 
 const structuredData = {
@@ -332,6 +339,31 @@ export default function AEOvsGEOvsSEOPost() {
               AEO targets AI-generated direct answers. GEO targets how AI
               systems generate content about your brand. SEO targets traditional
               search rankings. All three work best together.
+            </p>
+            <h3 style={h3Style}>A concrete example</h3>
+            <p style={{ marginBottom: 26 }}>
+              Take a Toronto dental clinic that offers implants. Three buyers,
+              three surfaces, three different jobs:
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              <strong>SEO:</strong>{" "}A patient Googles
+              &ldquo;dentist near me&rdquo; and clicks a ranked listing — this is
+              won with backlinks, on-page relevance and technical health.{" "}
+              <strong>AEO:</strong>{" "}A patient asks Perplexity
+              &ldquo;best dentist in Toronto for implants&rdquo; and gets a
+              synthesized answer citing two or three named clinics — this is won
+              with structured, directly-answerable content and citation-worthy
+              pages, not rankings. <strong>GEO:</strong>{" "}A
+              patient asks ChatGPT &ldquo;what should I know before choosing a
+              dentist for implants,&rdquo; a broader prompt that never names a
+              city or a clinic — whether the clinic gets mentioned here depends
+              on entity consistency across reviews, directories and third-party
+              sources, not on anything the clinic&rsquo;s own site says.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              Same clinic, same service, three separate battles — which is why
+              a page that ranks well on Google can still be invisible in the
+              second and third conversations.
             </p>
           </RevealSection>
 
