@@ -93,6 +93,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/blog/which-ai-platform-matters-most/", priority: 0.8, changeFrequency: "monthly" },
     { path: "/blog/ai-visibility-audit-checklist/", priority: 0.75, changeFrequency: "monthly" },
     { path: "/blog/ai-visibility-tool-accuracy/", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/blog/ai-visibility-consultant-vs-agency-vs-tool/", priority: 0.75, changeFrequency: "monthly" },
 
     // ── Writing index — REMOVED 2026-07-14 ───────────────────────────────
     // Noindexed (see the page). It indexes the off-topic personal cluster, so it is
@@ -160,6 +161,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog/aeo-vs-geo-vs-seo/": "2026-08-26",
     "/blog/ai-visibility-audit-checklist/": "2026-08-26",
     "/blog/ai-visibility-tool-accuracy/": "2026-08-26",
+    "/blog/ai-visibility-consultant-vs-agency-vs-tool/": "2026-08-26",
     "/blog/what-is-answer-engine-optimization/": "2026-08-16",
     "/blog/which-ai-platform-matters-most/": "2026-08-10",
     "/case-studies/homecalc-ai-visibility/": "2026-08-10",

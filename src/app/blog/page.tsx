@@ -123,6 +123,13 @@ const posts = [
     excerpt:
       "Profound, AirOps, Peec, and Share-of-Model trackers all report a number — they don't all measure it the same way. A self-test protocol for checking any tool before you buy it.",
   },
+  {
+    href: "/blog/ai-visibility-consultant-vs-agency-vs-tool/",
+    cat: "Strategy",
+    title: "AI Visibility Consultant vs Agency vs Tool",
+    excerpt:
+      "Software you run yourself, a team on retainer, or one person hired for a specific diagnosis — what each is built for, what each costs, and which one fits your situation.",
+  },
 ];
 
 const structuredData = {
