@@ -97,6 +97,17 @@ export default function Post() {
 <p data-start="2945" data-end="2990" data-is-last-node="" data-is-only-node="">That combination is where my edge comes from.</p>` } }
         />
 
+        {/* Related reading */}
+        <div style={ { marginTop: 48, paddingTop: 32, borderTop: "1px solid var(--line)" } }>
+          <div style={ { fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--faint)", marginBottom: 16 } }>
+            Related reading
+          </div>
+          <div style={ { display: "flex", flexDirection: "column", gap: 8 } }>
+            <Link href="/after-product-launch/" style={ { color: "var(--accent)" } }>My Entrepreneurial Journey with Up-Diet.com →</Link>
+            <Link href="/the-real-founder-dilemma/" style={ { color: "var(--accent)" } }>The Real Founder Dilemma (Not About Shares) →</Link>
+          </div>
+        </div>
+
         {/* Author box */}
         <div style={ { marginTop: 60, padding: "24px 0", borderTop: "1px solid var(--line)", display: "flex", gap: 16, alignItems: "center" } }>
           <div>

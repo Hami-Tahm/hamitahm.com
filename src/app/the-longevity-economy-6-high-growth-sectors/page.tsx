@@ -239,6 +239,16 @@ export default function Post() {
 From trillion-dollar lifestyle sectors to billion-dollar biotech moonshots, the longevity industry is among the most exciting frontiers for entrepreneurs, researchers, and investors. As aging transforms into a <strong>solvable problem</strong>, now is the time to build for the 100-year life.</p><p> </p><p><strong data-start="109" data-end="285">UpDiet is building the bridge between lifestyle optimization and precision medicine — a platform at the intersection of personalized nutrition, AI, and preventative health.</strong> While most wellness apps stop at generic advice, UpDiet integrates biological signals (like blood tests, DNA, and microbiome data) with real-time lifestyle inputs to deliver ultra-personalized meal plans and longevity coaching. Positioned across the fastest-growing sectors of the longevity economy — Lifestyle & Nutrition, Digital Health, and Precision Medicine — UpDiet is more than a diet app. It’s a <strong data-start="690" data-end="706">Longevity OS</strong> for the 100-year life.</p><p> </p>` } }
         />
 
+        {/* Related reading */}
+        <div style={ { marginTop: 48, paddingTop: 32, borderTop: "1px solid var(--line)" } }>
+          <div style={ { fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--faint)", marginBottom: 16 } }>
+            Related reading
+          </div>
+          <div style={ { display: "flex", flexDirection: "column", gap: 8 } }>
+            <Link href="/how-many-diets-exist-in-the-world/" style={ { color: "var(--accent)" } }>How Many Diets Exist in the World? →</Link>
+          </div>
+        </div>
+
         {/* Author box */}
         <div style={ { marginTop: 60, padding: "24px 0", borderTop: "1px solid var(--line)", display: "flex", gap: 16, alignItems: "center" } }>
           <div>

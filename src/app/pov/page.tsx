@@ -40,6 +40,16 @@ people want to have a good lifestyle and life, but they don't try different ways
 We should distinguish which knowledge is useful and which ones are useless.</p><p>People need to guide them, <a href="https://hamitahm.com/the-first-one/">motivate them</a>, push them, and maybe one thing is the honest answer: force them.</p><p>In my experience, IQ is an essential indicator of success. The person who can motivate themselves can reach their target.</p><p>Last but not least, quantity is important. How much we dedicate to that task/job is critical.</p>` } }
         />
 
+        {/* Related reading */}
+        <div style={ { marginTop: 48, paddingTop: 32, borderTop: "1px solid var(--line)" } }>
+          <div style={ { fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--faint)", marginBottom: 16 } }>
+            Related reading
+          </div>
+          <div style={ { display: "flex", flexDirection: "column", gap: 8 } }>
+            <Link href="/thriving/" style={ { color: "var(--accent)" } }>Adapting and thriving in a new country →</Link>
+          </div>
+        </div>
+
         {/* Author box */}
         <div style={ { marginTop: 60, padding: "24px 0", borderTop: "1px solid var(--line)", display: "flex", gap: 16, alignItems: "center" } }>
           <div>

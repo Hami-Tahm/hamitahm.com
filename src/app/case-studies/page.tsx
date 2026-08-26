@@ -330,6 +330,13 @@ export default function CaseStudiesIndexPage() {
                 Book a $1,500 AI Visibility Audit &mdash; full diagnosis of where
                 AI engines mention you, delivered in 7&nbsp;days.
               </p>
+              <p style={{ color: "var(--muted)", fontSize: "14.5px", marginTop: 5 }}>
+                Prefer to see the deliverable first?{" "}
+                <Link href="/ai-visibility/sample-report/" style={{ color: "var(--accent)" }}>
+                  Read a full sample report
+                </Link>
+                .
+              </p>
             </div>
             <Link href={AUDIT_URL} className="btn btn-primary">
               Book Your AI Visibility Audit <span className="arr">&rarr;</span>

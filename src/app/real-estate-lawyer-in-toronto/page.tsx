@@ -71,6 +71,17 @@ Toronto’s real estate market is unique, with rapid changes in property values,
 In Toronto, where real estate investments are significant and the market is ever-evolving, a real estate lawyer is not just an option but a necessity. They provide peace of mind, mitigate risks, and ensure that the transaction process is legally sound and efficient. Whether you’re a first-time homebuyer or an experienced investor, partnering with a skilled real estate lawyer can make all the difference in securing a successful real estate transaction.</p>` } }
         />
 
+        {/* Related reading */}
+        <div style={ { marginTop: 48, paddingTop: 32, borderTop: "1px solid var(--line)" } }>
+          <div style={ { fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--faint)", marginBottom: 16 } }>
+            Related reading
+          </div>
+          <div style={ { display: "flex", flexDirection: "column", gap: 8 } }>
+            <Link href="/pushing-boundaries/" style={ { color: "var(--accent)" } }>Pushing Boundaries →</Link>
+            <Link href="/reit/" style={ { color: "var(--accent)" } }>Understanding REITs: Pros, Cons, and Building a Balanced Portfolio →</Link>
+          </div>
+        </div>
+
         {/* Author box */}
         <div style={ { marginTop: 60, padding: "24px 0", borderTop: "1px solid var(--line)", display: "flex", gap: 16, alignItems: "center" } }>
           <div>

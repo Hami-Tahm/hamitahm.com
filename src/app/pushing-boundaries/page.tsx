@@ -45,6 +45,16 @@ export default function Post() {
 </div></p>` } }
         />
 
+        {/* Related reading */}
+        <div style={ { marginTop: 48, paddingTop: 32, borderTop: "1px solid var(--line)" } }>
+          <div style={ { fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".1em", textTransform: "uppercase", color: "var(--faint)", marginBottom: 16 } }>
+            Related reading
+          </div>
+          <div style={ { display: "flex", flexDirection: "column", gap: 8 } }>
+            <Link href="/the-first-one/" style={ { color: "var(--accent)" } }>The Courage to Start →</Link>
+          </div>
+        </div>
+
         {/* Author box */}
         <div style={ { marginTop: 60, padding: "24px 0", borderTop: "1px solid var(--line)", display: "flex", gap: 16, alignItems: "center" } }>
           <div>
