@@ -116,6 +116,13 @@ const posts = [
     excerpt:
       "Crawlability, entity and schema, content answerability, citation tracking, and competitor benchmarking — everything a professional audit checks, laid out so you can run it yourself first.",
   },
+  {
+    href: "/blog/ai-visibility-tool-accuracy/",
+    cat: "Tools & Comparisons",
+    title: "How to Evaluate AI Visibility Tool Accuracy",
+    excerpt:
+      "Profound, AirOps, Peec, and Share-of-Model trackers all report a number — they don't all measure it the same way. A self-test protocol for checking any tool before you buy it.",
+  },
 ];
 
 const structuredData = {
