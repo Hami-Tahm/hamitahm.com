@@ -109,6 +109,13 @@ const posts = [
     excerpt:
       "Single Page Apps serve an empty div to AI crawlers. We migrated HomeCalc.ca from SPA to SSG and watched citations jump 10× in two days.",
   },
+  {
+    href: "/blog/ai-visibility-audit-checklist/",
+    cat: "Strategy",
+    title: "The AI Visibility Audit Checklist: 23 Things to Check",
+    excerpt:
+      "Crawlability, entity and schema, content answerability, citation tracking, and competitor benchmarking — everything a professional audit checks, laid out so you can run it yourself first.",
+  },
 ];
 
 const structuredData = {

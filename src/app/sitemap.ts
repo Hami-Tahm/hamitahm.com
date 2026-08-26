@@ -91,6 +91,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Original cross-platform comparison (Copilot vs Google generative AI) — the
     // only place on the site that documents the two engines rewarding different pages.
     { path: "/blog/which-ai-platform-matters-most/", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/blog/ai-visibility-audit-checklist/", priority: 0.75, changeFrequency: "monthly" },
 
     // ── Writing index — REMOVED 2026-07-14 ───────────────────────────────
     // Noindexed (see the page). It indexes the off-topic personal cluster, so it is
@@ -154,7 +155,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog/peec-vs-profound-vs-airops/": "2026-08-24",
     "/blog/what-is-ai-visibility/": "2026-08-11",
     "/blog/best-ai-visibility-tools/": "2026-08-24",
-    "/blog/how-to-check-ai-visibility/": "2026-08-24",
+    "/blog/how-to-check-ai-visibility/": "2026-08-26",
+    "/blog/aeo-vs-geo-vs-seo/": "2026-08-26",
+    "/blog/ai-visibility-audit-checklist/": "2026-08-26",
     "/blog/what-is-answer-engine-optimization/": "2026-08-16",
     "/blog/which-ai-platform-matters-most/": "2026-08-10",
     "/case-studies/homecalc-ai-visibility/": "2026-08-10",
