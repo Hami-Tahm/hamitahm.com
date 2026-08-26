@@ -34,7 +34,12 @@ const ARTICLE_TITLE =
 const ARTICLE_DESCRIPTION =
   "Profound, AirOps and Peec AI compared on published pricing, AI-engine coverage and what each is actually built to do. Every figure read from the vendor's own page and linked, verified August 11, 2026.";
 const DATE_PUBLISHED = "2026-06-09";
-const DATE_MODIFIED = "2026-08-24";
+const DATE_MODIFIED = "2026-08-26";
+// 2026-08-26: added an "at a glance, best fit by situation" table right above
+// the existing "In short" verdict — a persona-based read (monitoring-only,
+// content workflow, enterprise, small budget) distinct from the capability
+// comparison in QUICK_COMPARISON_ROWS further down. Title/H1 order left as-is
+// (already fixed 2026-08-24 to match actual query phrasing).
 
 /**
  * ── VERIFICATION RULE FOR THIS PAGE ──
@@ -65,6 +70,36 @@ const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const HUB_URL = "/ai-visibility/";
 const TOOLS_URL = "/blog/best-ai-visibility-tools/";
 const TOOLS_VS_AUDIT_URL = "/blog/ai-visibility-tools-vs-audit/";
+
+// Persona-fit verdict, separate from QUICK_COMPARISON_ROWS below (which compares
+// capabilities). This answers "which one for my situation" in one glance, before
+// the reader has to read the capability table to work that out themselves.
+const BEST_FOR_ROWS = [
+  {
+    label: "Monitoring only, no content team",
+    peec: "Best fit",
+    profound: "Overkill below Growth",
+    airops: "Not built for this",
+  },
+  {
+    label: "Feeding a content production workflow",
+    peec: "Not built for this",
+    profound: "Good fit (agents)",
+    airops: "Best fit",
+  },
+  {
+    label: "Enterprise, multi-brand or multi-market",
+    peec: "Good fit (Enterprise tier)",
+    profound: "Best fit (9 engines, agents)",
+    airops: "Good fit, price on request",
+  },
+  {
+    label: "Small budget, self-serve signup",
+    peec: "Best fit ($95/mo, published)",
+    profound: "Good fit ($99/mo, 1 engine)",
+    airops: "Weakest fit (no published price)",
+  },
+] as const;
 
 const QUICK_COMPARISON_ROWS = [
   {
@@ -288,6 +323,10 @@ export default function PeecVsProfoundVsAirOpsPost() {
             maxWidth: 740,
           }}
         >
+          <RevealSection>
+            <BestForTable />
+          </RevealSection>
+
           <RevealSection>
             <div
               style={{
@@ -1007,6 +1046,74 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
       {number} &mdash; {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
     </h2>
+  );
+}
+
+function BestForTable() {
+  return (
+    <div
+      style={{
+        background: "var(--panel)",
+        border: "1px solid var(--line-strong)",
+        borderRadius: 10,
+        padding: "20px 16px",
+        margin: "0 0 20px",
+        fontFamily: "var(--sans)",
+        fontSize: 13,
+        overflowX: "auto",
+      }}
+    >
+      <div
+        style={{
+          fontFamily: "var(--mono)",
+          fontSize: 10,
+          letterSpacing: ".08em",
+          textTransform: "uppercase",
+          color: "var(--faint)",
+          marginBottom: 14,
+        }}
+      >
+        At a glance — best fit by situation
+      </div>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1.1fr 1fr 1fr 1fr",
+          gap: 12,
+          minWidth: 680,
+          fontFamily: "var(--mono)",
+          fontSize: 10,
+          letterSpacing: ".06em",
+          textTransform: "uppercase",
+          color: "var(--faint)",
+          paddingBottom: 12,
+          borderBottom: "1px solid var(--line)",
+        }}
+      >
+        <span />
+        <span>Peec</span>
+        <span>Profound</span>
+        <span>AirOps</span>
+      </div>
+      {BEST_FOR_ROWS.map((row) => (
+        <div
+          key={row.label}
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1.1fr 1fr 1fr 1fr",
+            gap: 12,
+            minWidth: 680,
+            padding: "12px 0",
+            borderBottom: "1px solid var(--line)",
+          }}
+        >
+          <span style={{ fontWeight: 600, color: "var(--ink)" }}>{row.label}</span>
+          <span>{row.peec}</span>
+          <span>{row.profound}</span>
+          <span>{row.airops}</span>
+        </div>
+      ))}
+    </div>
   );
 }
 
