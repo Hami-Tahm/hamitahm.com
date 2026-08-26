@@ -31,7 +31,17 @@ const DATE_PUBLISHED = "2026-06-09";
 // This is the date every product description below was last checked against the
 // vendor's own documentation. Bump it whenever you re-verify, not when you edit prose.
 const DATE_FACT_CHECKED = "2026-08-11";
-const DATE_MODIFIED = "2026-08-24";
+const DATE_MODIFIED = "2026-08-26";
+// 2026-08-26: added a "track it yourself" section (a copyable log template
+// + prompt-coverage/share-of-voice/sentiment definitions) and a link to the
+// full sample report, so the page hands the reader something usable instead
+// of only describing tools. Also fixed a duplicate "04" section number bug
+// (two sections both read 04; now 04-07 in order).
+//
+// Title deliberately NOT changed to anything containing "AI Visibility
+// Checker" — that phrase is already owned by /ai-visibility/ai-visibility-
+// checker/ (see the note above ARTICLE_TITLE). Retitling this page to match
+// would cannibalize the exact split that was deliberately built.
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const HUB_URL = "/ai-visibility/";
 const DEFINITION_URL = "/blog/what-is-ai-visibility/";
@@ -645,7 +655,95 @@ export default function HowToCheckAIVisibilityPost() {
           </RevealSection>
 
           <RevealSection>
-            <SectionLabel number="04" text="What free checkers miss" />
+            <SectionLabel number="04" text="Track it yourself: a simple log" />
+          </RevealSection>
+
+          <RevealSection delay={0.06}>
+            <p style={{ marginBottom: 26 }}>
+              Every method above answers one question at a time. The useful
+              signal is what happens when you repeat the same prompts on a
+              schedule and log the results yourself — that&rsquo;s what turns
+              a one-off check into an actual visibility picture. A simple
+              spreadsheet with these columns is enough to start:
+            </p>
+            <div
+              style={{
+                overflowX: "auto",
+                margin: "0 0 20px",
+                border: "1px solid var(--line-strong)",
+                borderRadius: 10,
+              }}
+            >
+              <table
+                style={{
+                  width: "100%",
+                  borderCollapse: "collapse",
+                  fontFamily: "var(--sans)",
+                  fontSize: 14.5,
+                }}
+              >
+                <thead>
+                  <tr style={{ background: "var(--panel)" }}>
+                    {["Prompt", "Engine", "Date", "Mentioned?", "Position", "Competitor named instead", "Notes"].map(
+                      (h) => (
+                        <th
+                          key={h}
+                          style={{
+                            textAlign: "left",
+                            padding: "10px 12px",
+                            borderBottom: "1px solid var(--line-strong)",
+                            whiteSpace: "nowrap",
+                          }}
+                        >
+                          {h}
+                        </th>
+                      ),
+                    )}
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style={{ padding: "10px 12px", borderBottom: "1px solid var(--line)" }}>
+                      &ldquo;best [your category] in [your city]&rdquo;
+                    </td>
+                    <td style={{ padding: "10px 12px", borderBottom: "1px solid var(--line)" }}>ChatGPT</td>
+                    <td style={{ padding: "10px 12px", borderBottom: "1px solid var(--line)" }}>2026-08-26</td>
+                    <td style={{ padding: "10px 12px", borderBottom: "1px solid var(--line)" }}>Y / N</td>
+                    <td style={{ padding: "10px 12px", borderBottom: "1px solid var(--line)" }}>1st / 2nd / …</td>
+                    <td style={{ padding: "10px 12px", borderBottom: "1px solid var(--line)" }}>who, if not you</td>
+                    <td style={{ padding: "10px 12px", borderBottom: "1px solid var(--line)" }}>anything inaccurate</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p style={{ marginBottom: 26 }}>
+              Run the same 10&ndash;15 prompts across the platforms that
+              matter to your business, on a fixed schedule (weekly is enough
+              for most businesses), and three numbers fall out of the log
+              without any tool:
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              <strong style={labelStyle}>Prompt coverage</strong>{" "}— the share of your prompts where you show up
+              at all, mentioned or not.{" "}
+              <strong style={labelStyle}>Share of voice</strong>{" "}— of the prompts where <em style={{ fontStyle: "italic" }}>any</em>{" "}
+              brand gets named, how often it&rsquo;s you versus a competitor.{" "}
+              <strong style={labelStyle}>Sentiment</strong>{" "}— not a score, just a Y/N read on whether the
+              description is accurate and favorable, since that&rsquo;s the
+              one thing no automated tool can verify for you.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              This is exactly the raw material a professional audit
+              formalizes and scales — see a{" "}
+              <Link href="/ai-visibility/sample-report/" style={linkStyle}>
+                full sample report
+              </Link>{" "}
+              to see what the same log looks like run at 30 prompts across
+              six engines with the analysis done for you.
+            </p>
+          </RevealSection>
+
+          <RevealSection>
+            <SectionLabel number="05" text="What free checkers miss" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
@@ -700,7 +798,7 @@ export default function HowToCheckAIVisibilityPost() {
 
           <RevealSection>
             <SectionLabel
-              number="04"
+              number="06"
               text="When a professional AI visibility audit is worth it"
             />
           </RevealSection>
@@ -737,7 +835,7 @@ export default function HowToCheckAIVisibilityPost() {
           </RevealSection>
 
           <RevealSection>
-            <SectionLabel number="05" text="Frequently asked questions" />
+            <SectionLabel number="07" text="Frequently asked questions" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
