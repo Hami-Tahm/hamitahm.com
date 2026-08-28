@@ -57,18 +57,21 @@ export const OFFERS = {
       contentGap: true,
     },
     /**
-     * Live Stripe Payment Link — self-serve checkout (added 2026-07-28).
+     * Live Stripe Payment Link — self-serve checkout (added 2026-07-28,
+     * moved to its own Stripe sub-account 2026-08-28).
      *
-     * ⚠️ The Stripe account is HOUMSE INC, so that is the descriptor on the
-     * buyer's card statement, NOT "Hami Tahm". The Stripe confirmation message
-     * states this explicitly; that disclosure is what prevents "I don't
-     * recognise this charge" chargebacks. If the account name ever changes,
-     * update the Stripe confirmation message in the same session.
+     * As of 2026-08-28 this runs under a dedicated "Hami Tahm" Stripe account
+     * (linked under the same Houmse Inc organization — same legal entity and
+     * payout bank account, but its own product catalog, balance and card
+     * statement descriptor). The statement descriptor is now "HAMI TAHM", not
+     * "HOUMSE INC" — the Stripe confirmation message reflects this. The old
+     * link under the Houmse Inc account (fZucN7fEFaYf3GAdrF00001) has been
+     * deactivated; do not resurrect it.
      *
      * The checkout collects the buyer's website URL and their target queries as
      * required custom fields — without both, a paid order can't be started.
      */
-    checkoutUrl: "https://buy.stripe.com/fZucN7fEFaYf3GAdrF00001",
+    checkoutUrl: "https://buy.stripe.com/5kQ5kF78Y6ZJaj81TteQM00",
   },
   /*
    * Renamed from `implementation` on 2026-08-16 — the key too, deliberately. A key
