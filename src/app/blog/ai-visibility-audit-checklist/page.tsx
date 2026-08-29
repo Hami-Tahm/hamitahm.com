@@ -5,6 +5,7 @@ import { RevealSection } from "@/components/Reveal";
 import { AuthorByline } from "@/components/AuthorByline";
 import { buildBlogSchema } from "@/lib/blog-schema";
 import { OFFERS, AUDIT_PLATFORM_COUNT_WORD } from "@/lib/offers";
+import { getAuditPricing } from "@/lib/currency";
 
 const SLUG = "ai-visibility-audit-checklist";
 const ARTICLE_TITLE = "The AI Visibility Audit Checklist: 23 Things to Check";
@@ -223,7 +224,8 @@ const CATEGORY_5: ChecklistItem[] = [
   },
 ];
 
-export default function AIVisibilityAuditChecklistPost() {
+export default async function AIVisibilityAuditChecklistPost() {
+  const { priceWithCurrency } = await getAuditPricing();
   return (
     <>
       <script
@@ -631,7 +633,7 @@ export default function AIVisibilityAuditChecklistPost() {
                 }}
               >
                 Cross-platform citation analysis, accuracy review, competitor
-                gap mapping, and a prioritized action plan. {OFFERS.audit.price}{" "}
+                gap mapping, and a prioritized action plan. {priceWithCurrency}{" "}
                 {OFFERS.audit.priceNote}.
               </p>
               <Link
@@ -647,7 +649,7 @@ export default function AIVisibilityAuditChecklistPost() {
                 className="btn btn-ghost"
                 style={{ marginTop: 14, marginLeft: 12, position: "relative" }}
               >
-                Or book the {OFFERS.audit.price} audit
+                Or book the {priceWithCurrency} audit
               </Link>
             </div>
           </RevealSection>

@@ -5,6 +5,7 @@ import { RevealSection } from "@/components/Reveal";
 import { AuthorByline } from "@/components/AuthorByline";
 import { buildBlogSchema } from "@/lib/blog-schema";
 import { OFFERS } from "@/lib/offers";
+import { getAuditPricing } from "@/lib/currency";
 
 const SLUG = "ai-visibility-tool-accuracy";
 const ARTICLE_TITLE = "How to Evaluate AI Visibility Tool Accuracy";
@@ -90,7 +91,8 @@ const labelStyle = {
   color: "var(--ink)",
 } as const;
 
-export default function AIVisibilityToolAccuracyPost() {
+export default async function AIVisibilityToolAccuracyPost() {
+  const { priceWithCurrency } = await getAuditPricing();
   return (
     <>
       <script
@@ -608,7 +610,7 @@ export default function AIVisibilityToolAccuracyPost() {
               >
                 Cross-platform citation analysis, accuracy review checked by a
                 person, competitor gap mapping, and a prioritized action plan.{" "}
-                {OFFERS.audit.price} {OFFERS.audit.priceNote}.
+                {priceWithCurrency} {OFFERS.audit.priceNote}.
               </p>
               <Link
                 href={OFFERS.checker.href}
@@ -623,7 +625,7 @@ export default function AIVisibilityToolAccuracyPost() {
                 className="btn btn-ghost"
                 style={{ marginTop: 14, marginLeft: 12, position: "relative" }}
               >
-                Or book the {OFFERS.audit.price} audit
+                Or book the {priceWithCurrency} audit
               </Link>
             </div>
           </RevealSection>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { OFFERS } from "@/lib/offers";
 import { HOMECALC_PROOF, HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
+import { getAuditPricing } from "@/lib/currency";
 
 /*
  * ⚠️ THIS PAGE SOLD DONE-FOR-YOU WORK UNTIL 2026-08-16. IT NO LONGER DOES.
@@ -36,7 +37,8 @@ export const metadata: Metadata = {
   alternates: { canonical: `https://hamitahm.com${SLUG}` },
 };
 
-const FAQ_ITEMS = [
+function buildFaqItems(priceDisplay: string) {
+  return [
   {
     q: "What is the AI Visibility Action Plan?",
     a: "It is the step after the audit. The audit tells you where AI engines cite you and where they don't; the Action Plan tells you what to change about it: page by page, in priority order, with the reasoning and the acceptance criteria written down. It is built so the developer or agency who already maintains your site can ship it without coming back to me with questions.",
@@ -59,7 +61,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "How much does it cost and how long does it take?",
-    a: "From $4,500 CAD, fixed scope, and the $1,500 audit fee is credited toward it. Most run up to 30 days. Larger or multi-language scopes are quoted from the audit. It is a one-time, fixed-scope engagement; optional monitoring and advisory is available afterward, but it's never required.",
+    a: `From $4,500 CAD, fixed scope, and the ${priceDisplay} audit fee is credited toward it. Most run up to 30 days. Larger or multi-language scopes are quoted from the audit. It is a one-time, fixed-scope engagement; optional monitoring and advisory is available afterward, but it's never required.`,
   },
   {
     q: "Do you guarantee I'll get cited by AI?",
@@ -69,7 +71,10 @@ const FAQ_ITEMS = [
     q: "Do you work with agencies?",
     a: "Yes, and it's the arrangement this fits best. If you're a web or marketing agency, your team already has the implementers: what you may not have in-house is the AI visibility measurement and the plan. The audit and Action Plan can be delivered as a white-label supplier arrangement. Email me.",
   },
-];const STEPS = [
+  ] as const;
+}
+
+const STEPS = [
   {
     n: "01",
     title: "Start with the audit",
@@ -92,7 +97,8 @@ const FAQ_ITEMS = [
   },
 ];
 
-const structuredData = {
+function buildStructuredData(faqItems: ReturnType<typeof buildFaqItems>) {
+  return {
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -128,16 +134,21 @@ const structuredData = {
     },
     {
       "@type": "FAQPage",
-      mainEntity: FAQ_ITEMS.map(({ q, a }) => ({
+      mainEntity: faqItems.map(({ q, a }) => ({
         "@type": "Question",
         name: q,
         acceptedAnswer: { "@type": "Answer", text: a },
       })),
     },
   ],
-};
+  };
+}
 
-export default function ImplementationPage() {
+export default async function ImplementationPage() {
+  const { priceWithCurrency } = await getAuditPricing();
+  const FAQ_ITEMS = buildFaqItems(priceWithCurrency);
+  const structuredData = buildStructuredData(FAQ_ITEMS);
+
   return (
     <>
       <script
@@ -202,7 +213,7 @@ export default function ImplementationPage() {
                 Talk about your plan <span className="arr">&rarr;</span>
               </Link>
               <Link href={OFFERS.audit.href} className="btn btn-ghost">
-                Or start with the ${"1,500"} audit
+                Or start with the {priceWithCurrency} audit
               </Link>
             </div>
             <p style={{ marginTop: 16, fontFamily: "var(--mono)", fontSize: 13, color: "var(--faint)" }}>
@@ -221,7 +232,7 @@ export default function ImplementationPage() {
           <RevealSection delay={0.08}>
             <div style={{ display: "grid", gap: 14 }}>
               <LadderRow o={OFFERS.checker} step="Step 0" />
-              <LadderRow o={OFFERS.audit} step="Step 1" />
+              <LadderRow o={{ ...OFFERS.audit, price: priceWithCurrency }} step="Step 1" />
               <LadderRow o={OFFERS.actionPlan} step="Step 2" highlight />
               <LadderRow o={OFFERS.monitor} step="Step 3 (optional)" />
             </div>

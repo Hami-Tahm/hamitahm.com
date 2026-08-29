@@ -8,19 +8,12 @@ import {
   ENGINE_CITATIONS,
 } from "@/lib/ai-citation-proof";
 import { OFFERS } from "@/lib/offers";
+import { getAuditPricing } from "@/lib/currency";
 
 const SLUG = "/ai-visibility/ai-visibility-consultant-toronto/";
 const AUDIT_URL = OFFERS.audit.href;
 const CHECKER_URL = OFFERS.checker.href;
 const PORTRAIT_SRC = "/images/hami-tahm/hami-tahm-portrait.png";
-const PRICE_DISPLAY = "$1,500 CAD";
-/**
- * `{PRICE_DISPLAY} flat` rendered live as "$1,500 CADflat": the space between a JSX
- * expression and the text beside it does not reliably survive. Never build a price
- * phrase across an expression boundary; render one node.
- * See the PRICE DISPLAY RULE in src/lib/offers.ts.
- */
-const PRICE_DISPLAY_FLAT = "$1,500 CAD flat";
 
 const LINK = {
   color: "var(--accent)",
@@ -61,7 +54,8 @@ const MEASUREMENT_LAYERS = [
   },
 ] as const;
 
-const FAQ_ITEMS = [
+function buildFaqItems(priceDisplay: string) {
+  return [
   {
     q: "How do I choose an AI visibility consultant in Toronto?",
     a: `Ask for the things that can be checked: a published methodology, dated measurements rather than undated screenshots, first-party console data, a fixed deliverable, and language that keeps citations, impressions, rankings and leads as separate numbers instead of blending them into one score. Anyone can claim a lift; far fewer will show you which console it came from and what it excludes. Applying that standard to me: the methodology, the pricing and the underlying dataset are all public, and the case study is a property I own (stated as such, because that is a weaker form of evidence than an independent client result). On the specific question of whether engines name me: they do, in two independent captures dated ${SNAPSHOT.displayDate} and ${SNAPSHOT_INCOGNITO.displayDate}, the second signed-out and incognito. AI answers vary by wording, location and date, so treat that as a repeated observation, not a ranking.`,
@@ -87,7 +81,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "How much does an AI visibility consultant cost in Toronto?",
-    a: `The audit is ${PRICE_DISPLAY} flat: one-time, no retainer. If you want the findings turned into a prioritized plan your own team can ship, the Action Plan starts at ${OFFERS.actionPlan.price.replace(
+    a: `The audit is ${priceDisplay} flat: one-time, no retainer. If you want the findings turned into a prioritized plan your own team can ship, the Action Plan starts at ${OFFERS.actionPlan.price.replace(
       "From ",
       ""
     )} CAD and the audit fee is credited toward it. Ongoing monitoring and advisory is optional afterward, on a fixed 6–12 month term. There's also a free AI visibility checker if you just want a first read.`,
@@ -100,9 +94,15 @@ const FAQ_ITEMS = [
     q: "How fast can a Toronto business see results?",
     a: `It varies by your starting point, but AI visibility can move quickly. HomeCalc.ca, a Toronto-based site, went from near-zero to ${HOMECALC_CLAIMS.appearancesInTimeframe}: ${HOMECALC_PROOF.combinedSourceLong}. The audit tells you which changes come first and what to expect.`,
   },
-];
+  ] as const;
+}
 
-const structuredData = {
+function buildStructuredData(
+  faqItems: ReturnType<typeof buildFaqItems>,
+  auditSchemaPrice: number,
+  auditPriceCurrency: string,
+) {
+  return {
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -131,8 +131,8 @@ const structuredData = {
         itemListElement: [
           {
             "@type": "Offer",
-            price: "1500",
-            priceCurrency: "CAD",
+            price: String(auditSchemaPrice),
+            priceCurrency: auditPriceCurrency,
             availability: "https://schema.org/InStock",
             itemOffered: {
               "@type": "Service",
@@ -142,6 +142,8 @@ const structuredData = {
           },
           {
             "@type": "Offer",
+            // Action Plan pricing stays CAD-only site-wide; the cross-currency
+            // credit policy is an unresolved business decision, not decided here.
             price: "4500",
             priceCurrency: "CAD",
             availability: "https://schema.org/InStock",
@@ -170,14 +172,15 @@ const structuredData = {
     },
     {
       "@type": "FAQPage",
-      mainEntity: FAQ_ITEMS.map(({ q, a }) => ({
+      mainEntity: faqItems.map(({ q, a }) => ({
         "@type": "Question",
         name: q,
         acceptedAnswer: { "@type": "Answer", text: a },
       })),
     },
   ],
-};
+  };
+}
 
 export const metadata: Metadata = {
   title: {
@@ -191,7 +194,13 @@ export const metadata: Metadata = {
   alternates: { canonical: `https://hamitahm.com${SLUG}` },
 };
 
-export default function AIVisibilityConsultantToronto() {
+export default async function AIVisibilityConsultantToronto() {
+  const { price, priceWithCurrency, currency } = await getAuditPricing();
+  const FAQ_ITEMS = buildFaqItems(priceWithCurrency);
+  // Schema.org price must be a plain number: strip the "$" and thousands comma.
+  const auditSchemaPrice = Number(price.replace(/[^0-9.]/g, ""));
+  const structuredData = buildStructuredData(FAQ_ITEMS, auditSchemaPrice, currency);
+
   return (
     <>
       <script
@@ -322,7 +331,7 @@ export default function AIVisibilityConsultantToronto() {
                 <span className="arr">&rarr;</span>
               </Link>
               <Link href={AUDIT_URL} className="btn btn-ghost">
-                See the {PRICE_DISPLAY}{" "}audit
+                See the {priceWithCurrency} audit
               </Link>
             </div>
             <p
@@ -565,7 +574,7 @@ export default function AIVisibilityConsultantToronto() {
                     marginBottom: 10,
                   }}
                 >
-                  {OFFERS.audit.price}{" "}&middot; Step 1
+                  {priceWithCurrency}{" "}&middot; Step 1
                 </div>
                 <h3 style={{ fontFamily: "var(--sans)", fontSize: 16, fontWeight: 600 }}>
                   {OFFERS.audit.name}
@@ -1001,7 +1010,7 @@ export default function AIVisibilityConsultantToronto() {
                 }}
               >
                 Six platforms reviewed, a written report, a prioritized action plan,
-                and a walkthrough call. {PRICE_DISPLAY_FLAT}, no retainer.
+                and a walkthrough call. {priceWithCurrency} flat, no retainer.
               </p>
               <Link
                 href={AUDIT_URL}
