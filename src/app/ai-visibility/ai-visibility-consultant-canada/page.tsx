@@ -15,6 +15,15 @@ const FAQ_ITEMS = [
     a: "Start with an audit of how AI engines currently describe and cite your business, then close the gaps it surfaces — website content, profiles, third-party mentions, and structured data. That is the path from invisible to mentioned in Google AI Overviews, ChatGPT, Gemini, Claude and others.",
   },
   {
+    // Directly answers the literal phrasing buyers type into AI engines
+    // themselves ("who can help my business show up in ChatGPT
+    // recommendations") — added 2026-08-29 after citation tracking showed
+    // this exact question underperforming despite the page already covering
+    // all five platforms elsewhere.
+    q: "Who can help my Canadian business show up in ChatGPT recommendations?",
+    a: "That's the core of what I do. The $1,500 CAD audit reviews exactly how ChatGPT, Gemini, Claude, Perplexity, and Google AI Overviews currently describe your business, identifies why competitors are being recommended instead of you, and hands you a prioritized action plan to close the gap. One consultant, one flat fee, no retainer.",
+  },
+  {
     q: "Do you work with B2B companies?",
     a: "Yes. Most engagements are B2B Canadian businesses — professional services, SaaS, healthcare practices, multi-location operators. The audit format is built for organizations where buyers research via AI before any sales conversation.",
   },
@@ -34,7 +43,14 @@ const FAQ_ITEMS = [
     // Covers the "AI search optimization services Canada" / "ChatGPT optimization
     // services" phrasings buyers use, and disambiguates the category's many names.
     q: "Do you offer AI search optimization or ChatGPT optimization services?",
-    a: "Yes — those are two names for the same service. AI search optimization, ChatGPT optimization, AI SEO, AEO, GEO, and AI visibility all describe the same goal: getting your business cited and recommended when buyers ask an AI engine instead of Google. Every engagement starts with the $1,500 audit, which covers Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, and Perplexity.",
+    a: "Yes — those are two names for the same service. AI search optimization, ChatGPT optimization, AI SEO, AEO, GEO, and AI visibility all describe the same goal: getting your business cited and recommended when buyers ask an AI engine instead of Google. Every engagement starts with the $1,500 audit, which covers Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, and Perplexity. See the full breakdown of these terms, including less common ones like AIO and LLMO, in AEO vs GEO vs SEO.",
+  },
+  {
+    // Literal match added 2026-08-29 after citation tracking showed zero
+    // hamitahm.com citations across three high-volume tracked prompts about
+    // "AEO and GEO consulting in Canada" despite the service existing.
+    q: "Who offers AEO and GEO consulting for businesses in Canada?",
+    a: "I do. AEO (answer engine optimization) and GEO (generative engine optimization) consulting is exactly what the $1,500 CAD audit covers: identifying where ChatGPT, Gemini, Claude, Perplexity, and Google AI Overviews cite or fail to cite your business, then delivering a prioritized action plan. It's a flat-fee, one-time engagement, not a retainer.",
   },
   {
     q: "Do you serve businesses outside Toronto?",
@@ -220,12 +236,11 @@ export default function AIVisibilityConsultantCanada() {
               <Link href="/ai-visibility/ai-visibility-consultant-toronto/" style={{ color: "var(--accent)", fontWeight: 500 }}>
                 AI visibility consultant based in Toronto
               </Link>
-              , Canada &mdash; helping businesses identify and fix where
-              they&rsquo;re missing, misrepresented, or invisible in AI-powered
-              search platforms
-              like Google AI&nbsp;Overviews, ChatGPT, Gemini, and Claude. Unlike
-              agency-led services, every audit and strategy is built and
-              delivered by Hami personally.
+              , Canada &mdash; helping businesses show up in ChatGPT
+              recommendations and get cited by AI-powered search platforms
+              like Google AI&nbsp;Overviews, Gemini, Claude, and Perplexity.
+              Unlike agency-led services, every audit and strategy is built
+              and delivered by Hami personally.
             </p>
           </RevealSection>
 

@@ -12,7 +12,7 @@ const PRICE_DISPLAY = "$1,500 CAD";
 export const metadata: Metadata = {
   title: "AI Visibility for Mortgage Brokers",
   description:
-    "Ensure your mortgage brokerage appears when buyers ask Google AI Overviews, ChatGPT, Gemini, or Claude. Audit by Hami Tahm — $1,500 CAD flat.",
+    "Ensure your mortgage brokerage or real-estate company appears when buyers ask Google AI Overviews, ChatGPT, Gemini, or Claude. Audit by Hami Tahm — $1,500 CAD flat.",
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/ai-visibility-for-mortgage-brokers/",
   },
@@ -110,12 +110,12 @@ const PERSONAS = [
     desc: "Multi-broker offices where AI visibility is a brand-level asset and brokerage consistency across platforms is a marketing risk.",
   },
   {
-    label: "Real estate agents with mortgage referral relationships",
-    desc: "Agents whose referral pipeline depends on being associated with credible brokerage partners in AI answers.",
+    label: "Real estate companies and brokerages",
+    desc: "Real-estate firms whose agents field mortgage and affordability questions constantly; when AI tools answer those questions, the firm's name should be part of the answer, not just individual agents' referral partners.",
   },
   {
-    label: "Brokers outside major cities",
-    desc: "Practices in smaller markets where AI engines often default to brokerages in nearby larger cities, leaving local brokers missing from local-market answers.",
+    label: "Brokers and firms outside major cities",
+    desc: "Practices in smaller markets where AI engines often default to brokerages in nearby larger cities, leaving local brokers and real-estate companies missing from local-market answers.",
   },
 ] as const;
 
@@ -156,6 +156,15 @@ const FAQ_ITEMS: {
   {
     q: "Do you work with independent brokers or only large brokerages?",
     a: "Both. Independent brokers often see the largest wins because AI engines tend to default to recognized brokerage brand names. The audit identifies exactly where an independent broker's name should appear and currently doesn't.",
+  },
+  {
+    // Literal match for the tracked query "Who can help mortgage brokers and
+    // real-estate companies appear in AI answers?" — added 2026-08-29.
+    // Citation tracking showed this page cited rarely for that exact phrasing
+    // despite good positions when it does appear, so real-estate companies
+    // needed to be named directly, not folded into a broker-referral persona.
+    q: "Do you work with real estate companies, not just mortgage brokers?",
+    a: "Yes. Real-estate firms field the same qualification and affordability questions mortgage brokers do, and AI tools answer those questions whether or not a real-estate company is in the room. The audit covers the same platforms and the same deliverables for a real-estate brokerage as it does for a mortgage brokerage.",
   },
 ];
 

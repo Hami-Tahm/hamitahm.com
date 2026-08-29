@@ -168,6 +168,22 @@ const structuredData = {
               url: "https://hamitahm.com/ai-visibility/ai-visibility-for-mortgage-brokers/",
             },
           },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "AI Visibility for SaaS Companies",
+              url: "https://hamitahm.com/ai-visibility/ai-visibility-for-saas-companies/",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "AI Visibility for Healthcare Clinics",
+              url: "https://hamitahm.com/ai-visibility/ai-visibility-for-healthcare-clinics/",
+            },
+          },
         ],
       },
     },
@@ -710,6 +726,43 @@ export default function AIVisibilityPage() {
                   }}
                 >
                   GEO Consulting &rarr;
+                </div>
+              </Link>
+
+              <Link
+                href="/ai-visibility/ai-visibility-for-saas-companies/"
+                className="inc"
+              >
+                <h3
+                  style={{
+                    fontFamily: "var(--serif)",
+                    fontSize: 19,
+                    fontWeight: 500,
+                    lineHeight: 1.25,
+                  }}
+                >
+                  AI Visibility for SaaS Companies
+                </h3>
+                <p
+                  style={{
+                    fontSize: "13.5px",
+                    color: "var(--muted)",
+                    marginTop: 10,
+                    lineHeight: 1.55,
+                  }}
+                >
+                  When a buyer asks ChatGPT for the best tool in your
+                  category, is your product in the answer?
+                </p>
+                <div
+                  style={{
+                    fontFamily: "var(--mono)",
+                    fontSize: 12,
+                    color: "var(--accent)",
+                    marginTop: 14,
+                  }}
+                >
+                  SaaS AI Visibility &rarr;
                 </div>
               </Link>
 
@@ -1705,7 +1758,7 @@ export default function AIVisibilityPage() {
           <RevealSection delay={0.06}>
             <div className="verts">
               <Link
-                href="/ai-visibility/ai-visibility-for-dental-clinics/"
+                href="/ai-visibility/ai-visibility-for-healthcare-clinics/"
                 className="vert"
               >
                 <div
@@ -1738,8 +1791,47 @@ export default function AIVisibilityPage() {
                     lineHeight: 1.55,
                   }}
                 >
-                  Dental, orthodontic, and medical practices that need patients
-                  to find them through AI-powered search.
+                  Dental, physiotherapy, medical, and multi-location practices
+                  that need patients to find them through AI-powered search.
+                </p>
+              </Link>
+
+              <Link
+                href="/ai-visibility/ai-visibility-for-saas-companies/"
+                className="vert"
+              >
+                <div
+                  style={{
+                    fontFamily: "var(--mono)",
+                    fontSize: 11,
+                    letterSpacing: ".1em",
+                    textTransform: "uppercase",
+                    color: "var(--accent)",
+                    marginBottom: 10,
+                  }}
+                >
+                  Vertical
+                </div>
+                <h3
+                  style={{
+                    fontFamily: "var(--serif)",
+                    fontSize: 21,
+                    fontWeight: 500,
+                    lineHeight: 1.25,
+                  }}
+                >
+                  SaaS Companies
+                </h3>
+                <p
+                  style={{
+                    fontSize: "13.5px",
+                    color: "var(--muted)",
+                    marginTop: 8,
+                    lineHeight: 1.55,
+                  }}
+                >
+                  Products whose buyers ask AI for comparisons and
+                  alternatives before ever requesting a demo.
                 </p>
               </Link>
 

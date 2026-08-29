@@ -60,6 +60,13 @@ const COMPARISON_ROWS = [
 
 const FAQ_ITEMS = [
   {
+    // Literal match for the exact question buyers ask AI engines — added
+    // 2026-08-29 after citation tracking showed this article underperforming
+    // on that precise phrasing despite covering the substance elsewhere.
+    q: "Should I hire an AI visibility consultant, an SEO agency, or use an AI visibility tool?",
+    a: "It depends on whether you've already diagnosed the problem. If you already know what to fix and just want to track progress, a tool is enough. If you need one team coordinating strategy, content, and execution across several channels on an ongoing basis, an agency fits. If you want a clear answer to where you're invisible in AI search and why, without committing to a retainer, hire an independent consultant for a one-time audit first: most businesses asking this question are in that third position.",
+  },
+  {
     q: "What's the difference between an AI visibility consultant and an agency?",
     a: "Scale and structure, mostly. An agency staffs a team against your account, bills a monthly retainer typically in the $2,000–$5,000 range, and coordinates strategy, content, and execution across whatever channels are in scope. An independent consultant is one named person doing the analysis directly, usually for a flat one-time fee, without a retainer or a rotating account team.",
   },
@@ -241,7 +248,7 @@ export default function ConsultantVsAgencyVsToolPost() {
                   marginBottom: 10,
                 }}
               >
-                In short
+                Verdict: should you hire a consultant, an agency, or use a tool?
               </div>
               <p
                 style={{
@@ -254,9 +261,13 @@ export default function ConsultantVsAgencyVsToolPost() {
               >
                 A tool is right if you already know what to fix and just want
                 tracking. An agency is right if you want one team coordinating
-                several channels on an ongoing retainer. A consultant is right
-                if you want a specific diagnosis and a fix list, without
-                signing up for either of the other two.
+                several channels on an ongoing retainer. An independent
+                consultant is right if you want a specific diagnosis and a
+                prioritized fix list, without signing up for either of the
+                other two. Most businesses asking this question haven&rsquo;t
+                yet diagnosed the problem, which is why a one-time audit from
+                a consultant (not a retainer or a dashboard) is usually the
+                right first step.
               </p>
             </div>
           </RevealSection>

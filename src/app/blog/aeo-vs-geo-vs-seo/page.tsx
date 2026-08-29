@@ -16,13 +16,53 @@ const DATE_PUBLISHED = "2026-06-08";
 // "is AEO the same as GEO" FAQ answer already existed). Title/H1 left as-is:
 // no prior dated Search Console decision exists for this page either way, and
 // "AEO vs GEO vs SEO: What's the Difference?" already matches query intent.
-const DATE_MODIFIED = "2026-08-26";
+// Added the "other acronyms" glossary section 2026-08-29, after citation
+// tracking showed hamitahm.com with zero citations across three high-volume
+// tracked prompts about "AEO and GEO consulting" / "AI search optimization
+// services" (0/120, 0/136, 0/156 in a 5-day window) despite this post already
+// ranking for the core AEO/GEO/SEO comparison. SAO is explicitly flagged as
+// one vendor's (Canopy Media's) house term, not a standard — do not treat it
+// as equivalent to AEO/GEO anywhere else on the site.
+const DATE_MODIFIED = "2026-08-29";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const HUB_URL = "/ai-visibility/";
 const AEO_URL = "/ai-visibility/answer-engine-optimization-consultant-canada/";
 const GEO_URL =
   "/ai-visibility/generative-engine-optimization-consultant-canada/";
 const DEFINITION_URL = "/blog/what-is-ai-visibility/";
+
+const GLOSSARY_ROWS = [
+  {
+    term: "AIO",
+    fullName: "AI Optimization",
+    prevalence: "Common, used as an umbrella term covering AEO and GEO together",
+    difference: "Not a distinct discipline. Usually shorthand for \"AEO and GEO combined,\" not a third thing to do.",
+  },
+  {
+    term: "LLMO",
+    fullName: "Large Language Model Optimization",
+    prevalence: "Occasional, mostly used by technical/developer-focused writers",
+    difference: "Near-synonym for GEO, with a narrower focus on chat-style LLM interfaces specifically rather than AI search broadly.",
+  },
+  {
+    term: "VEO",
+    fullName: "Voice Engine Optimization",
+    prevalence: "Rare, a small, distinct niche around voice assistants",
+    difference: "Genuinely different surface: voice-only answers (Alexa, Siri-style), not text-based AI search or chat.",
+  },
+  {
+    term: "RAO",
+    fullName: "Retrieval-Augmented Optimization",
+    prevalence: "Rare, mostly technical/RAG-adjacent writing",
+    difference: "Describes optimizing for retrieval-augmented generation systems specifically, a technical subset of what GEO already covers.",
+  },
+  {
+    term: "SAO",
+    fullName: "Search Anywhere Optimization",
+    prevalence: "Not a standard, coined and used by one agency (Canopy Media)",
+    difference: "Not an established category. Positioned as a house alternative to AEO/GEO by its creator, not adopted elsewhere.",
+  },
+] as const;
 
 const FAQ_ITEMS = [
   {
@@ -458,11 +498,79 @@ export default function AEOvsGEOvsSEOPost() {
           </RevealSection>
 
           <RevealSection>
+            <SectionLabel number="07" text="Other acronyms you'll see" />
+          </RevealSection>
+
+          <RevealSection delay={0.06}>
+            <p style={{ marginBottom: 26 }}>
+              AEO, GEO, and SEO cover the three concepts that matter. But
+              vendors and agencies keep coining new acronyms for the same
+              general idea, and it's worth knowing which ones are genuinely in
+              use versus which are one company's marketing term. Not every
+              three-letter acronym here is a real, widely-used category.
+            </p>
+            <div
+              style={{
+                overflowX: "auto",
+                margin: "0 0 26px",
+                border: "1px solid var(--line-strong)",
+                borderRadius: 10,
+              }}
+            >
+              <table
+                style={{
+                  width: "100%",
+                  borderCollapse: "collapse",
+                  fontFamily: "var(--sans)",
+                  fontSize: 14,
+                }}
+              >
+                <thead>
+                  <tr style={{ background: "var(--panel)" }}>
+                    {["Term", "Full name", "How common it actually is", "How it differs from AEO/GEO"].map((h) => (
+                      <th
+                        key={h}
+                        style={{
+                          textAlign: "left",
+                          padding: "10px 12px",
+                          borderBottom: "1px solid var(--line-strong)",
+                        }}
+                      >
+                        {h}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {GLOSSARY_ROWS.map((row) => (
+                    <tr key={row.term}>
+                      <td style={{ padding: "10px 12px", borderBottom: "1px solid var(--line)", fontWeight: 600, color: "var(--ink)", whiteSpace: "nowrap" }}>
+                        {row.term}
+                      </td>
+                      <td style={{ padding: "10px 12px", borderBottom: "1px solid var(--line)" }}>{row.fullName}</td>
+                      <td style={{ padding: "10px 12px", borderBottom: "1px solid var(--line)" }}>{row.prevalence}</td>
+                      <td style={{ padding: "10px 12px", borderBottom: "1px solid var(--line)" }}>{row.difference}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p style={{ marginBottom: 26 }}>
+              The pattern to watch for: when an acronym only shows up on one
+              company's own site and nowhere else, that's a naming exercise,
+              not a standard. AEO and GEO have both been adopted independently
+              by multiple agencies, platforms, and publications; that's the
+              actual test for whether a term describes a real category or
+              just one vendor's branding.
+            </p>
+          </RevealSection>
+
+          <RevealSection>
             <InlineAuditCTA />
           </RevealSection>
 
           <RevealSection>
-            <SectionLabel number="07" text="Frequently asked questions" />
+            <SectionLabel number="08" text="Frequently asked questions" />
           </RevealSection>
 
           <RevealSection delay={0.06}>

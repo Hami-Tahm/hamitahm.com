@@ -37,6 +37,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/ai-visibility/generative-engine-optimization-consultant-canada/", priority: 0.85, changeFrequency: "monthly" },
     { path: "/ai-visibility/ai-visibility-for-dental-clinics/", priority: 0.8, changeFrequency: "monthly" },
     { path: "/ai-visibility/ai-visibility-for-mortgage-brokers/", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/ai-visibility/ai-visibility-for-saas-companies/", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/ai-visibility/ai-visibility-for-healthcare-clinics/", priority: 0.8, changeFrequency: "monthly" },
 
     // ── Case studies ─────────────────────────────────────────────────────
     { path: "/case-studies/", priority: 0.8, changeFrequency: "monthly" },
