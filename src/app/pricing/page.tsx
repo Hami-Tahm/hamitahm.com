@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { OFFERS, PRICING_NOTICE } from "@/lib/offers";
+import { getAuditPricing } from "@/lib/currency";
 
 const SLUG = "/pricing/";
 const CONTACT_URL = "/contact/";
@@ -15,11 +16,14 @@ export const metadata: Metadata = {
 };
 
 /**
- * Every price on this page reads from src/lib/offers.ts. Never hardcode a number
- * here — a pricing page that disagrees with the money pages is exactly the kind of
- * contradiction an AI engine cross-checks and downgrades the whole site for.
+ * Every price on this page reads from src/lib/offers.ts (the audit tier reads
+ * from getAuditPricing() instead, so it localizes for non-Canadian visitors —
+ * see src/lib/currency.ts). Never hardcode a number here — a pricing page
+ * that disagrees with the money pages is exactly the kind of contradiction
+ * an AI engine cross-checks and downgrades the whole site for.
  */
-const TIERS = [
+function buildTiers(auditPrice: string, auditPriceNote: string) {
+  return [
   {
     step: "Step 0",
     name: OFFERS.checker.name,
@@ -38,8 +42,8 @@ const TIERS = [
   {
     step: "Step 1",
     name: OFFERS.audit.name,
-    price: OFFERS.audit.price,
-    priceNote: OFFERS.audit.priceNote,
+    price: auditPrice,
+    priceNote: auditPriceNote,
     href: OFFERS.audit.href,
     role: OFFERS.audit.role,
     ctaLabel: "Book the audit",
@@ -56,7 +60,14 @@ const TIERS = [
     step: "Step 2 (optional)",
     name: OFFERS.actionPlan.name,
     price: OFFERS.actionPlan.price,
-    priceNote: OFFERS.actionPlan.priceNote,
+    // NOT OFFERS.actionPlan.priceNote directly — that constant hardcodes
+    // "the $1,500 audit fee", which is wrong for a USD visitor seeing $1,100
+    // on the audit card above. Rather than guess how a USD audit payment
+    // converts into a credit against a CAD-only Action Plan quote (a real
+    // policy question, not a copy question — not decided here), this note
+    // stays currency-agnostic for everyone. Whoever buys the plan gets the
+    // exact credit figure at quote time.
+    priceNote: "CAD, fixed scope — your audit fee is credited toward it",
     href: OFFERS.actionPlan.href,
     role: OFFERS.actionPlan.role,
     ctaLabel: "See the Action Plan",
@@ -85,16 +96,18 @@ const TIERS = [
       `A fixed ${OFFERS.monitor.duration} term — never open-ended`,
     ],
   },
-] as const;
+  ] as const;
+}
 
-const FAQ_ITEMS = [
+function buildFaqItems(auditPrice: string, auditPriceDisplay: string) {
+  return [
   {
     q: "How much does an AI visibility audit cost?",
-    a: `${OFFERS.audit.price} CAD, flat. One-time payment, no retainer to get started, and it is not gated behind a sales call. That covers all six AI platforms, the written report, the prioritized action plan, a 60-minute walkthrough call, and 14 days of follow-up questions — delivered within 7 business days.`,
+    a: `${auditPriceDisplay}, flat. One-time payment, no retainer to get started, and it is not gated behind a sales call. That covers all six AI platforms, the written report, the prioritized action plan, a 60-minute walkthrough call, and 14 days of follow-up questions — delivered within 7 business days.`,
   },
   {
     q: "What does AI SEO or AEO work cost in Canada?",
-    a: `It depends who you ask, because the category has several names — AI SEO, AEO, GEO, LLMO, AI visibility — and pricing models vary widely. Agency retainers for this work in Canada typically run $2,000–$5,000 per month, ongoing. My structure is different: a ${OFFERS.audit.price} one-time audit, then an optional fixed-scope action plan from ${OFFERS.actionPlan.price.replace("From ", "")} CAD. You can stop after the audit.`,
+    a: `It depends who you ask, because the category has several names — AI SEO, AEO, GEO, LLMO, AI visibility — and pricing models vary widely. Agency retainers for this work in Canada typically run $2,000–$5,000 per month, ongoing. My structure is different: a ${auditPrice} one-time audit, then an optional fixed-scope action plan from ${OFFERS.actionPlan.price.replace("From ", "")} CAD. You can stop after the audit.`,
   },
   {
     q: "Do you charge a monthly retainer?",
@@ -110,40 +123,49 @@ const FAQ_ITEMS = [
   },
   {
     q: "Do I have to buy the action plan after the audit?",
-    a: `No. The audit is a complete deliverable on its own — the report and action plan are yours to hand to your own team or developer. The Action Plan exists for people who want the findings turned into page-level work their team can pick up without interpreting it, and if you choose it the ${OFFERS.audit.price} audit fee is credited toward the price.`,
+    a: `No. The audit is a complete deliverable on its own — the report and action plan are yours to hand to your own team or developer. The Action Plan exists for people who want the findings turned into page-level work their team can pick up without interpreting it, and if you choose it the ${auditPrice} audit fee is credited toward the price.`,
   },
   {
     q: "Do you guarantee results for the price?",
     a: "No, and be careful with anyone who does. AI engines are not under any consultant's control, so a guaranteed citation or ranking is not a promise anyone can honestly make. What is guaranteed is the deliverable: the audit you paid for, on the timeline quoted, and — in the Action Plan — recommendations specific enough for your team to act on without interpreting them.",
   },
-];
+  ];
+}
 
-const structuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BreadcrumbList",
-      "@id": `https://hamitahm.com${SLUG}#breadcrumb`,
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://hamitahm.com/" },
-        { "@type": "ListItem", position: 2, name: "Pricing", item: `https://hamitahm.com${SLUG}` },
-      ],
-    },
-    {
-      "@type": "FAQPage",
-      mainEntity: FAQ_ITEMS.map(({ q, a }) => ({
-        "@type": "Question",
-        name: q,
-        acceptedAnswer: { "@type": "Answer", text: a },
-      })),
-    },
-  ],
-  // NOTE: deliberately no Offer/Service nodes here. Each service already declares its
-  // own Offer on its own page (audit, implementation). Re-declaring them on a pricing
-  // index would create two competing declarations of the same offer.
-};
+function buildStructuredData(faqItems: ReturnType<typeof buildFaqItems>) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "@id": `https://hamitahm.com${SLUG}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://hamitahm.com/" },
+          { "@type": "ListItem", position: 2, name: "Pricing", item: `https://hamitahm.com${SLUG}` },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: faqItems.map(({ q, a }) => ({
+          "@type": "Question",
+          name: q,
+          acceptedAnswer: { "@type": "Answer", text: a },
+        })),
+      },
+    ],
+    // NOTE: deliberately no Offer/Service nodes here. Each service already declares its
+    // own Offer on its own page (audit, implementation). Re-declaring them on a pricing
+    // index would create two competing declarations of the same offer.
+  };
+}
 
-export default function PricingPage() {
+export default async function PricingPage() {
+  const { price: auditPrice, priceNote: auditPriceNote, priceWithCurrency: auditPriceDisplay } =
+    await getAuditPricing();
+  const TIERS = buildTiers(auditPrice, auditPriceNote);
+  const FAQ_ITEMS = buildFaqItems(auditPrice, auditPriceDisplay);
+  const structuredData = buildStructuredData(FAQ_ITEMS);
+
   return (
     <>
       <script
@@ -199,7 +221,7 @@ export default function PricingPage() {
           <RevealSection delay={0.18}>
             <div style={{ marginTop: 34, display: "flex", gap: 14, flexWrap: "wrap" }}>
               <Link href={OFFERS.audit.href} className="btn btn-primary">
-                Book the {OFFERS.audit.price}{" "}audit <span className="arr">&rarr;</span>
+                Book the {auditPrice}{" "}audit <span className="arr">&rarr;</span>
               </Link>
               <Link href={OFFERS.checker.href} className="btn btn-ghost">
                 Or start free
@@ -432,7 +454,7 @@ export default function PricingPage() {
                 lineHeight: 1.65,
               }}
             >
-              The diagnosis here is {OFFERS.audit.price}{" "}once. If you want it turned
+              The diagnosis here is {auditPrice}{" "}once. If you want it turned
               into a plan your team can ship, that is a fixed scope quoted from the
               audit, and the audit fee comes off it. Monitoring afterward is optional
               and term-limited.{" "}

@@ -39,6 +39,19 @@ export const OFFERS = {
     name: "AI Visibility Audit",
     price: "$1,500",
     priceNote: "CAD, flat fee, one-time",
+    /**
+     * USD price for visitors outside Canada — added 2026-08-29 alongside
+     * src/middleware.ts and src/lib/currency.ts. This is a REAL price backed
+     * by its own Stripe Payment Link (checkoutUrlUSD below), not a display-only
+     * conversion of the CAD figure. It is a fixed number, not a live FX
+     * conversion, so what a visitor sees on the page always matches exactly
+     * what Stripe charges — see the note on checkoutUrlUSD for why that
+     * matters. Roughly tracks the CAD price at ~0.72 CAD→USD (Aug 2026);
+     * re-check periodically, but don't chase the exchange rate day to day —
+     * a flat fee that moves with FX isn't a flat fee.
+     */
+    priceUSD: "$1,100",
+    priceNoteUSD: "USD, flat fee, one-time",
     href: "/ai-visibility/ai-visibility-audit/",
     role: "Diagnosis: exactly where AI engines cite you, where they don't, and what to change.",
     /**
@@ -72,6 +85,19 @@ export const OFFERS = {
      * required custom fields — without both, a paid order can't be started.
      */
     checkoutUrl: "https://buy.stripe.com/5kQ5kF78Y6ZJaj81TteQM00",
+    /**
+     * USD counterpart of checkoutUrl — added 2026-08-29. Same product, same
+     * account, a second real Price object ($1,100 USD) with its own Payment
+     * Link, same custom fields and confirmation message pattern. Do NOT
+     * point this at checkoutUrl with a query param or rely on Stripe's
+     * Adaptive Pricing conversion for the CAD link instead — that would let
+     * Stripe charge a live-converted amount that can drift from the
+     * `priceUSD` figure shown on the page, which is exactly the "number on
+     * the page doesn't match what you were charged" problem this exists to
+     * avoid. Read via src/lib/currency.ts, never directly, so a page can't
+     * show the CAD link to a USD visitor by accident.
+     */
+    checkoutUrlUSD: "https://buy.stripe.com/cNiaEZfFu3Nxezo2XxeQM01",
   },
   /*
    * Renamed from `implementation` on 2026-08-16 — the key too, deliberately. A key

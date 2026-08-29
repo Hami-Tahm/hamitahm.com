@@ -3,20 +3,25 @@ import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { HOMECALC_PROOF, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
 import { SNAPSHOT } from "@/lib/ai-citation-proof";
-import { OFFERS } from "@/lib/offers";
+import { getAuditPricing } from "@/lib/currency";
 
 /**
- * Self-serve checkout, sourced from OFFERS so the URL lives in one place.
+ * Self-serve checkout. WHY BOTH PATHS EXIST: at $1,500 some buyers pay
+ * immediately and some want to talk first. Removing either costs sales — the
+ * primary button pays, the secondary keeps the conversation route open. Do
+ * not "simplify" to one.
  *
- * WHY BOTH PATHS EXIST: at $1,500 some buyers pay immediately and some want to
- * talk first. Removing either costs sales — the primary button pays, the
- * secondary keeps the conversation route open. Do not "simplify" to one.
+ * The price and checkout URL are no longer static — see getAuditPricing()
+ * below. Canadian visitors get the CAD price/link; everyone else gets a real
+ * USD price backed by its own Stripe Payment Link (src/lib/currency.ts).
+ * That's also why this page is now an async component and why FAQ_ITEMS /
+ * COMPARISON_ROWS moved from module scope into functions — both embed the
+ * price as text and have to be built per-request, after we know which
+ * currency the visitor is seeing.
  */
-const CHECKOUT_URL = OFFERS.audit.checkoutUrl;
 const BOOKING_URL = "/contact/";
 const WALKTHROUGH_MINUTES = 60;
 const TURNAROUND = "7 business days";
-const PRICE_DISPLAY = "$1,500 CAD";
 
 export const metadata: Metadata = {
   // Buyers search this deliverable as "ChatGPT visibility audit", "AI search audit"
@@ -30,7 +35,8 @@ export const metadata: Metadata = {
   },
 };
 
-const FAQ_ITEMS = [
+function buildFaqItems(priceDisplay: string) {
+  return [
   {
     q: "How do I get my business to show up in ChatGPT and AI search?",
     a: "That is exactly what the audit addresses. It reviews how Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, and Perplexity currently see your business, then gives you a prioritized list of changes that make your brand citeable, trusted, and recommended in AI answers.",
@@ -62,7 +68,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Is there a free AI visibility audit?",
-    a: `No. Free tools give you a generic score from an algorithm. This audit is run personally and produces a custom action plan for your business. The flat fee is ${PRICE_DISPLAY}.`,
+    a: `No. Free tools give you a generic score from an algorithm. This audit is run personally and produces a custom action plan for your business. The flat fee is ${priceDisplay}.`,
   },
   {
     q: "What happens after I receive the report?",
@@ -72,9 +78,11 @@ const FAQ_ITEMS = [
     q: "Do you work with businesses outside Canada?",
     a: "I work primarily with Canadian businesses but accept clients from the US and UK when the fit is clear. Reach out before booking.",
   },
-] as const;
+  ] as const;
+}
 
-const COMPARISON_ROWS = [
+function buildComparisonRows(priceDisplay: string) {
+  return [
   ["Who runs it", "Hami Tahm, personally", "Account manager and junior team", "Algorithm, no human review"],
   [
     "Methodology transparency",
@@ -88,14 +96,15 @@ const COMPARISON_ROWS = [
     "Templated across clients",
     "Same output for everyone",
   ],
-  ["Pricing", "$1,500 CAD, flat", "Retainer or quote on request", "Monthly subscription"],
+  ["Pricing", `${priceDisplay}, flat`, "Retainer or quote on request", "Monthly subscription"],
   [
     "Case study access",
     "Public, named client (HomeCalc.ca)",
     "Rarely public",
     "None",
   ],
-] as const;
+  ] as const;
+}
 
 const VERTICALS = [
   {
@@ -140,53 +149,62 @@ const RELATED_LINKS = [
   },
 ] as const;
 
-const structuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://hamitahm.com/" },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "AI Visibility",
-          item: "https://hamitahm.com/ai-visibility/",
-        },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: "AI Visibility Audit",
-          item: "https://hamitahm.com/ai-visibility/ai-visibility-audit/",
-        },
-      ],
-    },
-    {
-      "@type": "Service",
-      name: "AI Visibility Audit",
-      serviceType: "AI Visibility Consulting",
-      areaServed: "Canada",
-      provider: { "@id": "https://hamitahm.com/#hami-tahm" },
-      offers: {
-        "@type": "Offer",
-        price: 1500,
-        priceCurrency: "CAD",
-        availability: "https://schema.org/InStock",
-        seller: { "@id": "https://hamitahm.com/#hami-tahm" },
+function buildStructuredData(faqItems: ReturnType<typeof buildFaqItems>, price: number, priceCurrency: string) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://hamitahm.com/" },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "AI Visibility",
+            item: "https://hamitahm.com/ai-visibility/",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "AI Visibility Audit",
+            item: "https://hamitahm.com/ai-visibility/ai-visibility-audit/",
+          },
+        ],
       },
-    },
-    {
-      "@type": "FAQPage",
-      mainEntity: FAQ_ITEMS.map(({ q, a }) => ({
-        "@type": "Question",
-        name: q,
-        acceptedAnswer: { "@type": "Answer", text: a },
-      })),
-    },
-  ],
-};
+      {
+        "@type": "Service",
+        name: "AI Visibility Audit",
+        serviceType: "AI Visibility Consulting",
+        areaServed: "Canada",
+        provider: { "@id": "https://hamitahm.com/#hami-tahm" },
+        offers: {
+          "@type": "Offer",
+          price,
+          priceCurrency,
+          availability: "https://schema.org/InStock",
+          seller: { "@id": "https://hamitahm.com/#hami-tahm" },
+        },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: faqItems.map(({ q, a }) => ({
+          "@type": "Question",
+          name: q,
+          acceptedAnswer: { "@type": "Answer", text: a },
+        })),
+      },
+    ],
+  };
+}
 
-export default function AIVisibilityAudit() {
+export default async function AIVisibilityAudit() {
+  const { price, priceWithCurrency, checkoutUrl, currency } = await getAuditPricing();
+  const FAQ_ITEMS = buildFaqItems(priceWithCurrency);
+  const COMPARISON_ROWS = buildComparisonRows(priceWithCurrency);
+  // Schema.org price must be a plain number — strip the "$" and thousands comma.
+  const schemaPrice = Number(price.replace(/[^0-9.]/g, ""));
+  const structuredData = buildStructuredData(FAQ_ITEMS, schemaPrice, currency);
+
   return (
     <>
       <script
@@ -262,18 +280,18 @@ export default function AIVisibilityAudit() {
                 lineHeight: 1.5,
               }}
             >
-              $1,500 CAD flat. One consultant. Public case study included.
+              {priceWithCurrency} flat. One consultant. Public case study included.
             </p>
           </RevealSection>
 
           <RevealSection delay={0.14}>
             <div style={{ marginTop: 32 }}>
               <a
-                href={CHECKOUT_URL}
+                href={checkoutUrl}
                 className="btn btn-primary"
                 data-gtm="audit-checkout-hero"
               >
-                Book &amp; pay &mdash; {PRICE_DISPLAY} <span className="arr">&rarr;</span>
+                Book &amp; pay &mdash; {priceWithCurrency} <span className="arr">&rarr;</span>
               </a>
               <div style={{ marginTop: 14, display: "flex", gap: 18, flexWrap: "wrap" }}>
                 <Link
@@ -838,7 +856,7 @@ export default function AIVisibilityAudit() {
               <ProcessStep
                 n="1"
                 title="Book and pay."
-                body={`${PRICE_DISPLAY} flat. One invoice, one payment, no retainer.`}
+                body={`${priceWithCurrency} flat. One invoice, one payment, no retainer.`}
               />
               <ProcessStep
                 n="2"
@@ -891,7 +909,7 @@ export default function AIVisibilityAudit() {
                   position: "relative",
                 }}
               >
-                $1,500 CAD. Flat fee. One-time.
+                {priceWithCurrency}. Flat fee. One-time.
               </p>
 
               <div
@@ -969,12 +987,12 @@ export default function AIVisibilityAudit() {
               </div>
 
               <a
-                href={CHECKOUT_URL}
+                href={checkoutUrl}
                 className="btn btn-primary"
                 style={{ marginTop: 36, position: "relative" }}
                 data-gtm="audit-checkout-included"
               >
-                Book &amp; pay — {PRICE_DISPLAY} <span className="arr">&rarr;</span>
+                Book &amp; pay — {priceWithCurrency} <span className="arr">&rarr;</span>
               </a>
             </div>
           </RevealSection>
@@ -1164,16 +1182,16 @@ export default function AIVisibilityAudit() {
                   position: "relative",
                 }}
               >
-                $1,500 CAD. Flat fee. Report and walkthrough call within{" "}
+                {priceWithCurrency}. Flat fee. Report and walkthrough call within{" "}
                 {TURNAROUND}.
               </p>
               <a
-                href={CHECKOUT_URL}
+                href={checkoutUrl}
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
                 data-gtm="audit-checkout-final"
               >
-                Book &amp; pay — {PRICE_DISPLAY} <span className="arr">&rarr;</span>
+                Book &amp; pay — {priceWithCurrency} <span className="arr">&rarr;</span>
               </a>
               <div style={{ marginTop: 16, position: "relative" }}>
                 <Link href={BOOKING_URL} style={{ color: "var(--muted)", fontSize: 14 }}>

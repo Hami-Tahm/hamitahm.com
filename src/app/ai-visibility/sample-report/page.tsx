@@ -7,6 +7,7 @@ import {
   AUDIT_PLATFORMS,
   AUDIT_PLATFORM_COUNT_WORD,
 } from "@/lib/offers";
+import { getAuditPricing } from "@/lib/currency";
 import {
   HOMECALC_PROOF,
   HOMECALC_CLAIMS,
@@ -85,7 +86,8 @@ const SECTIONS = [
   { id: "not", n: "08", title: "What this report does not claim" },
 ] as const;
 
-const FAQ_ITEMS = [
+function buildFaqItems(priceDisplay: string) {
+  return [
   {
     q: "Is this a real report or a mock-up?",
     a: "The data is real. Every figure on this page was read from Bing Webmaster Tools' AI Performance report or Google Search Console, and each one is published elsewhere on this site with its source named. The subject is our own two properties — HomeCalc.ca and hamitahm.com — rather than a client's audit, so nothing here depends on you trusting an anonymisation.",
@@ -104,42 +106,45 @@ const FAQ_ITEMS = [
   },
   {
     q: "Do I get a call, or just the document?",
-    a: `Both. The ${OFFERS.audit.price} CAD audit includes the written report, a 60-minute walkthrough call, and 14 days of follow-up access. If you then want the findings turned into a fixed-scope plan your own developer can ship, that is the ${OFFERS.actionPlan.name} (${OFFERS.actionPlan.priceWithCurrency}) and the audit fee is credited toward it.`,
+    a: `Both. The ${priceDisplay} audit includes the written report, a 60-minute walkthrough call, and 14 days of follow-up access. If you then want the findings turned into a fixed-scope plan your own developer can ship, that is the ${OFFERS.actionPlan.name} (${OFFERS.actionPlan.priceWithCurrency}) and the audit fee is credited toward it.`,
   },
-];
+  ];
+}
 
-const structuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": `${URL}#page`,
-      url: URL,
-      name: "Sample AI Visibility Audit Report",
-      description:
-        "A public sample of the AI Visibility Audit deliverable, built from published console data.",
-      inLanguage: "en-CA",
-      publisher: { "@id": `${SITE}/#organization` },
-      about: { "@id": `${SITE}/#organization` },
-    },
-    {
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
-        { "@type": "ListItem", position: 2, name: "AI Visibility", item: `${SITE}${HUB_URL}` },
-        { "@type": "ListItem", position: 3, name: "Sample Report", item: URL },
-      ],
-    },
-    {
-      "@type": "FAQPage",
-      mainEntity: FAQ_ITEMS.map(({ q, a }) => ({
-        "@type": "Question",
-        name: q,
-        acceptedAnswer: { "@type": "Answer", text: a },
-      })),
-    },
-  ],
-};
+function buildStructuredData(faqItems: ReturnType<typeof buildFaqItems>) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${URL}#page`,
+        url: URL,
+        name: "Sample AI Visibility Audit Report",
+        description:
+          "A public sample of the AI Visibility Audit deliverable, built from published console data.",
+        inLanguage: "en-CA",
+        publisher: { "@id": `${SITE}/#organization` },
+        about: { "@id": `${SITE}/#organization` },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+          { "@type": "ListItem", position: 2, name: "AI Visibility", item: `${SITE}${HUB_URL}` },
+          { "@type": "ListItem", position: 3, name: "Sample Report", item: URL },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: faqItems.map(({ q, a }) => ({
+          "@type": "Question",
+          name: q,
+          acceptedAnswer: { "@type": "Answer", text: a },
+        })),
+      },
+    ],
+  };
+}
 
 /* ── small presentational helpers, local to this page ── */
 
@@ -211,7 +216,11 @@ const thStyle: React.CSSProperties = {
 const numCell: React.CSSProperties = { ...cellBase, textAlign: "right", fontFamily: "var(--mono)", fontSize: 13.5 };
 const numHead: React.CSSProperties = { ...thStyle, textAlign: "right" };
 
-export default function SampleReportPage() {
+export default async function SampleReportPage() {
+  const { priceWithCurrency, checkoutUrl } = await getAuditPricing();
+  const FAQ_ITEMS = buildFaqItems(priceWithCurrency);
+  const structuredData = buildStructuredData(FAQ_ITEMS);
+
   return (
     <>
       <script
@@ -256,7 +265,7 @@ export default function SampleReportPage() {
                 maxWidth: "20ch",
               }}
             >
-              Before you pay {OFFERS.audit.price}, see exactly what arrives
+              Before you pay {priceWithCurrency}, see exactly what arrives
             </h1>
           </RevealSection>
           <RevealSection delay={0.06}>
@@ -277,7 +286,7 @@ export default function SampleReportPage() {
           <RevealSection delay={0.1}>
             <div style={{ marginTop: 26, display: "flex", gap: 12, flexWrap: "wrap" }} className="no-print">
               <a
-                href={OFFERS.audit.checkoutUrl}
+                href={checkoutUrl}
                 style={{
                   display: "inline-block",
                   padding: "13px 22px",
@@ -289,7 +298,7 @@ export default function SampleReportPage() {
                   textDecoration: "none",
                 }}
               >
-                Book the audit &mdash; {OFFERS.audit.price} CAD
+                Book the audit &mdash; {priceWithCurrency}
               </a>
               <PrintButton />
             </div>
@@ -737,15 +746,15 @@ export default function SampleReportPage() {
                 This, about your site
               </h2>
               <p style={{ fontSize: 16, color: "var(--muted)", lineHeight: 1.7, maxWidth: "56ch" }}>
-                {OFFERS.audit.name} &mdash; {OFFERS.audit.price} CAD,{" "}
-                {OFFERS.audit.priceNote}. {OFFERS.audit.scope.promptCount} prompts
+                {OFFERS.audit.name} &mdash; {priceWithCurrency}, flat fee,
+                one-time. {OFFERS.audit.scope.promptCount} prompts
                 across {AUDIT_PLATFORM_COUNT_WORD} engines, up to three competitors, a
                 content gap analysis, a 60-minute walkthrough and 14 days of follow-up.
                 Delivered within 7 business days.
               </p>
               <div style={{ marginTop: 22, display: "flex", gap: 12, flexWrap: "wrap" }}>
                 <a
-                  href={OFFERS.audit.checkoutUrl}
+                  href={checkoutUrl}
                   style={{
                     display: "inline-block",
                     padding: "13px 22px",
