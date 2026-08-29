@@ -1,7 +1,7 @@
 /**
  * Single source of truth for the legal pages (/privacy, /terms, /disclaimer).
  *
- * ── WHY THESE PAGES EXIST ──
+ * WHY THESE PAGES EXIST:
  * The AI Visibility Checker at /ai-visibility/ai-visibility-checker/ collects an
  * email address, a domain, keywords and a country, and forwards them to a Google
  * Apps Script webhook which appends a row to a Google Sheet and emails Hami.
@@ -9,8 +9,8 @@
  * Canadian business. It was live with no privacy policy and no notice at the point
  * of collection.
  *
- * These pages describe what the site ACTUALLY does. If the data flow changes —
- * a new form, a new analytics tool, a new third party — update this file.
+ * These pages describe what the site ACTUALLY does. If the data flow changes
+ * (a new form, a new analytics tool, a new third party), update this file.
  * A privacy policy that doesn't match reality is worse than none.
  */
 
@@ -42,7 +42,7 @@ export const DATA_COLLECTED = [
   {
     what: "Analytics",
     fields:
-      "Standard web analytics — pages viewed, approximate location (country/region), device type, referring site, and anonymised usage events.",
+      "Standard web analytics: pages viewed, approximate location (country/region), device type, referring site, and anonymised usage events.",
     why: "To understand which pages are useful and which are not.",
     where:
       "Google Analytics 4, loaded via Google Tag Manager. This site does not use advertising or retargeting pixels.",
@@ -50,8 +50,8 @@ export const DATA_COLLECTED = [
   {
     /*
      * ⚠️ ADDED 2026-08-16 WITH THE CLARITY TAG, IN THE SAME COMMIT. Session replay
-     * is a materially different kind of processing from page analytics — it records
-     * the interaction itself — so it gets its own entry rather than being folded
+     * is a materially different kind of processing from page analytics: it records
+     * the interaction itself, so it gets its own entry rather than being folded
      * into the Analytics one above. Under PIPEDA the purpose has to be identified;
      * "we use analytics" does not cover recording someone's session.
      *
@@ -60,10 +60,10 @@ export const DATA_COLLECTED = [
      */
     what: "Session replay and heatmaps",
     fields:
-      "How you moved through a page — scrolling, clicks, and which parts of a page get attention — plus device type and approximate location. Text you type into forms is masked and not recorded.",
+      "How you moved through a page: scrolling, clicks, and which parts of a page get attention, plus device type and approximate location. Text you type into forms is masked and not recorded.",
     why: "To see where pages confuse people, which is hard to learn from page-view counts alone.",
     where:
-      "Microsoft Clarity. It records interactions with this website only — never your screen, other tabs, or anything outside this site.",
+      "Microsoft Clarity. It records interactions with this website only: never your screen, other tabs, or anything outside this site.",
   },
   {
     what: "Server logs",
@@ -82,7 +82,7 @@ export const THIRD_PARTIES = [
   },
   {
     name: "Microsoft Clarity",
-    role: "Heatmaps and session replay — how people scroll and click through pages. Recordings are of page interactions, not your screen or camera, and Clarity masks text input by default.",
+    role: "Heatmaps and session replay: how people scroll and click through pages. Recordings are of page interactions, not your screen or camera, and Clarity masks text input by default.",
   },
   {
     name: "Google (Sheets & Apps Script)",

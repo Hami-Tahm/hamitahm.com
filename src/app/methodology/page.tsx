@@ -9,7 +9,7 @@ import { OFFERS } from "@/lib/offers";
 const SLUG = "/methodology/";
 
 /**
- * THE IP LINE ON THIS PAGE — read before editing.
+ * THE IP LINE ON THIS PAGE: read before editing.
  *
  * Publish: how visibility is MEASURED (engines, prompt handling, what gets recorded,
  * which metrics, what the numbers can and cannot support). That is credibility, and
@@ -21,9 +21,9 @@ const SLUG = "/methodology/";
  */
 
 export const metadata: Metadata = {
-  title: "How I Measure AI Visibility — Methodology",
+  title: "How I Measure AI Visibility: Methodology",
   description:
-    "The measurement method behind every audit: which engines, how prompts are run and recorded, which metrics, and — just as importantly — what these numbers cannot prove.",
+    "The measurement method behind every audit: which engines, how prompts are run and recorded, which metrics, and (just as importantly) what these numbers cannot prove.",
   alternates: { canonical: `https://hamitahm.com${SLUG}` },
 };
 
@@ -34,19 +34,19 @@ const FAQ_ITEMS = [
   },
   {
     q: "Which AI engines do you actually measure?",
-    a: "Six: Google AI Overviews, ChatGPT, Gemini, Claude, Microsoft Copilot, and Perplexity. They are not equivalent as data sources, which is the important part — only Copilot reports citations back to publishers, so it is the only engine where a first-party count exists. The rest are observed, not counted.",
+    a: "Six: Google AI Overviews, ChatGPT, Gemini, Claude, Microsoft Copilot, and Perplexity. They are not equivalent as data sources, which is the important part: only Copilot reports citations back to publishers, so it is the only engine where a first-party count exists. The rest are observed, not counted.",
   },
   {
     q: "Do you use an AI visibility score out of 100?",
-    a: "No. A composite score hides more than it shows: two brands with the same score can have completely different problems. You get the underlying observations instead — where you appeared, where a competitor appeared instead, and what each engine said — because those are the things you can act on.",
+    a: "No. A composite score hides more than it shows: two brands with the same score can have completely different problems. You get the underlying observations instead (where you appeared, where a competitor appeared instead, and what each engine said), because those are the things you can act on.",
   },
   {
     q: "Can you prove your work caused a change in citations?",
-    a: "Not in the strict sense, and I won't claim otherwise. AI engines change their models and retrieval independently of anything a consultant does, so a rise after an implementation is correlation with a plausible mechanism — not proof of causation. What I do is record a dated baseline before any work starts, so at least the before-and-after is real and you can judge it yourself.",
+    a: "Not in the strict sense, and I won't claim otherwise. AI engines change their models and retrieval independently of anything a consultant does, so a rise after an implementation is correlation with a plausible mechanism, not proof of causation. What I do is record a dated baseline before any work starts, so at least the before-and-after is real and you can judge it yourself.",
   },
   {
     q: "How do you avoid cherry-picking a good result?",
-    a: "By fixing the prompt set in advance, running it across engines rather than picking the flattering one, and recording the date and country of every answer. A single screenshot proves nothing — AI answers vary by session, phrasing, and region. Anything I report should say when it was captured and under what conditions.",
+    a: "By fixing the prompt set in advance, running it across engines rather than picking the flattering one, and recording the date and country of every answer. A single screenshot proves nothing: AI answers vary by session, phrasing, and region. Anything I report should say when it was captured and under what conditions.",
   },
 ];
 
@@ -73,13 +73,13 @@ const MEASURES = [
     metric: "Accuracy",
     q: "Is what it says about you correct?",
     detail:
-      "An inaccurate mention can be worse than none — wrong service, wrong location, wrong pricing, or confusion with a similarly-named business.",
+      "An inaccurate mention can be worse than none: wrong service, wrong location, wrong pricing, or confusion with a similarly-named business.",
   },
   {
     metric: "Share of voice",
     q: "Who gets named instead of you?",
     detail:
-      "Measured on the same question, at the same time, against named competitors — because “you're not very visible” is not actionable, and “on this query they are named and you are not” is.",
+      "Measured on the same question, at the same time, against named competitors, because “you're not very visible” is not actionable, and “on this query they are named and you are not” is.",
   },
 ];
 
@@ -134,7 +134,7 @@ export default function MethodologyPage() {
                 marginTop: 26,
               }}
             >
-              How I measure AI visibility &mdash;{" "}
+              How I measure AI visibility:{" "}
               <em style={{ fontStyle: "italic", color: "var(--accent)" }}>
                 and what the numbers can&rsquo;t prove.
               </em>
@@ -153,14 +153,14 @@ export default function MethodologyPage() {
             >
               Most providers in this category report a score without saying which
               engines they asked, on what date, from which country, or how many times.
-              That is not a measurement &mdash; it is a claim. This page documents the
+              That is not a measurement; it is a claim. This page documents the
               method behind every audit I deliver, including its limits.
             </p>
           </RevealSection>
         </div>
       </header>
 
-      {/* ── 01 — What gets measured ── */}
+      {/* 01. What gets measured */}
       <section style={{ padding: "40px 0" }}>
         <div className="wrap" style={{ maxWidth: 820 }}>
           <RevealSection>
@@ -221,7 +221,7 @@ export default function MethodologyPage() {
         </div>
       </section>
 
-      {/* ── 02 — How it's recorded ── */}
+      {/* 02. How it's recorded */}
       <section style={{ padding: "40px 0" }}>
         <div className="wrap" style={{ maxWidth: 760 }}>
           <RevealSection>
@@ -238,23 +238,23 @@ export default function MethodologyPage() {
             </p>
             <ul style={ulStyle}>
               <li>
-                <b style={bStyle}>The exact prompt</b> &mdash; fixed in advance, not
+                <b style={bStyle}>The exact prompt</b>: fixed in advance, not
                 adjusted afterwards to produce a better-looking result.
               </li>
               <li>
-                <b style={bStyle}>The engine</b> &mdash; reported separately, never
+                <b style={bStyle}>The engine</b>: reported separately, never
                 merged into a single blended figure.
               </li>
               <li>
-                <b style={bStyle}>The date</b> &mdash; every claim on this site is
+                <b style={bStyle}>The date</b>: every claim on this site is
                 dated for this reason.
               </li>
               <li>
-                <b style={bStyle}>The country</b> &mdash; a Toronto business gets
+                <b style={bStyle}>The country</b>: a Toronto business gets
                 different answers than the same query run from the US.
               </li>
               <li>
-                <b style={bStyle}>Named competitors</b> &mdash; measured on the same
+                <b style={bStyle}>Named competitors</b>: measured on the same
                 question at the same time, so the comparison is like-for-like.
               </li>
             </ul>
@@ -262,15 +262,15 @@ export default function MethodologyPage() {
               You can see this applied in the public{" "}
               <Link href={SNAPSHOT.caseStudyPath} style={linkStyle}>
                 engine snapshot
-              </Link>{" "}
-              &mdash; {SNAPSHOT.engineCount} engines, one fixed prompt, captured{" "}
+              </Link>
+              : {SNAPSHOT.engineCount} engines, one fixed prompt, captured{" "}
               {SNAPSHOT.displayDate}, each answer attributed to the engine that gave it.
             </p>
           </RevealSection>
         </div>
       </section>
 
-      {/* ── 03 — Where the numbers come from ── */}
+      {/* 03. Where the numbers come from */}
       <section style={{ padding: "40px 0" }}>
         <div className="wrap" style={{ maxWidth: 760 }}>
           <RevealSection>
@@ -287,13 +287,13 @@ export default function MethodologyPage() {
               Bing Webmaster Tools&rsquo; AI Performance report gives a first-party
               count: which of your pages were cited, how often, and the queries that
               retrieved them. Google Search Console has since added a Generative AI
-              features report, but it exposes impressions only &mdash; no citation
+              features report, but it exposes impressions only: no citation
               counts, clicks or queries. ChatGPT, Gemini and Perplexity still expose
               nothing to site owners.
             </p>
             <p style={pStyle}>
               So a citation <i>count</i> can only ever come from Copilot. Everything
-              else is observation &mdash; running the prompt and recording what came
+              else is observation: running the prompt and recording what came
               back. Both are useful; conflating them is not.
             </p>
 
@@ -313,7 +313,7 @@ export default function MethodologyPage() {
                 as a cross-engine citation count. Where the larger{" "}
                 {HOMECALC_PROOF.combinedAppearances} figure appears, it is labelled
                 <em style={{ fontStyle: "italic" }}> appearances</em>, not citations,
-                and carries both components with it &mdash; because
+                and carries both components with it:
                 {" "}{HOMECALC_PROOF.googleImpressions} of it is Google impressions,
                 and Google publishes no citation count at all. The{" "}
                 <Link href="/blog/ai-citation-study/" style={linkStyle}>
@@ -328,7 +328,7 @@ export default function MethodologyPage() {
         </div>
       </section>
 
-      {/* ── 04 — Limits ── */}
+      {/* 04. Limits */}
       <section style={{ padding: "40px 0" }}>
         <div className="wrap" style={{ maxWidth: 760 }}>
           <RevealSection>
@@ -341,7 +341,7 @@ export default function MethodologyPage() {
               <li>
                 <b style={bStyle}>Causation.</b> Engines change their models and
                 retrieval on their own schedule. A rise after an implementation is
-                correlation with a plausible mechanism &mdash; not proof. A dated
+                correlation with a plausible mechanism, not proof. A dated
                 baseline is what makes it judgeable at all.
               </li>
               <li>
@@ -362,7 +362,7 @@ export default function MethodologyPage() {
         </div>
       </section>
 
-      {/* ── 05 — What stays private ── */}
+      {/* 05. What stays private */}
       <section style={{ padding: "40px 0" }}>
         <div className="wrap" style={{ maxWidth: 760 }}>
           <RevealSection>
@@ -372,8 +372,8 @@ export default function MethodologyPage() {
           <RevealSection delay={0.06}>
             <h2 style={h2Style}>Measurement is public. The fix is the product.</h2>
             <p style={pStyle}>
-              Everything above &mdash; how visibility is measured, recorded, and
-              reported &mdash; is published so you can evaluate the work before paying
+              Everything above (how visibility is measured, recorded, and
+              reported) is published so you can evaluate the work before paying
               for it. What is not published is the specific set of technical and
               structural changes that produced the results in the case study.
             </p>
@@ -382,8 +382,8 @@ export default function MethodologyPage() {
               written down, in the{" "}
               <Link href={OFFERS.audit.href} style={linkStyle}>
                 {OFFERS.audit.name}
-              </Link>{" "}
-              &mdash; documented so your own team can execute it, or so I can implement
+              </Link>
+              : documented so your own team can execute it, or so I can implement
               it for you.
             </p>
           </RevealSection>
@@ -450,7 +450,7 @@ export default function MethodologyPage() {
                   position: "relative",
                 }}
               >
-                The free checker runs this same method on a small scale &mdash; your
+                The free checker runs this same method on a small scale: your
                 keywords, your competitors, dated and attributed.
               </p>
               <div
@@ -539,7 +539,7 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
         gap: 14,
       }}
     >
-      {number} &mdash; {text}
+      {number}. {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
     </div>
   );

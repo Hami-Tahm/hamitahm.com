@@ -14,14 +14,14 @@ import { HOMECALC_PROOF, HOMECALC_CLAIMS, HOMECALC_HEADLINE_STAT } from "@/lib/h
  * The two papers below are the actual literature. The 2026 survey reviewed 45
  * studies and concluded, in its own words, that "no reviewed technique shows a
  * stable, longitudinal, cross-platform causal effect on organic discoverability or
- * downstream behavior" — and, worth noting for anyone selling this work, that
+ * downstream behavior"; and, worth noting for anyone selling this work, that
  * "citation-oriented rewrites can impair retrieval". Confident mechanism claims on
  * this page were not just unsupported; some of them describe tactics the evidence
  * says can backfire.
  *
  * RULE: on this page, describe what is measured and what is uncertain. Selling a
- * developing practice honestly is a stronger position than pretending it is solved
- * — every competitor's page pretends.
+ * developing practice honestly is a stronger position than pretending it is solved.
+ * Every competitor's page pretends.
  */
 const GEO_PAPER_URL = "https://arxiv.org/abs/2311.09735";
 const GEO_SURVEY_URL = "https://arxiv.org/abs/2607.14035";
@@ -43,7 +43,7 @@ const SRC_LINK = {
 /**
  * Separating these stages is the single most useful thing on this page. Almost every
  * GEO pitch collapses them into one "visibility score", which hides the fact that
- * the last row — the only one that pays for anything — is never reported by any AI
+ * the last row (the only one that pays for anything) is never reported by any AI
  * platform.
  */
 const MEASUREMENT_STAGES = [
@@ -88,19 +88,19 @@ export const metadata: Metadata = {
 const CONSULTANT_WORK = [
   {
     title: "Entity signal building",
-    body: "Making it unambiguous who you are, what you sell and where — consistent organization details, authoritative profiles, structured information on your own site, and independently verifiable references. Inconsistent entity information is one of several reasons a brand goes missing from answers; the audit tells you whether it is yours. Wikidata only comes into it where an entity genuinely meets the notability bar.",
+    body: "Making it unambiguous who you are, what you sell and where: consistent organization details, authoritative profiles, structured information on your own site, and independently verifiable references. Inconsistent entity information is one of several reasons a brand goes missing from answers; the audit tells you whether it is yours. Wikidata only comes into it where an entity genuinely meets the notability bar.",
   },
   {
     title: "Citation authority development",
-    body: "Earning coverage on sources you do not control. A claim only you make is weaker evidence than one others repeat, and independent references improve corroboration, discovery and credibility. Treat that as sound reasoning rather than a measured weighting — no engine publishes how it scores third-party sources.",
+    body: "Earning coverage on sources you do not control. A claim only you make is weaker evidence than one others repeat, and independent references improve corroboration, discovery and credibility. Treat that as sound reasoning rather than a measured weighting: no engine publishes how it scores third-party sources.",
   },
   {
     title: "Content structure for generative AI",
-    body: "Restructuring how your core content is organized so generative AI systems can synthesize it into responses. This is different from formatting for extraction — GEO content structure focuses on clear claims, source attribution, and contextual completeness so an AI model can build an answer around your information rather than around a competitor's.",
+    body: "Restructuring how your core content is organized so generative AI systems can synthesize it into responses. This is different from formatting for extraction: GEO content structure focuses on clear claims, source attribution, and contextual completeness so an AI model can build an answer around your information rather than around a competitor's.",
   },
   {
     title: "Platform-specific strategy",
-    body: "Platforms differ in when they search at all, what they retrieve from, how fresh their sources are, how they present citations, and how much their answers vary between runs. So I test each one separately rather than assuming a tactic transfers. You will see confident claims elsewhere about what each engine \'favours\' — those are folklore, not findings. My recommendations come from repeated, dated observations on your own domain.",
+    body: "Platforms differ in when they search at all, what they retrieve from, how fresh their sources are, how they present citations, and how much their answers vary between runs. So I test each one separately rather than assuming a tactic transfers. You will see confident claims elsewhere about what each engine \'favours\'; those are folklore, not findings. My recommendations come from repeated, dated observations on your own domain.",
   },
 ] as const;
 
@@ -119,7 +119,7 @@ const COMPARISON_ROWS = [
     "Who builds the strategy",
     "Hami Tahm, personally",
     "Account manager and team",
-    "No one — software shows data only",
+    "No one: software shows data only",
   ],
   // ⚠️ This table used to assert that agencies "rarely publish proof", use a
   // "templated approach", and that software companies have "no case studies".
@@ -140,7 +140,7 @@ const COMPARISON_ROWS = [
   ],
   [
     "Usual limitation",
-    "Limited delivery capacity — one person",
+    "Limited delivery capacity (one person)",
     "Higher cost and more handoffs",
     "Still needs someone to interpret and act on it",
   ],
@@ -165,7 +165,7 @@ const PROCESS_STEPS = [
   },
   {
     title: "Entity gap analysis",
-    body: "What AI engines currently believe about your brand — and where the gaps in their understanding are largest.",
+    body: "What AI engines currently believe about your brand, and where the gaps in their understanding are largest.",
   },
   {
     title: "GEO strategy",
@@ -192,14 +192,14 @@ const PERSONAS = [
   },
   {
     label: "In-house marketing teams",
-    desc: "CMOs and marketing leads at established companies — you have a team that can execute; you need outside expertise to identify the highest-leverage AI moves first.",
+    desc: "CMOs and marketing leads at established companies: you have a team that can execute; you need outside expertise to identify the highest-leverage AI moves first.",
   },
 ] as const;
 
 /*
  * The two "Coming summer 2026" placeholder cards were deleted on 2026-08-11.
  * It was already August. A promise with a date that has passed is worse than an
- * empty space — it tells a buyer the page is unmaintained, on a page whose entire
+ * empty space: it tells a buyer the page is unmaintained, on a page whose entire
  * argument is that this practitioner is careful with claims.
  *
  * Do not re-add placeholders. Add a case study when there is one.
@@ -212,19 +212,19 @@ const FAQ_ITEMS: {
 }[] = [
   {
     q: "What is the difference between GEO and SEO?",
-    a: "They overlap heavily. Google states that its AI features run on its core Search ranking systems and that optimizing for AI Overviews and AI Mode is still SEO, with no special markup required — so on Google's surfaces, SEO foundations are the work. What generative visibility adds is the engines that do not use Google's index at all, and an outcome that is a spectrum rather than a position: you can be retrieved, mentioned, cited, paraphrased without attribution, or omitted. Nobody has shown that either discipline 'rewards' a specific fixed factor.",
+    a: "They overlap heavily. Google states that its AI features run on its core Search ranking systems and that optimizing for AI Overviews and AI Mode is still SEO, with no special markup required, so on Google's surfaces, SEO foundations are the work. What generative visibility adds is the engines that do not use Google's index at all, and an outcome that is a spectrum rather than a position: you can be retrieved, mentioned, cited, paraphrased without attribution, or omitted. Nobody has shown that either discipline 'rewards' a specific fixed factor.",
   },
   {
     q: "What is the difference between GEO and AEO?",
     aeoLink: true,
   },
   {
-    q: "What is generative AI visibility software — and do I need a consultant instead?",
-    a: "Generative AI visibility software (Peec, Profound, AirOps, and similar tools) tracks where and how AI engines mention your brand. They give you data. A GEO consultant interprets the data, identifies the entity gaps software can't see, and builds the strategy to close them. Most businesses benefit from both — software for ongoing monitoring, a consultant for strategy.",
+    q: "What is generative AI visibility software, and do I need a consultant instead?",
+    a: "Generative AI visibility software (Peec, Profound, AirOps, and similar tools) tracks where and how AI engines mention your brand. They give you data. A GEO consultant interprets the data, identifies the entity gaps software can't see, and builds the strategy to close them. Most businesses benefit from both: software for ongoing monitoring, a consultant for strategy.",
   },
   {
     q: "How quickly can I see GEO results?",
-    a: `On HomeCalc.ca — a site I own — appearances began climbing within 48 hours of the changes, with the ${HOMECALC_CLAIMS.fullLiftVisible}. That is one property, and one observation is not a timeline you should plan around. There is no published service level for this: Google's own documentation says recrawling alone can take days to months and that indexing is never guaranteed. What you can control is measuring on a fixed schedule so you can tell movement from noise.`,
+    a: `On HomeCalc.ca (a site I own), appearances began climbing within 48 hours of the changes, with the ${HOMECALC_CLAIMS.fullLiftVisible}. That is one property, and one observation is not a timeline you should plan around. There is no published service level for this: Google's own documentation says recrawling alone can take days to months and that indexing is never guaranteed. What you can control is measuring on a fixed schedule so you can tell movement from noise.`,
   },
   {
     q: "What do I receive when working with a GEO consultant?",
@@ -232,7 +232,7 @@ const FAQ_ITEMS: {
   },
   {
     q: "How much does this cost?",
-    a: `The starting point is a ${PRICE_DISPLAY} AI visibility audit — flat fee, one-time. From there you can act on the findings yourself, or have me turn them into a fixed-scope Action Plan and roadmap for your team to ship (the audit fee is credited toward it). Optional monthly monitoring is available afterward, on a fixed 6–12 month term — never required to get started.`,
+    a: `The starting point is a ${PRICE_DISPLAY} AI visibility audit: flat fee, one-time. From there you can act on the findings yourself, or have me turn them into a fixed-scope Action Plan and roadmap for your team to ship (the audit fee is credited toward it). Optional monthly monitoring is available afterward, on a fixed 6–12 month term, never required to get started.`,
   },
   {
     q: "Do I need both AEO and GEO?",
@@ -242,11 +242,11 @@ const FAQ_ITEMS: {
 
 const RELATED_LINKS = [
   {
-    label: "AEO vs GEO vs SEO — the differences explained",
+    label: "AEO vs GEO vs SEO: the differences explained",
     href: "/blog/aeo-vs-geo-vs-seo/",
   },
   {
-    label: "Profound vs AirOps vs Peec — generative AI visibility software compared",
+    label: "Profound vs AirOps vs Peec: generative AI visibility software compared",
     href: "/blog/peec-vs-profound-vs-airops/",
   },
   {
@@ -310,8 +310,8 @@ const structuredData = {
           "@type": "Answer",
           text: aeoLink
             ? q === "What is the difference between GEO and AEO?"
-              ? "They are overlapping industry labels rather than two standardised disciplines, and no body defines the boundary. In practice AEO emphasises making a page's content extractable as a direct answer, and GEO emphasises whether your brand is represented and cited at all. The underlying work — crawlable content, genuine usefulness, consistent entity information, credible outside references — is largely shared."
-              : "Usually you need one of them more than the other, and which one is a question for the audit rather than the sales page. The candidates are technical discovery, content usefulness, answer extraction, entity consistency and external authority — and for most businesses the gap sits in one or two of those, not all five."
+              ? "They are overlapping industry labels rather than two standardised disciplines, and no body defines the boundary. In practice AEO emphasises making a page's content extractable as a direct answer, and GEO emphasises whether your brand is represented and cited at all. The underlying work (crawlable content, genuine usefulness, consistent entity information, credible outside references) is largely shared."
+              : "Usually you need one of them more than the other, and which one is a question for the audit rather than the sales page. The candidates are technical discovery, content usefulness, answer extraction, entity consistency and external authority, and for most businesses the gap sits in one or two of those, not all five."
             : a!,
         },
       })),
@@ -347,7 +347,7 @@ export default function GEOConsultantCanada() {
         </RevealSection>
       </div>
 
-      {/* ── 1 — Hero ── */}
+      {/* Section 1: Hero */}
       <header style={{ padding: "34px 0 50px" }}>
         <div className="wrap">
           <RevealSection>
@@ -376,12 +376,12 @@ export default function GEOConsultantCanada() {
               }}
             >
               I help Canadian businesses measure and improve how their pages and
-              brand are retrieved, mentioned and cited in AI-generated answers &mdash;
+              brand are retrieved, mentioned and cited in AI-generated answers,
               across Google&rsquo;s AI features, Microsoft Copilot, ChatGPT,
               Perplexity, Gemini and Claude. The work combines technical SEO, original
               evidence, consistent entity information and credible third-party
               references. Every engagement starts with a measured baseline, so you
-              can tell whether anything actually changed &mdash; and no one, including
+              can tell whether anything actually changed, and no one, including
               me, can guarantee placement in an AI answer.
             </p>
           </RevealSection>
@@ -414,7 +414,7 @@ export default function GEOConsultantCanada() {
         </div>
       </header>
 
-      {/* ── 2 — What Is GEO ── */}
+      {/* Section 2: What Is GEO */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -476,7 +476,7 @@ export default function GEOConsultantCanada() {
                 >
                   a 2023 paper
                 </a>{" "}
-                reporting visibility gains of up to 40% &mdash; a figure you will see
+                reporting visibility gains of up to 40%: a figure you will see
                 quoted often, and usually without its condition. It applies to content
                 already present in the model&rsquo;s context, so it says nothing about
                 getting found in the first place. The same 2026 survey also found that
@@ -496,7 +496,7 @@ export default function GEOConsultantCanada() {
                   marginBottom: 12,
                 }}
               >
-                GEO vs SEO — what&rsquo;s different
+                GEO vs SEO: what&rsquo;s different
               </h3>
               <p
                 style={{
@@ -545,7 +545,7 @@ export default function GEOConsultantCanada() {
                   marginBottom: 12,
                 }}
               >
-                GEO vs AEO — overlapping labels, different emphasis
+                GEO vs AEO: overlapping labels, different emphasis
               </h3>
               <p
                 style={{
@@ -557,8 +557,8 @@ export default function GEOConsultantCanada() {
               >
                 GEO and AEO solve different problems. AEO focuses on how your
                 existing content is formatted so AI engines can extract a direct
-                answer from it — page-level structural work. GEO focuses on whether
-                AI models trust and recognize your brand enough to cite it at all —
+                answer from it: page-level structural work. GEO focuses on whether
+                AI models trust and recognize your brand enough to cite it at all:
                 entity-level positioning across the web. AEO is about being
                 extractable; GEO is about being represented. Most businesses need
                 both, but each is a separate practice.
@@ -670,7 +670,7 @@ export default function GEOConsultantCanada() {
         </div>
       </section>
 
-      {/* ── 3 — What a GEO Consultant Does ── */}
+      {/* Section 3: What a GEO Consultant Does */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -730,7 +730,7 @@ export default function GEOConsultantCanada() {
         </div>
       </section>
 
-      {/* ── 4 — Proof ── */}
+      {/* Section 4: Proof */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -744,7 +744,7 @@ export default function GEOConsultantCanada() {
                 marginBottom: 24,
               }}
             >
-              Results — Proof of Methodology
+              Results: Proof of Methodology
             </h2>
           </RevealSection>
 
@@ -769,8 +769,8 @@ export default function GEOConsultantCanada() {
                 <strong style={{ color: "var(--ink)", fontWeight: 600 }}>
                   Owned-property case study.
                 </strong>{" "}
-                HomeCalc.ca is a Canadian personal-finance calculator site that I own
-                &mdash; not a client engagement, which is why the raw data can be
+                HomeCalc.ca is a Canadian personal-finance calculator site that I own,
+                not a client engagement, which is why the raw data can be
                 published in full. Over {HOMECALC_PROOF.timeframe} it recorded{" "}
                 {HOMECALC_PROOF.combinedAppearances} measured AI appearances across two
                 publisher reports: {HOMECALC_PROOF.citations} Copilot citations in Bing
@@ -789,7 +789,7 @@ export default function GEOConsultantCanada() {
               >
                 HomeCalc launched with no backlink portfolio, no years of indexed
                 content and no brand recognition. That is what makes the numbers worth
-                showing &mdash; they were not inherited from an established domain. A
+                showing: they were not inherited from an established domain. A
                 specific technical change produced them, and identifying that change on
                 your site is what the audit is for.
               </p>
@@ -846,7 +846,7 @@ export default function GEOConsultantCanada() {
         </div>
       </section>
 
-      {/* ── 4b — How GEO visibility is measured ── */}
+      {/* Section 4b: How GEO visibility is measured */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -957,7 +957,7 @@ export default function GEOConsultantCanada() {
         </div>
       </section>
 
-      {/* ── 5 — Comparison ── */}
+      {/* Section 5: Comparison */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -999,7 +999,7 @@ export default function GEOConsultantCanada() {
               Software is useful for monitoring your citation patterns over time.
               Agencies make sense at scale. A consultant makes sense when you want
               one person to look at why AI models aren&rsquo;t citing your business
-              specifically — and build the entity strategy to change that.
+              specifically, and build the entity strategy to change that.
             </p>
             <p style={{ marginTop: 12, fontSize: 15, color: "var(--muted)" }}>
               For software comparisons:{" "}
@@ -1014,7 +1014,7 @@ export default function GEOConsultantCanada() {
         </div>
       </section>
 
-      {/* ── 6 — How I Work ── */}
+      {/* Section 6: How I Work */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 720 }}>
           <RevealSection>
@@ -1054,7 +1054,7 @@ export default function GEOConsultantCanada() {
         </div>
       </section>
 
-      {/* ── 7 — Who This Is For ── */}
+      {/* Section 7: Who This Is For */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -1101,7 +1101,7 @@ export default function GEOConsultantCanada() {
         </div>
       </section>
 
-      {/* ── 8 — FAQ ── */}
+      {/* Section 8: FAQ */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 760 }}>
           <RevealSection>
@@ -1143,9 +1143,9 @@ export default function GEOConsultantCanada() {
                     {aeoLink && q === "What is the difference between GEO and AEO?" ? (
                       <>
                         GEO addresses whether AI models trust and recognize your
-                        brand enough to cite it — entity-level work. AEO addresses
+                        brand enough to cite it: entity-level work. AEO addresses
                         how your existing content is formatted so AI engines can
-                        extract a direct answer from it — page-level work. GEO is
+                        extract a direct answer from it: page-level work. GEO is
                         about being represented; AEO is about being extractable. Most
                         businesses need both. For AEO specifically, see{" "}
                         <Link href={AEO_URL} style={{ color: "var(--accent)" }}>
@@ -1155,8 +1155,8 @@ export default function GEOConsultantCanada() {
                       </>
                     ) : aeoLink ? (
                       <>
-                        Often, yes. AEO and GEO solve different problems —
-                        extraction vs recognition — and most businesses have gaps in
+                        Often, yes. AEO and GEO solve different problems
+                        (extraction vs recognition), and most businesses have gaps in
                         both. The audit reveals which gap is bigger for your specific
                         situation. If AEO is the dominant problem, the strategy
                         focuses there first. If it&rsquo;s GEO, the strategy focuses
@@ -1177,7 +1177,7 @@ export default function GEOConsultantCanada() {
         </div>
       </section>
 
-      {/* ── 9 — Related Service: AEO ── */}
+      {/* Section 9: Related Service: AEO */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 740 }}>
           <RevealSection>
@@ -1191,7 +1191,7 @@ export default function GEOConsultantCanada() {
                 marginBottom: 20,
               }}
             >
-              Related Service — AEO Consulting
+              Related Service: AEO Consulting
             </h2>
             <p
               style={{
@@ -1202,9 +1202,9 @@ export default function GEOConsultantCanada() {
               }}
             >
               If your goal is specifically optimizing how your existing pages are
-              structured so AI engines can extract clear answers from them — not the
+              structured so AI engines can extract clear answers from them (not the
               broader question of whether AI models recognize your brand across the
-              web — that&rsquo;s a separate practice. Answer engine optimization (AEO)
+              web), that&rsquo;s a separate practice. Answer engine optimization (AEO)
               is page-level work; GEO is entity-level positioning.
             </p>
             <p
@@ -1232,7 +1232,7 @@ export default function GEOConsultantCanada() {
         </div>
       </section>
 
-      {/* ── 10 — Related Reading ── */}
+      {/* Section 10: Related Reading */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 760 }}>
           <RevealSection>
@@ -1276,7 +1276,7 @@ export default function GEOConsultantCanada() {
         </div>
       </section>
 
-      {/* ── 11 — Final CTA ── */}
+      {/* Section 11: Final CTA */}
       <section style={{ padding: "60px 0 80px" }}>
         <div className="wrap">
           <RevealSection>

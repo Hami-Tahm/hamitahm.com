@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   // anyone holding the link, removed from sitemap, excluded from search + AI corpus.
   robots: { index: false, follow: true },
   title: "Lifespan: How Wealth & Tech Extend Life Expectancy",
-  description: "Lifespan: The Role of Wealth and Technology in Extending Life Expectancy — by Hami Tahm",
+  description: "Lifespan: The Role of Wealth and Technology in Extending Life Expectancy, by Hami Tahm",
 };
 
 export default function Post() {

@@ -8,7 +8,7 @@ import Link from "next/link";
  * line. Optionally appends date + read time as part of the second line.
  *
  * Sits inside the post header, below the H1 + subhead, above the article
- * body. Use one of these on every post — never inline a custom byline.
+ * body. Use one of these on every post; never inline a custom byline.
  */
 export function AuthorByline({
   date,
@@ -40,7 +40,7 @@ export function AuthorByline({
     >
       <Image
         src="/images/hami-tahm/hami-tahm-portrait.png"
-        alt="Hami Tahm — AI Visibility Consultant"
+        alt="Hami Tahm, AI Visibility Consultant"
         width={42}
         height={42}
         style={{

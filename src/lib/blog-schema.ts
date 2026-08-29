@@ -21,7 +21,7 @@ type BlogSchemaInput = {
   /** Optional OG image, absolute or site-relative */
   image?: string;
   /**
-   * Breadcrumb cluster — also decides where the post lives.
+   * Breadcrumb cluster: also decides where the post lives.
    *
    * "ai-visibility" | "blog"  → /blog/<slug>/
    * "writing"                 → /<slug>/   (older root-level posts)

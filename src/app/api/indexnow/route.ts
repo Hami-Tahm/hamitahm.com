@@ -12,7 +12,7 @@ import {
  * Submit URLs to IndexNow (Bing, Yandex, Naver, Seznam, Copilot).
  *
  * Auth: requires header `x-indexnow-secret` matching env `INDEXNOW_SECRET`.
- *       If the env var isn't set, the route refuses to run — prevents anyone
+ *       If the env var isn't set, the route refuses to run: prevents anyone
  *       from triggering submissions on a misconfigured deploy.
  *
  * Body (all optional):
@@ -54,7 +54,7 @@ export async function POST(req: Request) {
 /**
  * GET /api/indexnow
  *
- * Health check — confirms key + host are wired up. Does NOT submit anything.
+ * Health check: confirms key + host are wired up. Does NOT submit anything.
  */
 export async function GET() {
   return NextResponse.json({

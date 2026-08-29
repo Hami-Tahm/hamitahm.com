@@ -43,15 +43,15 @@ export const metadata: Metadata = {
 const CONSULTANT_WORK = [
   {
     title: "Content structure audit",
-    body: "Reviewing how your existing pages are structured — heading hierarchy, schema, answer formatting, internal linking — to identify which pages are extractable by AI engines and which are not. The output is a prioritized list of structural fixes ranked by how much extraction lift each will produce.",
+    body: "Reviewing how your existing pages are structured (heading hierarchy, schema, answer formatting, internal linking) to identify which pages are extractable by AI engines and which are not. The output is a prioritized list of structural fixes ranked by how much extraction lift each will produce.",
   },
   {
     title: "Answer-format optimization",
-    body: "Rewriting and restructuring critical pages so AI engines can extract clear, standalone answers to the questions your customers ask. This is page-level work — title, opening paragraph, subheadings, FAQ sections — done with extractability as the primary design constraint.",
+    body: "Rewriting and restructuring critical pages so AI engines can extract clear, standalone answers to the questions your customers ask. This is page-level work (title, opening paragraph, subheadings, FAQ sections) done with extractability as the primary design constraint.",
   },
   {
     title: "Platform-specific strategy",
-    body: "Engines differ in what they retrieve from, how they present sources and how much their answers vary between runs, so I test each one separately rather than assuming a fix transfers. What I do not do is tell you what each engine \'favours\' — those claims circulate widely and trace back to no vendor document. Google says plainly that no special structured data is needed for its AI features. Recommendations here come from dated, repeated observations on your own pages.",
+    body: "Engines differ in what they retrieve from, how they present sources and how much their answers vary between runs, so I test each one separately rather than assuming a fix transfers. What I do not do is tell you what each engine \'favours\': those claims circulate widely and trace back to no vendor document. Google says plainly that no special structured data is needed for its AI features. Recommendations here come from dated, repeated observations on your own pages.",
   },
 ] as const;
 
@@ -76,7 +76,7 @@ const COMPARISON_ROWS = [
   ],
   [
     "Usual limitation",
-    "Limited delivery capacity — one person",
+    "Limited delivery capacity (one person)",
     "Usually a retainer, and more handoffs",
     "Needs someone in-house to interpret and act",
   ],
@@ -103,7 +103,7 @@ const COMPARISON_ROWS = [
 const PROCESS_STEPS = [
   {
     title: "Discover",
-    body: "Baseline where your content is cited — and where AI engines skip it entirely — across the platforms that matter to your buyers.",
+    body: "Baseline where your content is cited (and where AI engines skip it entirely) across the platforms that matter to your buyers.",
   },
   {
     title: "Audit",
@@ -115,14 +115,14 @@ const PROCESS_STEPS = [
   },
   {
     title: "Measure",
-    body: "Track citation lift over time and refine what works — so improvements compound instead of stalling.",
+    body: "Track citation lift over time and refine what works, so improvements compound instead of stalling.",
   },
 ] as const;
 
 const PERSONAS = [
   {
     label: "High-ticket service businesses",
-    desc: "Dental, mortgage, legal, and financial advisory firms — highest ROI from AI citations because each new client is worth more.",
+    desc: "Dental, mortgage, legal, and financial advisory firms: highest ROI from AI citations because each new client is worth more.",
   },
   {
     label: "B2B SaaS",
@@ -130,16 +130,16 @@ const PERSONAS = [
   },
   {
     label: "Local services in competitive categories",
-    desc: "Businesses where \"best [service] near me\" is now an AI query — not just a Google map search.",
+    desc: "Businesses where \"best [service] near me\" is now an AI query, not just a Google map search.",
   },
   {
     label: "In-house marketing teams",
-    desc: "CMOs and marketing leads at established companies — you have a team that can execute; you need outside expertise to identify the highest-leverage AI moves first.",
+    desc: "CMOs and marketing leads at established companies: you have a team that can execute; you need outside expertise to identify the highest-leverage AI moves first.",
   },
 ] as const;
 
 /*
- * Two "Coming summer 2026" placeholder cards were deleted on 2026-08-11 — it was
+ * Two "Coming summer 2026" placeholder cards were deleted on 2026-08-11; it was
  * already August. A promise whose date has passed reads as an abandoned page.
  * Add a case study when there is one; do not re-add placeholders.
  */
@@ -151,7 +151,7 @@ const FAQ_ITEMS: {
 }[] = [
   {
     q: "What is the difference between AEO and SEO?",
-    a: "Less than the labels suggest. Google states that its AI features run on its core Search ranking systems, that optimizing for AI Overviews and AI Mode is still SEO, and that no special markup is required — so on Google's surfaces the foundations are the same work. AEO is a useful label for one emphasis within that: writing and structuring a page so a machine can lift a clean, correct answer from it. It is a difference of emphasis, not a separate discipline with its own ranking system.",
+    a: "Less than the labels suggest. Google states that its AI features run on its core Search ranking systems, that optimizing for AI Overviews and AI Mode is still SEO, and that no special markup is required, so on Google's surfaces the foundations are the same work. AEO is a useful label for one emphasis within that: writing and structuring a page so a machine can lift a clean, correct answer from it. It is a difference of emphasis, not a separate discipline with its own ranking system.",
   },
   {
     q: "What is the difference between AEO and GEO?",
@@ -159,11 +159,11 @@ const FAQ_ITEMS: {
   },
   {
     q: "How long does AEO take to show results?",
-    a: `On HomeCalc.ca — a site I own — appearances began climbing within 48 hours of the changes, with the ${HOMECALC_CLAIMS.fullLiftVisible}. That is one property and no control group, so treat it as an encouraging data point rather than a timeline to plan around. There is no published service level for this: Google's documentation says recrawling alone can take days to months and that indexing is never guaranteed. What is controllable is measuring on a fixed schedule so you can tell movement from noise.`,
+    a: `On HomeCalc.ca (a site I own), appearances began climbing within 48 hours of the changes, with the ${HOMECALC_CLAIMS.fullLiftVisible}. That is one property and no control group, so treat it as an encouraging data point rather than a timeline to plan around. There is no published service level for this: Google's documentation says recrawling alone can take days to months and that indexing is never guaranteed. What is controllable is measuring on a fixed schedule so you can tell movement from noise.`,
   },
   {
     q: "Do I need AEO if I already rank on Google?",
-    a: "Ranking well on Google is a genuine advantage on Google's own AI surfaces, since they draw on the same ranking systems. Where it stops helping is everywhere else: ChatGPT, Claude and Perplexity retrieve through their own crawlers and indexes, so a strong Google position tells you nothing about them. The other thing ranking cannot tell you is whether what an answer says about you is accurate — a position is never wrong about you, a generated sentence can be.",
+    a: "Ranking well on Google is a genuine advantage on Google's own AI surfaces, since they draw on the same ranking systems. Where it stops helping is everywhere else: ChatGPT, Claude and Perplexity retrieve through their own crawlers and indexes, so a strong Google position tells you nothing about them. The other thing ranking cannot tell you is whether what an answer says about you is accurate: a position is never wrong about you, a generated sentence can be.",
   },
   {
     q: "What does an AEO consultant actually deliver?",
@@ -171,7 +171,7 @@ const FAQ_ITEMS: {
   },
   {
     q: "How much does this cost?",
-    a: `The starting point is a ${PRICE_DISPLAY} AI visibility audit — flat fee, one-time. From there you can act on the findings yourself, or have me turn them into a fixed-scope Action Plan and roadmap for your team to ship (the audit fee is credited toward it). Optional monthly monitoring is available afterward, on a fixed 6–12 month term — never required to get started.`,
+    a: `The starting point is a ${PRICE_DISPLAY} AI visibility audit: flat fee, one-time. From there you can act on the findings yourself, or have me turn them into a fixed-scope Action Plan and roadmap for your team to ship (the audit fee is credited toward it). Optional monthly monitoring is available afterward, on a fixed 6–12 month term, never required to get started.`,
   },
   {
     q: "Do you guarantee AI citations?",
@@ -189,7 +189,7 @@ const RELATED_LINKS = [
     href: "/blog/what-is-answer-engine-optimization/",
   },
   {
-    label: "AEO vs GEO vs SEO — the differences explained",
+    label: "AEO vs GEO vs SEO: the differences explained",
     href: "/blog/aeo-vs-geo-vs-seo/",
   },
   {
@@ -288,7 +288,7 @@ export default function AEOConsultantCanada() {
         </RevealSection>
       </div>
 
-      {/* ── 1 — Hero ── */}
+      {/* Section 1: Hero */}
       <header style={{ padding: "34px 0 50px" }}>
         <div className="wrap">
           <RevealSection>
@@ -362,7 +362,7 @@ export default function AEOConsultantCanada() {
         </div>
       </header>
 
-      {/* ── 2 — What Is AEO ── */}
+      {/* Section 2: What Is AEO */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -390,7 +390,7 @@ export default function AEOConsultantCanada() {
                 Answer engine optimization is the practice of making web content
                 easier for search and AI systems to understand, retrieve and present
                 as a direct answer. It builds on technical SEO, genuinely useful
-                content and authority signals &mdash; it does not replace them.
+                content and authority signals; it does not replace them.
                 Google states that the same SEO fundamentals apply to its AI
                 Overviews and AI Mode, and that{" "}
                 <a
@@ -418,7 +418,7 @@ export default function AEOConsultantCanada() {
                   marginBottom: 12,
                 }}
               >
-                AEO vs SEO — the key difference
+                AEO vs SEO: the key difference
               </h3>
               <p
                 style={{
@@ -428,8 +428,8 @@ export default function AEOConsultantCanada() {
                   marginBottom: 12,
                 }}
               >
-                SEO optimizes how your page ranks among a list of search results
-                — the user still clicks through to read it. AEO optimizes how AI
+                SEO optimizes how your page ranks among a list of search results;
+                the user still clicks through to read it. AEO optimizes how AI
                 engines pull from your page directly, summarize what they find, and
                 present it as an answer. The user often never visits your site. Both
                 matter, but they reward different things: SEO rewards relevance and
@@ -458,7 +458,7 @@ export default function AEOConsultantCanada() {
                   marginBottom: 12,
                 }}
               >
-                AEO vs GEO — why they&rsquo;re separate disciplines
+                AEO vs GEO: why they&rsquo;re separate disciplines
               </h3>
               <p
                 style={{
@@ -469,10 +469,10 @@ export default function AEOConsultantCanada() {
                 }}
               >
                 AEO and GEO are related but distinct. AEO addresses how AI engines
-                extract answers from your existing content — structure, format,
-                clarity. GEO addresses how AI engines generate responses about your
-                brand from across the web — entity signals, source diversity,
-                citation density. AEO is about being extractable; GEO is about being
+                extract answers from your existing content (structure, format,
+                clarity). GEO addresses how AI engines generate responses about your
+                brand from across the web (entity signals, source diversity,
+                citation density). AEO is about being extractable; GEO is about being
                 represented. Most businesses need both, but each is a separate
                 practice.
               </p>
@@ -487,7 +487,7 @@ export default function AEOConsultantCanada() {
         </div>
       </section>
 
-      {/* ── 3 — What an AEO Consultant Does ── */}
+      {/* Section 3: What an AEO Consultant Does */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -547,7 +547,7 @@ export default function AEOConsultantCanada() {
         </div>
       </section>
 
-      {/* ── 4 — Proof ── */}
+      {/* Section 4: Proof */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -561,7 +561,7 @@ export default function AEOConsultantCanada() {
                 marginBottom: 24,
               }}
             >
-              Results — Proof of Methodology
+              Results: Proof of Methodology
             </h2>
           </RevealSection>
 
@@ -586,10 +586,10 @@ export default function AEOConsultantCanada() {
                 <strong style={{ color: "var(--ink)", fontWeight: 600 }}>
                   Owned-property case study.
                 </strong>{" "}
-                HomeCalc.ca is a Canadian personal-finance calculator site that I own
-                &mdash; not a client engagement, which is why the underlying data can
+                HomeCalc.ca is a Canadian personal-finance calculator site that I own,
+                not a client engagement, which is why the underlying data can
                 be published in full. Under three months old, it went from near-zero
-                to {HOMECALC_CLAIMS.appearancesInTimeframe} &mdash;{" "}
+                to {HOMECALC_CLAIMS.appearancesInTimeframe}:{" "}
                 {HOMECALC_PROOF.combinedSourceLong}.
               </p>
               <p
@@ -605,7 +605,7 @@ export default function AEOConsultantCanada() {
                 {HOMECALC_PROOF.googleImpressions} Google generative-AI impressions.
                 A citation and an impression are not the same event, the two are not
                 deduplicated against each other, and the total covers Microsoft and
-                Google only &mdash; ChatGPT, Gemini, Claude and Perplexity publish
+                Google only; ChatGPT, Gemini, Claude and Perplexity publish
                 nothing, so no figure here speaks for them. The lift{" "}
                 <em>followed</em> a specific technical change; with one property and
                 no control, that is a sequence rather than a proven cause.
@@ -618,9 +618,9 @@ export default function AEOConsultantCanada() {
                   marginBottom: 24,
                 }}
               >
-                HomeCalc operates in YMYL —{" "}
-                <em style={{ fontStyle: "italic" }}>Your Money or Your Life</em>{" "}
-                — Google&rsquo;s strictest content category. AI engines are more
+                HomeCalc operates in YMYL{" "}
+                (<em style={{ fontStyle: "italic" }}>Your Money or Your Life</em>),
+                Google&rsquo;s strictest content category. AI engines are more
                 cautious about citing YMYL content than almost anything else. The
                 methodology cleared that bar on a brand-new domain with no
                 traditional authority.
@@ -678,7 +678,7 @@ export default function AEOConsultantCanada() {
         </div>
       </section>
 
-      {/* ── 5 — Comparison ── */}
+      {/* Section 5: Comparison */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -734,7 +734,7 @@ export default function AEOConsultantCanada() {
         </div>
       </section>
 
-      {/* ── 6 — How I Work ── */}
+      {/* Section 6: How I Work */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 720 }}>
           <RevealSection>
@@ -774,7 +774,7 @@ export default function AEOConsultantCanada() {
         </div>
       </section>
 
-      {/* ── 7 — Who This Is For ── */}
+      {/* Section 7: Who This Is For */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -821,7 +821,7 @@ export default function AEOConsultantCanada() {
         </div>
       </section>
 
-      {/* ── 8 — FAQ ── */}
+      {/* Section 8: FAQ */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 760 }}>
           <RevealSection>
@@ -884,7 +884,7 @@ export default function AEOConsultantCanada() {
         </div>
       </section>
 
-      {/* ── 9 — Related Service: GEO ── */}
+      {/* Section 9: Related Service: GEO */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 740 }}>
           <RevealSection>
@@ -898,7 +898,7 @@ export default function AEOConsultantCanada() {
                 marginBottom: 20,
               }}
             >
-              Related Service — GEO Consulting
+              Related Service: GEO Consulting
             </h2>
             <p
               style={{
@@ -909,8 +909,8 @@ export default function AEOConsultantCanada() {
               }}
             >
               If your goal is specifically how generative AI engines describe and
-              synthesize your brand across the web — not how they extract answers
-              from your specific pages — that&rsquo;s a separate practice.
+              synthesize your brand across the web, not how they extract answers
+              from your specific pages; that&rsquo;s a separate practice.
               Generative engine optimization (GEO) addresses entity signals,
               source diversity across third-party sites, and how AI engines compose
               responses about you when they generate from scratch rather than
@@ -941,7 +941,7 @@ export default function AEOConsultantCanada() {
         </div>
       </section>
 
-      {/* ── 10 — Related Reading ── */}
+      {/* Section 10: Related Reading */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 760 }}>
           <RevealSection>
@@ -985,7 +985,7 @@ export default function AEOConsultantCanada() {
         </div>
       </section>
 
-      {/* ── 11 — Final CTA ── */}
+      {/* Section 11: Final CTA */}
       <section style={{ padding: "60px 0 80px" }}>
         <div className="wrap">
           <RevealSection>

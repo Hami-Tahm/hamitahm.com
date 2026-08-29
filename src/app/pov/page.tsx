@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   // anyone holding the link, removed from sitemap, excluded from search + AI corpus.
   robots: { index: false, follow: true },
   title: "point of view",
-  description: "point of view — by Hami Tahm",
+  description: "point of view, by Hami Tahm",
 };
 
 export default function Post() {

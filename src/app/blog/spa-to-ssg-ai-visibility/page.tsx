@@ -8,7 +8,7 @@ import { HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
 
 const SLUG = "spa-to-ssg-ai-visibility";
 const ARTICLE_TITLE =
-  "Your SPA Is Invisible to AI — 10× Citations";
+  "Your SPA Is Invisible to AI: 10× Citations";
 const ARTICLE_DESCRIPTION =
   "Single Page Apps serve an empty <div> to AI crawlers. We migrated HomeCalc.ca from SPA to SSG and watched Bing Copilot citations jump from 20/day to 200/day in two days. Here's exactly what we changed and why it matters.";
 const DATE_PUBLISHED = "2026-06-23";
@@ -24,19 +24,19 @@ const FAQ_BUG_URL = "/blog/faq-schema-accordion-bug/";
 const FAQ_ITEMS = [
   {
     q: "Can AI crawlers render JavaScript like Google does?",
-    a: "No. Google has a full rendering pipeline (Googlebot + WRS) that executes JavaScript, though with delays. AI crawlers — Bing/Copilot, ChatGPT's browse mode, Perplexity — have limited or no JS execution. They rely on the raw HTML your server returns. If that HTML is an empty <div id=\"root\"></div>, they see nothing.",
+    a: "No. Google has a full rendering pipeline (Googlebot + WRS) that executes JavaScript, though with delays. AI crawlers (Bing/Copilot, ChatGPT's browse mode, Perplexity) have limited or no JS execution. They rely on the raw HTML your server returns. If that HTML is an empty <div id=\"root\"></div>, they see nothing.",
   },
   {
     q: "What's the difference between SSG and SSR for AI visibility?",
-    a: "Both produce full HTML on first request, so both solve the empty-body problem. SSG (Static Site Generation) pre-builds HTML at build time — fastest response, best for pages that don't change per-request. SSR (Server-Side Rendering) generates HTML on each request — better for personalized or real-time content. For AI visibility, either works. The critical thing is that the HTML contains your content before any JavaScript runs.",
+    a: "Both produce full HTML on first request, so both solve the empty-body problem. SSG (Static Site Generation) pre-builds HTML at build time: fastest response, best for pages that don't change per-request. SSR (Server-Side Rendering) generates HTML on each request: better for personalized or real-time content. For AI visibility, either works. The critical thing is that the HTML contains your content before any JavaScript runs.",
   },
   {
     q: "Does this affect Google rankings too, or just AI citations?",
-    a: "Google can render JavaScript, so SPAs aren't invisible to Google the way they are to AI crawlers. However, Google's rendering queue introduces delays — your content may take days or weeks to be fully indexed. SSG/SSR pages are indexed faster and more reliably. For AI Overviews specifically, Google pulls from its rendered index, so the delay matters less — but the speed advantage of SSG/SSR still helps with freshness signals.",
+    a: "Google can render JavaScript, so SPAs aren't invisible to Google the way they are to AI crawlers. However, Google's rendering queue introduces delays: your content may take days or weeks to be fully indexed. SSG/SSR pages are indexed faster and more reliably. For AI Overviews specifically, Google pulls from its rendered index, so the delay matters less, but the speed advantage of SSG/SSR still helps with freshness signals.",
   },
   {
     q: "How long does the SPA to SSG migration take?",
-    a: "For a React + Vite project, we used vite-react-ssg and the migration took under a day. For Next.js, SSG is the default — you may already have it. For Create React App, you'll need to migrate to Next.js, Remix, or add a prerendering step. The actual code changes are small; the complexity is in routing and data fetching patterns.",
+    a: "For a React + Vite project, we used vite-react-ssg and the migration took under a day. For Next.js, SSG is the default; you may already have it. For Create React App, you'll need to migrate to Next.js, Remix, or add a prerendering step. The actual code changes are small; the complexity is in routing and data fetching patterns.",
   },
   {
     q: "Should I use SSG for every new project from now on?",
@@ -169,7 +169,7 @@ export default function SpaToSsgAiVisibilityPost() {
                 letterSpacing: "-.025em",
               }}
             >
-              Your SPA is invisible to AI —{" "}
+              Your SPA is invisible to AI:{" "}
               <em style={{ fontStyle: "italic", color: "var(--accent)" }}>
                 here&rsquo;s the proof.
               </em>
@@ -287,8 +287,8 @@ export default function SpaToSsgAiVisibilityPost() {
               <p style={{ margin: 0 }}>
                 I found this on my own product (HomeCalc.ca) before any
                 tool flagged it. The AI Visibility Audit I run for clients
-                catches structural issues like this &mdash; the kind a
-                dashboard will never tell you about &mdash; and ships a
+                catches structural issues like this (the kind a
+                dashboard will never tell you about) and ships a
                 prioritized 7-day fix plan.{" "}
                 <Link
                   href={AUDIT_URL}
@@ -300,7 +300,7 @@ export default function SpaToSsgAiVisibilityPost() {
             </div>
           </RevealSection>
 
-          {/* ── Section 01: What AI crawlers see ── */}
+          {/* Section 01: What AI crawlers see */}
           <RevealSection>
             <SectionLabel number="01" text="What AI crawlers actually see" />
           </RevealSection>
@@ -309,12 +309,12 @@ export default function SpaToSsgAiVisibilityPost() {
             <p style={{ marginBottom: 26 }}>
               When a user visits your React SPA, their browser downloads a
               JavaScript bundle, executes it, and renders the page. They see
-              your content, your calculators, your FAQ sections — everything
+              your content, your calculators, your FAQ sections, everything
               works. But that&rsquo;s not what AI crawlers see.
             </p>
             <p style={{ marginBottom: 26 }}>
-              AI crawlers — Bing&rsquo;s indexer (which feeds Copilot),
-              Perplexity&rsquo;s crawler, ChatGPT&rsquo;s browse mode — request
+              AI crawlers, including Bing&rsquo;s indexer (which feeds Copilot),
+              Perplexity&rsquo;s crawler, and ChatGPT&rsquo;s browse mode, request
               your URL and read the raw HTML response. They don&rsquo;t execute
               JavaScript. For a standard React SPA built with Create React App
               or Vite, the HTML they receive looks like this:
@@ -342,7 +342,7 @@ export default function SpaToSsgAiVisibilityPost() {
               rendered.
             </p>
             <p style={{ marginBottom: 26 }}>
-              Google is the exception — Googlebot has a <a href="https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>full rendering pipeline</a>
+              Google is the exception: Googlebot has a <a href="https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>full rendering pipeline</a>
               (Web Rendering Service) that executes JavaScript. But even Google
               queues JS rendering, which means your content is indexed with a
               delay. Every other major AI crawler? They get the empty div and
@@ -350,7 +350,7 @@ export default function SpaToSsgAiVisibilityPost() {
             </p>
           </RevealSection>
 
-          {/* ── Section 02: HomeCalc before ── */}
+          {/* Section 02: HomeCalc before */}
           <RevealSection>
             <SectionLabel number="02" text="HomeCalc before: 68 invisible pages" />
           </RevealSection>
@@ -360,7 +360,7 @@ export default function SpaToSsgAiVisibilityPost() {
               <Link href={CASE_STUDY_URL} style={linkStyle}>
                 HomeCalc.ca
               </Link>{" "}
-              is a Canadian mortgage calculator site with 68 routes — land
+              is a Canadian mortgage calculator site with 68 routes: land
               transfer tax calculators, mortgage payment tools, CMHC insurance
               calculators, and more. Each page has substantial content:
               calculations, explanations, FAQ sections, and structured data.
@@ -368,7 +368,7 @@ export default function SpaToSsgAiVisibilityPost() {
             <p style={{ marginBottom: 26 }}>
               Before May 22, 2026, HomeCalc was a plain SPA built with React +
               Vite. The site worked perfectly in browsers. Users could calculate
-              mortgage payments, compare scenarios, see results — everything
+              mortgage payments, compare scenarios, see results, everything
               rendered client-side after the JavaScript bundle loaded.
             </p>
             <p style={{ marginBottom: 26 }}>
@@ -403,7 +403,7 @@ export default function SpaToSsgAiVisibilityPost() {
             </div>
           </RevealSection>
 
-          {/* ── Section 03: The migration ── */}
+          {/* Section 03: The migration */}
           <RevealSection>
             <SectionLabel number="03" text="The one-commit migration" />
           </RevealSection>
@@ -413,8 +413,8 @@ export default function SpaToSsgAiVisibilityPost() {
               On May 22, 2026, we pushed commit{" "}
               <code style={{ fontFamily: "var(--mono)", fontSize: "0.9em" }}>
                 47c5c55
-              </code>{" "}
-              — a migration from plain Vite SPA to{" "}
+              </code>
+              : a migration from plain Vite SPA to{" "}
               <strong style={labelStyle}>SSG (Static Site Generation)</strong>{" "}
               using{" "}
               <code style={{ fontFamily: "var(--mono)", fontSize: "0.9em" }}>
@@ -425,9 +425,9 @@ export default function SpaToSsgAiVisibilityPost() {
             <p style={{ marginBottom: 26 }}>
               What changed: instead of shipping an empty HTML shell with a JS
               bundle, the build process now pre-renders every route at build
-              time. Each of the 68 pages gets its own complete HTML file — with
+              time. Each of the 68 pages gets its own complete HTML file (with
               headings, paragraphs, calculator descriptions, FAQ answers,
-              structured data, everything — before a single line of JavaScript
+              structured data, everything) before a single line of JavaScript
               runs.
             </p>
             <p style={{ marginBottom: 26 }}>
@@ -469,7 +469,7 @@ export default function SpaToSsgAiVisibilityPost() {
             </p>
           </RevealSection>
 
-          {/* ── Section 04: The results ── */}
+          {/* Section 04: The results */}
           <RevealSection>
             <SectionLabel number="04" text="48 hours later" />
           </RevealSection>
@@ -533,15 +533,15 @@ export default function SpaToSsgAiVisibilityPost() {
             </div>
 
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>10&times; citation growth in 48 hours</strong>{" "}
-              — not from new content, not from backlinks, not from any marketing
+              <strong style={labelStyle}>10&times; citation growth in 48 hours:</strong>{" "}
+              not from new content, not from backlinks, not from any marketing
               effort. The same 68 pages, the same content, the same domain
               authority. The only difference: the HTML now contained the content
               instead of an empty div.
             </p>
             <p style={{ marginBottom: 26 }}>
-              The number of distinct pages being cited by AI went from 4 to 16+
-              — a 4&times; expansion of the &ldquo;citation surface area.&rdquo;
+              The number of distinct pages being cited by AI went from 4 to 16+:
+              a 4&times; expansion of the &ldquo;citation surface area.&rdquo;
               Pages that had existed for months were suddenly discoverable
               because they were finally readable.
             </p>
@@ -562,7 +562,7 @@ export default function SpaToSsgAiVisibilityPost() {
               your site is an SPA right now.
             </p>
             <p style={{ marginBottom: 26 }}>
-              Next.js, Remix, and Gatsby default to SSR or SSG — but only if you
+              Next.js, Remix, and Gatsby default to SSR or SSG, but only if you
               use them. A significant portion of React sites in production are
               still plain SPAs, especially tools, calculators, dashboards, and
               internal products that were later made public.
@@ -570,7 +570,7 @@ export default function SpaToSsgAiVisibilityPost() {
             <p style={{ marginBottom: 26 }}>
               The insidious part: everything works in your browser. Your users
               see the content. Your QA passes. Google eventually renders and
-              indexes it (with delays). The only thing broken is AI visibility —
+              indexes it (with delays). The only thing broken is AI visibility,
               and if you&rsquo;re not specifically measuring AI citations, you
               have no signal that 80% of AI crawlers can&rsquo;t see your site.
             </p>
@@ -580,14 +580,14 @@ export default function SpaToSsgAiVisibilityPost() {
                 related bug where FAQ accordion components hide content from
                 the DOM
               </Link>
-              . That bug affects SSG/SSR sites — the accordion strips content
+              . That bug affects SSG/SSR sites: the accordion strips content
               after the server renders it. The SPA problem is worse: there&rsquo;s
               no content to strip because the server never rendered it in the
               first place.
             </p>
           </RevealSection>
 
-          {/* ── Section 06: The principle ── */}
+          {/* Section 06: The principle */}
           <RevealSection>
             <SectionLabel number="06" text="The principle" />
           </RevealSection>
@@ -620,7 +620,7 @@ export default function SpaToSsgAiVisibilityPost() {
                 }}
               >
                 Everything you want Google and AI to see must be in the HTML
-                your server returns on first request — before any JavaScript
+                your server returns on first request, before any JavaScript
                 executes.
               </p>
             </div>
@@ -669,7 +669,7 @@ export default function SpaToSsgAiVisibilityPost() {
             </div>
           </RevealSection>
 
-          {/* ── Section 07: How to migrate ── */}
+          {/* Section 07: How to migrate */}
           <RevealSection>
             <SectionLabel number="07" text="How to check and fix your site" />
           </RevealSection>
@@ -688,8 +688,8 @@ export default function SpaToSsgAiVisibilityPost() {
               <code style={{ fontFamily: "var(--mono)", fontSize: "0.9em" }}>
                 {"<body>"}
               </code>{" "}
-              contains only a root div and script tags — no headings, no
-              paragraphs, no content — you have an SPA problem.
+              contains only a root div and script tags (no headings, no
+              paragraphs, no content), you have an SPA problem.
             </p>
 
             <h3 style={h3Style}>Step 2: Pick your migration path</h3>
@@ -702,7 +702,7 @@ export default function SpaToSsgAiVisibilityPost() {
               <code style={{ fontFamily: "var(--mono)", fontSize: "0.9em" }}>
                 vite-plugin-ssr
               </code>
-              . Minimal code changes — mostly configuration. Our migration was
+              . Minimal code changes: mostly configuration. Our migration was
               a single commit.
             </p>
             <p style={{ marginBottom: 26 }}>
@@ -722,8 +722,8 @@ export default function SpaToSsgAiVisibilityPost() {
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>Vue / Svelte / Angular:</strong>{" "}Same
               principle applies. Nuxt (Vue), SvelteKit (Svelte), and Angular
-              Universal all provide SSG/SSR. The framework doesn&rsquo;t matter
-              — what matters is that the HTML contains content before JS runs.
+              Universal all provide SSG/SSR. The framework doesn&rsquo;t matter:
+              what matters is that the HTML contains content before JS runs.
             </p>
 
             <h3 style={h3Style}>Step 3: Verify after deploy</h3>
@@ -777,19 +777,19 @@ export default function SpaToSsgAiVisibilityPost() {
               The cost is a few hours of configuration at project start. The
               downside of skipping it is 3–6 months of invisible content before
               someone notices that AI crawlers can&rsquo;t read the site. By
-              then, you&rsquo;ve lost months of potential citations —
+              then, you&rsquo;ve lost months of potential citations:
               citations your competitors were accumulating while your pages
               served empty HTML.
             </p>
             <p style={{ marginBottom: 26 }}>
               If you&rsquo;re building a dental clinic site, a real estate tool,
-              a SaaS landing page, a calculator, a directory — anything that
-              should be found by AI — the first commit should set up SSG or SSR.
+              a SaaS landing page, a calculator, a directory, or anything else
+              that should be found by AI, the first commit should set up SSG or SSR.
               Everything else can iterate. This can&rsquo;t.
             </p>
           </RevealSection>
 
-          {/* ── Section 09: FAQ ── */}
+          {/* Section 09: FAQ */}
           <RevealSection>
             <SectionLabel number="09" text="Frequently asked questions" />
           </RevealSection>
@@ -825,7 +825,7 @@ export default function SpaToSsgAiVisibilityPost() {
             </div>
           </RevealSection>
 
-          {/* ── Closing ── */}
+          {/* Closing */}
           <RevealSection>
             <p
               style={{
@@ -836,7 +836,7 @@ export default function SpaToSsgAiVisibilityPost() {
                 marginBottom: 12,
               }}
             >
-              For the full HomeCalc story — from {HOMECALC_CLAIMS.zeroToAppearances} — read the{" "}
+              For the full HomeCalc story (from {HOMECALC_CLAIMS.zeroToAppearances}), read the{" "}
               <Link href={CASE_STUDY_URL} style={linkStyle}>
                 case study
               </Link>
@@ -941,7 +941,7 @@ export default function SpaToSsgAiVisibilityPost() {
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
               >
-                Book Your AI Visibility Audit &mdash; $1,500 CAD{" "}
+                Book Your AI Visibility Audit for $1,500 CAD{" "}
                 <span className="arr">&rarr;</span>
               </Link>
             </div>
@@ -968,7 +968,7 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
         gap: 14,
       }}
     >
-      {number} &mdash; {text}
+      {number}: {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
     </h2>
   );
@@ -1006,7 +1006,7 @@ function InlineAuditCTA() {
           lineHeight: 1.55,
         }}
       >
-        The audit checks what Google AI Overviews, ChatGPT, Copilot, and Perplexity actually see when they crawl your site — including rendering
+        The audit checks what Google AI Overviews, ChatGPT, Copilot, and Perplexity actually see when they crawl your site, including rendering
         issues, schema mismatches, and content gaps competitors are exploiting.
       </p>
       <Link href={AUDIT_URL} className="btn btn-primary">

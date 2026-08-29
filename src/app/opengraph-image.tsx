@@ -1,7 +1,7 @@
 import { renderOgImage } from "@/lib/og-image";
 
 export const runtime = "edge";
-export const alt = "Hami Tahm — AI Visibility Consultant in Canada";
+export const alt = "Hami Tahm, AI Visibility Consultant in Canada";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

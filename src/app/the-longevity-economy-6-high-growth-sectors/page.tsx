@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   // anyone holding the link, removed from sitemap, excluded from search + AI corpus.
   robots: { index: false, follow: true },
   title: "The Longevity Economy: 6 High-Growth Sectors Ranked",
-  description: "The Longevity Economy: 6 High-Growth Sectors Ranked by Market Size — by Hami Tahm",
+  description: "The Longevity Economy: 6 High-Growth Sectors Ranked by Market Size, by Hami Tahm",
 };
 
 export default function Post() {
@@ -36,14 +36,14 @@ export default function Post() {
         {/* Content */}
         <Image
           src="/images/writing/the-longevity-economy-6-high-growth-sectors/Longivity-1.png"
-          alt="Longevity economy sectors chart — market size by 2030"
+          alt="Longevity economy sectors chart: market size by 2030"
           width={752}
           height={753}
           style={{ width: "100%", height: "auto", borderRadius: 12, margin: "32px 0" }}
         />
         <div
           className="post-content"
-          dangerouslySetInnerHTML={ { __html: `<p>As global life expectancy increases, the focus has shifted from simply living longer to living <strong>better</strong>. This shift has birthed a massive new opportunity: the <strong>longevity economy</strong>.</p><p>Whether it's through gene therapy, personalized diets, or AI-powered wearables, the future of aging is being rewritten by science, technology, and wellness. In this post, we explore the <strong>six key longevity sectors</strong> — now sorted by their projected <strong>market size by 2030</strong>, to help you understand where the biggest opportunities lie.
+          dangerouslySetInnerHTML={ { __html: `<p>As global life expectancy increases, the focus has shifted from simply living longer to living <strong>better</strong>. This shift has birthed a massive new opportunity: the <strong>longevity economy</strong>.</p><p>Whether it's through gene therapy, personalized diets, or AI-powered wearables, the future of aging is being rewritten by science, technology, and wellness. In this post, we explore the <strong>six key longevity sectors</strong>, now sorted by their projected <strong>market size by 2030</strong>, to help you understand where the biggest opportunities lie.
 <h3><img class="aligncenter" src="/images/writing/the-longevity-economy-6-high-growth-sectors/Longivity-1.png" alt="longevity sectors" width="646" height="647" /></h3>
 <h3>Longevity Market Share by 2030 (TAM – Total Addressable Market)</h3>
 <h3>1. Precision & Preventive Medicine</h3>
@@ -151,7 +151,7 @@ export default function Post() {
 <p data-start="1351" data-end="1369">Low sugar intake</p>
 </li>
 </ul>
-<p data-start="1371" data-end="1550">These diets are scientifically linked to lower rates of heart disease, obesity, diabetes, and even neurodegenerative conditions — all contributing to longer and healthier lives.</p>
+<p data-start="1371" data-end="1550">These diets are scientifically linked to lower rates of heart disease, obesity, diabetes, and even neurodegenerative conditions, all contributing to longer and healthier lives.</p>
 3. Anti-aging supplements (NMN, Spermidine, Resveratrol)</p><p>4. Holistic nutrition plans & coaching</p><p>5. Stress, sleep & lifestyle optimization</p><p>6. Personalized food & meal tracking</p><p>In this Segment of longevity, <a href="https://up-diet.com/">UPDiet</a> is shining.
 <h3>3. Digital Health & AI</h3>
 <strong>Estimated TAM (2030): $63.0B</strong></p><p>Where tech meets health, wearables, sensors, and AI enable real-time health optimization like never before.</p><p><strong>Key Areas:</strong>
@@ -164,7 +164,7 @@ export default function Post() {
  	<li>Health gamification apps</li>
 </ol>
 <h3>4. Biology of Aging</h3>
-<strong>Estimated TAM (2030): $4.1B</strong></p><p>This scientific core of longevity research explores what aging truly is — and how we might slow, stop, or even reverse it.</p><p><strong>Key Areas:</strong>
+<strong>Estimated TAM (2030): $4.1B</strong></p><p>This scientific core of longevity research explores what aging truly is, and how we might slow, stop, or even reverse it.</p><p><strong>Key Areas:</strong>
 <ol>
  	<li>Cellular senescence</li>
  	<li>Telomere & telomerase dynamics</li>
@@ -236,7 +236,7 @@ export default function Post() {
 </tbody>
 </table>
 <h2>Final Thought</h2>
-From trillion-dollar lifestyle sectors to billion-dollar biotech moonshots, the longevity industry is among the most exciting frontiers for entrepreneurs, researchers, and investors. As aging transforms into a <strong>solvable problem</strong>, now is the time to build for the 100-year life.</p><p> </p><p><strong data-start="109" data-end="285">UpDiet is building the bridge between lifestyle optimization and precision medicine — a platform at the intersection of personalized nutrition, AI, and preventative health.</strong> While most wellness apps stop at generic advice, UpDiet integrates biological signals (like blood tests, DNA, and microbiome data) with real-time lifestyle inputs to deliver ultra-personalized meal plans and longevity coaching. Positioned across the fastest-growing sectors of the longevity economy — Lifestyle & Nutrition, Digital Health, and Precision Medicine — UpDiet is more than a diet app. It’s a <strong data-start="690" data-end="706">Longevity OS</strong> for the 100-year life.</p><p> </p>` } }
+From trillion-dollar lifestyle sectors to billion-dollar biotech moonshots, the longevity industry is among the most exciting frontiers for entrepreneurs, researchers, and investors. As aging transforms into a <strong>solvable problem</strong>, now is the time to build for the 100-year life.</p><p> </p><p><strong data-start="109" data-end="285">UpDiet is building the bridge between lifestyle optimization and precision medicine: a platform at the intersection of personalized nutrition, AI, and preventative health.</strong> While most wellness apps stop at generic advice, UpDiet integrates biological signals (like blood tests, DNA, and microbiome data) with real-time lifestyle inputs to deliver ultra-personalized meal plans and longevity coaching. Positioned across the fastest-growing sectors of the longevity economy (Lifestyle & Nutrition, Digital Health, and Precision Medicine), UpDiet is more than a diet app. It’s a <strong data-start="690" data-end="706">Longevity OS</strong> for the 100-year life.</p><p> </p>` } }
         />
 
         {/* Author box */}

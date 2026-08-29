@@ -12,13 +12,13 @@ const PRICE_DISPLAY = "$1,500 CAD";
 export const metadata: Metadata = {
   title: "AI Visibility for Mortgage Brokers",
   description:
-    "Ensure your mortgage brokerage or real-estate company appears when buyers ask Google AI Overviews, ChatGPT, Gemini, or Claude. Audit by Hami Tahm — $1,500 CAD flat.",
+    "Ensure your mortgage brokerage or real-estate company appears when buyers ask Google AI Overviews, ChatGPT, Gemini, or Claude. Audit by Hami Tahm: $1,500 CAD flat.",
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/ai-visibility-for-mortgage-brokers/",
   },
 };
 
-/** Real Canadian homebuyer queries — must match case study / dashboard figures. */
+/** Real Canadian homebuyer queries; must match case study / dashboard figures. */
 const MORTGAGE_RESEARCH_QUERIES = [
   { query: "how much mortgage can I afford", citations: "51" },
   { query: "covering closing costs", citations: "39" },
@@ -29,7 +29,7 @@ const MORTGAGE_RESEARCH_QUERIES = [
 
 /**
  * Mortgage-relevant subset of HomeCalc top cited pages. Auto-derives from the
- * shared lib — update homecalc-proof.ts and this list refreshes automatically.
+ * shared lib: update homecalc-proof.ts and this list refreshes automatically.
  */
 const MORTGAGE_TOP_PAGES = HOMECALC_CITED_PAGES.filter(
   (p) => p.path.includes("mortgage") || p.path.includes("closing"),
@@ -37,11 +37,11 @@ const MORTGAGE_TOP_PAGES = HOMECALC_CITED_PAGES.filter(
 
 const BROKER_CHECKS = [
   "Whether your brokerage is mentioned when homebuyers ask for mortgage brokers in your city",
-  "Which specialties AI engines associate with your business — first-time buyers, self-employed, refinance, commercial, private lending",
+  "Which specialties AI engines associate with your business: first-time buyers, self-employed, refinance, commercial, private lending",
   "Whether AI tools recommend you for the qualification and affordability questions homebuyers ask before reaching out",
   "Accuracy of your service area, contact details, and lender relationships in AI-generated answers",
   "How your reviews and reputation are summarized across platforms",
-  "Which sources AI engines pull from when describing your brokerage — and which are missing or contradicting each other",
+  "Which sources AI engines pull from when describing your brokerage, and which are missing or contradicting each other",
 ] as const;
 
 const PLATFORMS = [
@@ -54,7 +54,7 @@ const PLATFORMS = [
 ] as const;
 
 const DELIVERABLES = [
-  "A written report covering each platform — what AI says about your brokerage, what it gets wrong, and where you're invisible",
+  "A written report covering each platform: what AI says about your brokerage, what it gets wrong, and where you're invisible",
   "A prioritized action plan ranked by impact and effort",
   `A ${WALKTHROUGH_MINUTES}-minute walkthrough call to review findings and next steps`,
   "14 days of follow-up questions after delivery",
@@ -82,9 +82,9 @@ const COMPARISON_ROWS = [
   ],
   [
     "Your control",
-    "Full — it's your content and entity strategy",
-    "Partial — you and the agency share it",
-    "None — the platform controls the relationship",
+    "Full: it's your content and entity strategy",
+    "Partial: you and the agency share it",
+    "None: the platform controls the relationship",
   ],
   [
     "Pricing model",
@@ -130,7 +130,7 @@ const FAQ_ITEMS: {
   },
   {
     q: "Do Canadian homebuyers really use AI for mortgage research?",
-    a: `Yes. HomeCalc.ca, a Canadian mortgage calculator site, received ${HOMECALC_CLAIMS.overAppearancesInTimeframe} — across queries like "how much mortgage can I afford," "covering closing costs," and "Canada mortgage qualification rules." These are real questions Canadian homebuyers asked AI tools. AI tools answered them. Brokerages who weren't cited weren't in the answer.`,
+    a: `Yes. HomeCalc.ca, a Canadian mortgage calculator site, received ${HOMECALC_CLAIMS.overAppearancesInTimeframe}, across queries like "how much mortgage can I afford," "covering closing costs," and "Canada mortgage qualification rules." These are real questions Canadian homebuyers asked AI tools. AI tools answered them. Brokerages who weren't cited weren't in the answer.`,
   },
   {
     q: "How is this different from my current SEO?",
@@ -138,7 +138,7 @@ const FAQ_ITEMS: {
   },
   {
     q: "Is this better than buying leads from Ratehub or LowestRates?",
-    a: "It's different work. Lead gen platforms put you in front of clients who have already decided to compare brokers — usually on price. AI visibility puts your brokerage in the answer the client receives during research, before they decide what kind of broker they want. Most brokerages benefit from both, but the conversations coming from AI visibility tend to arrive less price-anchored.",
+    a: "It's different work. Lead gen platforms put you in front of clients who have already decided to compare brokers, usually on price. AI visibility puts your brokerage in the answer the client receives during research, before they decide what kind of broker they want. Most brokerages benefit from both, but the conversations coming from AI visibility tend to arrive less price-anchored.",
   },
   {
     q: "How quickly can I see results?",
@@ -159,7 +159,7 @@ const FAQ_ITEMS: {
   },
   {
     // Literal match for the tracked query "Who can help mortgage brokers and
-    // real-estate companies appear in AI answers?" — added 2026-08-29.
+    // real-estate companies appear in AI answers?" (added 2026-08-29).
     // Citation tracking showed this page cited rarely for that exact phrasing
     // despite good positions when it does appear, so real-estate companies
     // needed to be named directly, not folded into a broker-referral persona.
@@ -254,7 +254,7 @@ export default function AIVisibilityMortgageBrokers() {
         </RevealSection>
       </div>
 
-      {/* ── 1 — Hero ── */}
+      {/* Section 1: Hero */}
       <header style={{ padding: "34px 0 50px" }}>
         <div className="wrap">
           <RevealSection>
@@ -283,7 +283,7 @@ export default function AIVisibilityMortgageBrokers() {
               }}
             >
               AI visibility for mortgage brokers is the practice of ensuring your
-              brokerage appears — accurately and credibly — when homebuyers ask AI
+              brokerage appears, accurately and credibly, when homebuyers ask AI
               tools like Google AI Overviews, ChatGPT, Gemini, or Claude for mortgage
               guidance. Hami Tahm audits mortgage brokerages across these platforms
               to identify where your business is missing from AI-generated answers,
@@ -318,7 +318,7 @@ export default function AIVisibilityMortgageBrokers() {
         </div>
       </header>
 
-      {/* ── 2 — How Homebuyers Research ── */}
+      {/* Section 2: How Homebuyers Research */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 740 }}>
           <RevealSection>
@@ -355,7 +355,7 @@ export default function AIVisibilityMortgageBrokers() {
               }}
             >
               In May 2026, these are real queries Canadian homebuyers typed into AI
-              tools — and the citations each query produced on HomeCalc.ca, a
+              tools, and the citations each query produced on HomeCalc.ca, a
               Canadian mortgage calculator site:
             </p>
             <ul
@@ -380,7 +380,7 @@ export default function AIVisibilityMortgageBrokers() {
                   <em style={{ fontStyle: "italic", color: "var(--ink)" }}>
                     {query}
                   </em>
-                  {" — "}
+                  {": "}
                   <strong style={{ color: "var(--ink)", fontWeight: 600 }}>
                     {citations} citations
                   </strong>
@@ -403,7 +403,7 @@ export default function AIVisibilityMortgageBrokers() {
         </div>
       </section>
 
-      {/* ── 3 — Definition ── */}
+      {/* Section 3: Definition */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -441,10 +441,10 @@ export default function AIVisibilityMortgageBrokers() {
                 }}
               >
                 AI visibility for mortgage brokers refers to how your brokerage
-                appears when Canadians ask AI tools mortgage questions — whether
+                appears when Canadians ask AI tools mortgage questions: whether
                 you&rsquo;re cited as a resource, recommended as a professional, or
                 missing from the conversation entirely. Unlike Google SEO, AI
-                visibility determines your presence in the research phase — before
+                visibility determines your presence in the research phase, before
                 the client ever searches for a broker by name.
               </p>
               <p
@@ -469,7 +469,7 @@ export default function AIVisibilityMortgageBrokers() {
         </div>
       </section>
 
-      {/* ── 4 — Audit Scope ── */}
+      {/* Section 4: Audit Scope */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -531,7 +531,7 @@ export default function AIVisibilityMortgageBrokers() {
         </div>
       </section>
 
-      {/* ── 5 — Proof ── */}
+      {/* Section 5: Proof */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -567,7 +567,7 @@ export default function AIVisibilityMortgageBrokers() {
                   marginBottom: 20,
                 }}
               >
-                HomeCalc.ca is a Canadian financial calculator platform — mortgage
+                HomeCalc.ca is a Canadian financial calculator platform: mortgage
                 qualifiers, closing-cost estimators, affordability tools. Under
                 three months old at the time of the audit. After an AI visibility
                 audit by Hami Tahm, HomeCalc went from{" "}
@@ -607,7 +607,7 @@ export default function AIVisibilityMortgageBrokers() {
                     <strong style={{ color: "var(--ink)", fontWeight: 600 }}>
                       {label}
                     </strong>
-                    {" — "}
+                    {": "}
                     {citations} citations
                   </li>
                 ))}
@@ -676,13 +676,13 @@ export default function AIVisibilityMortgageBrokers() {
 
           <RevealSection delay={0.14}>
             <div style={{ marginTop: 24 }}>
-              <PlaceholderCard note="Mortgage brokerage — case study publishing summer 2026" />
+              <PlaceholderCard note="Mortgage brokerage: case study publishing summer 2026" />
             </div>
           </RevealSection>
         </div>
       </section>
 
-      {/* ── 6 — Comparison ── */}
+      {/* Section 6: Comparison */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -723,14 +723,14 @@ export default function AIVisibilityMortgageBrokers() {
             <p style={{ marginTop: 24, fontSize: 15, color: "var(--muted)" }}>
               Lead gen platforms put your name in front of clients who are already
               shopping. AI visibility puts your brokerage in the answer the client
-              receives during research — when they&rsquo;re still deciding what kind
+              receives during research, when they&rsquo;re still deciding what kind
               of broker they need.
             </p>
           </RevealSection>
         </div>
       </section>
 
-      {/* ── 7 — How It Works ── */}
+      {/* Section 7: How It Works */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 720 }}>
           <RevealSection>
@@ -768,7 +768,7 @@ export default function AIVisibilityMortgageBrokers() {
         </div>
       </section>
 
-      {/* ── 8 — Who This Is For ── */}
+      {/* Section 8: Who This Is For */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -815,7 +815,7 @@ export default function AIVisibilityMortgageBrokers() {
         </div>
       </section>
 
-      {/* ── 9 — FAQ ── */}
+      {/* Section 9: FAQ */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 760 }}>
           <RevealSection>
@@ -874,7 +874,7 @@ export default function AIVisibilityMortgageBrokers() {
         </div>
       </section>
 
-      {/* ── 10 — Related Reading ── */}
+      {/* Section 10: Related Reading */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 760 }}>
           <RevealSection>
@@ -918,7 +918,7 @@ export default function AIVisibilityMortgageBrokers() {
         </div>
       </section>
 
-      {/* ── 11 — Final CTA ── */}
+      {/* Section 11: Final CTA */}
       <section style={{ padding: "60px 0 80px" }}>
         <div className="wrap">
           <RevealSection>

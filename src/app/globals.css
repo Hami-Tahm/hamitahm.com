@@ -13,7 +13,7 @@
   --accent-soft: rgba(15,110,120,.10);
   /* These MUST reference the next/font CSS variables. next/font self-hosts each
      family under a hashed name (e.g. __Newsreader_36bd41) that is only exposed
-     through its variable — so asking for the literal 'Newsreader' silently never
+     through its variable, so asking for the literal 'Newsreader' silently never
      matched, and the site rendered in the Georgia fallback while still paying to
      download Newsreader on every page. Same for JetBrains Mono. Fixed 2026-07-19. */
   --serif: var(--font-newsreader), Georgia, serif;
@@ -91,7 +91,7 @@ a { color: inherit; text-decoration: none; }
 /* Work item rows (homepage "Currently building" list).
    These were plain inline-style grids (140px 1fr auto + white-space:nowrap on the
    CTA column). A CSS Grid column with content set to nowrap never shrinks below its
-   own content's width — it just overflows the row, and because inline styles beat
+   own content's width; it just overflows the row, and because inline styles beat
    any CSS media query, there was no way to fix it responsively without moving the
    grid layout here. Confirmed 72px of horizontal scroll on a 375px viewport before
    this fix (2026-07-27). */
@@ -272,7 +272,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ──────────────────────────────────────────────────────────────────────────
-   PRINT — added 2026-08-22 for /ai-visibility/sample-report/.
+   PRINT: added 2026-08-22 for /ai-visibility/sample-report/.
 
    The sample report has no static PDF on purpose (see PrintButton.tsx): a
    hand-built file would drift from offers.ts the first time a price moved.
@@ -297,7 +297,7 @@ a { color: inherit; text-decoration: none; }
   /* RevealSection renders .rv at opacity 0 and adds .in when IntersectionObserver
      fires. Sections below the fold have never been scrolled to when the user hits
      the print button, so without this rule most of the report prints blank. This is
-     the single most important line in this block — it targets .rv directly because
+     the single most important line in this block: it targets .rv directly because
      the opacity lives in a class, not an inline style. */
   .rv, .rv.in { opacity: 1 !important; transform: none !important; transition: none !important; }
 

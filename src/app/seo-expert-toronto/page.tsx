@@ -9,9 +9,9 @@ const CASE_STUDY_URL = "/case-studies/homecalc-ai-visibility/";
 const ABOUT_URL = "/hami-tahm/";
 
 export const metadata: Metadata = {
-  title: "SEO Expert in Toronto — SEO + AI Search",
+  title: "SEO Expert in Toronto: SEO + AI Search",
   description:
-    "SEO expert in Toronto who covers both Google SEO and the new AI-search layer (Google AI Overviews, ChatGPT, Perplexity). Consultant-led — not an agency. By Hami Tahm.",
+    "SEO expert in Toronto who covers both Google SEO and the new AI-search layer (Google AI Overviews, ChatGPT, Perplexity). Consultant-led, not an agency. By Hami Tahm.",
   alternates: {
     canonical: "https://hamitahm.com/seo-expert-toronto/",
   },
@@ -19,13 +19,13 @@ export const metadata: Metadata = {
 
 /*
  * ⚠️ THIS PAGE TARGETS THE SEO KEYWORD BUT SELLS THE AI VISIBILITY AUDIT.
- * That is deliberate and it is why the page survives — plenty of buyers who need
+ * That is deliberate and it is why the page survives: plenty of buyers who need
  * AEO have never heard the word, and "SEO expert Toronto" is how they search.
  *
  * What is NOT allowed here, corrected 2026-08-20: promising SEO delivery. This page
  * answered "Do you do link building?" with "Yes", described technical SEO work as
  * scoped per project, and declared serviceType "SEO Consulting" in its schema. None
- * of that is true — the ladder is Audit -> Action Plan -> optional Monitoring, and no
+ * of that is true: the ladder is Audit -> Action Plan -> optional Monitoring, and no
  * tier includes execution. It also contradicted llms.txt, which states plainly that
  * this is not an SEO agency and that no tier changes the client's site.
  *
@@ -35,19 +35,19 @@ export const metadata: Metadata = {
 const FAQ_ITEMS = [
   {
     q: "What does an SEO expert in Toronto actually do in 2026?",
-    a: "Two jobs now, not one. The first is the classic job — keyword research, on-page optimization, technical fixes, content strategy and link building, so your site ranks on Google. The second is new — getting your business cited and recommended inside Google AI Overviews, ChatGPT, Claude and Bing Copilot. Anyone doing only the first is solving half the problem in 2026. To be clear about my own role: I work on the second job. I measure where AI engines cite you and write the plan for changing it — I don't take on the delivery work in either column.",
+    a: "Two jobs now, not one. The first is the classic job: keyword research, on-page optimization, technical fixes, content strategy and link building, so your site ranks on Google. The second is new: getting your business cited and recommended inside Google AI Overviews, ChatGPT, Claude and Bing Copilot. Anyone doing only the first is solving half the problem in 2026. To be clear about my own role: I work on the second job. I measure where AI engines cite you and write the plan for changing it; I don't take on the delivery work in either column.",
   },
   {
     q: "How much does an SEO expert cost in Toronto?",
-    a: "For the market generally: $100–$250 an hour for experienced freelancers, monthly retainers of $1,500–$5,000 for small businesses and $5,000–$15,000 for mid-market, and project audits from $1,500–$5,000. Those are what other people charge, not what I sell. What I sell is one thing — the AI Visibility Audit at $1,500 CAD flat, one-time, no retainer, delivered in 7 business days, with an optional action plan afterward.",
+    a: "For the market generally: $100–$250 an hour for experienced freelancers, monthly retainers of $1,500–$5,000 for small businesses and $5,000–$15,000 for mid-market, and project audits from $1,500–$5,000. Those are what other people charge, not what I sell. What I sell is one thing: the AI Visibility Audit at $1,500 CAD flat, one-time, no retainer, delivered in 7 business days, with an optional action plan afterward.",
   },
   {
     q: "How long does SEO take to produce results in Toronto?",
-    a: "Traditional Google SEO: 4–9 months for a competitive local market like Toronto. AI search visibility is faster — I've seen citations begin within 48 hours of the right technical change (documented in the HomeCalc case study). The fastest wins are usually in AI search; the most durable wins are in classic SEO. You want both.",
+    a: "Traditional Google SEO: 4–9 months for a competitive local market like Toronto. AI search visibility is faster: I've seen citations begin within 48 hours of the right technical change (documented in the HomeCalc case study). The fastest wins are usually in AI search; the most durable wins are in classic SEO. You want both.",
   },
   {
     q: "Should I hire an agency or a freelance SEO expert in Toronto?",
-    a: "Depends on what you need delivered and how complex your stack is. Agencies bring breadth — content team, link builders, technical SEO — but you usually work with an account manager, not the person doing the work. A consultant gives you direct access to the person making the calls, faster decisions, no overhead. For an audit or strategic project, a consultant is almost always the right call. For ongoing execution — someone actually shipping the changes month after month — you want an agency or an in-house developer, and that is genuinely not what I do.",
+    a: "Depends on what you need delivered and how complex your stack is. Agencies bring breadth (content team, link builders, technical SEO) but you usually work with an account manager, not the person doing the work. A consultant gives you direct access to the person making the calls, faster decisions, no overhead. For an audit or strategic project, a consultant is almost always the right call. For ongoing execution (someone actually shipping the changes month after month) you want an agency or an in-house developer, and that is genuinely not what I do.",
   },
   {
     q: "Can any SEO expert guarantee first-page rankings on Google?",
@@ -55,15 +55,15 @@ const FAQ_ITEMS = [
   },
   {
     q: "What's the difference between SEO and AI search visibility?",
-    a: "SEO is about ranking your page so users click through. AI search visibility is about being the source an AI engine pulls from and names directly in its answer. They share some signals (authority, content quality, structured data) but reward different things. SEO rewards rankings. AI search rewards extractability and entity recognition. In 2026, both matter — and most Toronto businesses are only doing the first.",
+    a: "SEO is about ranking your page so users click through. AI search visibility is about being the source an AI engine pulls from and names directly in its answer. They share some signals (authority, content quality, structured data) but reward different things. SEO rewards rankings. AI search rewards extractability and entity recognition. In 2026, both matter, and most Toronto businesses are only doing the first.",
   },
   {
     q: "Do you do link building?",
-    a: "No. I don't sell link building or outreach, and I'd be wary of anyone in this category who does — durable links come from being genuinely useful, not from being bought. What the audit does cover is where third-party sources already mention you, because those citations are part of what AI engines read when deciding whether to name you. If the plan says you need more of them, it says which kinds and why. Earning them is your team's work or your agency's, not mine.",
+    a: "No. I don't sell link building or outreach, and I'd be wary of anyone in this category who does: durable links come from being genuinely useful, not from being bought. What the audit does cover is where third-party sources already mention you, because those citations are part of what AI engines read when deciding whether to name you. If the plan says you need more of them, it says which kinds and why. Earning them is your team's work or your agency's, not mine.",
   },
   {
     q: "Do you work with businesses outside Toronto?",
-    a: "Canada. My office is at 111 Peter Street, Toronto — visits by appointment — but the work is remote-first. The technical foundations of search and AI visibility travel: they work the same whether you're in Toronto, Calgary or Austin. Local visibility is a different matter, though — it depends on location context, consistent business details across directories, reviews and local references, all specific to where you actually operate.",
+    a: "Canada. My office is at 111 Peter Street, Toronto (visits by appointment), but the work is remote-first. The technical foundations of search and AI visibility travel: they work the same whether you're in Toronto, Calgary or Austin. Local visibility is a different matter, though: it depends on location context, consistent business details across directories, reviews and local references, all specific to where you actually operate.",
   },
 ];
 
@@ -89,7 +89,7 @@ const structuredData = {
       // Renamed 2026-08-20. It said "SEO Consulting" with serviceType "SEO Consulting",
       // declaring a service this practice does not sell. The page may target the SEO
       // query; the schema has to state what is actually for sale.
-      name: "AI Visibility Audit — Toronto",
+      name: "AI Visibility Audit: Toronto",
       url: "https://hamitahm.com/seo-expert-toronto/",
       serviceType: "AI visibility, AEO and GEO consulting",
       provider: { "@id": "https://hamitahm.com/#hami-tahm" },
@@ -97,7 +97,7 @@ const structuredData = {
         { "@type": "Country", name: "Canada" },
         { "@type": "City", name: "Toronto" },
       ],
-      // Street address removed 2026-08-11 — see the note in
+      // Street address removed 2026-08-11, see the note in
       // src/app/ai-visibility/page.tsx. areaServed carries the geography honestly.
     },
     {
@@ -139,7 +139,7 @@ export default function SEOExpertTorontoPage() {
         </RevealSection>
       </div>
 
-      {/* ── Hero ── */}
+      {/* Hero */}
       <header style={{ padding: "34px 0 50px" }}>
         <div className="wrap">
           <RevealSection>
@@ -167,7 +167,7 @@ export default function SEOExpertTorontoPage() {
                 lineHeight: 1.65,
               }}
             >
-              I&rsquo;m Hami Tahm — a Toronto-based consultant working on the newer
+              I&rsquo;m Hami Tahm, a Toronto-based consultant working on the newer
               half of search: whether your business gets cited inside ChatGPT,
               Perplexity and Google AI Overviews, and what to change when it
               doesn&rsquo;t. If you came here looking for classic SEO delivery, this
@@ -188,8 +188,8 @@ export default function SEOExpertTorontoPage() {
                 lineHeight: 1.5,
               }}
             >
-              Engagements start at $1,500 CAD for an AI Visibility Audit
-              &mdash; see{" "}
+              Engagements start at $1,500 CAD for an AI Visibility Audit,
+              see{" "}
               <Link href="/pricing/" style={{ color: "var(--accent)", fontWeight: 500 }}>what each step costs</Link>, or
               the{" "}
               <Link href="/ai-visibility/ai-visibility-consultant-toronto/" style={{ color: "var(--accent)", fontWeight: 500 }}>
@@ -212,7 +212,7 @@ export default function SEOExpertTorontoPage() {
         </div>
       </header>
 
-      {/* ── Section 1 — Why SEO is two jobs now ── */}
+      {/* Section 1: Why SEO is two jobs now */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 740 }}>
           <RevealSection>
@@ -250,7 +250,7 @@ export default function SEOExpertTorontoPage() {
             >
               That job still exists. But a second job has been added to it. A
               growing share of buyers, patients, and clients now ask AI tools
-              directly — &ldquo;best mortgage broker in Toronto,&rdquo;
+              directly: &ldquo;best mortgage broker in Toronto,&rdquo;
               &ldquo;dentist near me that does implants,&rdquo; &ldquo;real
               estate lawyer with good reviews.&rdquo; ChatGPT answers with a
               paragraph that names two or three businesses. The asker calls one
@@ -264,7 +264,7 @@ export default function SEOExpertTorontoPage() {
                 lineHeight: 1.72,
               }}
             >
-              An SEO expert in Toronto in 2026 needs to cover both layers — the
+              An SEO expert in Toronto in 2026 needs to cover both layers: the
               Google ranking layer and the AI citation layer. Most don&rsquo;t.
               That&rsquo;s the gap I work in.
             </p>
@@ -272,7 +272,7 @@ export default function SEOExpertTorontoPage() {
         </div>
       </section>
 
-      {/* ── Section 2 — What to look for ── */}
+      {/* Section 2: What to look for */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 740 }}>
           <RevealSection>
@@ -369,7 +369,7 @@ export default function SEOExpertTorontoPage() {
         </div>
       </section>
 
-      {/* ── Section 3 — Proof ── */}
+      {/* Section 3: Proof */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 740 }}>
           <RevealSection>
@@ -383,7 +383,7 @@ export default function SEOExpertTorontoPage() {
                 marginBottom: 24,
               }}
             >
-              Proof — HomeCalc.ca
+              Proof: HomeCalc.ca
             </h2>
             <p
               style={{
@@ -393,10 +393,10 @@ export default function SEOExpertTorontoPage() {
                 marginBottom: 24,
               }}
             >
-              HomeCalc.ca is a Canadian financial calculator site — under three
-              months old at the time of the audit, in YMYL (Your Money or Your
+              HomeCalc.ca is a Canadian financial calculator site (under three
+              months old at the time of the audit), in YMYL (Your Money or Your
               Life), one of Google&rsquo;s strictest content categories. After
-              an AI visibility audit, the site went from {HOMECALC_CLAIMS.zeroToAppearances} &mdash;{" "}
+              an AI visibility audit, the site went from {HOMECALC_CLAIMS.zeroToAppearances},{" "}
                 {HOMECALC_PROOF.combinedSourceLong}.
             </p>
             <p
@@ -430,7 +430,7 @@ export default function SEOExpertTorontoPage() {
         </div>
       </section>
 
-      {/* ── Section 4 — How I work ── */}
+      {/* Section 4: How I work */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 740 }}>
           <RevealSection>
@@ -455,7 +455,7 @@ export default function SEOExpertTorontoPage() {
               }}
             >
               Every engagement starts with the $1,500 AI Visibility Audit. It
-              covers both layers of search — how your business ranks on Google
+              covers both layers of search: how your business ranks on Google
               and how AI engines describe, cite, and recommend you. You get a
               written report, a prioritized action plan, a 60-minute walkthrough
               call, and 14 days of follow-up. Delivered in 7 business days.
@@ -470,7 +470,7 @@ export default function SEOExpertTorontoPage() {
             >
               Most engagements begin and end with the audit. You implement
               internally with the action plan, or your agency does. I don&rsquo;t
-              take execution work — no retainers, no content production, no
+              take execution work: no retainers, no content production, no
               technical delivery. What can follow the audit is the action plan, and
               after that optional monitoring, and only when it&rsquo;s the right
               next move rather than by default.
@@ -490,7 +490,7 @@ export default function SEOExpertTorontoPage() {
         </div>
       </section>
 
-      {/* ── Section 5 — Who I am ── */}
+      {/* Section 5: Who I am */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 740 }}>
           <RevealSection>
@@ -514,7 +514,7 @@ export default function SEOExpertTorontoPage() {
                 marginBottom: 20,
               }}
             >
-              I&rsquo;ve been building on the web for over a decade — across
+              I&rsquo;ve been building on the web for over a decade, across
               roughly fourteen ventures, including a 7-year run as the SEO
               expert behind a dental clinic network. I&rsquo;m based at 111 Peter
               Street in Toronto and serve clients across Canada, with selective US
@@ -551,7 +551,7 @@ export default function SEOExpertTorontoPage() {
         </div>
       </section>
 
-      {/* ── Section 6 — FAQ ── */}
+      {/* Section 6: FAQ */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 760 }}>
           <RevealSection>
@@ -600,7 +600,7 @@ export default function SEOExpertTorontoPage() {
         </div>
       </section>
 
-      {/* ── Final CTA ── */}
+      {/* Final CTA */}
       <section style={{ padding: "60px 0 80px" }}>
         <div className="wrap">
           <RevealSection>

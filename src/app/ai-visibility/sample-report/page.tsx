@@ -18,7 +18,7 @@ import {
 import { STUDY, SITES, COMMERCIAL_REALITY } from "@/lib/citation-study";
 
 /**
- * /ai-visibility/sample-report/ — the audit deliverable, shown in public.
+ * /ai-visibility/sample-report/: the audit deliverable, shown in public.
  *
  * ── WHY THIS PAGE EXISTS ──
  * The audit is $1,500 paid up front by strangers, with no sales call. The single
@@ -30,7 +30,7 @@ import { STUDY, SITES, COMMERCIAL_REALITY } from "@/lib/citation-study";
  * 1. EVERY NUMBER ON THIS PAGE IS REAL AND ALREADY PUBLISHED ELSEWHERE ON THIS SITE.
  *    Nothing here is illustrative, modelled or "representative". It is all imported
  *    from homecalc-proof.ts and citation-study.ts, which each carry their own
- *    provenance rules. Do not hardcode a figure into this file — if a number is
+ *    provenance rules. Do not hardcode a figure into this file; if a number is
  *    worth showing here, it belongs in one of those two files first.
  *
  *    This matters more here than anywhere else on the site: this is the page that
@@ -45,8 +45,8 @@ import { STUDY, SITES, COMMERCIAL_REALITY } from "@/lib/citation-study";
  *
  * ── WHY THE SUBJECT IS OUR OWN DATA ──
  * No client's audit is reproduced here, redacted or otherwise. The two subjects are
- * HomeCalc.ca and hamitahm.com — both owned by us, both already published with their
- * consoles on screen. That means no consent question, no anonymisation that a reader
+ * HomeCalc.ca and hamitahm.com (both owned by us, both already published with their
+ * consoles on screen). That means no consent question, no anonymisation that a reader
  * has to take on faith, and a sample where the unflattering half (hamitahm.com's
  * plateau) is shown as plainly as the flattering half.
  *
@@ -67,12 +67,12 @@ const HUB_URL = "/ai-visibility/";
 export const metadata: Metadata = {
   title: "Sample AI Visibility Audit Report",
   description:
-    "See exactly what the $1,500 AI Visibility Audit delivers — the real sections, tables and findings, built from published console data rather than a mock-up.",
+    "See exactly what the $1,500 AI Visibility Audit delivers: the real sections, tables and findings, built from published console data rather than a mock-up.",
   alternates: { canonical: URL },
 };
 
 /**
- * The report's table of contents — also rendered as the on-page nav, so the buyer
+ * The report's table of contents, also rendered as the on-page nav, so the buyer
  * can see the shape of the deliverable before reading a word of it.
  */
 const SECTIONS = [
@@ -90,7 +90,7 @@ function buildFaqItems(priceDisplay: string) {
   return [
   {
     q: "Is this a real report or a mock-up?",
-    a: "The data is real. Every figure on this page was read from Bing Webmaster Tools' AI Performance report or Google Search Console, and each one is published elsewhere on this site with its source named. The subject is our own two properties — HomeCalc.ca and hamitahm.com — rather than a client's audit, so nothing here depends on you trusting an anonymisation.",
+    a: "The data is real. Every figure on this page was read from Bing Webmaster Tools' AI Performance report or Google Search Console, and each one is published elsewhere on this site with its source named. The subject is our own two properties (HomeCalc.ca and hamitahm.com) rather than a client's audit, so nothing here depends on you trusting an anonymisation.",
   },
   {
     q: "Why use your own sites instead of a client's?",
@@ -98,7 +98,7 @@ function buildFaqItems(priceDisplay: string) {
   },
   {
     q: "Does the real report show the method?",
-    a: `Your report shows every input and every result: the prompts, the engines, the country each answer was recorded from, and the date. What it does not publish — here or in the report — is how the ${OFFERS.audit.scope.promptCount} prompts are selected and how variance between model runs is handled. That is the part you are paying for, and putting it in a public sample would make it worth nothing.`,
+    a: `Your report shows every input and every result: the prompts, the engines, the country each answer was recorded from, and the date. What it does not publish, here or in the report, is how the ${OFFERS.audit.scope.promptCount} prompts are selected and how variance between model runs is handled. That is the part you are paying for, and putting it in a public sample would make it worth nothing.`,
   },
   {
     q: "How long is the actual report?",
@@ -189,7 +189,7 @@ function Source({ children }: { children: React.ReactNode }) {
         marginTop: 12,
       }}
     >
-      Source — {children}
+      Source: {children}
     </p>
   );
 }
@@ -253,7 +253,7 @@ export default async function SampleReportPage() {
                 marginBottom: 20,
               }}
             >
-              Sample Report — {OFFERS.audit.name}
+              Sample Report: {OFFERS.audit.name}
             </div>
             <h1
               style={{
@@ -278,7 +278,7 @@ export default async function SampleReportPage() {
                 lineHeight: 1.6,
               }}
             >
-              Eight sections, real tables, and one worked finding &mdash; built from
+              Eight sections, real tables, and one worked finding, built from
               console data that is already published on this site, on our own two
               properties. Not a mock-up, and not only the flattering half.
             </p>
@@ -298,7 +298,7 @@ export default async function SampleReportPage() {
                   textDecoration: "none",
                 }}
               >
-                Book the audit &mdash; {priceWithCurrency}
+                Book the audit for {priceWithCurrency}
               </a>
               <PrintButton />
             </div>
@@ -365,8 +365,8 @@ export default async function SampleReportPage() {
               Every report opens by stating what was measured and what was not, so
               that no figure later in the document has to be taken on trust. Yours
               covers {OFFERS.audit.scope.promptCount} prompts across{" "}
-              {AUDIT_PLATFORM_COUNT_WORD} engines &mdash; {AUDIT_PLATFORMS.join(", ")}{" "}
-              &mdash; plus up to three named competitors and a content gap analysis.
+              {AUDIT_PLATFORM_COUNT_WORD} engines ({AUDIT_PLATFORMS.join(", ")}), plus up to
+              three named competitors and a content gap analysis.
               Each recorded answer carries the date it was captured and the country it
               was run from, because these engines answer differently by market and an
               undated screenshot proves nothing.
@@ -374,7 +374,7 @@ export default async function SampleReportPage() {
             <p style={{ fontSize: 16.5, color: "var(--muted)", lineHeight: 1.7, marginTop: 14 }}>
               The section also states the limits plainly. Only two of the six engines
               report anything back to publishers at all: Microsoft Copilot, through
-              Bing Webmaster Tools, and Google, through Search Console &mdash; and
+              Bing Webmaster Tools, and Google, through Search Console, and
               Google publishes impressions with no citation count. ChatGPT, Gemini,
               Claude and Perplexity report nothing. Where a number exists it is named
               and sourced; where it does not, the report says so rather than
@@ -509,7 +509,7 @@ export default async function SampleReportPage() {
               </table>
             </div>
             <Source>
-              {HOMECALC_PROOF.sourceLong}. Sorted by citations, not by share &mdash; a
+              {HOMECALC_PROOF.sourceLong}. Sorted by citations, not by share: a
               high share on a handful of citations is noise, and the report says so
               wherever it appears.
             </Source>
@@ -538,12 +538,12 @@ export default async function SampleReportPage() {
                 </thead>
                 <tbody>
                   {[
-                    ["Microsoft Copilot", "Yes — citation counts, cited pages and grounding queries, via Bing Webmaster Tools."],
-                    ["Google AI Overviews", "Partly — impressions only, in Search Console. No clicks, no citation count, no queries."],
-                    ["ChatGPT", "No — measured by hand, recorded verbatim with date and country."],
-                    ["Gemini", "No — measured by hand, recorded verbatim with date and country."],
-                    ["Claude", "No — measured by hand, recorded verbatim with date and country."],
-                    ["Perplexity", "No — measured by hand, recorded verbatim with date and country."],
+                    ["Microsoft Copilot", "Yes: citation counts, cited pages and grounding queries, via Bing Webmaster Tools."],
+                    ["Google AI Overviews", "Partly: impressions only, in Search Console. No clicks, no citation count, no queries."],
+                    ["ChatGPT", "No: measured by hand, recorded verbatim with date and country."],
+                    ["Gemini", "No: measured by hand, recorded verbatim with date and country."],
+                    ["Claude", "No: measured by hand, recorded verbatim with date and country."],
+                    ["Perplexity", "No: measured by hand, recorded verbatim with date and country."],
                   ].map(([e, r]) => (
                     <tr key={e}>
                       <td style={{ ...cellBase, whiteSpace: "nowrap", fontWeight: 600 }}>{e}</td>
@@ -571,7 +571,7 @@ export default async function SampleReportPage() {
             <SectionHead {...SECTIONS[5]} />
             <p style={{ fontSize: 16.5, color: "var(--muted)", lineHeight: 1.7, marginBottom: 22 }}>
               Findings are ranked by what they cost you, not by how easy they are to
-              fix. Here is a real one, worked end to end &mdash; and it is about{" "}
+              fix. Here is a real one, worked end to end, and it is about{" "}
               <strong style={{ color: "var(--ink)" }}>this site</strong>, not a
               client&rsquo;s, because a sample that only shows wins is not a sample.
             </p>
@@ -615,8 +615,8 @@ export default async function SampleReportPage() {
                 {SITES.hamitahm.name} recorded {SITES.hamitahm.citations} Copilot
                 citations across the window, and the curve was{" "}
                 {SITES.hamitahm.curve}. Meanwhile{" "}
-                {HOMECALC_PROOF.siteUrl.replace("https://", "").replace("/", "")} &mdash;
-                same owner, same window, {SITES.homecalc.ageAtStart} &mdash; recorded{" "}
+                {HOMECALC_PROOF.siteUrl.replace("https://", "").replace("/", "")}{" "}
+                (same owner, same window, {SITES.homecalc.ageAtStart}) recorded{" "}
                 {SITES.homecalc.citations} on a curve described as{" "}
                 {SITES.homecalc.curve}.
               </p>
@@ -625,8 +625,8 @@ export default async function SampleReportPage() {
                 <strong style={{ color: "var(--ink)" }}>Diagnosis.</strong> The volume
                 is real but it is landing in the wrong place. An old essay,{" "}
                 &ldquo;{COMMERCIAL_REALITY.page}&rdquo;, absorbs{" "}
-                {COMMERCIAL_REALITY.aiCitations} of them. The commercial page &mdash;
-                the one the business actually sells &mdash; earns{" "}
+                {COMMERCIAL_REALITY.aiCitations} of them. The commercial page
+                (the one the business actually sells) earns{" "}
                 {COMMERCIAL_REALITY.moneyPageCitations}.
               </p>
 
@@ -645,7 +645,7 @@ export default async function SampleReportPage() {
                 A visibility number that goes up is not automatically a win. Before
                 anyone spends a dollar chasing more citations, the report establishes
                 whether the citations already being earned point at anything that
-                makes money &mdash; and if they do not, that becomes finding 01 rather
+                makes money, and if they do not, that becomes finding 01 rather
                 than a footnote.
               </p>
             </div>
@@ -677,7 +677,7 @@ export default async function SampleReportPage() {
               The last analytical section, and usually the one that produces the most
               work for the client&rsquo;s team. It lists the questions buyers in your
               category are asking the engines where a competitor is answering and you
-              are not &mdash; separated into pages you do not have, pages you have but
+              are not, separated into pages you do not have, pages you have but
               that are not structured to be extracted from, and pages that exist and
               are being passed over for a reason the report names.
             </p>
@@ -746,7 +746,7 @@ export default async function SampleReportPage() {
                 This, about your site
               </h2>
               <p style={{ fontSize: 16, color: "var(--muted)", lineHeight: 1.7, maxWidth: "56ch" }}>
-                {OFFERS.audit.name} &mdash; {priceWithCurrency}, flat fee,
+                {OFFERS.audit.name}: {priceWithCurrency}, flat fee,
                 one-time. {OFFERS.audit.scope.promptCount} prompts
                 across {AUDIT_PLATFORM_COUNT_WORD} engines, up to three competitors, a
                 content gap analysis, a 60-minute walkthrough and 14 days of follow-up.
@@ -810,7 +810,7 @@ export default async function SampleReportPage() {
                 marginBottom: 20,
               }}
             >
-              Sample report &mdash; FAQ
+              Sample report: FAQ
             </h2>
             {FAQ_ITEMS.map(({ q, a }) => (
               <div key={q} className="faq-item" style={{ borderTop: "1px solid var(--line)", padding: "18px 0" }}>

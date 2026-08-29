@@ -4,7 +4,7 @@ import { LegalPage, H2 } from "@/components/LegalPage";
 import { LEGAL, DATA_COLLECTED, THIRD_PARTIES } from "@/lib/legal";
 
 export const metadata: Metadata = {
-  title: { absolute: "Privacy Policy — Hami Tahm" },
+  title: { absolute: "Privacy Policy: Hami Tahm" },
   description:
     "What personal information hamitahm.com collects, why, who it is shared with, and how to have it deleted.",
   alternates: { canonical: "https://hamitahm.com/privacy/" },
@@ -62,7 +62,7 @@ export default function PrivacyPage() {
       </p>
       <p>
         I may reply to you personally about your result, and I may follow up once. If you
-        would rather I didn&rsquo;t, say so and I&rsquo;ll stop &mdash; or just ask me to
+        would rather I didn&rsquo;t, say so and I&rsquo;ll stop, or just ask me to
         delete everything (see below).
       </p>
 
@@ -85,8 +85,8 @@ export default function PrivacyPage() {
       <ul>
         {THIRD_PARTIES.map((t) => (
           <li key={t.name} style={{ marginBottom: 8 }}>
-            <strong style={{ color: "var(--ink)", fontWeight: 600 }}>{t.name}</strong>{" "}
-            &mdash; {t.role}
+            <strong style={{ color: "var(--ink)", fontWeight: 600 }}>{t.name}</strong>:{" "}
+            {t.role}
           </li>
         ))}
       </ul>
@@ -107,7 +107,7 @@ export default function PrivacyPage() {
       <H2>How long it is kept</H2>
       <p>
         Checker submissions are kept for as long as they are useful for following up with
-        you &mdash; and deleted on request, immediately. Analytics data is retained
+        you, and deleted on request, immediately. Analytics data is retained
         according to Google Analytics&rsquo; standard retention settings.
       </p>
 
@@ -142,7 +142,7 @@ export default function PrivacyPage() {
 
       <H2>Contact</H2>
       <p>
-        {LEGAL.operator} &mdash; {LEGAL.location}
+        {LEGAL.operator}, {LEGAL.location}
         <br />
         <a href={`mailto:${LEGAL.email}`} style={{ color: "var(--accent)" }}>
           {LEGAL.email}

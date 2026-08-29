@@ -9,7 +9,7 @@ const SLUG = "how-to-appear-in-google-ai-overviews";
 const ARTICLE_TITLE =
   "How to Appear in Google AI Overviews";
 const ARTICLE_DESCRIPTION =
-  "Google AI Overviews pull from top-ranking pages — but ranking alone isn't enough. Here's what actually determines whether your content gets cited in an AI Overview.";
+  "Google AI Overviews pull from top-ranking pages, but ranking alone isn't enough. Here's what actually determines whether your content gets cited in an AI Overview.";
 const DATE_PUBLISHED = "2026-06-08";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const HUB_URL = "/ai-visibility/";
@@ -20,7 +20,7 @@ const CHATGPT_URL = "/blog/how-to-get-mentioned-by-chatgpt/";
 const FAQ_ITEMS = [
   {
     q: "Can I opt out of Google AI Overviews?",
-    a: "Site owners can use the nosnippet meta tag to prevent Google from using page content in AI Overviews — but this also blocks featured snippets and other rich results. There's no AIO-specific opt-out. It's an all-or-nothing decision.",
+    a: "Site owners can use the nosnippet meta tag to prevent Google from using page content in AI Overviews, but this also blocks featured snippets and other rich results. There's no AIO-specific opt-out. It's an all-or-nothing decision.",
   },
   {
     q: "Does appearing in AI Overviews reduce my clicks?",
@@ -28,11 +28,11 @@ const FAQ_ITEMS = [
   },
   {
     q: "Does page speed affect Google AI Overview inclusion?",
-    a: "Indirectly. Page speed affects ranking, and ranking is a prerequisite for AIO. Slow pages that rank poorly are out. Pages that rank well despite speed issues can still be cited — but fixing speed improves ranking, which improves AIO inclusion probability.",
+    a: "Indirectly. Page speed affects ranking, and ranking is a prerequisite for AIO. Slow pages that rank poorly are out. Pages that rank well despite speed issues can still be cited, but fixing speed improves ranking, which improves AIO inclusion probability.",
   },
   {
     q: "How quickly can I appear in Google AI Overviews after making changes?",
-    a: "Faster than ChatGPT or other training-data-dependent platforms. Once Google re-crawls and re-indexes your updated pages — usually within days to weeks for active, well-linked sites — structural improvements can affect AIO citation probability relatively quickly.",
+    a: "Faster than ChatGPT or other training-data-dependent platforms. Once Google re-crawls and re-indexes your updated pages (usually within days to weeks for active, well-linked sites), structural improvements can affect AIO citation probability relatively quickly.",
   },
   {
     q: "Is there a tool to check my Google AI Overview visibility?",
@@ -206,7 +206,7 @@ export default function HowToAppearInGoogleAIOverviewsPost() {
                 }}
               >
                 Google AI Overviews cite content that ranks in the top 10 AND is
-                structured for direct extraction — clear answers, schema, and
+                structured for direct extraction: clear answers, schema, and
                 author authority.
               </p>
             </div>
@@ -216,7 +216,7 @@ export default function HowToAppearInGoogleAIOverviewsPost() {
             <p style={{ marginBottom: 26 }}>
               <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>Google AI Overviews</a>{" "}
               pull from pages that already rank in the top
-              10 — but ranking is a floor, not a guarantee. To get cited, your
+              10, but ranking is a floor, not a guarantee. To get cited, your
               content also needs to be structured for extraction: clear answers,
               strong schema, and content Google&rsquo;s AI can directly quote or
               paraphrase. This guide covers what moves your content from
@@ -232,7 +232,7 @@ export default function HowToAppearInGoogleAIOverviewsPost() {
               }}
             >
               Google AI Overviews cite content that ranks in the top 10 AND is
-              structured for direct extraction — clear answers, schema, and
+              structured for direct extraction: clear answers, schema, and
               author authority.
             </blockquote>
             <p style={{ marginBottom: 26 }}>
@@ -244,7 +244,7 @@ export default function HowToAppearInGoogleAIOverviewsPost() {
               <Link href={CHATGPT_URL} style={linkStyle}>
                 how to get mentioned by ChatGPT
               </Link>{" "}
-              guide — the mechanics there are different from AIO.
+              guide, the mechanics there are different from AIO.
             </p>
           </RevealSection>
 
@@ -263,7 +263,7 @@ export default function HowToAppearInGoogleAIOverviewsPost() {
               That distinction matters for strategy. AIO is a layer on top of
               Google Search: it takes pages that rank for a query and extracts
               the most directly answerable content from them. You have to rank
-              first. But ranking is a prerequisite — not the determining factor.
+              first. But ranking is a prerequisite, not the determining factor.
             </p>
             <p style={{ marginBottom: 26 }}>
               Here&rsquo;s what most guides miss:{" "}
@@ -277,7 +277,7 @@ export default function HowToAppearInGoogleAIOverviewsPost() {
           </RevealSection>
 
           <RevealSection>
-            <SectionLabel number="02" text="Step 1 — Rank first" />
+            <SectionLabel number="02" text="Step 1: Rank first" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
@@ -293,7 +293,7 @@ export default function HowToAppearInGoogleAIOverviewsPost() {
               changes that.
             </p>
             <p style={{ marginBottom: 26 }}>
-              Where AIO is most active: informational queries — &ldquo;what
+              Where AIO is most active: informational queries, &ldquo;what
               is,&rdquo; &ldquo;how to,&rdquo; &ldquo;best way to,&rdquo;
               &ldquo;difference between.&rdquo; These are the query types where
               AIO activates most frequently and where your content has the highest
@@ -305,15 +305,15 @@ export default function HowToAppearInGoogleAIOverviewsPost() {
           <RevealSection>
             <SectionLabel
               number="03"
-              text="Step 2 — Structure content for extraction"
+              text="Step 2: Structure content for extraction"
             />
           </RevealSection>
 
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
               AIO doesn&rsquo;t read your page the way a human does. It looks for
-              specific patterns — a direct answer immediately after a heading, a
-              definition at the top of a section, a numbered list of steps — and
+              specific patterns (a direct answer immediately after a heading, a
+              definition at the top of a section, a numbered list of steps) and
               pulls from those.
             </p>
             <p style={{ marginBottom: 16 }}>
@@ -349,7 +349,7 @@ export default function HowToAppearInGoogleAIOverviewsPost() {
                 </strong>{" "}
                 Write as if every sentence could stand alone as an answer. Not
                 &ldquo;leveraging innovative approaches to enhance digital
-                presence&rdquo; — but &ldquo;add FAQPage schema to your homepage
+                presence&rdquo;, but &ldquo;add FAQPage schema to your homepage
                 and service pages.&rdquo;
               </li>
             </ul>
@@ -361,12 +361,12 @@ export default function HowToAppearInGoogleAIOverviewsPost() {
           </RevealSection>
 
           <RevealSection>
-            <SectionLabel number="04" text="Step 3 — Build page authority (E-E-A-T)" />
+            <SectionLabel number="04" text="Step 3: Build page authority (E-E-A-T)" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
-              Google AI Overviews have a strong bias toward E-E-A-T — Experience,
+              Google AI Overviews have a strong bias toward E-E-A-T: Experience,
               Expertise, Authoritativeness, and Trustworthiness. This is
               Google&rsquo;s own quality framework, and AIO reflects it heavily.
               Low-E-E-A-T pages are deprioritized for citation regardless of their
@@ -380,7 +380,7 @@ export default function HowToAppearInGoogleAIOverviewsPost() {
               An anonymous page is a weaker citation candidate than a page
               authored by a named, linked expert. Add a clear author byline and
               connect it to an author bio page. Add Article schema with the
-              author field populated — Google uses this directly.
+              author field populated; Google uses this directly.
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
@@ -395,7 +395,7 @@ export default function HowToAppearInGoogleAIOverviewsPost() {
                 Build external authority.
               </strong>{" "}
               Backlinks from credible sources, mentions in industry publications,
-              reviews on trusted platforms — these reinforce E-E-A-T signals that
+              reviews on trusted platforms, and these reinforce E-E-A-T signals that
               increase AIO citation probability.
             </p>
             <p style={{ marginBottom: 26 }}>
@@ -410,13 +410,13 @@ export default function HowToAppearInGoogleAIOverviewsPost() {
           </RevealSection>
 
           <RevealSection>
-            <SectionLabel number="05" text="Step 4 — Use schema markup" />
+            <SectionLabel number="05" text="Step 4: Use schema markup" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
               <a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>Schema markup</a>{" "}
-              doesn&rsquo;t guarantee AIO inclusion — but it removes
+              doesn&rsquo;t guarantee AIO inclusion, but it removes
               ambiguity and reduces friction between your content and
               Google&rsquo;s extraction system. Well-structured schema is a
               signal that content is organized, authoritative, and
@@ -428,8 +428,8 @@ export default function HowToAppearInGoogleAIOverviewsPost() {
             <p style={{ marginBottom: 26 }}>
               <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
                 FAQPage schema
-              </strong>{" "}
-              — Mark up your FAQ section with FAQPage schema. When a user&rsquo;s
+              </strong>
+              : Mark up your FAQ section with FAQPage schema. When a user&rsquo;s
               query matches a question in your FAQ markup, your answer becomes a
               priority extraction target. This is the highest-ROI schema addition
               for AIO specifically.
@@ -437,8 +437,8 @@ export default function HowToAppearInGoogleAIOverviewsPost() {
             <p style={{ marginBottom: 26 }}>
               <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
                 HowTo schema
-              </strong>{" "}
-              — For step-based content (like this guide), HowTo schema signals the
+              </strong>
+              : For step-based content (like this guide), HowTo schema signals the
               structure directly. AIO frequently reproduces step content from
               HowTo-marked pages in Google Search rich results and AIO citations
               simultaneously.
@@ -446,8 +446,8 @@ export default function HowToAppearInGoogleAIOverviewsPost() {
             <p style={{ marginBottom: 26 }}>
               <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
                 Article schema with author
-              </strong>{" "}
-              — Populate{" "}
+              </strong>
+              : Populate{" "}
               <code
                 style={{
                   fontFamily: "var(--mono)",
@@ -484,14 +484,14 @@ export default function HowToAppearInGoogleAIOverviewsPost() {
                 headline
               </code>
               . This feeds directly into Google&rsquo;s E-E-A-T evaluation and
-              freshness signals — both inputs into AIO citation decisions.
+              freshness signals, both inputs into AIO citation decisions.
             </p>
           </RevealSection>
 
           <RevealSection>
             <SectionLabel
               number="06"
-              text="Step 5 — Monitor your Google AI Overviews presence"
+              text="Step 5: Monitor your Google AI Overviews presence"
             />
           </RevealSection>
 
@@ -511,15 +511,15 @@ export default function HowToAppearInGoogleAIOverviewsPost() {
                 List your 10–15 highest-priority informational queries
               </li>
               <li style={{ marginBottom: 11 }}>
-                Run each query in Google — in an incognito window to reduce
-                personalization
+                Run each query in Google (in an incognito window to reduce
+                personalization)
               </li>
               <li style={{ marginBottom: 11 }}>
                 Record whether an AI Overview appears and whether your site is
                 cited
               </li>
               <li style={{ marginBottom: 11 }}>
-                Note what the AIO says — accuracy matters as much as presence
+                Note what the AIO says: accuracy matters as much as presence
               </li>
               <li style={{ marginBottom: 11 }}>
                 Track weekly; AIO inclusions shift as Google re-crawls and updates
@@ -535,16 +535,16 @@ export default function HowToAppearInGoogleAIOverviewsPost() {
               <li style={{ marginBottom: 11 }}>
                 <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
                   Google Search Console
-                </strong>{" "}
-                — AIO impressions are beginning to surface in performance
+                </strong>
+                : AIO impressions are beginning to surface in performance
                 reports, though the data is still limited and inconsistently
                 categorized
               </li>
               <li style={{ marginBottom: 11 }}>
                 <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
                   Third-party tools
-                </strong>{" "}
-                — SE Ranking, BrightEdge, and Semrush have started tracking AIO
+                </strong>
+                : SE Ranking, BrightEdge, and Semrush have started tracking AIO
                 appearances at the query level; coverage is partial but improving
               </li>
             </ul>
@@ -755,7 +755,7 @@ export default function HowToAppearInGoogleAIOverviewsPost() {
                 }}
               >
                 An audit maps your Google AIO presence alongside ChatGPT,
-                Perplexity, and Gemini. $1,500 CAD flat — prioritized action
+                Perplexity, and Gemini. $1,500 CAD flat, prioritized action
                 plan included.
               </p>
               <Link
@@ -763,7 +763,7 @@ export default function HowToAppearInGoogleAIOverviewsPost() {
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
               >
-                Book Your AI Visibility Audit &mdash; $1,500 CAD{" "}
+                Book Your AI Visibility Audit for $1,500 CAD{" "}
                 <span className="arr">&rarr;</span>
               </Link>
             </div>
@@ -790,7 +790,7 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
         gap: 14,
       }}
     >
-      {number} &mdash; {text}
+      {number}: {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
     </h2>
   );

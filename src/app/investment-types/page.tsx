@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   // anyone holding the link, removed from sitemap, excluded from search + AI corpus.
   robots: { index: false, follow: true },
   title: "Investment Types Guide: Returns, Risks & Effort",
-  description: "A Comprehensive Guide to Investment Types: Understanding Returns, Risks, and Efforts — by Hami Tahm",
+  description: "A Comprehensive Guide to Investment Types: Understanding Returns, Risks, and Efforts, by Hami Tahm",
 };
 
 export default function Post() {

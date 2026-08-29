@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   // anyone holding the link, removed from sitemap, excluded from search + AI corpus.
   robots: { index: false, follow: true },
   title: "Understanding My Wine Taste Profile",
-  description: "Understanding My Wine Taste Profile — by Hami Tahm",
+  description: "Understanding My Wine Taste Profile, by Hami Tahm",
 };
 
 export default function Post() {
@@ -36,24 +36,24 @@ export default function Post() {
         {/* Content */}
         <Image
           src="/images/writing/wine-profile/infoghrapgy-wine.webp"
-          alt="Wine taste profile infographic — sweetness, tannin, acidity, body, and complexity"
+          alt="Wine taste profile infographic: sweetness, tannin, acidity, body, and complexity"
           width={1408}
           height={768}
           style={{ width: "100%", height: "auto", borderRadius: 12, margin: "32px 0" }}
         />
         <Image
           src="/images/writing/wine-profile/fav-wine.webp"
-          alt="Favorite wines that match this taste profile — Shiraz, Cabernet Sauvignon, Amarone, Barolo"
+          alt="Favorite wines that match this taste profile: Shiraz, Cabernet Sauvignon, Amarone, Barolo"
           width={1920}
           height={1047}
           style={{ width: "100%", height: "auto", borderRadius: 12, margin: "32px 0" }}
         />
         <div
           className="post-content"
-          dangerouslySetInnerHTML={ { __html: `<p>When I taste wine, I like to break it down into several key dimensions. Each wine sits somewhere on a spectrum — from low to high, light to powerful. By placing a wine along these spectrums, we can clearly understand its personality.</p><p>Below are the main characteristics I use when evaluating wine.
+          dangerouslySetInnerHTML={ { __html: `<p>When I taste wine, I like to break it down into several key dimensions. Each wine sits somewhere on a spectrum, from low to high, light to powerful. By placing a wine along these spectrums, we can clearly understand its personality.</p><p>Below are the main characteristics I use when evaluating wine.
 <h2>1. Sweetness</h2>
 Sweetness describes how much residual sugar remains in the wine.</p><p>The spectrum usually looks like this:</p><p>Dry → Off-dry → Sweet → Dessert wine</p><p>The wines I enjoy sit very close to the <strong>dry end of the spectrum</strong>.
-This means they contain little to no sugar and feel crisp rather than sweet.</p><p>Dry wines allow the other elements of wine — tannin, acidity, structure, and flavor — to stand out more clearly.
+This means they contain little to no sugar and feel crisp rather than sweet.</p><p>Dry wines allow the other elements of wine (tannin, acidity, structure, and flavor) to stand out more clearly.
 <h2>2. Tannin</h2>
 Tannins are natural compounds extracted from grape skins, seeds, and oak barrels.</p><p>They create that <strong>drying sensation in your mouth</strong>, similar to strong black tea.</p><p>The spectrum:</p><p>Low tannin → Medium tannin → High tannin</p><p>The wines I prefer tend to have <strong>medium-high to high tannins</strong>.</p><p>High tannin wines usually:</p><p>• feel more structured
 • pair well with meat
@@ -131,7 +131,7 @@ Long finish: stays in your mouth for a long time</p><p>High-quality wines usuall
 </table>
 In simple terms:</p><p>I enjoy <strong>bold, powerful, full-bodied red wines with deep flavors and structure</strong>.</p><p> 
 <h2>Wines That Match This Profile</h2>
-Based on this taste profile, several famous wine styles fit very well.</p><p><img class="alignnone size-medium wp-image-847" src="/images/writing/wine-profile/fav-wine.webp" alt="Favorite wine styles matching personal taste profile — including Pinot Noir, Riesling, and Chablis" width="300" height="164" />
+Based on this taste profile, several famous wine styles fit very well.</p><p><img class="alignnone size-medium wp-image-847" src="/images/writing/wine-profile/fav-wine.webp" alt="Favorite wine styles matching personal taste profile, including Pinot Noir, Riesling, and Chablis" width="300" height="164" />
 <h2>Australia</h2>
 Australia produces some of the most powerful wines in the world.</p><p>Best matches:</p><p><strong>Barossa Valley Shiraz</strong>
 Very bold, high alcohol, dark fruit, pepper, and chocolate.</p><p><strong>McLaren Vale Shiraz</strong>
@@ -162,7 +162,7 @@ If we simplify everything:</p><p>The wines that best match my taste profile are 
 • <strong>Cabernet Sauvignon</strong>
 • <strong>Amarone</strong>
 • <strong>Barolo</strong>
-• <strong>Brunello</strong></p><p>These wines share the same characteristics:</p><p>bold structure, deep flavors, high complexity, and long finishes.</p><p>They sit on the <strong>powerful end of the wine spectrum</strong> — exactly where my preferences lie. 🍷</p>` } }
+• <strong>Brunello</strong></p><p>These wines share the same characteristics:</p><p>bold structure, deep flavors, high complexity, and long finishes.</p><p>They sit on the <strong>powerful end of the wine spectrum</strong>, exactly where my preferences lie. 🍷</p>` } }
         />
 
         {/* Author box */}

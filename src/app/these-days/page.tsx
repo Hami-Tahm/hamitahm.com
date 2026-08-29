@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   // anyone holding the link, removed from sitemap, excluded from search + AI corpus.
   robots: { index: false, follow: true },
   title: "These days ...",
-  description: "These days ... — by Hami Tahm",
+  description: "These days ..., by Hami Tahm",
 };
 
 export default function Post() {
@@ -35,7 +35,7 @@ export default function Post() {
         {/* Content */}
         <div
           className="post-content"
-          dangerouslySetInnerHTML={ { __html: `<p>These days I feel like I’m living in two timelines. Part of me is still that 27-year-old in Iran, and yet today I’m 36. I’ve always believed that under 30 is the time to build, and after 30 is the time to manage. I’m still not sure what the focus should be after 40.</p><p>Right now, everything feels tough. Competing in North America means going up against the whole world—it's exciting, but it’s also hard. I’m just trying to stay in the game and keep moving forward. That’s what matters.</p><p>I’m pushing on sales, growing my network, and at the same time managing two businesses in Iran across a completely different time zone.</p><p>No pain, no gain.</p>` } }
+          dangerouslySetInnerHTML={ { __html: `<p>These days I feel like I’m living in two timelines. Part of me is still that 27-year-old in Iran, and yet today I’m 36. I’ve always believed that under 30 is the time to build, and after 30 is the time to manage. I’m still not sure what the focus should be after 40.</p><p>Right now, everything feels tough. Competing in North America means going up against the whole world: it's exciting, but it’s also hard. I’m just trying to stay in the game and keep moving forward. That’s what matters.</p><p>I’m pushing on sales, growing my network, and at the same time managing two businesses in Iran across a completely different time zone.</p><p>No pain, no gain.</p>` } }
         />
 
         {/* Author box */}

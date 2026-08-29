@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   // anyone holding the link, removed from sitemap, excluded from search + AI corpus.
   robots: { index: false, follow: true },
   title: "The Courage to Start",
-  description: "The Courage to Start — by Hami Tahm",
+  description: "The Courage to Start, by Hami Tahm",
 };
 
 export default function Post() {
@@ -35,7 +35,7 @@ export default function Post() {
         {/* Content */}
         <div
           className="post-content"
-          dangerouslySetInnerHTML={ { __html: `<p>No post is harder than the first post, and no work is tougher than the first one.</p><p>There is no alternative on the path to success; there is only one way—success.</p><p>I’ve decided that my first post will specifically focus on wisdom in English, to honor the act of starting.
+          dangerouslySetInnerHTML={ { __html: `<p>No post is harder than the first post, and no work is tougher than the first one.</p><p>There is no alternative on the path to success; there is only one way: success.</p><p>I’ve decided that my first post will specifically focus on wisdom in English, to honor the act of starting.
 <ol>
  	<li>Actions speak louder than words.</li>
  	<li>The journey of a thousand miles begins with a single step.</li>

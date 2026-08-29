@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   // anyone holding the link, removed from sitemap, excluded from search + AI corpus.
   robots: { index: false, follow: true },
   title: "Pushing Boundaries",
-  description: "Pushing Boundaries — by Hami Tahm",
+  description: "Pushing Boundaries, by Hami Tahm",
 };
 
 export default function Post() {
@@ -39,7 +39,7 @@ export default function Post() {
 2. <strong>Preconstruction Projects:</strong> A platform specifically for preconstruction projects, generating leads for realtors.
 3. <strong>Marketing Agency:</strong> A marketing agency focused solely on real estate professionals, including realtors, real estate lawyers, brokerages, and more. to do PPC, SEO with <a href="https://hamitahm.com/seo-expert-toronto/">SEO experts in Toronto</a>, social media marketing, and ...
 4. <strong>Mortgage Comparison:</strong> A site that compares mortgage options and provides insights to users.
-5. <strong>Insurance Comparison:</strong> A platform that compares insurance options, particularly home insurance.</p><p>These days, I’m working on these projects and staying extremely busy. Many advise me to focus on just one of these ventures, but I enjoy this challenge. At 35, I want to push myself and start all five ventures simultaneously. This challenge excites and motivates me, and I’m determined to succeed.</p><p>I need to learn a lot in these five paths, expand my network, improve my English, and develop many other skills. This is the most challenging work I have ever undertaken—it’s truly pushing me to the limits of my abilities. However, we all know that growth happens when we challenge ourselves. I plan to write about my journey and experiences along the way.
+5. <strong>Insurance Comparison:</strong> A platform that compares insurance options, particularly home insurance.</p><p>These days, I’m working on these projects and staying extremely busy. Many advise me to focus on just one of these ventures, but I enjoy this challenge. At 35, I want to push myself and start all five ventures simultaneously. This challenge excites and motivates me, and I’m determined to succeed.</p><p>I need to learn a lot in these five paths, expand my network, improve my English, and develop many other skills. This is the most challenging work I have ever undertaken: it’s truly pushing me to the limits of my abilities. However, we all know that growth happens when we challenge ourselves. I plan to write about my journey and experiences along the way.
 <div id="gtx-trans" style="position: absolute; left: 194px; top: -6px;">
 <div class="gtx-trans-icon"></div>
 </div></p>` } }

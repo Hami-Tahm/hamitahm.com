@@ -45,11 +45,11 @@ export const writingPosts = [...posts].sort((a, b) =>
 );
 
 /**
- * Posts surfaced on the HOMEPAGE — an explicit allowlist, not `.slice(0, 3)`.
+ * Posts surfaced on the HOMEPAGE: an explicit allowlist, not `.slice(0, 3)`.
  *
- * This used to take the three most recent posts by date, which meant the homepage —
- * the first page every crawler and answer engine reads, and the main signal for what
- * this site is about — surfaced whatever happened to be newest, regardless of topic.
+ * This used to take the three most recent posts by date, which meant the homepage
+ * (the first page every crawler and answer engine reads, and the main signal for what
+ * this site is about) surfaced whatever happened to be newest, regardless of topic.
  * Recency is the wrong sort key for a homepage. Curate deliberately, and keep the
  * selection on-topic.
  *

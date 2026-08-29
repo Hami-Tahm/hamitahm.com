@@ -5,7 +5,7 @@ import { RevealSection } from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Hami Tahm — AI visibility, SEO, partnerships, or ambitious projects. Based in Toronto, Canada.",
+    "Get in touch with Hami Tahm: AI visibility, SEO, partnerships, or ambitious projects. Based in Toronto, Canada.",
 };
 
 export default function ContactPage() {
@@ -13,7 +13,7 @@ export default function ContactPage() {
     <section style={{ padding: "80px 0", minHeight: "calc(100vh - 200px)" }}>
       <div className="wrap">
         <div className="contact-grid">
-          {/* ── Left column ── */}
+          {/* Left column */}
           <div>
             <RevealSection>
               <div
@@ -68,7 +68,7 @@ export default function ContactPage() {
               >
                 Whether you want your business found in AI search, or
                 you&rsquo;re working on something ambitious and thinking
-                globally&nbsp;&mdash;{" "}
+                globally,{" "}
                 <b style={{ color: "var(--ink)", fontWeight: 500 }}>
                   I read every message.
                 </b>
@@ -104,7 +104,7 @@ export default function ContactPage() {
                     <b style={{ color: "var(--ink)", fontWeight: 600 }}>
                       AI visibility &amp; SEO
                     </b>{" "}
-                    &mdash; get found in ChatGPT, Perplexity, and Google
+                    : get found in ChatGPT, Perplexity, and Google
                     AI&nbsp;Overviews.
                   </span>
                 </div>
@@ -129,7 +129,7 @@ export default function ContactPage() {
                     <b style={{ color: "var(--ink)", fontWeight: 600 }}>
                       Founders &amp; operators
                     </b>{" "}
-                    &mdash; building something ambitious, especially AI-driven
+                    : building something ambitious, especially AI-driven
                     or with strong distribution loops.
                   </span>
                 </div>
@@ -154,7 +154,7 @@ export default function ContactPage() {
                     <b style={{ color: "var(--ink)", fontWeight: 600 }}>
                       Collaboration &amp; ideas
                     </b>{" "}
-                    &mdash; partnerships, advising, or just a good conversation.
+                    : partnerships, advising, or just a good conversation.
                   </span>
                 </div>
               </div>
@@ -204,7 +204,7 @@ export default function ContactPage() {
                 </div>
               </a>
 
-              {/* LinkedIn — /in/hami-tahm is the real profile; /in/hamitahm 404s.
+              {/* LinkedIn: /in/hami-tahm is the real profile; /in/hamitahm 404s.
                   Same dead URL was already fixed in Footer.tsx + layout.tsx sameAs. */}
               <a
                 href="https://www.linkedin.com/in/hami-tahm/"

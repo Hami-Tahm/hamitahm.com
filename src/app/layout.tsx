@@ -25,15 +25,15 @@ const GTM_ID = "GTM-P3HNG5HQ";
  * Removed from here rather than from GTM on 2026-08-22, because the two installs
  * are NOT equivalent. The GTM tag passes {{Analytics Client ID}} and
  * {{Analytics Session ID}} into Clarity, which is what stitches a Clarity
- * recording to a GA4 session — the whole point of the Clarity↔GA4 link that is
+ * recording to a GA4 session: the whole point of the Clarity↔GA4 link that is
  * live in Clarity's settings. The inline snippet passed neither. Deleting the
  * GTM tag would have removed the capability and kept the weaker copy.
  *
- * ⚠️ STILL TRUE EVEN THOUGH THE TAG MOVED — do not "clean these up":
+ * ⚠️ STILL TRUE EVEN THOUGH THE TAG MOVED, do not "clean these up":
  *   - next.config.ts CSP must allow www.clarity.ms and *.clarity.ms in BOTH
  *     script-src and connect-src. The script is still loaded on every page; only
  *     the thing injecting it changed. Removing either directive drops sessions
- *     silently — an empty dashboard with no error anyone would think to look for.
+ *     silently: an empty dashboard with no error anyone would think to look for.
  *   - src/lib/legal.ts and /privacy/ must keep the Clarity third-party entry and
  *     the session-replay disclosure. Under PIPEDA the obligation follows the
  *     recording, not the injection method.
@@ -58,7 +58,7 @@ const jetbrainsMono = JetBrains_Mono({
 // render-blocking <link> to fonts.googleapis.com, which cost a DNS + TLS +
 // stylesheet round trip before first paint (~1.6s of render-blocking on
 // mobile). next/font self-hosts it from our own origin at build time, so the
-// blocking third-party request — and both preconnects — are gone.
+// blocking third-party request (and both preconnects) are gone.
 const hankenGrotesk = Hanken_Grotesk({
   variable: "--font-hanken",
   subsets: ["latin"],
@@ -66,13 +66,13 @@ const hankenGrotesk = Hanken_Grotesk({
   display: "swap",
 });
 
-// Site-wide entity schema — establishes Hami Tahm + HamiTahm.com as canonical
+// Site-wide entity schema: establishes Hami Tahm + HamiTahm.com as canonical
 // entities across every page. Page-level schema references these via @id.
 const siteStructuredData = {
   "@context": "https://schema.org",
   "@graph": [
     // THE canonical Person. Defined here ONCE and referenced everywhere else by @id.
-    // (/hami-tahm/ used to redefine this same @id with a conflicting sameAs list —
+    // (/hami-tahm/ used to redefine this same @id with a conflicting sameAs list;
     // removed 2026-07-14. Add new properties HERE, never in a page.)
     {
       "@type": "Person",
@@ -80,22 +80,22 @@ const siteStructuredData = {
       name: "Hami Tahm",
       url: "https://hamitahm.com/hami-tahm/",
       jobTitle: "AI Visibility Consultant",
-      // CANONICAL DESCRIPTOR — keep this identical to the footer, the X bio, the
+      // CANONICAL DESCRIPTOR: keep this identical to the footer, the X bio, the
       // LinkedIn headline, the Linktree bio and every other profile. The repetition
       // of one exact sentence across surfaces is what tells machines these profiles
       // are a single entity. If you change it, change it EVERYWHERE, or you rebuild
       // the fragmentation this was written to fix.
       description:
-        "AI Visibility Consultant in Toronto — AEO & GEO for Canadian businesses that want to be cited in Google AI Overviews, ChatGPT, Gemini, and Claude.",
+        "AI Visibility Consultant in Toronto: AEO & GEO for Canadian businesses that want to be cited in Google AI Overviews, ChatGPT, Gemini, and Claude.",
       image: "https://hamitahm.com/images/hami-tahm/hami-tahm-portrait.png",
       worksFor: { "@id": "https://hamitahm.com/#organization" },
       /*
-       * WHERE THE ADDRESS LIVES — moved to #organization on 2026-08-16.
+       * WHERE THE ADDRESS LIVES: moved to #organization on 2026-08-16.
        *
        * It used to be declared here, on the Person. That was valid (Person accepts
        * `address`) but it was the wrong home, because the coordinates that belong
-       * WITH it are not valid on a Person. Splitting a location across two nodes —
-       * street address on one, coordinates nowhere — is how the geo property ended up
+       * WITH it are not valid on a Person. Splitting a location across two nodes
+       * (street address on one, coordinates nowhere) is how the geo property ended up
        * homeless through three separate edits.
        *
        * So the whole location now sits on the business node below, which is typed
@@ -118,16 +118,16 @@ const siteStructuredData = {
       ],
       // Every URL below was opened and confirmed to resolve (2026-07-14).
       // The previous LinkedIn entry was a dead URL and had been declared site-wide,
-      // in both schema and footer. VERIFY ANY URL BEFORE ADDING IT HERE — a broken
+      // in both schema and footer. VERIFY ANY URL BEFORE ADDING IT HERE: a broken
       // sameAs is worse than no sameAs.
       //
       // This list is deliberately SCOPED to the professional English-language entity.
       // sameAs is an identity assertion, not a link: everything listed here is being
       // declared, to every crawler and every model, as "this is the same person."
       // So only list properties that belong to this practice. Personal, other-language
-      // and unrelated-venture properties are intentionally NOT declared — not hidden,
+      // and unrelated-venture properties are intentionally NOT declared, not hidden,
       // just not asserted as part of this professional identity.
-      // sameAs holds ALTER-EGO PROFILES only — other places that ARE this same person.
+      // sameAs holds ALTER-EGO PROFILES only: other places that ARE this same person.
       // homecalc.ca and houmse.com were removed 2026-07-14: they are companies Hami
       // FOUNDED, not alternate identities of the person, so they do not belong here.
       // That call was right; the `owns` array it originally pointed to was not, and is
@@ -144,12 +144,12 @@ const siteStructuredData = {
         "https://www.producthunt.com/@hamitahm",
       ],
       /*
-       * `owns` WAS HERE AND WAS INVALID — removed 2026-08-16. Do not re-add it.
+       * `owns` WAS HERE AND WAS INVALID: removed 2026-08-16. Do not re-add it.
        *
        * Ahrefs flagged this on all 69 crawled pages: "Unexpected type for owns.
        * Expected types: OwnershipInfo, Product." schema.org's `owns` does not accept
-       * an Organization, so pointing it at homecalc.ca and houmse.com was never valid
-       * — the note that used to sit here claimed it was the schema.org-correct
+       * an Organization, so pointing it at homecalc.ca and houmse.com was never valid;
+       * the note that used to sit here claimed it was the schema.org-correct
        * modelling, and that claim was simply wrong.
        *
        * Nothing is lost by deleting it. The relationship is ALREADY expressed, and
@@ -157,7 +157,7 @@ const siteStructuredData = {
        * at this Person. That is the canonical direction for this link.
        *
        * Note for AGENTS.md §5: this removal does not contradict the rule. §5 protects
-       * markup that is TRUE and FREE. Invalid markup is not free — a validator error
+       * markup that is TRUE and FREE. Invalid markup is not free: a validator error
        * can cost the parse of the whole node, which is a real price, unlike "Google
        * says it doesn't use this".
        */
@@ -168,7 +168,7 @@ const siteStructuredData = {
      * WHY THE TYPE CHANGED. ProfessionalService is a subtype of LocalBusiness, which
      * inherits from BOTH Organization and Place. That inheritance is the entire point:
      * it is what makes `address`, `geo` and `priceRange` valid on this node. A plain
-     * Organization accepts none of them, and a Person accepts only `address` — which
+     * Organization accepts none of them, and a Person accepts only `address`, which
      * is why the coordinates had no legal home anywhere in this graph until now.
      *
      * ⚠️ THIS DOES NOT REOPEN THE 2026-08-11 BUG. That bug was three SERVICE PAGES
@@ -188,7 +188,7 @@ const siteStructuredData = {
      * promise that someone can show up and find you, and the arrangement here is a
      * desk in an incubator with clients received BY APPOINTMENT. Declaring hours
      * would be the one thing on this node that isn't true. Do not add it unless the
-     * hours become real and reliable — §5 protects true markup, not all markup.
+     * hours become real and reliable: §5 protects true markup, not all markup.
      */
     {
       "@type": "ProfessionalService",
@@ -206,7 +206,7 @@ const siteStructuredData = {
        * `geo` history, because it has been off, on, and off again: removed 08-11 on
        * the bad reasoning that markup without a rich result is worth deleting;
        * restored 08-16 under AGENTS.md §5; removed again the same day because Ahrefs
-       * reported "Unexpected property for Person" — true coordinates on a node that
+       * reported "Unexpected property for Person": true coordinates on a node that
        * could not carry them. It is back now, on a node that can.
        */
       address: {
@@ -224,7 +224,7 @@ const siteStructuredData = {
       },
       priceRange: "$$$",
     },
-    // Companies Hami founded — declared as first-class entities with a founder link
+    // Companies Hami founded: declared as first-class entities with a founder link
     // back to the Person, which is the schema.org-correct way to connect them.
     {
       "@type": "Organization",
@@ -256,11 +256,11 @@ const siteStructuredData = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Hami Tahm \u2014 AI Visibility Consultant in Canada",
+    default: "Hami Tahm: AI Visibility Consultant in Canada",
     template: "%s | Hami Tahm",
   },
   description:
-    "Hami Tahm \u2014 AI Visibility Consultant in Canada. Helping businesses appear in Google AI Overviews, ChatGPT, Gemini, and Claude.",
+    "Hami Tahm: AI Visibility Consultant in Canada. Helping businesses appear in Google AI Overviews, ChatGPT, Gemini, and Claude.",
   metadataBase: new URL("https://hamitahm.com"),
   // SELF-REFERENCING CANONICAL FOR EVERY PAGE, from one place.
   // Next resolves a relative `alternates.canonical` against metadataBase + the current
@@ -276,13 +276,13 @@ export const metadata: Metadata = {
     siteName: "Hami Tahm",
     /*
      * ⚠️ THIS MUST STAY RELATIVE. It was "https://hamitahm.com/" until 2026-08-16,
-     * with a comment claiming Next resolved it per page. It does not — an ABSOLUTE
+     * with a comment claiming Next resolved it per page. It does not: an ABSOLUTE
      * url here is inherited literally, so all 37 crawled pages emitted
      * og:url = the homepage. Ahrefs reported it as "Open Graph URL not matching
      * canonical" and I confirmed it live on /blog/peec-vs-profound-vs-airops/.
      *
      * "./" is resolved against metadataBase plus the current route, exactly the way
-     * alternates.canonical above already works — so each page now declares itself.
+     * alternates.canonical above already works, so each page now declares itself.
      * That matters here more than on most sites: og:url is one of the signals a
      * social or AI crawler uses to decide which URL a share belongs to.
      */
@@ -314,7 +314,7 @@ export default function RootLayout({
         <Script id="gtm-init" strategy="lazyOnload">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`}
         </Script>
-        {/* GA4 and Microsoft Clarity both fire via GTM — no standalone gtag or
+        {/* GA4 and Microsoft Clarity both fire via GTM: no standalone gtag or
             clarity snippet here. See the Clarity note at the top of this file
             before adding either back. */}
         <script

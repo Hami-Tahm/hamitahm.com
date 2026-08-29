@@ -57,7 +57,7 @@ export default function NotFound() {
             marginRight: "auto",
           }}
         >
-          No search engine, no LLM, and no human can find anything here —
+          No search engine, no LLM, and no human can find anything here,
           because it doesn't exist. Let's get you somewhere real.
         </p>
 
@@ -92,7 +92,7 @@ export default function NotFound() {
               margin: 0,
             }}
           >
-            I'm <strong>Hami Tahm</strong> — I help businesses become the answer
+            I'm <strong>Hami Tahm</strong>: I help businesses become the answer
             when AI talks about their industry. If your brand isn't showing up in
             Google AI Overviews, ChatGPT, Gemini, or Claude, that's the problem I
             solve.

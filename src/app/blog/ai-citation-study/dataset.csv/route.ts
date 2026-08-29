@@ -5,7 +5,7 @@ import { STUDY, HOMECALC_PAGES, HOMECALC_QUERIES } from "@/lib/citation-study";
  *
  * ── WHY (GEO) ──
  * Original data gets cited when it is genuinely re-usable. Publishing the underlying
- * numbers as a plain CSV — not just a styled table — lets a journalist, an SEO blogger,
+ * numbers as a plain CSV (not just a styled table) lets a journalist, an SEO blogger,
  * or an AI answer engine take the data, verify it, and reference the source. It turns a
  * "look how well I did" page into a "here is a dataset you can cite" page. Same numbers
  * as the article, from the same single source of truth (citation-study.ts), so the CSV
@@ -17,13 +17,13 @@ import { STUDY, HOMECALC_PAGES, HOMECALC_QUERIES } from "@/lib/citation-study";
 export function GET() {
   const rows: string[] = [];
 
-  rows.push(`# AI Citation Study — HomeCalc.ca — top cited pages & queries (selected sample)`);
+  rows.push(`# AI Citation Study, HomeCalc.ca: top cited pages & queries (selected sample)`);
   rows.push(`# This is a selected sample (top pages + top queries), not the full per-page export.`);
   rows.push(`# Full export available on request: hami@hamitahm.com`);
   rows.push(`# Source: ${STUDY.source}`);
   rows.push(`# Window: ${STUDY.windowStart} to ${STUDY.windowEnd}`);
   rows.push(`# Pulled: ${STUDY.pulledOn}`);
-  rows.push(`# Published by Hami Tahm — https://hamitahm.com/blog/ai-citation-study/`);
+  rows.push(`# Published by Hami Tahm: https://hamitahm.com/blog/ai-citation-study/`);
   rows.push(`# Free to cite with attribution.`);
   rows.push("");
 

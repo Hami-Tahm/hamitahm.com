@@ -23,7 +23,7 @@ const posts = [
     cat: "Strategy",
     title: "Which AI Platform Actually Matters Most Right Now?",
     excerpt:
-      "Google AI Overviews, ChatGPT, Gemini, Claude, Copilot, Perplexity — ranked by real traffic share, not assumptions. And why this changed my own site.",
+      "Google AI Overviews, ChatGPT, Gemini, Claude, Copilot, Perplexity: ranked by real traffic share, not assumptions. And why this changed my own site.",
   },
   {
     href: "/blog/what-is-ai-visibility/",
@@ -35,9 +35,9 @@ const posts = [
   {
     href: "/blog/aeo-vs-geo-vs-seo/",
     cat: "AEO / GEO / SEO",
-    title: "AEO vs GEO vs SEO — What's the Difference?",
+    title: "AEO vs GEO vs SEO: What's the Difference?",
     excerpt:
-      "Three acronyms, one goal — being found. Here’s how they differ and where to focus.",
+      "Three acronyms, one goal: being found. Here’s how they differ and where to focus.",
   },
   {
     href: "/blog/how-to-get-mentioned-by-chatgpt/",
@@ -51,14 +51,14 @@ const posts = [
     cat: "Google AI Overviews",
     title: "How to Appear in Google AI Overviews",
     excerpt:
-      "Why AI Overviews cite sources that don’t rank on page one — and how to be one.",
+      "Why AI Overviews cite sources that don’t rank on page one, and how to be one.",
   },
   {
     href: "/blog/how-to-get-cited-by-perplexity/",
     cat: "ChatGPT & Perplexity",
     title: "How to Get Cited by Perplexity AI",
     excerpt:
-      "Perplexity shows its sources — here’s how to become one of them.",
+      "Perplexity shows its sources: here’s how to become one of them.",
   },
   {
     href: "/blog/how-to-check-ai-visibility/",
@@ -72,40 +72,40 @@ const posts = [
     cat: "AEO / GEO / SEO",
     title: "What Is Answer Engine Optimization (AEO)?",
     excerpt:
-      "Optimizing to be the answer, not just a result — the core idea behind AEO.",
+      "Optimizing to be the answer, not just a result: the core idea behind AEO.",
   },
   {
     href: "/blog/best-ai-visibility-tools/",
     cat: "Tools & Comparisons",
     title: "Best AI Visibility Tools in 2026: Ranked by an Independent Consultant",
     excerpt:
-      "The tools that track AI search visibility — ranked, tested, and reviewed by an independent consultant who doesn't sell them.",
+      "The tools that track AI search visibility, ranked, tested, and reviewed by an independent consultant who doesn't sell them.",
   },
   {
     href: "/blog/ai-visibility-tools-vs-audit/",
     cat: "Strategy",
-    title: "AI Visibility Tools vs AI Visibility Audit — Which Do You Need?",
+    title: "AI Visibility Tools vs AI Visibility Audit: Which Do You Need?",
     excerpt:
       "Tools show dashboards. Audits show what to fix. When you need a tool, an audit, or both.",
   },
   {
     href: "/blog/peec-vs-profound-vs-airops/",
     cat: "Tools & Comparisons",
-    title: "Peec AI vs Profound vs AirOps — AI Visibility Tools Compared",
+    title: "Peec AI vs Profound vs AirOps: AI Visibility Tools Compared",
     excerpt:
-      "Detailed comparison of the three leading AI visibility platforms — features, pricing, and fit.",
+      "Detailed comparison of the three leading AI visibility platforms: features, pricing, and fit.",
   },
   {
     href: "/blog/faq-schema-accordion-bug/",
     cat: "Technical SEO",
     title: "The Silent SEO Bug Hiding in Your React FAQ Accordion",
     excerpt:
-      "If your React site hides its FAQ answers inside a collapsible accordion, Google and AI crawlers may never see them — quietly costing you FAQ rich-result eligibility.",
+      "If your React site hides its FAQ answers inside a collapsible accordion, Google and AI crawlers may never see them, quietly costing you FAQ rich-result eligibility.",
   },
   {
     href: "/blog/spa-to-ssg-ai-visibility/",
     cat: "Technical SEO",
-    title: "Your SPA Is Invisible to AI — How One Migration Gave Us 10× More Citations in 48 Hours",
+    title: "Your SPA Is Invisible to AI: How One Migration Gave Us 10× More Citations in 48 Hours",
     excerpt:
       "Single Page Apps serve an empty div to AI crawlers. We migrated HomeCalc.ca from SPA to SSG and watched citations jump 10× in two days.",
   },
@@ -114,21 +114,21 @@ const posts = [
     cat: "Strategy",
     title: "The AI Visibility Audit Checklist: 23 Things to Check",
     excerpt:
-      "Crawlability, entity and schema, content answerability, citation tracking, and competitor benchmarking — everything a professional audit checks, laid out so you can run it yourself first.",
+      "Crawlability, entity and schema, content answerability, citation tracking, and competitor benchmarking: everything a professional audit checks, laid out so you can run it yourself first.",
   },
   {
     href: "/blog/ai-visibility-tool-accuracy/",
     cat: "Tools & Comparisons",
     title: "How to Evaluate AI Visibility Tool Accuracy",
     excerpt:
-      "Profound, AirOps, Peec, and Share-of-Model trackers all report a number — they don't all measure it the same way. A self-test protocol for checking any tool before you buy it.",
+      "Profound, AirOps, Peec, and Share-of-Model trackers all report a number, but they don't all measure it the same way. A self-test protocol for checking any tool before you buy it.",
   },
   {
     href: "/blog/ai-visibility-consultant-vs-agency-vs-tool/",
     cat: "Strategy",
     title: "AI Visibility Consultant vs Agency vs Tool",
     excerpt:
-      "Software you run yourself, a team on retainer, or one person hired for a specific diagnosis — what each is built for, what each costs, and which one fits your situation.",
+      "Software you run yourself, a team on retainer, or one person hired for a specific diagnosis: what each is built for, what each costs, and which one fits your situation.",
   },
 ];
 
@@ -229,7 +229,7 @@ export default function BlogIndexPage() {
                 letterSpacing: "-.03em",
               }}
             >
-              Understanding AI visibility &mdash; guides, frameworks, and
+              Understanding AI visibility: guides, frameworks, and
               analysis.
             </h1>
           </RevealSection>
@@ -317,7 +317,7 @@ export default function BlogIndexPage() {
                 lineHeight: 1.55,
               }}
             >
-              The shift from search results to AI answers, explained &mdash;
+              The shift from search results to AI answers, explained:
               what &ldquo;AI visibility&rdquo; actually means, why it&rsquo;s
               different from SEO, and what it means for your business.
             </p>
@@ -448,7 +448,7 @@ export default function BlogIndexPage() {
                   marginTop: 5,
                 }}
               >
-                Book a $1,500 AI Visibility Audit &mdash; full diagnosis of
+                Book a $1,500 AI Visibility Audit: full diagnosis of
                 where AI engines mention you, delivered in 7&nbsp;days.
               </p>
             </div>

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   // Kept under 48 chars: the root layout appends " | Hami Tahm" (12), and anything
   // over ~60 rendered chars gets truncated in Google. Leads with the exact query
   // ("free ai visibility checker") that drives most of this page's impressions.
-  title: "Free AI Visibility Checker — Test Your Brand",
+  title: "Free AI Visibility Checker: Test Your Brand",
   description:
     "See whether ChatGPT, Google AI Overview, and Gemini recommend your business or a competitor. A real analyst checks your keywords and emails your report, free.",
   alternates: { canonical: URL },
@@ -28,11 +28,11 @@ const FAQ_ITEMS = [
   },
   {
     q: "What is an AI visibility checker?",
-    a: "An AI visibility checker shows how your brand appears when people ask AI engines — ChatGPT, Google AI Overview, Gemini — about your category. Enter your domain and your keywords, and you get a report on whether these engines mention, cite or recommend you, and whether they named someone else instead. Naming which competitors were chosen over you, and why, is part of the paid audit.",
+    a: "An AI visibility checker shows how your brand appears when people ask AI engines (ChatGPT, Google AI Overview, Gemini) about your category. Enter your domain and your keywords, and you get a report on whether these engines mention, cite or recommend you, and whether they named someone else instead. Naming which competitors were chosen over you, and why, is part of the paid audit.",
   },
   {
     q: "Is this AI visibility checker free?",
-    a: "Yes, and there's no card and no trial. Submit your domain and keywords and you receive a detailed report by email at no cost. The free check runs for Canada and the United States — these engines answer differently depending on the country the search runs from, so a report from the wrong market would be misleading. If you're somewhere else you can still join the list and I'll tell you if it opens. If you then want a full audit with a prioritized action plan, that's the $1,500 CAD AI Visibility Audit.",
+    a: "Yes, and there's no card and no trial. Submit your domain and keywords and you receive a detailed report by email at no cost. The free check runs for Canada and the United States; these engines answer differently depending on the country the search runs from, so a report from the wrong market would be misleading. If you're somewhere else you can still join the list and I'll tell you if it opens. If you then want a full audit with a prioritized action plan, that's the $1,500 CAD AI Visibility Audit.",
   },
   {
     q: "Which AI engines does it check?",
@@ -40,7 +40,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "How long until I get my report?",
-    a: "Within one business day. A real analyst runs your searches by hand, so it isn't instant — but you get a considered read of each engine and keyword you selected for your country, not an automated score.",
+    a: "Within one business day. A real analyst runs your searches by hand, so it isn't instant, but you get a considered read of each engine and keyword you selected for your country, not an automated score.",
   },
 ];
 
@@ -133,7 +133,7 @@ export default function AiVisibilityCheckerPage() {
                 lineHeight: 1.6,
               }}
             >
-              Add your domain and the questions your buyers actually ask &mdash;
+              Add your domain and the questions your buyers actually ask,
               then a real analyst checks how ChatGPT, Google AI Overview and
               Gemini answer, and whether they name someone else instead. Free
               report in your inbox within one business day.
@@ -192,15 +192,15 @@ export default function AiVisibilityCheckerPage() {
             </h2>
             <p style={{ fontSize: "clamp(16px, 2vw, 18px)", color: "var(--muted)", lineHeight: 1.7 }}>
               For each engine and keyword you select, the report shows whether AI
-              mentions your brand, what it says about you, and &mdash; if you name
-              your competitors &mdash; which of you the engines actually recommend
+              mentions your brand, what it says about you, and (if you name
+              your competitors) which of you the engines actually recommend
               on the same question. Every answer is recorded with the date and the
               country it came from, so you can tell a real pattern from a one-off
               result. It&rsquo;s the same lens behind the full{" "}
               <Link href={AUDIT_URL} style={{ color: "var(--accent)", fontWeight: 500 }}>
                 AI Visibility Audit
               </Link>
-              {" "}— this free check is the fastest way to see where you stand.
+              {" "}so this free check is the fastest way to see where you stand.
             </p>
           </RevealSection>
         </div>
@@ -220,7 +220,7 @@ export default function AiVisibilityCheckerPage() {
                 marginBottom: 20,
               }}
             >
-              AI visibility checker — FAQ
+              AI visibility checker: FAQ
             </h2>
             {FAQ_ITEMS.map(({ q, a }) => (
               <div key={q} className="faq-item" style={{ borderTop: "1px solid var(--line)", padding: "18px 0" }}>

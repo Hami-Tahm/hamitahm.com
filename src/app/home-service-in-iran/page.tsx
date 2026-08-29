@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "2024 Market Analysis: Home Services Industry in Iran",
-  description: "2024 Market Analysis: Home Services Industry in Iran — by Hami Tahm",
+  description: "2024 Market Analysis: Home Services Industry in Iran, by Hami Tahm",
   // Noindexed and removed from the sitemap: off-topic for this site's focus.
   // Kept live for anyone holding a direct link.
   robots: { index: false, follow: true },
@@ -36,7 +36,7 @@ export default function Post() {
         {/* Featured Image */}
         <Image
           src="/images/writing/home-service-in-iran/index-pic.png"
-          alt="Home services industry in Iran — market analysis overview"
+          alt="Home services industry in Iran: market analysis overview"
           width={880}
           height={400}
           style={{ width: "100%", height: "auto", borderRadius: 12, margin: "32px 0" }}
@@ -81,7 +81,7 @@ To evaluate the competitive landscape and performance of businesses in the onlin
 <h4>Website Analysis</h4>
 Using the <a href="https://www.similarweb.com/corp/extension/">SimilarWeb extension</a>, I identified profitable keywords that competitors ranked for on the first page of Google. Through SEMrush, I generated detailed reports for each site, highlighting traffic volumes and rankings for key terms. This analysis clarified our website’s relative position in the market.</p><p>Internal dashboards and data from the past year (July 1, 2023, to June 30, 2024) were used to calculate the average number of organic requests to our site. This data was then extrapolated to provide a comprehensive comparison with competitors.
 <h4>Mobile App Analysis</h4>
-Given that Cafebazaar—a localized version of Google Play—is widely used in Iran (where Google Play is filtered), I analyzed the Top Charts in the Lifestyle category of Cafebazaar to assess app performance. These rankings, system-generated and reflective of overall performance, indicated that our app's daily install count (adjusted for uninstalls) exceeded that of competitors in the same category.</p><p>To refine this analysis, I also reviewed data from <a href="https://myket.ir/apps/lifestyle">Myket</a>, which reports active downloads rather than cumulative figures like <a href="https://cafebazaar.ir/cat/lifestyle?l=en">Cafebazaar</a>. This allowed for a more accurate comparison of app performance.</p><p><img class="aligncenter" src="/images/writing/home-service-in-iran/Life-style-The-best.png" width="241" height="428" alt="Cafebazaar and Myket Lifestyle category top chart rankings showing Iranian home service apps" />
+Given that Cafebazaar (a localized version of Google Play) is widely used in Iran (where Google Play is filtered), I analyzed the Top Charts in the Lifestyle category of Cafebazaar to assess app performance. These rankings, system-generated and reflective of overall performance, indicated that our app's daily install count (adjusted for uninstalls) exceeded that of competitors in the same category.</p><p>To refine this analysis, I also reviewed data from <a href="https://myket.ir/apps/lifestyle">Myket</a>, which reports active downloads rather than cumulative figures like <a href="https://cafebazaar.ir/cat/lifestyle?l=en">Cafebazaar</a>. This allowed for a more accurate comparison of app performance.</p><p><img class="aligncenter" src="/images/writing/home-service-in-iran/Life-style-The-best.png" width="241" height="428" alt="Cafebazaar and Myket Lifestyle category top chart rankings showing Iranian home service apps" />
 <h4>Digital Ads Analysis</h4>
 Google Ads provided clear insights through the Auction Insight tool, which shows the percentage of market share held by each competitor. By running campaigns targeting competitors’ brand names, I determined the daily requests generated from searches for their brands. This analysis also revealed that competitors run similar campaigns targeting our brand.
 <h4>Instagram Analysis</h4>
@@ -92,7 +92,7 @@ After consolidating data from all sources, the following conclusions emerged:
  	<li><strong>Market Data Accessibility</strong>: While much of the analysis (e.g., app installs, keyword rankings) is accessible to anyone in the industry, accurately estimating how many requests these keywords or installs generate requires insider knowledge.</li>
  	<li><strong>Market Leader Advantage</strong>: Only the first and second players in the market can accurately gauge request-to-install ratios and other critical metrics. Estimates from third and fourth players tend to be less precise.</li>
 </ol>
-While not claiming to be entirely free of inaccuracies, this report addresses a significant gap in reliable market data. In a landscape often marked by flawed or questionable reports, it offers a more informed and realistic perspective on the competitive dynamics of Iran’s online home services market.</p><p> </p><p><img class="aligncenter" src="/images/writing/home-service-in-iran/home-services-in-iran-2.png" alt="Iran online home services market competitive landscape — Achareh, Sanjagh, and Khedmat Az Ma comparison" /></p><p> </p><p>Source for Achareh:
+While not claiming to be entirely free of inaccuracies, this report addresses a significant gap in reliable market data. In a landscape often marked by flawed or questionable reports, it offers a more informed and realistic perspective on the competitive dynamics of Iran’s online home services market.</p><p> </p><p><img class="aligncenter" src="/images/writing/home-service-in-iran/home-services-in-iran-2.png" alt="Iran online home services market competitive landscape: Achareh, Sanjagh, and Khedmat Az Ma comparison" /></p><p> </p><p>Source for Achareh:
 <ol>
  	<li><a href="https://meet.google.com/sxt-mxkb-fuc?ijlm=1735580192603&hs=187&adhoc=1" target="_blank" rel="noopener">podcast</a></li>
  	<li><a href="https://digiato.com/article/2018/12/09/%D8%B3%D8%B1%D9%85%D8%A7%DB%8C%D9%87-%DA%AF%D8%B0%D8%A7%D8%B1%DB%8C-%DB%B6-%DB%B2-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86-%D8%AF%D9%84%D8%A7%D8%B1%DB%8C-%D9%87%D9%85%D8%B1%D8%A7%D9%87-%D8%A7%D9%88%D9%84" target="_blank" rel="noopener">6.2 million US (round 2)</a></li>

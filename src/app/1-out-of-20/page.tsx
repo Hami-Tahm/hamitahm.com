@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   // anyone holding the link, removed from sitemap, excluded from search + AI corpus.
   robots: { index: false, follow: true },
   title: "From Zero to Unicorn: Can an Ordinary Founder Make It?",
-  description: "From Zero to Unicorn: Can an Ordinary Founder Make It? — by Hami Tahm",
+  description: "From Zero to Unicorn: Can an Ordinary Founder Make It? (by Hami Tahm)",
 };
 
 export default function Post() {
@@ -37,9 +37,9 @@ export default function Post() {
           className="post-content"
           dangerouslySetInnerHTML={ { __html: `<strong>That’s the question I’ve dedicated the next 10 years of my life to.</strong>
 This post marks the beginning of that journey.</p><p>I’m not a Stanford grad. I’m not an ex-Googler. I’m just a founder with a clear mission:
-<strong>To build a unicorn from scratch—with no shortcuts, no prestige, and no pedigree. Just grit.</strong></p><p>Over the next decade, I’ll be building in public.
+<strong>To build a unicorn from scratch, with no shortcuts, no prestige, and no pedigree. Just grit.</strong></p><p>Over the next decade, I’ll be building in public.
 Every 6 months, I’ll publish one progress report. This is <strong>Report #1 of 20</strong>.
-The startup? It’s called <strong>UPDiet</strong>—and it’s where <em>health meets the code.</em>
+The startup? It’s called <strong>UPDiet</strong>, and it’s where <em>health meets the code.</em>
 <h3>Why HealthTech? Why Longevity? Why Nutrition?</h3>
 Because nutrition is the most controllable factor in achieving a healthy lifespan.
 I’ve had personal struggles with weight, cholesterol, and energy. I’ve watched loved ones suffer preventable illnesses. So I asked myself:
@@ -47,7 +47,7 @@ I’ve had personal struggles with weight, cholesterol, and energy. I’ve watch
 That’s the mission of UPDiet.
 <h3>The Idea Behind UPDiet</h3>
 While DNA and Microbiome testing are booming, most companies stop at the data.
-They give you a report—maybe a score or two—but then you’re on your own.</p><p><strong>UPDiet</strong> wants to change that. We combine:
+They give you a report (maybe a score or two), but then you’re on your own.</p><p><strong>UPDiet</strong> wants to change that. We combine:
 <ul>
  	<li>🧬 <strong>Genetic insights (DNA)</strong></li>
  	<li>🦠 <strong>Microbiome test results</strong></li>
@@ -56,7 +56,7 @@ They give you a report—maybe a score or two—but then you’re on your own.</
  	<li>🧠 <strong>Lifestyle patterns</strong></li>
 </ul>
 …and use it to deliver <strong>ultra-personalized nutrition plans</strong> that are actually actionable.
-We don’t just tell you what <em>might</em> work—we tell you <em>exactly</em> what to
+We don’t just tell you what <em>might</em> work; we tell you <em>exactly</em> what to
 eat,
 cook,
 and shop for.
@@ -65,7 +65,7 @@ and shop for.
 <p data-start="1033" data-end="1391">– Add AI-driven predictive & behavioral recommendation models<br data-start="1094" data-end="1097" />– Build DNA-based nutrition logic<br data-start="1130" data-end="1133" />– Raise a pre-seed funding round<br data-start="1165" data-end="1168" />– Partner with DNA and microbiome testing companies<br data-start="1219" data-end="1222" />– Start onboarding early adopters for closed beta<br data-start="1271" data-end="1274" />– Collaborate with universities in Toronto and health-focused incubators<br data-start="1346" data-end="1349" data-is-only-node="" />– Launch and grow UPDiet’s social presence</p></p><p><h3>You Can Help</h3>
 Are you passionate about the future of human health?
 Are you an expert in longevity, a health tech investor, a product thinker, or just curious?</p><p>Let’s talk.
-If this story resonates with you, I’d love your feedback—or even a reshare.
+If this story resonates with you, I’d love your feedback, or even a reshare.
 Someone out there might be waiting for a sign to start. Maybe this is it.</p><p><strong>Thanks for reading Report #1. See you in 6 months.</strong>
 Until then, UPDiet is loading...</p><p> ` } }
         />

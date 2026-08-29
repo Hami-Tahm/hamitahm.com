@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   // anyone holding the link, removed from sitemap, excluded from search + AI corpus.
   robots: { index: false, follow: true },
   title: "REITs Explained: Pros, Cons, and Portfolio Strategy",
-  description: "Understanding REITs: Pros, Cons, and Building a Balanced Portfolio — by Hami Tahm",
+  description: "Understanding REITs: Pros, Cons, and Building a Balanced Portfolio, by Hami Tahm",
 };
 
 export default function Post() {

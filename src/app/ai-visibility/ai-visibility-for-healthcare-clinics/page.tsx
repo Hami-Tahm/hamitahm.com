@@ -273,7 +273,7 @@ export default function AIVisibilityHealthcareClinics() {
         </RevealSection>
       </div>
 
-      {/* ── 1 — Hero ── */}
+      {/* Section 1: Hero */}
       <header style={{ padding: "34px 0 50px" }}>
         <div className="wrap">
           <RevealSection>
@@ -338,7 +338,7 @@ export default function AIVisibilityHealthcareClinics() {
         </div>
       </header>
 
-      {/* ── 2 — How Patients Find Clinics ── */}
+      {/* Section 2: How Patients Find Clinics */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 740 }}>
           <RevealSection>
@@ -403,7 +403,7 @@ export default function AIVisibilityHealthcareClinics() {
         </div>
       </section>
 
-      {/* ── 3 — Definition ── */}
+      {/* Section 3: Definition */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -468,7 +468,7 @@ export default function AIVisibilityHealthcareClinics() {
         </div>
       </section>
 
-      {/* ── 4 — Audit Scope ── */}
+      {/* Section 4: Audit Scope */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -530,7 +530,7 @@ export default function AIVisibilityHealthcareClinics() {
         </div>
       </section>
 
-      {/* ── 5 — Proof ── */}
+      {/* Section 5: Proof */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -659,7 +659,7 @@ export default function AIVisibilityHealthcareClinics() {
         </div>
       </section>
 
-      {/* ── 6 — Comparison ── */}
+      {/* Section 6: Comparison */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -714,7 +714,7 @@ export default function AIVisibilityHealthcareClinics() {
         </div>
       </section>
 
-      {/* ── 7 — How It Works ── */}
+      {/* Section 7: How It Works */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 720 }}>
           <RevealSection>
@@ -752,7 +752,7 @@ export default function AIVisibilityHealthcareClinics() {
         </div>
       </section>
 
-      {/* ── 8 — Who This Is For ── */}
+      {/* Section 8: Who This Is For */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -815,7 +815,7 @@ export default function AIVisibilityHealthcareClinics() {
         </div>
       </section>
 
-      {/* ── 9 — FAQ ── */}
+      {/* Section 9: FAQ */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 760 }}>
           <RevealSection>
@@ -874,7 +874,7 @@ export default function AIVisibilityHealthcareClinics() {
         </div>
       </section>
 
-      {/* ── 10 — Related Reading ── */}
+      {/* Section 10: Related Reading */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 760 }}>
           <RevealSection>
@@ -918,7 +918,7 @@ export default function AIVisibilityHealthcareClinics() {
         </div>
       </section>
 
-      {/* ── 11 — Final CTA ── */}
+      {/* Section 11: Final CTA */}
       <section style={{ padding: "60px 0 80px" }}>
         <div className="wrap">
           <RevealSection>

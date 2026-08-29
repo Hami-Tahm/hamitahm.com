@@ -9,7 +9,7 @@ import { OFFERS } from "@/lib/offers";
 const SLUG = "ai-visibility-tool-accuracy";
 const ARTICLE_TITLE = "How to Evaluate AI Visibility Tool Accuracy";
 const ARTICLE_DESCRIPTION =
-  "AI visibility platforms like Profound, AirOps, Peec, and Share-of-Model trackers all report a number — but they don't all measure the same thing the same way. A self-test protocol and the questions to ask any vendor before you trust their dashboard.";
+  "AI visibility platforms like Profound, AirOps, Peec, and Share-of-Model trackers all report a number, but they don't all measure the same thing the same way. A self-test protocol and the questions to ask any vendor before you trust their dashboard.";
 const DATE_PUBLISHED = "2026-08-26";
 const HUB_URL = "/ai-visibility/";
 const DEFINITION_URL = "/blog/what-is-ai-visibility/";
@@ -22,11 +22,11 @@ const SOM_DEFINITION_SRC = "https://cdp.com/glossary/share-of-model/";
 const FAQ_ITEMS = [
   {
     q: "How do I know if an AI visibility tool's numbers are accurate?",
-    a: "Run the same 10-15 prompts manually on the same platforms the tool claims to track, on the same day, and compare. If the tool shows a mention the manual check doesn't confirm (or misses one the manual check finds), that's a real discrepancy — not necessarily a broken tool, since AI answers vary by session too, but a data point worth repeating three times before you draw a conclusion either way.",
+    a: "Run the same 10-15 prompts manually on the same platforms the tool claims to track, on the same day, and compare. If the tool shows a mention the manual check doesn't confirm (or misses one the manual check finds), that's a real discrepancy, not necessarily a broken tool, since AI answers vary by session too, but a data point worth repeating three times before you draw a conclusion either way.",
   },
   {
     q: "What's the difference between a false positive and a false negative in AI visibility tracking?",
-    a: "A false positive is a tool reporting you were mentioned when a manual check of the same prompt and platform doesn't show it. A false negative is the reverse — you were actually mentioned, but the tool's sample didn't catch it. Sampled tools produce more false negatives than false positives, since missing an instance is a lot easier than inventing one.",
+    a: "A false positive is a tool reporting you were mentioned when a manual check of the same prompt and platform doesn't show it. A false negative is the reverse: you were actually mentioned, but the tool's sample didn't catch it. Sampled tools produce more false negatives than false positives, since missing an instance is a lot easier than inventing one.",
   },
   {
     q: "Do all AI visibility tools sample the same way?",
@@ -34,11 +34,11 @@ const FAQ_ITEMS = [
   },
   {
     q: "Is Share of Model a specific tool or a metric?",
-    a: "Both, depending on who's using the phrase. As a metric, share of model is your brand's mentions as a percentage of all brand mentions in your category, across the AI platforms your buyers use — the AI-era equivalent of share of voice. Several vendors also sell a product under that name. Before comparing a \"share of model\" number between two tools, confirm both are measuring the same set of platforms and prompts, or the comparison is meaningless.",
+    a: "Both, depending on who's using the phrase. As a metric, share of model is your brand's mentions as a percentage of all brand mentions in your category, across the AI platforms your buyers use, the AI-era equivalent of share of voice. Several vendors also sell a product under that name. Before comparing a \"share of model\" number between two tools, confirm both are measuring the same set of platforms and prompts, or the comparison is meaningless.",
   },
   {
     q: "Should I trust a vendor's own accuracy claims?",
-    a: "Read them, but verify with your own prompts before buying — this is a self-test protocol, not a defense of any one platform. A vendor's marketing page will describe its methodology in the most favorable light available; your own core buyer questions, run on your own account, are the only test that tells you how the tool performs on the thing you actually need it to track.",
+    a: "Read them, but verify with your own prompts before buying: this is a self-test protocol, not a defense of any one platform. A vendor's marketing page will describe its methodology in the most favorable light available; your own core buyer questions, run on your own account, are the only test that tells you how the tool performs on the thing you actually need it to track.",
   },
 ] as const;
 
@@ -149,7 +149,7 @@ export default function AIVisibilityToolAccuracyPost() {
                 letterSpacing: "-.025em",
               }}
             >
-              How to evaluate AI visibility tool accuracy &mdash;{" "}
+              How to evaluate AI visibility tool accuracy:{" "}
               <em style={{ fontStyle: "italic", color: "var(--accent)" }}>
                 before you buy one.
               </em>
@@ -169,7 +169,7 @@ export default function AIVisibilityToolAccuracyPost() {
             >
               Profound, AirOps, Peec, and Share-of-Model trackers all report a
               number. They don&rsquo;t all measure the same thing the same
-              way &mdash; here&rsquo;s how to test one yourself.
+              way. Here&rsquo;s how to test one yourself.
             </p>
           </RevealSection>
 
@@ -225,7 +225,7 @@ export default function AIVisibilityToolAccuracyPost() {
                 No independent, apples-to-apples accuracy benchmark of these
                 platforms exists publicly, including here. What does exist is
                 a repeatable way to test any one of them yourself in an
-                afternoon &mdash; this is that protocol, not a ranked score.
+                afternoon. This is that protocol, not a ranked score.
               </p>
             </div>
           </RevealSection>
@@ -238,7 +238,7 @@ export default function AIVisibilityToolAccuracyPost() {
               would require running the same fixed set of prompts through
               every platform, repeated enough times to separate a real
               pattern from ordinary AI response variance, then checking every
-              result by hand &mdash; work no publisher of a comparison post
+              result by hand: work no publisher of a comparison post
               actually appears to do, judging by how few show their prompts or
               their method. Publishing invented numbers instead would be
               worse than publishing nothing. What follows is the test protocol
@@ -256,7 +256,7 @@ export default function AIVisibilityToolAccuracyPost() {
 
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
-              Every AI visibility platform reports a headline number &mdash;
+              Every AI visibility platform reports a headline number:
               mentions, citations, share of model. What differs, often
               unstated, is what sits underneath that number: how many prompts
               were actually run, how those prompts were chosen, how often
@@ -282,7 +282,7 @@ export default function AIVisibilityToolAccuracyPost() {
               <strong style={labelStyle}>What to check:</strong>{" "}Which
               platforms does the tool actually query, and at what tier? A
               vendor advertising broad engine support often gates most of it
-              behind a higher plan &mdash; our own{" "}
+              behind a higher plan; our own{" "}
               <Link href={COMPARISON_URL} style={linkStyle}>
                 Profound vs AirOps vs Peec comparison
               </Link>{" "}
@@ -310,7 +310,7 @@ export default function AIVisibilityToolAccuracyPost() {
               <strong style={labelStyle}>What to check:</strong>{" "}Is a
               "mention" counted by a person reading the response, or by a
               script matching your brand name in the text? Automated matching
-              misses paraphrased references and can also over-count &mdash;
+              misses paraphrased references and can also over-count:
               your brand name appearing in a disclaimer or a competitor list
               is not the same as being recommended.
             </p>
@@ -335,8 +335,8 @@ export default function AIVisibilityToolAccuracyPost() {
             <ol style={{ margin: "0 0 26px 22px" }}>
               <li style={{ marginBottom: 14 }}>
                 <strong style={labelStyle}>Pick 10&ndash;15 real buyer
-                questions</strong>{" "}you already know the likely answer to
-                &mdash; ideally a mix of ones where you&rsquo;re confident
+                questions</strong>{" "}you already know the likely answer to,
+                ideally a mix of ones where you&rsquo;re confident
                 you're mentioned and ones where you suspect you aren't.
               </li>
               <li style={{ marginBottom: 14 }}>
@@ -359,7 +359,7 @@ export default function AIVisibilityToolAccuracyPost() {
               </li>
               <li style={{ marginBottom: 14 }}>
                 <strong style={labelStyle}>Repeat once more, a few days
-                later</strong>, before drawing a conclusion &mdash; a single
+                later</strong>, before drawing a conclusion: a single
                 mismatch can be ordinary AI response variance rather than a
                 tool problem, but a mismatch that repeats is a real signal.
               </li>
@@ -399,7 +399,7 @@ export default function AIVisibilityToolAccuracyPost() {
               </li>
               <li style={{ marginBottom: 11 }}>
                 Which specific platforms are included at the plan you'd
-                actually pay for &mdash; not the plan in the marketing
+                actually pay for, not the plan in the marketing
                 headline?
               </li>
             </ul>
@@ -429,7 +429,7 @@ export default function AIVisibilityToolAccuracyPost() {
               </a>{" "}
               is used two ways in this space, and mixing them up is its own
               accuracy problem. As a metric, it's your brand's mentions as a
-              percentage of all brand mentions in your category &mdash; the
+              percentage of all brand mentions in your category: the
               AI-era version of share of voice. Several vendors also sell a
               product under that literal name. Before comparing a share-of-
               model number pulled from two different tools, confirm they
@@ -531,7 +531,7 @@ export default function AIVisibilityToolAccuracyPost() {
               </strong>{" "}
               This article is educational and also describes a service I
               sell. It does not contain an original accuracy benchmark of any
-              named platform — see the note in Section 01 for why.
+              named platform: see the note in Section 01 for why.
             </p>
           </RevealSection>
         </div>
@@ -649,7 +649,7 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
         gap: 14,
       }}
     >
-      {number} &mdash; {text}
+      {number}: {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
     </h2>
   );

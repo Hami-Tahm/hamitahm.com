@@ -8,8 +8,8 @@ import Link from "next/link";
  * engines outside the audit scope.
  *
  * ⚠️ Google AI Mode was removed 2026-08-11. Not because it is the same thing as AI
- * Overviews — Google states they may use different models and return different links,
- * and every tracking vendor lists them separately — but because it is not one of the
+ * Overviews: Google states they may use different models and return different links,
+ * and every tracking vendor lists them separately, but because it is not one of the
  * six platforms AUDIT_PLATFORMS commits to, so offering it here promised a scope the
  * paid product doesn't cover. If AI Mode is ever added to the audit, add it back.
  *
@@ -18,7 +18,7 @@ import Link from "next/link";
  * happen.
  *
  * `tier` replaced the old `active` flag on 2026-08-11. The inactive engines used to
- * say "· soon", which promises a free upgrade that isn't coming — the other three
+ * say "· soon", which promises a free upgrade that isn't coming, the other three
  * platforms are part of the paid audit, not a roadmap item. Saying so is both true
  * and better positioning: the disabled buttons now show what $1,500 adds instead of
  * implying the free tier will eventually cover everything.
@@ -26,7 +26,7 @@ import Link from "next/link";
  * Grok and Meta AI are labelled "on request" rather than "in the audit" on purpose.
  * AUDIT_PLATFORMS is six, and the word "six" is hardcoded in 15 places across the
  * site. Saying "in the audit" here without changing all of that would promise a
- * scope the audit pages contradict on the very next click — the exact class of bug
+ * scope the audit pages contradict on the very next click, the exact class of bug
  * this file's other comments exist to prevent.
  *
  * If the audit ever moves to eight platforms: change AUDIT_PLATFORMS, then use
@@ -39,12 +39,12 @@ const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
  * COUNTRY IS A FIXED LIST, NOT FREE TEXT (2026-08-20).
  *
  * It was already required, but as an open input with "Canada" as the placeholder.
- * That produced unusable values — "USA", "us", "United States of America", blank
- * variants — for a field that is not decoration: every one of these engines returns
+ * That produced unusable values: "USA", "us", "United States of America", blank
+ * variants, for a field that is not decoration: every one of these engines returns
  * different answers depending on where the search runs from, so the country decides
  * how the check is actually performed. A typo silently produces a wrong report.
  *
- * Canada and the United States — both markets the check is actually run for.
+ * Canada and the United States, both markets the check is actually run for.
  *
  * ⚠️ ADDING A MARKET IS A MULTI-PLACE CHANGE, and the copy is what gets forgotten.
  * Add the country to COUNTRIES below, then fix every sentence that names the served
@@ -62,7 +62,7 @@ const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
  * evidence that would ever justify opening a second market.
  *
  * Which is why the free-text country box appears when they pick it. A waitlist you
- * can't segment by market is not a waitlist — without the actual country there is no
+ * can't segment by market is not a waitlist: without the actual country there is no
  * way to know who to write to when a market opens, and the promise becomes empty.
  *
  * `scope` in the payload is what the Apps Script webhook branches on to decide WHICH
@@ -76,8 +76,8 @@ const COUNTRY_OTHER = "Other";
  * named after one country stops being true the moment a second one is served, and
  * this string is what the Apps Script webhook branches on.
  *
- * ⚠️ THE WEBHOOK ONLY TESTS FOR "waitlist" — everything else falls through to the
- * report email — so renaming this side needs no Apps Script change. The API route
+ * ⚠️ THE WEBHOOK ONLY TESTS FOR "waitlist": everything else falls through to the
+ * report email, so renaming this side needs no Apps Script change. The API route
  * allow-lists the value though, and that DOES have to match. See api/checker.
  */
 type Scope = "served" | "waitlist";
@@ -130,7 +130,7 @@ export default function CheckerForm() {
 
   /**
    * Fires once, on the visitor's first interaction with the form. The gap between
-   * `checker_start` and `ai_checker_submit` is the form's abandonment rate — the
+   * `checker_start` and `ai_checker_submit` is the form's abandonment rate: the
    * single most useful number for improving this step of the funnel, and one that
    * submit-only tracking cannot show.
    */
@@ -168,7 +168,7 @@ export default function CheckerForm() {
       return;
     }
     // The country that actually gets recorded. For a waitlist entry that is the
-    // market they typed, never the literal string "Other" — an unsegmentable
+    // market they typed, never the literal string "Other": an unsegmentable
     // waitlist can't be acted on, which would make the promise in the email empty.
     const resolvedCountry = isWaitlist ? otherCountry.trim() : country.trim();
     const scope: Scope = isWaitlist ? "waitlist" : "served";
@@ -198,7 +198,7 @@ export default function CheckerForm() {
           event: "ai_checker_submit",
           engines,
           country: resolvedCountry,
-          // Keep these separable in GA4 — a waitlist signup is demand for a market
+          // Keep these separable in GA4: a waitlist signup is demand for a market
           // that doesn't exist yet, not a delivered report. Counting them as one
           // number would overstate the funnel.
           scope,
@@ -212,12 +212,12 @@ export default function CheckerForm() {
   }
 
   /*
-   * WAITLIST CONFIRMATION — deliberately promises nothing on a clock.
+   * WAITLIST CONFIRMATION: deliberately promises nothing on a clock.
    *
    * The served-market screen below commits to a report within one business day. Reusing it
    * here would be the worst possible outcome: someone waits a day for a report that
    * is never coming. So this screen says the service isn't available, thanks them,
-   * and states the only thing that is actually true — that they'll hear if it opens.
+   * and states the only thing that is actually true: that they'll hear if it opens.
    *
    * "if" and not "when". There is no dated plan to open another market, and a
    * confirmation screen is not the place to invent one.
@@ -235,10 +235,10 @@ export default function CheckerForm() {
             textAlign: "center",
           }}
         >
-          Thank you — you&rsquo;re on the list.
+          Thank you, you&rsquo;re on the list.
         </div>
         <p style={{ fontSize: 16, color: "var(--muted)", lineHeight: 1.7, margin: "0 0 14px" }}>
-          I&rsquo;m sorry — the free check doesn&rsquo;t cover{" "}
+          I&rsquo;m sorry, the free check doesn&rsquo;t cover{" "}
           <strong style={{ color: "var(--ink)" }}>{otherCountry.trim()}</strong> yet.
           These engines answer differently depending on the country the search runs
           from, and I run this for Canada and the United States right now. Sending you a report from
@@ -247,7 +247,7 @@ export default function CheckerForm() {
         <p style={{ fontSize: 16, color: "var(--muted)", lineHeight: 1.7, margin: "0 0 14px" }}>
           Your details are saved. If I open{" "}
           <strong style={{ color: "var(--ink)" }}>{otherCountry.trim()}</strong>,
-          you&rsquo;ll be among the first to hear — and a confirmation of this is on
+          you&rsquo;ll be among the first to hear, and a confirmation of this is on
           its way to your inbox now.
         </p>
         <p style={{ fontSize: 16, color: "var(--muted)", lineHeight: 1.7, margin: 0 }}>
@@ -279,7 +279,7 @@ export default function CheckerForm() {
 
         {/*
           Two steps, not one paragraph. Since the auto-confirmation went live, two
-          separate things happen on two different clocks — an email that is already
+          separate things happen on two different clocks: an email that is already
           in their inbox, and a report that takes a day. Blurring those into one
           block is what makes people think the report itself is late.
         */}
@@ -287,18 +287,18 @@ export default function CheckerForm() {
           marker="1"
           when="Just now"
           title="A confirmation email is already in your inbox"
-          body="It lists the exact domain, keywords, country and engines you asked me to check — so you can make sure I got it right. Reply to it if you want to change a keyword before I start."
+          body="It lists the exact domain, keywords, country and engines you asked me to check, so you can make sure I got it right. Reply to it if you want to change a keyword before I start."
         />
         <Step
           marker="2"
           when="Within one business day"
           title="Your report arrives"
-          body="I run each search by hand, record the date and country every answer came from, and send you exactly what came back — including which businesses the engines were recommending instead of you."
+          body="I run each search by hand, record the date and country every answer came from, and send you exactly what came back, including which businesses the engines were recommending instead of you."
         />
 
         {/*
           Deliverability note, deliberately the loudest element on this screen.
-          Both messages are cold mail to an address someone just typed into a form —
+          Both messages are cold mail to an address someone just typed into a form:
           the exact profile Gmail and Outlook route to Promotions or Spam. Saying this
           while they are still on the page, still expecting it, is the cheapest way to
           stop a delivered report from being recorded as a non-response.
@@ -390,7 +390,7 @@ export default function CheckerForm() {
                   eng.tier === "audit"
                     ? "Included in the $1,500 AI Visibility Audit"
                     : eng.tier === "request"
-                      ? "Available on request — email me before booking"
+                      ? "Available on request: email me before booking"
                       : undefined
                 }
                 onClick={() => free && toggle(eng.id)}
@@ -440,10 +440,10 @@ export default function CheckerForm() {
           </Link>{" "}
           {/*
             Deliberately does NOT state prompt counts or how many times each is run.
-            That is the method, and the method is the product — same rule as the one
+            That is the method, and the method is the product, same rule as the one
             in citation-study.ts: publish the outcome, never the mechanism.
           */}
-          &mdash; six platforms, a full prompt set, and competitor comparison. Grok
+          with six platforms, a full prompt set, and competitor comparison. Grok
           and Meta AI can be added on request.
         </p>
       </div>
@@ -471,7 +471,7 @@ export default function CheckerForm() {
       </div>
 
 
-      {/* Competitors — visible, locked, and labelled as a paid feature */}
+      {/* Competitors: visible, locked, and labelled as a paid feature */}
       <div style={{ marginBottom: 18 }}>
         <span style={labelStyle}>
           Competitors to compare against{" "}
@@ -489,7 +489,7 @@ export default function CheckerForm() {
                 background: "var(--panel)",
                 color: "var(--faint)",
               }}
-              aria-label={`${ph} — available in the paid audit`}
+              aria-label={`${ph}: available in the paid audit`}
               placeholder={ph}
               value=""
               readOnly
@@ -556,7 +556,7 @@ export default function CheckerForm() {
         >
           <p style={{ margin: "0 0 12px", fontSize: 14.5, color: "var(--ink)", lineHeight: 1.6 }}>
             The free check currently runs for <strong>Canada and the United
-            States</strong> — these
+            States</strong>; these
             engines answer differently depending on where the search runs from. I
             won&rsquo;t send you a report from the wrong market, but I&rsquo;ll add
             you to the list and tell you if yours opens.
@@ -596,13 +596,13 @@ export default function CheckerForm() {
         This form takes an email address, a domain and keywords from (mostly) Canadian
         users, on behalf of a Canadian business. It was live with no privacy notice of
         any kind. Under PIPEDA the purpose has to be identified and consent obtained at
-        the point of collection — which is here, not buried on another page.
+        the point of collection, which is here, not buried on another page.
 
         Say what we take, what we do with it, and how to make it go away. In plain words.
       */}
       <p style={{ fontSize: 12.5, color: "var(--faint)", marginTop: 12, textAlign: "center", lineHeight: 1.5 }}>
         {isWaitlist
-          ? "Free. No report is sent for markets outside Canada and the US — you're joining the list."
+          ? "Free. No report is sent for markets outside Canada and the US, you're joining the list."
           : "Free. A real analyst sends your report within one business day."}
       </p>
       <p
@@ -616,7 +616,7 @@ export default function CheckerForm() {
       >
         {/*
           ⚠️ THE WAITLIST WORDING IS A CASL REQUIREMENT, NOT A STYLE CHOICE.
-          The served-market path asks consent for a report plus ONE follow-up — a bounded,
+          The served-market path asks consent for a report plus ONE follow-up: a bounded,
           near-term exchange. A waitlist message is a commercial electronic message
           sent at an unknown future date, which is exactly what CASL requires express
           consent for, and "send you this report" plainly does not cover it. So the
@@ -624,7 +624,7 @@ export default function CheckerForm() {
           unsubscribe route has to be stated. Don't collapse these back into one line.
         */}
         {isWaitlist
-          ? "By submitting, you agree that I can email you if the free check opens for your country, and confirm that now. No report is sent in the meantime. Unsubscribe any time by replying — your details are stored privately, never sold, never published, and deleted the moment you ask. "
+          ? "By submitting, you agree that I can email you if the free check opens for your country, and confirm that now. No report is sent in the meantime. Unsubscribe any time by replying; your details are stored privately, never sold, never published, and deleted the moment you ask. "
           : "By submitting, you agree that I can use your email to send you this report and follow up once. Your details are stored privately, never sold, never published, and deleted the moment you ask. "}
         <Link href="/privacy/" style={{ color: "var(--muted)", textDecoration: "underline" }}>
           Privacy

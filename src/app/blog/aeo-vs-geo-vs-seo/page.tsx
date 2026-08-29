@@ -9,9 +9,9 @@ const SLUG = "aeo-vs-geo-vs-seo";
 const ARTICLE_TITLE =
   "AEO vs GEO vs SEO: What's the Difference?";
 const ARTICLE_DESCRIPTION =
-  "SEO optimizes for search rankings. AEO targets AI-generated answers. GEO optimizes for AI-generated content. Here's how they differ — and which one applies to your business.";
+  "SEO optimizes for search rankings. AEO targets AI-generated answers. GEO optimizes for AI-generated content. Here's how they differ, and which one applies to your business.";
 const DATE_PUBLISHED = "2026-06-08";
-// Added a worked "concrete example" section (dentist/SEO-AEO-GEO scenario) —
+// Added a worked "concrete example" section (dentist/SEO-AEO-GEO scenario),
 // the one piece the prior version lacked (comparison table and the direct
 // "is AEO the same as GEO" FAQ answer already existed). Title/H1 left as-is:
 // no prior dated Search Console decision exists for this page either way, and
@@ -21,7 +21,7 @@ const DATE_PUBLISHED = "2026-06-08";
 // tracked prompts about "AEO and GEO consulting" / "AI search optimization
 // services" (0/120, 0/136, 0/156 in a 5-day window) despite this post already
 // ranking for the core AEO/GEO/SEO comparison. SAO is explicitly flagged as
-// one vendor's (Canopy Media's) house term, not a standard — do not treat it
+// one vendor's (Canopy Media's) house term, not a standard; do not treat it
 // as equivalent to AEO/GEO anywhere else on the site.
 const DATE_MODIFIED = "2026-08-29";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
@@ -56,26 +56,20 @@ const GLOSSARY_ROWS = [
     prevalence: "Rare, mostly technical/RAG-adjacent writing",
     difference: "Describes optimizing for retrieval-augmented generation systems specifically, a technical subset of what GEO already covers.",
   },
-  {
-    term: "SAO",
-    fullName: "Search Anywhere Optimization",
-    prevalence: "Not a standard, coined and used by one agency (Canopy Media)",
-    difference: "Not an established category. Positioned as a house alternative to AEO/GEO by its creator, not adopted elsewhere.",
-  },
 ] as const;
 
 const FAQ_ITEMS = [
   {
     q: "Is AEO the same as GEO?",
-    a: "No. AEO focuses on appearing in AI-generated direct answer blocks — when a user asks a specific question and the AI produces a cited response. GEO is broader — it covers how AI systems represent your brand across all AI-generated content, not just direct Q&A answers.",
+    a: "No. AEO focuses on appearing in AI-generated direct answer blocks: when a user asks a specific question and the AI produces a cited response. GEO is broader: it covers how AI systems represent your brand across all AI-generated content, not just direct Q&A answers.",
   },
   {
     q: "Does SEO still matter with AI search?",
-    a: "Yes. Traditional search rankings still drive significant volume, and the technical signals SEO requires — clean architecture, authority, structured content — also feed AEO and GEO performance. A strong SEO foundation makes every other optimization layer more effective.",
+    a: "Yes. Traditional search rankings still drive significant volume, and the technical signals SEO requires (clean architecture, authority, structured content) also feed AEO and GEO performance. A strong SEO foundation makes every other optimization layer more effective.",
   },
   {
-    q: "Which should I invest in first — AEO, GEO, or SEO?",
-    a: "If your SEO foundation is weak: fix that first. If SEO is in reasonable shape and your buyers are using AI tools for research or decisions: prioritize AEO. Add GEO when brand accuracy in AI-generated content is a specific concern — typically B2B, professional services, and thought-leadership categories.",
+    q: "Which should I invest in first: AEO, GEO, or SEO?",
+    a: "If your SEO foundation is weak: fix that first. If SEO is in reasonable shape and your buyers are using AI tools for research or decisions: prioritize AEO. Add GEO when brand accuracy in AI-generated content is a specific concern: typically B2B, professional services, and thought-leadership categories.",
   },
   {
     q: "What industries benefit most from AEO?",
@@ -83,7 +77,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "How do I know if I need GEO optimization?",
-    a: "Ask ChatGPT or Gemini about your company. Ask what options exist in your category. Ask which vendors they'd recommend. If your brand doesn't appear — or appears inaccurately — you have a GEO problem.",
+    a: "Ask ChatGPT or Gemini about your company. Ask what options exist in your category. Ask which vendors they'd recommend. If your brand doesn't appear, or appears inaccurately, you have a GEO problem.",
   },
   {
     q: "Can one consultant handle SEO, AEO, and GEO?",
@@ -212,7 +206,7 @@ export default function AEOvsGEOvsSEOPost() {
                 lineHeight: 1.5,
               }}
             >
-              Three strategies, three surfaces — and how to know which layer
+              Three strategies, three surfaces, and how to know which layer
               your business needs first.
             </p>
           </RevealSection>
@@ -268,7 +262,7 @@ export default function AEOvsGEOvsSEOPost() {
               >
                 SEO targets traditional rankings. AEO targets AI-generated direct
                 answers. GEO targets how AI models represent your brand across
-                generated content. Most businesses need all three — priority
+                generated content. Most businesses need all three; priority
                 depends on where your buyers search.
               </p>
             </div>
@@ -276,13 +270,13 @@ export default function AEOvsGEOvsSEOPost() {
 
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
-              SEO, AEO, and GEO are three distinct optimization strategies — each
+              SEO, AEO, and GEO are three distinct optimization strategies, each
               targeting a different layer of modern search. SEO targets
               traditional search rankings. AEO (Answer Engine Optimization)
               targets AI-generated direct answers in platforms like Perplexity
               and Google AI Overviews. GEO (Generative Engine Optimization)
               targets how AI models generate and cite content across any
-              AI-powered interface. Most businesses need all three — but the
+              AI-powered interface. Most businesses need all three, but the
               priority depends on where your buyers search.
             </p>
             <p style={{ marginBottom: 26 }}>
@@ -301,7 +295,7 @@ export default function AEOvsGEOvsSEOPost() {
 
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
-              SEO — search engine optimization — is the practice of making your
+              SEO (search engine optimization) is the practice of making your
               content rank in Google and Bing. It has been the dominant digital
               marketing strategy for over two decades.
             </p>
@@ -325,7 +319,7 @@ export default function AEOvsGEOvsSEOPost() {
                 AEO (Answer Engine Optimization)
               </Link>{" "}
               is the practice of optimizing your content to appear in
-              AI-generated direct answers — the responses that Perplexity,
+              AI-generated direct answers: the responses that Perplexity,
               Google AI Overviews, Gemini, and similar platforms generate when
               someone asks a question.
             </p>
@@ -352,7 +346,7 @@ export default function AEOvsGEOvsSEOPost() {
                 GEO (Generative Engine Optimization)
               </Link>{" "}
               is broader. It&rsquo;s the practice of optimizing how AI systems
-              — ChatGPT, Claude, Gemini, Copilot, and others — represent your
+              (ChatGPT, Claude, Gemini, Copilot, and others) represent your
               brand whenever they generate content about your industry, your
               category, or your competitors.
             </p>
@@ -387,21 +381,21 @@ export default function AEOvsGEOvsSEOPost() {
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong>SEO:</strong>{" "}A patient Googles
-              &ldquo;dentist near me&rdquo; and clicks a ranked listing — this is
+              &ldquo;dentist near me&rdquo; and clicks a ranked listing: this is
               won with backlinks, on-page relevance and technical health.{" "}
               <strong>AEO:</strong>{" "}A patient asks Perplexity
               &ldquo;best dentist in Toronto for implants&rdquo; and gets a
-              synthesized answer citing two or three named clinics — this is won
+              synthesized answer citing two or three named clinics: this is won
               with structured, directly-answerable content and citation-worthy
               pages, not rankings. <strong>GEO:</strong>{" "}A
               patient asks ChatGPT &ldquo;what should I know before choosing a
               dentist for implants,&rdquo; a broader prompt that never names a
-              city or a clinic — whether the clinic gets mentioned here depends
+              city or a clinic: whether the clinic gets mentioned here depends
               on entity consistency across reviews, directories and third-party
               sources, not on anything the clinic&rsquo;s own site says.
             </p>
             <p style={{ marginBottom: 26 }}>
-              Same clinic, same service, three separate battles — which is why
+              Same clinic, same service, three separate battles, which is why
               a page that ranks well on Google can still be invisible in the
               second and third conversations.
             </p>
@@ -420,8 +414,8 @@ export default function AEOvsGEOvsSEOPost() {
             <h3 style={h3Style}>If your buyers use Google Search</h3>
             <p style={{ marginBottom: 26 }}>
               Start with SEO. If your customers are still finding businesses
-              primarily through Google — clicking links, visiting pages,
-              comparing options — SEO is your highest-leverage channel. Fix the
+              primarily through Google (clicking links, visiting pages,
+              comparing options), SEO is your highest-leverage channel. Fix the
               foundation before adding layers.
             </p>
 
@@ -430,8 +424,7 @@ export default function AEOvsGEOvsSEOPost() {
               Prioritize AEO. A buyer who asks Perplexity &ldquo;what&rsquo;s the
               best mortgage broker in Vancouver&rdquo; isn&rsquo;t clicking
               through to page two. If you&rsquo;re not cited in the answer block,
-              you don&rsquo;t exist for that buyer. AEO is what puts you there
-              &mdash;{" "}
+              you don&rsquo;t exist for that buyer. AEO is what puts you there:{" "}
               <Link href="/blog/what-is-answer-engine-optimization/" style={linkStyle}>
                 the full definition and what it actually involves
               </Link>{" "}
@@ -443,8 +436,8 @@ export default function AEOvsGEOvsSEOPost() {
             </h3>
             <p style={{ marginBottom: 26 }}>
               Add GEO. If your buyers are using ChatGPT or Gemini for research
-              and decision-making — asking about vendors, comparing categories,
-              looking for recommendations — GEO determines whether your brand
+              and decision-making (asking about vendors, comparing categories,
+              looking for recommendations), GEO determines whether your brand
               appears accurately in those conversations.
             </p>
 
@@ -458,8 +451,8 @@ export default function AEOvsGEOvsSEOPost() {
             </p>
             <p style={{ marginBottom: 26 }}>
               The best practice for <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>AI optimization</a>: start with AEO if
-              you&rsquo;re in a high-intent, Q&amp;A-driven vertical — then
-              layer GEO for brand accuracy across AI platforms — while
+              you&rsquo;re in a high-intent, Q&amp;A-driven vertical, then
+              layer GEO for brand accuracy across AI platforms, while
               maintaining your SEO foundation underneath.
             </p>
           </RevealSection>
@@ -473,18 +466,18 @@ export default function AEOvsGEOvsSEOPost() {
               These are not alternatives. They&rsquo;re layers.
             </p>
             <p style={{ marginBottom: 26 }}>
-              Good technical SEO — clean architecture, server-rendered pages,
-              fast load times — makes your content more crawlable by AI systems.
+              Good technical SEO (clean architecture, server-rendered pages,
+              fast load times) makes your content more crawlable by AI systems.
               Strong AEO content, built around clear questions and direct answers,
               creates the kind of authoritative signals that GEO builds on. GEO
-              entity work — consistent brand representation across third-party
-              sources — reinforces the authority signals that SEO relies on for
+              entity work (consistent brand representation across third-party
+              sources) reinforces the authority signals that SEO relies on for
               rankings.
             </p>
             <p style={{ marginBottom: 26 }}>
               The mistake is treating them as three separate products to evaluate
               and choose between. AI visibility tools for SEO are emerging across
-              the market — but the most effective approach is treating AEO, GEO,
+              the market, but the most effective approach is treating AEO, GEO,
               and SEO as a unified strategy rather than separate products you
               layer on top of each other.
             </p>
@@ -493,7 +486,7 @@ export default function AEOvsGEOvsSEOPost() {
               <Link href={HUB_URL} style={linkStyle}>
                 AI visibility
               </Link>{" "}
-              hub — that&rsquo;s where the full framework lives, not here.
+              hub: that&rsquo;s where the full framework lives, not here.
             </p>
           </RevealSection>
 
@@ -737,7 +730,7 @@ export default function AEOvsGEOvsSEOPost() {
                 }}
               >
                 An AI visibility audit maps your state across SEO, AEO, and GEO
-                and gives you a prioritized action plan. $1,500 CAD flat — no
+                and gives you a prioritized action plan. $1,500 CAD flat: no
                 retainer.
               </p>
               <Link
@@ -745,7 +738,7 @@ export default function AEOvsGEOvsSEOPost() {
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
               >
-                Book Your AI Visibility Audit &mdash; $1,500 CAD{" "}
+                Book Your AI Visibility Audit for $1,500 CAD{" "}
                 <span className="arr">&rarr;</span>
               </Link>
             </div>
@@ -772,7 +765,7 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
         gap: 14,
       }}
     >
-      {number} &mdash; {text}
+      {number}: {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
     </h2>
   );
@@ -882,7 +875,7 @@ function InlineAuditCTA() {
         plan.
       </p>
       <Link href={AUDIT_URL} className="btn btn-primary">
-        Book Your AI Visibility Audit &mdash; $1,500 CAD{" "}
+        Book Your AI Visibility Audit for $1,500 CAD{" "}
         <span className="arr">&rarr;</span>
       </Link>
     </div>

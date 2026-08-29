@@ -9,7 +9,7 @@ import { OFFERS, AUDIT_PLATFORM_COUNT_WORD } from "@/lib/offers";
 const SLUG = "ai-visibility-audit-checklist";
 const ARTICLE_TITLE = "The AI Visibility Audit Checklist: 23 Things to Check";
 const ARTICLE_DESCRIPTION =
-  "A free, 23-point checklist covering crawlability, entity and schema, content answerability, citation tracking, and competitor benchmarking — everything a professional AI visibility audit checks, laid out so you can run it yourself first.";
+  "A free, 23-point checklist covering crawlability, entity and schema, content answerability, citation tracking, and competitor benchmarking: everything a professional AI visibility audit checks, laid out so you can run it yourself first.";
 const DATE_PUBLISHED = "2026-08-26";
 const HUB_URL = "/ai-visibility/";
 const DEFINITION_URL = "/blog/what-is-ai-visibility/";
@@ -23,15 +23,15 @@ const SAMPLE_REPORT_URL = "/ai-visibility/sample-report/";
 const FAQ_ITEMS = [
   {
     q: "Can I do an AI visibility audit myself?",
-    a: "Yes, up to a point. This checklist covers the same categories a paid audit covers — crawlability, entity and schema, content, citations, and competitors. What you can't easily replicate yourself is scale: running the same 30 prompts across six platforms repeatedly to separate a real pattern from ordinary AI response variance, and a prioritized fix list ranked by expected impact rather than a raw list of problems.",
+    a: "Yes, up to a point. This checklist covers the same categories a paid audit covers: crawlability, entity and schema, content, citations, and competitors. What you can't easily replicate yourself is scale: running the same 30 prompts across six platforms repeatedly to separate a real pattern from ordinary AI response variance, and a prioritized fix list ranked by expected impact rather than a raw list of problems.",
   },
   {
     q: "How long does a DIY AI visibility audit take?",
-    a: "Budget half a day for a first pass if you go through all five categories properly — most of the time goes into manually checking ChatGPT, Perplexity, and Google AI Overviews for your core queries and comparing what you find to competitors. The technical and schema sections are faster if you already have Search Console access.",
+    a: "Budget half a day for a first pass if you go through all five categories properly: most of the time goes into manually checking ChatGPT, Perplexity, and Google AI Overviews for your core queries and comparing what you find to competitors. The technical and schema sections are faster if you already have Search Console access.",
   },
   {
     q: "What's the difference between this checklist and a professional AI visibility audit?",
-    a: "This checklist tells you where to look. A professional audit does the looking at scale — cross-platform citation tracking across all six major engines, accuracy review of what AI systems say about you, competitor gap analysis, and a written, prioritized action plan. Think of the checklist as the diagnostic questions; the audit as the answers, fully worked.",
+    a: "This checklist tells you where to look. A professional audit does the looking at scale: cross-platform citation tracking across all six major engines, accuracy review of what AI systems say about you, competitor gap analysis, and a written, prioritized action plan. Think of the checklist as the diagnostic questions; the audit as the answers, fully worked.",
   },
   {
     q: "How often should I re-run this checklist?",
@@ -39,7 +39,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Do I need to check all six AI platforms?",
-    a: "Not necessarily all six with equal effort. Which platform matters most depends on where your buyers actually go — see which AI platform matters most for your industry. But checking none of them, or only the one you personally use, is the most common gap this checklist is built to catch.",
+    a: "Not necessarily all six with equal effort. Which platform matters most depends on where your buyers actually go. See which AI platform matters most for your industry. But checking none of them, or only the one you personally use, is the most common gap this checklist is built to catch.",
   },
 ] as const;
 
@@ -97,12 +97,12 @@ const CATEGORY_1: ChecklistItem[] = [
   {
     label: "Pages return real HTML to a bot, not an empty div",
     detail:
-      "Single-page apps that render everything client-side often serve an empty shell to crawlers that don't execute JavaScript — one of the most common and most invisible gaps on this list.",
+      "Single-page apps that render everything client-side often serve an empty shell to crawlers that don't execute JavaScript, one of the most common and most invisible gaps on this list.",
   },
   {
     label: "robots.txt doesn't block AI crawlers",
     detail:
-      "Check for GPTBot, PerplexityBot, ClaudeBot, Google-Extended, and Amazonbot specifically — a blanket disallow rule written years ago for a different reason can silently exclude all of them.",
+      "Check for GPTBot, PerplexityBot, ClaudeBot, Google-Extended, and Amazonbot specifically: a blanket disallow rule written years ago for a different reason can silently exclude all of them.",
   },
   {
     label: "sitemap.xml is current and actually submitted",
@@ -112,12 +112,12 @@ const CATEGORY_1: ChecklistItem[] = [
   {
     label: "Core pages load fast enough not to time out",
     detail:
-      "AI crawlers abandon slow pages the same way any bot does — Core Web Vitals aren't just a Google ranking input here.",
+      "AI crawlers abandon slow pages the same way any bot does; Core Web Vitals aren't just a Google ranking input here.",
   },
   {
     label: "FAQ and collapsible content is server-rendered",
     detail:
-      "A common React pattern hides FAQ answers behind client-side accordion state, which means the answer text never reaches the initial HTML — quietly costing FAQ rich-result eligibility along with it.",
+      "A common React pattern hides FAQ answers behind client-side accordion state, which means the answer text never reaches the initial HTML, quietly costing FAQ rich-result eligibility along with it.",
   },
 ];
 
@@ -125,12 +125,12 @@ const CATEGORY_2: ChecklistItem[] = [
   {
     label: "One canonical entity, not duplicated per page",
     detail:
-      "Person and Organization schema should be declared once and referenced by @id everywhere else — duplicating the same entity across pages confuses rather than reinforces it.",
+      "Person and Organization schema should be declared once and referenced by @id everywhere else: duplicating the same entity across pages confuses rather than reinforces it.",
   },
   {
     label: "sameAs links point to your real authoritative profiles",
     detail:
-      "LinkedIn, Crunchbase, industry directories — these are what let an AI system corroborate that the entity on your site and the entity elsewhere are the same one.",
+      "LinkedIn, Crunchbase, industry directories: these are what let an AI system corroborate that the entity on your site and the entity elsewhere are the same one.",
   },
   {
     label: "Name, address, and phone number match everywhere",
@@ -140,7 +140,7 @@ const CATEGORY_2: ChecklistItem[] = [
   {
     label: "FAQPage schema exists on genuine FAQ content",
     detail:
-      "Only mark up content that's actually structured as question-and-answer — retrofitting FAQ schema onto prose that isn't really answering discrete questions doesn't hold up.",
+      "Only mark up content that's actually structured as question-and-answer; retrofitting FAQ schema onto prose that isn't really answering discrete questions doesn't hold up.",
   },
   {
     label: "Article schema has accurate datePublished and dateModified",
@@ -153,7 +153,7 @@ const CATEGORY_3: ChecklistItem[] = [
   {
     label: "Each core page answers its target question in the first few sentences",
     detail:
-      "AI systems extract and summarize — a direct answer up front gets pulled cleanly; one buried three paragraphs into scene-setting often doesn't.",
+      "AI systems extract and summarize: a direct answer up front gets pulled cleanly; one buried three paragraphs into scene-setting often doesn't.",
   },
   {
     label: "High-intent buyer questions each have a real page or section",
@@ -168,7 +168,7 @@ const CATEGORY_3: ChecklistItem[] = [
   {
     label: "Claims are backed by a specific number, not a vague superlative",
     detail:
-      "\"21,700 citations analyzed\" is citable. \"Extensive experience\" is not — specificity is what separates a fact an AI system will repeat from a claim it will quietly ignore.",
+      "\"21,700 citations analyzed\" is citable. \"Extensive experience\" is not. Specificity is what separates a fact an AI system will repeat from a claim it will quietly ignore.",
   },
   {
     label: "Anything time-sensitive shows a visible last-updated date",
@@ -191,7 +191,7 @@ const CATEGORY_4: ChecklistItem[] = [
   {
     label: "When you are mentioned, the description is factually accurate",
     detail:
-      "Being cited isn't automatically good — no automated tool can verify this for you, which is exactly why it has to be read by a person.",
+      "Being cited isn't automatically good; no automated tool can verify this for you, which is exactly why it has to be read by a person.",
   },
   {
     label: "You know which specific pages get cited, not just that the domain does",
@@ -209,12 +209,12 @@ const CATEGORY_5: ChecklistItem[] = [
   {
     label: "You've compared your entity and schema signals against theirs",
     detail:
-      "If a competitor with weaker content still gets cited more often, the gap is frequently structural — schema, entity consistency, crawlability — not prose quality.",
+      "If a competitor with weaker content still gets cited more often, the gap is frequently structural (schema, entity consistency, crawlability), not prose quality.",
   },
   {
     label: "You know which AI platform actually matters for your buyer journey",
     detail:
-      "Not all six platforms carry equal weight for every business — check which one matters most before spreading equal effort across all of them.",
+      "Not all six platforms carry equal weight for every business: check which one matters most before spreading equal effort across all of them.",
   },
   {
     label: "There's a written, prioritized fix list ranked by expected impact",
@@ -282,7 +282,7 @@ export default function AIVisibilityAuditChecklistPost() {
                 letterSpacing: "-.025em",
               }}
             >
-              The AI visibility audit checklist &mdash;{" "}
+              The AI visibility audit checklist:{" "}
               <em style={{ fontStyle: "italic", color: "var(--accent)" }}>
                 23 things to check before you pay anyone.
               </em>
@@ -301,7 +301,7 @@ export default function AIVisibilityAuditChecklistPost() {
               }}
             >
               Crawlability, entity and schema, content answerability, citation
-              tracking, and competitor benchmarking &mdash; everything a
+              tracking, and competitor benchmarking: everything a
               professional audit checks, laid out so you can run it yourself
               first.
             </p>
@@ -370,7 +370,7 @@ export default function AIVisibilityAuditChecklistPost() {
               <Link href={OFFERS.audit.href} style={linkStyle}>
                 AI visibility audit
               </Link>{" "}
-              checks the same things this checklist walks through &mdash; it
+              checks the same things this checklist walks through; it
               just does it across all {AUDIT_PLATFORM_COUNT_WORD} major AI
               platforms, at scale, with a written fix list at the end. Before
               you pay anyone for that, it&rsquo;s worth running the checklist
@@ -403,7 +403,7 @@ export default function AIVisibilityAuditChecklistPost() {
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 20 }}>
               This is how an AI system decides you&rsquo;re a real, coherent
-              entity worth citing &mdash; rather than a page it doesn&rsquo;t
+              entity worth citing, rather than a page it doesn&rsquo;t
               yet trust enough to attribute a claim to.
             </p>
             <ChecklistGroup items={CATEGORY_2} startAt={6} />
@@ -440,7 +440,7 @@ export default function AIVisibilityAuditChecklistPost() {
 
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 20 }}>
-              AI visibility isn&rsquo;t measured in isolation &mdash; it&rsquo;s
+              AI visibility isn&rsquo;t measured in isolation; it&rsquo;s
               measured against whoever gets named when you don&rsquo;t.
             </p>
             <ChecklistGroup items={CATEGORY_5} startAt={20} />
@@ -450,7 +450,7 @@ export default function AIVisibilityAuditChecklistPost() {
             <p style={{ margin: "8px 0 26px" }}>
               If you worked through all five sections and came out with a
               short list of gaps rather than a clean sheet, that&rsquo;s the
-              normal outcome &mdash; running the same raw material at 30
+              normal outcome: running the same raw material at 30
               prompts across six engines is exactly what a{" "}
               <Link href={SAMPLE_REPORT_URL} style={linkStyle}>
                 full sample report
@@ -673,7 +673,7 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
         gap: 14,
       }}
     >
-      {number} &mdash; {text}
+      {number}: {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
     </h2>
   );
@@ -759,7 +759,7 @@ function InlineAuditCTA() {
           lineHeight: 1.55,
         }}
       >
-        The audit covers all {AUDIT_PLATFORM_COUNT_WORD} major platforms —
+        The audit covers all {AUDIT_PLATFORM_COUNT_WORD} major platforms,
         with platform-specific citation analysis, accuracy review, competitor
         gap mapping, and a prioritized action plan.
       </p>

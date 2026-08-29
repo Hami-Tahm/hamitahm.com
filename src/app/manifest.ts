@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Hami Tahm — AI Visibility Consultant",
+    name: "Hami Tahm: AI Visibility Consultant",
     short_name: "Hami Tahm",
     description:
       "AI Visibility Consultant in Canada. Helping businesses appear in Google AI Overviews, ChatGPT, Gemini, and Claude.",

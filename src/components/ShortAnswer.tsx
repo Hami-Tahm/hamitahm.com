@@ -4,11 +4,11 @@
  * ── WHY THIS EXISTS (AEO) ──
  * Answer engines lift a concise, self-contained, direct answer far more readily than
  * they lift a paragraph that eases into the point. Putting a labelled, ≤ ~50-word,
- * plain-language answer at the very top of a page — before any preamble — gives ChatGPT,
+ * plain-language answer at the very top of a page (before any preamble) gives ChatGPT,
  * Perplexity, Google AI Overviews and Copilot something clean to quote.
  *
  * It renders visibly (good for humans skimming) AND is plain text in the DOM (good for
- * extraction). Keep the answer genuinely short and genuinely answer the H1's question —
+ * extraction). Keep the answer genuinely short and genuinely answer the H1's question:
  * a "short answer" that rambles or dodges is worse than none.
  */
 export function ShortAnswer({ children }: { children: React.ReactNode }) {

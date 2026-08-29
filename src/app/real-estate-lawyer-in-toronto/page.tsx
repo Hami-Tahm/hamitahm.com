@@ -5,7 +5,7 @@ import { blogSchemaJson } from "@/lib/blog-schema";
 
 const ARTICLE_TITLE = "Real Estate Lawyer in Toronto";
 const ARTICLE_DESCRIPTION =
-  "What a real estate lawyer in Toronto actually does, what it costs, and when you need one — from someone who has bought, sold, and built in this market.";
+  "What a real estate lawyer in Toronto actually does, what it costs, and when you need one, from someone who has bought, sold, and built in this market.";
 
 export const metadata: Metadata = {
   title: "Real estate lawyer in Toronto",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   // NOINDEX 2026-07-14 (reversed an earlier "keep" call). This is a YMYL legal-advice
   // topic written by a non-lawyer, with no legal credentials, no qualified reviewer and
-  // no official Ontario sources — a genuine E-E-A-T/trust liability for a site whose
+  // no official Ontario sources: a genuine E-E-A-T/trust liability for a site whose
   // whole positioning is AI-visibility consulting, not legal advice. Off-topic and
   // higher-risk than it is worth. Kept live for direct links; out of search + sitemap.
   robots: { index: false, follow: true },

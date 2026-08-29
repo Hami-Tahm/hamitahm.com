@@ -5,7 +5,7 @@ import { writingPosts } from "@/lib/writing-posts";
 export const metadata: Metadata = {
   // NOINDEX + delisted 2026-07-14. This is the index of the older personal-writing
   // cluster (longevity, finance, lifestyle) which is now noindexed. Keeping the index
-  // itself indexed — at a high sitemap priority — while its contents are noindexed is
+  // itself indexed (at a high sitemap priority) while its contents are noindexed is
   // contradictory, and the page's own description used to broadcast the exact
   // "longevity / building toward a unicorn" signals we spent the day removing.
   // The on-topic keeper essays (10,000-hour rule, SEO Toronto, etc.) are individually

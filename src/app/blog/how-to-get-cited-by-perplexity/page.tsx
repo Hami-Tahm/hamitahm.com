@@ -10,7 +10,7 @@ const SLUG = "how-to-get-cited-by-perplexity";
 const ARTICLE_TITLE =
   "How to Get Cited by Perplexity AI";
 const ARTICLE_DESCRIPTION =
-  "Perplexity cites sources differently than Google — it actively retrieves, reads, and ranks pages in real time. Here's how to make your content one it chooses to cite.";
+  "Perplexity cites sources differently than Google: it actively retrieves, reads, and ranks pages in real time. Here's how to make your content one it chooses to cite.";
 const DATE_PUBLISHED = "2026-06-08";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const HUB_URL = "/ai-visibility/";
@@ -22,11 +22,11 @@ const CASE_STUDY_URL = HOMECALC_PROOF.caseStudyPath;
 const FAQ_ITEMS = [
   {
     q: "Does Perplexity use the same sources as Google?",
-    a: "No. Perplexity runs its own live retrieval — it doesn't pull from Google's index. Ranking in Google doesn't automatically translate to Perplexity citations. Perplexity performs its own search on every query and selects sources based on its own quality and relevance signals.",
+    a: "No. Perplexity runs its own live retrieval: it doesn't pull from Google's index. Ranking in Google doesn't automatically translate to Perplexity citations. Perplexity performs its own search on every query and selects sources based on its own quality and relevance signals.",
   },
   {
     q: "Can I request to be cited by Perplexity?",
-    a: "No. There's no submission process. The only lever is making your content more retrievable, more structured, and more authoritative — so Perplexity's system selects it over competing pages.",
+    a: "No. There's no submission process. The only lever is making your content more retrievable, more structured, and more authoritative, so Perplexity's system selects it over competing pages.",
   },
   {
     q: "Does Perplexity cite paywalled content?",
@@ -207,7 +207,7 @@ export default function HowToGetCitedByPerplexityPost() {
                   margin: 0,
                 }}
               >
-                Perplexity is retrieval-first — it browses live pages and cites
+                Perplexity is retrieval-first: it browses live pages and cites
                 what it finds, not what it was trained on. Your indexability and
                 content structure determine whether it cites you.
               </p>
@@ -216,12 +216,12 @@ export default function HowToGetCitedByPerplexityPost() {
 
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
-              Perplexity AI is a retrieval-first system — it searches the web in
+              Perplexity AI is a retrieval-first system: it searches the web in
               real time, reads your pages, and cites the sources it finds most
               direct, credible, and well-structured. Unlike ChatGPT&rsquo;s
               training-based knowledge, Perplexity actively browses. That means
               your indexability, content structure, and page authority all
-              directly affect whether Perplexity cites you — and whether it
+              directly affect whether Perplexity cites you, and whether it
               cites you accurately.
             </p>
             <blockquote
@@ -233,7 +233,7 @@ export default function HowToGetCitedByPerplexityPost() {
                 color: "var(--muted)",
               }}
             >
-              Perplexity is retrieval-first — it browses live pages and cites
+              Perplexity is retrieval-first: it browses live pages and cites
               what it finds, not what it was trained on. Your indexability and
               content structure determine whether it cites you.
             </blockquote>
@@ -245,8 +245,8 @@ export default function HowToGetCitedByPerplexityPost() {
               and{" "}
               <Link href={AIO_URL} style={linkStyle}>
                 how to appear in Google AI Overviews
-              </Link>{" "}
-              — the mechanisms are different on each platform.
+              </Link>
+              , the mechanisms are different on each platform.
             </p>
           </RevealSection>
 
@@ -263,7 +263,7 @@ export default function HowToGetCitedByPerplexityPost() {
               When a user asks Perplexity a question, it doesn&rsquo;t draw from
               a pre-trained knowledge base. It runs a live web search, retrieves
               the top results, reads those pages directly, synthesizes an
-              answer, and cites its sources — all in real time, on every query.
+              answer, and cites its sources, all in real time, on every query.
             </p>
             <p style={{ marginBottom: 26 }}>This means:</p>
             <ul style={{ margin: "0 0 26px 22px" }}>
@@ -284,7 +284,7 @@ export default function HowToGetCitedByPerplexityPost() {
               Google AIO works from Google&rsquo;s existing search index. ChatGPT
               works from training data with an optional Browse layer. Perplexity
               runs its own fresh retrieval on every single query. That&rsquo;s a
-              meaningfully different pipeline — and it changes what optimization
+              meaningfully different pipeline, and it changes what optimization
               looks like.
             </p>
             <p style={{ marginBottom: 26 }}>
@@ -296,7 +296,7 @@ export default function HowToGetCitedByPerplexityPost() {
           </RevealSection>
 
           <RevealSection>
-            <SectionLabel number="02" text="Step 1 — Make your pages retrievable" />
+            <SectionLabel number="02" text="Step 1: Make your pages retrievable" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
@@ -326,7 +326,7 @@ export default function HowToGetCitedByPerplexityPost() {
               Beyond robots.txt: confirm your core pages are indexed, internally
               linked, and included in your sitemap. If your site is SPA-rendered
               (JavaScript-only), retrieval-based systems including Perplexity
-              often see an empty page. SSG or SSR is the fix — and it&rsquo;s
+              often see an empty page. SSG or SSR is the fix, and it&rsquo;s
               the same fix that applies across every AI platform.
             </p>
             <p style={{ marginBottom: 26 }}>
@@ -336,7 +336,7 @@ export default function HowToGetCitedByPerplexityPost() {
           </RevealSection>
 
           <RevealSection>
-            <SectionLabel number="03" text="Step 2 — Write for direct extraction" />
+            <SectionLabel number="03" text="Step 2: Write for direct extraction" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
@@ -356,8 +356,8 @@ export default function HowToGetCitedByPerplexityPost() {
               <li style={{ marginBottom: 11 }}>
                 <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
                   First 1-2 sentences = the direct answer
-                </strong>{" "}
-                — don&rsquo;t build up to it
+                </strong>
+                , don&rsquo;t build up to it
               </li>
               <li style={{ marginBottom: 11 }}>
                 <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
@@ -374,7 +374,7 @@ export default function HowToGetCitedByPerplexityPost() {
           </RevealSection>
 
           <RevealSection>
-            <SectionLabel number="04" text="Step 3 — Build domain authority" />
+            <SectionLabel number="04" text="Step 3: Build domain authority" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
@@ -382,7 +382,7 @@ export default function HowToGetCitedByPerplexityPost() {
               Perplexity preferentially cites high-authority sources. A newly
               published page from a site with no backlinks competes against pages
               from established industry publications. The established source
-              usually wins — unless your content is significantly more direct
+              usually wins, unless your content is significantly more direct
               and relevant.
             </p>
             <p style={{ marginBottom: 26 }}>
@@ -405,11 +405,11 @@ export default function HowToGetCitedByPerplexityPost() {
               </li>
             </ul>
             <p style={{ marginBottom: 26 }}>
-              HomeCalc.ca — a financial calculator site with no established
-              authority — earned thousands of AI citations in three months after
+              HomeCalc.ca (a financial calculator site with no established
+              authority) earned thousands of AI citations in three months after
               an audit-driven rebuild. To be precise about the evidence: that
               citation volume was measured in Bing&rsquo;s AI Performance report
-              (Microsoft Copilot), not Perplexity — Perplexity doesn&rsquo;t
+              (Microsoft Copilot), not Perplexity; Perplexity doesn&rsquo;t
               expose citation counts to publishers, so I don&rsquo;t claim a
               specific Perplexity number. The{" "}
               <Link href={CASE_STUDY_URL} style={linkStyle}>
@@ -423,7 +423,7 @@ export default function HowToGetCitedByPerplexityPost() {
           <RevealSection>
             <SectionLabel
               number="05"
-              text="Step 4 — Structure content Perplexity can parse"
+              text="Step 4: Structure content Perplexity can parse"
             />
           </RevealSection>
 
@@ -444,14 +444,14 @@ export default function HowToGetCitedByPerplexityPost() {
                 Short paragraphs (2-4 sentences)
               </li>
               <li style={{ marginBottom: 11 }}>
-                H2 and H3 headings that describe each section specifically — not
+                H2 and H3 headings that describe each section specifically, not
                 vaguely
               </li>
               <li style={{ marginBottom: 11 }}>
                 Numbered and bulleted lists for multi-part answers
               </li>
               <li style={{ marginBottom: 11 }}>
-                FAQ sections — Perplexity frequently pulls directly from Q&amp;A
+                FAQ sections: Perplexity frequently pulls directly from Q&amp;A
                 formatted content
               </li>
               <li style={{ marginBottom: 11 }}>
@@ -480,7 +480,7 @@ export default function HowToGetCitedByPerplexityPost() {
           <RevealSection>
             <SectionLabel
               number="06"
-              text="Step 5 — Check your Perplexity citations"
+              text="Step 5: Check your Perplexity citations"
             />
           </RevealSection>
 
@@ -503,14 +503,14 @@ export default function HowToGetCitedByPerplexityPost() {
                 whether the attribution is accurate
               </li>
               <li style={{ marginBottom: 11 }}>
-                Flag inaccuracies — Perplexity occasionally misrepresents
+                Flag inaccuracies: Perplexity occasionally misrepresents
                 sources; if it&rsquo;s attributing incorrect claims to your
                 page, you need to know and correct it
               </li>
             </ol>
             <p style={{ marginBottom: 26 }}>
               Perplexity Pro users see the specific sources cited. Run audits
-              from a Pro account — you&rsquo;ll see exactly which pages are being
+              from a Pro account: you&rsquo;ll see exactly which pages are being
               pulled and what text was extracted.
             </p>
             <p style={{ marginBottom: 26 }}>
@@ -530,7 +530,7 @@ export default function HowToGetCitedByPerplexityPost() {
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
               Perplexity&rsquo;s user base is concentrated among professional,
-              research-oriented, and high-intent buyers — the audience most
+              research-oriented, and high-intent buyers, the audience most
               high-ticket service businesses and B2B companies want. A citation
               in Perplexity positions your brand as a verified source at the
               exact moment a buyer is forming their view.
@@ -683,7 +683,7 @@ export default function HowToGetCitedByPerplexityPost() {
                 }}
               >
                 The audit covers Perplexity alongside ChatGPT, Google AI
-                Overviews, and Gemini — with platform-specific citation analysis
+                Overviews, and Gemini, with platform-specific citation analysis
                 and a prioritized action plan. $1,500 CAD flat.
               </p>
               <Link
@@ -691,7 +691,7 @@ export default function HowToGetCitedByPerplexityPost() {
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
               >
-                Book Your AI Visibility Audit &mdash; $1,500 CAD{" "}
+                Book Your AI Visibility Audit for $1,500 CAD{" "}
                 <span className="arr">&rarr;</span>
               </Link>
             </div>
@@ -718,7 +718,7 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
         gap: 14,
       }}
     >
-      {number} &mdash; {text}
+      {number}: {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
     </h2>
   );
@@ -757,7 +757,7 @@ function InlineAuditCTA() {
         }}
       >
         If you want to know exactly how often Perplexity is citing you, what
-        it&rsquo;s saying, and where the gaps are — the audit covers Perplexity
+        it&rsquo;s saying, and where the gaps are: the audit covers Perplexity
         alongside ChatGPT, Google AI Overviews, and Gemini.
       </p>
       <Link href={AUDIT_URL} className="btn btn-primary">

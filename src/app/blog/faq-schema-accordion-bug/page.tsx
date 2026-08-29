@@ -22,7 +22,7 @@ const TOOLS_URL = "/blog/best-ai-visibility-tools/";
 const FAQ_ITEMS = [
   {
     q: "Does this bug affect Next.js sites specifically?",
-    a: "It affects any React framework that does SSG or SSR — Next.js, Remix, Gatsby, Astro with React islands. The issue is that the accordion component removes children from the DOM when collapsed, and the server render captures that collapsed state. Next.js is the most common framework where this appears because of its SSG/SSR defaults.",
+    a: "It affects any React framework that does SSG or SSR: Next.js, Remix, Gatsby, Astro with React islands. The issue is that the accordion component removes children from the DOM when collapsed, and the server render captures that collapsed state. Next.js is the most common framework where this appears because of its SSG/SSR defaults.",
   },
   {
     q: "How do I know if my FAQ accordion has this bug?",
@@ -30,7 +30,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Will Google penalize me for mismatched schema and visible content?",
-    a: "Not in the way people fear. Google's structured data guidelines require schema to match visible content, and a violation can make the page ineligible for rich results (and, if flagged, trigger a structured-data manual action against rich-result eligibility). Per Google's own documentation, that removes rich-result eligibility — it does not demote your normal ranking. And as of May 2026 Google no longer shows FAQ rich results for most sites at all, so the direct rich-result upside is gone regardless. Keep schema honest for consistency, not for a ranking boost.",
+    a: "Not in the way people fear. Google's structured data guidelines require schema to match visible content, and a violation can make the page ineligible for rich results (and, if flagged, trigger a structured-data manual action against rich-result eligibility). Per Google's own documentation, that removes rich-result eligibility; it does not demote your normal ranking. And as of May 2026 Google no longer shows FAQ rich results for most sites at all, so the direct rich-result upside is gone regardless. Keep schema honest for consistency, not for a ranking boost.",
   },
   {
     q: "Did fixing this actually recover traffic?",
@@ -38,7 +38,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Does this affect AI visibility too, or just traditional SEO?",
-    a: "Both. AI systems like ChatGPT, Perplexity, and Google's AI Overviews rely on crawlable, structured content to generate citations. If your FAQ answers aren't in the DOM, AI crawlers can't extract them either. The schema says you have answers, but the page doesn't deliver them — so AI systems skip your content entirely.",
+    a: "Both. AI systems like ChatGPT, Perplexity, and Google's AI Overviews rely on crawlable, structured content to generate citations. If your FAQ answers aren't in the DOM, AI crawlers can't extract them either. The schema says you have answers, but the page doesn't deliver them, so AI systems skip your content entirely.",
   },
 ] as const;
 
@@ -186,7 +186,7 @@ export default function FaqSchemaAccordionBugPost() {
               }}
             >
               Your UX looks fine. Your build passes. But your FAQ answers
-              aren&rsquo;t in the DOM &mdash; so your schema describes content
+              aren&rsquo;t in the DOM, so your schema describes content
               Google can&rsquo;t see.
             </p>
           </RevealSection>
@@ -200,7 +200,7 @@ export default function FaqSchemaAccordionBugPost() {
                 claimed a "ranking demotion / algorithmic penalty" and a "4.8x recovery"
                 caused by the schema fix. Per Google's own policy, a structured-data
                 violation removes rich-result eligibility but does not demote normal
-                ranking — and Google deprecated FAQ rich results in May 2026. The banner
+                ranking, and Google deprecated FAQ rich results in May 2026. The banner
                 states both facts up front rather than quietly editing the claims out. */}
             <div
               style={{
@@ -217,7 +217,7 @@ export default function FaqSchemaAccordionBugPost() {
             >
               <strong style={{ color: "var(--ink)" }}>Updated July 2026.</strong>{" "}
               Two corrections to the original post. First: a schema/content mismatch
-              affects <em>rich-result eligibility</em>, not your normal ranking &mdash;
+              affects <em>rich-result eligibility</em>, not your normal ranking;
               Google does not algorithmically demote a page for it. Second: Google
               deprecated FAQ rich results in May 2026, so keep FAQ schema for semantic
               consistency, not for a rich snippet. The impressions recovery below is a
@@ -277,13 +277,13 @@ export default function FaqSchemaAccordionBugPost() {
                 structured data violation. The fix is one line. We caught it on{" "}
                 <Link href={CASE_STUDY_URL} style={linkStyle}>
                   HomeCalc.ca
-                </Link>{" "}
-                — impressions went from 486 to 2,330 in 7 days after the fix.
+                </Link>
+                : impressions went from 486 to 2,330 in 7 days after the fix.
               </p>
             </div>
           </RevealSection>
 
-          {/* ── From the author bridge ── */}
+          {/* From the author bridge */}
           <RevealSection delay={0.04}>
             <div
               style={{
@@ -314,8 +314,8 @@ export default function FaqSchemaAccordionBugPost() {
               <p style={{ margin: 0 }}>
                 I found this bug on my own product (HomeCalc.ca) before any
                 tool flagged it. The AI Visibility Audit I run for clients
-                catches structural mismatches like this one &mdash; the kind no
-                dashboard alerts you to &mdash; and ships a prioritized 7-day
+                catches structural mismatches like this one (the kind no
+                dashboard alerts you to) and ships a prioritized 7-day
                 fix plan.{" "}
                 <Link
                   href={AUDIT_URL}
@@ -327,7 +327,7 @@ export default function FaqSchemaAccordionBugPost() {
             </div>
           </RevealSection>
 
-          {/* ── Section 01: The bug ── */}
+          {/* Section 01: The bug */}
           <RevealSection>
             <SectionLabel number="01" text="The bug" />
           </RevealSection>
@@ -343,7 +343,7 @@ export default function FaqSchemaAccordionBugPost() {
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>1. You add an FAQ section</strong>{" "}with
-              a collapsible accordion — Radix UI, Headless UI, Shadcn, or any
+              a collapsible accordion: Radix UI, Headless UI, Shadcn, or any
               component that toggles visibility. Users click a question, the
               answer expands. Standard UX pattern.
             </p>
@@ -355,7 +355,7 @@ export default function FaqSchemaAccordionBugPost() {
               <code style={{ fontFamily: "var(--mono)", fontSize: "0.9em" }}>
                 state=&quot;closed&quot;
               </code>
-              , the answer text isn&rsquo;t hidden — it&rsquo;s gone. The DOM
+              , the answer text isn&rsquo;t hidden; it&rsquo;s gone. The DOM
               node is empty. This is how most React accordion libraries work by
               default, because it&rsquo;s more performant than keeping
               off-screen content mounted.
@@ -363,7 +363,7 @@ export default function FaqSchemaAccordionBugPost() {
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>3. SSG/SSR captures the closed state.</strong>{" "}
               When Next.js (or Gatsby, Remix, Astro) pre-renders the page, it
-              runs the component with its default state — which is closed. The
+              runs the component with its default state, which is closed. The
               generated HTML contains the question text and an empty answer
               container:
             </p>
@@ -376,11 +376,11 @@ export default function FaqSchemaAccordionBugPost() {
               <strong style={labelStyle}>
                 4. But your JSON-LD says the answers exist.
               </strong>{" "}
-              Your FAQPage schema — sitting in a{" "}
+              Your FAQPage schema (sitting in a{" "}
               <code style={{ fontFamily: "var(--mono)", fontSize: "0.9em" }}>
                 {"<script type=\"application/ld+json\">"}
               </code>{" "}
-              tag — correctly contains every question and every answer. Because
+              tag) correctly contains every question and every answer. Because
               the schema is generated from a data array, not from the DOM, it
               doesn&rsquo;t know the accordion ate the content.
             </p>
@@ -394,7 +394,7 @@ export default function FaqSchemaAccordionBugPost() {
             </p>
             <p style={{ marginBottom: 26 }}>
               The result: the page loses rich-result eligibility for that schema.
-              It does <strong>not</strong>{" "}demote your normal ranking &mdash;
+              It does <strong>not</strong>{" "}demote your normal ranking;
               Google&rsquo;s policy is explicit that structured-data issues affect
               rich results, not ordinary rankings. (And since May 2026, Google no
               longer shows <a href="https://developers.google.com/search/docs/appearance/structured-data/faqpage" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>FAQ rich results</a> for most sites anyway.) So the real
@@ -420,7 +420,7 @@ export default function FaqSchemaAccordionBugPost() {
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>The build passes.</strong>{" "}No TypeScript
               errors, no lint failures, no broken tests. The component is
-              functioning correctly by its own definition — the default state is
+              functioning correctly by its own definition: the default state is
               closed, and closed means unmounted.
             </p>
             <p style={{ marginBottom: 26 }}>
@@ -428,7 +428,7 @@ export default function FaqSchemaAccordionBugPost() {
                 Google&rsquo;s Rich Results Test may still pass.
               </strong>{" "}
               The test validates schema syntax, not content parity. Your <a href="https://schema.org/FAQPage" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>FAQPage</a>
-              schema is syntactically valid. The violation is semantic — the
+              schema is syntactically valid. The violation is semantic: the
               content it describes isn&rsquo;t in the DOM.
             </p>
             <p style={{ marginBottom: 26 }}>
@@ -440,12 +440,12 @@ export default function FaqSchemaAccordionBugPost() {
             </p>
             <p style={{ marginBottom: 26 }}>
               The only way to catch this is to inspect the raw HTML your server
-              generates — not the JavaScript-hydrated page in your browser, but
+              generates, not the JavaScript-hydrated page in your browser, but
               the actual HTML that Googlebot receives on first request.
             </p>
           </RevealSection>
 
-          {/* ── Section 03: How to test ── */}
+          {/* Section 03: How to test */}
           <RevealSection>
             <SectionLabel number="03" text="How to test your site (2 commands)" />
           </RevealSection>
@@ -463,7 +463,7 @@ export default function FaqSchemaAccordionBugPost() {
 
             <h3 style={h3Style}>Step 2: Search for an FAQ answer</h3>
             <p style={{ marginBottom: 14 }}>
-              Pick a unique phrase from one of your FAQ answers — something
+              Pick a unique phrase from one of your FAQ answers, something
               specific enough to not appear elsewhere on the page.
             </p>
             <code style={codeStyle}>
@@ -479,8 +479,8 @@ Select-String "your unique answer phrase" page.html`}
               <strong style={labelStyle}>If the answer appears only inside</strong>{" "}
               <code style={{ fontFamily: "var(--mono)", fontSize: "0.9em" }}>
                 {"<script type=\"application/ld+json\">"}
-              </code>{" "}
-              — you have the bug. The schema contains answers that aren&rsquo;t
+              </code>
+              : you have the bug. The schema contains answers that aren&rsquo;t
               in the visible HTML. Google sees a mismatch.
             </p>
             <p style={{ marginBottom: 26 }}>
@@ -493,12 +493,12 @@ Select-String "your unique answer phrase" page.html`}
               <code style={{ fontFamily: "var(--mono)", fontSize: "0.9em" }}>
                 {"<div>"}
               </code>{" "}
-              in the page body) — you&rsquo;re clean. Your accordion is
+              in the page body): you&rsquo;re clean. Your accordion is
               rendering content in the DOM regardless of collapsed state.
             </p>
           </RevealSection>
 
-          {/* ── Section 04: The fix ── */}
+          {/* Section 04: The fix */}
           <RevealSection>
             <SectionLabel number="04" text="The one-line fix" />
           </RevealSection>
@@ -506,7 +506,7 @@ Select-String "your unique answer phrase" page.html`}
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
               The principle: keep FAQ answer content in the DOM at all times. Use
-              CSS to hide it visually when collapsed — not JavaScript to unmount
+              CSS to hide it visually when collapsed, not JavaScript to unmount
               it.
             </p>
 
@@ -569,13 +569,13 @@ Select-String "your unique answer phrase" page.html`}
               <code style={{ fontFamily: "var(--mono)", fontSize: "0.9em" }}>
                 visibility: hidden
               </code>{" "}
-              via CSS — never conditionally unmount the content.
+              via CSS, never conditionally unmount the content.
             </p>
 
             <h3 style={h3Style}>Alternative: skip the accordion entirely</h3>
             <p style={{ marginBottom: 26 }}>
-              The safest approach is to render FAQ content as plain visible HTML
-              — no accordion at all. This is what we do on{" "}
+              The safest approach is to render FAQ content as plain visible HTML:
+              no accordion at all. This is what we do on{" "}
               <Link href="/" style={linkStyle}>
                 hamitahm.com
               </Link>
@@ -602,8 +602,8 @@ Select-String "your unique answer phrase" page.html`}
               We discovered this bug on{" "}
               <Link href={CASE_STUDY_URL} style={linkStyle}>
                 HomeCalc.ca
-              </Link>{" "}
-              — a Canadian mortgage calculator that scaled from{" "}
+              </Link>
+              , a Canadian mortgage calculator that scaled from{" "}
               {HOMECALC_CLAIMS.zeroToAppearances}. The site uses Next.js with SSG
               and had FAQ sections on multiple calculator pages.
             </p>
@@ -614,18 +614,18 @@ Select-String "your unique answer phrase" page.html`}
               FAQPage had disappeared from Search Console.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>The fix:</strong>{" "}One prop change —{" "}
+              <strong style={labelStyle}>The fix:</strong>{" "}One prop change:{" "}
               <code style={{ fontFamily: "var(--mono)", fontSize: "0.9em" }}>
                 forceMount
               </code>{" "}
-              on the Radix Accordion Content component — plus a CSS class to
+              on the Radix Accordion Content component, plus a CSS class to
               maintain the visual collapse behavior.
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>After the fix:</strong>{" "}over the following
               weeks, 7-day impressions rose from 486 to 2,330, and FAQ rich results
               returned in Search Console. Stated honestly: this is a correlation on
-              one site over one window, not a controlled experiment &mdash; other
+              one site over one window, not a controlled experiment; other
               content and technical work shipped in the same period, so we can&rsquo;t
               attribute the whole change to this one fix. We report what we saw.
             </p>
@@ -665,7 +665,7 @@ Select-String "your unique answer phrase" page.html`}
             </div>
           </RevealSection>
 
-          {/* ── Section 06: Who's affected ── */}
+          {/* Section 06: Who's affected */}
           <RevealSection>
             <SectionLabel number="06" text="Who's affected" />
           </RevealSection>
@@ -676,7 +676,7 @@ Select-String "your unique answer phrase" page.html`}
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>1.</strong>{" "}Your site uses SSG or SSR
-              (Next.js, Gatsby, Remix, Astro, Nuxt, SvelteKit — any framework
+              (Next.js, Gatsby, Remix, Astro, Nuxt, SvelteKit, or any framework
               that pre-renders HTML on the server).
             </p>
             <p style={{ marginBottom: 26 }}>
@@ -694,7 +694,7 @@ Select-String "your unique answer phrase" page.html`}
               site with an accordion but no FAQPage schema has no mismatch to
               trigger. A site with FAQPage schema but no accordion renders the
               answers in the DOM. An SPA with an accordion has different
-              rendering behavior — Googlebot runs JavaScript on SPAs and may see
+              rendering behavior: Googlebot runs JavaScript on SPAs and may see
               the expanded content (though SPAs have their own{" "}
               <Link href={AIO_URL} style={linkStyle}>
                 AI visibility challenges
@@ -841,7 +841,7 @@ Select-String "your unique answer phrase" page.html`}
                   position: "relative",
                 }}
               >
-                Your FAQ section should make you visible — not invisible.
+                Your FAQ section should make you visible, not invisible.
               </h2>
               <p
                 style={{
@@ -863,7 +863,7 @@ Select-String "your unique answer phrase" page.html`}
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
               >
-                Book Your AI Visibility Audit &mdash; $1,500 CAD{" "}
+                Book Your AI Visibility Audit for $1,500 CAD{" "}
                 <span className="arr">&rarr;</span>
               </Link>
             </div>
@@ -890,7 +890,7 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
         gap: 14,
       }}
     >
-      {number} &mdash; {text}
+      {number}: {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
     </h2>
   );

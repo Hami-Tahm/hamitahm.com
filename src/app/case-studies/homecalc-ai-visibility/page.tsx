@@ -28,7 +28,7 @@ const CHART_SRC = "/images/case-studies/homecalc-citation-chart.jpg";
  * Google Search Console → Performance → Generative AI features (Beta), homecalc.ca,
  * 3-month view, captured 2026-08-10. 1549×679.
  *
- * ⚠️ This report exposes IMPRESSIONS ONLY — no clicks, no CTR, no position, no query
+ * ⚠️ This report exposes IMPRESSIONS ONLY: no clicks, no CTR, no position, no query
  * breakdown. It is not the same measurement as Bing's citation count and must never be
  * added to it. See the figcaption, which says so to the reader as well.
  */
@@ -39,7 +39,7 @@ const CHART_ALT = `Bing Webmaster Tools AI Performance console for homecalc.ca, 
 
 export const metadata: Metadata = {
   title: "HomeCalc.ca AI Visibility Case Study",
-  description: `How HomeCalc.ca went from near-zero to ${HOMECALC_CLAIMS.appearancesInTimeframe} on a YMYL financial site that was under three months old when the audit began — now commanding up to ${HOMECALC_PROOF.topCitationShare} citation share on key queries. By Hami Tahm.`,
+  description: `How HomeCalc.ca went from near-zero to ${HOMECALC_CLAIMS.appearancesInTimeframe} on a YMYL financial site that was under three months old when the audit began, now commanding up to ${HOMECALC_PROOF.topCitationShare} citation share on key queries. By Hami Tahm.`,
   alternates: {
     canonical: "https://hamitahm.com/case-studies/homecalc-ai-visibility/",
   },
@@ -162,7 +162,7 @@ export default function HomeCalcCaseStudy() {
         </RevealSection>
       </div>
 
-      {/* ── 1 — Hero ── */}
+      {/* 1. Hero */}
       <header style={{ padding: "30px 0 50px" }}>
         <div className="wrap">
           <RevealSection>
@@ -209,8 +209,8 @@ export default function HomeCalcCaseStudy() {
               Case study by{" "}
               <Link href="/hami-tahm/" style={{ color: "var(--accent)" }}>
                 Hami Tahm
-              </Link>{" "}
-              — May 2026. Updated June 17, 2026 with latest citation data.
+              </Link>
+              , May 2026. Updated June 17, 2026 with latest citation data.
             </p>
           </RevealSection>
 
@@ -225,7 +225,7 @@ export default function HomeCalcCaseStudy() {
               }}
             >
               HomeCalc.ca launched into one of Canada&rsquo;s most competitive
-              niches — real estate and mortgage. With no ad budget and nothing
+              niches: real estate and mortgage. With no ad budget and nothing
               to buy its way in, it earned {HOMECALC_PROOF.combinedAppearances} AI
               appearances in its first {HOMECALC_PROOF.timeframe}, in a market
               dominated by banks/finance. Here is exactly what we did, and what
@@ -251,7 +251,7 @@ export default function HomeCalcCaseStudy() {
         </div>
       </header>
 
-      {/* ── 2 — The Client ── */}
+      {/* 2. The Client */}
       <section style={{ padding: "46px 0" }}>
         <div className="wrap" style={{ maxWidth: 740 }}>
           <RevealSection>
@@ -265,7 +265,7 @@ export default function HomeCalcCaseStudy() {
                 marginBottom: 24,
               }}
             >
-              The Client — HomeCalc.ca
+              The Client: HomeCalc.ca
             </h2>
             <div
               style={{
@@ -275,17 +275,17 @@ export default function HomeCalcCaseStudy() {
               }}
             >
               <p style={{ marginBottom: 20 }}>
-                HomeCalc.ca is a Canadian personal finance calculator platform
-                — mortgage qualifiers, closing-cost estimators, rent-increase
+                HomeCalc.ca is a Canadian personal finance calculator platform:
+                mortgage qualifiers, closing-cost estimators, rent-increase
                 tools, and land-transfer-tax calculators for buyers and renters
                 in Ontario and across the rest of Canada. The site launched in
                 early 2026 and was under three months old when the audit took
                 place.
               </p>
               <p style={{ marginBottom: 20 }}>
-                Personal finance is a YMYL category —{" "}
-                <em style={{ fontStyle: "italic" }}>Your Money or Your Life</em>{" "}
-                — Google&rsquo;s designation for content that could materially
+                Personal finance is a YMYL category (
+                <em style={{ fontStyle: "italic" }}>Your Money or Your Life</em>
+                ), Google&rsquo;s designation for content that could materially
                 affect a reader&rsquo;s financial wellbeing. YMYL sites are held
                 to a higher standard than almost any other category, and AI
                 engines apply similar caution before citing them. Building
@@ -308,7 +308,7 @@ export default function HomeCalcCaseStudy() {
         </div>
       </section>
 
-      {/* ── 3 — The Challenge ── */}
+      {/* 3. The Challenge */}
       <section style={{ padding: "46px 0" }}>
         <div className="wrap" style={{ maxWidth: 740 }}>
           <RevealSection>
@@ -322,7 +322,7 @@ export default function HomeCalcCaseStudy() {
                 marginBottom: 28,
               }}
             >
-              The Challenge — Invisible in AI Search
+              The Challenge: Invisible in AI Search
             </h2>
           </RevealSection>
 
@@ -346,10 +346,10 @@ export default function HomeCalcCaseStudy() {
               }}
             >
               AI engines weight content authority heavily when answering
-              financial questions. For YMYL queries — &ldquo;how much mortgage
+              financial questions. For YMYL queries (&ldquo;how much mortgage
               can I afford,&rdquo; &ldquo;what closing costs should I
               expect,&rdquo; &ldquo;how much can my landlord raise my
-              rent&rdquo; — the bar to be cited is steep. Engines prefer
+              rent&rdquo;), the bar to be cited is steep. Engines prefer
               established institutional sources: banks, government departments,
               decade-old advisor brands. A new financial calculator site is, by
               default, invisible.
@@ -379,7 +379,7 @@ export default function HomeCalcCaseStudy() {
               backlink portfolio. No years of indexed content. No brand
               recognition signals. By every conventional measure, a site like
               this is expected to wait twelve to eighteen months before AI
-              platforms start recognizing it — if ever.
+              platforms start recognizing it, if ever.
             </p>
           </RevealSection>
 
@@ -395,14 +395,14 @@ export default function HomeCalcCaseStudy() {
               }}
             >
               Pre-audit baseline: near-zero AI citations in Bing Webmaster
-              Tools&rsquo; AI Performance report &mdash; the same Microsoft
-              Copilot source the after-figures come from.
+              Tools&rsquo; AI Performance report (the same Microsoft
+              Copilot source the after-figures come from).
             </p>
           </RevealSection>
         </div>
       </section>
 
-      {/* ── 4 — The Results ── */}
+      {/* 4. The Results */}
       <section style={{ padding: "46px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -429,12 +429,12 @@ export default function HomeCalcCaseStudy() {
             >
               HomeCalc.ca accumulated {HOMECALC_PROOF.citations} AI citations
               across {HOMECALC_PROOF.pagesCited} pages in{" "}
-              {HOMECALC_PROOF.timeframe} — on a financial site less than three
+              {HOMECALC_PROOF.timeframe}, on a financial site less than three
               months old at the time of the audit. The closing-cost-calculator
               page alone received {HOMECALC_CITED_PAGES[0].citations} citations,
               and on the &ldquo;mortgage affordability calculator&rdquo; query,
               HomeCalc commands a {HOMECALC_PROOF.topCitationShare} citation
-              share — meaning roughly three out of every four AI answers on that
+              share, meaning roughly three out of every four AI answers on that
               query cite HomeCalc.
             </p>
           </RevealSection>
@@ -449,7 +449,7 @@ export default function HomeCalcCaseStudy() {
 
           {/*
             HEADLINE COMBINED FIGURE. Deliberately labelled "AI appearances", not
-            "citations" — 15,000 of it is Google impressions, and calling that a
+            "citations": 15,000 of it is Google impressions, and calling that a
             citation is the one move here that would be indefensible. The breakdown
             sits directly underneath so the total is never load-bearing on its own.
           */}
@@ -502,7 +502,7 @@ export default function HomeCalcCaseStudy() {
                     {HOMECALC_PROOF.citations} citations
                   </strong>{" "}
                   <span style={{ color: "var(--muted)" }}>
-                    &mdash; {HOMECALC_PROOF.sourceLabel}
+                    via {HOMECALC_PROOF.sourceLabel}
                   </span>
                 </div>
                 <div style={{ fontSize: 15.5, color: "var(--ink)", lineHeight: 1.55 }}>
@@ -510,7 +510,7 @@ export default function HomeCalcCaseStudy() {
                     {HOMECALC_PROOF.googleImpressions} impressions
                   </strong>{" "}
                   <span style={{ color: "var(--muted)" }}>
-                    &mdash; {HOMECALC_PROOF.googleSourceLabel}
+                    via {HOMECALC_PROOF.googleSourceLabel}
                   </span>
                 </div>
               </div>
@@ -528,7 +528,7 @@ export default function HomeCalcCaseStudy() {
                 one word that is honestly true of both: a link to this site appeared
                 inside an AI-generated answer. They are separate engines, so nothing is
                 counted twice. Deliberately <em style={{ fontStyle: "italic" }}>not</em>{" "}
-                called 32,800 citations &mdash; 15,000 of it is impressions, and Google
+                called 32,800 citations: 15,000 of it is impressions, and Google
                 reports no citation count at all. Neither console shows the total; each
                 shows its own half, and both screenshots are below.
               </p>
@@ -560,8 +560,8 @@ export default function HomeCalcCaseStudy() {
                 }}
               >
                 The trailing three-month view, May 9 &ndash; August 7, 2026.
-                Citations start at effectively zero &mdash; the first days on this
-                chart read 3, 1, 0 &mdash; then climb to peaks of{" "}
+                Citations start at effectively zero (the first days on this
+                chart read 3, 1, 0), then climb to peaks of{" "}
                 {HOMECALC_PROOF.peakPerDay} citations per day, accumulating to{" "}
                 {HOMECALC_PROOF.citations.replace("+", "")} across{" "}
                 {HOMECALC_PROOF.pagesCited} cited pages.{" "}
@@ -583,11 +583,11 @@ export default function HomeCalcCaseStudy() {
           </RevealSection>
 
           {/*
-            SECOND, INDEPENDENT PLATFORM — added 2026-08-10.
+            SECOND, INDEPENDENT PLATFORM: added 2026-08-10.
             Deliberately a separate figure with its own number, not merged into the
             Bing total. Bing reports CITATIONS (the page was cited in an answer);
             this report gives IMPRESSIONS ONLY (the page appeared in a generative AI
-            feature) — no clicks, no CTR, no position. Adding 17,800 citations to
+            feature): no clicks, no CTR, no position. Adding 17,800 citations to
             15,000 impressions would produce a figure that traces back to no console
             screen anywhere, which is exactly what this site's provenance rule exists
             to prevent. Two independent platforms agreeing is the stronger claim.
@@ -633,7 +633,7 @@ export default function HomeCalcCaseStudy() {
                 no clicks, CTR or position at all. They are different measurements
                 from different companies, and summing them would invent a number
                 that neither console shows. Two platforms independently registering
-                the same site is the point &mdash; not a bigger total.
+                the same site is the point, not a bigger total.
               </figcaption>
             </figure>
           </RevealSection>
@@ -641,7 +641,7 @@ export default function HomeCalcCaseStudy() {
           {/*
             Cross-platform page comparison, added 2026-08-10.
             NOTE ON METHOD: this deliberately compares WHICH pages appear and in what
-            ORDER — never the magnitudes. Bing counts citations, Google counts
+            ORDER: never the magnitudes. Bing counts citations, Google counts
             impressions; the two numbers are not comparable, but "does this page show
             up at all, and how high" is a fair question to ask of both.
           */}
@@ -659,7 +659,7 @@ export default function HomeCalcCaseStudy() {
             </h3>
             <p style={{ fontSize: 16, color: "var(--muted)", lineHeight: 1.7, marginBottom: 20, maxWidth: "62ch" }}>
               Having both consoles open at once surfaced something neither shows on
-              its own. Same site, same window &mdash; almost entirely different
+              its own. Same site, same window: almost entirely different
               winners.
             </p>
 
@@ -667,7 +667,7 @@ export default function HomeCalcCaseStudy() {
               <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14.5 }}>
                 <thead>
                   <tr>
-                    {["", "Copilot — most cited", "Google AI — most impressions"].map((h) => (
+                    {["", "Copilot: most cited", "Google AI: most impressions"].map((h) => (
                       <th
                         key={h}
                         style={{
@@ -715,15 +715,15 @@ export default function HomeCalcCaseStudy() {
                   Google&rsquo;s single biggest page does not appear in Copilot&rsquo;s
                   top 25 at all.
                 </strong>{" "}
-                The income tax calculator draws 3,659 impressions &mdash; nearly
-                three times Google&rsquo;s second-place page &mdash; and Copilot
+                The income tax calculator draws 3,659 impressions (nearly
+                three times Google&rsquo;s second-place page), and Copilot
                 barely registers it.
               </li>
               <li style={{ marginBottom: 8 }}>
                 <strong style={{ color: "var(--ink)" }}>Copilot cites guides. Google&rsquo;s AI surfaces do not.</strong>{" "}
                 Seven of Copilot&rsquo;s top 25 are written guides, including the
                 single most-cited page on the site. Google&rsquo;s top ten are ten
-                calculators &mdash; not one article.
+                calculators, not one article.
               </li>
               <li>
                 <strong style={{ color: "var(--ink)" }}>Rank does not transfer.</strong>{" "}
@@ -734,7 +734,7 @@ export default function HomeCalcCaseStudy() {
             <p style={{ fontSize: 15, color: "var(--faint)", lineHeight: 1.65, marginBottom: 8, maxWidth: "62ch" }}>
               To be precise about method: the two columns are not the same
               measurement, so the numbers are never compared against each other.
-              What is compared is which pages appear, and where &mdash; a fair
+              What is compared is which pages appear, and where: a fair
               question to ask of either console.
             </p>
             <p style={{ fontSize: 16, color: "var(--muted)", lineHeight: 1.7, maxWidth: "62ch" }}>
@@ -813,7 +813,7 @@ export default function HomeCalcCaseStudy() {
               }}
             >
               Volume matters. Dominance matters more. HomeCalc is no longer just
-              cited by AI engines for Canadian financial calculations — for
+              cited by AI engines for Canadian financial calculations; for
               several of the most important queries in the category, it is the
               <em style={{ fontStyle: "italic" }}> default source</em>.
             </p>
@@ -821,7 +821,7 @@ export default function HomeCalcCaseStudy() {
         </div>
       </section>
 
-      {/* ── 5 — What Was Done ── */}
+      {/* 5. What Was Done */}
       <section style={{ padding: "46px 0" }}>
         <div className="wrap" style={{ maxWidth: 740 }}>
           <RevealSection>
@@ -848,7 +848,7 @@ export default function HomeCalcCaseStudy() {
               Hami Tahm conducted an AI visibility audit on HomeCalc.ca. He
               identified a specific technical change that would improve AI
               platform recognition of the site&rsquo;s pages. The change was
-              implemented — and citations began climbing within 48 hours.
+              implemented, and citations began climbing within 48 hours.
             </p>
             <blockquote
               style={{
@@ -905,7 +905,7 @@ export default function HomeCalcCaseStudy() {
         </div>
       </section>
 
-      {/* ── 6 — What This Means ── */}
+      {/* 6. What This Means */}
       <section style={{ padding: "46px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -932,8 +932,8 @@ export default function HomeCalcCaseStudy() {
             >
               <p style={{ marginBottom: 20 }}>
                 If this worked on a YMYL financial site {HOMECALC_PROOF.domainAge}
-                — the hardest category on the web, on one of the youngest domains
-                in market — it works on businesses with real authority,
+                (the hardest category on the web, on one of the youngest domains
+                in market), it works on businesses with real authority,
                 established history, and clearer queries.
               </p>
               <p>
@@ -947,7 +947,7 @@ export default function HomeCalcCaseStudy() {
           </RevealSection>
 
           {/*
-            ── THE TWO-SIDED FINDING — added 2026-08-24 ──
+            THE TWO-SIDED FINDING: added 2026-08-24
 
             Deliberately carries NO NUMBERS, and that is the point.
 
@@ -957,7 +957,7 @@ export default function HomeCalcCaseStudy() {
 
               1. Its "citation share" figure (3.2%, sixth of ten domains) means
                  something completely different from the "up to 72%" this page
-                 already states from Bing Webmaster Tools — the first is share of
+                 already states from Bing Webmaster Tools: the first is share of
                  all citations across a prompt set, the second is share on one
                  query. Same words, different instruments. Publishing both on one
                  site invites a cross-check that reads as a contradiction.
@@ -972,7 +972,7 @@ export default function HomeCalcCaseStudy() {
             sells earns 12. Placement and discovery are different problems.
 
             ⚠️ If a number is ever added to this block, the reasoning above stops
-            applying — check it against homecalc-proof.ts first.
+            applying: check it against homecalc-proof.ts first.
           */}
           <RevealSection delay={0.04}>
             <div
@@ -1007,7 +1007,7 @@ export default function HomeCalcCaseStudy() {
               >
                 Neither one substitutes for the other, and most sites are only
                 working on one of them. That is the finding underneath every
-                figure on this page &mdash; and it cuts both ways. This site,
+                figure on this page, and it cuts both ways. This site,
                 hamitahm.com, has the opposite problem to HomeCalc: it earns
                 thousands of AI citations while the page it actually sells earns
                 twelve. Being cited is not the same as being cited where it
@@ -1048,7 +1048,7 @@ export default function HomeCalcCaseStudy() {
         </div>
       </section>
 
-      {/* ── 7 — CTA ── */}
+      {/* 7. CTA */}
       <section style={{ padding: "60px 0 80px" }}>
         <div className="wrap">
           <RevealSection>

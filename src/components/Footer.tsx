@@ -24,10 +24,10 @@ export function Footer() {
         </div>
         <div style={{ display: "flex", gap: 22, flexWrap: "wrap" }}>
           <FooterLink href="https://x.com/hamitahm">X / Twitter</FooterLink>
-          {/* Verify this URL if you ever change it — the previous one 404'd. */}
+          {/* Verify this URL if you ever change it: the previous one 404'd. */}
           <FooterLink href="https://www.linkedin.com/in/hami-tahm/">LinkedIn</FooterLink>
           <FooterLink href="/contact">Contact</FooterLink>
-          {/* Legal pages are noindex, but they must be reachable from every page —
+          {/* Legal pages are noindex, but they must be reachable from every page;
               that's the point of them. A privacy policy nobody can find isn't one. */}
           <FooterLink href="/privacy/">Privacy</FooterLink>
           <FooterLink href="/terms/">Terms</FooterLink>
@@ -36,8 +36,8 @@ export function Footer() {
       </div>
       <div className="wrap">
         {/*
-          The footer is sitewide, so crawlers and answer engines read it on every page
-          \u2014 and they do quote it back. These ~20 words carry the canonical descriptor.
+          The footer is sitewide, so crawlers and answer engines read it on every page,
+          and they do quote it back. These ~20 words carry the canonical descriptor.
 
           Keep this sentence identical to the X bio, the LinkedIn headline and the
           Linktree bio. The repetition across surfaces is the point: it is what tells
@@ -53,7 +53,7 @@ export function Footer() {
             lineHeight: 1.6,
           }}
         >
-          AI Visibility Consultant in Toronto &mdash; AEO &amp; GEO for Canadian
+          AI Visibility Consultant in Toronto: AEO &amp; GEO for Canadian
           businesses that want to be cited in ChatGPT, Perplexity, and
           Google AI&nbsp;Overviews.
         </div>

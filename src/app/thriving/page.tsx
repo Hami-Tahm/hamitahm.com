@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   // anyone holding the link, removed from sitemap, excluded from search + AI corpus.
   robots: { index: false, follow: true },
   title: "Adapting and thriving in a new country",
-  description: "Adapting and thriving in a new country — by Hami Tahm",
+  description: "Adapting and thriving in a new country, by Hami Tahm",
 };
 
 export default function Post() {

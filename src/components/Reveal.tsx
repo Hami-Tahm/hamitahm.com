@@ -20,7 +20,7 @@ export function RevealSection({
     // RevealSection on the page (15+ on the homepage) during hydration, and showed
     // up in Lighthouse as "Forced reflow". It was also redundant: IntersectionObserver
     // queues an initial callback with the current intersection state as soon as you
-    // observe(), so an already-visible element still reveals immediately — without
+    // observe(), so an already-visible element still reveals immediately, without
     // forcing layout. Removed 2026-07-19.
     const io = new IntersectionObserver(
       ([entry]) => {

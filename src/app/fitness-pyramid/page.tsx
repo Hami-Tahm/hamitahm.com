@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   // anyone holding the link, removed from sitemap, excluded from search + AI corpus.
   robots: { index: false, follow: true },
   title: "Fitness Pyramid (Beginner → Advanced)",
-  description: "Fitness Pyramid (Beginner → Advanced) — by Hami Tahm",
+  description: "Fitness Pyramid (Beginner → Advanced), by Hami Tahm",
 };
 
 export default function Post() {
@@ -44,7 +44,7 @@ export default function Post() {
         <div
           className="post-content"
           dangerouslySetInnerHTML={ { __html: `<p>At first, we break down the goal, like other startegy plan and goal setting
-<h2 data-start="333" data-end="381">Layer 1 — “Frictionless Start” (7–10 min/day)</h2>
+<h2 data-start="333" data-end="381">Layer 1: “Frictionless Start” (7–10 min/day)</h2>
 <p data-start="382" data-end="447"><strong data-start="382" data-end="391">Goal:</strong> Just wake your body up. Build the habit. Zero pressure.</p></p><p><ul data-start="449" data-end="544">
  	<li data-start="449" data-end="487">
 <p data-start="451" data-end="487">7–10 min easy walking (even indoors)</p>
@@ -55,7 +55,7 @@ export default function Post() {
 </ul>
 <p data-start="546" data-end="593"><strong data-start="546" data-end="566">Rule to move up:</strong><br data-start="566" data-end="569" />Do it 10 days out of 14.</p>
 YouTube videos:</p><p>https://www.youtube.com/watch?v=GHb1xKvO3NY</p><p>She is top-notch in stretching and mobility on YouTube</p><p>https://www.youtube.com/watch?v=s-7lyvblFNI</p><p> </p><p>https://youtu.be/g_tea8ZNk5A?si=rhmNTCIh0Emrez5u</p><p>Just head and shoulder</p><p>https://youtu.be/t-1Z2ZYpmt0?si=SFH-b0RaijWFdE6s</p><p> </p><p>full-body stretching/mobility</p><p>https://youtu.be/L_xrDAtykMI?si=QJJIAT2SAKU0xAa2</p><p> </p><p>https://youtu.be/tnZ96Y2C28Y?si=iFPvIKgESPK8I9iE</p><p> </p><p>https://youtu.be/0FbUo7N_ULg?si=EZPUvAHtoemg8Q-I</p><p> </p><p>https://youtu.be/lPKRiU9u_Hc?si=SBOO4_P2ehUH1bV3</p><p> </p><p>https://youtu.be/R3WDe7byUXo?si=bzGB6UgCzKlQYQc5
-<h2 data-start="600" data-end="656">Layer 2 — “Daily Movement” (20–30 min, 5–6 days/week)</h2>
+<h2 data-start="600" data-end="656">Layer 2: “Daily Movement” (20–30 min, 5–6 days/week)</h2>
 <p data-start="657" data-end="710"><strong data-start="657" data-end="666">Goal:</strong> Basic cardiovascular fitness + consistency.</p></p><p><ul data-start="712" data-end="808">
  	<li data-start="712" data-end="740">
 <p data-start="714" data-end="740">Brisk walking or treadmill</p>
@@ -65,7 +65,7 @@ YouTube videos:</p><p>https://www.youtube.com/watch?v=GHb1xKvO3NY</p><p>She is t
 </li>
 </ul>
 <p data-start="810" data-end="859">Increase steps gradually (+1,000 every 1–2 weeks)</p>
-<p data-start="861" data-end="903"><strong data-start="861" data-end="881">Rule to move up:</strong><br data-start="881" data-end="884" />3 consistent weeks.</p></p><p><h2>Layer 3 — Mobility + Core (10–15 min, 4–6 days/week)</h2>
+<p data-start="861" data-end="903"><strong data-start="861" data-end="881">Rule to move up:</strong><br data-start="881" data-end="884" />3 consistent weeks.</p></p><p><h2>Layer 3: Mobility + Core (10–15 min, 4–6 days/week)</h2>
 <strong>Goal:</strong> Prevent injuries and improve posture, stability, and movement quality.
 These exercises activate the <strong>core, hips, and shoulders</strong>, which are essential before moving to heavier strength training.</p><p><hr /></p><p><h3>1. Plank (20–40 seconds)</h3>
 <img src="https://images.openai.com/static-rsc-3/kYW_oO61OI6SyCBekFWfNxTtnV9dHVoA7MrI-6RNJmU7PPaFkOEgxZfrXCzXXzsUKohmEoeNY-IKIKnngTRhfvOAvCeJrIo3jKOt9ww5cFk?purpose=fullsize&v=1" alt="Image" /></p><p><img src="https://blog.nasm.org/hubfs/how-to-perform-standard-plank.jpg" alt="Image" /></p><p><img src="https://images.openai.com/static-rsc-3/STdAnDw9Uka5ju4XjWHk3fxAQMWjMOj9VHxWQSNefMaohGdwBtE_5ZlC1Zd1mBhY_eK4KmPAVPaFlWmrO-Fnr04Ba30Yjm_lRvACD0Ub3yY?purpose=fullsize&v=1" alt="Image" /></p><p><img src="https://images.openai.com/static-rsc-3/k0Tk5UU_JrtrEzGp83HjD5YaMLpqUXJca-_Zq78rEdjOZwE2pSOcLLCbEOmDdIg8K392i4SDrMMgdkFQr5fbOEQjdFYT3GVqdo0hy_B6Qg8?purpose=fullsize&v=1" alt="Image" /></p><p><strong>How to do it</strong>
@@ -133,11 +133,11 @@ These exercises activate the <strong>core, hips, and shoulders</strong>, which a
  	<li>Helps posture (especially for desk work)</li>
 </ul></p><p><hr /></p><p><h2>Simple Daily Routine (10–15 minutes)</h2>
 <ol>
- 	<li>Plank — 30 sec</li>
- 	<li>Glute bridge — 12 reps</li>
- 	<li>Dead bug — 10 reps each side</li>
- 	<li>Hip hinge drill — 10 reps</li>
- 	<li>Shoulder mobility — 10 reps</li>
+ 	<li>Plank: 30 sec</li>
+ 	<li>Glute bridge: 12 reps</li>
+ 	<li>Dead bug: 10 reps each side</li>
+ 	<li>Hip hinge drill: 10 reps</li>
+ 	<li>Shoulder mobility: 10 reps</li>
 </ol>
 Repeat <strong>2 rounds</strong>.</p><p><hr /></p><p><h2>Rule to Move to the Next Layer</h2>
 You can progress when:

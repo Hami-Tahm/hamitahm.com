@@ -10,11 +10,11 @@ const TURNAROUND = "7 business days";
 const PRICE_DISPLAY = "$1,500 CAD";
 
 /*
- * ── ORTHODONTICS FOLDED IN HERE, NOT GIVEN ITS OWN PAGE — 2026-08-24 ──
+ * ORTHODONTICS FOLDED IN HERE, NOT GIVEN ITS OWN PAGE (2026-08-24)
  *
  * Search Console shows a small but genuinely commercial cluster over three
  * months: "orthodontic seo", "orthodontic seo expert", "orthodontic seo company",
- * "seo for orthodontists" — 334 impressions between them. Small, but the person
+ * "seo for orthodontists": 334 impressions between them. Small, but the person
  * typing it owns a practice and has a budget, which is more than can be said for
  * the 15,000 impressions sitting on "best ai visibility software".
  *
@@ -32,7 +32,7 @@ const PRICE_DISPLAY = "$1,500 CAD";
 export const metadata: Metadata = {
   title: "AI Visibility for Dental & Orthodontic Clinics",
   description:
-    "Ensure your dental or orthodontic practice appears when patients ask Google AI Overviews, ChatGPT, Gemini, or Claude. Audit by Hami Tahm — $1,500 CAD flat.",
+    "Ensure your dental or orthodontic practice appears when patients ask Google AI Overviews, ChatGPT, Gemini, or Claude. Audit by Hami Tahm for $1,500 CAD flat.",
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/ai-visibility-for-dental-clinics/",
   },
@@ -40,11 +40,11 @@ export const metadata: Metadata = {
 
 const DENTAL_CHECKS = [
   "Whether your clinic is mentioned when patients ask for dentists in your city",
-  "Which procedures AI engines associate with your practice — implants, Invisalign, braces and clear aligners, pediatric, cosmetic, emergency, sedation",
+  "Which procedures AI engines associate with your practice: implants, Invisalign, braces and clear aligners, pediatric, cosmetic, emergency, sedation",
   "Accuracy of your address, hours, phone number, and accepted insurance in AI-generated answers",
   "How patient reviews are summarized and represented across platforms",
   "Whether competitors are being recommended in queries your clinic should own",
-  "Which sources AI engines pull from when describing your clinic — and which ones are missing, outdated, or contradicting each other",
+  "Which sources AI engines pull from when describing your clinic, and which ones are missing, outdated, or contradicting each other",
 ] as const;
 
 const PLATFORMS = [
@@ -57,7 +57,7 @@ const PLATFORMS = [
 ] as const;
 
 const DELIVERABLES = [
-  "A written report covering each platform — what AI says about your clinic, what it gets wrong, and where you're invisible",
+  "A written report covering each platform: what AI says about your clinic, what it gets wrong, and where you're invisible",
   "A prioritized action plan ranked by impact and effort",
   `A ${WALKTHROUGH_MINUTES}-minute walkthrough call to review findings and next steps`,
   "14 days of follow-up questions after delivery",
@@ -97,9 +97,9 @@ const COMPARISON_ROWS = [
   ],
   [
     "Relationship to SEO & GMB",
-    "Additional layer — audit runs alongside your existing SEO and GMB work",
-    "Keep investing — strong SEO feeds AI citation signals",
-    "Keep optimizing — GMB data feeds AI local answers",
+    "Additional layer: audit runs alongside your existing SEO and GMB work",
+    "Keep investing: strong SEO feeds AI citation signals",
+    "Keep optimizing: GMB data feeds AI local answers",
   ],
   [
     "Pricing model",
@@ -120,7 +120,7 @@ const PERSONAS = [
   },
   {
     label: "Multi-location dental groups",
-    desc: "2+ clinics where AI responses vary by location, hours, services, or pricing — inconsistency erodes trust before a patient ever calls.",
+    desc: "2+ clinics where AI responses vary by location, hours, services, or pricing; inconsistency erodes trust before a patient ever calls.",
   },
   {
     label: "Dental marketing agencies",
@@ -135,19 +135,19 @@ const FAQ_ITEMS: {
 }[] = [
   {
     q: "How do I get my dental clinic recommended by ChatGPT?",
-    a: 'Make your clinic the clearest, most consistent answer to the questions patients ask AI — "best dentist for implants in [city]," "Invisalign near me." That means aligned website content, Google Business Profile, directory listings, and structured data. The audit shows exactly which of these are keeping your clinic out of AI answers.',
+    a: 'Make your clinic the clearest, most consistent answer to the questions patients ask AI: "best dentist for implants in [city]," "Invisalign near me." That means aligned website content, Google Business Profile, directory listings, and structured data. The audit shows exactly which of these are keeping your clinic out of AI answers.',
   },
   {
     q: "Do AI tools actually recommend dental clinics to patients?",
-    a: 'Yes. Google AI Overviews, ChatGPT, Gemini, and Bing Copilot all answer questions like "best dentist for implants in [city]" or "which clinic should I go to for Invisalign near me" with named clinic recommendations. Patients who ask these questions often call the named clinic directly — without ever opening Google search.',
+    a: 'Yes. Google AI Overviews, ChatGPT, Gemini, and Bing Copilot all answer questions like "best dentist for implants in [city]" or "which clinic should I go to for Invisalign near me" with named clinic recommendations. Patients who ask these questions often call the named clinic directly, without ever opening Google search.',
   },
   {
     q: "Is this the same as dental SEO?",
-    a: "No. Dental SEO improves how your website ranks in Google's classic search results. AI visibility is an additional layer on top — it covers how AI platforms describe and recommend your clinic. Keep your SEO and GMB investments; the audit shows what's missing from the AI surface specifically. You can rank #1 on Google and still be missing from the answer ChatGPT gives a patient.",
+    a: "No. Dental SEO improves how your website ranks in Google's classic search results. AI visibility is an additional layer on top: it covers how AI platforms describe and recommend your clinic. Keep your SEO and GMB investments; the audit shows what's missing from the AI surface specifically. You can rank #1 on Google and still be missing from the answer ChatGPT gives a patient.",
   },
   {
-    q: "My clinic has great Google reviews — why am I not showing up in AI?",
-    a: "Reviews are one signal AI engines use, but they're not enough on their own. AI platforms pull from your website content, Google Business Profile, directory listings, third-party mentions, and structured data. If any of those sources are inconsistent, outdated, or missing critical information, AI engines often skip your clinic — even with strong reviews.",
+    q: "My clinic has great Google reviews, so why am I not showing up in AI?",
+    a: "Reviews are one signal AI engines use, but they're not enough on their own. AI platforms pull from your website content, Google Business Profile, directory listings, third-party mentions, and structured data. If any of those sources are inconsistent, outdated, or missing critical information, AI engines often skip your clinic, even with strong reviews.",
   },
   {
     q: "How quickly can I see results?",
@@ -164,21 +164,21 @@ const FAQ_ITEMS: {
   },
   {
     /*
-     * Answers the "orthodontic seo" cluster head-on, and has to say NO first —
+     * Answers the "orthodontic seo" cluster head-on, and has to say NO first,
      * because the honest answer is no, and because implying otherwise would undo
      * the /seo-expert-toronto/ rewrite. Saying no and then naming the thing the
      * searcher may not have known to ask for is the entire point of this entry.
      */
     q: "Do you do orthodontic SEO?",
-    a: "No — I don't take SEO or execution work of any kind. What I do sits on top of it: measuring how ChatGPT, Google AI Overviews, Gemini, Claude, Copilot and Perplexity actually describe and recommend your practice, then handing your existing marketing team or agency a prioritized list of what to change. If you are searching for orthodontic SEO because new patients aren't finding you, it is worth checking whether ranking is the problem at all. You can sit at #1 on Google for “orthodontist in [city]” and still be absent from the answer an AI gives a parent who never opens Google.",
+    a: "No. I don't take SEO or execution work of any kind. What I do sits on top of it: measuring how ChatGPT, Google AI Overviews, Gemini, Claude, Copilot and Perplexity actually describe and recommend your practice, then handing your existing marketing team or agency a prioritized list of what to change. If you are searching for orthodontic SEO because new patients aren't finding you, it is worth checking whether ranking is the problem at all. You can sit at #1 on Google for “orthodontist in [city]” and still be absent from the answer an AI gives a parent who never opens Google.",
   },
   {
     q: "Do you work with orthodontists, or only general dentists?",
-    a: "Both, and the audit is the same. Orthodontic queries tend to be more specific than general dental ones — patients compare clear aligners against braces, and ask about treatment length and cost, before they ask for a practice by name — so the prompts differ. What gets measured, and what you receive, does not.",
+    a: "Both, and the audit is the same. Orthodontic queries tend to be more specific than general dental ones (patients compare clear aligners against braces, and ask about treatment length and cost, before they ask for a practice by name), so the prompts differ. What gets measured, and what you receive, does not.",
   },
   {
     q: "Do you work with clinics outside major cities?",
-    a: "Yes. Clinics in smaller markets often see the largest AI visibility wins, because AI engines tend to default to clinics in nearby larger cities — leaving local practices missing from answers their own patients are asking.",
+    a: "Yes. Clinics in smaller markets often see the largest AI visibility wins, because AI engines tend to default to clinics in nearby larger cities, leaving local practices missing from answers their own patients are asking.",
   },
 ];
 
@@ -194,7 +194,7 @@ const RELATED_LINKS = [
     href: "/ai-visibility/ai-visibility-for-mortgage-brokers/",
   },
   {
-    label: "Top 10 to #1 — a 7-year dental SEO case study",
+    label: "Top 10 to #1: a 7-year dental SEO case study",
     href: "/orthodontic-seo-marketing-case-study/",
   },
 ] as const;
@@ -272,7 +272,7 @@ export default function AIVisibilityDentalClinics() {
         </RevealSection>
       </div>
 
-      {/* ── 1 — Hero ── */}
+      {/* Section 1: Hero */}
       <header style={{ padding: "34px 0 50px" }}>
         <div className="wrap">
           <RevealSection>
@@ -301,7 +301,7 @@ export default function AIVisibilityDentalClinics() {
               }}
             >
               AI visibility for dental clinics is the practice of ensuring your
-              clinic appears — accurately and consistently — when patients ask AI
+              clinic appears (accurately and consistently) when patients ask AI
               tools like Google AI Overviews, ChatGPT, Gemini, or Claude for dentist
               recommendations. Hami Tahm audits dental clinics across these
               platforms to identify where your clinic is missing, misrepresented,
@@ -336,7 +336,7 @@ export default function AIVisibilityDentalClinics() {
         </div>
       </header>
 
-      {/* ── 2 — How Patients Find Dentists ── */}
+      {/* Section 2: How Patients Find Dentists */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 740 }}>
           <RevealSection>
@@ -393,14 +393,14 @@ export default function AIVisibilityDentalClinics() {
               Gemini, and Bing Copilot. Each one generates an answer to a
               patient&rsquo;s question, and each one decides which clinics to
               mention. If your clinic isn&rsquo;t in those answers, you
-              don&rsquo;t get the call — regardless of how well you rank on
+              don&rsquo;t get the call, regardless of how well you rank on
               traditional Google search.
             </p>
           </RevealSection>
         </div>
       </section>
 
-      {/* ── 3 — Definition ── */}
+      {/* Section 3: Definition */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -441,7 +441,7 @@ export default function AIVisibilityDentalClinics() {
                 your clinic when a patient asks. It covers three things: whether
                 you&rsquo;re mentioned at all, what services and specialties
                 you&rsquo;re associated with, and whether the practical details
-                — location, hours, accepted insurance, procedure list — are
+                (location, hours, accepted insurance, procedure list) are
                 accurate.
               </p>
               <p
@@ -465,7 +465,7 @@ export default function AIVisibilityDentalClinics() {
         </div>
       </section>
 
-      {/* ── 4 — Audit Scope ── */}
+      {/* Section 4: Audit Scope */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -527,7 +527,7 @@ export default function AIVisibilityDentalClinics() {
         </div>
       </section>
 
-      {/* ── 5 — Proof ── */}
+      {/* Section 5: Proof */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -541,7 +541,7 @@ export default function AIVisibilityDentalClinics() {
                 marginBottom: 24,
               }}
             >
-              Proof — Results From a Real AI Visibility Audit
+              Proof: Results From a Real AI Visibility Audit
             </h2>
           </RevealSection>
 
@@ -563,11 +563,11 @@ export default function AIVisibilityDentalClinics() {
                   marginBottom: 20,
                 }}
               >
-                HomeCalc.ca is a Canadian personal finance calculator site —{" "}
-                {HOMECALC_PROOF.domainAge}. After an AI
+                HomeCalc.ca is a Canadian personal finance calculator site (
+                {HOMECALC_PROOF.domainAge}). After an AI
                 visibility audit by Hami Tahm, the site went from near-zero AI
                 appearances to {HOMECALC_PROOF.combinedAppearances} in{" "}
-                {HOMECALC_PROOF.timeframe} &mdash;{" "}
+                {HOMECALC_PROOF.timeframe}, with{" "}
                 {HOMECALC_PROOF.combinedSourceLong}.
               </p>
               <p
@@ -578,12 +578,12 @@ export default function AIVisibilityDentalClinics() {
                   marginBottom: 24,
                 }}
               >
-                HomeCalc operates in financial services — one of Google&rsquo;s
+                HomeCalc operates in financial services, one of Google&rsquo;s
                 strictest YMYL categories{" "}
                 <em style={{ fontStyle: "italic" }}>
                   (Your Money or Your Life)
                 </em>
-                . Dental is also a YMYL category — health. AI engines apply
+                . Dental is also a YMYL category: health. AI engines apply
                 similar caution before citing both.
               </p>
               <p
@@ -650,13 +650,13 @@ export default function AIVisibilityDentalClinics() {
 
           <RevealSection delay={0.14}>
             <div style={{ marginTop: 24 }}>
-              <PlaceholderCard note="First dental client case study — coming summer 2026" />
+              <PlaceholderCard note="First dental client case study, coming summer 2026" />
             </div>
           </RevealSection>
         </div>
       </section>
 
-      {/* ── 6 — Comparison ── */}
+      {/* Section 6: Comparison */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -682,7 +682,7 @@ export default function AIVisibilityDentalClinics() {
             >
               Most dental clinics already invest in Google SEO, Google My Business
               optimization, or a dental marketing agency. An AI visibility audit
-              is not a replacement for any of those — it is an additional layer
+              is not a replacement for any of those: it is an additional layer
               on top of the work you already do. Strong SEO and a complete GMB
               profile feed AI signals; the audit shows what&rsquo;s still missing
               from AI-generated answers. Here&rsquo;s how the three compare.
@@ -700,7 +700,7 @@ export default function AIVisibilityDentalClinics() {
             />
             <p style={{ marginTop: 24, fontSize: 15, color: "var(--muted)" }}>
               Strong Google reviews and a complete GMB profile help your AI
-              visibility — but they don&rsquo;t guarantee it on their own. AI
+              visibility, but they don&rsquo;t guarantee it on their own. AI
               engines pull from many more sources, and inconsistencies across
               those sources are the most common reason a clinic stays invisible
               in AI answers. Keep your SEO and GMB programs running; add the
@@ -710,7 +710,7 @@ export default function AIVisibilityDentalClinics() {
         </div>
       </section>
 
-      {/* ── 7 — How It Works ── */}
+      {/* Section 7: How It Works */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 720 }}>
           <RevealSection>
@@ -748,7 +748,7 @@ export default function AIVisibilityDentalClinics() {
         </div>
       </section>
 
-      {/* ── 8 — Who This Is For ── */}
+      {/* Section 8: Who This Is For */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -795,7 +795,7 @@ export default function AIVisibilityDentalClinics() {
         </div>
       </section>
 
-      {/* ── 9 — FAQ ── */}
+      {/* Section 9: FAQ */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 760 }}>
           <RevealSection>
@@ -854,7 +854,7 @@ export default function AIVisibilityDentalClinics() {
         </div>
       </section>
 
-      {/* ── 10 — Related Reading ── */}
+      {/* Section 10: Related Reading */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 760 }}>
           <RevealSection>
@@ -898,7 +898,7 @@ export default function AIVisibilityDentalClinics() {
         </div>
       </section>
 
-      {/* ── 11 — Final CTA ── */}
+      {/* Section 11: Final CTA */}
       <section style={{ padding: "60px 0 80px" }}>
         <div className="wrap">
           <RevealSection>

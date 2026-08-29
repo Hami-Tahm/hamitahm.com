@@ -5,7 +5,7 @@ import { blogSchemaJson } from "@/lib/blog-schema";
 
 const ARTICLE_TITLE = "What I'm Actually Good At";
 const ARTICLE_DESCRIPTION =
-  "A decade of building, testing and shipping digital products across two markets — and an honest look at where I actually add value.";
+  "A decade of building, testing and shipping digital products across two markets, and an honest look at where I actually add value.";
 
 export const metadata: Metadata = {
   title: "What I’m Actually Good At",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
 };
 
-// Schema added 2026-07-14 — this legacy post had none.
+// Schema added 2026-07-14: this legacy post had none.
 const schemaJson = blogSchemaJson({
   slug: "service-business-growth",
   title: ARTICLE_TITLE,

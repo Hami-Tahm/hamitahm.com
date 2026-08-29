@@ -6,7 +6,7 @@ import { HOMECALC_PROOF, HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
 import { SNAPSHOT } from "@/lib/ai-citation-proof";
 
 export const metadata: Metadata = {
-  title: { absolute: "Disclaimer — Hami Tahm" },
+  title: { absolute: "Disclaimer: Hami Tahm" },
   description:
     "What the results and case studies on this site do and do not mean. AI engine outputs change constantly; nothing here is a guarantee.",
   alternates: { canonical: "https://hamitahm.com/disclaimer/" },
@@ -20,7 +20,7 @@ export default function DisclaimerPage() {
   return (
     <LegalPage
       title="Disclaimer"
-      intro="This page exists because the honest version of AI visibility is less tidy than the marketing version — and I would rather you knew that before you paid me than after."
+      intro="This page exists because the honest version of AI visibility is less tidy than the marketing version, and I would rather you knew that before you paid me than after."
     >
       <H2>No guarantee of results</H2>
       <p>
@@ -31,7 +31,7 @@ export default function DisclaimerPage() {
         lying.
       </p>
 
-      <H2>AI answers change &mdash; constantly</H2>
+      <H2>AI answers change constantly</H2>
       <p>
         AI-generated answers are not stable. The same prompt, asked twice, can return
         different sources, different names, and different wording. Answers vary by user,
@@ -41,11 +41,11 @@ export default function DisclaimerPage() {
       </p>
       <p>
         Every result shown on this site is therefore a <strong>dated snapshot</strong>,
-        not a permanent state. Where I show an AI answer that mentions me &mdash; see{" "}
+        not a permanent state. Where I show an AI answer that mentions me (see{" "}
         <Link href={ENGINES_URL} style={{ color: "var(--accent)" }}>
           AI Engines Already Name Hami Tahm
-        </Link>{" "}
-        &mdash; it is a capture from {SNAPSHOT.displayDate}. It is evidence that it
+        </Link>
+        ), it is a capture from {SNAPSHOT.displayDate}. It is evidence that it
         happened. It is not a claim that it always happens, or that it happens for you.
       </p>
 
@@ -65,10 +65,10 @@ export default function DisclaimerPage() {
           Performance (Microsoft Copilot and partners), plus{" "}
           {HOMECALC_PROOF.googleImpressions} impressions in Google Search
           Console&rsquo;s Generative AI features report. It is still not a measure of
-          every AI engine &mdash; ChatGPT, Gemini and Perplexity publish nothing at all.
+          every AI engine: ChatGPT, Gemini and Perplexity publish nothing at all.
         </li>
         <li>
-          It is a count of <strong>appearances</strong> &mdash; how often a page was
+          It is a count of <strong>appearances</strong>: how often a page was
           cited or shown as a source inside an AI answer. It is deliberately not called
           a citation count, because {HOMECALC_PROOF.googleImpressions} of it is Google
           impressions and Google publishes no citation figure. It is{" "}
@@ -92,8 +92,8 @@ export default function DisclaimerPage() {
 
       <H2>The free AI Visibility Check</H2>
       <p>
-        The free check is a limited, manual review &mdash; a look at whether a small number
-        of AI engines currently surface your business for a small number of queries. It is
+        The free check is a limited, manual review (a look at whether a small number
+        of AI engines currently surface your business for a small number of queries). It is
         a starting point, not an audit, and not a complete picture of your AI visibility.
         It is offered as-is, with no service level and no warranty.
       </p>
@@ -102,7 +102,7 @@ export default function DisclaimerPage() {
       <p>
         Content on this site is general information about search and AI visibility. It is
         not legal, financial, medical, or other professional advice. Some pages discuss
-        regulated industries &mdash; dental, mortgage, legal, real estate. Nothing here is
+        regulated industries: dental, mortgage, legal, real estate. Nothing here is
         advice about how to run a regulated business, and you remain responsible for your
         own compliance and advertising obligations.
       </p>

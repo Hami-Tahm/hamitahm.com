@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   // anyone holding the link, removed from sitemap, excluded from search + AI corpus.
   robots: { index: false, follow: true },
   title: "How Many Diets Exist in the World?",
-  description: "How Many Diets Exist in the World? — by Hami Tahm",
+  description: "How Many Diets Exist in the World? (by Hami Tahm)",
 };
 
 export default function Post() {

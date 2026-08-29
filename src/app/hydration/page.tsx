@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   // anyone holding the link, removed from sitemap, excluded from search + AI corpus.
   robots: { index: false, follow: true },
   title: "Hydration for High Performers: Energy, Focus, Output",
-  description: "Hydration for High Performers: Maximize Energy, Focus, and Productivity — by Hami Tahm",
+  description: "Hydration for High Performers: Maximize Energy, Focus, and Productivity (by Hami Tahm)",
 };
 
 export default function Post() {
@@ -36,7 +36,7 @@ export default function Post() {
         {/* Content */}
         <Image
           src="/images/writing/hydration/Hydration.png"
-          alt="Hydration guide for high performers — water intake and energy optimization"
+          alt="Hydration guide for high performers: water intake and energy optimization"
           width={662}
           height={487}
           style={{ width: "100%", height: "auto", borderRadius: 12, margin: "32px 0" }}
@@ -44,7 +44,7 @@ export default function Post() {
         <div
           className="post-content"
           dangerouslySetInnerHTML={ { __html: `<span style="font-weight: 400;">Drinking enough water (<strong>at least 2-3 liters daily</strong>) helps with digestion, brain function, and energy levels. </span><span style="font-weight: 400;">Dehydration can cause <strong>headaches</strong>, <strong>fatigue</strong>, and <strong>poor concentration</strong>.</span></p><p>We will go over some key points in the discussion.
-<span style="font-weight: 400;">Drinking enough water is essential, but </span><b>hydration isn’t just about drinking plain water.</b><span style="font-weight: 400;"> Here are some additional </span>hacks, strategies, and science-backed tips<span style="font-weight: 400;"> to stay optimally hydrated:</span></p><p> </p><p><img class="aligncenter" src="/images/writing/hydration/Hydration.png" alt="Optimal hydration strategies infographic — water, electrolytes, foods, and timing for daily hydration" />
+<span style="font-weight: 400;">Drinking enough water is essential, but </span><b>hydration isn’t just about drinking plain water.</b><span style="font-weight: 400;"> Here are some additional </span>hacks, strategies, and science-backed tips<span style="font-weight: 400;"> to stay optimally hydrated:</span></p><p> </p><p><img class="aligncenter" src="/images/writing/hydration/Hydration.png" alt="Optimal hydration strategies infographic: water, electrolytes, foods, and timing for daily hydration" />
 <h2><b>1. Optimize Your Water Intake Throughout the Day</b></h2>
 <ul>
  	<li style="font-weight: 400;" aria-level="1">Morning: Start your day with 500ml (16-20 oz) of warm or room-temperature water. This jumpstarts digestion, metabolism, and brain function.</li>
@@ -53,7 +53,7 @@ export default function Post() {
  	<li style="font-weight: 400;" aria-level="1">Evening<b>:</b><span style="font-weight: 400;"> Avoid drinking too much before bed to prevent waking up at night for bathroom trips.</span></li>
 </ul>
 <h2><b>2. Add Electrolytes for Better Absorption</b></h2>
-<span style="font-weight: 400;">Water alone isn’t enough—your body needs </span><b>electrolytes</b><span style="font-weight: 400;"> (sodium, potassium, magnesium) to retain and use water efficiently.</span>
+<span style="font-weight: 400;">Water alone isn’t enough; your body needs </span><b>electrolytes</b><span style="font-weight: 400;"> (sodium, potassium, magnesium) to retain and use water efficiently.</span>
 <ul>
  	<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Add a pinch of </span><b>Himalayan salt</b><span style="font-weight: 400;"> or </span><b>electrolyte powder</b><span style="font-weight: 400;"> to your water, especially if you sweat a lot.</span></li>
  	<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Eat hydrating foods high in potassium (bananas, avocados, spinach, coconut water).</span></li>
@@ -118,7 +118,7 @@ export default function Post() {
 ✅ Electrolytes Boost: After sweating, add salt, coconut water, or electrolyte tablets.
 ✅ Hydrating Snacks: Eat watermelon, cucumbers, oranges, and soups.
 ✅ Smart Water Choices: Filtered, mineral, or spring water is better than plain tap.
-✅ Personalized Approach:<span style="font-weight: 400;"> Adjust water intake based on weight, activity level, and climate.</span></p><p><b>Ultimate Rule:</b><span style="font-weight: 400;"> If you feel </span><b>tired, hungry, or sluggish</b><span style="font-weight: 400;">, drink water first—it might fix the problem!</span></p><p><strong>P.S: Stop drinking water two hours before sleep to avoid waking up to urinate.</strong>` } }
+✅ Personalized Approach:<span style="font-weight: 400;"> Adjust water intake based on weight, activity level, and climate.</span></p><p><b>Ultimate Rule:</b><span style="font-weight: 400;"> If you feel </span><b>tired, hungry, or sluggish</b><span style="font-weight: 400;">, drink water first; it might fix the problem!</span></p><p><strong>P.S: Stop drinking water two hours before sleep to avoid waking up to urinate.</strong>` } }
         />
 
         {/* Author box */}

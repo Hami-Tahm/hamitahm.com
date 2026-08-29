@@ -10,14 +10,14 @@ const CHECKER_URL = "/ai-visibility/ai-visibility-checker/";
 const CASE_STUDY_URL = "/case-studies/homecalc-ai-visibility/";
 
 /**
- * PROFILES — alter-ego profiles of the same person. Rendered with rel="me".
+ * PROFILES: alter-ego profiles of the same person. Rendered with rel="me".
  *
  * These MUST stay identical to the Person `sameAs` in layout.tsx: both are identity
  * assertions ("this is also me"). Listing them visibly here with rel="me" closes the
- * round-trip — each profile links back to hamitahm.com, and now hamitahm.com links out
+ * round-trip: each profile links back to hamitahm.com, and now hamitahm.com links out
  * to each. Machines trust a confirmed round-trip far more than a one-way claim.
  *
- * Companies Hami founded (HomeCalc, Houmse) are NOT here — they are not "him", they are
+ * Companies Hami founded (HomeCalc, Houmse) are NOT here; they are not "him", they are
  * ventures. They live in VENTURES below (no rel="me"), and are modelled in schema via
  * `founder`/`owns`, not sameAs.
  */
@@ -30,7 +30,7 @@ const PROFILES = [
   { label: "Product Hunt", href: "https://www.producthunt.com/@hamitahm" },
 ] as const;
 
-/** Ventures he founded — linked, but NOT asserted as his identity (no rel="me"). */
+/** Ventures he founded: linked, but NOT asserted as his identity (no rel="me"). */
 const VENTURES = [
   { label: "HomeCalc.ca", href: "https://homecalc.ca" },
   { label: "Houmse.com", href: "https://houmse.com" },
@@ -48,14 +48,14 @@ const pillStyle: React.CSSProperties = {
 
 export const metadata: Metadata = {
   // `absolute` is required. The root layout applies the template "%s | Hami Tahm", so
-  // a plain string here rendered as "Hami Tahm — AI Visibility Consultant | HamiTahm.com
-  // | Hami Tahm" — the name twice in one title. That is the exact keyword-stuffing
+  // a plain string here rendered as "Hami Tahm: AI Visibility Consultant | HamiTahm.com
+  // | Hami Tahm", the name twice in one title. That is the exact keyword-stuffing
   // pattern search engines have penalised since 2012.
   title: {
-    absolute: "Hami Tahm — AI Visibility Consultant in Toronto, Canada",
+    absolute: "Hami Tahm: AI Visibility Consultant in Toronto, Canada",
   },
   description:
-    "Hami Tahm — Toronto AI visibility consultant. AEO & GEO to get Canadian businesses cited in Google AI Overviews, ChatGPT, Gemini, and Claude. Founder of HomeCalc.ca.",
+    "Hami Tahm: Toronto AI visibility consultant. AEO & GEO to get Canadian businesses cited in Google AI Overviews, ChatGPT, Gemini, and Claude. Founder of HomeCalc.ca.",
   alternates: {
     canonical: "https://hamitahm.com/hami-tahm/",
   },
@@ -63,11 +63,11 @@ export const metadata: Metadata = {
 
 /**
  * This page used to redefine the Person with the same @id already declared in
- * layout.tsx, but with a different sameAs list — two conflicting definitions of one
+ * layout.tsx, but with a different sameAs list: two conflicting definitions of one
  * entity, which is exactly what an @id exists to prevent.
  *
  * The Person is now declared ONCE, in layout.tsx, and referenced here by @id.
- * If you need to add a property to it, add it there — not here.
+ * If you need to add a property to it, add it there, not here.
  */
 const structuredData = {
   "@context": "https://schema.org",
@@ -76,7 +76,7 @@ const structuredData = {
       "@type": "ProfilePage",
       "@id": "https://hamitahm.com/hami-tahm/#profilepage",
       url: "https://hamitahm.com/hami-tahm/",
-      name: "Hami Tahm — AI Visibility Consultant",
+      name: "Hami Tahm: AI Visibility Consultant",
       mainEntity: { "@id": "https://hamitahm.com/#hami-tahm" },
       breadcrumb: { "@id": "https://hamitahm.com/hami-tahm/#breadcrumb" },
     },
@@ -123,12 +123,12 @@ export default function AboutPage() {
             <div className="hero-grid">
               <div>
                 <h1 style={{ fontFamily: "var(--serif)", fontWeight: 500, fontSize: "clamp(38px, 5.6vw, 64px)", lineHeight: 1.06, letterSpacing: "-.032em" }}>
-                  I build, test, and ship &mdash;{" "}
+                  I build, test, and ship,{" "}
                   <em style={{ fontStyle: "italic", color: "var(--accent)" }}>then double down</em>{" "}
                   on what works.
                 </h1>
                 <p style={{ marginTop: 28, fontSize: "clamp(17px, 2vw, 20px)", color: "var(--muted)", maxWidth: "54ch", lineHeight: 1.65 }}>
-                  Hami Tahm is a Canadian AI visibility consultant and founder — building tools and practices that help businesses appear in AI-powered search. Based in Toronto, Hami runs HamiTahm.com as his AI visibility practice and HomeCalc.ca as a live case study in AI citation growth. He works with <Link href="/ai-visibility/ai-visibility-consultant-toronto/" style={{ color: "var(--accent)", fontWeight: 500 }}>businesses across Toronto and the GTA</Link>, and takes on <Link href="/seo-expert-toronto/" style={{ color: "var(--accent)", fontWeight: 500 }}>traditional SEO engagements</Link> where the two overlap. Every result he publishes is traceable to a <Link href="/case-studies/" style={{ color: "var(--accent)", fontWeight: 500 }}>case study</Link>.
+                  Hami Tahm is a Canadian AI visibility consultant and founder, building tools and practices that help businesses appear in AI-powered search. Based in Toronto, Hami runs HamiTahm.com as his AI visibility practice and HomeCalc.ca as a live case study in AI citation growth. He works with <Link href="/ai-visibility/ai-visibility-consultant-toronto/" style={{ color: "var(--accent)", fontWeight: 500 }}>businesses across Toronto and the GTA</Link>, and takes on <Link href="/seo-expert-toronto/" style={{ color: "var(--accent)", fontWeight: 500 }}>traditional SEO engagements</Link> where the two overlap. Every result he publishes is traceable to a <Link href="/case-studies/" style={{ color: "var(--accent)", fontWeight: 500 }}>case study</Link>.
                 </p>
               </div>
               <div className="portrait">
@@ -151,11 +151,11 @@ export default function AboutPage() {
         </div>
       </header>
 
-      {/* WHY — the belief underneath every venture below, stated once, plainly.
+      {/* WHY: the belief underneath every venture below, stated once, plainly.
           Placed right after the hero and before the facts/short-version sections
           on purpose: the numbers and the products are evidence FOR this, not
-          the thing itself. Kept short — one sentence of belief, one of what it
-          means in practice — rather than turned into a mission-statement essay. */}
+          the thing itself. Kept short (one sentence of belief, one of what it
+          means in practice) rather than turned into a mission-statement essay. */}
       <div className="wrap">
         <RevealSection delay={0.08}>
           <div
@@ -188,7 +188,7 @@ export default function AboutPage() {
                 color: "var(--ink)",
               }}
             >
-              The best answer should win &mdash; not the biggest brand.
+              The best answer should win, not the biggest brand.
             </p>
             <p
               style={{
@@ -216,8 +216,8 @@ export default function AboutPage() {
             <Stat value="~14" label="Ventures" />
             {/*
               Was: 100 hrs/wk "Deep work".
-              For the buyer this page is written for — a dentist, a lawyer, a broker
-              deciding whether to hand over $1,500 — "100 hours a week" does not read as
+              For the buyer this page is written for (a dentist, a lawyer, a broker
+              deciding whether to hand over $1,500), "100 hours a week" does not read as
               commitment. It reads as: this person will burn out and my project will be
               left half-finished. It also contradicts everything else we sell: a system,
               a repeatable playbook, flat fees, no retainer.
@@ -227,7 +227,7 @@ export default function AboutPage() {
         </RevealSection>
       </div>
 
-      {/* 01 — THE SHORT VERSION */}
+      {/* Section 01: The short version */}
       <section style={{ padding: "80px 0" }}>
         <div className="wrap">
           <RevealSection delay={0.18}>
@@ -238,12 +238,12 @@ export default function AboutPage() {
               REWRITTEN 2026-07-14. Four things were wrong here:
 
               1. RENDER BUG. It read `from near-zero to {HOMECALC_CLAIMS.zeroToAppearances}`
-                 — but that constant ALREADY contains "near-zero to". The live page said
+                 , but that constant ALREADY contains "near-zero to". The live page said
                  "from near-zero to near-zero to 7,400+ AI citations." Same bug again on
                  the "It crossed …" line. Use `citationsInTimeframe`, not `zeroToCitations`.
               2. MIXED POV. Third person ("He took…"), then first ("I'm Hami Tahm"), then
                  back. To a language model that reads as two people. One voice: first.
-              3. UNSOURCED NUMBER. "Khedmatazma, 3M+ users across 80 cities" — a big claim
+              3. UNSOURCED NUMBER. "Khedmatazma, 3M+ users across 80 cities": a big claim
                  with nothing behind it. Generalised.
               4. NO LINK TO THE PROOF. The page claimed 7,400+ citations twice and linked
                  to the case study zero times. That is now the single cheapest credibility
@@ -251,7 +251,7 @@ export default function AboutPage() {
             */}
             <div className="prose">
               <p className="big">
-                I&rsquo;m Hami Tahm. I build the proof for AI visibility before I sell it. I took HomeCalc.ca &mdash; a brand-new Canadian real estate site &mdash; from near-zero to{" "}
+                I&rsquo;m Hami Tahm. I build the proof for AI visibility before I sell it. I took HomeCalc.ca (a brand-new Canadian real estate site) from near-zero to{" "}
                 <Link href={CASE_STUDY_URL} style={{ color: "var(--accent)", fontWeight: 500 }}>
                   {HOMECALC_CLAIMS.appearancesInTimeframe}
                 </Link>
@@ -284,7 +284,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 02 — HOW I WORK */}
+      {/* Section 02: How I work */}
       <section style={{ padding: "80px 0" }}>
         <div className="wrap">
           <RevealSection delay={0.06}>
@@ -292,7 +292,7 @@ export default function AboutPage() {
           </RevealSection>
           <RevealSection delay={0.12}>
             <div className="method">
-              <MethodCard n="01" title="Build fast" desc="Ship the smallest real version, this week. Plans don&rsquo;t survive contact with users &mdash; products do." />
+              <MethodCard n="01" title="Build fast" desc="Ship the smallest real version, this week. Plans don&rsquo;t survive contact with users; products do." />
               <MethodCard n="02" title="Test aggressively" desc="Let the market, not the roadmap, decide what&rsquo;s true. Real signal over comfortable assumptions." />
               <MethodCard n="03" title="Kill what doesn&rsquo;t work" desc="No sunk-cost loyalty. A clean shutdown frees the resources the next bet needs." />
               <MethodCard n="04" title="Double down on what does" desc="When something works, concentrate everything on it. Focus beats spreading thin every time." />
@@ -301,7 +301,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA — before Execution Snapshot */}
+      {/* CTA: before Execution Snapshot */}
       <section style={{ padding: "0 0 80px" }}>
         <div className="wrap">
           <RevealSection delay={0.06}>
@@ -330,8 +330,8 @@ export default function AboutPage() {
                 {/*
                   This page used to offer three CTAs, two of which ("Book an AI visibility
                   audit" and "Get Your AI Visibility Audit") pointed at the SAME URL. Three
-                  choices, two identical — so the reader picks none.
-                  Now: one free, low-commitment entry point first (the checker — this is a
+                  choices, two identical, so the reader picks none.
+                  Now: one free, low-commitment entry point first (the checker; this is a
                   cold page, most readers are not ready to spend $1,500), then the audit.
                 */}
                 <li>
@@ -350,7 +350,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 03 — EXECUTION SNAPSHOT */}
+      {/* Section 03: Execution snapshot */}
       <section style={{ padding: "80px 0" }}>
         <div className="wrap">
           <RevealSection delay={0.06}>
@@ -368,7 +368,7 @@ export default function AboutPage() {
                     <a href="https://homecalc.ca" target="_blank" rel="noopener noreferrer" style={{ borderBottom: "1px solid var(--line-strong)", transition: "border-color .2s" }}>HomeCalc.ca</a>
                   </div>
                   <div style={{ color: "var(--muted)", fontSize: 15, marginTop: 5, maxWidth: "52ch" }}>
-                    Ontario real-estate calculators &mdash; built solo, ranking, earning AI citations.
+                    Ontario real-estate calculators, built solo, ranking, earning AI citations.
                   </div>
                   <span style={{ fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".06em", textTransform: "uppercase", color: "var(--accent)", background: "var(--accent-soft)", borderRadius: 999, padding: "3px 10px", marginTop: 8, display: "inline-block" }}>Real Estate</span>
                 </div>
@@ -384,7 +384,7 @@ export default function AboutPage() {
                     <a href="https://hamitahm.com" target="_blank" rel="noopener noreferrer" style={{ borderBottom: "1px solid var(--line-strong)", transition: "border-color .2s" }}>HamiTahm.com</a>
                   </div>
                   <div style={{ color: "var(--muted)", fontSize: 15, marginTop: 5, maxWidth: "52ch" }}>
-                    This site &mdash; writing, case studies, and AI visibility practice.
+                    This site: writing, case studies, and AI visibility practice.
                   </div>
                   <span style={{ fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".06em", textTransform: "uppercase", color: "var(--accent)", background: "var(--accent-soft)", borderRadius: 999, padding: "3px 10px", marginTop: 8, display: "inline-block" }}>Personal Brand</span>
                 </div>
@@ -400,7 +400,7 @@ export default function AboutPage() {
                     <a href="https://houmse.com" target="_blank" rel="noopener noreferrer" style={{ borderBottom: "1px solid var(--line-strong)", transition: "border-color .2s" }}>Houmse.com</a>
                   </div>
                   <div style={{ color: "var(--muted)", fontSize: 15, marginTop: 5, maxWidth: "52ch" }}>
-                    Home services marketplace &mdash; multiple pivots, still live and serving users.
+                    Home services marketplace: multiple pivots, still live and serving users.
                   </div>
                   <span style={{ fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".06em", textTransform: "uppercase", color: "var(--accent)", background: "var(--accent-soft)", borderRadius: 999, padding: "3px 10px", marginTop: 8, display: "inline-block" }}>Home Services</span>
                 </div>
@@ -413,7 +413,7 @@ export default function AboutPage() {
                 <div>
                   <div style={{ fontFamily: "var(--serif)", fontSize: 21, fontWeight: 500, letterSpacing: "-.01em" }}>Preconhub</div>
                   <div style={{ color: "var(--muted)", fontSize: 15, marginTop: 5, maxWidth: "52ch" }}>
-                    Pre-construction real estate platform &mdash; tested, sunset.
+                    Pre-construction real estate platform: tested, sunset.
                   </div>
                   <span style={{ fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".06em", textTransform: "uppercase", color: "var(--faint)", border: "1px solid var(--line-strong)", borderRadius: 999, padding: "3px 10px", marginTop: 8, display: "inline-block" }}>Sunset</span>
                 </div>
@@ -439,7 +439,7 @@ export default function AboutPage() {
                 <div>
                   <div style={{ fontFamily: "var(--serif)", fontSize: 21, fontWeight: 500, letterSpacing: "-.01em" }}>Up-Diet</div>
                   <div style={{ color: "var(--muted)", fontSize: 15, marginTop: 5, maxWidth: "52ch" }}>
-                    Diet &amp; health app &mdash; tested, sunset.
+                    Diet &amp; health app: tested, sunset.
                   </div>
                   <span style={{ fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".06em", textTransform: "uppercase", color: "var(--faint)", border: "1px solid var(--line-strong)", borderRadius: 999, padding: "3px 10px", marginTop: 8, display: "inline-block" }}>Sunset</span>
                 </div>
@@ -449,7 +449,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 04 — FOR AI & PRESS + PROFILES */}
+      {/* Section 04: For AI & press + profiles */}
       <section style={{ padding: "80px 0" }}>
         <div className="wrap">
           <RevealSection delay={0.06}>
@@ -457,7 +457,7 @@ export default function AboutPage() {
           </RevealSection>
           <RevealSection delay={0.12}>
             {/*
-              The ONLY third-person block on the page — deliberately.
+              The ONLY third-person block on the page, deliberately.
               The rest of this page is first person, because mixing "He built…" with
               "I built…" makes a language model see two different people. But models and
               journalists both want a clean, quotable, third-person paragraph they can
@@ -478,8 +478,8 @@ export default function AboutPage() {
                 <strong style={{ fontWeight: 600 }}>Hami Tahm</strong> is an AI Visibility
                 Consultant based in Toronto, Canada. He specialises in Answer Engine
                 Optimization (AEO) and Generative Engine Optimization (GEO), helping Canadian
-                trust-based local businesses &mdash; dental clinics, mortgage brokers, realtors
-                and law firms &mdash; get cited and recommended in AI-generated answers from
+                trust-based local businesses (dental clinics, mortgage brokers, realtors
+                and law firms) get cited and recommended in AI-generated answers from
                 Google AI Overviews, ChatGPT, Gemini and Copilot. He is the founder
                 of HomeCalc.ca, which he grew from near-zero to{" "}
                 {HOMECALC_CLAIMS.appearancesInTimeframe}, and a co-founder of Houmse.com. He works
@@ -530,7 +530,7 @@ export default function AboutPage() {
               </p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
                 {VENTURES.map(({ label, href }) => (
-                  // No rel="me" — these are companies he founded, not his identity.
+                  // No rel="me": these are companies he founded, not his identity.
                   <a
                     key={href}
                     href={href}
@@ -556,7 +556,7 @@ export default function AboutPage() {
                 Want to be found in AI search?
               </h2>
               <p style={{ color: "var(--muted)", marginTop: 16, position: "relative", maxWidth: "54ch", marginLeft: "auto", marginRight: "auto" }}>
-                I help Canadian businesses show up in Google AI&nbsp;Overviews, ChatGPT, Gemini, and Claude &mdash; using the same system I proved on my own products, in public, with numbers you can check.
+                I help Canadian businesses show up in Google AI&nbsp;Overviews, ChatGPT, Gemini, and Claude, using the same system I proved on my own products, in public, with numbers you can check.
               </p>
               <Link href={CHECKER_URL} className="btn btn-primary" style={{ marginTop: 36, position: "relative" }}>
                 Run the free AI visibility check <span className="arr">&rarr;</span>
@@ -577,7 +577,7 @@ export default function AboutPage() {
 function SectionLabel({ number, text }: { number: string; text: string }) {
   return (
     <div style={{ fontFamily: "var(--mono)", fontSize: 12, letterSpacing: ".14em", color: "var(--faint)", textTransform: "uppercase", marginBottom: 34, display: "flex", alignItems: "center", gap: 14 }}>
-      {number} &mdash; {text}
+      {number}: {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
     </div>
   );

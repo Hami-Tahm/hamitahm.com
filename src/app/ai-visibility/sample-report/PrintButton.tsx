@@ -6,7 +6,7 @@
  * ⚠️ THIS IS DELIBERATELY NOT A LINK TO A STATIC PDF IN /public.
  * A hand-built PDF would drift from offers.ts the first time a price changed, and a
  * stale document with a download button pointed at it is worse than no download at
- * all — on a page whose whole argument is that the numbers are current and sourced.
+ * all, on a page whose whole argument is that the numbers are current and sourced.
  * Printing the live page means the buyer's PDF can never disagree with the site.
  *
  * The print styles that make the output readable (hiding nav, chrome and CTAs, and

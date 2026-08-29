@@ -8,7 +8,7 @@ import { blogSchemaJson } from "@/lib/blog-schema";
 const SLUG = "which-ai-platform-matters-most";
 const ARTICLE_TITLE = "Which AI Platform Actually Matters Most Right Now?";
 const ARTICLE_DESCRIPTION =
-  "Google AI Overviews, ChatGPT, Gemini, Claude, Copilot, Perplexity — ranked by real traffic share, not assumptions. And why this changed my own site.";
+  "Google AI Overviews, ChatGPT, Gemini, Claude, Copilot, Perplexity: ranked by real traffic share, not assumptions. And why this changed my own site.";
 const DATE_PUBLISHED = "2026-07-30";
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
@@ -90,7 +90,7 @@ export default function Page() {
                 assistant), then Gemini (rising fast on Google&rsquo;s own
                 distribution), then Claude (smaller, growing fastest), then
                 Copilot and Perplexity, roughly tied, well behind the rest.
-                That order should set your priority — not equal effort across
+                That order should set your priority, not equal effort across
                 six logos.
               </ShortAnswer>
 
@@ -98,7 +98,7 @@ export default function Page() {
                 <strong style={{ color: "var(--ink)" }}>
                   Where this comes from.
                 </strong>{" "}
-                The headline figures — AI Overviews now appearing in{" "}
+                The headline figures: AI Overviews now appearing in{" "}
                 <a
                   href="https://www.similarweb.com/corp/reports/2026-generative-ai-landscape/"
                   target="_blank"
@@ -108,7 +108,7 @@ export default function Page() {
                   Similarweb&rsquo;s 2026 Generative AI Landscape Report
                 </a>
                 , &ldquo;the market is fragmenting&rdquo; as ChatGPT&rsquo;s
-                share declines while Gemini and Claude gain ground — are
+                share declines while Gemini and Claude gain ground, are
                 Similarweb&rsquo;s own stated findings, not a third-party
                 paraphrase. The more granular per-platform percentages in the
                 table below are as summarized by outlets reporting on that
@@ -116,7 +116,7 @@ export default function Page() {
                 ppc.land, FourWeekMBA, CommandLinux), since Similarweb&rsquo;s
                 full breakdown sits behind a downloadable report I have not
                 filled out a form to access. I did not run this measurement
-                myself — unlike the{" "}
+                myself; unlike the{" "}
                 <Link href="/blog/ai-citation-study/" style={{ color: "var(--accent)" }}>
                   first-party citation study
                 </Link>{" "}
@@ -165,9 +165,9 @@ export default function Page() {
               <p>
                 Two things jump out. First,{" "}
                 <strong style={{ color: "var(--ink)" }}>
-                  Google AI Overviews is not a fringe feature
+                  Google AI Overviews is not a fringe feature:
                 </strong>{" "}
-                — it&rsquo;s embedded in the search box nearly half of your
+                it&rsquo;s embedded in the search box nearly half of your
                 buyers already use, which puts its real reach above every
                 standalone assistant combined. Second,{" "}
                 <strong style={{ color: "var(--ink)" }}>
@@ -181,7 +181,7 @@ export default function Page() {
               <H2>Same data, as a picture</H2>
               <p>
                 Search infrastructure still dwarfs every standalone AI
-                assistant combined — this is why AI Overviews can&rsquo;t be
+                assistant combined, which is why AI Overviews can&rsquo;t be
                 treated as optional:
               </p>
               <BarList
@@ -221,7 +221,7 @@ export default function Page() {
                 }}
               >
                 *AI Overviews has no standalone visit count since it&rsquo;s
-                embedded in Search — the 36B figure is an estimated reach
+                embedded in Search; the 36B figure is an estimated reach
                 (Google Search visits × estimated share of searches
                 triggering an AI Overview), illustrative of scale, not a
                 measured Similarweb metric. Everything else is measured
@@ -229,7 +229,7 @@ export default function Page() {
                 reported in June–July 2026 coverage of its 2026 report.
               </p>
 
-              <H2>The Google AI Overviews number is contested — say so</H2>
+              <H2>The Google AI Overviews number is contested: say so</H2>
               <p>
                 &ldquo;Over 40%&rdquo; is Similarweb&rsquo;s own headline
                 figure from its 2026 report, not a third-party estimate of
@@ -252,7 +252,7 @@ export default function Page() {
               <H2>What this means for where you spend effort</H2>
               <p>
                 This isn&rsquo;t an argument to ignore Claude, Copilot, or
-                Perplexity — a citation on any of them is still worth having.
+                Perplexity: a citation on any of them is still worth having.
                 It&rsquo;s an argument against{" "}
                 <em>equal</em> effort across all six. If your content,
                 structured data, and third-party signals aren&rsquo;t at
@@ -264,7 +264,7 @@ export default function Page() {
                 Practically, that means: fix your schema and extractable
                 content for how Google&rsquo;s AI systems read your site
                 first. Confirm ChatGPT can find and cite you second. Then
-                work down the list — Gemini and Claude are worth real
+                work down the list: Gemini and Claude are worth real
                 attention given how fast they&rsquo;re growing, and Copilot
                 and Perplexity last, not because they&rsquo;re worthless, but
                 because the volume behind them is still comparatively small.
@@ -275,7 +275,7 @@ export default function Page() {
                 I&rsquo;d had the six platforms I audit listed as
                 &ldquo;ChatGPT, Perplexity, Google AI Overviews, Claude,
                 Gemini, Copilot&rdquo; across dozens of FAQ answers, titles,
-                and meta descriptions on this site — an order that put
+                and meta descriptions on this site: an order that put
                 Perplexity ahead of Google AI Overviews and Claude ahead of
                 Gemini, both backwards from the actual traffic. That&rsquo;s
                 the same mistake I&rsquo;m describing above, just made by me,
@@ -283,7 +283,7 @@ export default function Page() {
               </p>
               <p>
                 I reordered every instance to lead with Google AI Overviews,
-                then ChatGPT, then Gemini, Claude, and the rest — same
+                then ChatGPT, then Gemini, Claude, and the rest: same
                 platforms, same claims, just honest about which ones carry
                 the volume. Small fix, but it&rsquo;s the same principle this
                 whole site is built on: say what the numbers actually show,
@@ -352,7 +352,7 @@ export default function Page() {
                 }}
               >
                 The audit checks Google AI Overviews, ChatGPT, Gemini,
-                Claude, Copilot, and Perplexity individually — not a single
+                Claude, Copilot, and Perplexity individually, not a single
                 blended score.
               </p>
               <Link

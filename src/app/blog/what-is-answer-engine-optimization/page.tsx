@@ -48,11 +48,11 @@ const TOOLS_URL = "/blog/best-ai-visibility-tools/";
 const FAQ_ITEMS = [
   {
     q: "Is AEO replacing SEO?",
-    a: "No. AEO is an additional layer, not a replacement. SEO remains essential for traditional search rankings, and ranking is often a prerequisite for AIO citation. AEO and SEO work best together — they target different surfaces of modern search.",
+    a: "No. AEO is an additional layer, not a replacement. SEO remains essential for traditional search rankings, and ranking is often a prerequisite for AIO citation. AEO and SEO work best together: they target different surfaces of modern search.",
   },
   {
     q: "Does AEO work for small businesses?",
-    a: "Yes. A well-structured page from a small business can be cited by AI platforms over a poorly structured page from a major brand — if it's more direct, clear, and authoritative on the specific question. The playing field is more level than traditional search.",
+    a: "Yes. A well-structured page from a small business can be cited by AI platforms over a poorly structured page from a major brand, if it's more direct, clear, and authoritative on the specific question. The playing field is more level than traditional search.",
   },
   {
     q: "How long does AEO take to show results?",
@@ -60,15 +60,15 @@ const FAQ_ITEMS = [
   },
   {
     q: "Can I do AEO myself or do I need a consultant?",
-    a: "Some of it is accessible without a consultant — restructuring pages so the answer comes first, tightening titles and headings, and adding basic Organization and Article markup. The harder parts — entity mapping, cross-platform citation strategy, competitor gap analysis — benefit from expertise. Most businesses start with a professional audit to understand where they stand before deciding how much to implement themselves.",
+    a: "Some of it is accessible without a consultant: restructuring pages so the answer comes first, tightening titles and headings, and adding basic Organization and Article markup. The harder parts (entity mapping, cross-platform citation strategy, competitor gap analysis) benefit from expertise. Most businesses start with a professional audit to understand where they stand before deciding how much to implement themselves.",
   },
   {
     q: "What's the difference between AEO and GEO?",
-    a: "AEO optimizes for being cited in AI-generated direct answers. GEO (Generative Engine Optimization) is broader — it covers how AI systems represent your brand across all AI-generated content, not just direct Q&A responses. They overlap, but AEO is narrower and answer-specific. See AEO vs GEO vs SEO for the full breakdown.",
+    a: "AEO optimizes for being cited in AI-generated direct answers. GEO (Generative Engine Optimization) is broader: it covers how AI systems represent your brand across all AI-generated content, not just direct Q&A responses. They overlap, but AEO is narrower and answer-specific. See AEO vs GEO vs SEO for the full breakdown.",
   },
   {
     q: "Is AEO only for ChatGPT?",
-    a: "No. AEO applies to any platform that generates AI answers — Perplexity, Google AI Overviews, Gemini, Bing Copilot, and ChatGPT. The tactics differ by platform; the foundation is the same.",
+    a: "No. AEO applies to any platform that generates AI answers: Perplexity, Google AI Overviews, Gemini, Bing Copilot, and ChatGPT. The tactics differ by platform; the foundation is the same.",
   },
 ] as const;
 
@@ -198,7 +198,7 @@ export default function WhatIsAnswerEngineOptimizationPost() {
                 lineHeight: 1.5,
               }}
             >
-              SEO targets rankings. AEO targets citations — being the source AI
+              SEO targets rankings. AEO targets citations: being the source AI
               chooses to quote when users ask questions in your space.
             </p>
           </RevealSection>
@@ -252,8 +252,8 @@ export default function WhatIsAnswerEngineOptimizationPost() {
                   margin: 0,
                 }}
               >
-                AEO structures content so AI search platforms — Perplexity,
-                Google AI Overviews, ChatGPT — cite it directly. The goal is
+                AEO structures content so AI search platforms (Perplexity,
+                Google AI Overviews, ChatGPT) cite it directly. The goal is
                 citations, not rankings.
               </p>
             </div>
@@ -262,8 +262,8 @@ export default function WhatIsAnswerEngineOptimizationPost() {
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
               Answer Engine Optimization (AEO) is the practice of structuring
-              your content so that <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>AI-powered search platforms</a> — Perplexity,
-              Google AI Overviews, ChatGPT, and Gemini — cite it directly in
+              your content so that <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>AI-powered search platforms</a> (Perplexity,
+              Google AI Overviews, ChatGPT, and Gemini) cite it directly in
               their answers. Where SEO targets rankings, AEO targets citations.
               The goal is not to be ranked first, but to be the source AI
               chooses to quote, paraphrase, or recommend when users ask questions
@@ -278,8 +278,8 @@ export default function WhatIsAnswerEngineOptimizationPost() {
                 color: "var(--muted)",
               }}
             >
-              AEO structures content so AI search platforms — Perplexity, Google
-              AI Overviews, ChatGPT — cite it directly. The goal is citations,
+              AEO structures content so AI search platforms (Perplexity, Google
+              AI Overviews, ChatGPT) cite it directly. The goal is citations,
               not rankings.
             </blockquote>
             <p style={{ marginBottom: 26 }}>
@@ -293,24 +293,24 @@ export default function WhatIsAnswerEngineOptimizationPost() {
           </RevealSection>
 
           <RevealSection>
-            <SectionLabel number="01" text="AEO vs SEO — what's different" />
+            <SectionLabel number="01" text="AEO vs SEO: what's different" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
               SEO optimizes for position in a ranked list. AEO optimizes for
-              inclusion in a synthesized answer. Both matter — but they require
+              inclusion in a synthesized answer. Both matter, but they require
               different strategies and produce different outcomes.
             </p>
             <p style={{ marginBottom: 26 }}>
               The clearest way to see the difference: in traditional search, users
               see a list of links and choose one. In AI search, users get an
-              answer — and your brand either contributed to that answer or it
+              answer, and your brand either contributed to that answer or it
               didn&rsquo;t. If it didn&rsquo;t, you weren&rsquo;t ranked lower.
               You were absent entirely.
             </p>
             <p style={{ marginBottom: 26 }}>
-              For the full three-way comparison — AEO, GEO, and SEO — including
+              For the full three-way comparison (AEO, GEO, and SEO) including
               which to prioritize for your business, see{" "}
               <Link href={COMPARISON_URL} style={linkStyle}>
                 AEO vs GEO vs SEO
@@ -327,7 +327,7 @@ export default function WhatIsAnswerEngineOptimizationPost() {
             <p style={{ marginBottom: 26 }}>
               Answer engines like Perplexity, Google AI Overviews, and ChatGPT
               don&rsquo;t rank pages. They retrieve content, read it, and generate
-              a synthesized response — citing the sources they found most direct,
+              a synthesized response, citing the sources they found most direct,
               credible, and well-structured.
             </p>
             <p style={{ marginBottom: 26 }}>The citation pipeline:</p>
@@ -346,7 +346,7 @@ export default function WhatIsAnswerEngineOptimizationPost() {
             </ol>
             <p style={{ marginBottom: 26 }}>
               AEO is the practice of engineering your content to perform well at
-              steps 2, 3, and 4 — so the engine retrieves you, extracts your
+              steps 2, 3, and 4, so the engine retrieves you, extracts your
               content cleanly, and names you as a source.
             </p>
           </RevealSection>
@@ -433,12 +433,12 @@ export default function WhatIsAnswerEngineOptimizationPost() {
             <p style={{ marginBottom: 26 }}>
               Answer engines favor sources that other credible sources trust.
               Backlinks from relevant industry publications, mentions on platforms
-              AI systems read heavily — Reddit, Quora, G2, Clutch — and consistent
+              AI systems read heavily (Reddit, Quora, G2, Clutch) and consistent
               brand presence across the web all contribute to citation authority.
             </p>
             <p style={{ marginBottom: 26 }}>
-              E-E-A-T — Experience, Expertise, Authoritativeness,
-              Trustworthiness — is Google&rsquo;s own quality framework, and it
+              E-E-A-T (Experience, Expertise, Authoritativeness,
+              Trustworthiness) is Google&rsquo;s own quality framework, and it
               applies to AIO citation decisions directly. Named authors, clear
               credentials, and external validation increase your citation
               probability.
@@ -465,19 +465,19 @@ export default function WhatIsAnswerEngineOptimizationPost() {
             </p>
             <ul style={{ margin: "0 0 26px 22px" }}>
               <li style={{ marginBottom: 11 }}>
-                <strong style={labelStyle}>Professional services</strong> — legal,
+                <strong style={labelStyle}>Professional services</strong>: legal,
                 financial, consulting, accounting
               </li>
               <li style={{ marginBottom: 11 }}>
-                <strong style={labelStyle}>Healthcare and wellness</strong> — where
+                <strong style={labelStyle}>Healthcare and wellness</strong>: where
                 patients research before they book
               </li>
               <li style={{ marginBottom: 11 }}>
-                <strong style={labelStyle}>Real estate and mortgage</strong> —
+                <strong style={labelStyle}>Real estate and mortgage</strong>:
                 buyers ask specific, high-stakes questions
               </li>
               <li style={{ marginBottom: 11 }}>
-                <strong style={labelStyle}>B2B software and SaaS</strong> —
+                <strong style={labelStyle}>B2B software and SaaS</strong>:
                 comparison and evaluation queries
               </li>
               <li style={{ marginBottom: 11 }}>
@@ -487,8 +487,8 @@ export default function WhatIsAnswerEngineOptimizationPost() {
               </li>
             </ul>
             <p style={{ marginBottom: 26 }}>
-              If your customers ask specific questions before making a decision —
-              and most do — AEO determines whether your brand is the answer they
+              If your customers ask specific questions before making a decision
+              (and most do), AEO determines whether your brand is the answer they
               find.
             </p>
           </RevealSection>
@@ -514,7 +514,7 @@ export default function WhatIsAnswerEngineOptimizationPost() {
               top of it. Platform-specific work extends coverage from there.
             </p>
             <p style={{ marginBottom: 26 }}>
-              There are emerging tools for tracking AEO performance — but AEO
+              There are emerging tools for tracking AEO performance, but AEO
               itself is a content and structure practice, not a software purchase.
               If you&rsquo;re looking for tracking tools, the{" "}
               <Link href={TOOLS_URL} style={linkStyle}>
@@ -530,7 +530,7 @@ export default function WhatIsAnswerEngineOptimizationPost() {
 
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
-              This matters — because AEO is one of the more frequently
+              This matters, because AEO is one of the more frequently
               misunderstood practices in digital marketing right now.
             </p>
             <p style={{ marginBottom: 26 }}>
@@ -545,7 +545,7 @@ export default function WhatIsAnswerEngineOptimizationPost() {
               This is truer than when it was first written. Adding an FAQ section and
               expecting AI citation was always thin, and now the rich result that
               used to reward it is gone. What still helps is answering a real
-              question clearly and early on the page — a question-and-answer shape is
+              question clearly and early on the page: a question-and-answer shape is
               useful because it is readable, not because of the markup around it.
               Content structure, authority, entity clarity and third-party signals
               are what actually move this.
@@ -555,7 +555,7 @@ export default function WhatIsAnswerEngineOptimizationPost() {
               There is no published service level for any of this. Google&rsquo;s
               documentation says recrawling alone can take days to months and that
               indexing and serving are never guaranteed, and engines refresh at
-              different rates. Treat any specific timeline — including one from me —
+              different rates. Treat any specific timeline (including one from me)
               as an estimate, and measure on a fixed schedule so you can tell
               movement from noise.
             </p>
@@ -563,8 +563,8 @@ export default function WhatIsAnswerEngineOptimizationPost() {
               <strong style={labelStyle}>AEO is not only for ChatGPT.</strong> AEO
               applies to every AI search platform: Perplexity, Google AI Overviews,
               Gemini, Bing Copilot, and ChatGPT. The retrieval mechanics differ
-              by platform, but the AEO foundation — structured, credible, citable
-              content — applies universally.
+              by platform, but the AEO foundation (structured, credible, citable
+              content) applies universally.
             </p>
           </RevealSection>
 
@@ -709,7 +709,7 @@ export default function WhatIsAnswerEngineOptimizationPost() {
                 }}
               >
                 Platform-specific citation work with a clear audit and prioritized
-                action plan — or start with a cross-platform{" "}
+                action plan, or start with a cross-platform{" "}
                 <Link href={AUDIT_URL} style={linkStyle}>
                   AI visibility audit
                 </Link>{" "}
@@ -746,7 +746,7 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
         gap: 14,
       }}
     >
-      {number} &mdash; {text}
+      {number}: {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
     </h2>
   );
@@ -784,8 +784,8 @@ function InlineAEOCTA() {
           lineHeight: 1.55,
         }}
       >
-        If you&rsquo;re ready to implement AEO — not just understand what it is
-        — the next step is working with someone who can audit where you stand and
+        If you&rsquo;re ready to implement AEO (not just understand what it is),
+        the next step is working with someone who can audit where you stand and
         build a plan specific to your industry and platforms.
       </p>
       <Link href={AEO_URL} className="btn btn-primary">

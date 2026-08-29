@@ -1,16 +1,16 @@
 /**
  * Single source of truth for the published-research hub (/research/).
  *
- * ── WHY THIS PAGE EXISTS ──
+ * WHY THIS PAGE EXISTS:
  * The citation dataset used to live only inside a blog post. A journalist, a
  * researcher, or an AI engine looking for "the source" had to read an essay to
  * find it. /research/ is the citable front door: DOI, mirror, raw files,
  * methodology, and limitations in one place, marked up as a Dataset.
  *
- * ⚠️ HONESTY CONTROLS — the whole point of this page is that it can be checked.
+ * ⚠️ HONESTY CONTROLS: the whole point of this page is that it can be checked.
  *   - `doi` and `zenodoUrl` stay null until the record is ACTUALLY published on
  *     Zenodo. The page hides the "Cite this dataset" block while they are null.
- *     Never put a placeholder DOI here — a fake identifier is worse than none.
+ *     Never put a placeholder DOI here; a fake identifier is worse than none.
  *   - Same for `githubUrl`: null until the repo is public.
  *   - Figures are NOT duplicated here. They are imported from citation-study.ts
  *     and homecalc-proof.ts so this page can never contradict the study.
@@ -28,7 +28,7 @@ export const RESEARCH = {
   githubUrl: null as string | null,
   license: "CC BY 4.0",
   licenseUrl: "https://creativecommons.org/licenses/by/4.0/",
-  /** Where the raw CSV lives today — served from this site, always available. */
+  /** Where the raw CSV lives today: served from this site, always available. */
   csvPath: "/blog/ai-citation-study/dataset.csv",
   writeUpPath: "/blog/ai-citation-study/",
   methodologyPath: "/methodology/",
@@ -52,7 +52,7 @@ export const RESEARCH_FILES = [
   },
   {
     name: "04_hamitahm_most_cited_pages.csv",
-    what: "The six most-cited pages on HamiTahm.com — including the ones that embarrass me.",
+    what: "The six most-cited pages on HamiTahm.com, including the ones that embarrass me.",
   },
   {
     name: "05_commercial_reality.csv",
@@ -79,11 +79,11 @@ export const RESEARCH_FILES = [
 export const RESEARCH_LIMITS = [
   {
     head: "n = 2 sites, one owner, one market",
-    body: "A strong signal, not a law. Two data points cannot support general claims about how AI citation works — only about what happened to these two sites, in Canada, in this window.",
+    body: "A strong signal, not a law. Two data points cannot support general claims about how AI citation works; only about what happened to these two sites, in Canada, in this window.",
   },
   {
     head: "One engine, not all of them",
-    body: "This measures Microsoft Copilot and its partners, because that is the only engine that reports citation counts back to publishers. Google Search Console has since added a Generative AI features report, but it gives impressions only — not citations — so it cannot be compared to, or added to, these figures. ChatGPT, Gemini and Perplexity expose nothing. Behaviour there may differ.",
+    body: "This measures Microsoft Copilot and its partners, because that is the only engine that reports citation counts back to publishers. Google Search Console has since added a Generative AI features report, but it gives impressions only, not citations, so it cannot be compared to, or added to, these figures. ChatGPT, Gemini and Perplexity expose nothing. Behaviour there may differ.",
   },
   {
     head: "Same-owner control is a confound",
@@ -91,7 +91,7 @@ export const RESEARCH_LIMITS = [
   },
   {
     head: "Outcomes are published; the method is not",
-    body: "The dataset shows what got cited, how much, and how fast. It does not explain how the pages were built to earn it — that is the paid work, and saying so plainly is more honest than pretending the dataset is a full recipe.",
+    body: "The dataset shows what got cited, how much, and how fast. It does not explain how the pages were built to earn it: that is the paid work, and saying so plainly is more honest than pretending the dataset is a full recipe.",
   },
   {
     head: "Citations are not customers",
@@ -103,6 +103,6 @@ export const RESEARCH_LIMITS = [
   },
   {
     head: "Bing's own numbers are aggregated, not raw",
-    body: "Grounding queries are Bing's own aggregated groupings of prompt activity, not verbatim user prompts, and Bing itself describes AI Performance as sampled, aggregated reporting rather than a complete log. This dataset publishes those figures faithfully — it does not and cannot de-aggregate them.",
+    body: "Grounding queries are Bing's own aggregated groupings of prompt activity, not verbatim user prompts, and Bing itself describes AI Performance as sampled, aggregated reporting rather than a complete log. This dataset publishes those figures faithfully; it does not and cannot de-aggregate them.",
   },
 ] as const;

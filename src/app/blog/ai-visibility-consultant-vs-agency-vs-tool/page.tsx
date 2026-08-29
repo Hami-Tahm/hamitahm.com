@@ -9,7 +9,7 @@ import { OFFERS } from "@/lib/offers";
 const SLUG = "ai-visibility-consultant-vs-agency-vs-tool";
 const ARTICLE_TITLE = "AI Visibility Consultant vs Agency vs Tool";
 const ARTICLE_DESCRIPTION =
-  "Three ways to get AI visibility work done — software you run yourself, an agency retainer, or an independent consultant. What each is actually built for, what each costs, and how to know which one fits your situation.";
+  "Three ways to get AI visibility work done: software you run yourself, an agency retainer, or an independent consultant. What each is actually built for, what each costs, and how to know which one fits your situation.";
 const DATE_PUBLISHED = "2026-08-26";
 const HUB_URL = "/ai-visibility/";
 const CONSULTANT_CANADA_URL = "/ai-visibility/ai-visibility-consultant-canada/";
@@ -48,7 +48,7 @@ const COMPARISON_ROWS = [
     label: "Who ships the fixes",
     tool: "You, or whoever runs your site",
     agency: "The agency's own team, as part of the retainer",
-    consultant: "Your existing developer — the plan is built for handoff",
+    consultant: "Your existing developer: the plan is built for handoff",
   },
   {
     label: "Best for",
@@ -60,7 +60,7 @@ const COMPARISON_ROWS = [
 
 const FAQ_ITEMS = [
   {
-    // Literal match for the exact question buyers ask AI engines — added
+    // Literal match for the exact question buyers ask AI engines, added
     // 2026-08-29 after citation tracking showed this article underperforming
     // on that precise phrasing despite covering the substance elsewhere.
     q: "Should I hire an AI visibility consultant, an SEO agency, or use an AI visibility tool?",
@@ -72,19 +72,19 @@ const FAQ_ITEMS = [
   },
   {
     q: "Is a tool enough, or do I need to hire someone?",
-    a: "Depends on whether you already know what to fix. A tool is enough if you have the in-house expertise to read the data and act on it — it's tracking, not strategy. If you don't yet know why you're invisible on the queries that matter, or what to prioritize, a tool gives you more dashboards without answering that question. See tools vs audit for that comparison in more depth.",
+    a: "Depends on whether you already know what to fix. A tool is enough if you have the in-house expertise to read the data and act on it: it's tracking, not strategy. If you don't yet know why you're invisible on the queries that matter, or what to prioritize, a tool gives you more dashboards without answering that question. See tools vs audit for that comparison in more depth.",
   },
   {
     q: "Why not just hire an agency for AI visibility?",
-    a: "Sometimes you should — if you need several channels coordinated by one team and have the budget for an ongoing retainer. The tradeoff is cost and structure: a typical retainer runs $2,000–5,000 a month, ongoing, and your account may be staffed by whoever the agency assigns rather than the person who understands your business best. If what you actually need is a one-time diagnosis, that's a lot of ongoing cost for a question that doesn't need to be asked every month.",
+    a: "Sometimes you should, if you need several channels coordinated by one team and have the budget for an ongoing retainer. The tradeoff is cost and structure: a typical retainer runs $2,000–5,000 a month, ongoing, and your account may be staffed by whoever the agency assigns rather than the person who understands your business best. If what you actually need is a one-time diagnosis, that's a lot of ongoing cost for a question that doesn't need to be asked every month.",
   },
   {
     q: "Can an independent consultant really replace an agency?",
-    a: "For a full-service, many-channel retainer — no, and that's not the pitch. For a specific, bounded question — where are AI engines citing us, where aren't they, and what should we fix first — one consultant who does the work personally, with no account-manager layer, covers exactly that without the retainer commitment. Larger, ongoing execution across many channels is genuinely an agency's strength.",
+    a: "For a full-service, many-channel retainer: no, and that's not the pitch. For a specific, bounded question (where are AI engines citing us, where aren't they, and what should we fix first), one consultant who does the work personally, with no account-manager layer, covers exactly that without the retainer commitment. Larger, ongoing execution across many channels is genuinely an agency's strength.",
   },
   {
     q: "How much does each option cost?",
-    a: "AI visibility tools typically run $50–500 per month. Agency retainers for comparable strategic work typically run $2,000–5,000 per month, ongoing. A one-time AI visibility audit from an independent consultant is a flat fee — $1,500 CAD here, covering all major AI platforms with no retainer required to start.",
+    a: "AI visibility tools typically run $50–500 per month. Agency retainers for comparable strategic work typically run $2,000–5,000 per month, ongoing. A one-time AI visibility audit from an independent consultant is a flat fee: $1,500 CAD here, covering all major AI platforms with no retainer required to start.",
   },
 ] as const;
 
@@ -186,7 +186,7 @@ export default function ConsultantVsAgencyVsToolPost() {
                 letterSpacing: "-.025em",
               }}
             >
-              AI visibility consultant vs agency vs tool &mdash;{" "}
+              AI visibility consultant vs agency vs tool:{" "}
               <em style={{ fontStyle: "italic", color: "var(--accent)" }}>
                 which one actually fits what you need?
               </em>
@@ -205,7 +205,7 @@ export default function ConsultantVsAgencyVsToolPost() {
               }}
             >
               Software you run yourself, a team on retainer, or one person
-              hired for a specific diagnosis — three genuinely different
+              hired for a specific diagnosis: three genuinely different
               ways to get this work done, not three tiers of the same thing.
             </p>
           </RevealSection>
@@ -275,7 +275,7 @@ export default function ConsultantVsAgencyVsToolPost() {
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
               These get talked about as if they're competing options for the
-              same job. They aren't, quite — they solve different parts of
+              same job. They aren't, quite; they solve different parts of
               the problem, at different scales, for different budgets. Below
               is what each is actually built to do, what it costs, and which
               one fits a given situation.
@@ -374,7 +374,7 @@ export default function ConsultantVsAgencyVsToolPost() {
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>A tool</strong> is the cheapest option
               and the only one that gives you ongoing, self-serve data. Its
-              limit isn't the data — it's that a dashboard doesn't tell you
+              limit isn't the data: it's that a dashboard doesn't tell you
               why a number is what it is, or what to do about it. That
               analysis is on you.
             </p>
@@ -382,7 +382,7 @@ export default function ConsultantVsAgencyVsToolPost() {
               <strong style={labelStyle}>An agency</strong> is built for
               breadth: one team coordinating strategy, content, and execution
               across several channels at once, which is genuinely valuable
-              when that's what you need. The tradeoff is cost and structure —
+              when that's what you need. The tradeoff is cost and structure:
               a typical retainer runs $2,000–5,000 a month, ongoing, and the
               person actually doing the analysis on your account may not be
               the person you spoke to when you signed. See{" "}
@@ -393,8 +393,8 @@ export default function ConsultantVsAgencyVsToolPost() {
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>An independent consultant</strong> is
-              built for a bounded question — where are you cited, where
-              aren't you, and what should you fix first — done by one named
+              built for a bounded question (where are you cited, where
+              aren't you, and what should you fix first), done by one named
               person, usually for a flat fee, with no retainer required to
               start. The honest limit: a consultant working this way
               generally isn't the one implementing the fixes. The output is a
@@ -402,7 +402,7 @@ export default function ConsultantVsAgencyVsToolPost() {
               <Link href={IMPLEMENTATION_URL} style={linkStyle}>
                 built for your own developer to ship
               </Link>
-              , not a promise of done-for-you execution — which is a feature
+              , not a promise of done-for-you execution, which is a feature
               for some businesses and a gap for others, depending on whether
               you already have someone who can act on it.
             </p>
@@ -416,20 +416,20 @@ export default function ConsultantVsAgencyVsToolPost() {
             <ul style={{ margin: "0 0 26px 22px" }}>
               <li style={{ marginBottom: 11 }}>
                 <strong style={labelStyle}>You already know what's wrong
-                and just want to track progress</strong> — a tool.
+                and just want to track progress</strong>: a tool.
               </li>
               <li style={{ marginBottom: 11 }}>
                 <strong style={labelStyle}>You need one team running
                 strategy, content, and execution across several channels at
-                once</strong> — an agency.
+                once</strong>: an agency.
               </li>
               <li style={{ marginBottom: 11 }}>
                 <strong style={labelStyle}>You want a clear answer to "where
                 are we invisible and why," without signing an ongoing
-                retainer</strong> — a consultant.
+                retainer</strong>: a consultant.
               </li>
               <li style={{ marginBottom: 11 }}>
-                <strong style={labelStyle}>You're not sure yet</strong> — run
+                <strong style={labelStyle}>You're not sure yet</strong>: run
                 through the{" "}
                 <Link href={CHECKLIST_URL} style={linkStyle}>
                   free audit checklist
@@ -646,7 +646,7 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
         gap: 14,
       }}
     >
-      {number} &mdash; {text}
+      {number}: {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
     </h2>
   );

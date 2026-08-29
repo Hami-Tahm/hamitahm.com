@@ -10,7 +10,7 @@ const SLUG = "what-is-ai-visibility";
 const ARTICLE_TITLE =
   "What Is AI Visibility? Definition & Metrics";
 const ARTICLE_DESCRIPTION =
-  "AI visibility is how often — and how accurately — your brand appears in AI-generated answers. What it means, how to measure it, and where it genuinely differs from SEO — with Google's own guidance quoted rather than talked around.";
+  "AI visibility is how often (and how accurately) your brand appears in AI-generated answers. What it means, how to measure it, and where it genuinely differs from SEO: with Google's own guidance quoted rather than talked around.";
 const DATE_PUBLISHED = "2026-06-08";
 const DATE_MODIFIED = "2026-08-11";
 
@@ -62,7 +62,7 @@ const GEO_URL =
 const FAQ_ITEMS = [
   {
     q: "Is AI visibility the same as SEO?",
-    a: "For Google's surfaces, Google says it largely is. Its own guidance states that generative AI features are rooted in Google's core Search ranking systems, that there are no additional requirements to appear in AI Overviews or AI Mode, and that optimizing for generative AI search is 'still SEO'. Two things remain genuinely separate. First, that guidance is about Google — ChatGPT, Perplexity and Claude do not use Google's index and publish no equivalent rules. Second, no ranking guidance addresses whether what an answer says about you is accurate, which is a question SEO never had to ask.",
+    a: "For Google's surfaces, Google says it largely is. Its own guidance states that generative AI features are rooted in Google's core Search ranking systems, that there are no additional requirements to appear in AI Overviews or AI Mode, and that optimizing for generative AI search is 'still SEO'. Two things remain genuinely separate. First, that guidance is about Google: ChatGPT, Perplexity and Claude do not use Google's index and publish no equivalent rules. Second, no ranking guidance addresses whether what an answer says about you is accurate, which is a question SEO never had to ask.",
   },
   {
     q: "What platforms does AI visibility cover?",
@@ -70,15 +70,15 @@ const FAQ_ITEMS = [
   },
   {
     q: "How do I track my AI visibility on Gemini?",
-    a: "Run your core queries in the Gemini app and record whether your brand appears, what it says, and whether that is correct. Keep the conditions fixed — same wording, same location, same model — and repeat each query at least three times, because answers vary between sessions. Track the Gemini app separately from Google AI Overviews and AI Mode: they are different products and can disagree about you. Paid tools automate this at a scale manual testing cannot reach; manual testing is the most direct look at a single answer, not the most accurate measurement overall.",
+    a: "Run your core queries in the Gemini app and record whether your brand appears, what it says, and whether that is correct. Keep the conditions fixed (same wording, same location, same model) and repeat each query at least three times, because answers vary between sessions. Track the Gemini app separately from Google AI Overviews and AI Mode: they are different products and can disagree about you. Paid tools automate this at a scale manual testing cannot reach; manual testing is the most direct look at a single answer, not the most accurate measurement overall.",
   },
   {
     q: "What is a good AI visibility benchmark?",
-    a: "There is no independent cross-vendor standard, so the benchmark is your own baseline measured consistently over time. Some businesses start at zero on their commercial queries and some do not — that is something to measure on your own domain, not to assume.",
+    a: "There is no independent cross-vendor standard, so the benchmark is your own baseline measured consistently over time. Some businesses start at zero on their commercial queries and some do not: that is something to measure on your own domain, not to assume.",
   },
   {
     q: "Can a small business improve AI visibility without a big budget?",
-    a: "Usually yes, because the work is diagnosis and content rather than media spend. But start by finding out what is actually wrong. The common candidates — pages that are not indexed, content that does not answer the question, an ambiguous entity, inconsistent business details across directories, or simply a competitor with more authority — need different fixes, and picking one before testing wastes the budget you have.",
+    a: "Usually yes, because the work is diagnosis and content rather than media spend. But start by finding out what is actually wrong. The common candidates (pages that are not indexed, content that does not answer the question, an ambiguous entity, inconsistent business details across directories, or simply a competitor with more authority) need different fixes, and picking one before testing wastes the budget you have.",
   },
   {
     q: "How long does it take to see AI visibility results?",
@@ -208,7 +208,7 @@ export default function WhatIsAIVisibilityPost() {
               }}
             >
               Definition, metrics, and how to track whether AI systems know you
-              exist — and say the right things when they do.
+              exist, and say the right things when they do.
             </p>
           </RevealSection>
 
@@ -278,12 +278,12 @@ export default function WhatIsAIVisibilityPost() {
                   margin: 0,
                 }}
               >
-                AI visibility is how often — and how accurately — your brand
+                AI visibility is how often (and how accurately) your brand
                 appears in AI-generated answers, measured per platform across{" "}
                 {AUDIT_PLATFORMS.join(", ")}. It overlaps heavily with SEO on
                 Google&rsquo;s own surfaces, by Google&rsquo;s own account. Where
                 it genuinely departs is on the engines that don&rsquo;t use
-                Google&rsquo;s index — and on the question SEO never had to ask:
+                Google&rsquo;s index, and on the question SEO never had to ask:
                 is what the answer says about you correct?
               </p>
             </div>
@@ -292,7 +292,7 @@ export default function WhatIsAIVisibilityPost() {
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
               AI visibility is the degree to which your brand, product, or
-              content appears — accurately and prominently — in AI-generated
+              content appears (accurately and prominently) in AI-generated
               answers. Where traditional SEO measures rankings and clicks, AI
               visibility measures whether AI systems know you exist, what they
               say about you, and how often they cite you when users ask relevant
@@ -300,7 +300,7 @@ export default function WhatIsAIVisibilityPost() {
             </p>
             <p style={{ marginBottom: 26 }}>
               If someone asks ChatGPT &ldquo;who are the best mortgage brokers in
-              Toronto&rdquo; and you don&rsquo;t come up, that is worth knowing —
+              Toronto&rdquo; and you don&rsquo;t come up, that is worth knowing,
               and Google Search rankings will not tell you about it, because
               ChatGPT does not use Google&rsquo;s index.
             </p>
@@ -326,7 +326,7 @@ export default function WhatIsAIVisibilityPost() {
                 Accuracy.
               </strong>{" "}
               When the AI mentions you, is what it says correct? Wrong
-              descriptions, outdated information, misattributed claims — all of
+              descriptions, outdated information, misattributed claims: all of
               that counts against you, even if you technically &ldquo;appear.&rdquo;
             </p>
             <p style={{ marginBottom: 26 }}>
@@ -345,8 +345,8 @@ export default function WhatIsAIVisibilityPost() {
             <p style={{ marginBottom: 26 }}>
               A common assumption is that ranking well in Google means AI systems
               will pick you up automatically. On Google&rsquo;s own AI surfaces
-              that assumption is roughly right, and Google says so — more on that
-              in the next section. Across the other engines it does not follow,
+              that assumption is roughly right, and Google says so (more on that
+              in the next section). Across the other engines it does not follow,
               because they retrieve from their own indexes. And even where you
               are cited, being cited is not the same as being visited: on my own
               site, the single most-cited page earned{" "}
@@ -374,8 +374,8 @@ export default function WhatIsAIVisibilityPost() {
               Google&rsquo;s published guidance on generative AI features says its
               AI features are &ldquo;rooted in our core Search ranking and quality
               systems,&rdquo; that from Google&rsquo;s perspective optimizing for
-              generative AI search is &ldquo;still SEO,&rdquo; and — in the AI
-              features documentation — that there are{" "}
+              generative AI search is &ldquo;still SEO,&rdquo; and, in the AI
+              features documentation, that there are{" "}
               <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
                 no additional requirements
               </strong>{" "}
@@ -412,7 +412,7 @@ export default function WhatIsAIVisibilityPost() {
               </strong>{" "}
               It describes how AI Overviews and AI Mode draw on Google&rsquo;s
               index. It says nothing about ChatGPT, Perplexity or Claude, which
-              retrieve through their own crawlers and partners — ChatGPT, for
+              retrieve through their own crawlers and partners: ChatGPT, for
               instance, requires that{" "}
               <a
                 href={OPENAI_SEARCH_URL}
@@ -438,14 +438,14 @@ export default function WhatIsAIVisibilityPost() {
                 Measurement is genuinely separate.
               </strong>{" "}
               Knowing how to rank and knowing whether you are being cited are
-              different problems with different instruments — and for most
+              different problems with different instruments, and for most
               engines, no instrument at all. That gap is the honest reason this
               work exists as a distinct exercise.
             </p>
             <ComparisonTable />
             <p style={{ marginBottom: 26 }}>
               The mistake worth avoiding is not &ldquo;doing SEO instead.&rdquo;
-              It is assuming that because you rank, you must be cited everywhere —
+              It is assuming that because you rank, you must be cited everywhere,
               and never checking the engines that don&rsquo;t report back to you.
             </p>
           </RevealSection>
@@ -463,22 +463,22 @@ export default function WhatIsAIVisibilityPost() {
               <li style={{ marginBottom: 14 }}>
                 <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
                   ChatGPT (OpenAI)
-                </strong>{" "}
-                — Conversational queries, product and service recommendations,
+                </strong>
+                : Conversational queries, product and service recommendations,
                 research questions. The platform most people picture first.
               </li>
               <li style={{ marginBottom: 14 }}>
                 <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
                   Perplexity
-                </strong>{" "}
-                — High-citation responses with visible source links. Strong in
+                </strong>
+                : High-citation responses with visible source links. Strong in
                 professional, research, and comparison searches.
               </li>
               <li style={{ marginBottom: 14 }}>
                 <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
                   Google AI Overviews and AI Mode
-                </strong>{" "}
-                — Inside Google Search itself, drawing on Google&rsquo;s index.
+                </strong>
+                : Inside Google Search itself, drawing on Google&rsquo;s index.
                 Because they sit where your existing search audience already is,
                 this is the surface most people will meet by default. Google has
                 not published query volume for them, so treat &ldquo;the big
@@ -487,8 +487,8 @@ export default function WhatIsAIVisibilityPost() {
               <li style={{ marginBottom: 14 }}>
                 <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
                   Gemini (the app)
-                </strong>{" "}
-                — A separate product from AI Overviews and AI Mode. It shares
+                </strong>
+                : A separate product from AI Overviews and AI Mode. It shares
                 model families with them, which is why the two get conflated, but
                 it is a different experience and can give a different answer about
                 you. Track it separately or you will misattribute a result.
@@ -496,15 +496,15 @@ export default function WhatIsAIVisibilityPost() {
               <li style={{ marginBottom: 14 }}>
                 <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
                   Claude (Anthropic)
-                </strong>{" "}
-                — Widely used for research and professional work, with web search
+                </strong>
+                : Widely used for research and professional work, with web search
                 and visible sources.
               </li>
               <li style={{ marginBottom: 14 }}>
                 <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
                   Microsoft Copilot
-                </strong>{" "}
-                — Microsoft&rsquo;s AI layer over Bing. Notable for one practical
+                </strong>
+                : Microsoft&rsquo;s AI layer over Bing. Notable for one practical
                 reason: through Bing Webmaster Tools it is the only major engine
                 that reports citation counts back to publishers at all.
               </li>
@@ -512,7 +512,7 @@ export default function WhatIsAIVisibilityPost() {
             <p style={{ marginBottom: 26 }}>
               Being well-cited on one doesn&rsquo;t guarantee anything on the
               others. They retrieve from different indexes, refresh on different
-              schedules, and weigh sources differently &mdash; which is why{" "}
+              schedules, and weigh sources differently, which is why{" "}
               <Link href="/blog/which-ai-platform-matters-most/" style={linkStyle}>
                 deciding which platform to prioritise
               </Link>{" "}
@@ -538,13 +538,13 @@ export default function WhatIsAIVisibilityPost() {
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
               A correction on this section. It previously said there was no
-              dashboard for this. There are several — Semrush, Ahrefs, Profound,
+              dashboard for this. There are several: Semrush, Ahrefs, Profound,
               Otterly and SE Visible all sell multi-platform dashboards. What
               doesn&rsquo;t exist is an{" "}
               <em style={{ fontStyle: "italic" }}>independent, cross-vendor</em>{" "}
               standard: no shared definition of a &ldquo;visibility score,&rdquo;
-              no way to compare one vendor&rsquo;s number to another&rsquo;s, and
-              — as Google itself notes — no third-party tool with access to any
+              no way to compare one vendor&rsquo;s number to another&rsquo;s, and,
+              as Google itself notes, no third-party tool with access to any
               engine&rsquo;s internal systems. So whatever you use, the number is
               only meaningful against itself over time.
             </p>
@@ -561,8 +561,8 @@ export default function WhatIsAIVisibilityPost() {
               is your brand name appearing in the text of an answer. A{" "}
               <strong style={{ fontWeight: 600, color: "var(--ink)" }}>citation</strong>{" "}
               is the answer linking to your page as a source. You can be mentioned
-              without being cited — the engine knows of you but sent the reader
-              elsewhere — and cited without being mentioned, where your page
+              without being cited (the engine knows of you but sent the reader
+              elsewhere) and cited without being mentioned, where your page
               supplied the fact but not the recommendation. They call for
               different fixes, so record them in separate columns.
             </p>
@@ -571,7 +571,7 @@ export default function WhatIsAIVisibilityPost() {
               customers would actually ask for what you do. Run them on each
               platform. Because answers vary between sessions, models and
               locations, hold those conditions fixed, repeat each query at least
-              three times, and record the model and date alongside the result —
+              three times, and record the model and date alongside the result;
               otherwise you are measuring variance and calling it change. Then
               repeat on a consistent schedule.
             </p>
@@ -593,7 +593,7 @@ export default function WhatIsAIVisibilityPost() {
 
             <h3 style={h3Style}>Platform coverage</h3>
             <p style={{ marginBottom: 26 }}>
-              Which AI platforms include you — and which don&rsquo;t?
+              Which AI platforms include you, and which don&rsquo;t?
             </p>
             <p style={{ marginBottom: 26 }}>
               A brand that appears in Perplexity but not in{" "}
@@ -607,7 +607,7 @@ export default function WhatIsAIVisibilityPost() {
               </a>{" "}
               has a gap worth closing, because Google&rsquo;s surfaces sit in
               front of the audience already searching for you. Track the Gemini
-              app as its own row rather than folding it in with AI Overviews —
+              app as its own row rather than folding it in with AI Overviews:
               they are different products and routinely disagree.
             </p>
             <p style={{ marginBottom: 26 }}>
@@ -629,7 +629,7 @@ export default function WhatIsAIVisibilityPost() {
             </p>
             <p style={{ marginBottom: 26 }}>
               This page used to say most businesses start at zero. I have no data
-              supporting that, so I have removed it — some do and some
+              supporting that, so I have removed it: some do and some
               don&rsquo;t, and it is cheap to find out for your own domain rather
               than assume. The reason to establish the baseline first is simply
               that without it, you cannot tell later whether anything you changed
@@ -673,7 +673,7 @@ export default function WhatIsAIVisibilityPost() {
               page as each engine&rsquo;s bot and see whether the main content is
               in what comes back. Re-architecting a site is a large, expensive
               change and should follow evidence that content is genuinely
-              unreachable — never a default recommendation, including from me.
+              unreachable, never a default recommendation, including from me.
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
@@ -705,7 +705,7 @@ export default function WhatIsAIVisibilityPost() {
               Reviews, directory listings, press and industry sources are where
               engines learn things your own site cannot assert credibly. Keeping
               those consistent and correct is legitimate work. Manufacturing
-              mentions is not — Google explicitly calls out seeking inauthentic
+              mentions is not: Google explicitly calls out seeking inauthentic
               mentions as ineffective, and it is the tactic most likely to be sold
               to you under an AI-visibility label.
             </p>
@@ -715,7 +715,7 @@ export default function WhatIsAIVisibilityPost() {
               <Link href={HUB_URL} style={linkStyle}>
                 AI visibility hub
               </Link>{" "}
-              is where that lives — not here.
+              is where that lives, not here.
             </p>
           </RevealSection>
 
@@ -732,7 +732,7 @@ export default function WhatIsAIVisibilityPost() {
             <p style={{ marginBottom: 26 }}>
               This page used to say the highest-leverage moves are technical
               first. Diagnose first is the more defensible order. Absence has
-              several plausible causes — pages not indexed or not eligible for a
+              several plausible causes: pages not indexed or not eligible for a
               snippet, content that doesn&rsquo;t answer the question asked, an
               entity the engine can&rsquo;t pin down, business details that
               disagree across directories, a competitor with more authority, or a
@@ -820,7 +820,7 @@ export default function WhatIsAIVisibilityPost() {
               guidance is quoted directly above rather than paraphrased around:
               on Google&rsquo;s own surfaces, Google says this is still SEO and
               that no special optimization is required. The parts I argue are
-              distinct — the non-Google engines, accuracy, and measurement — are
+              distinct (the non-Google engines, accuracy, and measurement) are
               stated narrowly enough that you can check them. Corrected against
               vendor documentation on {DATE_FACT_CHECKED_HUMAN} (
               {DATE_FACT_CHECKED}).
@@ -929,14 +929,14 @@ export default function WhatIsAIVisibilityPost() {
                 }}
               >
                 Structured audit, written report, action plan, and walkthrough
-                call. $1,500 CAD flat — no retainer.
+                call. $1,500 CAD flat, no retainer.
               </p>
               <Link
                 href={AUDIT_URL}
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
               >
-                Book Your AI Visibility Audit &mdash; $1,500 CAD{" "}
+                Book Your AI Visibility Audit for $1,500 CAD{" "}
                 <span className="arr">&rarr;</span>
               </Link>
             </div>
@@ -963,7 +963,7 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
         gap: 14,
       }}
     >
-      {number} &mdash; {text}
+      {number}: {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
     </h2>
   );
@@ -972,7 +972,7 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
 function ComparisonTable() {
   /**
    * ⚠️ The "what content it needs" row used to read "Keywords, backlinks" vs
-   * "Authority, schema, structured data". That was a false dichotomy — both depend on
+   * "Authority, schema, structured data". That was a false dichotomy: both depend on
    * the same foundations, and Google states plainly that no special schema is needed
    * for generative AI search. The row now says so.
    */
@@ -987,12 +987,12 @@ function ComparisonTable() {
     [
       "What it needs",
       "Crawlable, credible, relevant content",
-      "The same foundations — plus consistent, correct facts about you off-site",
+      "The same foundations, plus consistent, correct facts about you off-site",
     ],
     [
       "Can it be wrong about you?",
-      "No — a position isn't a claim",
-      "Yes — and that's the risk with no SEO equivalent",
+      "No: a position isn't a claim",
+      "Yes, and that's the risk with no SEO equivalent",
     ],
     [
       "How to track",
@@ -1089,12 +1089,12 @@ function InlineAuditCTA() {
         }}
       >
         An AI visibility audit tests your core queries across all{" "}
-        {AUDIT_PLATFORM_COUNT_WORD} platforms &mdash;{" "}
-        {AUDIT_PLATFORMS.join(", ")} &mdash; and gives you mention and citation
-        counts, accuracy gaps, and a prioritized action plan.
+        {AUDIT_PLATFORM_COUNT_WORD} platforms ({AUDIT_PLATFORMS.join(", ")}) and
+        gives you mention and citation counts, accuracy gaps, and a prioritized
+        action plan.
       </p>
       <Link href={AUDIT_URL} className="btn btn-primary">
-        Book Your AI Visibility Audit &mdash; $1,500 CAD{" "}
+        Book Your AI Visibility Audit for $1,500 CAD{" "}
         <span className="arr">&rarr;</span>
       </Link>
     </div>

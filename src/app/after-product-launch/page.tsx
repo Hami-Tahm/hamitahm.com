@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   // anyone holding the link, removed from sitemap, excluded from search + AI corpus.
   robots: { index: false, follow: true },
   title: "My Entrepreneurial Journey with Up-Diet.com",
-  description: "My Entrepreneurial Journey with Up-Diet.com — by Hami Tahm",
+  description: "My Entrepreneurial Journey with Up-Diet.com, by Hami Tahm",
 };
 
 export default function Post() {
@@ -42,7 +42,7 @@ export default function Post() {
  	<li><strong>Weak engagement/retention</strong></li>
 </ol>
 Our solution helps them keep their customers more active and loyal.</p><p>I also want to <strong>partner with nutritionists</strong>. The idea is simple:
-They can recommend our service to their clients, and we share the earnings. Later, I plan to build a <strong>marketplace</strong> where nutritionists and biohackers in the longevity space can connect with users.</p><p>Right now, I am <strong>team building in marketing</strong>. I never give up, but I stay flexible with pivots when needed. I set a sales target for myself last Monday that will last for two weeks. Now it’s Tuesday, and I still don’t have any sales. That’s a bummer—but I will keep working on it.</p><p>For me, <strong>entrepreneurship is not just work; it’s a lifestyle.</strong> And this lifestyle fits me well.</p><p>Recently, I applied to two incubators: <strong>Johnson & Johnson</strong> and <strong>MaRS</strong>. Both rejected me. Johnson & Johnson said my product was not in their path, and MaRS said I didn’t have enough traction. Still, I’m happy because three other companies replied to me, and two of them want to set up meetings now.</p><p>This is only the beginning.</p><p>P.S.: I want to reach <strong>10,000 US dollars</strong>. This is my first goal for this year.</p>` } }
+They can recommend our service to their clients, and we share the earnings. Later, I plan to build a <strong>marketplace</strong> where nutritionists and biohackers in the longevity space can connect with users.</p><p>Right now, I am <strong>team building in marketing</strong>. I never give up, but I stay flexible with pivots when needed. I set a sales target for myself last Monday that will last for two weeks. Now it’s Tuesday, and I still don’t have any sales. That’s a bummer, but I will keep working on it.</p><p>For me, <strong>entrepreneurship is not just work; it’s a lifestyle.</strong> And this lifestyle fits me well.</p><p>Recently, I applied to two incubators: <strong>Johnson & Johnson</strong> and <strong>MaRS</strong>. Both rejected me. Johnson & Johnson said my product was not in their path, and MaRS said I didn’t have enough traction. Still, I’m happy because three other companies replied to me, and two of them want to set up meetings now.</p><p>This is only the beginning.</p><p>P.S.: I want to reach <strong>10,000 US dollars</strong>. This is my first goal for this year.</p>` } }
         />
 
         {/* Author box */}

@@ -4,7 +4,7 @@ import { LegalPage, H2 } from "@/components/LegalPage";
 import { LEGAL } from "@/lib/legal";
 
 export const metadata: Metadata = {
-  title: { absolute: "Terms of Service — Hami Tahm" },
+  title: { absolute: "Terms of Service: Hami Tahm" },
   description:
     "The terms for using hamitahm.com, the free AI Visibility Check, and paid consulting engagements.",
   alternates: { canonical: "https://hamitahm.com/terms/" },
@@ -49,7 +49,7 @@ export default function TermsPage() {
 
       <H2>Paid engagements</H2>
       <p>
-        Paid work &mdash; including the AI Visibility Audit &mdash; is governed by the
+        Paid work (including the AI Visibility Audit) is governed by the
         specific scope, price and terms agreed in writing with you before any work starts.
         Those written terms take precedence over anything on this page or elsewhere on
         this site.
@@ -66,7 +66,7 @@ export default function TermsPage() {
         <Link href="/disclaimer/" style={{ color: "var(--accent)" }}>
           Disclaimer
         </Link>{" "}
-        for the detail &mdash; it is worth reading properly, because it is the honest
+        for the detail: it is worth reading properly, because it is the honest
         version.
       </p>
 
@@ -88,8 +88,8 @@ export default function TermsPage() {
 
       <H2>Intellectual property</H2>
       <p>
-        The content of this site &mdash; writing, case studies, data and the methods
-        described &mdash; belongs to {LEGAL.operator}. You are welcome to quote and link
+        The content of this site (writing, case studies, data and the methods
+        described) belongs to {LEGAL.operator}. You are welcome to quote and link
         to it with attribution. You may not republish it wholesale or present it as your
         own.
       </p>

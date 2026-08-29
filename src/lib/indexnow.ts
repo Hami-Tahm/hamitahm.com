@@ -1,5 +1,5 @@
 /**
- * IndexNow client — notifies Bing, Yandex, Naver, Seznam, and Copilot
+ * IndexNow client: notifies Bing, Yandex, Naver, Seznam, and Copilot
  * the moment new or changed URLs ship. Faster than waiting for crawl cycles.
  *
  * Key + key-file pattern: the key must be hosted at `https://<host>/<key>.txt`
@@ -63,12 +63,12 @@ export async function submitToIndexNow(
 }
 
 /**
- * Every canonical URL on the site — derived from the sitemap, not retyped.
+ * Every canonical URL on the site, derived from the sitemap, not retyped.
  *
  * ⚠️ THIS USED TO BE A HAND-WRITTEN LIST and it had silently drifted. It was
  * missing eleven live pages, including /ai-visibility/ai-visibility-consultant-toronto/,
  * /ai-visibility/ai-visibility-checker/, /ai-visibility/implementation/, /pricing/,
- * /methodology/, /research/ and three blog posts — so every "full resubmit" quietly
+ * /methodology/, /research/ and three blog posts, so every "full resubmit" quietly
  * skipped them.
  *
  * Reading from the sitemap means the two can never disagree again: add a page to

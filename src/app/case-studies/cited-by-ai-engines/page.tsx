@@ -10,7 +10,7 @@ const TURNAROUND = "7 business days";
 export const metadata: Metadata = {
   title: "AI Engines Already Name Hami Tahm",
   description:
-    "Ask ChatGPT, Perplexity, Google AI Mode, or Grok who does AI visibility in Toronto — they name Hami Tahm. A dated snapshot of the outcome the audit is built to produce.",
+    "Ask ChatGPT, Perplexity, Google AI Mode, or Grok who does AI visibility in Toronto: they name Hami Tahm. A dated snapshot of the outcome the audit is built to produce.",
   alternates: {
     canonical: "https://hamitahm.com/case-studies/cited-by-ai-engines/",
   },
@@ -86,7 +86,7 @@ export default function CitedByAiEnginesCaseStudy() {
         </RevealSection>
       </div>
 
-      {/* ── 1 — Hero ── */}
+      {/* 1. Hero */}
       <header style={{ padding: "30px 0 50px" }}>
         <div className="wrap">
           <RevealSection>
@@ -117,7 +117,7 @@ export default function CitedByAiEnginesCaseStudy() {
               <Link href="/hami-tahm/" style={{ color: "var(--accent)" }}>
                 Hami Tahm
               </Link>
-              . AI answers change over time — this is a dated record, not a
+              . AI answers change over time; this is a dated record, not a
               permanent ranking.
             </p>
           </RevealSection>
@@ -136,7 +136,7 @@ export default function CitedByAiEnginesCaseStudy() {
               the exact outcome an AI visibility audit is built to produce. So
               here is the most direct proof I can offer: when buyers ask
               ChatGPT, Perplexity, Google AI Mode, and Grok who does AI
-              visibility in Toronto or Canada, they name me — by name, with my
+              visibility in Toronto or Canada, they name me: by name, with my
               site cited.
             </p>
           </RevealSection>
@@ -159,7 +159,7 @@ export default function CitedByAiEnginesCaseStudy() {
         </div>
       </header>
 
-      {/* ── 2 — The prompt ── */}
+      {/* 2. The prompt */}
       <section style={{ padding: "46px 0" }}>
         <div className="wrap" style={{ maxWidth: 740 }}>
           <RevealSection>
@@ -204,7 +204,7 @@ export default function CitedByAiEnginesCaseStudy() {
         </div>
       </section>
 
-      {/* ── 3 — Engine by engine ── */}
+      {/* 3. Engine by engine */}
       <section style={{ padding: "46px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -302,10 +302,10 @@ export default function CitedByAiEnginesCaseStudy() {
         </div>
       </section>
 
-      {/* ── 3b — Second, independent check (2026-07-27) ──
+      {/* 3b. Second, independent check (2026-07-27)
           Kept alongside the June snapshot rather than replacing it: one result can be
           luck, a repeat four weeks later is a pattern. Wording is constrained by the
-          claim-discipline note on SNAPSHOT_INCOGNITO in lib/ai-citation-proof.ts —
+          claim-discipline note on SNAPSHOT_INCOGNITO in lib/ai-citation-proof.ts:
           "named", never "ranked #1", and the variability caveat always ships with it. */}
       <section style={{ padding: "10px 0 46px" }}>
         <div className="wrap" style={{ maxWidth: 740 }}>
@@ -352,11 +352,11 @@ export default function CitedByAiEnginesCaseStudy() {
                   lineHeight: 1.65,
                 }}
               >
-                A different question &mdash;{" "}
+                A different question (
                 <em style={{ color: "var(--ink)" }}>
                   &ldquo;{SNAPSHOT_INCOGNITO.prompt}&rdquo;
-                </em>{" "}
-                &mdash; run in a {SNAPSHOT_INCOGNITO.condition.toLowerCase()}, with no
+                </em>
+                ) run in a {SNAPSHOT_INCOGNITO.condition.toLowerCase()}, with no
                 account history to personalise the answer:
               </p>
 
@@ -387,7 +387,7 @@ export default function CitedByAiEnginesCaseStudy() {
                     </span>
                     <span style={{ fontSize: 15.5, lineHeight: 1.6 }}>
                       <b style={{ color: "var(--ink)", fontWeight: 600 }}>{surface}</b>
-                      <span style={{ color: "var(--muted)" }}> &mdash; {outcome}</span>
+                      <span style={{ color: "var(--muted)" }}>: {outcome}</span>
                     </span>
                   </li>
                 ))}
@@ -412,7 +412,7 @@ export default function CitedByAiEnginesCaseStudy() {
         </div>
       </section>
 
-      {/* ── 4 — Why this matters ── */}
+      {/* 4. Why this matters */}
       <section style={{ padding: "46px 0" }}>
         <div className="wrap" style={{ maxWidth: 740 }}>
           <RevealSection>
@@ -438,7 +438,7 @@ export default function CitedByAiEnginesCaseStudy() {
               <p style={{ marginBottom: 20 }}>
                 Buyers increasingly ask an AI engine for a shortlist before they
                 ask Google. When the engine returns one name, that name gets the
-                first conversation — and often the only one. Being the named
+                first conversation, and often the only one. Being the named
                 answer is the whole game.
               </p>
               {/* A self-referential citation-count claim was removed here on review.
@@ -478,7 +478,7 @@ export default function CitedByAiEnginesCaseStudy() {
         </div>
       </section>
 
-      {/* ── 5 — CTA ── */}
+      {/* 5. CTA */}
       <section style={{ padding: "60px 0 80px" }}>
         <div className="wrap">
           <RevealSection>
@@ -507,7 +507,7 @@ export default function CitedByAiEnginesCaseStudy() {
                   position: "relative",
                 }}
               >
-                The audit finds why AI engines do or don&rsquo;t cite you — and
+                The audit finds why AI engines do or don&rsquo;t cite you, and
                 what to change first.
               </p>
               <p

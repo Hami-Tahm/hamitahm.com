@@ -7,15 +7,15 @@ import { getAuditPricing } from "@/lib/currency";
 
 /**
  * Self-serve checkout. WHY BOTH PATHS EXIST: at $1,500 some buyers pay
- * immediately and some want to talk first. Removing either costs sales — the
+ * immediately and some want to talk first. Removing either costs sales: the
  * primary button pays, the secondary keeps the conversation route open. Do
  * not "simplify" to one.
  *
- * The price and checkout URL are no longer static — see getAuditPricing()
+ * The price and checkout URL are no longer static; see getAuditPricing()
  * below. Canadian visitors get the CAD price/link; everyone else gets a real
  * USD price backed by its own Stripe Payment Link (src/lib/currency.ts).
  * That's also why this page is now an async component and why FAQ_ITEMS /
- * COMPARISON_ROWS moved from module scope into functions — both embed the
+ * COMPARISON_ROWS moved from module scope into functions: both embed the
  * price as text and have to be built per-request, after we know which
  * currency the visitor is seeing.
  */
@@ -25,11 +25,11 @@ const TURNAROUND = "7 business days";
 
 export const metadata: Metadata = {
   // Buyers search this deliverable as "ChatGPT visibility audit", "AI search audit"
-  // and "AEO audit" as often as "AI visibility audit" — title/description carry the
+  // and "AEO audit" as often as "AI visibility audit"; title/description carry the
   // aliases so one page ranks for the whole cluster.
-  title: "ChatGPT & AI Visibility Audit — $1,500 CAD Flat",
+  title: "ChatGPT & AI Visibility Audit: $1,500 CAD Flat",
   description:
-    "AI visibility audit across Google AI Overviews, ChatGPT, Gemini, and Claude — also called a ChatGPT visibility or AEO audit. $1,500 CAD flat, by Hami Tahm.",
+    "AI visibility audit across Google AI Overviews, ChatGPT, Gemini, and Claude (also called a ChatGPT visibility or AEO audit). $1,500 CAD flat, by Hami Tahm.",
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/ai-visibility-audit/",
   },
@@ -43,16 +43,16 @@ function buildFaqItems(priceDisplay: string) {
   },
   {
     q: "Why does AI recommend my competitor instead of me?",
-    a: "Usually because AI engines find clearer, more consistent, better-structured signals about your competitor across the web — not because they are a better business. The audit pinpoints which signals are missing or misrepresented for you, and what to change first to close the gap.",
+    a: "Usually because AI engines find clearer, more consistent, better-structured signals about your competitor across the web, not because they are a better business. The audit pinpoints which signals are missing or misrepresented for you, and what to change first to close the gap.",
   },
   {
     q: "What is an AI visibility audit?",
-    a: "An AI visibility audit is a structured review of how your business appears across AI platforms — Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, and Perplexity. The output is a written report and a prioritized action plan.",
+    a: "An AI visibility audit is a structured review of how your business appears across AI platforms: Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, and Perplexity. The output is a written report and a prioritized action plan.",
   },
   {
     // Alias-capture FAQ: same deliverable, four search phrasings.
     q: "Is this the same as a ChatGPT visibility audit or an AEO audit?",
-    a: "Yes. ChatGPT visibility audit, AI search audit, AEO audit, GEO audit — these are different names for the same deliverable. The difference here is coverage: this audit reviews six engines (Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, and Perplexity), so you get the full picture rather than a single-platform snapshot.",
+    a: "Yes. ChatGPT visibility audit, AI search audit, AEO audit, GEO audit: these are different names for the same deliverable. The difference here is coverage: this audit reviews six engines (Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, and Perplexity), so you get the full picture rather than a single-platform snapshot.",
   },
   {
     q: "How is this different from a traditional SEO audit?",
@@ -72,7 +72,7 @@ function buildFaqItems(priceDisplay: string) {
   },
   {
     q: "What happens after I receive the report?",
-    a: "You have 14 days of follow-up access — questions, clarifications, prioritization help. After that, if you want the findings turned into a page-level action plan and roadmap your team can work from, that's the fixed-scope Action Plan, and the audit fee is credited toward it. I don't take execution work — the people who already maintain your site do the shipping.",
+    a: "You have 14 days of follow-up access: questions, clarifications, prioritization help. After that, if you want the findings turned into a page-level action plan and roadmap your team can work from, that's the fixed-scope Action Plan, and the audit fee is credited toward it. I don't take execution work; the people who already maintain your site do the shipping.",
   },
   {
     q: "Do you work with businesses outside Canada?",
@@ -134,8 +134,8 @@ const RELATED_LINKS = [
     label: "Want the plan to act on it? The Action Plan",
     href: "/ai-visibility/implementation/",
   },
-  { label: "Full pricing — every step, published", href: "/pricing/" },
-  { label: "Case studies — the results behind the method", href: "/case-studies/" },
+  { label: "Full pricing: every step, published", href: "/pricing/" },
+  { label: "Case studies: the results behind the method", href: "/case-studies/" },
   { label: "How I measure AI visibility (methodology)", href: "/methodology/" },
   { label: "What is AI visibility?", href: "/ai-visibility/" },
   {
@@ -201,7 +201,7 @@ export default async function AIVisibilityAudit() {
   const { price, priceWithCurrency, checkoutUrl, currency } = await getAuditPricing();
   const FAQ_ITEMS = buildFaqItems(priceWithCurrency);
   const COMPARISON_ROWS = buildComparisonRows(priceWithCurrency);
-  // Schema.org price must be a plain number — strip the "$" and thousands comma.
+  // Schema.org price must be a plain number: strip the "$" and thousands comma.
   const schemaPrice = Number(price.replace(/[^0-9.]/g, ""));
   const structuredData = buildStructuredData(FAQ_ITEMS, schemaPrice, currency);
 
@@ -233,7 +233,7 @@ export default async function AIVisibilityAudit() {
         </RevealSection>
       </div>
 
-      {/* ── 1 — Hero ── */}
+      {/* Section 1: Hero */}
       <header style={{ padding: "34px 0 50px" }}>
         <div className="wrap">
           <RevealSection>
@@ -262,9 +262,9 @@ export default async function AIVisibilityAudit() {
               }}
             >
               An AI visibility audit is a structured review of how your business
-              appears across AI platforms like Google AI Overviews, ChatGPT, Gemini, Claude and others. Hami Tahm conducts each audit personally — identifying
+              appears across AI platforms like Google AI Overviews, ChatGPT, Gemini, Claude and others. Hami Tahm conducts each audit personally, identifying
               where your business is missing, misrepresented, or invisible in
-              AI-generated answers — and delivers a prioritized action plan you
+              AI-generated answers, and delivers a prioritized action plan you
               can act on the same week.
             </p>
           </RevealSection>
@@ -291,7 +291,7 @@ export default async function AIVisibilityAudit() {
                 className="btn btn-primary"
                 data-gtm="audit-checkout-hero"
               >
-                Book &amp; pay &mdash; {priceWithCurrency} <span className="arr">&rarr;</span>
+                Book &amp; pay for {priceWithCurrency} <span className="arr">&rarr;</span>
               </a>
               <div style={{ marginTop: 14, display: "flex", gap: 18, flexWrap: "wrap" }}>
                 <Link
@@ -320,7 +320,7 @@ export default async function AIVisibilityAudit() {
         </div>
       </header>
 
-      {/* ── 2 — What's Included ── */}
+      {/* Section 2: What's Included */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -336,7 +336,7 @@ export default async function AIVisibilityAudit() {
               What&rsquo;s Included in Your Audit
             </h2>
             {/* The strongest objection on this page is "I can't see what I'm buying."
-                Answer it at the top of the includes section rather than in the FAQ —
+                Answer it at the top of the includes section rather than in the FAQ;
                 the sample report is a real deliverable, not a brochure, and it does
                 more selling than another paragraph of description would. */}
             <p
@@ -351,7 +351,7 @@ export default async function AIVisibilityAudit() {
               <Link href="/ai-visibility/sample-report/" style={{ color: "var(--accent)", fontWeight: 500 }}>
                 Read a full sample report
               </Link>
-              {" "}&mdash; real data, every section.
+              : real data, every section.
             </p>
             <p
               style={{
@@ -363,7 +363,7 @@ export default async function AIVisibilityAudit() {
               }}
             >
               Every AI visibility audit covers the platforms your customers
-              actually use to find businesses like yours — and ends with a report
+              actually use to find businesses like yours, and ends with a report
               you can hand to a developer or act on yourself.
             </p>
           </RevealSection>
@@ -432,14 +432,14 @@ export default async function AIVisibilityAudit() {
                   }}
                 >
                   {[
-                    "A written report covering each platform — where you appear, where you don't, and what AI engines say about you",
+                    "A written report covering each platform: where you appear, where you don't, and what AI engines say about you",
                     "A prioritized action plan ranked by impact and effort",
                     // Genuinely differentiating: Bing's AI Performance report (public
                     // preview since Feb 2026) is the only first-party source that shows
                     // publishers which of their pages Copilot actually cited. Setting it
                     // up on the CLIENT's own account also records a dated baseline, which
                     // is what makes any later "before/after" claim defensible.
-                    "Bing AI Performance tracking set up on your own account — the one first-party report that shows which of your pages Microsoft Copilot cites, with today's baseline recorded",
+                    "Bing AI Performance tracking set up on your own account (the one first-party report that shows which of your pages Microsoft Copilot cites), with today's baseline recorded",
                     `A ${WALKTHROUGH_MINUTES}-minute walkthrough call to review findings and next steps`,
                     "14 days of follow-up questions after delivery",
                   ].map((item) => (
@@ -459,7 +459,7 @@ export default async function AIVisibilityAudit() {
         </div>
       </section>
 
-      {/* ── 3 — Proof: HomeCalc ── */}
+      {/* Section 3: Proof (HomeCalc) */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -472,7 +472,7 @@ export default async function AIVisibilityAudit() {
                 letterSpacing: "-.015em",
               }}
             >
-              Real Results — HomeCalc.ca
+              Real Results: HomeCalc.ca
             </h2>
           </RevealSection>
 
@@ -554,8 +554,7 @@ export default async function AIVisibilityAudit() {
                   HomeCalc.ca, a Canadian financial calculator site{" "}
                   {HOMECALC_PROOF.domainAge}, went from near-zero
                   to {HOMECALC_PROOF.combinedAppearances}{" "}AI appearances in{" "}
-                  {HOMECALC_PROOF.timeframe}{" "}&mdash;{" "}
-                  {HOMECALC_PROOF.combinedSourceLong}.
+                  {HOMECALC_PROOF.timeframe} ({HOMECALC_PROOF.combinedSourceLong}).
                 </p>
                 <p
                   style={{
@@ -638,7 +637,7 @@ export default async function AIVisibilityAudit() {
         </div>
       </section>
 
-      {/* ── 4 — Comparison ── */}
+      {/* Section 4: Comparison */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -834,7 +833,7 @@ export default async function AIVisibilityAudit() {
         </div>
       </section>
 
-      {/* ── 5 — How the Audit Works ── */}
+      {/* Section 5: How the Audit Works */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 720 }}>
           <RevealSection>
@@ -873,7 +872,7 @@ export default async function AIVisibilityAudit() {
         </div>
       </section>
 
-      {/* ── 6 — Pricing ── */}
+      {/* Section 6: Pricing */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -946,7 +945,7 @@ export default async function AIVisibilityAudit() {
                         lineHeight: 1.5,
                       }}
                     >
-                      &mdash; {item}
+                      &bull; {item}
                     </li>
                   ))}
                 </ul>
@@ -980,7 +979,7 @@ export default async function AIVisibilityAudit() {
                         lineHeight: 1.5,
                       }}
                     >
-                      &mdash; {item}
+                      &bull; {item}
                     </li>
                   ))}
                 </ul>
@@ -992,14 +991,14 @@ export default async function AIVisibilityAudit() {
                 style={{ marginTop: 36, position: "relative" }}
                 data-gtm="audit-checkout-included"
               >
-                Book &amp; pay — {priceWithCurrency} <span className="arr">&rarr;</span>
+                Book &amp; pay for {priceWithCurrency} <span className="arr">&rarr;</span>
               </a>
             </div>
           </RevealSection>
         </div>
       </section>
 
-      {/* ── 7 — Who This Is For ── */}
+      {/* Section 7: Who This Is For */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -1059,7 +1058,7 @@ export default async function AIVisibilityAudit() {
         </div>
       </section>
 
-      {/* ── 8 — FAQ ── */}
+      {/* Section 8: FAQ */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 760 }}>
           <RevealSection>
@@ -1108,7 +1107,7 @@ export default async function AIVisibilityAudit() {
         </div>
       </section>
 
-      {/* ── 9 — Related Reading ── */}
+      {/* Section 9: Related Reading */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 760 }}>
           <RevealSection>
@@ -1153,7 +1152,7 @@ export default async function AIVisibilityAudit() {
         </div>
       </section>
 
-      {/* ── 10 — Final CTA ── */}
+      {/* Section 10: Final CTA */}
       <section style={{ padding: "60px 0 80px" }}>
         <div className="wrap">
           <RevealSection>
@@ -1191,7 +1190,7 @@ export default async function AIVisibilityAudit() {
                 style={{ marginTop: 30, position: "relative" }}
                 data-gtm="audit-checkout-final"
               >
-                Book &amp; pay — {priceWithCurrency} <span className="arr">&rarr;</span>
+                Book &amp; pay for {priceWithCurrency} <span className="arr">&rarr;</span>
               </a>
               <div style={{ marginTop: 16, position: "relative" }}>
                 <Link href={BOOKING_URL} style={{ color: "var(--muted)", fontSize: 14 }}>

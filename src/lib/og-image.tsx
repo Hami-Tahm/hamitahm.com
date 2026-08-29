@@ -17,7 +17,7 @@ export const OG_WIDTH = 1200;
 export const OG_HEIGHT = 630;
 
 export type OgConfig = {
-  /** Top-right chip — short context label. */
+  /** Top-right chip: short context label. */
   badge?: string;
   /** Big serif headline. Keep ≤ 60 chars for a single line of impact. */
   title: string;
@@ -51,7 +51,7 @@ export function renderOgImage(cfg: OgConfig) {
           paddingRight: 80,
         }}
       >
-        {/* Top strip — branded chip + section badge */}
+        {/* Top strip: branded chip + section badge */}
         <div
           style={{
             display: "flex",
@@ -113,7 +113,7 @@ export function renderOgImage(cfg: OgConfig) {
           </div>
         </div>
 
-        {/* Bottom strip — author + location */}
+        {/* Bottom strip: author + location */}
         <div
           style={{
             display: "flex",

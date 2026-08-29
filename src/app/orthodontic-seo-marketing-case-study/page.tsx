@@ -9,7 +9,7 @@ const CASE_STUDY_URL = "/case-studies/homecalc-ai-visibility/";
 const ABOUT_URL = "/hami-tahm/";
 
 export const metadata: Metadata = {
-  title: "Top 10 to #1 — A 7-Year Dental SEO Case Study",
+  title: "Top 10 to #1: A 7-Year Dental SEO Case Study",
   description:
     "How a single orthodontic practice went from page-one obscurity to #1 in the city through 7+ years of honest SEO, brand building, and conversion work. By Hami Tahm.",
   alternates: {
@@ -24,7 +24,7 @@ const structuredData = {
       "@type": "Article",
       "@id":
         "https://hamitahm.com/orthodontic-seo-marketing-case-study/#article",
-      headline: "Top 10 to #1 — A 7-Year Dental SEO Case Study",
+      headline: "Top 10 to #1: A 7-Year Dental SEO Case Study",
       description:
         "How a single orthodontic practice went from page-one obscurity to #1 in the city through 7+ years of honest SEO, brand building, and conversion work.",
       url: "https://hamitahm.com/orthodontic-seo-marketing-case-study/",
@@ -98,7 +98,7 @@ export default function OrthodonticSEOCaseStudy() {
         </RevealSection>
       </div>
 
-      {/* ── Hero ── */}
+      {/* Hero */}
       <header style={{ padding: "34px 0 50px" }}>
         <div className="wrap">
           <RevealSection>
@@ -127,7 +127,7 @@ export default function OrthodonticSEOCaseStudy() {
                 maxWidth: "22ch",
               }}
             >
-              Top 10 to #1 — a 7-year orthodontic SEO case study.
+              Top 10 to #1: a 7-year orthodontic SEO case study.
             </h1>
           </RevealSection>
 
@@ -143,8 +143,8 @@ export default function OrthodonticSEOCaseStudy() {
               Case study by{" "}
               <Link href={ABOUT_URL} style={{ color: "var(--accent)" }}>
                 Hami Tahm
-              </Link>{" "}
-              &mdash; February 2026.
+              </Link>
+              , February 2026.
             </p>
           </RevealSection>
 
@@ -159,7 +159,7 @@ export default function OrthodonticSEOCaseStudy() {
               }}
             >
               How one orthodontic practice went from page-one obscurity to #1
-              in its city &mdash; through 7+ years of patient SEO, brand
+              in its city, through 7+ years of patient SEO, brand
               building, conversion work, and a single contrarian decision that
               changed everything.
             </p>
@@ -199,7 +199,7 @@ export default function OrthodonticSEOCaseStudy() {
         </div>
       </header>
 
-      {/* ── 1 — The Inbox Message ── */}
+      {/* 1: The Inbox Message */}
       <section style={{ padding: "46px 0" }}>
         <div className="wrap" style={{ maxWidth: 740 }}>
           <RevealSection>
@@ -254,7 +254,7 @@ export default function OrthodonticSEOCaseStudy() {
               }}
             >
               I was honest with him. I&rsquo;d never run an SEO project for
-              another business before &mdash; only for myself. He hired me
+              another business before, only for myself. He hired me
               anyway. That decision turned into a 7.5-year partnership and
               became the foundation of every methodology I&rsquo;ve used since.
             </p>
@@ -262,7 +262,7 @@ export default function OrthodonticSEOCaseStudy() {
         </div>
       </section>
 
-      {/* ── 2 — The Failing Start ── */}
+      {/* 2: The Failing Start */}
       <section style={{ padding: "46px 0" }}>
         <div className="wrap" style={{ maxWidth: 740 }}>
           <RevealSection>
@@ -276,7 +276,7 @@ export default function OrthodonticSEOCaseStudy() {
                 marginBottom: 24,
               }}
             >
-              Six months of failing &mdash; and the turning point
+              Six months of failing, and the turning point
             </h2>
             <p
               style={{
@@ -328,8 +328,8 @@ export default function OrthodonticSEOCaseStudy() {
               I made a contrarian call. I told him to{" "}
               <strong style={{ color: "var(--ink)", fontWeight: 600 }}>
                 stop running multiple weak websites
-              </strong>{" "}
-              &mdash; it was diluting his authority across the same audience.
+              </strong>
+              : it was diluting his authority across the same audience.
               We consolidated everything into a single domain. One brand. One
               authority signal. One target for every link, citation, and
               ranking signal we&rsquo;d build over the next seven years.
@@ -342,15 +342,15 @@ export default function OrthodonticSEOCaseStudy() {
                 lineHeight: 1.72,
               }}
             >
-              That call &mdash; choosing concentration over fragmentation
-              &mdash; was the single highest-leverage decision of the entire
+              That call (choosing concentration over fragmentation)
+              was the single highest-leverage decision of the entire
               engagement.
             </p>
           </RevealSection>
         </div>
       </section>
 
-      {/* ── 3 — Beyond SEO ── */}
+      {/* 3: Beyond SEO */}
       <section style={{ padding: "46px 0" }}>
         <div className="wrap" style={{ maxWidth: 740 }}>
           <RevealSection>
@@ -364,7 +364,7 @@ export default function OrthodonticSEOCaseStudy() {
                 marginBottom: 24,
               }}
             >
-              Beyond rankings &mdash; building a brand the city remembered
+              Beyond rankings: building a brand the city remembered
             </h2>
             <p
               style={{
@@ -375,7 +375,7 @@ export default function OrthodonticSEOCaseStudy() {
               }}
             >
               SEO got us in the door. But for a medical professional, search
-              traffic isn&rsquo;t the destination &mdash; brand recall is.
+              traffic isn&rsquo;t the destination: brand recall is.
               Patients who remember your name when they need treatment are
               worth more than patients who happen to click. So we built around
               that.
@@ -397,7 +397,7 @@ export default function OrthodonticSEOCaseStudy() {
               n: "01",
               title: "Retargeting funnels",
               body:
-                "Every site visitor stayed in the brand orbit &mdash; display ads, follow-up touches, gentle reminders. The first visit was almost never the conversion. The fifth often was.",
+                "Every site visitor stayed in the brand orbit: display ads, follow-up touches, gentle reminders. The first visit was almost never the conversion. The fifth often was.",
             },
             {
               n: "02",
@@ -409,13 +409,13 @@ export default function OrthodonticSEOCaseStudy() {
               n: "03",
               title: "Google Ads + lead generation",
               body:
-                "Once the SEO foundation was solid, we layered paid acquisition on top &mdash; for new procedures and new locations specifically, not as a substitute for organic. Paid funded the experiments. Organic carried the durable wins.",
+                "Once the SEO foundation was solid, we layered paid acquisition on top, for new procedures and new locations specifically, not as a substitute for organic. Paid funded the experiments. Organic carried the durable wins.",
             },
             {
               n: "04",
               title: "CRO across three clinic locations",
               body:
-                "We tracked how many website visitors actually became scheduled patients, broken down per clinic. Different cities, different demographics, different conversion patterns &mdash; each location got its own funnel optimization, not a one-size-fits-all template.",
+                "We tracked how many website visitors actually became scheduled patients, broken down per clinic. Different cities, different demographics, different conversion patterns: each location got its own funnel optimization, not a one-size-fits-all template.",
             },
           ].map(({ n, title, body }) => (
             <RevealSection key={n} delay={0.06}>
@@ -466,7 +466,7 @@ export default function OrthodonticSEOCaseStudy() {
         </div>
       </section>
 
-      {/* ── 4 — Result ── */}
+      {/* 4: Result */}
       <section style={{ padding: "46px 0" }}>
         <div className="wrap" style={{ maxWidth: 740 }}>
           <RevealSection>
@@ -480,7 +480,7 @@ export default function OrthodonticSEOCaseStudy() {
                 marginBottom: 24,
               }}
             >
-              The result &mdash; #1 in the city
+              The result: #1 in the city
             </h2>
             <p
               style={{
@@ -500,8 +500,8 @@ export default function OrthodonticSEOCaseStudy() {
                 }}
               >
                 he became the #1 orthodontist in his market
-              </strong>{" "}
-              &mdash; both on search and in the categories patients used to
+              </strong>
+              , both on search and in the categories patients used to
               describe top providers.
             </p>
             <p
@@ -520,7 +520,7 @@ export default function OrthodonticSEOCaseStudy() {
         </div>
       </section>
 
-      {/* ── 5 — Why I'm Sharing This ── */}
+      {/* 5: Why I'm Sharing This */}
       <section style={{ padding: "46px 0" }}>
         <div className="wrap" style={{ maxWidth: 740 }}>
           <RevealSection>
@@ -556,10 +556,10 @@ export default function OrthodonticSEOCaseStudy() {
                 marginBottom: 20,
               }}
             >
-              The principles that won &mdash; concentration over fragmentation,
+              The principles that won (concentration over fragmentation,
               brand recall over click counts, transparency about what&rsquo;s
-              working and what isn&rsquo;t, measurement instead of vanity
-              &mdash; are exactly the principles I now apply to{" "}
+              working and what isn&rsquo;t, measurement instead of vanity)
+              are exactly the principles I now apply to{" "}
               <Link
                 href="/ai-visibility/"
                 style={{ color: "var(--accent)", fontWeight: 500 }}
@@ -583,7 +583,7 @@ export default function OrthodonticSEOCaseStudy() {
                 href={CASE_STUDY_URL}
                 style={{ color: "var(--accent)", fontWeight: 500 }}
               >
-                HomeCalc.ca &mdash; {HOMECALC_CLAIMS.appearancesInTimeframe}
+                HomeCalc.ca: {HOMECALC_CLAIMS.appearancesInTimeframe}
               </Link>{" "}
               on a YMYL site that was under three months old when the audit began.
             </p>
@@ -597,7 +597,7 @@ export default function OrthodonticSEOCaseStudy() {
             >
               If you&rsquo;re a dental practice, an orthodontist, or any
               high-ticket professional service in Canada or the US tired of
-              agencies that promise rankings and disappear &mdash; the
+              agencies that promise rankings and disappear: the
               methodology is the same. I just apply it now to a market that
               also includes Google AI Overviews, ChatGPT, Gemini, Claude and others.
             </p>
@@ -605,7 +605,7 @@ export default function OrthodonticSEOCaseStudy() {
         </div>
       </section>
 
-      {/* ── Final CTA ── */}
+      {/* Final CTA */}
       <section style={{ padding: "60px 0 80px" }}>
         <div className="wrap">
           <RevealSection>
@@ -635,7 +635,7 @@ export default function OrthodonticSEOCaseStudy() {
                 }}
               >
                 Start with a $1,500 AI Visibility Audit. Report and walkthrough
-                call within 7 business days. Consultant-led &mdash; no agency
+                call within 7 business days. Consultant-led, no agency
                 layer.
               </p>
               <div

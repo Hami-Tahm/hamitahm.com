@@ -8,7 +8,7 @@
  *
  * From 2026-07-14 to 2026-08-16 the second tier was an "Implementation Sprint",
  * sold as done-for-you: "I make the changes the audit identified." That tier is
- * GONE, and it is not coming back. Hami does not take execution work — not as a
+ * GONE, and it is not coming back. Hami does not take execution work: not as a
  * pricing decision but as a business one. Execution carries unbounded scope, makes
  * revenue a function of his own hours, and is the thing that stops this practice
  * from serving ten clients a month instead of two.
@@ -24,8 +24,8 @@
  * The `monitor` tier (added 2026-07-17) is the OPTIONAL ongoing step: monthly
  * monitoring + advisory on a fixed 6–12 month term, offered only AFTER the plan.
  * Positioning rule: it is never required to get started, and it is term-limited (not
- * open-ended). Copy must say "no retainer to get started / optional ongoing monitoring"
- * — NOT the old absolute "no retainer, not a subscription," which now contradicts it.
+ * open-ended). Copy must say "no retainer to get started / optional ongoing monitoring",
+ * NOT the old absolute "no retainer, not a subscription," which now contradicts it.
  */
 
 export const OFFERS = {
@@ -40,17 +40,17 @@ export const OFFERS = {
     price: "$1,500",
     priceNote: "CAD, flat fee, one-time",
     /**
-     * USD price for visitors outside Canada — added 2026-08-29 alongside
+     * USD price for visitors outside Canada, added 2026-08-29 alongside
      * src/proxy.ts and src/lib/currency.ts. This is a REAL price backed
      * by its own Stripe Payment Link (checkoutUrlUSD below), not a display-only
      * conversion of the CAD figure.
      *
      * ⚠️ THIS IS NOT AN FX CONVERSION AND NEVER SHOULD BE. Hami's explicit
      * instruction: $1,500 USD flat, deliberately HIGHER than the $1,500 CAD
-     * price in absolute terms — non-Canada visitors are charged more, not an
+     * price in absolute terms: non-Canada visitors are charged more, not an
      * equivalent-value conversion of the CAD price. Do not "fix" this back
      * down to a converted figure (an earlier draft of this file briefly had
-     * $1,100 USD as a converted amount — that was wrong and was corrected
+     * $1,100 USD as a converted amount; that was wrong and was corrected
      * same-day). If the upcharge amount ever changes, that's a deliberate
      * pricing decision to get explicitly, not a rate to recalculate.
      */
@@ -62,7 +62,7 @@ export const OFFERS = {
      * What the audit covers, in the buyer's words. Kept here so the pages can't drift
      * from each other the way the platform count once did.
      *
-     * ⚠️ THE PROMPT COUNT IS PUBLISHABLE, THE METHOD IS NOT. "30 prompts" is scope —
+     * ⚠️ THE PROMPT COUNT IS PUBLISHABLE, THE METHOD IS NOT. "30 prompts" is scope:
      * it tells a buyer what they are getting. How those 30 are chosen, and how many
      * times each is re-run to separate a real pattern from model variance, is the
      * mechanism and stays private. Same rule as citation-study.ts: publish the
@@ -74,28 +74,28 @@ export const OFFERS = {
       contentGap: true,
     },
     /**
-     * Live Stripe Payment Link — self-serve checkout (added 2026-07-28,
+     * Live Stripe Payment Link: self-serve checkout (added 2026-07-28,
      * moved to its own Stripe sub-account 2026-08-28).
      *
      * As of 2026-08-28 this runs under a dedicated "Hami Tahm" Stripe account
-     * (linked under the same Houmse Inc organization — same legal entity and
+     * (linked under the same Houmse Inc organization: same legal entity and
      * payout bank account, but its own product catalog, balance and card
      * statement descriptor). The statement descriptor is now "HAMI TAHM", not
-     * "HOUMSE INC" — the Stripe confirmation message reflects this. The old
+     * "HOUMSE INC"; the Stripe confirmation message reflects this. The old
      * link under the Houmse Inc account (fZucN7fEFaYf3GAdrF00001) has been
      * deactivated; do not resurrect it.
      *
      * The checkout collects the buyer's website URL and their target queries as
-     * required custom fields — without both, a paid order can't be started.
+     * required custom fields; without both, a paid order can't be started.
      */
     checkoutUrl: "https://buy.stripe.com/5kQ5kF78Y6ZJaj81TteQM00",
     /**
-     * USD counterpart of checkoutUrl — added 2026-08-29. Same product, same
+     * USD counterpart of checkoutUrl, added 2026-08-29. Same product, same
      * account, a second real Price object ($1,500 USD, a deliberate flat
-     * upcharge for non-Canada visitors — see priceUSD above) with its own
+     * upcharge for non-Canada visitors; see priceUSD above) with its own
      * Payment Link, same custom fields and confirmation message pattern. Do
      * NOT point this at checkoutUrl with a query param or rely on Stripe's
-     * Adaptive Pricing conversion for the CAD link instead — that would let
+     * Adaptive Pricing conversion for the CAD link instead: that would let
      * Stripe charge a live-converted amount that can drift from the
      * `priceUSD` figure shown on the page, which is exactly the "number on
      * the page doesn't match what you were charged" problem this exists to
@@ -105,7 +105,7 @@ export const OFFERS = {
     checkoutUrlUSD: "https://buy.stripe.com/7sYcN764U2Jt4YOfKjeQM02",
   },
   /*
-   * Renamed from `implementation` on 2026-08-16 — the key too, deliberately. A key
+   * Renamed from `implementation` on 2026-08-16, the key too, deliberately. A key
    * called `implementation` on a product that contains no implementation is exactly
    * the drift the rest of this file exists to prevent, and TypeScript catches every
    * missed reference at build time, so the rename is cheap.
@@ -118,13 +118,13 @@ export const OFFERS = {
     price: "From $4,500",
     /** Use this in prose. See PRICE DISPLAY RULE below. */
     priceWithCurrency: "From $4,500 CAD",
-    priceNote: "CAD, fixed scope — the $1,500 audit fee is credited toward it",
+    priceNote: "CAD, fixed scope: the $1,500 audit fee is credited toward it",
     href: "/ai-visibility/implementation/",
-    role: "Recommendations, a prioritized action plan and a roadmap — built for your team to ship.",
+    role: "Recommendations, a prioritized action plan and a roadmap, built for your team to ship.",
     duration: "Up to 30 days",
   },
   /*
-   * ⚠️ MONITORING IS DELIBERATELY UNPRICED — changed 2026-08-16. Do not "fix" this
+   * ⚠️ MONITORING IS DELIBERATELY UNPRICED, changed 2026-08-16. Do not "fix" this
    * by putting a number back without being asked.
    *
    * It used to publish "From $2,500/mo". That number was wrong for this ladder and
@@ -134,7 +134,7 @@ export const OFFERS = {
    * number of engines, prompts and competitors tracked, so a single "From" figure
    * was never going to be honest across cases.
    *
-   * Every OTHER price on this site stays published — that is a deliberate position
+   * Every OTHER price on this site stays published; that is a deliberate position
    * and this is the single exception, not a softening of it. The audit and the
    * action plan are the things a stranger needs to price without talking to anyone.
    * Monitoring only ever gets discussed with someone who has already worked with us
@@ -143,19 +143,19 @@ export const OFFERS = {
   monitor: {
     name: "AI Visibility Monitoring & Advisory",
     price: "Contact us",
-    /** Kept for API symmetry with the other tiers — no currency to append. */
+    /** Kept for API symmetry with the other tiers; no currency to append. */
     priceWithCurrency: "Contact us",
-    priceNote: "Optional — a fixed 6–12 month term, only after the action plan",
+    priceNote: "Optional: a fixed 6–12 month term, only after the action plan",
     href: "/contact/",
     role: "Optional and ongoing: I track your citations, watch competitors, and keep you visible as models retrain.",
     duration: "6–12 months",
-    /** Use this in prose instead of `${duration} term` — see the rule below. */
+    /** Use this in prose instead of `${duration} term`; see the rule below. */
     durationPhrase: "a fixed 6–12 month term",
   },
 } as const;
 
 /**
- * ── PRICE DISPLAY RULE — read before writing `{OFFERS.x.price} CAD` ──
+ * PRICE DISPLAY RULE: read before writing `{OFFERS.x.price} CAD`
  *
  * On the live hub page these rendered with the space missing:
  *
@@ -163,14 +163,14 @@ export const OFFERS = {
  *     From $2,500/moCAD · optional
  *     on a fixed 6–12 monthsterm
  *
- * The JSX source looked correct — `{OFFERS.implementation.price} CAD` with a space.
+ * The JSX source looked correct: `{OFFERS.implementation.price} CAD` with a space.
  * The cause is that an expression and the text beside it are two ADJACENT TEXT NODES,
  * and the separating space survives or dies depending on how the boundary between
  * them is serialised and re-read downstream. A price is the last thing on the site
  * that should depend on that.
  *
  * So: never concatenate a unit onto a price across a JSX expression boundary.
- * Render ONE node — `{OFFERS.implementation.priceWithCurrency}` — and keep the unit
+ * Render ONE node, `{OFFERS.implementation.priceWithCurrency}`, and keep the unit
  * inside the constant, where it also stays consistent site-wide.
  *
  * Same reasoning for `durationPhrase`. `{OFFERS.monitor.duration} term` is the same
@@ -180,7 +180,7 @@ export const OFFERS = {
 /**
  * Forward-looking price notice shown on the pricing page.
  *
- * SHAPE IS DELIBERATE — two things it is NOT, and why:
+ * SHAPE IS DELIBERATE: two things it is NOT, and why:
  *
  * 1. NOT "after the first N clients." A client-count trigger publicly advertises how
  *    few clients there are. A date says the same thing about urgency without
@@ -188,7 +188,7 @@ export const OFFERS = {
  *
  * 2. NOT a struck-through or "official" price. Canada's Competition Act
  *    (ordinary-selling-price rules) prohibits advertising a regular price the business
- *    has not genuinely sold at, in order to make the current price look discounted —
+ *    has not genuinely sold at, in order to make the current price look discounted;
  *    the tests are a volume test (>50% of sales at that price) and a time test (offered
  *    in good faith for a substantial period). Since these rates have not been sold at a
  *    higher price, ANY "was $X, now $Y" framing would fail both. A statement about a
@@ -210,7 +210,7 @@ export const PRICING_NOTICE = {
  *
  * ⚠️ WHY THIS EXISTS. Roughly a dozen pages said "six AI platforms" while only a
  * couple actually named all six, and /blog/what-is-ai-visibility/ listed five in the
- * body while its own CTA promised six — a reader could count the gap. The count and
+ * body while its own CTA promised six, a reader could count the gap. The count and
  * the names must come from the same place or they drift again.
  *
  * If the audit scope changes, change it HERE and nowhere else. Use

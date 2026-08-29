@@ -16,10 +16,10 @@ import {
 const SLUG = "ai-citation-study";
 const ARTICLE_TITLE = `What ${STUDY.totalCitations} AI Citations Actually Taught Me`;
 const ARTICLE_DESCRIPTION =
-  "Two sites, three months, 21,700 Microsoft Copilot citations — which pages got cited, which got nothing, and why citations aren't customers.";
+  "Two sites, three months, 21,700 Microsoft Copilot citations: which pages got cited, which got nothing, and why citations aren't customers.";
 const DATE_PUBLISHED = "2026-07-14";
 // The underlying figures were refreshed from the console on STUDY.pulledOn
-// (2026-07-27) — several numbers on this page changed after the original publish
+// (2026-07-27): several numbers on this page changed after the original publish
 // date (see citation-study.ts). dateModified must track that, or the page's own
 // structured data understates how current the content actually is.
 const DATE_MODIFIED = STUDY.pulledOnISO;
@@ -29,7 +29,7 @@ const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const CASE_STUDY_URL = "/case-studies/homecalc-ai-visibility/";
 
 export const metadata: Metadata = {
-  // Kept well under 60 chars — ARTICLE_TITLE alone is long, so the metadata title is a
+  // Kept well under 60 chars, since ARTICLE_TITLE alone is long, so the metadata title is a
   // tighter, keyword-forward variant rather than the full H1.
   title: { absolute: "AI Citation Study: What 21,700 Citations Taught Me" },
   description: ARTICLE_DESCRIPTION,
@@ -45,16 +45,16 @@ const schemaJson = blogSchemaJson({
   cluster: "ai-visibility",
 });
 
-// Dataset schema — tells crawlers and answer engines that this page is backed by a
+// Dataset schema: tells crawlers and answer engines that this page is backed by a
 // real, downloadable dataset, and where to get it. Original first-party data is the
 // most citation-worthy thing a GEO page can carry; marking it up as a Dataset makes
 // that legible to machines instead of leaving it as prose.
 const datasetSchema = {
   "@context": "https://schema.org",
   "@type": "Dataset",
-  name: "HomeCalc.ca AI Citation Study — top cited pages and queries",
+  name: "HomeCalc.ca AI Citation Study: top cited pages and queries",
   description:
-    // Dates and window pulled from STUDY, not hand-typed — this exact field was the
+    // Dates and window pulled from STUDY, not hand-typed; this exact field was the
     // one that drifted silently for weeks after the window refreshed. See STUDY's
     // windowStartISO/windowEndISO comment in citation-study.ts.
     `Top cited pages and top grounding queries for HomeCalc.ca from Bing Webmaster AI Performance (Microsoft Copilot), ${STUDY.windowStart} – ${STUDY.windowEnd}. A selected sample; full per-page export available on request.`,
@@ -118,7 +118,7 @@ export default function Page() {
             >
               Two sites I own. {STUDY.windowLabel}. {STUDY.totalCitations} citations from
               AI answer engines. Almost everyone writing about AI visibility right now is
-              working from theory. This is the data &mdash; including the part that makes
+              working from theory. This is the data, including the part that makes
               me look bad.
             </p>
 
@@ -127,13 +127,13 @@ export default function Page() {
 
           <RevealSection delay={0.08}>
             <div className="prose" style={{ marginTop: 44 }}>
-              {/* Direct-answer block at the top — the one thing an answer engine can
+              {/* Direct-answer block at the top: the one thing an answer engine can
                   lift verbatim. Every other AEO post on this site has one; this page
                   (added the same day) was the only one missing it. */}
               <ShortAnswer>
                 Across two sites over three months, Microsoft Copilot generated{" "}
                 {STUDY.totalCitations} AI citations. The lesson wasn&rsquo;t the size of
-                the number &mdash; it was that citations concentrate on tools and
+                the number; it was that citations concentrate on tools and
                 purpose-built pages, follow a winner-take-most pattern per query, and do
                 not, by themselves, produce traffic or customers. A citation count is a
                 vanity metric unless it lands on pages a buyer actually reaches.
@@ -144,7 +144,7 @@ export default function Page() {
                 Every number below was read from {STUDY.source}, plus Google Search
                 Console, on {STUDY.pulledOn}. Window: {STUDY.windowStart} &ndash;{" "}
                 {STUDY.windowEnd}. Nothing is modelled or estimated. It measures Microsoft
-                Copilot and its partners &mdash; not every AI engine. That is a real limit
+                Copilot and its partners, not every AI engine. That is a real limit
                 and I&rsquo;m stating it up front rather than burying it.
               </Callout>
 
@@ -176,19 +176,19 @@ export default function Page() {
                 </strong>
               </p>
 
-              <H2>Finding 1 &mdash; A new site is invisible for about three weeks, then it isn&rsquo;t</H2>
+              <H2>Finding 1: A new site is invisible for about three weeks, then it isn&rsquo;t</H2>
               <p>
                 HomeCalc was a brand-new domain, {SITES.homecalc.ageAtStart}, in a market
                 owned by banks and national brokerages. For roughly the first three weeks
-                of the window it earned effectively nothing. Then it moved &mdash; fast
-                &mdash; to a peak of {SITES.homecalc.peakPerDay} citations a day.
+                of the window it earned effectively nothing. Then it moved, fast,
+                to a peak of {SITES.homecalc.peakPerDay} citations a day.
               </p>
               <p>
                 If you launch and see nothing for a month, that is not necessarily
                 failure. It may just be the lag. Most people quit inside that window.
               </p>
 
-              <H2>Finding 2 &mdash; Tools get cited. Opinions don&rsquo;t.</H2>
+              <H2>Finding 2: Tools get cited. Opinions don&rsquo;t.</H2>
               <p>
                 The most-cited pages on HomeCalc, in order:
               </p>
@@ -215,7 +215,7 @@ export default function Page() {
                 question.
               </p>
 
-              <H2>Finding 3 &mdash; AI picks a source and stays loyal</H2>
+              <H2>Finding 3: AI picks a source and stays loyal</H2>
               <p>
                 &ldquo;Citation share&rdquo; is the percentage of <em>all</em> citations
                 for a query that went to this one site:
@@ -244,7 +244,7 @@ export default function Page() {
               </p>
 
               <H2>
-                Finding 4 &mdash; A purpose-built site earns citations. A blog buys a
+                Finding 4: A purpose-built site earns citations. A blog buys a
                 lottery ticket.
               </H2>
               <p>
@@ -271,7 +271,7 @@ export default function Page() {
                 do with what I sell.
               </p>
               <p>
-                The page I actually sell &mdash; my AI visibility services page &mdash;
+                The page I actually sell (my AI visibility services page)
                 earned <strong>{COMMERCIAL_REALITY.moneyPageCitations} citations</strong>{" "}
                 in three months.
               </p>
@@ -281,7 +281,7 @@ export default function Page() {
                 accidental jackpot and a flat line. Same person. Same three months.
               </p>
 
-              <H2>Finding 5 &mdash; The one nobody in this industry wants to publish</H2>
+              <H2>Finding 5: The one nobody in this industry wants to publish</H2>
 
               <Callout danger>
                 <p style={{ marginBottom: 12 }}>
@@ -290,8 +290,8 @@ export default function Page() {
                   </strong>
                 </p>
                 <p style={{ marginBottom: 10 }}>
-                  My most-cited page in the world &mdash;{" "}
-                  {COMMERCIAL_REALITY.aiCitations} AI citations &mdash; produced{" "}
+                  My most-cited page in the world, with{" "}
+                  {COMMERCIAL_REALITY.aiCitations} AI citations, produced{" "}
                   <strong>{COMMERCIAL_REALITY.googleClicksPerQuarter} clicks</strong>{" "}from
                   Google over the same three months. Twenty-four clicks, from an essay
                   about skill mastery that has nothing to do with what I sell.
@@ -311,7 +311,7 @@ export default function Page() {
               <p>
                 A citation count is a <strong>vanity metric</strong>{" "}unless the citations
                 land on pages that sell something, for queries a buyer actually types. Mine
-                mostly didn&rsquo;t. That is not a reason to ignore AI visibility &mdash;
+                mostly didn&rsquo;t. That is not a reason to ignore AI visibility;
                 HomeCalc proves the opposite. It is a reason to be extremely suspicious of
                 anyone, including me, who shows you a big citation number and stops there.
               </p>
@@ -331,7 +331,7 @@ export default function Page() {
                 <li>
                   <strong>Off-topic content:</strong>{" "}a post about diets earned 61
                   citations on a site that sells AI visibility consulting. Useless
-                  citations are worse than none &mdash; they teach the model the wrong
+                  citations are worse than none: they teach the model the wrong
                   thing about who you are.
                 </li>
                 <li>
@@ -368,7 +368,7 @@ export default function Page() {
                   window.
                 </li>
                 <li>
-                  <strong>This measures Copilot and its partners</strong>{" "}&mdash; not
+                  <strong>This measures Copilot and its partners</strong>, not
                   ChatGPT, Perplexity, Gemini or Grok, none of which publish citation data
                   to publishers. Behaviour may differ on those engines. Anyone claiming
                   otherwise with confidence is guessing.
@@ -376,7 +376,7 @@ export default function Page() {
                 <li>
                   <strong>n = 2 sites, one owner, one market.</strong>{" "}This is a strong
                   signal, not a law. Both sites are mine, which means I had total control
-                  and no stakeholders &mdash; advantages your business will not have.
+                  and no stakeholders: advantages your business will not have.
                 </li>
                 <li>
                   I am publishing the outcomes, not the build method. The method is what I
@@ -391,7 +391,7 @@ export default function Page() {
                     Use this data. Please.
                   </strong>{" "}
                   If you are writing about AI search and need real numbers instead of
-                  speculation, take them &mdash; charts, tables, figures. All I ask is a
+                  speculation, take them: charts, tables, figures. All I ask is a
                   link back to this page so people can check the source.
                 </p>
                 <p style={{ marginBottom: 14 }}>
@@ -401,8 +401,8 @@ export default function Page() {
                     style={{ color: "var(--accent)", fontWeight: 600 }}
                   >
                     &darr; Download the HomeCalc sample (CSV)
-                  </a>{" "}
-                  &mdash; the top cited pages and queries for HomeCalc only, CC BY 4.0.
+                  </a>
+                  : the top cited pages and queries for HomeCalc only, CC BY 4.0.
                   For the full two-site comparison (both domains, methodology,
                   limitations), see{" "}
                   <Link href="/research/" style={{ color: "var(--accent)", fontWeight: 600 }}>
@@ -602,7 +602,7 @@ function BarList({
     tag?: string;
     value: number;
     /** Rendered instead of value.toLocaleString() when the source only gave a
-     *  rounded figure (e.g. "1.7K") — never show more precision than that. */
+     *  rounded figure (e.g. "1.7K"); never show more precision than that. */
     display?: string;
     danger?: boolean;
   }[];

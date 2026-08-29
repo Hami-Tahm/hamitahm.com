@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   // anyone holding the link, removed from sitemap, excluded from search + AI corpus.
   robots: { index: false, follow: true },
   title: "Optimal Shower & Hair Routine for Oily Skin & Scalp",
-  description: "The Optimal Shower & Hair Routine for Busy Found­ers (Oily Skin & Sc­alp) — by Hami Tahm",
+  description: "The Optimal Shower & Hair Routine for Busy Found­ers (Oily Skin & Sc­alp), by Hami Tahm",
 };
 
 export default function Post() {
@@ -36,7 +36,7 @@ export default function Post() {
         <div
           className="post-content"
           dangerouslySetInnerHTML={ { __html: `<p data-start="238" data-end="427">If you work long hours at a desk, spend time in meetings, and want to look sharp without overthinking grooming, your hygiene routine should be <strong data-start="381" data-end="426">efficient, science-based, and sustainable</strong>.</p>
-<p data-start="429" data-end="578">For men with <strong data-start="442" data-end="474">slightly oily skin and scalp</strong>, the goal is not to remove all oil — but to <strong data-start="519" data-end="577">control excess sebum while protecting the skin barrier</strong>.</p></p><p><h2 data-start="585" data-end="604">Why This Matters</h2>
+<p data-start="429" data-end="578">For men with <strong data-start="442" data-end="474">slightly oily skin and scalp</strong>, the goal is not to remove all oil, but to <strong data-start="519" data-end="577">control excess sebum while protecting the skin barrier</strong>.</p></p><p><h2 data-start="585" data-end="604">Why This Matters</h2>
 <p data-start="606" data-end="692">Over-washing strips protective oils → your body compensates by producing <strong data-start="679" data-end="691">more oil</strong>.</p>
 <p data-start="694" data-end="769">Under-washing allows buildup → hair looks flat, greasy, and unprofessional.</p>
 <p data-start="771" data-end="810">The optimal routine sits in the middle.</p></p><p><h2 data-start="817" data-end="842">Quick Routine Overview</h2>
@@ -86,8 +86,8 @@ export default function Post() {
 </tr>
 <tr data-start="1561" data-end="1623">
 <td data-start="1561" data-end="1581" data-col-size="sm">Hair looks greasy</td>
-<td data-col-size="sm" data-start="1581" data-end="1585">—</td>
-<td data-col-size="sm" data-start="1585" data-end="1589">—</td>
+<td data-col-size="sm" data-start="1581" data-end="1585">N/A</td>
+<td data-col-size="sm" data-start="1585" data-end="1589">N/A</td>
 <td data-col-size="sm" data-start="1589" data-end="1593">✔</td>
 <td data-col-size="sm" data-start="1593" data-end="1623">Restore volume & freshness</td>
 </tr>
@@ -233,7 +233,7 @@ Every 20 minutes → look 20 feet away → for 20 seconds.</p>
 <p data-start="4164" data-end="4246">✔ self-discipline<br data-start="4181" data-end="4184" />✔ attention to detail<br data-start="4205" data-end="4208" />✔ reliability<br data-start="4221" data-end="4224" />✔ executive presence</p>
 <p data-start="4248" data-end="4303">Small habits create a polished look without extra time.</p></p><p><h2 data-start="4310" data-end="4338">Final Routine (Optimized)</h2>
 <p data-start="4340" data-end="4514">✔ Short daily shower (lukewarm)<br data-start="4371" data-end="4374" />✔ Shampoo every 1–2 days<br data-start="4398" data-end="4401" />✔ Clean sweat areas daily<br data-start="4426" data-end="4429" />✔ Face cleanse morning & night<br data-start="4459" data-end="4462" />✔ Oil-free moisturizer<br data-start="4484" data-end="4487" />✔ Hydrate & manage stress</p>
-<p data-start="4521" data-end="4648">If you maintain this routine, you’ll look fresh, professional, and put-together — without spending extra time or mental energy.</p>` } }
+<p data-start="4521" data-end="4648">If you maintain this routine, you’ll look fresh, professional, and put-together, without spending extra time or mental energy.</p>` } }
         />
 
         {/* Author box */}

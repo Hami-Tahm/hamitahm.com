@@ -3,18 +3,18 @@
 import { useEffect } from "react";
 
 /**
- * Site-wide CTA click tracking — one delegated listener, mounted once in the layout.
+ * Site-wide CTA click tracking: one delegated listener, mounted once in the layout.
  *
  * WHY A DELEGATED LISTENER instead of wrapping every CTA in a tracked component:
  * the money pages are server components (they export `metadata`), so adding onClick
  * handlers would mean converting them to client components or wrapping dozens of
  * links by hand. A single capture-phase listener on `document` covers every CTA on
- * every page — including ones added later — with zero changes to page code.
+ * every page, including ones added later, with zero changes to page code.
  *
  * ⚠️ POSSIBLE OVERLAP WITH EXISTING GTM TRIGGERS: GA4 already receives
  * `book_audit_click` and `contact_click`, which are almost certainly fired by click
  * triggers configured inside the GTM container. This pushes a DIFFERENT event name
- * (`cta_click`), so nothing double-counts under the same name — but once this data
+ * (`cta_click`), so nothing double-counts under the same name, but once this data
  * looks right, the older single-purpose triggers can be retired in GTM in favour of
  * `cta_click` + its parameters, which carry far more context.
  *
@@ -59,7 +59,7 @@ export function CtaTracking() {
       const hit = classify(href);
       if (!hit) return;
 
-      // Link text is site copy, never user input — safe to send. Trimmed and capped
+      // Link text is site copy, never user input: safe to send. Trimmed and capped
       // so an unexpectedly long label can't bloat the payload.
       const label = (anchor.textContent || "").replace(/\s+/g, " ").trim().slice(0, 80);
 
@@ -70,7 +70,7 @@ export function CtaTracking() {
         cta: hit.cta,
         funnel_step: hit.funnelStep,
         cta_label: label,
-        // Where the click happened — lets you see which page actually drives the audit.
+        // Where the click happened: lets you see which page actually drives the audit.
         source_path: window.location.pathname,
         destination: href,
         // Buttons vs inline text links convert very differently; worth splitting.

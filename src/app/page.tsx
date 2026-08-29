@@ -6,7 +6,7 @@ import { HOMECALC_PROOF, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
 
 export const metadata: Metadata = {
   // Trimmed to ~150 chars (was ~207 and would truncate in the SERP). Leads with the
-  // exact query — "AI Visibility Consultant in Canada" — then the engines.
+  // exact query: "AI Visibility Consultant in Canada", then the engines.
   description:
     "AI Visibility Consultant in Canada. I help businesses get cited in Google AI Overviews, ChatGPT, Gemini, and Claude. Flat-fee audits, no retainer.",
   alternates: {
@@ -57,7 +57,7 @@ export default function Home() {
             >
               I&rsquo;m Hami Tahm, an AI Visibility Consultant in Toronto. I help
               Canadian businesses get cited and recommended when buyers ask AI
-              engines &mdash; and I prove it on my own products first, in public,
+              engines, and I prove it on my own products first, in public,
               with numbers you can check.
             </p>
           </RevealSection>
@@ -86,7 +86,7 @@ export default function Home() {
         <RevealSection>
           {/*
             Was: "12 yrs building", "~14 ventures", "Goal: a unicorn".
-            Those are founder-flex stats — and "a unicorn" is the exact burnout/
+            Those are founder-flex stats, and "a unicorn" is the exact burnout/
             wrong-vertical signal we removed from the footer. For the buyer this page is
             for (a dentist, a lawyer deciding on $1,500), the homepage should lead with
             PROOF of the service, not a startup manifesto. The founder story lives on
@@ -95,8 +95,8 @@ export default function Home() {
           */}
           <div className="stats-grid stats-grid-centered stats-grid-3">
             <Stat value={HOMECALC_HEADLINE_STAT.value} label={HOMECALC_HEADLINE_STAT.labelLong} />
-            <Stat value="$1,500" label="Flat-fee audit — no retainer" />
-            <Stat value="1" label="Consultant — no agency, no handoffs" />
+            <Stat value="$1,500" label="Flat-fee audit: no retainer" />
+            <Stat value="1" label="Consultant: no agency, no handoffs" />
           </div>
         </RevealSection>
       </div>
@@ -113,7 +113,7 @@ export default function Home() {
                 Most businesses are invisible the moment people stop Googling and start asking AI.
               </h2>
               <p style={{ color: "var(--muted)", marginTop: 18, maxWidth: "52ch", position: "relative" }}>
-                Search is moving to answer engines. I help Canadian clinics, real-estate brands, and SaaS companies show up when buyers ask ChatGPT, Perplexity, and Google&rsquo;s AI&nbsp;Overviews &mdash; using the same system I built and proved on my own products.
+                Search is moving to answer engines. I help Canadian clinics, real-estate brands, and SaaS companies show up when buyers ask ChatGPT, Perplexity, and Google&rsquo;s AI&nbsp;Overviews, using the same system I built and proved on my own products.
               </p>
               <div
                 className="ladder"
@@ -143,9 +143,9 @@ export default function Home() {
           </RevealSection>
           <RevealSection delay={0.06}>
             <div>
-              <WorkItem href="https://homecalc.ca" external live="LIVE" dates="2026 → now" title="HomeCalc.ca" desc="A suite of real-estate calculators for Ontario buyers and investors — built solo, ranking, and earning AI citations." cta="homecalc.ca ↗" />
+              <WorkItem href="https://homecalc.ca" external live="LIVE" dates="2026 → now" title="HomeCalc.ca" desc="A suite of real-estate calculators for Ontario buyers and investors, built solo, ranking, and earning AI citations." cta="homecalc.ca ↗" />
               <WorkItem href="/ai-visibility" live="NEW" dates="2026 → now" title="AI Visibility Practice" desc="Productized AEO / GEO work that gets Canadian businesses found across AI search engines." cta="Learn more ↗" />
-              <WorkItem href="/hami-tahm" dates="2014 → now" title="A decade of ventures" desc="Marketplaces, service platforms, diet & health apps, and marketing tools across two markets. Some scaled, some sunset — all sharpened the system." cta="The full story ↗" />
+              <WorkItem href="/hami-tahm" dates="2014 → now" title="A decade of ventures" desc="Marketplaces, service platforms, diet & health apps, and marketing tools across two markets. Some scaled, some sunset; all sharpened the system." cta="The full story ↗" />
             </div>
           </RevealSection>
         </div>
@@ -180,7 +180,7 @@ export default function Home() {
             <div>
               <SectionLabel number="04" text="About" />
               <h2 style={{ fontFamily: "var(--serif)", fontWeight: 500, fontSize: "clamp(26px, 3.4vw, 40px)", lineHeight: 1.12, letterSpacing: "-.02em" }}>
-                I build, test, and ship in public &mdash;{" "}
+                I build, test, and ship in public,{" "}
                 <em style={{ fontStyle: "italic", color: "var(--accent)" }}>with speed and real-world validation.</em>
               </h2>
               <p style={{ marginTop: 22, fontSize: 16, color: "var(--muted)", maxWidth: "54ch", lineHeight: 1.65 }}>
@@ -206,7 +206,7 @@ export default function Home() {
 function SectionLabel({ number, text }: { number: string; text: string }) {
   return (
     <div style={{ fontFamily: "var(--mono)", fontSize: 12, letterSpacing: ".14em", color: "var(--faint)", textTransform: "uppercase", marginBottom: 34, display: "flex", alignItems: "center", gap: 14 }}>
-      {number} &mdash; {text}
+      {number}: {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
     </div>
   );

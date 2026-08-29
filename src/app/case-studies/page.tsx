@@ -26,7 +26,7 @@ const CASE_STUDIES: readonly CaseStudy[] = [
     tag: "Named client · YMYL finance",
     title: `How a brand-new Canadian site earned ${HOMECALC_CLAIMS.appearancesInTimeframe}`,
     excerpt:
-      "HomeCalc.ca launched into real estate and mortgage — a market dominated by banks and finance — and became a default AI source without ad budget or domain authority.",
+      "HomeCalc.ca launched into real estate and mortgage, a market dominated by banks and finance, and became a default AI source without ad budget or domain authority.",
     stats: [
       { value: HOMECALC_HEADLINE_STAT.value, label: HOMECALC_HEADLINE_STAT.label },
       { value: HOMECALC_PROOF.timeframe, label: "Timeframe" },
@@ -38,7 +38,7 @@ const CASE_STUDIES: readonly CaseStudy[] = [
     tag: "Proof on the category itself",
     title: "AI Engines Already Name Hami Tahm",
     excerpt:
-      "Ask ChatGPT, Perplexity, Google AI Mode, or Grok who does AI visibility in Toronto, and they name Hami Tahm directly — a dated snapshot of the exact outcome the audit produces.",
+      "Ask ChatGPT, Perplexity, Google AI Mode, or Grok who does AI visibility in Toronto, and they name Hami Tahm directly: a dated snapshot of the exact outcome the audit produces.",
     stats: [
       { value: String(SNAPSHOT.engineCount), label: "AI engines" },
       { value: "1", label: "Consultant named" },
@@ -150,7 +150,7 @@ export default function CaseStudiesIndexPage() {
                 letterSpacing: "-.03em",
               }}
             >
-              AI visibility, proven &mdash; not promised.
+              AI visibility, proven, not promised.
             </h1>
           </RevealSection>
 
@@ -164,7 +164,7 @@ export default function CaseStudiesIndexPage() {
                 lineHeight: 1.6,
               }}
             >
-              Documented results from AI visibility work &mdash; a named client
+              Documented results from AI visibility work: a named client
               that went from near-zero to a default AI source, and proof on the
               AI-visibility category itself.
             </p>
@@ -327,7 +327,7 @@ export default function CaseStudiesIndexPage() {
                 Want results like these for your business?
               </h3>
               <p style={{ color: "var(--muted)", fontSize: "14.5px", marginTop: 5 }}>
-                Book a $1,500 AI Visibility Audit &mdash; full diagnosis of where
+                Book a $1,500 AI Visibility Audit: full diagnosis of where
                 AI engines mention you, delivered in 7&nbsp;days.
               </p>
               <p style={{ color: "var(--muted)", fontSize: "14.5px", marginTop: 5 }}>

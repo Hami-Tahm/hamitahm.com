@@ -5,16 +5,16 @@ import { OFFERS } from "@/lib/offers";
  * Visitor-facing currency for the audit product, decided by src/middleware.ts
  * from IP geolocation and handed off via a cookie. Canada sees CAD (the real
  * billing currency and the site's default). Everyone else sees a real USD
- * price backed by its own Stripe Payment Link — see the note on
+ * price backed by its own Stripe Payment Link; see the note on
  * OFFERS.audit.checkoutUrlUSD for why this is a fixed price and a distinct
  * link rather than a live-converted number.
  *
  * ⚠️ THIS IS SCOPED TO THE AUDIT PRODUCT ONLY. The action plan and monitoring
  * tiers are quote/contact-based regardless of currency and are not wired
- * through this helper — do not invent a USD figure for either without first
+ * through this helper: do not invent a USD figure for either without first
  * creating a real priced offer for it, the same way the audit has one.
  *
- * Reading cookies() opts a page into dynamic (per-request) rendering — that's
+ * Reading cookies() opts a page into dynamic (per-request) rendering; that's
  * an intentional, necessary trade-off for the handful of pages that call
  * this. Pages that don't need currency-aware pricing should keep reading
  * OFFERS.audit.* directly and stay statically generated.
@@ -30,11 +30,11 @@ export async function getCurrency(): Promise<Currency> {
 
 export type AuditPricing = {
   currency: Currency;
-  /** e.g. "$1,500" / "$1,100" — no currency word. */
+  /** e.g. "$1,500" / "$1,100": no currency word. */
   price: string;
   /** e.g. "CAD, flat fee, one-time" / "USD, flat fee, one-time". */
   priceNote: string;
-  /** e.g. "$1,500 CAD" / "$1,100 USD" — single string, safe to drop straight into JSX. */
+  /** e.g. "$1,500 CAD" / "$1,100 USD": single string, safe to drop straight into JSX. */
   priceWithCurrency: string;
   checkoutUrl: string;
 };

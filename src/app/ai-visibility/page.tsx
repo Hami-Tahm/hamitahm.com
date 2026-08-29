@@ -12,7 +12,7 @@ const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 
 /**
  * The Resources section used to be an empty promise ending in "New posts ship in
- * Sprint S4" — an internal sprint label, shown to buyers, on a page selling
+ * Sprint S4": an internal sprint label, shown to buyers, on a page selling
  * transparency. These four are the pages that actually back the claims made above.
  */
 const RESOURCES = [
@@ -21,7 +21,7 @@ const RESOURCES = [
     tag: "Data",
     title: "AI Citation Study",
     blurb:
-      "The original dataset behind the numbers on this page — raw CSVs, methodology, stated limitations, published under a DOI.",
+      "The original dataset behind the numbers on this page: raw CSVs, methodology, stated limitations, published under a DOI.",
   },
   {
     href: "/case-studies/homecalc-ai-visibility/",
@@ -35,7 +35,7 @@ const RESOURCES = [
     tag: "Guide",
     title: "How to Check AI Visibility",
     blurb:
-      "Seven free and freemium ways to see where you stand — including the one commonly recommended tool that doesn't do this at all.",
+      "Seven free and freemium ways to see where you stand, including the one commonly recommended tool that doesn't do this at all.",
   },
   {
     href: "/methodology/",
@@ -49,7 +49,7 @@ const RESOURCES = [
     tag: "Results",
     title: "All case studies",
     blurb:
-      "Every published result in one place — what changed, over what window, and which console reported it.",
+      "Every published result in one place: what changed, over what window, and which console reported it.",
   },
 ] as const;
 
@@ -60,15 +60,15 @@ const HUB_FAQ = [
   },
   {
     q: "How do I get recommended by AI?",
-    a: "Being recommended means engines can tell what you do, for whom, and where — and find that description agreeing with itself across your site, your profiles, and third-party sources. There is no markup that buys this; Google says plainly that no special schema is required for generative AI search. The audit shows which of those signals are missing, wrong, or contradicting each other.",
+    a: "Being recommended means engines can tell what you do, for whom, and where, and find that description agreeing with itself across your site, your profiles, and third-party sources. There is no markup that buys this; Google says plainly that no special schema is required for generative AI search. The audit shows which of those signals are missing, wrong, or contradicting each other.",
   },
   {
     q: "What is the difference between AI visibility and SEO?",
-    a: "They overlap more than the labels suggest. Google states that its AI features are rooted in its core Search ranking systems and that no special optimization is required for AI Overviews or AI Mode — so on Google's surfaces, this is largely SEO. Three things stay separate: the engines that don't use Google's index (ChatGPT, Claude, Perplexity) and have their own crawlers and rules; whether what an answer says about you is accurate, which no ranking system addresses; and measurement, since most engines report nothing back to you.",
+    a: "They overlap more than the labels suggest. Google states that its AI features are rooted in its core Search ranking systems and that no special optimization is required for AI Overviews or AI Mode, so on Google's surfaces, this is largely SEO. Three things stay separate: the engines that don't use Google's index (ChatGPT, Claude, Perplexity) and have their own crawlers and rules; whether what an answer says about you is accurate, which no ranking system addresses; and measurement, since most engines report nothing back to you.",
   },
   {
     q: "Which AI platforms should my business be visible in?",
-    a: "The six that drive most AI-generated answers today are Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, and Perplexity. Different platforms weight different signals — strategy is built per platform.",
+    a: "The six that drive most AI-generated answers today are Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, and Perplexity. Different platforms weight different signals; strategy is built per platform.",
   },
   {
     q: "How do I check my AI visibility?",
@@ -76,7 +76,7 @@ const HUB_FAQ = [
   },
   {
     q: "How much does AI visibility consulting cost?",
-    a: "Engagements start with a $1,500 CAD AI visibility audit — flat fee, one-time, no retainer to get started. If you want the findings turned into a prioritized action plan and roadmap for your team to ship, that starts at $4,500 (the audit fee is credited toward it). I don't take execution work; your developer or agency implements it. Optional monitoring and advisory is available afterward on a fixed 6–12 month term — never required.",
+    a: "Engagements start with a $1,500 CAD AI visibility audit: flat fee, one-time, no retainer to get started. If you want the findings turned into a prioritized action plan and roadmap for your team to ship, that starts at $4,500 (the audit fee is credited toward it). I don't take execution work; your developer or agency implements it. Optional monitoring and advisory is available afterward on a fixed 6–12 month term; never required.",
   },
 ] as const;
 
@@ -94,20 +94,20 @@ const structuredData = {
      *    That is the real bug and it is independent of any address question.
      * 2. A LocalBusiness subtype also duplicates the address, which lives in exactly
      *    one place. UPDATED 2026-08-16: that place is now the #organization node in
-     *    layout.tsx, not the Person — the address moved so it could sit with the geo
+     *    layout.tsx, not the Person; the address moved so it could sit with the geo
      *    coordinates, which are not valid on a Person.
      *
      * ⚠️ layout.tsx NOW DECLARES `ProfessionalService` ON #organization, so this
      * heading looks contradictory at a glance. It is not, and the distinction is the
      * whole point: the business is declared ONCE, in the file that owns the graph.
-     * The bug was never the type — it was three PAGES each minting their own business
+     * The bug was never the type; it was three PAGES each minting their own business
      * entity with its own @id. That must not come back. Pages describe services;
      * layout.tsx describes the business.
      *
      * `Service` with `provider` pointing at the single Person node says the true
      * thing: one practitioner, several services, serving an area. `priceRange` went
      * with it, and now lives on #organization where it is valid. A GBP listing is
-     * still deliberately not pursued — see the note in layout.tsx.
+     * still deliberately not pursued: see the note in layout.tsx.
      */
     {
       "@type": "Service",
@@ -219,7 +219,7 @@ const structuredData = {
 export const metadata: Metadata = {
   title: "AI Visibility Consulting in Canada",
   description:
-    "AI visibility consulting in Canada — from ChatGPT citations to Google AI Overviews. Hami Tahm, Toronto-based consultant with a public case study. Not an agency.",
+    "AI visibility consulting in Canada: from ChatGPT citations to Google AI Overviews. Hami Tahm, Toronto-based consultant with a public case study. Not an agency.",
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/",
   },
@@ -297,13 +297,13 @@ export default function AIVisibilityPage() {
           </RevealSection>
 
           {/*
-            EXTRACTABILITY FIX (2026-07-27) — this replaced a plain paragraph.
+            EXTRACTABILITY FIX (2026-07-27): this replaced a plain paragraph.
 
             An incognito Google search for "who does AI visibility in Toronto" was
             returning a snippet for this page stitched from three unrelated places:
             the intro sentence, the fragment "are agencies." lifted mid-sentence out of
             the "Why a Consultant, Not an Agency" section far below, and the venture
-            list. The result read as broken text — and it is the only thing a buyer
+            list. The result read as broken text, and it is the only thing a buyer
             sees in the results.
 
             The cause is that no single block on the page answered "what is this and
@@ -325,7 +325,7 @@ export default function AIVisibilityPage() {
                 href="/ai-visibility/ai-visibility-checker/"
                 className="btn btn-primary"
               >
-                Check my AI visibility &mdash; free{" "}
+                Check my AI visibility for free{" "}
                 <span className="arr">&rarr;</span>
               </Link>
               <Link href={AUDIT_URL} className="btn btn-ghost">
@@ -354,7 +354,7 @@ export default function AIVisibilityPage() {
               }}
             >
               {HOMECALC_HEADLINE_STAT.value}{" "}measured AI appearances in{" "}
-              {HOMECALC_PROOF.timeframe}{" "}on a site I own &mdash; Copilot citations
+              {HOMECALC_PROOF.timeframe}{" "}on a site I own: Copilot citations
               plus Google generative-AI impressions &middot;{" "}
               <Link href="/methodology/" style={{ color: "var(--accent)" }}>
                 public methodology
@@ -369,7 +369,7 @@ export default function AIVisibilityPage() {
                 AI visibility is how accurately and consistently your business appears
                 when people ask Google AI Overviews, ChatGPT, Gemini, Claude, or Copilot to recommend a product or service. Hami Tahm is a
                 Toronto-based AI visibility consultant who audits how those engines
-                describe, cite and recommend Canadian businesses &mdash; then fixes
+                describe, cite and recommend Canadian businesses, then fixes
                 the gaps.
               </ShortAnswer>
             </div>
@@ -410,7 +410,7 @@ export default function AIVisibilityPage() {
                 }}
               >
                 When a homebuyer asks ChatGPT &ldquo;best mortgage broker in
-                Toronto,&rdquo; it doesn&rsquo;t show ten blue links &mdash; it
+                Toronto,&rdquo; it doesn&rsquo;t show ten blue links; it
                 names three. When a patient asks Perplexity &ldquo;top dental
                 clinic near me,&rdquo; it cites two or three sources and moves
                 on. Google&rsquo;s AI Overviews now answer the query before the
@@ -483,8 +483,8 @@ export default function AIVisibilityPage() {
                       maxWidth: "26ch",
                     }}
                   >
-                    Google clicks that same page earned &mdash; why citations get
-                    measured separately
+                    Google clicks that same page earned (why citations get
+                    measured separately)
                   </div>
                 </div>
               </div>
@@ -566,8 +566,8 @@ export default function AIVisibilityPage() {
                   }}
                 >
                   What to change and in what order, written for your team to
-                  ship. {OFFERS.actionPlan.priceWithCurrency}, fixed scope
-                  &mdash; audit fee credited.
+                  ship. {OFFERS.actionPlan.priceWithCurrency}, fixed scope:
+                  audit fee credited.
                 </p>
                 <div
                   style={{
@@ -640,7 +640,7 @@ export default function AIVisibilityPage() {
                     lineHeight: 1.55,
                   }}
                 >
-                  The local cornerstone &mdash; AEO and GEO for Toronto and GTA
+                  The local cornerstone: AEO and GEO for Toronto and GTA
                   businesses. The consultant AI engines already name for Toronto.
                 </p>
                 <div
@@ -714,7 +714,7 @@ export default function AIVisibilityPage() {
                     lineHeight: 1.55,
                   }}
                 >
-                  Making your brand legible to generative engines &mdash;
+                  Making your brand legible to generative engines:
                   consistent entity information and credible third-party sources.
                 </p>
                 <div
@@ -857,7 +857,7 @@ export default function AIVisibilityPage() {
                 letterSpacing: "-.01em",
               }}
             >
-              Proof &mdash; HomeCalc.ca, a site I own
+              Proof: HomeCalc.ca, a site I own
             </h2>
           </RevealSection>
 
@@ -973,7 +973,7 @@ export default function AIVisibilityPage() {
               }}
             >
               HomeCalc.ca is a Toronto-based Canadian financial calculator site.
-              I own it &mdash; this is an owned-property case study, not a client
+              I own it: this is an owned-property case study, not a client
               engagement, which is why the raw data can be published in full. It went
               from near-zero to{" "}
               {HOMECALC_CLAIMS.appearancesInTimeframe},{" "}
@@ -1129,7 +1129,7 @@ export default function AIVisibilityPage() {
         </div>
       </section>
 
-      {/* ── 01 — WHAT AI VISIBILITY WORK COVERS ── */}
+      {/* Section 01: What AI Visibility Work Covers */}
       <section id="how" style={{ padding: "80px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -1184,7 +1184,7 @@ export default function AIVisibilityPage() {
                   }}
                 >
                   Structure your content so AI models pull it as the direct
-                  answer &mdash; not a footnote.
+                  answer, not a footnote.
                 </p>
               </div>
 
@@ -1218,7 +1218,7 @@ export default function AIVisibilityPage() {
                   }}
                 >
                   Improve how retrieval-enabled AI systems discover,
-                  understand and cite your pages &mdash; crawlable content,
+                  understand and cite your pages: crawlable content,
                   original evidence, and consistent entity information.
                 </p>
               </div>
@@ -1363,7 +1363,7 @@ export default function AIVisibilityPage() {
         </div>
       </section>
 
-      {/* ── 02 — PRODUCTIZED PATH ── */}
+      {/* Section 02: Productized Path */}
       <section style={{ padding: "80px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -1432,7 +1432,7 @@ export default function AIVisibilityPage() {
                   }}
                 >
                   Full diagnosis of your AI footprint: where you appear, where
-                  competitors appear, and the exact gaps to close &mdash;
+                  competitors appear, and the exact gaps to close,
                   delivered in 7&nbsp;days.
                 </p>
               </div>
@@ -1478,8 +1478,8 @@ export default function AIVisibilityPage() {
                   }}
                 >
                   Recommendations, a page-level action plan and a roadmap
-                  &mdash; content structure, entity work, structured data and
-                  authority signals &mdash; prioritized against your own Search
+                  (content structure, entity work, structured data and
+                  authority signals) prioritized against your own Search
                   Console and Bing data and delivered in{" "}
                   {OFFERS.actionPlan.duration.toLowerCase()}. Your team ships it;
                   the audit fee is credited toward it.{" "}
@@ -1533,7 +1533,7 @@ export default function AIVisibilityPage() {
                   }}
                 >
                   Optional after the action plan, on{" "}
-                  {OFFERS.monitor.durationPhrase}{" "}&mdash; never required to start.{" "}
+                  {OFFERS.monitor.durationPhrase}, never required to start.{" "}
                   <Link href="/pricing/" style={{ color: "var(--accent)", fontWeight: 500 }}>
                     Every step, priced &rarr;
                   </Link>
@@ -1546,7 +1546,7 @@ export default function AIVisibilityPage() {
         </div>
       </section>
 
-      {/* ── 03 — PROOF ── */}
+      {/* Section 03: Proof */}
       <section style={{ padding: "80px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -1596,7 +1596,7 @@ export default function AIVisibilityPage() {
                     letterSpacing: "-.01em",
                   }}
                 >
-                  HomeCalc.ca &mdash; Built for AI Visibility from Day One
+                  HomeCalc.ca: Built for AI Visibility from Day One
                 </h3>
                 <p
                   style={{
@@ -1659,7 +1659,7 @@ export default function AIVisibilityPage() {
                     maxWidth: "44ch",
                   }}
                 >
-                  Two independent, dated checks four weeks apart &mdash; ChatGPT,
+                  Two independent, dated checks four weeks apart: ChatGPT,
                   Perplexity, Google AI Mode, and Grok all name me when asked
                   who does AI visibility in Toronto. Not a ranking claim, a
                   repeated pattern.
@@ -1713,7 +1713,7 @@ export default function AIVisibilityPage() {
                   }}
                 >
                   A long-running engagement that grew organic traffic and
-                  patient leads &mdash; the foundation my AI visibility system
+                  patient leads, the foundation my AI visibility system
                   is built on.
                 </p>
                 <div
@@ -1732,7 +1732,7 @@ export default function AIVisibilityPage() {
         </div>
       </section>
 
-      {/* ── 04 — WHO I WORK WITH ── */}
+      {/* Section 04: Who I Work With */}
       <section style={{ padding: "80px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -1917,7 +1917,7 @@ export default function AIVisibilityPage() {
         </div>
       </section>
 
-      {/* ── 05 — RESOURCES ── */}
+      {/* Section 05: Resources */}
       <section style={{ padding: "80px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -1947,7 +1947,7 @@ export default function AIVisibilityPage() {
               }}
             >
               The original data, the method behind it, and the free way to check
-              yourself. All of it is public &mdash; none of it is gated.
+              yourself. All of it is public; none of it is gated.
             </p>
           </RevealSection>
 
@@ -1994,7 +1994,7 @@ export default function AIVisibilityPage() {
         </div>
       </section>
 
-      {/* ── 06 — FAQ ── */}
+      {/* Section 06: FAQ */}
       <section style={{ padding: "80px 0" }}>
         <div className="wrap" style={{ maxWidth: 760 }}>
           <RevealSection>
@@ -2045,7 +2045,7 @@ export default function AIVisibilityPage() {
                           href={AUDIT_URL}
                           style={{ color: "var(--accent)", fontWeight: 500 }}
                         >
-                          Book an AI visibility audit &mdash; $1,500 CAD
+                          Book an AI visibility audit for $1,500 CAD
                         </Link>
                         .
                       </>
@@ -2088,14 +2088,14 @@ export default function AIVisibilityPage() {
                 }}
               >
                 Six platforms reviewed, written report, action plan, and
-                walkthrough call. $1,500 CAD flat &mdash; no retainer.
+                walkthrough call. $1,500 CAD flat, no retainer.
               </p>
               <Link
                 href={AUDIT_URL}
                 className="btn btn-primary"
                 style={{ position: "relative" }}
               >
-                Book Your AI Visibility Audit &mdash; $1,500 CAD{" "}
+                Book Your AI Visibility Audit for $1,500 CAD{" "}
                 <span className="arr">&rarr;</span>
               </Link>
             </div>
@@ -2121,7 +2121,7 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
         gap: 14,
       }}
     >
-      {number}{" "}&mdash; {text}
+      {number}: {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
     </div>
   );

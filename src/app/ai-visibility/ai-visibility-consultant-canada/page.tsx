@@ -12,12 +12,12 @@ const PORTRAIT_SRC = "/images/hami-tahm/hami-tahm-portrait.png";
 const FAQ_ITEMS = [
   {
     q: "How do I get my business mentioned in AI answers?",
-    a: "Start with an audit of how AI engines currently describe and cite your business, then close the gaps it surfaces — website content, profiles, third-party mentions, and structured data. That is the path from invisible to mentioned in Google AI Overviews, ChatGPT, Gemini, Claude and others.",
+    a: "Start with an audit of how AI engines currently describe and cite your business, then close the gaps it surfaces: website content, profiles, third-party mentions, and structured data. That is the path from invisible to mentioned in Google AI Overviews, ChatGPT, Gemini, Claude and others.",
   },
   {
     // Directly answers the literal phrasing buyers type into AI engines
     // themselves ("who can help my business show up in ChatGPT
-    // recommendations") — added 2026-08-29 after citation tracking showed
+    // recommendations"), added 2026-08-29 after citation tracking showed
     // this exact question underperforming despite the page already covering
     // all five platforms elsewhere.
     q: "Who can help my Canadian business show up in ChatGPT recommendations?",
@@ -25,7 +25,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Do you work with B2B companies?",
-    a: "Yes. Most engagements are B2B Canadian businesses — professional services, SaaS, healthcare practices, multi-location operators. The audit format is built for organizations where buyers research via AI before any sales conversation.",
+    a: "Yes. Most engagements are B2B Canadian businesses: professional services, SaaS, healthcare practices, multi-location operators. The audit format is built for organizations where buyers research via AI before any sales conversation.",
   },
   {
     q: "Is Perplexity included in the audit?",
@@ -33,7 +33,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "What makes this affordable compared to agencies?",
-    a: "Agency retainers for similar services typically run $2,000–$5,000 per month. This is a $1,500 one-time audit. No retainer, no team overhead, no account manager — you work directly with the consultant who runs the audit.",
+    a: "Agency retainers for similar services typically run $2,000–$5,000 per month. This is a $1,500 one-time audit. No retainer, no team overhead, no account manager: you work directly with the consultant who runs the audit.",
   },
   {
     q: "How is an AI visibility consultant different from an SEO agency?",
@@ -43,7 +43,7 @@ const FAQ_ITEMS = [
     // Covers the "AI search optimization services Canada" / "ChatGPT optimization
     // services" phrasings buyers use, and disambiguates the category's many names.
     q: "Do you offer AI search optimization or ChatGPT optimization services?",
-    a: "Yes — those are two names for the same service. AI search optimization, ChatGPT optimization, AI SEO, AEO, GEO, and AI visibility all describe the same goal: getting your business cited and recommended when buyers ask an AI engine instead of Google. Every engagement starts with the $1,500 audit, which covers Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, and Perplexity. See the full breakdown of these terms, including less common ones like AIO and LLMO, in AEO vs GEO vs SEO.",
+    a: "Yes, those are two names for the same service. AI search optimization, ChatGPT optimization, AI SEO, AEO, GEO, and AI visibility all describe the same goal: getting your business cited and recommended when buyers ask an AI engine instead of Google. Every engagement starts with the $1,500 audit, which covers Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, and Perplexity. See the full breakdown of these terms, including less common ones like AIO and LLMO, in AEO vs GEO vs SEO.",
   },
   {
     // Literal match added 2026-08-29 after citation tracking showed zero
@@ -54,7 +54,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Do you serve businesses outside Toronto?",
-    a: "Yes. I'm Toronto-based, but I serve Canadian businesses nationwide. US and UK clients accepted when the fit is clear — reach out before booking.",
+    a: "Yes. I'm Toronto-based, but I serve Canadian businesses nationwide. US and UK clients accepted when the fit is clear: reach out before booking.",
   },
   {
     q: "How quickly can I see results?",
@@ -67,12 +67,12 @@ const structuredData = {
   "@graph": [
     {
       // See the note in src/app/ai-visibility/page.tsx: `Service`, not a
-      // LocalBusiness subtype, and no street address — there is no location
+      // LocalBusiness subtype, and no street address; there is no location
       // customers visit.
       "@type": "Service",
       "@id":
         "https://hamitahm.com/ai-visibility/ai-visibility-consultant-canada/#service",
-      name: "Hami Tahm — AI Visibility Consultant",
+      name: "Hami Tahm, AI Visibility Consultant",
       url: "https://hamitahm.com/ai-visibility/ai-visibility-consultant-canada/",
       image: `https://hamitahm.com${PORTRAIT_SRC}`,
       provider: { "@id": "https://hamitahm.com/#hami-tahm" },
@@ -140,7 +140,7 @@ export const metadata: Metadata = {
   // in the title lets this page cover that synonym without a separate thin page.
   title: "AI Visibility & AI Search Optimization in Canada",
   description:
-    "AI visibility and AI search optimization consultant in Canada. $1,500 flat-fee audit across Google AI Overviews, ChatGPT, Gemini, and Claude — not an agency.",
+    "AI visibility and AI search optimization consultant in Canada. $1,500 flat-fee audit across Google AI Overviews, ChatGPT, Gemini, and Claude, not an agency.",
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/ai-visibility-consultant-canada/",
   },
@@ -236,7 +236,7 @@ export default function AIVisibilityConsultantCanada() {
               <Link href="/ai-visibility/ai-visibility-consultant-toronto/" style={{ color: "var(--accent)", fontWeight: 500 }}>
                 AI visibility consultant based in Toronto
               </Link>
-              , Canada &mdash; helping businesses show up in ChatGPT
+              , Canada, helping businesses show up in ChatGPT
               recommendations and get cited by AI-powered search platforms
               like Google AI&nbsp;Overviews, Gemini, Claude, and Perplexity.
               Unlike agency-led services, every audit and strategy is built
@@ -255,7 +255,7 @@ export default function AIVisibilityConsultantCanada() {
               }}
             >
               <Link href={AUDIT_URL} className="btn btn-primary">
-                Book Your AI Visibility Audit &mdash; $1,500 CAD{" "}
+                Book Your AI Visibility Audit for $1,500 CAD{" "}
                 <span className="arr">&rarr;</span>
               </Link>
               <Link
@@ -300,8 +300,8 @@ export default function AIVisibilityConsultantCanada() {
             >
               Search is splitting in two. Traditional results still matter, but a
               growing share of high-intent queries now end inside ChatGPT,
-              Perplexity, Gemini, and Google&rsquo;s AI&nbsp;Overviews &mdash;
-              where the answer engine names a handful of brands and links to
+              Perplexity, Gemini, and Google&rsquo;s AI&nbsp;Overviews, where
+              the answer engine names a handful of brands and links to
               nothing else.{" "}
               <b style={{ color: "var(--ink)", fontWeight: 500 }}>
                 If your competitors are named and you aren&rsquo;t, the customer
@@ -325,7 +325,7 @@ export default function AIVisibilityConsultantCanada() {
                 letterSpacing: "-.015em",
               }}
             >
-              Proof &mdash; HomeCalc.ca, Toronto
+              Proof: HomeCalc.ca, Toronto
             </h2>
           </RevealSection>
 
@@ -439,8 +439,8 @@ export default function AIVisibilityConsultantCanada() {
                   lineHeight: 1.65,
                 }}
               >
-                HomeCalc.ca &mdash; a Toronto-based Canadian financial calculator
-                site &mdash; went from near-zero to{" "}
+                HomeCalc.ca (a Toronto-based Canadian financial calculator
+                site) went from near-zero to{" "}
                 {HOMECALC_CLAIMS.appearancesInTimeframe}{" "}after an AI visibility audit.
                 The domain was {HOMECALC_PROOF.domainAge}. This count is{" "}
                 {HOMECALC_PROOF.combinedSourceLong}.
@@ -510,7 +510,7 @@ export default function AIVisibilityConsultantCanada() {
                   position: "relative",
                 }}
               >
-                Pricing &mdash; $1,500 Flat Fee
+                Pricing: $1,500 Flat Fee
               </h2>
               <p
                 style={{
@@ -619,7 +619,7 @@ export default function AIVisibilityConsultantCanada() {
                 className="btn btn-primary"
                 style={{ marginTop: 32, position: "relative" }}
               >
-                Book Your AI Visibility Audit &mdash; $1,500 CAD{" "}
+                Book Your AI Visibility Audit for $1,500 CAD{" "}
                 <span className="arr">&rarr;</span>
               </Link>
             </div>
@@ -829,8 +829,8 @@ export default function AIVisibilityConsultantCanada() {
                 <strong style={{ color: "var(--ink)", fontWeight: 600 }}>
                   Perplexity
                 </strong>{" "}
-                &mdash; one of the fastest-growing AI search platforms,
-                increasingly used by B2B buyers researching options
+                (one of the fastest-growing AI search platforms,
+                increasingly used by B2B buyers researching options)
               </li>
               <li>
                 <strong style={{ color: "var(--ink)", fontWeight: 600 }}>
@@ -914,14 +914,14 @@ export default function AIVisibilityConsultantCanada() {
                 the walkthrough call
               </li>
               <li>
-                $1,500 flat fee, one-time &mdash; no retainer to get started, and
+                $1,500 flat fee, one-time: no retainer to get started, and
                 nothing open-ended
               </li>
               <li>
-                Public, named case study (HomeCalc.ca) &mdash; verifiable proof
+                Public, named case study (HomeCalc.ca): verifiable proof
               </li>
               <li>
-                Transparent methodology &mdash; documented and delivered to you,
+                Transparent methodology: documented and delivered to you,
                 not held internally
               </li>
             </ul>
@@ -935,22 +935,22 @@ export default function AIVisibilityConsultantCanada() {
             >
               If you want a team and a $30,000+/year retainer, hire an agency. If
               you want one consultant who has done this work, runs your audit
-              personally, and hands you a plan you can execute or hand to a team
-              &mdash; book the audit.
+              personally, and hands you a plan you can execute or hand to a team:
+              book the audit.
             </p>
             <Link
               href={AUDIT_URL}
               className="btn btn-primary"
               style={{ marginTop: 28 }}
             >
-              Book Your AI Visibility Audit &mdash; $1,500 CAD{" "}
+              Book Your AI Visibility Audit for $1,500 CAD{" "}
               <span className="arr">&rarr;</span>
             </Link>
           </RevealSection>
         </div>
       </section>
 
-      {/* ── 01 — Why work with an operator, not an agency ── */}
+      {/* Section 01: Why work with an operator, not an agency */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -974,10 +974,10 @@ export default function AIVisibilityConsultantCanada() {
                   A typical agency
                 </div>
                 <ul style={{ listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 14 }}>
-                  <VsItem marker="&mdash;" color="var(--faint)" text="Strategy by one team, work handed to juniors" />
-                  <VsItem marker="&mdash;" color="var(--faint)" text="Open-ended retainers with vague deliverables" />
-                  <VsItem marker="&mdash;" color="var(--faint)" text='Recycled SEO playbooks, lightly relabelled "AI"' />
-                  <VsItem marker="&mdash;" color="var(--faint)" text="You're one account among many" />
+                  <VsItem marker="-" color="var(--faint)" text="Strategy by one team, work handed to juniors" />
+                  <VsItem marker="-" color="var(--faint)" text="Open-ended retainers with vague deliverables" />
+                  <VsItem marker="-" color="var(--faint)" text='Recycled SEO playbooks, lightly relabelled "AI"' />
+                  <VsItem marker="-" color="var(--faint)" text="You're one account among many" />
                 </ul>
               </div>
 
@@ -1007,7 +1007,7 @@ export default function AIVisibilityConsultantCanada() {
         </div>
       </section>
 
-      {/* ── 02 — How it works ── */}
+      {/* Section 02: How it works */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 720 }}>
           <RevealSection>
@@ -1036,7 +1036,7 @@ export default function AIVisibilityConsultantCanada() {
         </div>
       </section>
 
-      {/* ── 03 — What you get ── */}
+      {/* Section 03: What you get */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap">
           <RevealSection>
@@ -1088,7 +1088,7 @@ export default function AIVisibilityConsultantCanada() {
               >
                 Over a decade of SEO and digital marketing in the Canadian market.
                 I built HomeCalc.ca to #1 in its city for competitive real-estate
-                queries &mdash; and proved the same AI-visibility system works on
+                queries, and proved the same AI-visibility system works on
                 my own products before offering it to clients. I understand
                 Canadian local intent, bilingual search nuances, and the YMYL
                 scrutiny that governs finance, health, and real-estate verticals
@@ -1099,7 +1099,7 @@ export default function AIVisibilityConsultantCanada() {
         </div>
       </section>
 
-      {/* ── 04 — Questions (FAQ) ── */}
+      {/* Section 04: Questions (FAQ) */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 760 }}>
           <RevealSection>
@@ -1167,14 +1167,14 @@ export default function AIVisibilityConsultantCanada() {
                 }}
               >
                 Six platforms reviewed, written report, action plan, and
-                walkthrough call. {PRICE_DISPLAY}{" "}flat &mdash; no retainer.
+                walkthrough call. {PRICE_DISPLAY}{" "}flat: no retainer.
               </p>
               <Link
                 href={AUDIT_URL}
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
               >
-                Book Your AI Visibility Audit &mdash; $1,500 CAD{" "}
+                Book Your AI Visibility Audit for $1,500 CAD{" "}
                 <span className="arr">&rarr;</span>
               </Link>
             </div>
@@ -1202,7 +1202,7 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
         gap: 14,
       }}
     >
-      {number}{" "}&mdash; {text}
+      {number}: {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
     </div>
   );

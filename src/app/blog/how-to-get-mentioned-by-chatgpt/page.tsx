@@ -10,7 +10,7 @@ const SLUG = "how-to-get-mentioned-by-chatgpt";
 const ARTICLE_TITLE =
   "How to Get Your Business Mentioned by ChatGPT";
 const ARTICLE_DESCRIPTION =
-  "ChatGPT mentions brands that are authoritative, well-structured, and consistently cited across the web. Here's exactly how to improve your chances — with steps you can start this week.";
+  "ChatGPT mentions brands that are authoritative, well-structured, and consistently cited across the web. Here's exactly how to improve your chances, with steps you can start this week.";
 const DATE_PUBLISHED = "2026-06-08";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const HUB_URL = "/ai-visibility/";
@@ -20,7 +20,7 @@ const CASE_STUDY_URL = HOMECALC_PROOF.caseStudyPath;
 const FAQ_ITEMS = [
   {
     q: "Can I pay to get mentioned by ChatGPT?",
-    a: "No. ChatGPT doesn't offer paid brand placement. Mentions come from training data and real-time retrieval — not advertising. There is no buyable shortcut.",
+    a: "No. ChatGPT doesn't offer paid brand placement. Mentions come from training data and real-time retrieval, not advertising. There is no buyable shortcut.",
   },
   {
     q: "Does ChatGPT use real-time information?",
@@ -28,7 +28,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Does schema markup help with ChatGPT mentions?",
-    a: "Yes — particularly Organization, FAQPage, and Article schema. Structured data makes your brand identifiable and accurately representable by AI systems. It's one of the fastest technical changes you can make.",
+    a: "Yes, particularly Organization, FAQPage, and Article schema. Structured data makes your brand identifiable and accurately representable by AI systems. It's one of the fastest technical changes you can make.",
   },
   {
     q: "How do I know if ChatGPT is mentioning my brand?",
@@ -36,7 +36,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "What's the fastest way to improve ChatGPT brand visibility?",
-    a: "Three moves in order: (1) make sure OAI-SearchBot and ChatGPT-User are allowed in your robots.txt — these are the crawlers that let ChatGPT search find and cite you (GPTBot is a separate training crawler), (2) switch from SPA to SSR or SSG if applicable, (3) add Organization schema to your homepage. These changes can produce measurable ChatGPT-search visibility within weeks.",
+    a: "Three moves in order: (1) make sure OAI-SearchBot and ChatGPT-User are allowed in your robots.txt: these are the crawlers that let ChatGPT search find and cite you (GPTBot is a separate training crawler), (2) switch from SPA to SSR or SSG if applicable, (3) add Organization schema to your homepage. These changes can produce measurable ChatGPT-search visibility within weeks.",
   },
 ] as const;
 
@@ -206,7 +206,7 @@ export default function HowToGetMentionedByChatGPTPost() {
                 }}
               >
                 ChatGPT mentions brands that are credible, consistently cited,
-                and structurally easy for AI to identify — not brands that paid
+                and structurally easy for AI to identify, not brands that paid
                 for placement.
               </p>
             </div>
@@ -217,7 +217,7 @@ export default function HowToGetMentionedByChatGPTPost() {
               ChatGPT mentions brands based on what it learned during training
               and what it retrieves via web browsing. To get mentioned, your
               brand needs to be present, credible, and consistently cited across
-              sources that AI systems trust — including structured content,
+              sources that AI systems trust: including structured content,
               authoritative third-party mentions, and schema markup. This guide
               covers the specific steps that move the needle.
             </p>
@@ -231,7 +231,7 @@ export default function HowToGetMentionedByChatGPTPost() {
               }}
             >
               ChatGPT mentions brands that are credible, consistently cited, and
-              structurally easy for AI to identify — not brands that paid for
+              structurally easy for AI to identify, not brands that paid for
               placement.
             </blockquote>
             <p style={{ marginBottom: 26 }}>
@@ -271,7 +271,7 @@ export default function HowToGetMentionedByChatGPTPost() {
               When ChatGPT has web browsing enabled (available in ChatGPT Plus and
               GPT-4o), it retrieves live web pages in real time. This is
               fundamentally different from training data. If your pages
-              aren&rsquo;t indexable, Browse can&rsquo;t find them — even if
+              aren&rsquo;t indexable, Browse can&rsquo;t find them, even if
               you&rsquo;ve published excellent content.
             </p>
             <p style={{ marginBottom: 26 }}>
@@ -283,7 +283,7 @@ export default function HowToGetMentionedByChatGPTPost() {
           </RevealSection>
 
           <RevealSection>
-            <SectionLabel number="02" text="Step 1 — Build a citable entity" />
+            <SectionLabel number="02" text="Step 1: Build a citable entity" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
@@ -343,8 +343,8 @@ export default function HowToGetMentionedByChatGPTPost() {
                 }}
               >
                 sameAs
-              </code>{" "}
-              — links to your LinkedIn, Google Business Profile, and Crunchbase
+              </code>
+              : links to your LinkedIn, Google Business Profile, and Crunchbase
               or equivalent. This tells AI systems, unambiguously, who you are and
               what category you belong to.
             </p>
@@ -362,7 +362,7 @@ export default function HowToGetMentionedByChatGPTPost() {
                 Build an author page
               </strong>{" "}
               if your brand centers on personal expertise. A named author with a
-              linked bio and publication history reinforces entity clarity — and
+              linked bio and publication history reinforces entity clarity, and
               is a direct signal used by Google AI Overviews and Gemini.
             </p>
           </RevealSection>
@@ -370,7 +370,7 @@ export default function HowToGetMentionedByChatGPTPost() {
           <RevealSection>
             <SectionLabel
               number="03"
-              text="Step 2 — Get cited on sources ChatGPT trusts"
+              text="Step 2: Get cited on sources ChatGPT trusts"
             />
           </RevealSection>
 
@@ -385,8 +385,8 @@ export default function HowToGetMentionedByChatGPTPost() {
               <li style={{ marginBottom: 14 }}>
                 <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
                   Wikipedia and Wikidata
-                </strong>{" "}
-                — You don&rsquo;t need a Wikipedia page. Being mentioned on a page
+                </strong>
+                : You don&rsquo;t need a Wikipedia page. Being mentioned on a page
                 that&rsquo;s relevant to your category is enough. A Wikidata
                 entity entry for your business costs nothing and signals
                 legitimacy directly.
@@ -394,8 +394,8 @@ export default function HowToGetMentionedByChatGPTPost() {
               <li style={{ marginBottom: 14 }}>
                 <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
                   Reddit
-                </strong>{" "}
-                — ChatGPT&rsquo;s training corpus includes extensive Reddit
+                </strong>
+                : ChatGPT&rsquo;s training corpus includes extensive Reddit
                 content. Genuine mentions in relevant subreddits
                 (r/realestate, r/personalfinance, r/smallbusiness,
                 r/legaladvice, etc.) are more valuable than most people realize.
@@ -403,38 +403,38 @@ export default function HowToGetMentionedByChatGPTPost() {
               <li style={{ marginBottom: 14 }}>
                 <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
                   G2, Clutch, Capterra
-                </strong>{" "}
-                — For software and professional services, these are among the
+                </strong>
+                : For software and professional services, these are among the
                 most trusted citation sources in AI training data.
               </li>
               <li style={{ marginBottom: 14 }}>
                 <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
                   Industry publications and trade press
-                </strong>{" "}
-                — Vertical-specific outlets with real readership. One article in
+                </strong>
+                : Vertical-specific outlets with real readership. One article in
                 an industry-specific publication outweighs ten generic blog
                 mentions.
               </li>
               <li style={{ marginBottom: 14 }}>
                 <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
                   Earned PR mentions
-                </strong>{" "}
-                — Any coverage in outlets with established domain authority. Even
+                </strong>
+                : Any coverage in outlets with established domain authority. Even
                 a brief mention in a credible outlet adds a data point that AI
                 systems draw from.
               </li>
             </ul>
             <p style={{ marginBottom: 26 }}>
               The through-line: the strategy for getting mentioned in AI outputs
-              is the same as the strategy for building credibility across the web
-              — because that&rsquo;s exactly what AI systems learned from.
+              is the same as the strategy for building credibility across the web,
+              because that&rsquo;s exactly what AI systems learned from.
             </p>
           </RevealSection>
 
           <RevealSection>
             <SectionLabel
               number="04"
-              text="Step 3 — Structure your content for AI extraction"
+              text="Step 3: Structure your content for AI extraction"
             />
           </RevealSection>
 
@@ -460,7 +460,7 @@ export default function HowToGetMentionedByChatGPTPost() {
                 do, who you serve, where you operate, what results you produce
               </li>
               <li style={{ marginBottom: 11 }}>
-                Write in direct declarative sentences — not hedged, abstract
+                Write in direct declarative sentences, not hedged, abstract
                 language
               </li>
             </ul>
@@ -475,18 +475,18 @@ export default function HowToGetMentionedByChatGPTPost() {
           <RevealSection>
             <SectionLabel
               number="05"
-              text="Step 4 — Enable ChatGPT Browse mode to find you"
+              text="Step 4: Enable ChatGPT Browse mode to find you"
             />
           </RevealSection>
 
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
               If your site blocks AI crawlers or isn&rsquo;t properly indexed,
-              ChatGPT Browse cannot see you — regardless of content quality.
+              ChatGPT Browse cannot see you, regardless of content quality.
             </p>
             <p style={{ marginBottom: 16 }}>
               <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
-                Check your robots.txt — and know which bot does what.
+                Check your robots.txt, and know which bot does what.
               </strong>{" "}
               OpenAI runs three separate crawlers, and they are not
               interchangeable{" "}
@@ -500,23 +500,23 @@ export default function HowToGetMentionedByChatGPTPost() {
               <li style={{ marginBottom: 8 }}>
                 <code style={{ fontFamily: "var(--mono)", fontSize: "0.9em" }}>
                   OAI-SearchBot
-                </code>{" "}
-                &mdash; surfaces and links your pages inside ChatGPT search. This
+                </code>
+                : surfaces and links your pages inside ChatGPT search. This
                 is the one that controls whether you can appear in ChatGPT&rsquo;s
                 search answers. <strong>Allow it.</strong>
               </li>
               <li style={{ marginBottom: 8 }}>
                 <code style={{ fontFamily: "var(--mono)", fontSize: "0.9em" }}>
                   ChatGPT-User
-                </code>{" "}
-                &mdash; fetches a page when a user&rsquo;s ChatGPT session visits
+                </code>
+                : fetches a page when a user&rsquo;s ChatGPT session visits
                 a link. Allow it too.
               </li>
               <li style={{ marginBottom: 8 }}>
                 <code style={{ fontFamily: "var(--mono)", fontSize: "0.9em" }}>
                   GPTBot
-                </code>{" "}
-                &mdash; crawls content for model <em>training</em>. Blocking it
+                </code>
+                : crawls content for model <em>training</em>. Blocking it
                 keeps you out of future training data; it does{" "}
                 <strong>not</strong> remove you from ChatGPT search.
               </li>
@@ -559,8 +559,8 @@ Disallow: /`}
               <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
                 Address your rendering architecture.
               </strong>{" "}
-              If your site is built as a single-page application (SPA) — fully
-              JavaScript-rendered — GPTBot and most AI crawlers see a near-empty
+              If your site is built as a single-page application (SPA) that is
+              fully JavaScript-rendered, GPTBot and most AI crawlers see a near-empty
               page. Server-side rendering (SSG or SSR) is not optional if AI
               visibility matters to you. This was the single highest-impact
               technical change behind the HomeCalc results referenced above.
@@ -570,7 +570,7 @@ Disallow: /`}
           <RevealSection>
             <SectionLabel
               number="06"
-              text="Step 5 — Monitor your ChatGPT visibility"
+              text="Step 5: Monitor your ChatGPT visibility"
             />
           </RevealSection>
 
@@ -590,7 +590,7 @@ Disallow: /`}
                 surface your brand
               </li>
               <li style={{ marginBottom: 11 }}>
-                Run those queries in ChatGPT weekly — once with Browse enabled,
+                Run those queries in ChatGPT weekly: once with Browse enabled,
                 once without
               </li>
               <li style={{ marginBottom: 11 }}>
@@ -618,7 +618,7 @@ Disallow: /`}
               </strong>{" "}
               Days to weeks. Once OAI-SearchBot and ChatGPT-User can crawl your
               site and your schema is in place, ChatGPT search can start surfacing
-              you. (GPTBot is the separate training crawler — allowing it affects
+              you. (GPTBot is the separate training crawler; allowing it affects
               future model training, not how fast you appear in search.)
             </p>
             <p style={{ marginBottom: 26 }}>
@@ -627,7 +627,7 @@ Disallow: /`}
               </strong>{" "}
               Months. Training data updates on a model cycle, not a crawl cycle.
               Building your citation presence across Reddit, G2, industry
-              publications, and PR takes time — but compounds.
+              publications, and PR takes time, but compounds.
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={{ fontWeight: 600, color: "var(--ink)" }}>
@@ -784,14 +784,14 @@ Disallow: /`}
                   position: "relative",
                 }}
               >
-                The audit covers Google AI Overviews, ChatGPT, and Gemini — with a prioritized action plan. $1,500 CAD flat.
+                The audit covers Google AI Overviews, ChatGPT, and Gemini, with a prioritized action plan. $1,500 CAD flat.
               </p>
               <Link
                 href={AUDIT_URL}
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
               >
-                Book Your AI Visibility Audit &mdash; $1,500 CAD{" "}
+                Book Your AI Visibility Audit for $1,500 CAD{" "}
                 <span className="arr">&rarr;</span>
               </Link>
             </div>
@@ -818,7 +818,7 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
         gap: 14,
       }}
     >
-      {number} &mdash; {text}
+      {number}: {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
     </h2>
   );
@@ -856,7 +856,7 @@ function InlineAuditCTA() {
           lineHeight: 1.55,
         }}
       >
-        An AI visibility audit covers Google AI Overviews, ChatGPT, and Gemini — not just one platform. You&rsquo;ll know exactly where you
+        An AI visibility audit covers Google AI Overviews, ChatGPT, and Gemini, not just one platform. You&rsquo;ll know exactly where you
         stand and what to fix first.
       </p>
       <Link href={AUDIT_URL} className="btn btn-primary">

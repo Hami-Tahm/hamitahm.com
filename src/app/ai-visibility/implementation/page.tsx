@@ -7,18 +7,18 @@ import { HOMECALC_PROOF, HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
 /*
  * ⚠️ THIS PAGE SOLD DONE-FOR-YOU WORK UNTIL 2026-08-16. IT NO LONGER DOES.
  *
- * It used to be the "Implementation Sprint" — "I make the changes myself." That
+ * It used to be the "Implementation Sprint": "I make the changes myself." That
  * tier no longer exists. Hami does not take execution work: it carries unbounded
  * scope, ties revenue to his own hours, and is the single thing that stops this
  * practice from serving ten clients a month. See the note in lib/offers.ts.
  *
- * The product is now the plan itself — recommendations, a prioritized action list
+ * The product is now the plan itself: recommendations, a prioritized action list
  * and a roadmap, written so the developer who already maintains the site can ship
  * it without asking a question. Anyone with a website already has that person.
  *
  * ⚠️ THE URL DELIBERATELY STILL SAYS /implementation/. It has inbound links and
  * crawl history; renaming the slug would trade a real asset for a tidier one. The
- * word is also not wrong — it is the client's implementation, specified here.
+ * word is also not wrong; it is the client's implementation, specified here.
  *
  * ⚠️ NEVER reintroduce "done-for-you", "I implement", "I make the changes" or
  * "have me do it for you" on this page. Someone paying $4,500 on that wording is
@@ -29,21 +29,21 @@ const CONTACT_URL = "/contact/";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "AI Visibility Action Plan — Recommendations & Roadmap | Toronto",
+    absolute: "AI Visibility Action Plan: Recommendations & Roadmap | Toronto",
   },
   description:
-    "After the audit: prioritized recommendations, a page-level action plan and a roadmap your team can ship — grounded in your own Search Console and Bing data. From $4,500 CAD.",
+    "After the audit: prioritized recommendations, a page-level action plan and a roadmap your team can ship, grounded in your own Search Console and Bing data. From $4,500 CAD.",
   alternates: { canonical: `https://hamitahm.com${SLUG}` },
 };
 
 const FAQ_ITEMS = [
   {
     q: "What is the AI Visibility Action Plan?",
-    a: "It is the step after the audit. The audit tells you where AI engines cite you and where they don't; the Action Plan tells you what to change about it — page by page, in priority order, with the reasoning and the acceptance criteria written down. It is built so the developer or agency who already maintains your site can ship it without coming back to me with questions.",
+    a: "It is the step after the audit. The audit tells you where AI engines cite you and where they don't; the Action Plan tells you what to change about it: page by page, in priority order, with the reasoning and the acceptance criteria written down. It is built so the developer or agency who already maintains your site can ship it without coming back to me with questions.",
   },
   {
     q: "Do you make the changes yourself?",
-    a: "No, and that is deliberate rather than a limitation. I don't take execution work. Anyone who has a website already has someone who edits it, and that person will always be faster inside your codebase and your deploy process than an outside consultant would be. What is usually missing is not hands — it is knowing exactly what to change and in what order. That is what you are buying here.",
+    a: "No, and that is deliberate rather than a limitation. I don't take execution work. Anyone who has a website already has someone who edits it, and that person will always be faster inside your codebase and your deploy process than an outside consultant would be. What is usually missing is not hands: it is knowing exactly what to change and in what order. That is what you are buying here.",
   },
   {
     q: "How is this different from the audit?",
@@ -55,19 +55,19 @@ const FAQ_ITEMS = [
   },
   {
     q: "Why do you need Search Console and Bing Webmaster Tools access?",
-    a: "So the plan is prioritized on your real data instead of my assumptions. Read-only access shows which queries already bring you impressions, which pages Google and Bing actually consider relevant, and where you are close enough to move. Without it I would be ordering the work by guesswork. If you don't have these set up, I'll send you documentation so your team can create them — read-only access is enough.",
+    a: "So the plan is prioritized on your real data instead of my assumptions. Read-only access shows which queries already bring you impressions, which pages Google and Bing actually consider relevant, and where you are close enough to move. Without it I would be ordering the work by guesswork. If you don't have these set up, I'll send you documentation so your team can create them; read-only access is enough.",
   },
   {
     q: "How much does it cost and how long does it take?",
-    a: "From $4,500 CAD, fixed scope, and the $1,500 audit fee is credited toward it. Most run up to 30 days. Larger or multi-language scopes are quoted from the audit. It is a one-time, fixed-scope engagement — optional monitoring and advisory is available afterward, but it's never required.",
+    a: "From $4,500 CAD, fixed scope, and the $1,500 audit fee is credited toward it. Most run up to 30 days. Larger or multi-language scopes are quoted from the audit. It is a one-time, fixed-scope engagement; optional monitoring and advisory is available afterward, but it's never required.",
   },
   {
     q: "Do you guarantee I'll get cited by AI?",
-    a: "No — and anyone who guarantees a specific AI result is either mistaken or selling you something. AI engines aren't under anyone's control, and I don't control your deployment either. What I commit to is that the plan is specific enough to act on and grounded in what the audit actually measured. See the disclaimer for the honest version.",
+    a: "No, and anyone who guarantees a specific AI result is either mistaken or selling you something. AI engines aren't under anyone's control, and I don't control your deployment either. What I commit to is that the plan is specific enough to act on and grounded in what the audit actually measured. See the disclaimer for the honest version.",
   },
   {
     q: "Do you work with agencies?",
-    a: "Yes, and it's the arrangement this fits best. If you're a web or marketing agency, your team already has the implementers — what you may not have in-house is the AI visibility measurement and the plan. The audit and Action Plan can be delivered as a white-label supplier arrangement. Email me.",
+    a: "Yes, and it's the arrangement this fits best. If you're a web or marketing agency, your team already has the implementers: what you may not have in-house is the AI visibility measurement and the plan. The audit and Action Plan can be delivered as a white-label supplier arrangement. Email me.",
   },
 ];const STEPS = [
   {
@@ -78,7 +78,7 @@ const FAQ_ITEMS = [
   {
     n: "02",
     title: "Your own data comes in",
-    body: "I take read-only access to your Search Console and Bing Webmaster Tools — and send documentation for your team to create them if they don't exist yet. This is what lets the plan be prioritized on the queries and pages you already have traction on, instead of on assumptions.",
+    body: "I take read-only access to your Search Console and Bing Webmaster Tools, and send documentation for your team to create them if they don't exist yet. This is what lets the plan be prioritized on the queries and pages you already have traction on, instead of on assumptions.",
   },
   {
     n: "03",
@@ -88,7 +88,7 @@ const FAQ_ITEMS = [
   {
     n: "04",
     title: "Roadmap and walkthrough",
-    body: "The work sequenced over the coming weeks, plus a call with whoever is going to do it — so the people implementing hear the reasoning directly rather than reading it second-hand.",
+    body: "The work sequenced over the coming weeks, plus a call with whoever is going to do it, so the people implementing hear the reasoning directly rather than reading it second-hand.",
   },
 ];
 
@@ -184,12 +184,12 @@ export default function ImplementationPage() {
               }}
             >
               The audit measures where you stand. This is where that becomes a list
-              your team can actually ship &mdash; content structure, entity
+              your team can actually ship: content structure, entity
               consistency,{" "}
               <Link href="/blog/spa-to-ssg-ai-visibility/" style={{ color: "var(--accent)", fontWeight: 500 }}>
                 rendering
               </Link>
-              , structured data, crawler config &mdash; page by page, in priority
+              , structured data, crawler config, page by page, in priority
               order, and prioritized against your own Search Console and Bing data
               rather than my assumptions. It&rsquo;s the same sequence I ran on my own
               site to earn {HOMECALC_CLAIMS.appearancesInTimeframe}.
@@ -227,7 +227,7 @@ export default function ImplementationPage() {
             </div>
             <p style={{ marginTop: 18, fontSize: 15, color: "var(--muted)", lineHeight: 1.6, maxWidth: "62ch" }}>
               Most people start at the checker or the audit. You reach step 2 when you
-              want the findings turned into work your team can pick up &mdash; and the
+              want the findings turned into work your team can pick up, and the
               audit fee comes off the price when you do. Monitoring afterward is
               optional and term-limited, never required to get started.{" "}
               <Link href="/pricing/" style={{ color: "var(--accent)", fontWeight: 500 }}>
@@ -281,9 +281,9 @@ export default function ImplementationPage() {
             >
               <p style={{ color: "var(--ink)", lineHeight: 1.7, margin: 0 }}>
                 I don&rsquo;t ask you to trust the method on faith. I ran this exact
-                sequence on my own product, HomeCalc.ca &mdash; where I was also the one
-                implementing it &mdash; and took it from near-zero to{" "}
-                {HOMECALC_CLAIMS.appearancesInTimeframe}{" "}&mdash;{" "}
+                sequence on my own product, HomeCalc.ca (where I was also the one
+                implementing it), and took it from near-zero to{" "}
+                {HOMECALC_CLAIMS.appearancesInTimeframe}:{" "}
                 {HOMECALC_PROOF.combinedSourceLong}. The{" "}
                 <Link href={HOMECALC_PROOF.caseStudyPath} style={{ color: "var(--accent)" }}>
                   full case study
@@ -324,7 +324,7 @@ export default function ImplementationPage() {
               </h2>
               <p style={{ color: "var(--muted)", marginTop: 16, position: "relative", maxWidth: "54ch", marginLeft: "auto", marginRight: "auto" }}>
                 Tell me about your site. If you haven&rsquo;t had the audit yet,
-                we&rsquo;ll start there &mdash; and its fee comes off this.
+                we&rsquo;ll start there, and its fee comes off this.
               </p>
               <Link href={CONTACT_URL} className="btn btn-primary" style={{ marginTop: 34, position: "relative" }}>
                 Talk about your plan <span className="arr">&rarr;</span>
@@ -371,7 +371,7 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
         gap: 14,
       }}
     >
-      {number}{" "}&mdash; {text}
+      {number}: {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
     </div>
   );

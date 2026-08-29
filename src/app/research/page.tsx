@@ -7,7 +7,7 @@ import { STUDY, SITES } from "@/lib/citation-study";
 const SLUG = "/research/";
 
 /**
- * /research/ — the citable front door for the original dataset.
+ * /research/: the citable front door for the original dataset.
  *
  * ── WHY THIS PAGE EXISTS (GEO) ──
  * Original, first-party, re-usable data is the single most citation-worthy thing
@@ -18,13 +18,13 @@ const SLUG = "/research/";
  * ── THE HONESTY LINE ──
  * The DOI / Zenodo / GitHub blocks render ONLY when those fields are non-null in
  * lib/research.ts. Do not hardcode a placeholder identifier to make the page look
- * finished — an unresolvable DOI destroys exactly the credibility this page is
+ * finished: an unresolvable DOI destroys exactly the credibility this page is
  * built to earn. Until the record is published, the page still works: it points
  * at the CSV served from this domain.
  */
 
 export const metadata: Metadata = {
-  title: "Research & Data — AI Citation Dataset",
+  title: "Research & Data: AI Citation Dataset",
   description:
     "The open dataset behind the AI citation study: 21,700 citations across two owner-operated Canadian sites in three months. Files, methodology, and stated limitations, CC BY 4.0.",
   alternates: { canonical: `https://hamitahm.com${SLUG}` },
@@ -106,7 +106,7 @@ export default function ResearchPage() {
                 marginTop: 26,
               }}
             >
-              An open dataset on what AI engines actually cite &mdash;{" "}
+              An open dataset on what AI engines actually cite:{" "}
               <em style={{ fontStyle: "italic", color: "var(--accent)" }}>
                 including the parts that don&rsquo;t flatter me.
               </em>
@@ -125,7 +125,7 @@ export default function ResearchPage() {
             >
               Two websites. One owner. The same {STUDY.windowLabel.toLowerCase()},
               measured the same way. {STUDY.totalCitations} AI citations between
-              them &mdash; and completely opposite results. Everything below is
+              them, and completely opposite results. Everything below is
               free to download, re-use and check, under {RESEARCH.license}.
             </p>
           </RevealSection>
@@ -143,7 +143,7 @@ export default function ResearchPage() {
         </div>
       </header>
 
-      {/* ── 01 — The headline numbers ── */}
+      {/* 01. The headline numbers */}
       <section style={{ padding: "40px 0" }}>
         <div className="wrap" style={{ maxWidth: 820 }}>
           <RevealSection>
@@ -193,7 +193,7 @@ export default function ResearchPage() {
         </div>
       </section>
 
-      {/* ── 02 — Files ── */}
+      {/* 02. Files */}
       <section style={{ padding: "40px 0" }}>
         <div className="wrap" style={{ maxWidth: 820 }}>
           <RevealSection>
@@ -237,14 +237,14 @@ export default function ResearchPage() {
               screenshots, email{" "}
               <a href={`mailto:${RESEARCH.contactEmail}`} style={linkStyle}>
                 {RESEARCH.contactEmail}
-              </a>{" "}
-              &mdash; I send them.
+              </a>
+              : I send them.
             </p>
           </RevealSection>
         </div>
       </section>
 
-      {/* ── 03 — How to cite (only when a real identifier exists) ── */}
+      {/* 03. How to cite (only when a real identifier exists) */}
       {isPublished && (
         <section style={{ padding: "40px 0" }}>
           <div className="wrap" style={{ maxWidth: 820 }}>
@@ -297,8 +297,8 @@ export default function ResearchPage() {
               modelled, projected, or rounded upward.
             </p>
             <p style={pStyle}>
-              Where the console displayed its own rounded figure &mdash; &ldquo;1.7K&rdquo;
-              rather than an exact integer &mdash; the dataset publishes that same
+              Where the console displayed its own rounded figure (&ldquo;1.7K&rdquo;
+              rather than an exact integer), the dataset publishes that same
               rounded string, so it never implies more precision than the source
               gave. The full measurement method, including how prompts and conditions
               are recorded for the non-Copilot engines, is on the{" "}
@@ -357,7 +357,7 @@ export default function ResearchPage() {
               <p style={{ marginTop: 0, marginBottom: 10 }}>
                 <b style={{ color: "var(--ink)" }}>Use this data. Please.</b> If you
                 are writing about AI search and want real numbers instead of
-                speculation, take them &mdash; charts, tables, figures. The licence is{" "}
+                speculation, take them: charts, tables, figures. The licence is{" "}
                 <a href={RESEARCH.licenseUrl} style={linkStyle}>
                   {RESEARCH.license}
                 </a>
@@ -401,7 +401,7 @@ export default function ResearchPage() {
                   position: "relative",
                 }}
               >
-                The same measurement, on your queries and your competitors &mdash;
+                The same measurement, on your queries and your competitors,
                 dated, attributed, and honest about what it can&rsquo;t tell you.
               </p>
               <div
@@ -505,7 +505,7 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
         gap: 14,
       }}
     >
-      {number} &mdash; {text}
+      {number}. {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
     </div>
   );
