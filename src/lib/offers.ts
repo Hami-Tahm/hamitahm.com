@@ -41,16 +41,20 @@ export const OFFERS = {
     priceNote: "CAD, flat fee, one-time",
     /**
      * USD price for visitors outside Canada — added 2026-08-29 alongside
-     * src/middleware.ts and src/lib/currency.ts. This is a REAL price backed
+     * src/proxy.ts and src/lib/currency.ts. This is a REAL price backed
      * by its own Stripe Payment Link (checkoutUrlUSD below), not a display-only
-     * conversion of the CAD figure. It is a fixed number, not a live FX
-     * conversion, so what a visitor sees on the page always matches exactly
-     * what Stripe charges — see the note on checkoutUrlUSD for why that
-     * matters. Roughly tracks the CAD price at ~0.72 CAD→USD (Aug 2026);
-     * re-check periodically, but don't chase the exchange rate day to day —
-     * a flat fee that moves with FX isn't a flat fee.
+     * conversion of the CAD figure.
+     *
+     * ⚠️ THIS IS NOT AN FX CONVERSION AND NEVER SHOULD BE. Hami's explicit
+     * instruction: $1,500 USD flat, deliberately HIGHER than the $1,500 CAD
+     * price in absolute terms — non-Canada visitors are charged more, not an
+     * equivalent-value conversion of the CAD price. Do not "fix" this back
+     * down to a converted figure (an earlier draft of this file briefly had
+     * $1,100 USD as a converted amount — that was wrong and was corrected
+     * same-day). If the upcharge amount ever changes, that's a deliberate
+     * pricing decision to get explicitly, not a rate to recalculate.
      */
-    priceUSD: "$1,100",
+    priceUSD: "$1,500",
     priceNoteUSD: "USD, flat fee, one-time",
     href: "/ai-visibility/ai-visibility-audit/",
     role: "Diagnosis: exactly where AI engines cite you, where they don't, and what to change.",
@@ -87,9 +91,10 @@ export const OFFERS = {
     checkoutUrl: "https://buy.stripe.com/5kQ5kF78Y6ZJaj81TteQM00",
     /**
      * USD counterpart of checkoutUrl — added 2026-08-29. Same product, same
-     * account, a second real Price object ($1,100 USD) with its own Payment
-     * Link, same custom fields and confirmation message pattern. Do NOT
-     * point this at checkoutUrl with a query param or rely on Stripe's
+     * account, a second real Price object ($1,500 USD, a deliberate flat
+     * upcharge for non-Canada visitors — see priceUSD above) with its own
+     * Payment Link, same custom fields and confirmation message pattern. Do
+     * NOT point this at checkoutUrl with a query param or rely on Stripe's
      * Adaptive Pricing conversion for the CAD link instead — that would let
      * Stripe charge a live-converted amount that can drift from the
      * `priceUSD` figure shown on the page, which is exactly the "number on
@@ -97,7 +102,7 @@ export const OFFERS = {
      * avoid. Read via src/lib/currency.ts, never directly, so a page can't
      * show the CAD link to a USD visitor by accident.
      */
-    checkoutUrlUSD: "https://buy.stripe.com/cNiaEZfFu3Nxezo2XxeQM01",
+    checkoutUrlUSD: "https://buy.stripe.com/7sYcN764U2Jt4YOfKjeQM02",
   },
   /*
    * Renamed from `implementation` on 2026-08-16 — the key too, deliberately. A key
