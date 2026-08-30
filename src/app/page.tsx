@@ -69,6 +69,16 @@ export default function Home() {
               <span style={{ width: 34, height: 1, background: "var(--accent)", display: "inline-block" }} />
               AI Visibility Consultant &middot; Toronto, Canada
             </div>
+            {/* Lead with the number so it's the first thing anyone scanning this
+                section sees, per feedback 2026-08-30. */}
+            <div style={{ display: "flex", alignItems: "baseline", gap: 12, flexWrap: "wrap", marginBottom: 18 }}>
+              <span style={{ fontFamily: "var(--serif)", fontWeight: 500, fontSize: "clamp(36px, 4.6vw, 52px)", letterSpacing: "-.01em", color: "var(--ink)" }}>
+                {HOMECALC_PROOF.combinedAppearances}
+              </span>
+              <span style={{ fontFamily: "var(--mono)", fontSize: "12.5px", letterSpacing: ".06em", color: "var(--muted)", textTransform: "uppercase" }}>
+                AI appearances, in just {HOMECALC_PROOF.timeframe}
+              </span>
+            </div>
             <p
               style={{
                 fontSize: "clamp(17px, 2vw, 20px)",
