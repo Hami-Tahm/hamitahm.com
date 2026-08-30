@@ -204,13 +204,13 @@ export const OFFERS = {
  *
  * ⚠️ THE INCREASE MUST ACTUALLY HAPPEN.
  * An increase notice that quietly slips becomes exactly the false-urgency claim this
- * wording was built to avoid. When September 2026 arrives there are only two valid
+ * wording was built to avoid. When October 2026 arrives there are only two valid
  * moves: raise the prices in OFFERS above, or set `active: false` and remove the
  * notice. Do not leave it standing past the date.
  */
 export const PRICING_NOTICE = {
   active: true,
-  text: "Rates increase in September 2026. Engagements booked before then run at the prices shown here.",
+  text: "Rates increase in October 2026. Engagements booked before then run at the prices shown here.",
 } as const;
 
 /**
