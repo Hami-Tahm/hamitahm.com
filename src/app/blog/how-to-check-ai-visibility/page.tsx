@@ -263,16 +263,16 @@ export default function HowToCheckAIVisibilityPost() {
                   maxWidth: "46ch",
                 }}
               >
-                <strong>Rather not check by hand?</strong>{" "}Pick your engines and
-                keywords and a real analyst emails your AI visibility report,
-                free, within one business day.
+                <strong>Rather have an expert check it?</strong>{" "}Fill out this
+                short form, and I&rsquo;ll send you your AI visibility report
+                within one business day. It&rsquo;s free.
               </p>
               <Link
                 href="/ai-visibility/ai-visibility-checker/"
                 className="btn btn-primary"
                 style={{ whiteSpace: "nowrap" }}
               >
-                Run the free AI Visibility Check{" "}
+                Get my free AI visibility check{" "}
                 <span className="arr">&rarr;</span>
               </Link>
             </div>

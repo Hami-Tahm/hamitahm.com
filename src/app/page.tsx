@@ -37,11 +37,11 @@ export default function Home() {
                 letterSpacing: "-.032em",
               }}
             >
-              Get found inside{" "}
+              Get ChatGPT to{" "}
               <em style={{ fontStyle: "italic", color: "var(--accent)" }}>
-                Google&nbsp;AI, ChatGPT,
+                recommend you
               </em>{" "}
-              Gemini, and Claude.
+              to your customers.
             </h1>
           </RevealSection>
 
