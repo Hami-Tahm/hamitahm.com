@@ -3,7 +3,7 @@ import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { EngineRotator } from "@/components/EngineRotator";
 import { latestWritingPosts } from "@/lib/writing-posts";
-import { HOMECALC_PROOF, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
+import { HOMECALC_PROOF } from "@/lib/homecalc-proof";
 
 export const metadata: Metadata = {
   // Trimmed to ~150 chars (was ~207 and would truncate in the SERP). Leads with the
@@ -22,13 +22,6 @@ export default function Home() {
       <header style={{ padding: "108px 0 86px" }}>
         <div className="wrap">
           <RevealSection>
-            <div style={{ fontFamily: "var(--mono)", fontSize: "12.5px", letterSpacing: ".18em", color: "var(--accent)", textTransform: "uppercase", marginBottom: 30, display: "flex", alignItems: "center", gap: 12 }}>
-              <span style={{ width: 34, height: 1, background: "var(--accent)", display: "inline-block" }} />
-              AI Visibility Consultant &middot; Toronto, Canada
-            </div>
-          </RevealSection>
-
-          <RevealSection delay={0.06}>
             <h1
               style={{
                 fontFamily: "var(--serif)",
@@ -44,23 +37,6 @@ export default function Home() {
               </em>{" "}
               to your customers.
             </h1>
-          </RevealSection>
-
-          <RevealSection delay={0.12}>
-            <p
-              style={{
-                marginTop: 30,
-                fontSize: "clamp(17px, 2vw, 20px)",
-                color: "var(--muted)",
-                maxWidth: "56ch",
-                lineHeight: 1.65,
-              }}
-            >
-              I&rsquo;m Hami Tahm, an AI Visibility Consultant in Toronto. I help
-              Canadian businesses get cited and recommended when buyers ask AI
-              engines, and I prove it on my own products first, in public,
-              with numbers you can check.
-            </p>
           </RevealSection>
 
           <RevealSection delay={0.18}>
@@ -86,11 +62,11 @@ export default function Home() {
       <div className="wrap">
         <RevealSection>
           {/*
-            Was a 3-stat bar (32,800+ / $1,500 / 1, no-agency). Moved 2026-08-30: the
-            traffic and price stats now live down in the "01" section, closer to the
-            audit CTA they're proof for. What's left here is a single link into the
-            founder story, since that's what "1 / no agency, no handoffs" was really
-            pointing at.
+            Was a 3-stat bar (32,800+ / $1,500 / 1, no-agency). 2026-08-30: the traffic
+            and price stats were dropped (they'd briefly lived in the "02" section
+            below but weren't earning their space there either). What's left here is a
+            single link into the founder story, since that's what "1 / no agency, no
+            handoffs" was really pointing at.
           */}
           <Link href="/hami-tahm/" className="stat-cell-link" style={{ display: "inline-flex", flexDirection: "column", gap: 4 }}>
             <span style={{ fontFamily: "var(--serif)", fontSize: 34, fontWeight: 500, letterSpacing: "-.01em", color: "var(--ink)" }}>
@@ -103,17 +79,39 @@ export default function Home() {
         </RevealSection>
       </div>
 
+      {/* WHO I AM (moved down from hero 2026-08-30) */}
+      <section id="who" style={{ padding: "80px 0" }}>
+        <div className="wrap">
+          <RevealSection>
+            <SectionLabel number="01" text="Who I am" />
+          </RevealSection>
+          <RevealSection delay={0.04}>
+            <div style={{ fontFamily: "var(--mono)", fontSize: "12.5px", letterSpacing: ".18em", color: "var(--accent)", textTransform: "uppercase", marginBottom: 20, display: "flex", alignItems: "center", gap: 12 }}>
+              <span style={{ width: 34, height: 1, background: "var(--accent)", display: "inline-block" }} />
+              AI Visibility Consultant &middot; Toronto, Canada
+            </div>
+            <p
+              style={{
+                fontSize: "clamp(17px, 2vw, 20px)",
+                color: "var(--muted)",
+                maxWidth: "56ch",
+                lineHeight: 1.65,
+              }}
+            >
+              I&rsquo;m Hami Tahm, an AI Visibility Consultant in Toronto. I help
+              Canadian businesses get cited and recommended when buyers ask AI
+              engines, and I prove it on my own products first, in public,
+              with numbers you can check.
+            </p>
+          </RevealSection>
+        </div>
+      </section>
+
       {/* AI VISIBILITY */}
       <section id="ai" style={{ padding: "80px 0" }}>
         <div className="wrap">
           <RevealSection>
-            <SectionLabel number="01" text="What I'm focused on" />
-          </RevealSection>
-          <RevealSection delay={0.04}>
-            <div className="stats-grid stats-grid-centered" style={{ gridTemplateColumns: "repeat(2, 1fr)", marginBottom: 34, maxWidth: 420 }}>
-              <Stat value={HOMECALC_HEADLINE_STAT.value} label={HOMECALC_HEADLINE_STAT.labelLong} />
-              <Stat value="$1,500" label="Flat-fee audit: no retainer" />
-            </div>
+            <SectionLabel number="02" text="What I'm focused on" />
           </RevealSection>
           <RevealSection delay={0.06}>
             <div className="panel">
@@ -147,7 +145,7 @@ export default function Home() {
       <section id="work" style={{ padding: "80px 0" }}>
         <div className="wrap">
           <RevealSection>
-            <SectionLabel number="02" text="Currently building" />
+            <SectionLabel number="03" text="Currently building" />
           </RevealSection>
           <RevealSection delay={0.06}>
             <div>
@@ -163,7 +161,7 @@ export default function Home() {
       <section id="writing" style={{ padding: "80px 0" }}>
         <div className="wrap">
           <RevealSection>
-            <SectionLabel number="03" text="Writing" />
+            <SectionLabel number="04" text="Writing" />
           </RevealSection>
           <RevealSection delay={0.06}>
             <div>
@@ -186,7 +184,7 @@ export default function Home() {
         <div className="wrap about-grid">
           <RevealSection>
             <div>
-              <SectionLabel number="04" text="About" />
+              <SectionLabel number="05" text="About" />
               <h2 style={{ fontFamily: "var(--serif)", fontWeight: 500, fontSize: "clamp(26px, 3.4vw, 40px)", lineHeight: 1.12, letterSpacing: "-.02em" }}>
                 I build, test, and ship in public,{" "}
                 <em style={{ fontStyle: "italic", color: "var(--accent)" }}>with speed and real-world validation.</em>
@@ -216,31 +214,6 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
     <div style={{ fontFamily: "var(--mono)", fontSize: 12, letterSpacing: ".14em", color: "var(--faint)", textTransform: "uppercase", marginBottom: 34, display: "flex", alignItems: "center", gap: 14 }}>
       {number}: {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
-    </div>
-  );
-}
-
-function Stat({
-  value,
-  unit,
-  accent,
-  label,
-}: {
-  value: string;
-  unit?: string;
-  accent?: string;
-  label: string;
-}) {
-  return (
-    <div className="stat-cell">
-      <div style={{ fontFamily: "var(--serif)", fontSize: 34, fontWeight: 500, letterSpacing: "-.01em" }}>
-        {value}
-        {unit && <span style={{ color: "var(--faint)" }}> {unit}</span>}
-        {accent && <span style={{ color: "var(--accent)" }}>{accent}</span>}
-      </div>
-      <div style={{ fontFamily: "var(--mono)", fontSize: "11.5px", letterSpacing: ".08em", color: "var(--muted)", textTransform: "uppercase", marginTop: 4 }}>
-        {label}
-      </div>
     </div>
   );
 }
