@@ -195,6 +195,18 @@ const siteStructuredData = {
       "@id": "https://hamitahm.com/#organization",
       name: "HamiTahm.com",
       url: "https://hamitahm.com/",
+      /*
+       * Added 2026-08-30: Google's Rich Results Test flagged this node with
+       * "Missing field 'image' (optional)" (non-critical, LocalBusiness type).
+       * Reusing the same portrait already declared, verified real, on the Person
+       * node above; not a new asset or a new claim, so this is free under §5.
+       *
+       * `telephone` was flagged too and is DELIBERATELY still absent: there is no
+       * public phone number for the practice to publish truthfully. Do not add a
+       * placeholder or a personal number just to clear the warning; add it only
+       * if a real one exists.
+       */
+      image: "https://hamitahm.com/images/hami-tahm/hami-tahm-portrait.png",
       founder: { "@id": "https://hamitahm.com/#hami-tahm" },
       areaServed: { "@type": "Country", name: "Canada" },
       foundingDate: "2024",
