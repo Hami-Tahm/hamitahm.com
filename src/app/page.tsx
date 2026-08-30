@@ -58,27 +58,6 @@ export default function Home() {
         </div>
       </header>
 
-      {/* WHO AM I */}
-      <div className="wrap">
-        <RevealSection>
-          {/*
-            Was a 3-stat bar (32,800+ / $1,500 / 1, no-agency). 2026-08-30: the traffic
-            and price stats were dropped (they'd briefly lived in the "02" section
-            below but weren't earning their space there either). What's left here is a
-            single link into the founder story, since that's what "1 / no agency, no
-            handoffs" was really pointing at.
-          */}
-          <Link href="/hami-tahm/" className="stat-cell-link" style={{ display: "inline-flex", flexDirection: "column", gap: 4 }}>
-            <span style={{ fontFamily: "var(--serif)", fontSize: 34, fontWeight: 500, letterSpacing: "-.01em", color: "var(--ink)" }}>
-              Who am I <span className="arr">&rarr;</span>
-            </span>
-            <span style={{ fontFamily: "var(--mono)", fontSize: "11.5px", letterSpacing: ".08em", color: "var(--muted)", textTransform: "uppercase" }}>
-              One consultant, no agency, no handoffs
-            </span>
-          </Link>
-        </RevealSection>
-      </div>
-
       {/* WHO I AM (moved down from hero 2026-08-30) */}
       <section id="who" style={{ padding: "80px 0" }}>
         <div className="wrap">
