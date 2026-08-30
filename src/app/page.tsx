@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
+import { EngineRotator } from "@/components/EngineRotator";
 import { latestWritingPosts } from "@/lib/writing-posts";
 import { HOMECALC_PROOF, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
 
@@ -37,7 +38,7 @@ export default function Home() {
                 letterSpacing: "-.032em",
               }}
             >
-              Get ChatGPT to{" "}
+              Get <EngineRotator /> to{" "}
               <em style={{ fontStyle: "italic", color: "var(--accent)" }}>
                 recommend you
               </em>{" "}
