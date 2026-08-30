@@ -979,7 +979,12 @@ export default function HowToCheckAIVisibilityPost() {
                   position: "relative",
                 }}
               >
-                Free checkers show a signal. An audit shows the picture.
+                <strong style={{ fontWeight: 700 }}>
+                  Free checkers show a signal.
+                </strong>{" "}
+                <span style={{ fontWeight: 400 }}>
+                  An audit shows the picture.
+                </span>
               </h2>
               <p
                 style={{
@@ -994,7 +999,7 @@ export default function HowToCheckAIVisibilityPost() {
                 }}
               >
                 Cross-platform citation analysis, accuracy review, competitor gap
-                mapping, and a prioritized action plan. $1,500 CAD flat.
+                mapping, and a prioritized action plan.
               </p>
               <Link
                 href="/ai-visibility/ai-visibility-checker/"
@@ -1009,7 +1014,7 @@ export default function HowToCheckAIVisibilityPost() {
                 className="btn btn-ghost"
                 style={{ marginTop: 14, marginLeft: 12, position: "relative" }}
               >
-                Or book the $1,500 audit
+                Get an audit by an expert
               </Link>
             </div>
           </RevealSection>
