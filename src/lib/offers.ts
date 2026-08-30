@@ -119,6 +119,14 @@ export const OFFERS = {
     /** Use this in prose. See PRICE DISPLAY RULE below. */
     priceWithCurrency: "From $4,500 CAD",
     priceNote: "CAD, fixed scope: the $1,500 audit fee is credited toward it",
+    /**
+     * Why $4,500 is a floor, not the number everyone pays: the final scope (and
+     * therefore the final price) depends on the client's traffic volume, industry,
+     * and site size, not a flat rate. Added 2026-08-30 so "From $4,500" stops
+     * reading as a bait price. Use this alongside priceNote in prose that explains
+     * the number rather than just displaying it (FAQs, not short card taglines).
+     */
+    priceScalesWith: "your traffic volume, industry, and site size",
     href: "/ai-visibility/implementation/",
     role: "Recommendations, a prioritized action plan and a roadmap, built for your team to ship.",
     duration: "Up to 30 days",

@@ -78,6 +78,7 @@ function buildTiers(auditPrice: string, auditPriceNote: string) {
       "Page-level recommendations: content structure, entities, structured data, rendering",
       "A roadmap sequencing the work, plus a walkthrough call with whoever will ship it",
       `Typically ${OFFERS.actionPlan.duration.toLowerCase()}`,
+      "Final price scales with your traffic volume, industry, and site size",
     ],
   },
   {
@@ -107,7 +108,7 @@ function buildFaqItems(auditPrice: string, auditPriceDisplay: string) {
   },
   {
     q: "What does AI SEO or AEO work cost in Canada?",
-    a: `It depends who you ask, because the category has several names (AI SEO, AEO, GEO, LLMO, AI visibility) and pricing models vary widely. Agency retainers for this work in Canada typically run $2,000–$5,000 per month, ongoing. My structure is different: a ${auditPrice} one-time audit, then an optional fixed-scope action plan from ${OFFERS.actionPlan.price.replace("From ", "")} CAD. You can stop after the audit.`,
+    a: `It depends who you ask, because the category has several names (AI SEO, AEO, GEO, LLMO, AI visibility) and pricing models vary widely. Agency retainers for this work in Canada typically run $2,000–$5,000 per month, ongoing. My structure is different: a ${auditPrice} one-time audit, then an optional fixed-scope action plan from ${OFFERS.actionPlan.price.replace("From ", "")} CAD, where the final number scales with your traffic volume, industry, and site size. You can stop after the audit.`,
   },
   {
     q: "Do you charge a monthly retainer?",

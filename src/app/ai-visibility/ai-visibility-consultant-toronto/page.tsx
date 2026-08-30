@@ -84,7 +84,7 @@ function buildFaqItems(priceDisplay: string) {
     a: `The audit is ${priceDisplay} flat: one-time, no retainer. If you want the findings turned into a prioritized plan your own team can ship, the Action Plan starts at ${OFFERS.actionPlan.price.replace(
       "From ",
       ""
-    )} CAD and the audit fee is credited toward it. Ongoing monitoring and advisory is optional afterward, on a fixed 6–12 month term. There's also a free AI visibility checker if you just want a first read.`,
+    )} CAD and the audit fee is credited toward it; the final number scales with your traffic volume, industry, and site size. Ongoing monitoring and advisory is optional afterward, on a fixed 6–12 month term. There's also a free AI visibility checker if you just want a first read.`,
   },
   {
     q: "Do you only work with Toronto businesses?",

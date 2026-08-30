@@ -61,7 +61,7 @@ function buildFaqItems(priceDisplay: string) {
   },
   {
     q: "How much does it cost and how long does it take?",
-    a: `From $4,500 CAD, fixed scope, and the ${priceDisplay} audit fee is credited toward it. Most run up to 30 days. Larger or multi-language scopes are quoted from the audit. It is a one-time, fixed-scope engagement; optional monitoring and advisory is available afterward, but it's never required.`,
+    a: `From $4,500 CAD, fixed scope, and the ${priceDisplay} audit fee is credited toward it; the final number scales with your traffic volume, industry, and site size. Most run up to 30 days. Larger or multi-language scopes are quoted from the audit. It is a one-time, fixed-scope engagement; optional monitoring and advisory is available afterward, but it's never required.`,
   },
   {
     q: "Do you guarantee I'll get cited by AI?",

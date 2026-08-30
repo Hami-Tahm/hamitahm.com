@@ -76,7 +76,7 @@ const HUB_FAQ = [
   },
   {
     q: "How much does AI visibility consulting cost?",
-    a: "Engagements start with a $1,500 CAD AI visibility audit: flat fee, one-time, no retainer to get started. If you want the findings turned into a prioritized action plan and roadmap for your team to ship, that starts at $4,500 (the audit fee is credited toward it). I don't take execution work; your developer or agency implements it. Optional monitoring and advisory is available afterward on a fixed 6–12 month term; never required.",
+    a: "Engagements start with a $1,500 CAD AI visibility audit: flat fee, one-time, no retainer to get started. If you want the findings turned into a prioritized action plan and roadmap for your team to ship, that starts at $4,500 (the audit fee is credited toward it); the final number scales with your traffic volume, industry, and site size. I don't take execution work; your developer or agency implements it. Optional monitoring and advisory is available afterward on a fixed 6–12 month term; never required.",
   },
 ] as const;
 
