@@ -100,14 +100,6 @@ export default function Home() {
               <p style={{ color: "var(--muted)", marginTop: 18, maxWidth: "52ch", position: "relative" }}>
                 Search is moving to answer engines. I help Canadian clinics, real-estate brands, and SaaS companies show up when buyers ask ChatGPT, Perplexity, and Google&rsquo;s AI&nbsp;Overviews, using the same system I built and proved on my own products.
               </p>
-              <div
-                className="ladder"
-                style={{ gridTemplateColumns: "repeat(3, 1fr)" }}
-              >
-                <Step n="01" title="Audit" desc="Full AI visibility diagnosis" />
-                <Step n="02" title="Report" desc="Prioritized action plan" />
-                <Step n="03" title="Walkthrough" desc="60-min review call" />
-              </div>
               <Link
                 href="/ai-visibility/ai-visibility-audit/"
                 className="btn btn-primary"
@@ -230,16 +222,6 @@ function WorkItemStatic({
       <div className="wi-cta" style={{ fontFamily: "var(--mono)", fontSize: 13, color: "var(--muted)" }}>
         {cta}
       </div>
-    </div>
-  );
-}
-
-function Step({ n, title, desc }: { n: string; title: string; desc: string }) {
-  return (
-    <div style={{ background: "var(--bg)", border: "1px solid var(--line-strong)", borderRadius: 10, padding: "16px 14px" }}>
-      <div style={{ fontFamily: "var(--mono)", fontSize: 11, color: "var(--accent)", letterSpacing: ".04em" }}>{n}</div>
-      <div style={{ fontFamily: "var(--sans)", fontSize: 14, fontWeight: 600, marginTop: 8, lineHeight: 1.3, color: "var(--ink)" }}>{title}</div>
-      <div style={{ fontFamily: "var(--mono)", fontSize: "10.5px", color: "var(--faint)", marginTop: 6, letterSpacing: ".02em" }}>{desc}</div>
     </div>
   );
 }
