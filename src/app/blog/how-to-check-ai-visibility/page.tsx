@@ -279,13 +279,17 @@ export default function HowToCheckAIVisibilityPost() {
           </RevealSection>
 
           <RevealSection>
+            {/*
+              Was the same bordered card as the CTA panel right above it (same
+              background/border/border-left/radius), so the two fought for attention
+              back to back. Restyled 2026-08-30 to a quieter inline callout, distinct
+              from plain body copy but no longer competing with the CTA card for the
+              eye: no background, no box border, just a thin rule and a label.
+            */}
             <div
               style={{
-                background: "var(--panel)",
-                border: "1px solid var(--line-strong)",
-                borderLeft: "3px solid var(--accent)",
-                borderRadius: 10,
-                padding: "24px 26px",
+                borderLeft: "2px solid var(--line-strong)",
+                paddingLeft: 20,
                 margin: "6px 0 36px",
               }}
             >
@@ -295,17 +299,18 @@ export default function HowToCheckAIVisibilityPost() {
                   fontSize: 11,
                   letterSpacing: ".1em",
                   textTransform: "uppercase",
-                  color: "var(--accent)",
-                  marginBottom: 10,
+                  color: "var(--faint)",
+                  marginBottom: 8,
                 }}
               >
                 In short
               </div>
               <p
                 style={{
-                  fontFamily: "var(--sans)",
-                  fontSize: 16,
-                  color: "var(--ink)",
+                  fontFamily: "var(--serif)",
+                  fontStyle: "italic",
+                  fontSize: 17,
+                  color: "var(--muted)",
                   lineHeight: 1.55,
                   margin: 0,
                 }}
