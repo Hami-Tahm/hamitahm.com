@@ -85,15 +85,17 @@ export default function CheckerForm() {
   const [err, setErr] = useState("");
 
   /**
-   * TWO-STEP FLOW (2026-08-30, per CRO feedback / Iman): capture market + email
-   * first, then reveal engines/domain/keywords. Still a single <form> with a single
-   * submit at the end, nothing is sent to the server until the real submit, so this
-   * is a front-end sequencing change only, not a separate partial-lead capture.
+   * TWO-STEP FLOW (2026-08-30, per CRO feedback).
    *
-   * Country has to be collected in this first step, not just email, because it's
-   * what decides `isWaitlist` below, which decides which consent wording (CASL) is
-   * legally correct to show at the point of collection. Splitting email from
-   * country would mean showing consent text before we know which version applies.
+   * ⚠️ EMAIL ALWAYS GOES LAST, NOT FIRST. First version of this put email in step
+   * one, reasoning "capture the lead before they can bail." That's backwards for an
+   * interactive tool: step one should be the engaging, low-friction part (pick
+   * engines, type your domain and keywords) so the visitor is already invested by
+   * the time step two asks for their email to see the result. Corrected same day.
+   *
+   * Still a single <form> with a single submit at the end; nothing is sent to the
+   * server until the real submit, so this is a front-end sequencing change only, not
+   * a separate partial-lead capture.
    */
   const [showRest, setShowRest] = useState(false);
 
@@ -123,12 +125,16 @@ export default function CheckerForm() {
 
   function continueToRest() {
     markStarted();
-    if (!country.trim() || !email.trim()) {
-      setErr("Please select your market and enter your email.");
+    if (!country.trim() || !domain.trim() || !kw1.trim()) {
+      setErr("Please select your market, add your domain, and enter at least one keyword.");
       return;
     }
     if (isWaitlist && !otherCountry.trim()) {
       setErr("Please tell me which country, so I can let you know when it opens.");
+      return;
+    }
+    if (engines.length === 0) {
+      setErr("Select at least one AI engine to check.");
       return;
     }
     setErr("");
@@ -358,7 +364,9 @@ export default function CheckerForm() {
     >
       {!showRest ? (
         <>
-          {/* Step 1: market + email only. See the showRest note above for why. */}
+          {/* Step 1: the engaging part (pick engines, type your domain and
+              keywords). Email always goes last, in step 2. See the showRest note
+              above for why. */}
           <div style={{ marginBottom: 18 }}>
             <label style={labelStyle} htmlFor="cw-country">Main market</label>
             <select
@@ -410,98 +418,6 @@ export default function CheckerForm() {
               />
             </div>
           )}
-
-          <div style={{ marginBottom: 18 }}>
-            <label style={labelStyle} htmlFor="cw-email">Email (for your report)</label>
-            <input id="cw-email" type="email" style={inputStyle} placeholder="you@yourbrand.com" value={email} onChange={(e) => setEmail(e.target.value)} />
-          </div>
-
-          {err && (
-            <p role="alert" style={{ color: "#b3261e", fontSize: 13.5, marginBottom: 14 }}>{err}</p>
-          )}
-
-          <button
-            type="button"
-            className="btn btn-primary"
-            onClick={continueToRest}
-            style={{ width: "100%", justifyContent: "center" }}
-          >
-            Continue →
-          </button>
-
-          {/*
-            NOTICE AT THE POINT OF COLLECTION.
-
-            This form takes an email address, a domain and keywords from (mostly) Canadian
-            users, on behalf of a Canadian business. It was live with no privacy notice of
-            any kind. Under PIPEDA the purpose has to be identified and consent obtained at
-            the point of collection: since 2026-08-30 that point is HERE, where email is
-            actually typed, not lower down near the final submit button.
-
-            ⚠️ THE WAITLIST WORDING IS A CASL REQUIREMENT, NOT A STYLE CHOICE.
-            The served-market path asks consent for a report plus ONE follow-up: a bounded,
-            near-term exchange. A waitlist message is a commercial electronic message
-            sent at an unknown future date, which is exactly what CASL requires express
-            consent for, and "send you this report" plainly does not cover it. So the
-            notice has to name that future message at the point of collection, and the
-            unsubscribe route has to be stated. Don't collapse these back into one line.
-          */}
-          <p
-            style={{
-              fontSize: 12,
-              color: "var(--faint)",
-              marginTop: 14,
-              textAlign: "center",
-              lineHeight: 1.6,
-            }}
-          >
-            {isWaitlist
-              ? "By continuing, you agree that I can email you if the free check opens for your country, and confirm that now. No report is sent in the meantime. Unsubscribe any time by replying; your details are stored privately, never sold, never published, and deleted the moment you ask. "
-              : "By continuing, you agree that I can use your email to send you this report and follow up once. Your details are stored privately, never sold, never published, and deleted the moment you ask. "}
-            <Link href="/privacy/" style={{ color: "var(--muted)", textDecoration: "underline" }}>
-              Privacy
-            </Link>
-            {" · "}
-            <Link href="/disclaimer/" style={{ color: "var(--muted)", textDecoration: "underline" }}>
-              What this check is and isn&rsquo;t
-            </Link>
-          </p>
-        </>
-      ) : (
-        <>
-          {/* Confirmed market + email from step 1, editable via "Change". */}
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              gap: 12,
-              marginBottom: 22,
-              padding: "10px 14px",
-              background: "var(--panel)",
-              borderRadius: 10,
-              fontSize: 13.5,
-            }}
-          >
-            <span style={{ color: "var(--muted)" }}>
-              {(isWaitlist ? otherCountry.trim() : country) || "Your market"} &middot; {email}
-            </span>
-            <button
-              type="button"
-              onClick={() => setShowRest(false)}
-              style={{
-                background: "none",
-                border: "none",
-                color: "var(--accent)",
-                fontWeight: 600,
-                cursor: "pointer",
-                fontSize: 13,
-                padding: 0,
-              }}
-            >
-              Change
-            </button>
-          </div>
 
           {/* Engines */}
           <div style={{ marginBottom: 24 }}>
@@ -558,6 +474,99 @@ export default function CheckerForm() {
               <input style={inputStyle} aria-label="Keyword 3 (optional)" placeholder="Keyword 3 (optional)" value={kw3} onChange={(e) => setKw3(e.target.value)} />
             </div>
           </div>
+
+          {err && (
+            <p role="alert" style={{ color: "#b3261e", fontSize: 13.5, marginBottom: 14 }}>{err}</p>
+          )}
+
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={continueToRest}
+            style={{ width: "100%", justifyContent: "center" }}
+          >
+            Continue →
+          </button>
+        </>
+      ) : (
+        <>
+          {/* Confirmed market + check config from step 1, editable via "Change". */}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: 12,
+              marginBottom: 22,
+              padding: "10px 14px",
+              background: "var(--panel)",
+              borderRadius: 10,
+              fontSize: 13.5,
+            }}
+          >
+            <span style={{ color: "var(--muted)" }}>
+              {domain || "your domain"} &middot; {engines.length} engine{engines.length === 1 ? "" : "s"} &middot;{" "}
+              {(isWaitlist ? otherCountry.trim() : country) || "your market"}
+            </span>
+            <button
+              type="button"
+              onClick={() => setShowRest(false)}
+              style={{
+                background: "none",
+                border: "none",
+                color: "var(--accent)",
+                fontWeight: 600,
+                cursor: "pointer",
+                fontSize: 13,
+                padding: 0,
+              }}
+            >
+              Change
+            </button>
+          </div>
+
+          {/* Email: always the last thing asked, right before the real submit. */}
+          <div style={{ marginBottom: 18 }}>
+            <label style={labelStyle} htmlFor="cw-email">Email (for your report)</label>
+            <input id="cw-email" type="email" style={inputStyle} placeholder="you@yourbrand.com" value={email} onChange={(e) => setEmail(e.target.value)} />
+          </div>
+
+          {/*
+            NOTICE AT THE POINT OF COLLECTION.
+
+            This form takes an email address, a domain and keywords from (mostly) Canadian
+            users, on behalf of a Canadian business. It was live with no privacy notice of
+            any kind. Under PIPEDA the purpose has to be identified and consent obtained at
+            the point of collection, which is here, right under the email field, not
+            buried somewhere else on the page.
+
+            ⚠️ THE WAITLIST WORDING IS A CASL REQUIREMENT, NOT A STYLE CHOICE.
+            The served-market path asks consent for a report plus ONE follow-up: a bounded,
+            near-term exchange. A waitlist message is a commercial electronic message
+            sent at an unknown future date, which is exactly what CASL requires express
+            consent for, and "send you this report" plainly does not cover it. So the
+            notice has to name that future message at the point of collection, and the
+            unsubscribe route has to be stated. Don't collapse these back into one line.
+          */}
+          <p
+            style={{
+              fontSize: 12,
+              color: "var(--faint)",
+              marginBottom: 18,
+              lineHeight: 1.6,
+            }}
+          >
+            {isWaitlist
+              ? "By submitting, you agree that I can email you if the free check opens for your country, and confirm that now. No report is sent in the meantime. Unsubscribe any time by replying; your details are stored privately, never sold, never published, and deleted the moment you ask. "
+              : "By submitting, you agree that I can use your email to send you this report and follow up once. Your details are stored privately, never sold, never published, and deleted the moment you ask. "}
+            <Link href="/privacy/" style={{ color: "var(--muted)", textDecoration: "underline" }}>
+              Privacy
+            </Link>
+            {" · "}
+            <Link href="/disclaimer/" style={{ color: "var(--muted)", textDecoration: "underline" }}>
+              What this check is and isn&rsquo;t
+            </Link>
+          </p>
 
           {err && (
             <p role="alert" style={{ color: "#b3261e", fontSize: 13.5, marginBottom: 14 }}>{err}</p>
