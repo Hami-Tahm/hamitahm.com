@@ -111,7 +111,7 @@ export default function Home() {
       <section id="ai" style={{ padding: "80px 0" }}>
         <div className="wrap">
           <RevealSection>
-            <SectionLabel number="02" text="What I'm focused on" />
+            <SectionLabel number="02" text="What problem do I solve" />
           </RevealSection>
           <RevealSection delay={0.06}>
             <div className="panel">
