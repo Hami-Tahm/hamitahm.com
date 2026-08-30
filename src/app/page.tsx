@@ -74,30 +74,31 @@ export default function Home() {
                 Run the free AI visibility check <span className="arr">&rarr;</span>
               </Link>
               <Link href="/ai-visibility/ai-visibility-audit/" className="btn btn-ghost">
-                Or book the $1,500 audit
+                Or book the audit
               </Link>
             </div>
           </RevealSection>
         </div>
       </header>
 
-      {/* STATS */}
+      {/* WHO AM I */}
       <div className="wrap">
         <RevealSection>
           {/*
-            Was: "12 yrs building", "~14 ventures", "Goal: a unicorn".
-            Those are founder-flex stats, and "a unicorn" is the exact burnout/
-            wrong-vertical signal we removed from the footer. For the buyer this page is
-            for (a dentist, a lawyer deciding on $1,500), the homepage should lead with
-            PROOF of the service, not a startup manifesto. The founder story lives on
-            /hami-tahm/. These three are buyer-facing: a real result, the price, and the
-            no-agency promise.
+            Was a 3-stat bar (32,800+ / $1,500 / 1, no-agency). Moved 2026-08-30: the
+            traffic and price stats now live down in the "01" section, closer to the
+            audit CTA they're proof for. What's left here is a single link into the
+            founder story, since that's what "1 / no agency, no handoffs" was really
+            pointing at.
           */}
-          <div className="stats-grid stats-grid-centered stats-grid-3">
-            <Stat value={HOMECALC_HEADLINE_STAT.value} label={HOMECALC_HEADLINE_STAT.labelLong} />
-            <Stat value="$1,500" label="Flat-fee audit: no retainer" />
-            <Stat value="1" label="Consultant: no agency, no handoffs" />
-          </div>
+          <Link href="/hami-tahm/" className="stat-cell-link" style={{ display: "inline-flex", flexDirection: "column", gap: 4 }}>
+            <span style={{ fontFamily: "var(--serif)", fontSize: 34, fontWeight: 500, letterSpacing: "-.01em", color: "var(--ink)" }}>
+              Who am I <span className="arr">&rarr;</span>
+            </span>
+            <span style={{ fontFamily: "var(--mono)", fontSize: "11.5px", letterSpacing: ".08em", color: "var(--muted)", textTransform: "uppercase" }}>
+              One consultant, no agency, no handoffs
+            </span>
+          </Link>
         </RevealSection>
       </div>
 
@@ -106,6 +107,12 @@ export default function Home() {
         <div className="wrap">
           <RevealSection>
             <SectionLabel number="01" text="What I'm focused on" />
+          </RevealSection>
+          <RevealSection delay={0.04}>
+            <div className="stats-grid stats-grid-centered" style={{ gridTemplateColumns: "repeat(2, 1fr)", marginBottom: 34, maxWidth: 420 }}>
+              <Stat value={HOMECALC_HEADLINE_STAT.value} label={HOMECALC_HEADLINE_STAT.labelLong} />
+              <Stat value="$1,500" label="Flat-fee audit: no retainer" />
+            </div>
           </RevealSection>
           <RevealSection delay={0.06}>
             <div className="panel">
