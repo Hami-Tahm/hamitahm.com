@@ -120,24 +120,15 @@ export default function AiVisibilityCheckerPage() {
                 maxWidth: "18ch",
               }}
             >
-              See if AI recommends your business, or a competitor
+              {/*
+                Was "See if AI recommends your business, or a competitor". Changed
+                2026-08-30 per feedback to lead with the exact free-tool action instead
+                of the outcome. Deliberately says "check", not "audit": this page is the
+                free checker, the $1,500 AI Visibility Audit is a different product, and
+                the site is careful everywhere else not to blur the two.
+              */}
+              Get your free AI visibility check
             </h1>
-          </RevealSection>
-          <RevealSection delay={0.06}>
-            <p
-              style={{
-                marginTop: 18,
-                fontSize: "clamp(17px, 2vw, 19.5px)",
-                color: "var(--muted)",
-                maxWidth: "58ch",
-                lineHeight: 1.6,
-              }}
-            >
-              Add your domain and the questions your buyers actually ask,
-              then a real analyst checks how ChatGPT, Google AI Overview and
-              Gemini answer, and whether they name someone else instead. Free
-              report in your inbox within one business day.
-            </p>
           </RevealSection>
         </div>
       </header>
