@@ -81,6 +81,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Second original-research asset: a competitive benchmark (Otterly.AI), not the
     // console-based citation study above. Added 2026-08-31.
     { path: "/blog/homecalc-ai-search-mortgage-ranking/", priority: 0.8, changeFrequency: "monthly" },
+    // Third original-research asset: a self-benchmark (Otterly.AI), same
+    // instrument as the HomeCalc one above, different subject. Added 2026-08-31.
+    { path: "/blog/hamitahm-ai-visibility-benchmark/", priority: 0.8, changeFrequency: "monthly" },
     { path: "/blog/what-is-ai-visibility/", priority: 0.7 },
     { path: "/blog/what-is-answer-engine-optimization/", priority: 0.65 },
     { path: "/blog/aeo-vs-geo-vs-seo/", priority: 0.7 },
@@ -160,6 +163,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/ai-visibility/generative-engine-optimization-consultant-canada/": "2026-08-11",
     "/blog/peec-vs-profound-vs-airops/": "2026-08-24",
     "/blog/homecalc-ai-search-mortgage-ranking/": "2026-08-31",
+    "/blog/hamitahm-ai-visibility-benchmark/": "2026-08-31",
     "/blog/what-is-ai-visibility/": "2026-08-11",
     "/blog/best-ai-visibility-tools/": "2026-08-24",
     "/blog/how-to-check-ai-visibility/": "2026-08-26",

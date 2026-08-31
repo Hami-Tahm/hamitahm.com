@@ -26,6 +26,13 @@ const posts = [
       "Ran 50 real mortgage-calculator questions through ChatGPT, Perplexity, Google AI Overviews, and Copilot. HomeCalc.ca outranked every major bank's own domain. The data, the method, and what it doesn't prove.",
   },
   {
+    href: "/blog/hamitahm-ai-visibility-benchmark/",
+    cat: "Original research",
+    title: "Hami Tahm vs. Canada's AI Visibility Agencies: A 39-Prompt AI Search Benchmark",
+    excerpt:
+      "Ran my own audit method on my own name. hamitahm.com is the most-cited domain in the panel, ahead of every named competing agency's own site, but AI still recommends someone else by name almost every time.",
+  },
+  {
     href: "/blog/which-ai-platform-matters-most/",
     cat: "Strategy",
     title: "Which AI Platform Actually Matters Most Right Now?",
