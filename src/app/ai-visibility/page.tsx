@@ -1010,6 +1010,23 @@ export default function AIVisibilityPage() {
             >
               Read the full case study <span>&rarr;</span>
             </Link>
+            <div style={{ marginTop: 10 }}>
+              <Link
+                href="/blog/hamitahm-ai-visibility-benchmark/"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  fontFamily: "var(--sans)",
+                  fontSize: 14,
+                  fontWeight: 600,
+                  color: "var(--accent)",
+                }}
+              >
+                I also ran this same benchmark on hamitahm.com itself{" "}
+                <span>&rarr;</span>
+              </Link>
+            </div>
           </RevealSection>
         </div>
       </section>

@@ -92,6 +92,22 @@ export default function Home() {
               engines, and I prove it on my own products first, in public,
               with numbers you can check.
             </p>
+            <Link
+              href="/blog/hamitahm-ai-visibility-benchmark/"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                marginTop: 18,
+                fontFamily: "var(--sans)",
+                fontSize: 14,
+                fontWeight: 600,
+                color: "var(--accent)",
+              }}
+            >
+              Also: this site was the most-cited domain in a 39-prompt
+              competitive AI visibility benchmark <span>&rarr;</span>
+            </Link>
           </RevealSection>
         </div>
       </section>

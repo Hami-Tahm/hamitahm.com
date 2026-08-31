@@ -158,7 +158,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // `priority` and `changeFrequency` are kept for other consumers (Bing/IndexNow),
   // but note Google ignores both; they are not worth arguing about.
   const LAST_MODIFIED: Record<string, string> = {
-    "/ai-visibility/": "2026-08-11",
+    // Added a link to the new hamitahm-ai-visibility-benchmark post, 2026-08-31.
+    "/": "2026-08-31",
+    // Added a link to the new hamitahm-ai-visibility-benchmark post, 2026-08-31.
+    "/ai-visibility/": "2026-08-31",
     "/ai-visibility/answer-engine-optimization-consultant-canada/": "2026-08-11",
     "/ai-visibility/generative-engine-optimization-consultant-canada/": "2026-08-11",
     "/blog/peec-vs-profound-vs-airops/": "2026-08-24",
