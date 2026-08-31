@@ -24,7 +24,7 @@ const B = OTTERLY_BENCHMARK;
 const FAQ_ITEMS = [
   {
     q: "Does this mean HomeCalc.ca is a top-5 mortgage brand in Canada?",
-    a: "No, and this post doesn't claim that. It's a snapshot of one 50-prompt panel, run over one week, for the calculator/affordability-tool corner of the mortgage category, through one tracking vendor (Otterly.AI). Within that specific, narrow scope, HomeCalc.ca ranked 6th by citation volume among roughly 20 tracked domains, ahead of every major bank's own domain individually. That is a real, sourced result. It is not a market-share claim about the mortgage industry as a whole.",
+    a: "No, and this post doesn't claim that. It's a snapshot of one 50-prompt panel, run over one week, for the calculator/affordability-tool corner of the mortgage category, through one tracking vendor (Otterly.AI). Within that specific, narrow scope, HomeCalc.ca ranked 6th on Otterly's Brand Ranking leaderboard, the roughly 20 brands the tool tracks by name for this panel, ahead of every major bank's own domain individually. That is a real, sourced result. It is not a market-share claim about the mortgage industry as a whole.",
   },
   {
     q: "What's the difference between a 'citation' and a 'mention' in this data?",
@@ -252,8 +252,9 @@ export default async function HomecalcAiSearchMortgageRankingPost() {
                 {B.totalCitations.toLocaleString()} recorded citations
                 (Otterly.AI, {B.market}, {B.windowStart}&ndash;{B.windowEnd}),
                 HomeCalc.ca was cited {B.homecalc.citationCount} times: 6th
-                among all ~20 tracked domains, 3rd among commercial
-                (non-government) domains, and #1 on Microsoft Copilot every
+                on Otterly&rsquo;s Brand Ranking leaderboard of ~20 tracked
+                brands, 3rd among commercial (non-government) domains on that
+                same leaderboard, and #1 on Microsoft Copilot every
                 single day of the window for one specific question. That is a
                 narrow, sourced result, not a market-share claim; see
                 &ldquo;What this isn&rsquo;t claiming&rdquo; below.
@@ -287,11 +288,16 @@ export default async function HomecalcAiSearchMortgageRankingPost() {
               {B.windowEnd}, using Otterly.AI, a competitive AI-search
               tracking tool. Every domain each engine cited as a source was
               logged, along with how many times: {B.totalCitations.toLocaleString()}{" "}
-              total citations, across roughly 20 competing domains. (Some
-              prompts were checked once during the window; others were
+              total citations, across hundreds of distinct cited domains.
+              (Some prompts were checked once during the window; others were
               checked daily across all 8 days, so a domain&rsquo;s total
               reflects both how often it&rsquo;s cited and how consistently
-              that citation held up day after day.)
+              that citation held up day after day.) Otterly separately
+              maintains a Brand Ranking leaderboard of about 20 named
+              brands/domains for this panel, ranked by citations, mentions,
+              and sentiment; HomeCalc.ca&rsquo;s 6th and 3rd-place rankings
+              below come from that leaderboard, not from the full
+              hundreds-of-domains citation export.
             </p>
             <p style={{ marginBottom: 20 }}>
               This is deliberately a different instrument and a different
@@ -438,8 +444,12 @@ export default async function HomecalcAiSearchMortgageRankingPost() {
               {B.homecalc.promptsTracked} tracked prompts overall, and held
               position #1 at least once for {B.homecalc.firstPlacePromptCount}{" "}
               different questions, everything from rental-property cap rate to
-              down payment size to newcomer mortgages. Across its{" "}
-              {B.homecalc.citationRows} recorded citation observations, it
+              down payment size to newcomer mortgages. The export logged{" "}
+              {B.homecalc.citationRows} distinct citation observations for
+              HomeCalc.ca (the {B.homecalc.citationCount} figure above is
+              those {B.homecalc.citationRows} observations weighted by how
+              many times each was recorded during the 8-day window). Across
+              those {B.homecalc.citationRows} observations, it
               held the #1 spot{" "}
               {Math.round((B.homecalc.firstPlaceRows / B.homecalc.citationRows) * 100)}
               % of the time and a top-3 spot{" "}
