@@ -27,6 +27,8 @@ Hami does not take execution work. He does not implement changes on client sites
 
 - [AI Visibility for Dental Clinics](https://hamitahm.com/ai-visibility/ai-visibility-for-dental-clinics/): Patients increasingly ask AI tools for dentist recommendations instead of opening Google. This page covers what an AI visibility audit checks for dental practices — including specialty practices (implants, Invisalign, cosmetic), solo owners, multi-location groups, and dental marketing agencies.
 - [AI Visibility for Mortgage Brokers](https://hamitahm.com/ai-visibility/ai-visibility-for-mortgage-brokers/): Buyers research mortgage options through AI before contacting any broker. This page covers AI visibility specifics for mortgage professionals in Canada.
+- [AI Visibility for Canadian SaaS Companies](https://hamitahm.com/ai-visibility/ai-visibility-for-saas-companies/): Buyers ask ChatGPT, Perplexity, and Google AI Overviews for software alternatives, comparisons, and recommendations before they ever visit a pricing page. This page covers AI visibility specifics for SaaS products.
+- [AI Visibility for Healthcare Clinics](https://hamitahm.com/ai-visibility/ai-visibility-for-healthcare-clinics/): Patients ask AI tools to find and compare healthcare providers. This page covers AI visibility specifics for clinics and healthcare practices in Canada.
 
 ## Hub
 
@@ -68,4 +70,4 @@ Engagements start at $1,500 CAD (flat fee, one-time) for the AI Visibility Audit
 - Owner: Hami Tahm (Toronto, ON, Canada)
 - Schema: a Person entity canonical at `https://hamitahm.com/#hami-tahm` and a ProfessionalService entity canonical at `https://hamitahm.com/#organization`. Both are declared once, site-wide; individual service pages reference them by @id rather than declaring their own.
 - Canonical hostname: `hamitahm.com` without `www`. The `www` hostname permanently redirects and should not be cited as a source.
-- Last reviewed: 2026-08-22
+- Last reviewed: 2026-08-31

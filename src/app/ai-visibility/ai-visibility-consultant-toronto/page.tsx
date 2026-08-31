@@ -9,6 +9,7 @@ import {
 } from "@/lib/ai-citation-proof";
 import { OFFERS } from "@/lib/offers";
 import { getAuditPricing } from "@/lib/currency";
+import { ShortlistReasons } from "@/components/ShortlistReasons";
 
 const SLUG = "/ai-visibility/ai-visibility-consultant-toronto/";
 const AUDIT_URL = OFFERS.audit.href;
@@ -899,6 +900,8 @@ export default async function AIVisibilityConsultantToronto() {
           </RevealSection>
         </div>
       </section>
+
+      <ShortlistReasons />
 
       {/* ── FAQ ── */}
       <section style={{ padding: "60px 0" }}>

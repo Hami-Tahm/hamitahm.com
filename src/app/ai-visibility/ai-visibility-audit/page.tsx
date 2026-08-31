@@ -4,6 +4,15 @@ import { RevealSection } from "@/components/Reveal";
 import { HOMECALC_PROOF, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
 import { SNAPSHOT } from "@/lib/ai-citation-proof";
 import { getAuditPricing } from "@/lib/currency";
+import { ShortlistReasons } from "@/components/ShortlistReasons";
+import { ZoomableImage } from "@/components/ZoomableImage";
+
+// Same file, same alt text, as the full case study
+// (src/app/case-studies/homecalc-ai-visibility/page.tsx): the point of
+// showing it here too is that a buyer deciding whether to pay shouldn't have
+// to leave this page to see the actual screenshot behind the headline number.
+const CHART_SRC = "/images/case-studies/homecalc-citation-chart.jpg";
+const CHART_ALT = `Bing Webmaster Tools AI Performance console for homecalc.ca, three-month view: AI citations climbing from near-zero in early May 2026 to ${HOMECALC_PROOF.citations} total across ${HOMECALC_PROOF.pagesCited} cited pages, with daily peaks of ${HOMECALC_PROOF.peakPerDay}.`;
 
 /**
  * Self-serve checkout. WHY BOTH PATHS EXIST: at $1,500 some buyers pay
@@ -23,17 +32,29 @@ const BOOKING_URL = "/contact/";
 const WALKTHROUGH_MINUTES = 60;
 const TURNAROUND = "7 business days";
 
-export const metadata: Metadata = {
-  // Buyers search this deliverable as "ChatGPT visibility audit", "AI search audit"
-  // and "AEO audit" as often as "AI visibility audit"; title/description carry the
-  // aliases so one page ranks for the whole cluster.
-  title: "ChatGPT & AI Visibility Audit: $1,500 CAD Flat",
-  description:
-    "AI visibility audit across Google AI Overviews, ChatGPT, Gemini, and Claude (also called a ChatGPT visibility or AEO audit). $1,500 CAD flat, by Hami Tahm.",
-  alternates: {
-    canonical: "https://hamitahm.com/ai-visibility/ai-visibility-audit/",
-  },
-};
+/**
+ * Dynamic, not static: the visible price and the JSON-LD Offer below already
+ * switch between CAD and USD per visitor (getAuditPricing()); the <title>/
+ * <meta description> used to be a hardcoded "$1,500 CAD" regardless of which
+ * price the same visitor saw in the body and schema. A USD visitor landing
+ * from a search snippet that says CAD, then seeing USD everywhere on the
+ * page, is exactly the kind of mismatch an AI engine (or a person) treats as
+ * a signal something's wrong. Fixed 2026-08-31: metadata now reads the same
+ * cookie-derived currency as the rest of the page.
+ */
+export async function generateMetadata(): Promise<Metadata> {
+  const { priceWithCurrency } = await getAuditPricing();
+  return {
+    // Buyers search this deliverable as "ChatGPT visibility audit", "AI search audit"
+    // and "AEO audit" as often as "AI visibility audit"; title/description carry the
+    // aliases so one page ranks for the whole cluster.
+    title: `ChatGPT & AI Visibility Audit: ${priceWithCurrency} Flat`,
+    description: `AI visibility audit across Google AI Overviews, ChatGPT, Gemini, and Claude (also called a ChatGPT visibility or AEO audit). ${priceWithCurrency} flat, by Hami Tahm.`,
+    alternates: {
+      canonical: "https://hamitahm.com/ai-visibility/ai-visibility-audit/",
+    },
+  };
+}
 
 function buildFaqItems(priceDisplay: string) {
   return [
@@ -592,6 +613,37 @@ export default async function AIVisibilityAudit() {
             </div>
           </RevealSection>
 
+          <RevealSection delay={0.1}>
+            <figure style={{ marginTop: 28 }}>
+              <ZoomableImage
+                src={CHART_SRC}
+                alt={CHART_ALT}
+                width={2368}
+                height={1144}
+                loading="lazy"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  borderRadius: 12,
+                  border: "1px solid var(--line-strong)",
+                }}
+              />
+              <figcaption
+                style={{
+                  marginTop: 10,
+                  fontFamily: "var(--sans)",
+                  fontSize: 13,
+                  color: "var(--faint)",
+                  lineHeight: 1.55,
+                }}
+              >
+                Bing Webmaster Tools' own AI Performance console for
+                homecalc.ca, the actual screenshot behind the number above.
+                Click to enlarge.
+              </figcaption>
+            </figure>
+          </RevealSection>
+
           <RevealSection delay={0.16}>
             <div
               className="proof-card"
@@ -1057,6 +1109,8 @@ export default async function AIVisibilityAudit() {
           </RevealSection>
         </div>
       </section>
+
+      <ShortlistReasons />
 
       {/* Section 8: FAQ */}
       <section style={{ padding: "60px 0" }}>

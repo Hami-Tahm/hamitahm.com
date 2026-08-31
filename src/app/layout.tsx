@@ -78,6 +78,13 @@ const siteStructuredData = {
       "@type": "Person",
       "@id": "https://hamitahm.com/#hami-tahm",
       name: "Hami Tahm",
+      // Added 2026-08-31: real name variants this person is referred to and
+      // tracked under (e.g. the Otterly.AI brand-tracking tool logs this
+      // practice as the single word "HamiTahm"). Not aliases invented for
+      // SEO: both are already in real use; declaring them helps a model
+      // resolve "HamiTahm" and "Hami Tahm" as the same @id instead of two
+      // separate, weaker signals.
+      alternateName: ["HamiTahm", "Hami Tahm AI Visibility"],
       url: "https://hamitahm.com/hami-tahm/",
       jobTitle: "AI Visibility Consultant",
       // CANONICAL DESCRIPTOR: keep this identical to the footer, the X bio, the
@@ -194,7 +201,33 @@ const siteStructuredData = {
       "@type": "ProfessionalService",
       "@id": "https://hamitahm.com/#organization",
       name: "HamiTahm.com",
+      // Added 2026-08-31, same rationale as the Person node's alternateName
+      // above: "HamiTahm" and "Hami Tahm" are real, already-in-use variants
+      // of this same business (again, Otterly.AI's own brand tracker logs
+      // the practice as "HamiTahm"), not new names invented for this markup.
+      alternateName: ["HamiTahm", "Hami Tahm"],
       url: "https://hamitahm.com/",
+      // Real, publicly published contact channel (footer, /contact/, every
+      // service page): true and free under AGENTS.md #5. No `telephone`
+      // still, per the note above, because none is published.
+      email: "hami@hamitahm.com",
+      contactPoint: {
+        "@type": "ContactPoint",
+        email: "hami@hamitahm.com",
+        contactType: "sales",
+        areaServed: "CA",
+      },
+      // Mirrors the Person node's knowsAbout: same practice, same expertise,
+      // worth declaring on both nodes since a consumer may only read one.
+      knowsAbout: [
+        "AI Visibility",
+        "Answer Engine Optimization",
+        "Generative Engine Optimization",
+        "AI Search Optimization",
+        "SEO",
+        "Real estate technology",
+        "Canadian mortgage market",
+      ],
       /*
        * Added 2026-08-30: Google's Rich Results Test flagged this node with
        * "Missing field 'image' (optional)" (non-critical, LocalBusiness type).

@@ -156,7 +156,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // but note Google ignores both; they are not worth arguing about.
   const LAST_MODIFIED: Record<string, string> = {
     "/ai-visibility/": "2026-08-11",
-    "/ai-visibility/ai-visibility-consultant-toronto/": "2026-08-11",
     "/ai-visibility/answer-engine-optimization-consultant-canada/": "2026-08-11",
     "/ai-visibility/generative-engine-optimization-consultant-canada/": "2026-08-11",
     "/blog/peec-vs-profound-vs-airops/": "2026-08-24",
@@ -173,6 +172,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/case-studies/homecalc-ai-visibility/": "2026-08-10",
     "/research/": "2026-08-09",
     "/methodology/": "2026-08-09",
+    // Metadata switched from a hardcoded CAD title to generateMetadata() so
+    // it matches the visitor's real currency, same as the body already did.
+    "/ai-visibility/ai-visibility-audit/": "2026-08-31",
+    // Added the "Why businesses shortlist Hami Tahm" block, 2026-08-31.
+    "/ai-visibility/ai-visibility-consultant-canada/": "2026-08-31",
+    "/ai-visibility/ai-visibility-consultant-toronto/": "2026-08-31",
   };
 
   return entries.map(({ path, priority, changeFrequency }) => ({

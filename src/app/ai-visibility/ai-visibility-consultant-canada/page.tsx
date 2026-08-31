@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { HOMECALC_PROOF, HOMECALC_CLAIMS, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
+import { ShortlistReasons } from "@/components/ShortlistReasons";
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const WALKTHROUGH_MINUTES = 60;
@@ -1098,6 +1099,8 @@ export default function AIVisibilityConsultantCanada() {
           </RevealSection>
         </div>
       </section>
+
+      <ShortlistReasons />
 
       {/* Section 04: Questions (FAQ) */}
       <section style={{ padding: "60px 0" }}>
