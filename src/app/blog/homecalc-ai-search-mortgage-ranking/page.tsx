@@ -12,7 +12,7 @@ const SLUG = "homecalc-ai-search-mortgage-ranking";
 const ARTICLE_TITLE =
   "HomeCalc.ca vs. Canada's Big Banks: A 50-Prompt AI Search Benchmark";
 const ARTICLE_DESCRIPTION =
-  "Ran 50 real mortgage-calculator questions through ChatGPT, Perplexity, Google AI Overviews, and Copilot. HomeCalc.ca outranked every major Canadian bank and placed #1 for 8+ real buyer questions. Full data, full method, and what this doesn't prove.";
+  "Ran 50 real mortgage-calculator questions through ChatGPT, Perplexity, Google AI Overviews, and Copilot. HomeCalc.ca outranked every major Canadian bank and held the #1 position for 18 different buyer questions. Full data, full method, and what this doesn't prove.";
 const DATE_PUBLISHED = "2026-08-31";
 const HUB_URL = "/ai-visibility/";
 const CASE_STUDY_URL = "/case-studies/homecalc-ai-visibility/";
@@ -28,7 +28,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "What's the difference between a 'citation' and a 'mention' in this data?",
-    a: `A citation is Otterly recording that an AI engine's answer linked to a domain as a source; that's the ${B.totalCitationRows.toLocaleString()}-row export this post's ranking table comes from. A mention is the brand named in the answer's text, which Otterly reports separately on its Brand Ranking dashboard (${B.homecalc.brandMentions} for HomeCalc.ca in this window). The two numbers measure different things and are never added together here, same rule this site applies to citations vs. impressions elsewhere.`,
+    a: `A citation is Otterly recording that an AI engine's answer linked to a domain as a source, counted once per day it was observed; that's the ${B.totalCitations.toLocaleString()}-citation export this post's ranking table comes from. A mention is the brand named in the answer's text, which Otterly reports separately on its Brand Ranking dashboard (${B.homecalc.brandMentions} for HomeCalc.ca in this window). The two numbers measure different things and are never added together here, same rule this site applies to citations vs. impressions elsewhere.`,
   },
   {
     q: "Is this the same data as the HomeCalc AI citation case study?",
@@ -36,7 +36,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Which AI engine cited HomeCalc.ca the most?",
-    a: `Microsoft Copilot, by a wide margin: ${B.homecalc.byEngine.copilot.rows} of HomeCalc.ca's ${B.homecalc.citationRows} citation rows in this panel, at an average position of ${B.homecalc.byEngine.copilot.avgPosition} and the #1 spot in ${B.homecalc.byEngine.copilot.firstPlace} of them. Perplexity and ChatGPT cited it too, but less often and at lower average positions; Google AI Overviews recorded none of HomeCalc.ca's citations in this particular window, which is one week of one prompt panel, not a claim that Google never cites it.`,
+    a: `Microsoft Copilot, by a wide margin: ${B.homecalc.byEngine.copilot.citationCount} of HomeCalc.ca's ${B.homecalc.citationCount} citations in this panel, at an average position of ${B.homecalc.byEngine.copilot.avgPosition} and the #1 spot in ${B.homecalc.byEngine.copilot.firstPlace} of its recorded observations. Perplexity and ChatGPT cited it too, but less often and at lower average positions; Google AI Overviews recorded none of HomeCalc.ca's citations in this particular window, which is one week of one prompt panel, not a claim that Google never cites it.`,
   },
   {
     q: "Can I run this same benchmark for my own business?",
@@ -193,7 +193,7 @@ export default async function HomecalcAiSearchMortgageRankingPost() {
               }}
             >
               I ran 50 real mortgage-calculator questions through four AI
-              engines and counted, row by row, who got cited. HomeCalc.ca beat
+              engines and counted every recorded citation. HomeCalc.ca beat
               every major bank&rsquo;s own domain. Here&rsquo;s the data, the
               method, and exactly what it doesn&rsquo;t prove.
             </p>
@@ -249,15 +249,14 @@ export default async function HomecalcAiSearchMortgageRankingPost() {
                 }}
               >
                 Across {B.promptCount} real mortgage-calculator prompts and{" "}
-                {B.totalCitationRows.toLocaleString()} recorded citations
+                {B.totalCitations.toLocaleString()} recorded citations
                 (Otterly.AI, {B.market}, {B.windowStart}&ndash;{B.windowEnd}),
-                HomeCalc.ca was cited {B.homecalc.citationRows} times, ranked
-                #{B.homecalc.overallRankByCitationRows} by citation volume
-                among roughly 20 tracked domains, ahead of every major bank in
-                the panel individually, and held position #1 for at least{" "}
-                {B.firstPlacePrompts.length} distinct real buyer questions.
-                That is a narrow, sourced result, not a market-share claim;
-                see &ldquo;What this isn&rsquo;t claiming&rdquo; below.
+                HomeCalc.ca was cited {B.homecalc.citationCount} times: 6th
+                among all ~20 tracked domains, 3rd among commercial
+                (non-government) domains, and #1 on Microsoft Copilot every
+                single day of the window for one specific question. That is a
+                narrow, sourced result, not a market-share claim; see
+                &ldquo;What this isn&rsquo;t claiming&rdquo; below.
               </p>
             </div>
           </RevealSection>
@@ -287,8 +286,12 @@ export default async function HomecalcAiSearchMortgageRankingPost() {
               the {B.market} market, over the week of {B.windowStart} to{" "}
               {B.windowEnd}, using Otterly.AI, a competitive AI-search
               tracking tool. Every domain each engine cited as a source was
-              logged: {B.totalCitationRows.toLocaleString()} rows in total,
-              across roughly 20 competing domains.
+              logged, along with how many times: {B.totalCitations.toLocaleString()}{" "}
+              total citations, across roughly 20 competing domains. (Some
+              prompts were checked once during the window; others were
+              checked daily across all 8 days, so a domain&rsquo;s total
+              reflects both how often it&rsquo;s cited and how consistently
+              that citation held up day after day.)
             </p>
             <p style={{ marginBottom: 20 }}>
               This is deliberately a different instrument and a different
@@ -315,12 +318,13 @@ export default async function HomecalcAiSearchMortgageRankingPost() {
 
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 20 }}>
-              Sorted by raw citation-row count across all {B.promptCount}{" "}
-              prompts. The top four spots are two government sources (CMHC,
-              the federal consumer-finance regulator) and Canada&rsquo;s two
-              largest rate-comparison sites. HomeCalc.ca is 6th, and is the
-              highest-ranked domain in the panel that isn&rsquo;t a
-              government source or a dedicated rate-comparison site.
+              Sorted by total citations (summed across every day of the
+              window) across all {B.promptCount} prompts. The top four spots
+              are two government sources (CMHC, the federal consumer-finance
+              regulator) and Canada&rsquo;s two largest rate-comparison sites.
+              HomeCalc.ca is 6th overall, and 3rd once government sources are
+              set aside, behind only Ratehub and wowa.ca among commercial
+              domains.
             </p>
             <div style={{ overflowX: "auto" }}>
               <table style={{ width: "100%", borderCollapse: "collapse", background: "var(--panel)" }}>
@@ -329,7 +333,7 @@ export default async function HomecalcAiSearchMortgageRankingPost() {
                     <th style={thStyle}>#</th>
                     <th style={thStyle}>Domain</th>
                     <th style={thStyle}>Kind</th>
-                    <th style={numHead}>Citation rows</th>
+                    <th style={numHead}>Citations</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -349,7 +353,7 @@ export default async function HomecalcAiSearchMortgageRankingPost() {
                         {d.domain}
                       </td>
                       <td style={{ ...cellBase, color: "var(--muted)", fontSize: 13.5 }}>{d.kind}</td>
-                      <td style={numCell}>{d.rows}</td>
+                      <td style={numCell}>{d.citations}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -372,7 +376,11 @@ export default async function HomecalcAiSearchMortgageRankingPost() {
               often than BMO&rsquo;s, Scotiabank&rsquo;s, RBC&rsquo;s, TD&rsquo;s
               or CIBC&rsquo;s own domains individually, for this specific set
               of calculator and affordability questions. None of those banks
-              cracked the top 10.
+              cracked the top 10. And against the two sites that actually beat
+              it (Ratehub, wowa.ca), the gap isn&rsquo;t close to what a
+              &ldquo;3rd of 20+&rdquo; ranking might suggest on its own; both
+              are established, general-purpose rate-comparison platforms,
+              while HomeCalc.ca is a narrower, calculator-only product.
             </p>
           </RevealSection>
 
@@ -381,35 +389,77 @@ export default async function HomecalcAiSearchMortgageRankingPost() {
           </RevealSection>
 
           <RevealSection delay={0.06}>
-            <h3 style={h3Style}>Position #1, real questions</h3>
+            <h3 style={h3Style}>The standout: #1 on Copilot, 8 days running</h3>
             <p style={{ marginBottom: 20 }}>
-              HomeCalc.ca was cited in {B.homecalc.promptsCitedIn} of the{" "}
-              {B.homecalc.promptsTracked} tracked prompts, holding the #1
-              cited position in {B.homecalc.firstPlaceRows} of its{" "}
-              {B.homecalc.citationRows} citation rows ({Math.round((B.homecalc.firstPlaceRows / B.homecalc.citationRows) * 100)}
-              %) and a top-3 position in{" "}
-              {Math.round((B.homecalc.top3Rows / B.homecalc.citationRows) * 100)}%. Its average
-              cited position across every row was {B.homecalc.avgPosition}. At
-              least once during the window, it was the #1-cited source for:
+              The single strongest result in the dataset is also the easiest
+              to miss in a table sorted by raw totals. For the prompt
+              &ldquo;What are the most accurate Canadian mortgage calculator
+              sites?&rdquo;, HomeCalc.ca held position #1 on Microsoft Copilot
+              on every one of the 8 days the window was monitored, plus
+              secondary mentions on Perplexity and ChatGPT. That consistency
+              is what drives its {B.topPrompts[0].citations} citations on this
+              one prompt alone, more than double its next-best question.
             </p>
-            <ul style={{ margin: "0 0 26px 22px" }}>
-              {B.firstPlacePrompts.map((p) => (
-                <li key={p} style={{ marginBottom: 8 }}>
-                  &ldquo;{p}&rdquo;
-                </li>
-              ))}
-            </ul>
+
+            <h3 style={h3Style}>Its five best-performing prompts</h3>
+            <p style={{ marginBottom: 16 }}>
+              Ranked by total citations, not by how many separate times it was
+              checked. A prompt monitored daily for a week and cited every
+              time earns its higher total honestly.
+            </p>
+            <div style={{ overflowX: "auto", marginBottom: 20 }}>
+              <table style={{ width: "100%", borderCollapse: "collapse", background: "var(--panel)" }}>
+                <thead>
+                  <tr>
+                    <th style={thStyle}>Prompt</th>
+                    <th style={numHead}>Citations</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {B.topPrompts.map((p) => (
+                    <tr key={p.prompt}>
+                      <td style={cellBase}>
+                        &ldquo;{p.prompt}&rdquo;
+                        {"note" in p && p.note && (
+                          <div style={{ fontSize: 12.5, color: "var(--accent)", marginTop: 4 }}>
+                            {p.note}
+                          </div>
+                        )}
+                      </td>
+                      <td style={numCell}>{p.citations}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p style={{ marginBottom: 20 }}>
+              That one prompt is the extreme case, not the whole story.
+              HomeCalc.ca was cited in {B.homecalc.promptsCitedIn} of the{" "}
+              {B.homecalc.promptsTracked} tracked prompts overall, and held
+              position #1 at least once for {B.homecalc.firstPlacePromptCount}{" "}
+              different questions, everything from rental-property cap rate to
+              down payment size to newcomer mortgages. Across its{" "}
+              {B.homecalc.citationRows} recorded citation observations, it
+              held the #1 spot{" "}
+              {Math.round((B.homecalc.firstPlaceRows / B.homecalc.citationRows) * 100)}
+              % of the time and a top-3 spot{" "}
+              {Math.round((B.homecalc.top3Rows / B.homecalc.citationRows) * 100)}
+              % of the time, with a median cited position of{" "}
+              {B.homecalc.medianPosition} and an average of{" "}
+              {B.homecalc.avgPosition}.
+            </p>
 
             <h3 style={h3Style}>One engine drives most of it: Copilot</h3>
             <p style={{ marginBottom: 20 }}>
               The engine breakdown isn&rsquo;t even. Microsoft Copilot
-              accounts for {B.homecalc.byEngine.copilot.rows} of HomeCalc.ca&rsquo;s{" "}
-              {B.homecalc.citationRows} citations, at an average position of{" "}
-              {B.homecalc.byEngine.copilot.avgPosition} and #1 in{" "}
-              {B.homecalc.byEngine.copilot.firstPlace} of them. Perplexity
-              cited it {B.homecalc.byEngine.perplexity.rows} times at a
-              weaker average position ({B.homecalc.byEngine.perplexity.avgPosition}
-              ), ChatGPT only {B.homecalc.byEngine.chatgpt.rows} times at a
+              accounts for {B.homecalc.byEngine.copilot.citationCount} of
+              HomeCalc.ca&rsquo;s {B.homecalc.citationCount} citations, at an
+              average position of {B.homecalc.byEngine.copilot.avgPosition}{" "}
+              and #1 in {B.homecalc.byEngine.copilot.firstPlace} of its
+              recorded observations. Perplexity contributed{" "}
+              {B.homecalc.byEngine.perplexity.citationCount} at a weaker
+              average position ({B.homecalc.byEngine.perplexity.avgPosition}
+              ), ChatGPT only {B.homecalc.byEngine.chatgpt.citationCount} at a
               much lower average position ({B.homecalc.byEngine.chatgpt.avgPosition}
               ), and Google AI Overviews recorded none of HomeCalc.ca&rsquo;s
               citations in this particular window. A brand that looks strong
@@ -419,17 +469,17 @@ export default async function HomecalcAiSearchMortgageRankingPost() {
               single combined score.
             </p>
 
-            <h3 style={h3Style}>Sentiment: 2nd of the ten ranked brands</h3>
+            <h3 style={h3Style}>Sentiment and mentions: consistently top 5</h3>
             <p style={{ marginBottom: 0 }}>
               Otterly&rsquo;s separate Brand Ranking dashboard, which tracks
               brand mentions in the answer text rather than source citations,
               recorded {B.homecalc.brandMentions} mentions for HomeCalc.ca in
-              this window, {B.homecalc.brandCoveragePct}% brand coverage, and
-              a sentiment score of +{B.homecalc.sentiment}: the{" "}
-              {B.homecalc.sentimentRankAmongTop10 === 2 ? "second" : `${B.homecalc.sentimentRankAmongTop10}th`}-highest
-              of the ten ranked brands, behind only Ratehub and ahead of
-              CMHC, the Financial Consumer Agency of Canada, and every bank on
-              the list.
+              this window and {B.homecalc.brandCoveragePct}% brand coverage:
+              4th among the ten commercial brands ranked, once CMHC and the
+              Financial Consumer Agency of Canada are set aside. Its sentiment
+              score of +{B.homecalc.sentiment} was the 2nd-highest of all ten
+              ranked brands, government sources included, behind only
+              Ratehub.
             </p>
           </RevealSection>
 
