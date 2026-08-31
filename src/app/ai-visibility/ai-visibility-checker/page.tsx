@@ -4,6 +4,7 @@ import { RevealSection } from "@/components/Reveal";
 import CheckerForm from "./CheckerForm";
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
+const SAMPLE_REPORT_URL = "/ai-visibility/sample-report/";
 const HUB_URL = "/ai-visibility/";
 const SITE = "https://hamitahm.com";
 const URL = `${SITE}/ai-visibility/ai-visibility-checker/`;
@@ -182,16 +183,26 @@ export default function AiVisibilityCheckerPage() {
               What your report covers
             </h2>
             <p style={{ fontSize: "clamp(16px, 2vw, 18px)", color: "var(--muted)", lineHeight: 1.7 }}>
+              {/*
+                Was "(if you name your competitors) which of you the engines actually
+                recommend": stale since the competitor fields were removed from this
+                form 2026-08-30. Corrected so this paragraph only promises what the
+                free check actually delivers.
+              */}
               For each engine and keyword you select, the report shows whether AI
-              mentions your brand, what it says about you, and (if you name
-              your competitors) which of you the engines actually recommend
-              on the same question. Every answer is recorded with the date and the
+              mentions your brand, what it says about you, and whether it named a
+              competitor instead. Every answer is recorded with the date and the
               country it came from, so you can tell a real pattern from a one-off
-              result. It&rsquo;s the same lens behind the full{" "}
+              result. It&rsquo;s a smaller version of the same method behind the
+              full{" "}
               <Link href={AUDIT_URL} style={{ color: "var(--accent)", fontWeight: 500 }}>
                 AI Visibility Audit
               </Link>
-              {" "}so this free check is the fastest way to see where you stand.
+              {" "}(see a{" "}
+              <Link href={SAMPLE_REPORT_URL} style={{ color: "var(--accent)", fontWeight: 500 }}>
+                real sample of that report
+              </Link>
+              ), so this free check is the fastest way to see where you stand.
             </p>
           </RevealSection>
         </div>
