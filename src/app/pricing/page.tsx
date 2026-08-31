@@ -443,26 +443,76 @@ export default async function PricingPage() {
               }}
             >
               Agency retainers for AI visibility work in Canada typically run
-              $2,000&ndash;$5,000 per month, ongoing, which is roughly
-              $24,000&ndash;$60,000 in a year, usually with an account manager between
-              you and whoever does the work.
+              $2,000&ndash;$5,000 per month, ongoing, roughly
+              $24,000&ndash;$60,000 in a year, usually with an account manager
+              between you and whoever does the work. Here is how the structure
+              on this page differs:
             </p>
-            <p
+
+            <ul
               style={{
-                marginTop: 18,
-                fontSize: "clamp(17px, 2vw, 19px)",
-                color: "var(--muted)",
-                lineHeight: 1.65,
+                listStyle: "none",
+                padding: 0,
+                margin: "22px 0 0",
+                display: "flex",
+                flexDirection: "column",
+                gap: 14,
               }}
             >
-              The diagnosis here is {auditPrice}{" "}once. If you want it turned
-              into a plan your team can ship, that is a fixed scope quoted from the
-              audit, and the audit fee comes off it. Monitoring afterward is optional
-              and term-limited.{" "}
-              <b style={{ color: "var(--ink)", fontWeight: 500 }}>
-                You are never signing something open-ended.
-              </b>
-            </p>
+              {[
+                <>
+                  <b style={{ color: "var(--ink)", fontWeight: 500 }}>
+                    {auditPrice} once
+                  </b>{" "}
+                  for the diagnosis, not a monthly fee.
+                </>,
+                <>
+                  Want it turned into a plan your team can ship? That is a{" "}
+                  <b style={{ color: "var(--ink)", fontWeight: 500 }}>
+                    fixed scope quoted from the audit
+                  </b>
+                  , and the audit fee comes off the price.
+                </>,
+                <>
+                  Monitoring afterward is optional and{" "}
+                  <b style={{ color: "var(--ink)", fontWeight: 500 }}>
+                    term-limited
+                  </b>
+                  .
+                </>,
+                <>
+                  <b style={{ color: "var(--ink)", fontWeight: 500 }}>
+                    You are never signing something open-ended.
+                  </b>
+                </>,
+              ].map((content, i) => (
+                <li
+                  key={i}
+                  style={{ display: "flex", gap: 10, alignItems: "flex-start" }}
+                >
+                  <span
+                    style={{
+                      color: "var(--accent)",
+                      fontFamily: "var(--mono)",
+                      fontSize: 15,
+                      flexShrink: 0,
+                      marginTop: 2,
+                    }}
+                  >
+                    &rarr;
+                  </span>
+                  <span
+                    style={{
+                      fontSize: "clamp(16px, 1.9vw, 18px)",
+                      color: "var(--muted)",
+                      lineHeight: 1.6,
+                    }}
+                  >
+                    {content}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </RevealSection>
         </div>
       </section>
@@ -475,30 +525,20 @@ export default async function PricingPage() {
           </RevealSection>
 
           <RevealSection delay={0.06}>
+            {/* Native <details>/<summary>, not a JS accordion library: the
+                answer text stays physically in the DOM at all times, so the
+                FAQPage schema below (built from this same FAQ_ITEMS array)
+                never diverges from what's rendered. See
+                /blog/faq-schema-accordion-bug/ for why every other FAQ on
+                this site renders fully expanded instead of collapsible;
+                this is the one place a visual dropdown was requested, built
+                the DOM-safe way. */}
             <div>
               {FAQ_ITEMS.map(({ q, a }) => (
-                <div className="faq-item" key={q}>
-                  <h3
-                    style={{
-                      fontFamily: "var(--serif)",
-                      fontSize: 19,
-                      fontWeight: 500,
-                      letterSpacing: "-.01em",
-                    }}
-                  >
-                    {q}
-                  </h3>
-                  <p
-                    style={{
-                      marginTop: 10,
-                      fontSize: 15,
-                      color: "var(--muted)",
-                      lineHeight: 1.65,
-                    }}
-                  >
-                    {a}
-                  </p>
-                </div>
+                <details className="pricing-faq" key={q}>
+                  <summary className="pricing-faq-q">{q}</summary>
+                  <p className="pricing-faq-a">{a}</p>
+                </details>
               ))}
             </div>
           </RevealSection>
