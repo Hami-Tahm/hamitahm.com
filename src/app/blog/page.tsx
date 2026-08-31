@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const posts = [
-  // First on purpose. This is the only page here with original first-party data,
+  // First on purpose. This is the flagship original first-party dataset,
   // and it is the asset the entire off-site link strategy is built around.
   {
     href: "/blog/ai-citation-study/",
@@ -17,6 +17,13 @@ const posts = [
     title: "What 21,700+ AI Citations Actually Taught Me",
     excerpt:
       "Two sites, three months, 21,700 citations from Microsoft Copilot. Which pages got cited, which got nothing, and the finding nobody publishes: citations are not customers.",
+  },
+  {
+    href: "/blog/homecalc-ai-search-mortgage-ranking/",
+    cat: "Original research",
+    title: "HomeCalc.ca vs. Canada's Big Banks: A 50-Prompt AI Search Benchmark",
+    excerpt:
+      "Ran 50 real mortgage-calculator questions through ChatGPT, Perplexity, Google AI Overviews, and Copilot. HomeCalc.ca outranked every major bank's own domain. The data, the method, and what it doesn't prove.",
   },
   {
     href: "/blog/which-ai-platform-matters-most/",
