@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { RevealSection } from "@/components/Reveal";
 import { AuthorByline } from "@/components/AuthorByline";
 import { buildBlogSchema } from "@/lib/blog-schema";
@@ -299,6 +300,13 @@ export default async function HomecalcAiSearchMortgageRankingPost() {
               below come from that leaderboard, not from the full
               hundreds-of-domains citation export.
             </p>
+            <ScreenshotFigure
+              src="/images/blog/homecalc-ai-search-mortgage-ranking/otterly-domain-coverage-over-time.png"
+              width={1591}
+              height={607}
+              alt="Otterly.AI Domain Coverage Over Time chart showing homecalc.ca alongside 14 competing domains, including ratehub.ca, cmhc-schl.gc.ca, and several major Canadian bank domains, for August 22 to 29, 2026."
+              caption="A live view from the Otterly.AI dashboard used for this benchmark, homecalc.ca in blue. Dashboard tiles like this one are a rounded, real-time snapshot; every number quoted in this post is recomputed from the underlying CSV export, not read off a chart."
+            />
             <p style={{ marginBottom: 20 }}>
               This is deliberately a different instrument and a different
               dataset from the Bing Webmaster Tools / Google Search Console
@@ -388,6 +396,13 @@ export default async function HomecalcAiSearchMortgageRankingPost() {
               are established, general-purpose rate-comparison platforms,
               while HomeCalc.ca is a narrower, calculator-only product.
             </p>
+            <ScreenshotFigure
+              src="/images/blog/homecalc-ai-search-mortgage-ranking/otterly-brand-visibility-index.png"
+              width={1591}
+              height={548}
+              alt="Otterly.AI Brand Visibility Index quadrant chart placing homecalc.ca in the Niche quadrant with 15% brand coverage and an 84% likelihood-to-buy score, alongside CMHC, Rates, Ratehub, wowa, and several Canadian banks, for August 23 to 30, 2026."
+              caption={`Brand coverage, a related but distinct Otterly metric from the citation counts above, plotted against likelihood-to-buy for the same panel and window. HomeCalc lands in the “Niche” quadrant: lower reach than the three category leaders, but with one of the highest likelihood-to-buy scores in the set.`}
+            />
           </RevealSection>
 
           <RevealSection>
@@ -491,6 +506,13 @@ export default async function HomecalcAiSearchMortgageRankingPost() {
               ranked brands, government sources included, behind only
               Ratehub.
             </p>
+            <ScreenshotFigure
+              src="/images/blog/homecalc-ai-search-mortgage-ranking/otterly-brand-ranking-top10.png"
+              width={790}
+              height={589}
+              alt="Otterly.AI Brand Ranking table showing homecalc.ca in 6th place with +56 sentiment, 124 mentions, and 16% brand coverage, among the top 10 of the tool's ~20 tracked brands, including CMHC, Rates, Ratehub, wowa, and nesto."
+              caption="Otterly's Brand Ranking leaderboard for this panel, ranks 1 to 10 of the roughly 20 brands it tracks by name. HomeCalc's row matches the mentions, sentiment, and coverage figures above exactly; ranks 11 to 20 continue on a second page and aren't shown here."
+            />
           </RevealSection>
 
           <RevealSection>
@@ -740,6 +762,52 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
       {number}: {text}
       <span style={{ flex: 1, height: 1, background: "var(--line)" }} />
     </h2>
+  );
+}
+
+function ScreenshotFigure({
+  src,
+  width,
+  height,
+  alt,
+  caption,
+}: {
+  src: string;
+  width: number;
+  height: number;
+  alt: string;
+  caption: string;
+}) {
+  return (
+    <figure style={{ margin: "26px 0" }}>
+      <div
+        style={{
+          border: "1px solid var(--line-strong)",
+          borderRadius: 10,
+          overflow: "hidden",
+          background: "var(--panel)",
+        }}
+      >
+        <Image
+          src={src}
+          width={width}
+          height={height}
+          alt={alt}
+          style={{ width: "100%", height: "auto", display: "block" }}
+        />
+      </div>
+      <figcaption
+        style={{
+          fontFamily: "var(--sans)",
+          fontSize: 13,
+          color: "var(--faint)",
+          lineHeight: 1.55,
+          marginTop: 10,
+        }}
+      >
+        {caption}
+      </figcaption>
+    </figure>
   );
 }
 
