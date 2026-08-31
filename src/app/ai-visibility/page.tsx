@@ -1064,20 +1064,45 @@ export default function AIVisibilityPage() {
                   by a team you may never speak to. That&rsquo;s a different
                   product.
                 </p>
-                <p
+                <ul
                   style={{
-                    fontSize: 18,
-                    color: "var(--muted)",
-                    lineHeight: 1.65,
+                    listStyle: "none",
+                    padding: 0,
+                    margin: "18px 0 0",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 10,
                     maxWidth: "58ch",
-                    marginTop: 18,
                   }}
                 >
-                  Working with an individual consultant means the same person
-                  who reviews your data writes your action plan, runs the
-                  walkthrough call, and is reachable for follow-up questions. No
-                  handoffs, no retainer, public case study, public pricing.
-                </p>
+                  {[
+                    "The same person reviews your data, writes your action plan, runs the walkthrough call, and is reachable for follow-up questions",
+                    "No handoffs between departments",
+                    "No retainer required to start",
+                    "A public case study",
+                    "Public pricing",
+                  ].map((item) => (
+                    <li
+                      key={item}
+                      style={{ display: "flex", gap: 10, alignItems: "flex-start" }}
+                    >
+                      <span
+                        style={{
+                          color: "var(--accent)",
+                          fontFamily: "var(--mono)",
+                          fontSize: 15,
+                          flexShrink: 0,
+                          marginTop: 2,
+                        }}
+                      >
+                        &rarr;
+                      </span>
+                      <span style={{ fontSize: 18, color: "var(--muted)", lineHeight: 1.55 }}>
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </div>
               <div
                 style={{

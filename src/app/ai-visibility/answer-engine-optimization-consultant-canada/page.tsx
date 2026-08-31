@@ -425,17 +425,73 @@ export default function AEOConsultantCanada() {
                   fontSize: "clamp(17px, 2vw, 19px)",
                   color: "var(--muted)",
                   lineHeight: 1.65,
-                  marginBottom: 12,
                 }}
               >
-                SEO optimizes how your page ranks among a list of search results;
-                the user still clicks through to read it. AEO optimizes how AI
-                engines pull from your page directly, summarize what they find, and
-                present it as an answer. The user often never visits your site. Both
-                matter, but they reward different things: SEO rewards relevance and
-                authority signals; AEO rewards structure, clarity, and
-                extractability.
+                SEO and AEO optimize for different outcomes, and reward different
+                things:
               </p>
+              <ul
+                style={{
+                  listStyle: "none",
+                  padding: 0,
+                  margin: "16px 0 12px",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 10,
+                }}
+              >
+                <li style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
+                  <span
+                    style={{
+                      color: "var(--accent)",
+                      fontFamily: "var(--mono)",
+                      fontSize: 15,
+                      flexShrink: 0,
+                      marginTop: 2,
+                    }}
+                  >
+                    &rarr;
+                  </span>
+                  <span
+                    style={{
+                      fontSize: "clamp(17px, 2vw, 19px)",
+                      color: "var(--muted)",
+                      lineHeight: 1.55,
+                    }}
+                  >
+                    <b style={{ color: "var(--ink)", fontWeight: 500 }}>SEO</b>{" "}
+                    optimizes how your page ranks among a list of search results;
+                    the user still clicks through to read it. Rewards relevance
+                    and authority signals.
+                  </span>
+                </li>
+                <li style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
+                  <span
+                    style={{
+                      color: "var(--accent)",
+                      fontFamily: "var(--mono)",
+                      fontSize: 15,
+                      flexShrink: 0,
+                      marginTop: 2,
+                    }}
+                  >
+                    &rarr;
+                  </span>
+                  <span
+                    style={{
+                      fontSize: "clamp(17px, 2vw, 19px)",
+                      color: "var(--muted)",
+                      lineHeight: 1.55,
+                    }}
+                  >
+                    <b style={{ color: "var(--ink)", fontWeight: 500 }}>AEO</b>{" "}
+                    optimizes how AI engines pull from your page directly,
+                    summarize what they find, and present it as an answer; the
+                    user often never visits your site. Rewards structure,
+                    clarity, and extractability.
+                  </span>
+                </li>
+              </ul>
               <p
                 style={{
                   fontSize: 14,
@@ -465,16 +521,80 @@ export default function AEOConsultantCanada() {
                   fontSize: "clamp(17px, 2vw, 19px)",
                   color: "var(--muted)",
                   lineHeight: 1.65,
+                }}
+              >
+                AEO and GEO are related but distinct:
+              </p>
+              <ul
+                style={{
+                  listStyle: "none",
+                  padding: 0,
+                  margin: "16px 0 12px",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 10,
+                }}
+              >
+                <li style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
+                  <span
+                    style={{
+                      color: "var(--accent)",
+                      fontFamily: "var(--mono)",
+                      fontSize: 15,
+                      flexShrink: 0,
+                      marginTop: 2,
+                    }}
+                  >
+                    &rarr;
+                  </span>
+                  <span
+                    style={{
+                      fontSize: "clamp(17px, 2vw, 19px)",
+                      color: "var(--muted)",
+                      lineHeight: 1.55,
+                    }}
+                  >
+                    <b style={{ color: "var(--ink)", fontWeight: 500 }}>AEO</b>{" "}
+                    addresses how AI engines extract answers from your existing
+                    content: structure, format, clarity.
+                  </span>
+                </li>
+                <li style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
+                  <span
+                    style={{
+                      color: "var(--accent)",
+                      fontFamily: "var(--mono)",
+                      fontSize: 15,
+                      flexShrink: 0,
+                      marginTop: 2,
+                    }}
+                  >
+                    &rarr;
+                  </span>
+                  <span
+                    style={{
+                      fontSize: "clamp(17px, 2vw, 19px)",
+                      color: "var(--muted)",
+                      lineHeight: 1.55,
+                    }}
+                  >
+                    <b style={{ color: "var(--ink)", fontWeight: 500 }}>GEO</b>{" "}
+                    addresses how AI engines generate responses about your brand
+                    from across the web: entity signals, source diversity,
+                    citation density.
+                  </span>
+                </li>
+              </ul>
+              <p
+                style={{
+                  fontSize: "clamp(17px, 2vw, 19px)",
+                  color: "var(--muted)",
+                  lineHeight: 1.65,
                   marginBottom: 12,
                 }}
               >
-                AEO and GEO are related but distinct. AEO addresses how AI engines
-                extract answers from your existing content (structure, format,
-                clarity). GEO addresses how AI engines generate responses about your
-                brand from across the web (entity signals, source diversity,
-                citation density). AEO is about being extractable; GEO is about being
-                represented. Most businesses need both, but each is a separate
-                practice.
+                AEO is about being extractable; GEO is about being represented.
+                Most businesses need both, but each is a separate practice.
               </p>
               <p style={{ fontSize: 14, fontStyle: "italic", color: "var(--faint)" }}>
                 If your goal is specifically GEO:{" "}

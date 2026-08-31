@@ -284,13 +284,25 @@ export default function MethodologyPage() {
               <b style={bStyle}>
                 Only Microsoft Copilot reports citations back to publishers.
               </b>{" "}
-              Bing Webmaster Tools&rsquo; AI Performance report gives a first-party
-              count: which of your pages were cited, how often, and the queries that
-              retrieved them. Google Search Console has since added a Generative AI
-              features report, but it exposes impressions only: no citation
-              counts, clicks or queries. ChatGPT, Gemini and Perplexity still expose
-              nothing to site owners.
+              Here is what each engine actually exposes to a site owner:
             </p>
+            <ul style={ulStyle}>
+              <li>
+                <b style={bStyle}>Microsoft Copilot</b>: Bing Webmaster
+                Tools&rsquo; AI Performance report gives a first-party count,
+                which of your pages were cited, how often, and the queries
+                that retrieved them.
+              </li>
+              <li>
+                <b style={bStyle}>Google</b>: Search Console has since added a
+                Generative AI features report, but it exposes impressions
+                only, no citation counts, clicks or queries.
+              </li>
+              <li>
+                <b style={bStyle}>ChatGPT, Gemini and Perplexity</b>: still
+                expose nothing to site owners.
+              </li>
+            </ul>
             <p style={pStyle}>
               So a citation <i>count</i> can only ever come from Copilot. Everything
               else is observation: running the prompt and recording what came

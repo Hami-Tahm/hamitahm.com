@@ -526,15 +526,67 @@ export default function GEOConsultantCanada() {
                   fontSize: "clamp(17px, 2vw, 19px)",
                   color: "var(--muted)",
                   lineHeight: 1.65,
-                  marginBottom: 32,
                 }}
               >
                 What generative visibility adds on top: it applies to engines that do
                 not use Google&rsquo;s index at all, and the outcome is not a position
-                but a spectrum. You can be retrieved, mentioned, cited, paraphrased
-                without attribution, or left out entirely. Those are five different
-                situations with five different fixes, and treating them as one is the
-                most common reason this work gets misdiagnosed.
+                but a spectrum. You can be:
+              </p>
+              <ul
+                style={{
+                  listStyle: "none",
+                  padding: 0,
+                  margin: "18px 0",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 8,
+                }}
+              >
+                {[
+                  "Retrieved",
+                  "Mentioned",
+                  "Cited",
+                  "Paraphrased without attribution",
+                  "Left out entirely",
+                ].map((item) => (
+                  <li
+                    key={item}
+                    style={{ display: "flex", gap: 10, alignItems: "flex-start" }}
+                  >
+                    <span
+                      style={{
+                        color: "var(--accent)",
+                        fontFamily: "var(--mono)",
+                        fontSize: 15,
+                        flexShrink: 0,
+                        marginTop: 2,
+                      }}
+                    >
+                      &rarr;
+                    </span>
+                    <span
+                      style={{
+                        fontSize: "clamp(17px, 2vw, 19px)",
+                        color: "var(--muted)",
+                        lineHeight: 1.55,
+                      }}
+                    >
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <p
+                style={{
+                  fontSize: "clamp(17px, 2vw, 19px)",
+                  color: "var(--muted)",
+                  lineHeight: 1.65,
+                  marginBottom: 32,
+                }}
+              >
+                Those are five different situations with five different fixes, and
+                treating them as one is the most common reason this work gets
+                misdiagnosed.
               </p>
 
               <h3

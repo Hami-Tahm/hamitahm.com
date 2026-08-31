@@ -451,15 +451,107 @@ export default function SEOExpertTorontoPage() {
                 fontSize: "clamp(17px, 2vw, 19px)",
                 color: "var(--muted)",
                 lineHeight: 1.72,
-                marginBottom: 24,
               }}
             >
-              Every engagement starts with the $1,500 AI Visibility Audit. It
-              covers both layers of search: how your business ranks on Google
-              and how AI engines describe, cite, and recommend you. You get a
-              written report, a prioritized action plan, a 60-minute walkthrough
-              call, and 14 days of follow-up. Delivered in 7 business days.
+              Every engagement starts with the $1,500 AI Visibility Audit,
+              covering both layers of search: how your business ranks on Google
+              and how AI engines describe, cite, and recommend you. You get:
             </p>
+            <ul
+              style={{
+                listStyle: "none",
+                padding: 0,
+                margin: "16px 0 24px",
+                display: "flex",
+                flexDirection: "column",
+                gap: 8,
+              }}
+            >
+              {[
+                "A written report",
+                "A prioritized action plan",
+                "A 60-minute walkthrough call",
+                "14 days of follow-up",
+                "Delivered in 7 business days",
+              ].map((item) => (
+                <li
+                  key={item}
+                  style={{ display: "flex", gap: 10, alignItems: "flex-start" }}
+                >
+                  <span
+                    style={{
+                      color: "var(--accent)",
+                      fontFamily: "var(--mono)",
+                      fontSize: 15,
+                      flexShrink: 0,
+                      marginTop: 2,
+                    }}
+                  >
+                    &rarr;
+                  </span>
+                  <span
+                    style={{
+                      fontSize: "clamp(17px, 2vw, 19px)",
+                      color: "var(--muted)",
+                      lineHeight: 1.55,
+                    }}
+                  >
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <p
+              style={{
+                fontSize: "clamp(17px, 2vw, 19px)",
+                color: "var(--muted)",
+                lineHeight: 1.72,
+              }}
+            >
+              Most engagements begin and end with the audit. You implement
+              internally with the action plan, or your agency does. I
+              don&rsquo;t take execution work:
+            </p>
+            <ul
+              style={{
+                listStyle: "none",
+                padding: 0,
+                margin: "16px 0 24px",
+                display: "flex",
+                flexDirection: "column",
+                gap: 8,
+              }}
+            >
+              {["No retainers", "No content production", "No technical delivery"].map(
+                (item) => (
+                  <li
+                    key={item}
+                    style={{ display: "flex", gap: 10, alignItems: "flex-start" }}
+                  >
+                    <span
+                      style={{
+                        color: "var(--accent)",
+                        fontFamily: "var(--mono)",
+                        fontSize: 15,
+                        flexShrink: 0,
+                        marginTop: 2,
+                      }}
+                    >
+                      &rarr;
+                    </span>
+                    <span
+                      style={{
+                        fontSize: "clamp(17px, 2vw, 19px)",
+                        color: "var(--muted)",
+                        lineHeight: 1.55,
+                      }}
+                    >
+                      {item}
+                    </span>
+                  </li>
+                )
+              )}
+            </ul>
             <p
               style={{
                 fontSize: "clamp(17px, 2vw, 19px)",
@@ -468,12 +560,9 @@ export default function SEOExpertTorontoPage() {
                 marginBottom: 24,
               }}
             >
-              Most engagements begin and end with the audit. You implement
-              internally with the action plan, or your agency does. I don&rsquo;t
-              take execution work: no retainers, no content production, no
-              technical delivery. What can follow the audit is the action plan, and
-              after that optional monitoring, and only when it&rsquo;s the right
-              next move rather than by default.
+              What can follow the audit is the action plan, and after that
+              optional monitoring, only when it&rsquo;s the right next move
+              rather than by default.
             </p>
             <p
               style={{
