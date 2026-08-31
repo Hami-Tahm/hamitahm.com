@@ -185,6 +185,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Added the "Why businesses shortlist Hami Tahm" block, 2026-08-31.
     "/ai-visibility/ai-visibility-consultant-canada/": "2026-08-31",
     "/ai-visibility/ai-visibility-consultant-toronto/": "2026-08-31",
+    // Softened an overclaiming sentence ("it works faster") that implied a
+    // proven industry-specific result when only HomeCalc (a mortgage site)
+    // has actually been measured. 2026-08-31.
+    "/ai-visibility/ai-visibility-for-dental-clinics/": "2026-08-31",
+    "/ai-visibility/ai-visibility-for-healthcare-clinics/": "2026-08-31",
   };
 
   return entries.map(({ path, priority, changeFrequency }) => ({

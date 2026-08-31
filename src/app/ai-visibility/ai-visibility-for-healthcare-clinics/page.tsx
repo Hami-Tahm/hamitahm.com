@@ -598,8 +598,12 @@ export default function AIVisibilityHealthcareClinics() {
                   marginBottom: 24,
                 }}
               >
-                If this worked on a 3-month-old YMYL finance site, it works
-                faster on an established clinic with real authority.
+                This is a general method, demonstrated on a 3-month-old YMYL
+                finance site, not a healthcare-specific result: no clinic
+                case study exists yet (see below). The same logic should
+                apply at least as well to an established clinic with real
+                authority, but that is a hypothesis, not something proven
+                here.
               </p>
               <blockquote
                 style={{
