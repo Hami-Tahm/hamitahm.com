@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+import { ZoomableImage } from "@/components/ZoomableImage";
 import { RevealSection } from "@/components/Reveal";
 import { AuthorByline } from "@/components/AuthorByline";
 import { buildBlogSchema } from "@/lib/blog-schema";
@@ -788,7 +788,7 @@ function ScreenshotFigure({
           background: "var(--panel)",
         }}
       >
-        <Image
+        <ZoomableImage
           src={src}
           width={width}
           height={height}

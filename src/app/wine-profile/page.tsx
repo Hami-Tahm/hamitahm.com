@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { AuthorByline } from "@/components/AuthorByline";
-import Image from "next/image";
+import { ZoomableImage } from "@/components/ZoomableImage";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -34,14 +34,14 @@ export default function Post() {
         <AuthorByline date="Mar 07, 2026" />
 
         {/* Content */}
-        <Image
+        <ZoomableImage
           src="/images/writing/wine-profile/infoghrapgy-wine.webp"
           alt="Wine taste profile infographic: sweetness, tannin, acidity, body, and complexity"
           width={1408}
           height={768}
           style={{ width: "100%", height: "auto", borderRadius: 12, margin: "32px 0" }}
         />
-        <Image
+        <ZoomableImage
           src="/images/writing/wine-profile/fav-wine.webp"
           alt="Favorite wines that match this taste profile: Shiraz, Cabernet Sauvignon, Amarone, Barolo"
           width={1920}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { ZoomableImage } from "@/components/ZoomableImage";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { ENGINE_CITATIONS, SNAPSHOT, SNAPSHOT_INCOGNITO } from "@/lib/ai-citation-proof";
@@ -271,7 +271,7 @@ export default function CitedByAiEnginesCaseStudy() {
                   &ldquo;{c.quote}&rdquo;
                 </blockquote>
                 <figure style={{ margin: "24px 0 0" }}>
-                  <Image
+                  <ZoomableImage
                     src={c.image}
                     alt={c.alt}
                     width={1024}

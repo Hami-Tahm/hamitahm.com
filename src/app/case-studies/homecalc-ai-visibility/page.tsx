@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { ZoomableImage } from "@/components/ZoomableImage";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import {
@@ -537,7 +537,7 @@ export default function HomeCalcCaseStudy() {
 
           <RevealSection delay={0.1}>
             <figure style={{ marginTop: 36 }}>
-              <Image
+              <ZoomableImage
                 src={CHART_SRC}
                 alt={CHART_ALT}
                 width={2368}
@@ -594,7 +594,7 @@ export default function HomeCalcCaseStudy() {
           */}
           <RevealSection delay={0.12}>
             <figure style={{ marginTop: 44 }}>
-              <Image
+              <ZoomableImage
                 src={GOOGLE_AI_SRC}
                 alt={GOOGLE_AI_ALT}
                 width={1549}

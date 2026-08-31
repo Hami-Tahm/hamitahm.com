@@ -116,4 +116,24 @@ cannot support. Both statements are true at once, and the corrections made on
 
 ---
 
+## 6. Content Images Are Always Clickable to Zoom
+
+**Standing rule from Hami, added 2026-08-31. Applies to the whole site, not just one page.**
+
+Every genuine content image, a chart, screenshot, or diagram that's part of an
+article's argument (usually sitting inside a `<figure>`, often with a caption),
+must use `<ZoomableImage>` from `src/components/ZoomableImage.tsx` instead of a
+bare `next/image` `<Image>`. It's a drop-in replacement with an identical props
+API; clicking the rendered image opens it full-size in a lightbox overlay
+(click outside, or press Escape, to close).
+
+**Do NOT apply this to:** icons, logos, favicons, or avatar/portrait photos
+(e.g. an author byline headshot). Those stay plain `<Image>`.
+
+When adding any new content image to any page, import `ZoomableImage` from the
+start rather than `Image` from `next/image`. This is not a one-off request for
+a single post, it is a default for all future work on this site.
+
+---
+
 **These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.

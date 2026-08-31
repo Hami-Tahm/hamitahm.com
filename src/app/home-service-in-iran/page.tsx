@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { AuthorByline } from "@/components/AuthorByline";
-import Image from "next/image";
+import { ZoomableImage } from "@/components/ZoomableImage";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -34,7 +34,7 @@ export default function Post() {
         <AuthorByline date="Dec 09, 2024" />
 
         {/* Featured Image */}
-        <Image
+        <ZoomableImage
           src="/images/writing/home-service-in-iran/index-pic.png"
           alt="Home services industry in Iran: market analysis overview"
           width={880}
@@ -44,21 +44,21 @@ export default function Post() {
         />
 
         {/* Content Images */}
-        <Image
+        <ZoomableImage
           src="/images/writing/home-service-in-iran/Life-style-The-best.png"
           alt="Cafebazaar lifestyle category app rankings for home services in Iran"
           width={1080}
           height={1920}
           style={{ width: "100%", height: "auto", borderRadius: 12, margin: "32px 0" }}
         />
-        <Image
+        <ZoomableImage
           src="/images/writing/home-service-in-iran/home-services-in-iran-2.png"
           alt="Home services market data and competitive analysis in Iran"
           width={1927}
           height={1200}
           style={{ width: "100%", height: "auto", borderRadius: 12, margin: "32px 0" }}
         />
-        <Image
+        <ZoomableImage
           src="/images/writing/home-service-in-iran/homesevices-in-iran.png"
           alt="Home services competitive landscape and market share in Iran"
           width={1927}

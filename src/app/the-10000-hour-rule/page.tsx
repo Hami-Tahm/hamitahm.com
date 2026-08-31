@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { AuthorByline } from "@/components/AuthorByline";
-import Image from "next/image";
+import { ZoomableImage } from "@/components/ZoomableImage";
 import Link from "next/link";
 import { HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
 import { blogSchemaJson } from "@/lib/blog-schema";
@@ -179,7 +179,7 @@ export default function Post() {
         </div>
 
         {/* Content */}
-        <Image
+        <ZoomableImage
           src="/images/writing/the-10000-hour-rule/image_2025_02_22T16_46_25_692Z.png"
           alt="Learning curve chart showing hours invested vs mastery level for the 10,000-hour rule"
           width={639}

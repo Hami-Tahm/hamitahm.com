@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { AuthorByline } from "@/components/AuthorByline";
-import Image from "next/image";
+import { ZoomableImage } from "@/components/ZoomableImage";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -34,7 +34,7 @@ export default function Post() {
         <AuthorByline date="May 26, 2025" />
 
         {/* Content */}
-        <Image
+        <ZoomableImage
           src="/images/writing/the-longevity-economy-6-high-growth-sectors/Longivity-1.png"
           alt="Longevity economy sectors chart: market size by 2030"
           width={752}

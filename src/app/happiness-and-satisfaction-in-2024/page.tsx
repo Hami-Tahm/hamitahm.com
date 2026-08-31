@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { AuthorByline } from "@/components/AuthorByline";
-import Image from "next/image";
+import { ZoomableImage } from "@/components/ZoomableImage";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -34,7 +34,7 @@ export default function Post() {
         <AuthorByline date="Dec 31, 2024" />
 
         {/* Content */}
-        <Image
+        <ZoomableImage
           src="/images/writing/happiness-and-satisfaction-in-2024/1-3d79563d.png"
           alt="Chart showing the relationship between income, happiness, and life satisfaction"
           width={630}

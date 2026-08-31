@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { AuthorByline } from "@/components/AuthorByline";
-import Image from "next/image";
+import { ZoomableImage } from "@/components/ZoomableImage";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -34,7 +34,7 @@ export default function Post() {
         <AuthorByline date="Dec 10, 2024" />
 
         {/* Content */}
-        <Image
+        <ZoomableImage
           src="/images/writing/invest-amid-inflation-in-canada/CAD.png"
           alt="Canadian dollar USD/CAD exchange rate chart showing currency depreciation"
           width={860}

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { AuthorByline } from "@/components/AuthorByline";
-import Image from "next/image";
+import { ZoomableImage } from "@/components/ZoomableImage";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -34,7 +34,7 @@ export default function Post() {
         <AuthorByline date="Feb 21, 2025" />
 
         {/* Content */}
-        <Image
+        <ZoomableImage
           src="/images/writing/hydration/Hydration.png"
           alt="Hydration guide for high performers: water intake and energy optimization"
           width={662}
