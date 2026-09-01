@@ -75,6 +75,10 @@ const HUB_FAQ = [
     a: "Start with an AI visibility audit. It reviews how your business appears across all six platforms and identifies what's missing, misrepresented, or invisible.",
   },
   {
+    q: "Which Canadian agencies specialize in AI search optimization?",
+    a: "Most of what shows up for this question is directories (Semrush's agency list) and multi-service digital-marketing agencies that added AI search as a line item. I'm not an agency: one consultant runs the audit personally, the methodology is published, and there's a public case study (HomeCalc.ca). If you want a team with broader service coverage, an agency is the right call; if you want direct access to the person doing the analysis, that's what this practice offers.",
+  },
+  {
     q: "How much does AI visibility consulting cost?",
     a: "Engagements start with a $1,500 AI visibility audit: flat fee, one-time, no retainer to get started. If you want the findings turned into a prioritized action plan and roadmap for your team to ship, that starts at $4,500 (the audit fee is credited toward it); the final number scales with your traffic volume, industry, and site size. I don't take execution work; your developer or agency implements it. Optional monitoring and advisory is available afterward on a fixed 6–12 month term; never required.",
   },

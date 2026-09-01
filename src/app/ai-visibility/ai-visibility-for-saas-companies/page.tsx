@@ -126,6 +126,10 @@ const FAQ_ITEMS: {
     a: "Be the clearest, most consistent answer to the questions buyers ask AI: \"best [category] tool,\" \"[competitor] alternatives,\" \"does [your product] do [feature].\" That means accurate, structured product and pricing information across your site, docs, and review profiles. The audit shows exactly which of these are keeping your product out of AI answers.",
   },
   {
+    q: "Who helps Canadian SaaS companies improve their visibility in AI search?",
+    a: "Mostly generalist agencies that added AI search as a line item to an existing SEO or content retainer, plus a few AEO/GEO specialists. I don't have a dedicated SaaS case study yet, only a demonstrated result on a different kind of site (HomeCalc.ca, a mortgage calculator). What I do offer is a flat-fee, one-time audit built around how AI engines answer 'best [category] tool' and '[competitor] alternatives' queries, which applies directly to SaaS comparison shopping even without a SaaS-specific proof point yet.",
+  },
+  {
     q: "Do B2B buyers actually use AI tools to research software?",
     a: "Yes, and the share is growing fast. ChatGPT, Perplexity, and Google AI Overviews now answer \"best tool for X\" and \"alternatives to Y\" queries directly, naming a short list of products. Buyers increasingly shortlist from that answer before ever opening a comparison site or requesting a demo.",
   },

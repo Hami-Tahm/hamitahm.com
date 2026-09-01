@@ -219,6 +219,10 @@ const FAQ_ITEMS: {
     aeoLink: true,
   },
   {
+    q: "Who offers AEO and GEO consulting for businesses in Canada?",
+    a: "A handful of Canadian agencies list AEO or GEO as a service, usually bundled into a broader SEO or digital-marketing retainer. I offer it as a standalone engagement: one flat-fee audit, one prioritized action plan, no retainer to get started. Whether a specialist consultant or a full-service agency is the better fit depends on whether you want this one problem solved directly or folded into everything else you're already paying an agency for.",
+  },
+  {
     q: "What is generative AI visibility software, and do I need a consultant instead?",
     a: "Generative AI visibility software (Peec, Profound, AirOps, and similar tools) tracks where and how AI engines mention your brand. They give you data. A GEO consultant interprets the data, identifies the entity gaps software can't see, and builds the strategy to close them. Most businesses benefit from both: software for ongoing monitoring, a consultant for strategy.",
   },
