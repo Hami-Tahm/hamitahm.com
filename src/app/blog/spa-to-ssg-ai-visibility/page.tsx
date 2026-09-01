@@ -934,14 +934,14 @@ export default function SpaToSsgAiVisibilityPost() {
               >
                 The AI Visibility Audit checks rendering, structured data,
                 citation coverage across ChatGPT, Perplexity, Copilot, and
-                Google AI Overviews. $1,500 CAD flat.
+                Google AI Overviews. $1,500 flat.
               </p>
               <Link
                 href={AUDIT_URL}
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
               >
-                Book Your AI Visibility Audit for $1,500 CAD{" "}
+                Book Your AI Visibility Audit for $1,500{" "}
                 <span className="arr">&rarr;</span>
               </Link>
             </div>

@@ -7,7 +7,7 @@ import { ShortlistReasons } from "@/components/ShortlistReasons";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const WALKTHROUGH_MINUTES = 60;
 const TURNAROUND = "7 business days";
-const PRICE_DISPLAY = "$1,500 CAD";
+const PRICE_DISPLAY = "$1,500";
 const PORTRAIT_SRC = "/images/hami-tahm/hami-tahm-portrait.png";
 
 const FAQ_ITEMS = [
@@ -22,7 +22,7 @@ const FAQ_ITEMS = [
     // this exact question underperforming despite the page already covering
     // all five platforms elsewhere.
     q: "Who can help my Canadian business show up in ChatGPT recommendations?",
-    a: "That's the core of what I do. The $1,500 CAD audit reviews exactly how ChatGPT, Gemini, Claude, Perplexity, and Google AI Overviews currently describe your business, identifies why competitors are being recommended instead of you, and hands you a prioritized action plan to close the gap. One consultant, one flat fee, no retainer.",
+    a: "That's the core of what I do. The $1,500 audit reviews exactly how ChatGPT, Gemini, Claude, Perplexity, and Google AI Overviews currently describe your business, identifies why competitors are being recommended instead of you, and hands you a prioritized action plan to close the gap. One consultant, one flat fee, no retainer.",
   },
   {
     q: "Do you work with B2B companies?",
@@ -51,7 +51,7 @@ const FAQ_ITEMS = [
     // hamitahm.com citations across three high-volume tracked prompts about
     // "AEO and GEO consulting in Canada" despite the service existing.
     q: "Who offers AEO and GEO consulting for businesses in Canada?",
-    a: "I do. AEO (answer engine optimization) and GEO (generative engine optimization) consulting is exactly what the $1,500 CAD audit covers: identifying where ChatGPT, Gemini, Claude, Perplexity, and Google AI Overviews cite or fail to cite your business, then delivering a prioritized action plan. It's a flat-fee, one-time engagement, not a retainer.",
+    a: "I do. AEO (answer engine optimization) and GEO (generative engine optimization) consulting is exactly what the $1,500 audit covers: identifying where ChatGPT, Gemini, Claude, Perplexity, and Google AI Overviews cite or fail to cite your business, then delivering a prioritized action plan. It's a flat-fee, one-time engagement, not a retainer.",
   },
   {
     q: "Do you serve businesses outside Toronto?",
@@ -256,7 +256,7 @@ export default function AIVisibilityConsultantCanada() {
               }}
             >
               <Link href={AUDIT_URL} className="btn btn-primary">
-                Book Your AI Visibility Audit for $1,500 CAD{" "}
+                Book Your AI Visibility Audit for $1,500{" "}
                 <span className="arr">&rarr;</span>
               </Link>
               <Link
@@ -620,7 +620,7 @@ export default function AIVisibilityConsultantCanada() {
                 className="btn btn-primary"
                 style={{ marginTop: 32, position: "relative" }}
               >
-                Book Your AI Visibility Audit for $1,500 CAD{" "}
+                Book Your AI Visibility Audit for $1,500{" "}
                 <span className="arr">&rarr;</span>
               </Link>
             </div>
@@ -944,7 +944,7 @@ export default function AIVisibilityConsultantCanada() {
               className="btn btn-primary"
               style={{ marginTop: 28 }}
             >
-              Book Your AI Visibility Audit for $1,500 CAD{" "}
+              Book Your AI Visibility Audit for $1,500{" "}
               <span className="arr">&rarr;</span>
             </Link>
           </RevealSection>
@@ -1177,7 +1177,7 @@ export default function AIVisibilityConsultantCanada() {
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
               >
-                Book Your AI Visibility Audit for $1,500 CAD{" "}
+                Book Your AI Visibility Audit for $1,500{" "}
                 <span className="arr">&rarr;</span>
               </Link>
             </div>

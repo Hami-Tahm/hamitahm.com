@@ -856,14 +856,14 @@ Select-String "your unique answer phrase" page.html`}
                 }}
               >
                 Cross-platform citation analysis, structured data review,
-                technical audit, and a prioritized action plan. $1,500 CAD flat.
+                technical audit, and a prioritized action plan. $1,500 flat.
               </p>
               <Link
                 href={AUDIT_URL}
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
               >
-                Book Your AI Visibility Audit for $1,500 CAD{" "}
+                Book Your AI Visibility Audit for $1,500{" "}
                 <span className="arr">&rarr;</span>
               </Link>
             </div>

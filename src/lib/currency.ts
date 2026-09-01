@@ -18,6 +18,16 @@ import { OFFERS } from "@/lib/offers";
  * an intentional, necessary trade-off for the handful of pages that call
  * this. Pages that don't need currency-aware pricing should keep reading
  * OFFERS.audit.* directly and stay statically generated.
+ *
+ * ⚠️ DISPLAY NEVER SHOWS THE CURRENCY CODE, decided 2026-09-01. Every number
+ * on the site reads as a bare "$1,500", never "$1,500 CAD" or "$1,500 USD".
+ * A Canadian reads "$" as CAD and an American reads the same "$" as USD, so
+ * the bare symbol is correct for both without printing a code most visitors
+ * don't need. The actual currency split still happens for real at checkout:
+ * this helper still routes a Canadian to the CAD Stripe link and everyone
+ * else to the USD one (see checkoutUrl/checkoutUrlUSD in offers.ts). Only
+ * the on-page label changed, not the billing logic. Do not re-add " CAD" /
+ * " USD" to `price`, `priceNote`, or `priceWithCurrency` below.
  */
 export type Currency = "CAD" | "USD";
 
@@ -30,11 +40,16 @@ export async function getCurrency(): Promise<Currency> {
 
 export type AuditPricing = {
   currency: Currency;
-  /** e.g. "$1,500" / "$1,100": no currency word. */
+  /** e.g. "$1,500" / "$1,500": bare symbol, never a currency code. */
   price: string;
-  /** e.g. "CAD, flat fee, one-time" / "USD, flat fee, one-time". */
+  /** e.g. "Flat fee, one-time": no currency word. */
   priceNote: string;
-  /** e.g. "$1,500 CAD" / "$1,100 USD": single string, safe to drop straight into JSX. */
+  /**
+   * Kept as its own field for call-site compatibility (many pages already
+   * read `priceWithCurrency` expecting one JSX-safe node per the PRICE
+   * DISPLAY RULE in offers.ts). As of 2026-09-01 this is identical to
+   * `price`: no code is appended for either currency.
+   */
   priceWithCurrency: string;
   checkoutUrl: string;
 };
@@ -47,7 +62,7 @@ export async function getAuditPricing(): Promise<AuditPricing> {
       currency,
       price: OFFERS.audit.priceUSD,
       priceNote: OFFERS.audit.priceNoteUSD,
-      priceWithCurrency: `${OFFERS.audit.priceUSD} USD`,
+      priceWithCurrency: OFFERS.audit.priceUSD,
       checkoutUrl: OFFERS.audit.checkoutUrlUSD,
     };
   }
@@ -56,7 +71,7 @@ export async function getAuditPricing(): Promise<AuditPricing> {
     currency,
     price: OFFERS.audit.price,
     priceNote: OFFERS.audit.priceNote,
-    priceWithCurrency: `${OFFERS.audit.price} CAD`,
+    priceWithCurrency: OFFERS.audit.price,
     checkoutUrl: OFFERS.audit.checkoutUrl,
   };
 }

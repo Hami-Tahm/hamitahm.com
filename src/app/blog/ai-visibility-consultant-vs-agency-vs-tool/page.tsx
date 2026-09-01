@@ -84,7 +84,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "How much does each option cost?",
-    a: "AI visibility tools typically run $50–500 per month. Agency retainers for comparable strategic work typically run $2,000–5,000 per month, ongoing. A one-time AI visibility audit from an independent consultant is a flat fee: $1,500 CAD here, covering all major AI platforms with no retainer required to start.",
+    a: "AI visibility tools typically run $50–500 per month. Agency retainers for comparable strategic work typically run $2,000–5,000 per month, ongoing. A one-time AI visibility audit from an independent consultant is a flat fee: $1,500 here, covering all major AI platforms with no retainer required to start.",
   },
 ] as const;
 

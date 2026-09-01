@@ -8,7 +8,7 @@ const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const CASE_STUDY_URL = HOMECALC_PROOF.caseStudyPath;
 const WALKTHROUGH_MINUTES = 60;
 const TURNAROUND = "7 business days";
-const PRICE_DISPLAY = "$1,500 CAD";
+const PRICE_DISPLAY = "$1,500";
 const DENTAL_URL = "/ai-visibility/ai-visibility-for-dental-clinics/";
 
 /*
@@ -29,7 +29,7 @@ const DENTAL_URL = "/ai-visibility/ai-visibility-for-dental-clinics/";
 export const metadata: Metadata = {
   title: "AI Visibility for Healthcare Clinics",
   description:
-    "Ensure your clinic appears when patients ask ChatGPT, Google AI Overviews, Gemini, or Claude for a healthcare provider. Audit by Hami Tahm, $1,500 CAD flat.",
+    "Ensure your clinic appears when patients ask ChatGPT, Google AI Overviews, Gemini, or Claude for a healthcare provider. Audit by Hami Tahm, $1,500 flat.",
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/ai-visibility-for-healthcare-clinics/",
   },
@@ -100,7 +100,7 @@ const COMPARISON_ROWS = [
   ],
   [
     "Pricing model",
-    "$1,500 CAD, flat (one-time)",
+    "$1,500, flat (one-time)",
     "Monthly retainer",
     "Free (Google product)",
   ],
@@ -168,7 +168,7 @@ const FAQ_ITEMS: {
   },
   {
     q: "How much does the audit cost?",
-    a: `$1,500 CAD, flat. One-time payment, no retainer. See the full audit page for what's included.`,
+    a: `$1,500, flat. One-time payment, no retainer. See the full audit page for what's included.`,
     auditLink: true,
   },
   {

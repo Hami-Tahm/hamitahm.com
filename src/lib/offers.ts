@@ -38,7 +38,7 @@ export const OFFERS = {
   audit: {
     name: "AI Visibility Audit",
     price: "$1,500",
-    priceNote: "CAD, flat fee, one-time",
+    priceNote: "Flat fee, one-time",
     /**
      * USD price for visitors outside Canada, added 2026-08-29 alongside
      * src/proxy.ts and src/lib/currency.ts. This is a REAL price backed
@@ -46,7 +46,7 @@ export const OFFERS = {
      * conversion of the CAD figure.
      *
      * ⚠️ THIS IS NOT AN FX CONVERSION AND NEVER SHOULD BE. Hami's explicit
-     * instruction: $1,500 USD flat, deliberately HIGHER than the $1,500 CAD
+     * instruction: $1,500 USD flat, deliberately HIGHER than the $1,500
      * price in absolute terms: non-Canada visitors are charged more, not an
      * equivalent-value conversion of the CAD price. Do not "fix" this back
      * down to a converted figure (an earlier draft of this file briefly had
@@ -55,7 +55,7 @@ export const OFFERS = {
      * pricing decision to get explicitly, not a rate to recalculate.
      */
     priceUSD: "$1,500",
-    priceNoteUSD: "USD, flat fee, one-time",
+    priceNoteUSD: "Flat fee, one-time",
     href: "/ai-visibility/ai-visibility-audit/",
     role: "Diagnosis: exactly where AI engines cite you, where they don't, and what to change.",
     /**
@@ -117,8 +117,8 @@ export const OFFERS = {
     name: "AI Visibility Action Plan",
     price: "From $4,500",
     /** Use this in prose. See PRICE DISPLAY RULE below. */
-    priceWithCurrency: "From $4,500 CAD",
-    priceNote: "CAD, fixed scope: the $1,500 audit fee is credited toward it",
+    priceWithCurrency: "From $4,500",
+    priceNote: "Fixed scope: the $1,500 audit fee is credited toward it",
     /**
      * Why $4,500 is a floor, not the number everyone pays: the final scope (and
      * therefore the final price) depends on the client's traffic volume, industry,
@@ -167,7 +167,7 @@ export const OFFERS = {
  *
  * On the live hub page these rendered with the space missing:
  *
- *     From $4,500CAD, fixed scope
+ *     From $4,500, fixed scope
  *     From $2,500/moCAD · optional
  *     on a fixed 6–12 monthsterm
  *

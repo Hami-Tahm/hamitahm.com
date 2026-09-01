@@ -26,7 +26,7 @@ const GEO_URL = "/ai-visibility/generative-engine-optimization-consultant-canada
 const CASE_STUDY_URL = HOMECALC_PROOF.caseStudyPath;
 const WALKTHROUGH_MINUTES = 60;
 const TURNAROUND = "7 business days";
-const PRICE_DISPLAY = "$1,500 CAD";
+const PRICE_DISPLAY = "$1,500";
 
 export const metadata: Metadata = {
   title: {
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
       "Answer Engine Optimization Consultant Canada | AEO Services",
   },
   description:
-    "Canada-based AEO consultant helping businesses make their content easier for Google AI Overviews, ChatGPT, Copilot and Perplexity to understand and cite. $1,500 CAD audit, delivered in 7 business days.",
+    "Canada-based AEO consultant helping businesses make their content easier for Google AI Overviews, ChatGPT, Copilot and Perplexity to understand and cite. $1,500 audit, delivered in 7 business days.",
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/answer-engine-optimization-consultant-canada/",
   },
@@ -88,7 +88,7 @@ const COMPARISON_ROWS = [
   ],
   [
     "Pricing model",
-    "Starts with $1,500 CAD audit, no retainer",
+    "Starts with $1,500 audit, no retainer",
     "Monthly retainer",
     "Monthly subscription",
   ],

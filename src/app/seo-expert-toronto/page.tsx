@@ -39,7 +39,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "How much does an SEO expert cost in Toronto?",
-    a: "For the market generally: $100–$250 an hour for experienced freelancers, monthly retainers of $1,500–$5,000 for small businesses and $5,000–$15,000 for mid-market, and project audits from $1,500–$5,000. Those are what other people charge, not what I sell. What I sell is one thing: the AI Visibility Audit at $1,500 CAD flat, one-time, no retainer, delivered in 7 business days, with an optional action plan afterward.",
+    a: "For the market generally: $100–$250 an hour for experienced freelancers, monthly retainers of $1,500–$5,000 for small businesses and $5,000–$15,000 for mid-market, and project audits from $1,500–$5,000. Those are what other people charge, not what I sell. What I sell is one thing: the AI Visibility Audit at $1,500 flat, one-time, no retainer, delivered in 7 business days, with an optional action plan afterward.",
   },
   {
     q: "How long does SEO take to produce results in Toronto?",
@@ -188,7 +188,7 @@ export default function SEOExpertTorontoPage() {
                 lineHeight: 1.5,
               }}
             >
-              Engagements start at $1,500 CAD for an AI Visibility Audit,
+              Engagements start at $1,500 for an AI Visibility Audit,
               see{" "}
               <Link href="/pricing/" style={{ color: "var(--accent)", fontWeight: 500 }}>what each step costs</Link>, or
               the{" "}

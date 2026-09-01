@@ -7,12 +7,12 @@ const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const CASE_STUDY_URL = HOMECALC_PROOF.caseStudyPath;
 const WALKTHROUGH_MINUTES = 60;
 const TURNAROUND = "7 business days";
-const PRICE_DISPLAY = "$1,500 CAD";
+const PRICE_DISPLAY = "$1,500";
 
 export const metadata: Metadata = {
   title: "AI Visibility for Canadian SaaS Companies",
   description:
-    "Ensure your SaaS product appears when buyers ask ChatGPT, Perplexity, or Google AI Overviews for alternatives, comparisons, and recommendations. Audit by Hami Tahm, $1,500 CAD flat.",
+    "Ensure your SaaS product appears when buyers ask ChatGPT, Perplexity, or Google AI Overviews for alternatives, comparisons, and recommendations. Audit by Hami Tahm, $1,500 flat.",
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/ai-visibility-for-saas-companies/",
   },
@@ -91,7 +91,7 @@ const COMPARISON_ROWS = [
   ],
   [
     "Pricing model",
-    "$1,500 CAD, flat (one-time)",
+    "$1,500, flat (one-time)",
     "Monthly retainer",
     "Free to claim, paid tiers for placement",
   ],
@@ -143,7 +143,7 @@ const FAQ_ITEMS: {
   },
   {
     q: "How much does the audit cost?",
-    a: `$1,500 CAD, flat. One-time payment, no retainer. See the full audit page for what's included.`,
+    a: `$1,500, flat. One-time payment, no retainer. See the full audit page for what's included.`,
     auditLink: true,
   },
   {

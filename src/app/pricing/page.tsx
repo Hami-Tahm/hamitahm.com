@@ -61,13 +61,13 @@ function buildTiers(auditPrice: string, auditPriceNote: string) {
     name: OFFERS.actionPlan.name,
     price: OFFERS.actionPlan.price,
     // NOT OFFERS.actionPlan.priceNote directly: that constant hardcodes
-    // "the $1,500 audit fee", which is wrong for a USD visitor seeing $1,100
-    // on the audit card above. Rather than guess how a USD audit payment
-    // converts into a credit against a CAD-only Action Plan quote (a real
-    // policy question, not a copy question, and not decided here), this note
-    // stays currency-agnostic for everyone. Whoever buys the plan gets the
-    // exact credit figure at quote time.
-    priceNote: "CAD, fixed scope: your audit fee is credited toward it",
+    // "the $1,500 audit fee", which assumes the visitor paid the CAD audit
+    // price. The Action Plan itself is a CAD-only quote regardless of what
+    // currency the audit was paid in (a real policy question, not a copy
+    // question, and not decided here), so this note stays generic about
+    // "your audit fee" for everyone. Whoever buys the plan gets the exact
+    // credit figure at quote time.
+    priceNote: "Fixed scope: your audit fee is credited toward it",
     href: OFFERS.actionPlan.href,
     role: OFFERS.actionPlan.role,
     ctaLabel: "See the Action Plan",
@@ -108,7 +108,7 @@ function buildFaqItems(auditPrice: string, auditPriceDisplay: string) {
   },
   {
     q: "What does AI SEO or AEO work cost in Canada?",
-    a: `It depends who you ask, because the category has several names (AI SEO, AEO, GEO, LLMO, AI visibility) and pricing models vary widely. Agency retainers for this work in Canada typically run $2,000–$5,000 per month, ongoing. My structure is different: a ${auditPrice} one-time audit, then an optional fixed-scope action plan from ${OFFERS.actionPlan.price.replace("From ", "")} CAD, where the final number scales with your traffic volume, industry, and site size. You can stop after the audit.`,
+    a: `It depends who you ask, because the category has several names (AI SEO, AEO, GEO, LLMO, AI visibility) and pricing models vary widely. Agency retainers for this work in Canada typically run $2,000–$5,000 per month, ongoing. My structure is different: a ${auditPrice} one-time audit, then an optional fixed-scope action plan from ${OFFERS.actionPlan.price.replace("From ", "")}, where the final number scales with your traffic volume, industry, and site size. You can stop after the audit.`,
   },
   {
     q: "Do you charge a monthly retainer?",
@@ -217,17 +217,6 @@ export default async function PricingPage() {
               where you can stop. You can go as far as the free checker and never spend
               anything.
             </p>
-          </RevealSection>
-
-          <RevealSection delay={0.18}>
-            <div style={{ marginTop: 34, display: "flex", gap: 14, flexWrap: "wrap" }}>
-              <Link href={OFFERS.audit.href} className="btn btn-primary">
-                Book the {auditPrice}{" "}audit <span className="arr">&rarr;</span>
-              </Link>
-              <Link href={OFFERS.checker.href} className="btn btn-ghost">
-                Or start free
-              </Link>
-            </div>
           </RevealSection>
         </div>
       </header>

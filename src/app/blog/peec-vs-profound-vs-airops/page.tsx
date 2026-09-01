@@ -1008,7 +1008,7 @@ export default function PeecVsProfoundVsAirOpsPost() {
                 }}
               >
                 Start with an audit to map your baseline and know which platforms
-                to prioritize, before committing to a subscription. $1,500 CAD
+                to prioritize, before committing to a subscription. $1,500
                 flat.
               </p>
               <Link
@@ -1016,7 +1016,7 @@ export default function PeecVsProfoundVsAirOpsPost() {
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
               >
-                Book Your AI Visibility Audit for $1,500 CAD{" "}
+                Book Your AI Visibility Audit for $1,500{" "}
                 <span className="arr">&rarr;</span>
               </Link>
             </div>

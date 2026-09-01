@@ -35,7 +35,7 @@ const TURNAROUND = "7 business days";
 /**
  * Dynamic, not static: the visible price and the JSON-LD Offer below already
  * switch between CAD and USD per visitor (getAuditPricing()); the <title>/
- * <meta description> used to be a hardcoded "$1,500 CAD" regardless of which
+ * <meta description> used to be a hardcoded "$1,500" regardless of which
  * price the same visitor saw in the body and schema. A USD visitor landing
  * from a search snippet that says CAD, then seeing USD everywhere on the
  * page, is exactly the kind of mismatch an AI engine (or a person) treats as

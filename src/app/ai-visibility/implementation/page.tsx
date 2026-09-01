@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     absolute: "AI Visibility Action Plan: Recommendations & Roadmap | Toronto",
   },
   description:
-    "After the audit: prioritized recommendations, a page-level action plan and a roadmap your team can ship, grounded in your own Search Console and Bing data. From $4,500 CAD.",
+    "After the audit: prioritized recommendations, a page-level action plan and a roadmap your team can ship, grounded in your own Search Console and Bing data. From $4,500.",
   alternates: { canonical: `https://hamitahm.com${SLUG}` },
 };
 
@@ -61,7 +61,7 @@ function buildFaqItems(priceDisplay: string) {
   },
   {
     q: "How much does it cost and how long does it take?",
-    a: `From $4,500 CAD, fixed scope, and the ${priceDisplay} audit fee is credited toward it; the final number scales with your traffic volume, industry, and site size. Most run up to 30 days. Larger or multi-language scopes are quoted from the audit. It is a one-time, fixed-scope engagement; optional monitoring and advisory is available afterward, but it's never required.`,
+    a: `From $4,500, fixed scope, and the ${priceDisplay} audit fee is credited toward it; the final number scales with your traffic volume, industry, and site size. Most run up to 30 days. Larger or multi-language scopes are quoted from the audit. It is a one-time, fixed-scope engagement; optional monitoring and advisory is available afterward, but it's never required.`,
   },
   {
     q: "Do you guarantee I'll get cited by AI?",
@@ -109,7 +109,7 @@ function buildStructuredData(faqItems: ReturnType<typeof buildFaqItems>) {
       provider: { "@id": "https://hamitahm.com/#hami-tahm" },
       url: `https://hamitahm.com${SLUG}`,
       description:
-        "Prioritized recommendations, a page-level action plan and a roadmap based on the AI Visibility Audit and on the client's own Search Console and Bing Webmaster Tools data. Built for the client's own team to implement. Fixed scope, from $4,500 CAD.",
+        "Prioritized recommendations, a page-level action plan and a roadmap based on the AI Visibility Audit and on the client's own Search Console and Bing Webmaster Tools data. Built for the client's own team to implement. Fixed scope, from $4,500.",
       offers: {
         "@type": "Offer",
         price: "4500",

@@ -7,12 +7,12 @@ const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const CASE_STUDY_URL = HOMECALC_PROOF.caseStudyPath;
 const WALKTHROUGH_MINUTES = 60;
 const TURNAROUND = "7 business days";
-const PRICE_DISPLAY = "$1,500 CAD";
+const PRICE_DISPLAY = "$1,500";
 
 export const metadata: Metadata = {
   title: "AI Visibility for Mortgage Brokers",
   description:
-    "Ensure your mortgage brokerage or real-estate company appears when buyers ask Google AI Overviews, ChatGPT, Gemini, or Claude. Audit by Hami Tahm: $1,500 CAD flat.",
+    "Ensure your mortgage brokerage or real-estate company appears when buyers ask Google AI Overviews, ChatGPT, Gemini, or Claude. Audit by Hami Tahm: $1,500 flat.",
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/ai-visibility-for-mortgage-brokers/",
   },
@@ -88,7 +88,7 @@ const COMPARISON_ROWS = [
   ],
   [
     "Pricing model",
-    "$1,500 CAD audit, flat (one-time)",
+    "$1,500 audit, flat (one-time)",
     "Monthly retainer",
     "Per-lead cost",
   ],
@@ -150,7 +150,7 @@ const FAQ_ITEMS: {
   },
   {
     q: "What does this cost?",
-    a: `$1,500 CAD, flat. One-time payment, no retainer. See the full audit page for what's included.`,
+    a: `$1,500, flat. One-time payment, no retainer. See the full audit page for what's included.`,
     auditLink: true,
   },
   {

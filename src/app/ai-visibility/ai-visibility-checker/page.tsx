@@ -33,7 +33,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Is this AI visibility checker free?",
-    a: "Yes, and there's no card and no trial. Submit your domain and keywords and you receive a detailed report by email at no cost. The free check runs for Canada and the United States; these engines answer differently depending on the country the search runs from, so a report from the wrong market would be misleading. If you're somewhere else you can still join the list and I'll tell you if it opens. If you then want a full audit with a prioritized action plan, that's the $1,500 CAD AI Visibility Audit.",
+    a: "Yes, and there's no card and no trial. Submit your domain and keywords and you receive a detailed report by email at no cost. The free check runs for Canada and the United States; these engines answer differently depending on the country the search runs from, so a report from the wrong market would be misleading. If you're somewhere else you can still join the list and I'll tell you if it opens. If you then want a full audit with a prioritized action plan, that's the $1,500 AI Visibility Audit.",
   },
   {
     q: "Which AI engines does it check?",

@@ -71,7 +71,7 @@ const MEASUREMENT_STAGES = [
       "Referral traffic, qualified enquiries, closed work. No AI platform reports this; it comes from your own analytics. It is also the only row that pays for anything.",
   },
 ] as const;
-const PRICE_DISPLAY = "$1,500 CAD";
+const PRICE_DISPLAY = "$1,500";
 
 export const metadata: Metadata = {
   title: {
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
       "Generative Engine Optimization Consultant Canada | Hami Tahm",
   },
   description:
-    "Canadian GEO consultant helping businesses measure and improve how they are retrieved, mentioned and cited across Google AI, Copilot, ChatGPT, Perplexity, Gemini and Claude. Flat-fee audit, $1,500 CAD. No placement guaranteed.",
+    "Canadian GEO consultant helping businesses measure and improve how they are retrieved, mentioned and cited across Google AI, Copilot, ChatGPT, Perplexity, Gemini and Claude. Flat-fee audit, $1,500. No placement guaranteed.",
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/generative-engine-optimization-consultant-canada/",
   },
@@ -152,7 +152,7 @@ const COMPARISON_ROWS = [
   ],
   [
     "Pricing model",
-    "Starts with $1,500 CAD audit, no retainer",
+    "Starts with $1,500 audit, no retainer",
     "Monthly retainer",
     "Monthly subscription",
   ],

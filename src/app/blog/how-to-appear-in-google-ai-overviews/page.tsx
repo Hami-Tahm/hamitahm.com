@@ -755,7 +755,7 @@ export default function HowToAppearInGoogleAIOverviewsPost() {
                 }}
               >
                 An audit maps your Google AIO presence alongside ChatGPT,
-                Perplexity, and Gemini. $1,500 CAD flat, prioritized action
+                Perplexity, and Gemini. $1,500 flat, prioritized action
                 plan included.
               </p>
               <Link
@@ -763,7 +763,7 @@ export default function HowToAppearInGoogleAIOverviewsPost() {
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
               >
-                Book Your AI Visibility Audit for $1,500 CAD{" "}
+                Book Your AI Visibility Audit for $1,500{" "}
                 <span className="arr">&rarr;</span>
               </Link>
             </div>
