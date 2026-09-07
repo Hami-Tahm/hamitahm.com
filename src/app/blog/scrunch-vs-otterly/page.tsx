@@ -85,8 +85,13 @@ const QUICK_COMPARISON_ROWS = [
   },
   {
     label: "AI agent / bot traffic tracking",
-    scrunch: "Included from Core",
+    scrunch: "Included from Core ($250/mo)",
     otterly: "Agent Analytics from Standard ($189/mo) up: 200k events/mo",
+  },
+  {
+    label: "Free alternative for bot-traffic visibility alone",
+    scrunch: "Microsoft Clarity's AI Bot Activity dashboard, $0, since Jan 2026",
+    otterly: "Same free alternative applies",
   },
   {
     label: "Workspaces / multi-brand",
@@ -126,6 +131,10 @@ const FAQ_ITEMS = [
   {
     q: "Does either tool actually fix AI visibility problems, or just track them?",
     a: "Scrunch goes further on the built-in-fix side: Site Maps scores every tracked page 0-100 on its own AI-accessibility audit, AXP (its Agent Experience Platform) serves an optimized version of pages to AI agents, and a basic content-generation feature is included from Core. Otterly is closer to Peec in this comparison series: strong on measurement (citations, share of voice, sentiment, domain ranking), with GEO URL Audits included but positioned as a diagnostic, not an on-page fix. Neither replaces a written, prioritized action plan built for your own site.",
+  },
+  {
+    q: "Is paying for AI bot traffic tracking worth it, when Microsoft Clarity does this for free?",
+    a: "Not for that feature alone. Microsoft Clarity launched an AI Bot Activity dashboard in January 2026 (reading real server logs from a connected CDN, not client-side JS) and added a robots.txt-violations layer in June 2026, both at Clarity's standard price of $0. That covers the same ground as the \"AI agent/bot traffic tracking\" checkbox on Scrunch's Core plan and Otterly's Agent Analytics feature: which AI crawlers are hitting your site and whether they're following robots.txt. What Clarity does not do is score individual pages for AI-readability or serve an optimized version of a page to an agent; that's Scrunch's Site Maps and AXP specifically, and Otterly's GEO URL Audits cover the diagnostic half without the serving part either. If bot-traffic visibility is the only thing you need, start with the free tool.",
   },
   {
     q: "Do I need a tool or a consultant for AI visibility?",
