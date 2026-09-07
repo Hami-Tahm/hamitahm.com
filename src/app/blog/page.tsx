@@ -33,6 +33,20 @@ const posts = [
       "Ran my own audit method on my own name. hamitahm.com is the most-cited domain in the panel, ahead of every named competing agency's own site, but AI still recommends someone else by name almost every time.",
   },
   {
+    href: "/blog/homecalc-scrunch-citation-mention-gap/",
+    cat: "Original research",
+    title: "HomeCalc Is the Most-Cited Domain in Its Category, and Still Loses the Brand Mention",
+    excerpt:
+      "A third, independent instrument on HomeCalc.ca: Scrunch's own dashboard. Top of the citation table, behind two competitors on brand mentions, a perfect technical audit next to 22 pages with zero citations, and zero AI-referred traffic in 90 days.",
+  },
+  {
+    href: "/blog/scrunch-vs-otterly/",
+    cat: "Tools & Comparisons",
+    title: "Scrunch vs. Otterly.AI (2026): Pricing & Best Fit",
+    excerpt:
+      "Two AI visibility tracking tools compared on published pricing, engine coverage, and what each is actually built to do. Every figure read from the vendor's own page and linked.",
+  },
+  {
     href: "/blog/which-ai-platform-matters-most/",
     cat: "Strategy",
     title: "Which AI Platform Actually Matters Most Right Now?",

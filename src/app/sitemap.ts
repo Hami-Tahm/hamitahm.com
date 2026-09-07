@@ -84,6 +84,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Third original-research asset: a self-benchmark (Otterly.AI), same
     // instrument as the HomeCalc one above, different subject. Added 2026-08-31.
     { path: "/blog/hamitahm-ai-visibility-benchmark/", priority: 0.8, changeFrequency: "monthly" },
+    // Fourth original-research asset: a third, separate HomeCalc instrument
+    // (Scrunch, not Otterly/Bing). Added 2026-09-07.
+    { path: "/blog/homecalc-scrunch-citation-mention-gap/", priority: 0.8, changeFrequency: "monthly" },
     { path: "/blog/what-is-ai-visibility/", priority: 0.7 },
     { path: "/blog/what-is-answer-engine-optimization/", priority: 0.65 },
     { path: "/blog/aeo-vs-geo-vs-seo/", priority: 0.7 },
@@ -94,6 +97,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/blog/best-ai-visibility-tools/", priority: 0.85 },
     { path: "/blog/ai-visibility-tools-vs-audit/", priority: 0.7 },
     { path: "/blog/peec-vs-profound-vs-airops/", priority: 0.65 },
+    { path: "/blog/scrunch-vs-otterly/", priority: 0.65 },
     { path: "/blog/faq-schema-accordion-bug/", priority: 0.75 },
     { path: "/blog/spa-to-ssg-ai-visibility/", priority: 0.75 },
     // Original cross-platform comparison (Copilot vs Google generative AI), the
@@ -167,6 +171,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog/peec-vs-profound-vs-airops/": "2026-08-24",
     "/blog/homecalc-ai-search-mortgage-ranking/": "2026-08-31",
     "/blog/hamitahm-ai-visibility-benchmark/": "2026-08-31",
+    "/blog/homecalc-scrunch-citation-mention-gap/": "2026-09-07",
+    "/blog/scrunch-vs-otterly/": "2026-09-07",
+    "/blog/": "2026-09-07",
     "/blog/what-is-ai-visibility/": "2026-08-11",
     "/blog/best-ai-visibility-tools/": "2026-08-24",
     "/blog/how-to-check-ai-visibility/": "2026-08-26",
