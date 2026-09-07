@@ -38,7 +38,7 @@ const ARTICLE_TITLE = "Best AI Visibility Tools & Software (2026)";
 const ARTICLE_DESCRIPTION =
   "AI visibility tools and software in 2026: engine coverage and entry pricing taken from each vendor's own documentation, with the source linked for every claim. By an independent consultant with no affiliate relationships.";
 const DATE_PUBLISHED = "2026-06-09";
-const DATE_MODIFIED = "2026-08-24";
+const DATE_MODIFIED = "2026-09-07";
 
 /**
  * ── WHY THIS FILE LOOKS LIKE THIS ──
@@ -81,6 +81,8 @@ type Tool = {
   whoFor: string;
   /** The thing a buyer would get wrong if they only read the marketing page. */
   watchOut: string;
+  /** Overrides DATE_FACT_CHECKED for this one row, if it was verified on a different day. */
+  dateRead?: string;
 };
 
 const TOOLS: readonly Tool[] = [
@@ -115,6 +117,22 @@ const TOOLS: readonly Tool[] = [
       "Small teams and agencies that want systematic multi-engine tracking at a price that does not require a procurement process.",
     watchOut:
       "The engine list is the thing to read carefully. Copilot and AI Overviews are included; Gemini and Claude are not. Adding Gemini costs $9–$149/mo depending on plan, and Claude $29–$439/mo. A quoted base price can understate the real cost by a wide margin if Gemini or Claude matter to you.",
+  },
+  {
+    name: "Scrunch",
+    category: "dedicated",
+    engines:
+      "Core: ChatGPT, Perplexity, Google AI Overviews, Microsoft Copilot. Enterprise: 9 total, adding Claude, Gemini, Meta AI, Google AI Mode and Grok.",
+    entryPrice: "$250/mo (Core, 125 prompt variants, 7-day free trial) · Enterprise not published (\"talk to us\")",
+    sourceUrl: "https://scrunch.com/pricing",
+    sourceLabel: "Scrunch pricing page",
+    what:
+      "Tracking plus an on-page fix layer most competitors don't publish: Site Maps scores every tracked page 0-100 on AI accessibility, and AXP (Agent Experience Platform) serves an optimized version of a page to AI agents rather than only reporting a problem. Core also includes AI agent/bot traffic tracking, sentiment analysis and basic content generation.",
+    whoFor:
+      "Teams whose AI visibility gap includes a real technical component and who want measurement and a partial fix inside one tool rather than a separate developer handoff.",
+    watchOut:
+      "There is no tier below $250/month, and it buys one brand workspace, five seats, and a 25-page site-map limit. API access, MCP access, expanded model coverage and SSO beyond Google are all Enterprise-only, and Enterprise carries no published price at all. See the fuller Scrunch vs Otterly comparison for the entry-plan math against a cheaper published alternative.",
+    dateRead: "2026-09-07",
   },
   {
     name: "SE Visible (SE Ranking)",
@@ -713,7 +731,7 @@ export default function BestAIVisibilityToolsPost() {
                       >
                         {tool.sourceLabel}
                       </a>
-                      , read {DATE_FACT_CHECKED}
+                      , read {tool.dateRead ?? DATE_FACT_CHECKED}
                     </p>
                   </div>
                 ))}

@@ -175,7 +175,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog/scrunch-vs-otterly/": "2026-09-07",
     "/blog/": "2026-09-07",
     "/blog/what-is-ai-visibility/": "2026-08-11",
-    "/blog/best-ai-visibility-tools/": "2026-08-24",
+    "/blog/best-ai-visibility-tools/": "2026-09-07",
     "/blog/how-to-check-ai-visibility/": "2026-08-26",
     "/blog/aeo-vs-geo-vs-seo/": "2026-08-26",
     "/blog/ai-visibility-audit-checklist/": "2026-08-26",
