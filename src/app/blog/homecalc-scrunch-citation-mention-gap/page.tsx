@@ -14,10 +14,9 @@ const SLUG = "homecalc-scrunch-citation-mention-gap";
  * (Bing Webmaster Tools) or citation-study.ts (the published Zenodo dataset).
  * This post is explicit throughout about which numbers come from Scrunch.
  */
-const ARTICLE_TITLE =
-  "HomeCalc Is the Most-Cited Domain in Its Category, and Still Loses the Brand Mention";
+const ARTICLE_TITLE = "HomeCalc Is Most-Cited, Yet Rarely Mentioned by AI";
 const ARTICLE_DESCRIPTION =
-  "Reading HomeCalc.ca's own Scrunch dashboard: cited more than any competitor, but named in the answer text less often than Ratehub or WOWA, plus zero AI-referred site traffic in 90 days. Every number sourced and dated.";
+  "HomeCalc.ca's own Scrunch data: cited more than any competitor, but named less often than Ratehub or WOWA, with zero AI-referred traffic in 90 days.";
 const DATE_PUBLISHED = "2026-09-07";
 const READ_DATE_HUMAN = "September 7, 2026";
 

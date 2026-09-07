@@ -94,7 +94,7 @@ After consolidating data from all sources, the following conclusions emerged:
 </ol>
 While not claiming to be entirely free of inaccuracies, this report addresses a significant gap in reliable market data. In a landscape often marked by flawed or questionable reports, it offers a more informed and realistic perspective on the competitive dynamics of Iran’s online home services market.</p><p> </p><p><img class="aligncenter" src="/images/writing/home-service-in-iran/home-services-in-iran-2.png" alt="Iran online home services market competitive landscape: Achareh, Sanjagh, and Khedmat Az Ma comparison" /></p><p> </p><p>Source for Achareh:
 <ol>
- 	<li><a href="https://meet.google.com/sxt-mxkb-fuc?ijlm=1735580192603&hs=187&adhoc=1" target="_blank" rel="noopener">podcast</a></li>
+ 	<li>podcast</li>
  	<li><a href="https://digiato.com/article/2018/12/09/%D8%B3%D8%B1%D9%85%D8%A7%DB%8C%D9%87-%DA%AF%D8%B0%D8%A7%D8%B1%DB%8C-%DB%B6-%DB%B2-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86-%D8%AF%D9%84%D8%A7%D8%B1%DB%8C-%D9%87%D9%85%D8%B1%D8%A7%D9%87-%D8%A7%D9%88%D9%84" target="_blank" rel="noopener">6.2 million US (round 2)</a></li>
  	<li><a href="https://www.zoomit.ir/tech-iran/414543-kayson-investment-in-achareh/" target="_blank" rel="noopener">70 billion Toman</a></li>
 </ol>

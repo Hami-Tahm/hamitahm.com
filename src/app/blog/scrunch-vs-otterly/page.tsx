@@ -6,9 +6,9 @@ import { buildBlogSchema } from "@/lib/blog-schema";
 
 const SLUG = "scrunch-vs-otterly";
 
-const ARTICLE_TITLE = "Scrunch vs. Otterly.AI (2026): Pricing & Best Fit";
+const ARTICLE_TITLE = "Scrunch vs Otterly.AI: Pricing & Fit (2026)";
 const ARTICLE_DESCRIPTION =
-  "Scrunch and Otterly.AI compared on published pricing, AI-engine coverage and what each is actually built to do. Every figure read from the vendor's own pricing page and linked, verified September 7, 2026.";
+  "Scrunch vs. Otterly.AI compared on pricing, AI-engine coverage, and what each is built to do, sourced from each vendor's own pricing page.";
 const DATE_PUBLISHED = "2026-09-07";
 const DATE_VERIFIED_HUMAN = "September 7, 2026";
 const DATE_VERIFIED = "2026-09-07";
