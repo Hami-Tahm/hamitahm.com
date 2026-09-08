@@ -576,11 +576,11 @@ export default async function PricingPage() {
                   position: "relative",
                 }}
               >
-                <Link href={OFFERS.audit.href} className="btn btn-primary">
-                  Book the audit <span className="arr">&rarr;</span>
+                <Link href={OFFERS.checker.href} className="btn btn-primary">
+                  Get free AI visibility check <span className="arr">&rarr;</span>
                 </Link>
-                <Link href={OFFERS.checker.href} className="btn btn-ghost">
-                  Run the free checker
+                <Link href={OFFERS.audit.href} className="btn btn-ghost">
+                  Or book the audit
                 </Link>
               </div>
               <p
