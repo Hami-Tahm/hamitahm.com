@@ -730,15 +730,15 @@ export default function AEOvsGEOvsSEOPost() {
                 }}
               >
                 An AI visibility audit maps your state across SEO, AEO, and GEO
-                and gives you a prioritized action plan. $1,500 flat: no
-                retainer.
+                and gives you a prioritized action plan. Scoped to your
+                business, no retainer.
               </p>
               <Link
                 href={AUDIT_URL}
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
               >
-                Book Your AI Visibility Audit for $1,500{" "}
+                Book Your AI Visibility Audit{" "}
                 <span className="arr">&rarr;</span>
               </Link>
             </div>
@@ -875,7 +875,7 @@ function InlineAuditCTA() {
         plan.
       </p>
       <Link href={AUDIT_URL} className="btn btn-primary">
-        Book Your AI Visibility Audit for $1,500{" "}
+        Book Your AI Visibility Audit{" "}
         <span className="arr">&rarr;</span>
       </Link>
     </div>

@@ -4,6 +4,7 @@ import { RevealSection } from "@/components/Reveal";
 import { HOMECALC_PROOF, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
 import { SNAPSHOT } from "@/lib/ai-citation-proof";
 import { getAuditPricing } from "@/lib/currency";
+import { BOOKING_URL, AUDIT_CTA_LABEL, AUDIT_PRICE_DISPLAY } from "@/lib/offers";
 import { ShortlistReasons } from "@/components/ShortlistReasons";
 import { ZoomableImage } from "@/components/ZoomableImage";
 
@@ -15,20 +16,18 @@ const CHART_SRC = "/images/case-studies/homecalc-citation-chart.jpg";
 const CHART_ALT = `Bing Webmaster Tools AI Performance console for homecalc.ca, three-month view: AI citations climbing from near-zero in early May 2026 to ${HOMECALC_PROOF.citations} total across ${HOMECALC_PROOF.pagesCited} cited pages, with daily peaks of ${HOMECALC_PROOF.peakPerDay}.`;
 
 /**
- * Self-serve checkout. WHY BOTH PATHS EXIST: at $1,500 some buyers pay
- * immediately and some want to talk first. Removing either costs sales: the
- * primary button pays, the secondary keeps the conversation route open. Do
- * not "simplify" to one.
+ * ⚠️ CALL-GATED SINCE 2026-09-08. The self-serve Stripe checkout produced
+ * zero direct signups; a CRO expert and a founder-advisor both flagged
+ * showing the exact price upfront as the likely cause (see the 2026-09-08
+ * note in src/lib/offers.ts). Every CTA on this page now leads to booking a
+ * free call (BOOKING_URL, imported from offers.ts) as the PRIMARY action,
+ * not straight to Stripe.
  *
- * The price and checkout URL are no longer static; see getAuditPricing()
- * below. Canadian visitors get the CAD price/link; everyone else gets a real
- * USD price backed by its own Stripe Payment Link (src/lib/currency.ts).
- * That's also why this page is now an async component and why FAQ_ITEMS /
- * COMPARISON_ROWS moved from module scope into functions: both embed the
- * price as text and have to be built per-request, after we know which
- * currency the visitor is seeing.
+ * getAuditPricing() is still called below, but only for the schema.org Offer
+ * node's `price`/`priceCurrency`, which needs a real number regardless of
+ * what visible copy says. Nothing on this page should render
+ * `priceWithCurrency` or `checkoutUrl` as visible text or a button anymore.
  */
-const BOOKING_URL = "/contact/";
 const WALKTHROUGH_MINUTES = 60;
 const TURNAROUND = "7 business days";
 
@@ -42,21 +41,19 @@ const TURNAROUND = "7 business days";
  * a signal something's wrong. Fixed 2026-08-31: metadata now reads the same
  * cookie-derived currency as the rest of the page.
  */
-export async function generateMetadata(): Promise<Metadata> {
-  const { priceWithCurrency } = await getAuditPricing();
-  return {
-    // Buyers search this deliverable as "ChatGPT visibility audit", "AI search audit"
-    // and "AEO audit" as often as "AI visibility audit"; title/description carry the
-    // aliases so one page ranks for the whole cluster.
-    title: `ChatGPT & AI Visibility Audit: ${priceWithCurrency} Flat`,
-    description: `AI visibility audit across Google AI Overviews, ChatGPT, Gemini, and Claude (also called a ChatGPT visibility or AEO audit). ${priceWithCurrency} flat, by Hami Tahm.`,
-    alternates: {
-      canonical: "https://hamitahm.com/ai-visibility/ai-visibility-audit/",
-    },
-  };
-}
+export const metadata: Metadata = {
+  // Buyers search this deliverable as "ChatGPT visibility audit", "AI search audit"
+  // and "AEO audit" as often as "AI visibility audit"; title/description carry the
+  // aliases so one page ranks for the whole cluster.
+  title: "ChatGPT & AI Visibility Audit",
+  description:
+    "AI visibility audit across Google AI Overviews, ChatGPT, Gemini, and Claude (also called a ChatGPT visibility or AEO audit), by Hami Tahm. Scoped to your business and confirmed on a free call.",
+  alternates: {
+    canonical: "https://hamitahm.com/ai-visibility/ai-visibility-audit/",
+  },
+};
 
-function buildFaqItems(priceDisplay: string) {
+function buildFaqItems() {
   return [
   {
     q: "How do I get my business to show up in ChatGPT and AI search?",
@@ -89,7 +86,7 @@ function buildFaqItems(priceDisplay: string) {
   },
   {
     q: "Is there a free AI visibility audit?",
-    a: `No. Free tools give you a generic score from an algorithm. This audit is run personally and produces a custom action plan for your business. The flat fee is ${priceDisplay}.`,
+    a: `Not the full audit, no. Free tools give you a generic score from an algorithm; this audit is run personally and produces a custom action plan for your business. It is priced to your business and confirmed on a free call. If you want a free first read, run the AI Visibility Checker instead.`,
   },
   {
     q: "What happens after I receive the report?",
@@ -102,7 +99,7 @@ function buildFaqItems(priceDisplay: string) {
   ] as const;
 }
 
-function buildComparisonRows(priceDisplay: string) {
+function buildComparisonRows() {
   return [
   ["Who runs it", "Hami Tahm, personally", "Account manager and junior team", "Algorithm, no human review"],
   [
@@ -117,7 +114,7 @@ function buildComparisonRows(priceDisplay: string) {
     "Templated across clients",
     "Same output for everyone",
   ],
-  ["Pricing", `${priceDisplay}, flat`, "Retainer or quote on request", "Monthly subscription"],
+  ["Pricing", "Scoped to your business, confirmed on a call", "Retainer or quote on request", "Monthly subscription"],
   [
     "Case study access",
     "Public, named client (HomeCalc.ca)",
@@ -219,9 +216,11 @@ function buildStructuredData(faqItems: ReturnType<typeof buildFaqItems>, price: 
 }
 
 export default async function AIVisibilityAudit() {
-  const { price, priceWithCurrency, checkoutUrl, currency } = await getAuditPricing();
-  const FAQ_ITEMS = buildFaqItems(priceWithCurrency);
-  const COMPARISON_ROWS = buildComparisonRows(priceWithCurrency);
+  // Only used for the schema.org Offer node below; nothing here renders as
+  // visible text (see the 2026-09-08 note above).
+  const { price, currency } = await getAuditPricing();
+  const FAQ_ITEMS = buildFaqItems();
+  const COMPARISON_ROWS = buildComparisonRows();
   // Schema.org price must be a plain number: strip the "$" and thousands comma.
   const schemaPrice = Number(price.replace(/[^0-9.]/g, ""));
   const structuredData = buildStructuredData(FAQ_ITEMS, schemaPrice, currency);
@@ -301,30 +300,20 @@ export default async function AIVisibilityAudit() {
                 lineHeight: 1.5,
               }}
             >
-              {priceWithCurrency} flat. One consultant. Public case study included.
+              {AUDIT_PRICE_DISPLAY}. One consultant. Public case study included.
             </p>
           </RevealSection>
 
           <RevealSection delay={0.14}>
             <div style={{ marginTop: 32 }}>
-              <a
-                href={checkoutUrl}
+              <Link
+                href={BOOKING_URL}
                 className="btn btn-primary"
-                data-gtm="audit-checkout-hero"
+                data-gtm="audit-book-call-hero"
               >
-                Book &amp; pay for {priceWithCurrency} <span className="arr">&rarr;</span>
-              </a>
+                {AUDIT_CTA_LABEL} <span className="arr">&rarr;</span>
+              </Link>
               <div style={{ marginTop: 14, display: "flex", gap: 18, flexWrap: "wrap" }}>
-                <Link
-                  href={BOOKING_URL}
-                  style={{
-                    fontFamily: "var(--mono)",
-                    fontSize: 13,
-                    color: "var(--faint)",
-                  }}
-                >
-                  Prefer to talk first? Get in touch &rarr;
-                </Link>
                 <Link
                   href="/ai-visibility/ai-visibility-checker/"
                   style={{
@@ -906,8 +895,8 @@ export default async function AIVisibilityAudit() {
             <div style={{ marginTop: 32 }}>
               <ProcessStep
                 n="1"
-                title="Book and pay."
-                body={`${priceWithCurrency} flat. One invoice, one payment, no retainer.`}
+                title="Book a call."
+                body="Book a free call to scope your business and confirm price. No pressure, no obligation."
               />
               <ProcessStep
                 n="2"
@@ -960,7 +949,7 @@ export default async function AIVisibilityAudit() {
                   position: "relative",
                 }}
               >
-                {priceWithCurrency}. Flat fee. One-time.
+                Tailored pricing. {AUDIT_PRICE_DISPLAY}.
               </p>
 
               <div
@@ -1020,7 +1009,6 @@ export default async function AIVisibilityAudit() {
                     // retainer" flatly contradicts the optional Monitoring tier.
                     "Not an open-ended retainer",
                     "Not a subscription you have to remember to cancel",
-                    "Not gated by a sales call",
                   ].map((item) => (
                     <li
                       key={item}
@@ -1037,14 +1025,14 @@ export default async function AIVisibilityAudit() {
                 </ul>
               </div>
 
-              <a
-                href={checkoutUrl}
+              <Link
+                href={BOOKING_URL}
                 className="btn btn-primary"
                 style={{ marginTop: 36, position: "relative" }}
-                data-gtm="audit-checkout-included"
+                data-gtm="audit-book-call-included"
               >
-                Book &amp; pay for {priceWithCurrency} <span className="arr">&rarr;</span>
-              </a>
+                {AUDIT_CTA_LABEL} <span className="arr">&rarr;</span>
+              </Link>
             </div>
           </RevealSection>
         </div>
@@ -1235,22 +1223,17 @@ export default async function AIVisibilityAudit() {
                   position: "relative",
                 }}
               >
-                {priceWithCurrency}. Flat fee. Report and walkthrough call within{" "}
-                {TURNAROUND}.
+                {AUDIT_PRICE_DISPLAY}. Report and walkthrough call within{" "}
+                {TURNAROUND} of booking.
               </p>
-              <a
-                href={checkoutUrl}
+              <Link
+                href={BOOKING_URL}
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
-                data-gtm="audit-checkout-final"
+                data-gtm="audit-book-call-final"
               >
-                Book &amp; pay for {priceWithCurrency} <span className="arr">&rarr;</span>
-              </a>
-              <div style={{ marginTop: 16, position: "relative" }}>
-                <Link href={BOOKING_URL} style={{ color: "var(--muted)", fontSize: 14 }}>
-                  Prefer to talk it through first? &rarr;
-                </Link>
-              </div>
+                {AUDIT_CTA_LABEL} <span className="arr">&rarr;</span>
+              </Link>
               <p
                 style={{
                   marginTop: 20,

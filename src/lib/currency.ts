@@ -54,6 +54,18 @@ export type AuditPricing = {
   checkoutUrl: string;
 };
 
+/**
+ * ⚠️ NO LONGER USED TO RENDER VISIBLE PRICING COPY, as of 2026-09-08. Pricing
+ * is now call-gated (see the 2026-09-08 note in src/lib/offers.ts): visitors
+ * no longer see a dollar figure on the page, they see
+ * `AUDIT_PRICE_DISPLAY` from offers.ts and a "book a call" CTA instead.
+ *
+ * This function is kept for internal/schema purposes only: Stripe checkout
+ * amounts (`checkoutUrl`) and schema.org Offer node prices still need a real
+ * currency-aware number even though the page no longer prints one. Any page
+ * that used to call this purely to print `{pricing.priceWithCurrency}` in
+ * visible text should switch to the offers.ts display constants instead.
+ */
 export async function getAuditPricing(): Promise<AuditPricing> {
   const currency = await getCurrency();
 

@@ -929,14 +929,14 @@ export default function WhatIsAIVisibilityPost() {
                 }}
               >
                 Structured audit, written report, action plan, and walkthrough
-                call. $1,500 flat, no retainer.
+                call. Scoped to your business, no retainer.
               </p>
               <Link
                 href={AUDIT_URL}
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
               >
-                Book Your AI Visibility Audit for $1,500{" "}
+                Book Your AI Visibility Audit{" "}
                 <span className="arr">&rarr;</span>
               </Link>
             </div>
@@ -1094,7 +1094,7 @@ function InlineAuditCTA() {
         action plan.
       </p>
       <Link href={AUDIT_URL} className="btn btn-primary">
-        Book Your AI Visibility Audit for $1,500{" "}
+        Book Your AI Visibility Audit{" "}
         <span className="arr">&rarr;</span>
       </Link>
     </div>

@@ -26,6 +26,26 @@
  * Positioning rule: it is never required to get started, and it is term-limited (not
  * open-ended). Copy must say "no retainer to get started / optional ongoing monitoring",
  * NOT the old absolute "no retainer, not a subscription," which now contradicts it.
+ *
+ * ⚠️ PRICING BECAME CALL-GATED ON 2026-09-08. READ THIS BEFORE PRINTING A PRICE.
+ *
+ * The self-serve $1,500 checkout (live since 2026-07-28) produced zero direct
+ * signups. A CRO expert and a founder-advisor independently reviewed the funnel
+ * and both said the same thing: showing the exact price upfront, before a
+ * visitor has talked to anyone, was killing conversion. Hami's decision: every
+ * price on the site is now disclosed on a call rather than published, and every
+ * pricing CTA points to booking a call (or, failing that, the free checker)
+ * instead of straight to Stripe checkout.
+ *
+ * The raw price fields above (`price`, `priceUSD`, `actionPlan.price`,
+ * `priceWithCurrency`, etc.) are NOT deleted: they still back Stripe checkout
+ * amounts and schema.org Offer nodes, which need a real number regardless of
+ * what the page shows a visitor. What changed is which constants pages should
+ * RENDER as visible copy. Use the new display constants below
+ * (`AUDIT_PRICE_DISPLAY`, `ACTION_PLAN_PRICE_DISPLAY`) and the new CTA
+ * constants (`BOOKING_URL`, `AUDIT_CTA_LABEL`) for anything a visitor reads.
+ * Do not reintroduce a dollar figure into visible copy without a new,
+ * equally explicit decision from Hami reversing this one.
  */
 
 export const OFFERS = {
@@ -207,9 +227,23 @@ export const OFFERS = {
  * wording was built to avoid. When October 2026 arrives there are only two valid
  * moves: raise the prices in OFFERS above, or set `active: false` and remove the
  * notice. Do not leave it standing past the date.
+ *
+ * ⚠️ TURNED OFF 2026-09-08, alongside the call-gated pricing decision above.
+ * This notice depends on a published price ("run at the prices shown here")
+ * that no longer appears on the page, so it no longer makes sense to show.
+ * More importantly: Hami decided to drop this FOMO/urgency framing outright.
+ * Zero direct signups from the published $1,500 checkout is not a sign of
+ * unmet urgency, it is the opposite: nobody was converting even with a
+ * deadline attached. Manufacturing urgency ("rates increase soon") also
+ * contradicts the trust-building goal behind book-a-call-first positioning;
+ * a visitor who is being asked to trust a consultant enough to get on a call
+ * should not simultaneously be pressured by a countdown. `text` is kept
+ * (not deleted) in case a genuine, real future increase needs this shape
+ * again, but `active` must stay `false` unless Hami explicitly reverses
+ * this.
  */
 export const PRICING_NOTICE = {
-  active: true,
+  active: false,
   text: "Rates increase in October 2026. Engagements booked before then run at the prices shown here.",
 } as const;
 
@@ -235,3 +269,21 @@ export const AUDIT_PLATFORMS = [
 
 export const AUDIT_PLATFORM_COUNT = AUDIT_PLATFORMS.length;
 export const AUDIT_PLATFORM_COUNT_WORD = "six";
+
+/**
+ * Visitor-facing display copy for prices, added 2026-09-08 alongside the
+ * call-gated pricing decision above. These are what pages should RENDER;
+ * the raw `price` / `priceUSD` / `priceWithCurrency` fields on OFFERS stay
+ * in place for Stripe and schema.org use only.
+ */
+export const AUDIT_PRICE_DISPLAY = "Scoped to your business, confirmed on a free call";
+export const ACTION_PLAN_PRICE_DISPLAY = "Scoped to your business";
+
+/**
+ * Single source of truth for the booking destination and its CTA label,
+ * added 2026-09-08. Previously duplicated locally in
+ * src/app/ai-visibility/ai-visibility-audit/page.tsx; that local copy should
+ * be replaced with this import rather than kept as a second definition.
+ */
+export const BOOKING_URL = "/contact/";
+export const AUDIT_CTA_LABEL = "Book a free call";

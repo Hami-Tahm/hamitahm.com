@@ -713,7 +713,7 @@ export default function WhatIsAnswerEngineOptimizationPost() {
                 <Link href={AUDIT_URL} style={linkStyle}>
                   AI visibility audit
                 </Link>{" "}
-                ($1,500 flat).
+(priced on a free call).
               </p>
               <Link
                 href={AEO_URL}

@@ -518,7 +518,7 @@ export default function CitedByAiEnginesCaseStudy() {
                   position: "relative",
                 }}
               >
-                $1,500 flat. Report and walkthrough call within {TURNAROUND}.
+                Scoped to your business, confirmed on a free call. Report and walkthrough call within {TURNAROUND}.
               </p>
               <Link
                 href={AUDIT_URL}

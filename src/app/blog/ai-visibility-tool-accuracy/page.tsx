@@ -4,8 +4,7 @@ import Image from "next/image";
 import { RevealSection } from "@/components/Reveal";
 import { AuthorByline } from "@/components/AuthorByline";
 import { buildBlogSchema } from "@/lib/blog-schema";
-import { OFFERS } from "@/lib/offers";
-import { getAuditPricing } from "@/lib/currency";
+import { OFFERS, AUDIT_PRICE_DISPLAY, BOOKING_URL } from "@/lib/offers";
 
 const SLUG = "ai-visibility-tool-accuracy";
 const ARTICLE_TITLE = "How to Evaluate AI Visibility Tool Accuracy";
@@ -91,8 +90,7 @@ const labelStyle = {
   color: "var(--ink)",
 } as const;
 
-export default async function AIVisibilityToolAccuracyPost() {
-  const { priceWithCurrency } = await getAuditPricing();
+export default function AIVisibilityToolAccuracyPost() {
   return (
     <>
       <script
@@ -610,7 +608,7 @@ export default async function AIVisibilityToolAccuracyPost() {
               >
                 Cross-platform citation analysis, accuracy review checked by a
                 person, competitor gap mapping, and a prioritized action plan.{" "}
-                {priceWithCurrency} {OFFERS.audit.priceNote}.
+                {AUDIT_PRICE_DISPLAY}.
               </p>
               <Link
                 href={OFFERS.checker.href}
@@ -621,11 +619,11 @@ export default async function AIVisibilityToolAccuracyPost() {
                 <span className="arr">&rarr;</span>
               </Link>
               <Link
-                href={OFFERS.audit.href}
+                href={BOOKING_URL}
                 className="btn btn-ghost"
                 style={{ marginTop: 14, marginLeft: 12, position: "relative" }}
               >
-                Or book the {priceWithCurrency} audit
+                Or book a free call
               </Link>
             </div>
           </RevealSection>

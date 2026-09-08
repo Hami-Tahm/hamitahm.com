@@ -534,7 +534,8 @@ export default function BestAIVisibilityToolsPost() {
                 A tool tells you <em style={{ fontStyle: "italic" }}>where</em> you
                 stand. The AI Visibility Audit I run for clients tells you{" "}
                 <em style={{ fontStyle: "italic" }}>why</em>, and gives you a
-                prioritized 7-day fix plan, $1,500 flat.{" "}
+                prioritized 7-day fix plan, scoped to your business and
+                confirmed on a free call.{" "}
                 <Link
                   href={AUDIT_URL}
                   style={{ color: "var(--accent)", fontWeight: 600 }}
@@ -1179,7 +1180,7 @@ export default function BestAIVisibilityToolsPost() {
               >
                 Start with platform-specific citation analysis, accuracy review, and a
                 prioritized action plan before committing to ongoing tracking
-                software. $1,500 flat.
+                software. Scoped to your business, confirmed on a free call.
               </p>
               <Link
                 href="/ai-visibility/ai-visibility-checker/"
@@ -1194,7 +1195,7 @@ export default function BestAIVisibilityToolsPost() {
                 className="btn btn-ghost"
                 style={{ marginTop: 14, marginLeft: 12, position: "relative" }}
               >
-                Or book the $1,500 audit
+                Or book the audit
               </Link>
             </div>
           </RevealSection>

@@ -4,8 +4,7 @@ import Image from "next/image";
 import { RevealSection } from "@/components/Reveal";
 import { AuthorByline } from "@/components/AuthorByline";
 import { buildBlogSchema } from "@/lib/blog-schema";
-import { OFFERS, AUDIT_PLATFORM_COUNT_WORD } from "@/lib/offers";
-import { getAuditPricing } from "@/lib/currency";
+import { OFFERS, AUDIT_PLATFORM_COUNT_WORD, AUDIT_PRICE_DISPLAY, BOOKING_URL } from "@/lib/offers";
 
 const SLUG = "ai-visibility-audit-checklist";
 const ARTICLE_TITLE = "The AI Visibility Audit Checklist: 23 Things to Check";
@@ -224,8 +223,7 @@ const CATEGORY_5: ChecklistItem[] = [
   },
 ];
 
-export default async function AIVisibilityAuditChecklistPost() {
-  const { priceWithCurrency } = await getAuditPricing();
+export default function AIVisibilityAuditChecklistPost() {
   return (
     <>
       <script
@@ -633,8 +631,7 @@ export default async function AIVisibilityAuditChecklistPost() {
                 }}
               >
                 Cross-platform citation analysis, accuracy review, competitor
-                gap mapping, and a prioritized action plan. {priceWithCurrency}{" "}
-                {OFFERS.audit.priceNote}.
+                gap mapping, and a prioritized action plan. {AUDIT_PRICE_DISPLAY}.
               </p>
               <Link
                 href={OFFERS.checker.href}
@@ -645,11 +642,11 @@ export default async function AIVisibilityAuditChecklistPost() {
                 <span className="arr">&rarr;</span>
               </Link>
               <Link
-                href={OFFERS.audit.href}
+                href={BOOKING_URL}
                 className="btn btn-ghost"
                 style={{ marginTop: 14, marginLeft: 12, position: "relative" }}
               >
-                Or book the {priceWithCurrency} audit
+                Or book a free call
               </Link>
             </div>
           </RevealSection>

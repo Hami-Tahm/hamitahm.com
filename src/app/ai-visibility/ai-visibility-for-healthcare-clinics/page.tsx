@@ -3,12 +3,13 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { HOMECALC_PROOF, HOMECALC_CLAIMS, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
+import { AUDIT_PRICE_DISPLAY, BOOKING_URL } from "@/lib/offers";
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const CASE_STUDY_URL = HOMECALC_PROOF.caseStudyPath;
 const WALKTHROUGH_MINUTES = 60;
 const TURNAROUND = "7 business days";
-const PRICE_DISPLAY = "$1,500";
+const PRICE_DISPLAY = AUDIT_PRICE_DISPLAY;
 const DENTAL_URL = "/ai-visibility/ai-visibility-for-dental-clinics/";
 
 /*
@@ -29,7 +30,7 @@ const DENTAL_URL = "/ai-visibility/ai-visibility-for-dental-clinics/";
 export const metadata: Metadata = {
   title: "AI Visibility for Healthcare Clinics",
   description:
-    "Ensure your clinic appears when patients ask ChatGPT, Google AI Overviews, Gemini, or Claude for a healthcare provider. Audit by Hami Tahm, $1,500 flat.",
+    "Ensure your clinic appears when patients ask ChatGPT, Google AI Overviews, Gemini, or Claude for a healthcare provider. Audit by Hami Tahm, scoped to your practice and confirmed on a free call.",
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/ai-visibility-for-healthcare-clinics/",
   },
@@ -100,7 +101,7 @@ const COMPARISON_ROWS = [
   ],
   [
     "Pricing model",
-    "$1,500, flat (one-time)",
+    `${PRICE_DISPLAY}`,
     "Monthly retainer",
     "Free (Google product)",
   ],
@@ -168,7 +169,7 @@ const FAQ_ITEMS: {
   },
   {
     q: "How much does the audit cost?",
-    a: `$1,500, flat. One-time payment, no retainer. See the full audit page for what's included.`,
+    a: `${PRICE_DISPLAY}. One-time, no retainer. See the full audit page for what's included.`,
     auditLink: true,
   },
   {
@@ -235,7 +236,7 @@ const structuredData = {
         acceptedAnswer: {
           "@type": "Answer",
           text: auditLink
-            ? `${PRICE_DISPLAY}, flat. One-time payment, no retainer. See the full audit page for what's included.`
+            ? `${PRICE_DISPLAY}. One-time, no retainer. See the full audit page for what's included.`
             : typeof a === "string"
               ? a
               : "See the dental clinics page for the specialty-specific version of this audit; coverage and deliverables are identical.",
@@ -739,7 +740,7 @@ export default function AIVisibilityHealthcareClinics() {
               <ProcessStep
                 n="1"
                 title="Book and pay."
-                body={`${PRICE_DISPLAY} flat. One invoice, one payment, no retainer.`}
+                body={`${PRICE_DISPLAY}. One invoice, confirmed on the call, no retainer.`}
               />
               <ProcessStep
                 n="2"
@@ -860,7 +861,7 @@ export default function AIVisibilityHealthcareClinics() {
                   >
                     {auditLink ? (
                       <>
-                        {PRICE_DISPLAY}, flat. One-time payment, no retainer.
+                        {PRICE_DISPLAY}. One-time, no retainer.
                         See the{" "}
                         <Link href={AUDIT_URL} style={{ color: "var(--accent)" }}>
                           full audit page
@@ -962,7 +963,7 @@ export default function AIVisibilityHealthcareClinics() {
                   position: "relative",
                 }}
               >
-                {PRICE_DISPLAY} flat. Report and walkthrough call within{" "}
+                {PRICE_DISPLAY}. Report and walkthrough call within{" "}
                 {TURNAROUND}.
               </p>
               <Link

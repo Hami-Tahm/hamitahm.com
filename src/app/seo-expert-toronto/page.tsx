@@ -39,7 +39,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "How much does an SEO expert cost in Toronto?",
-    a: "For the market generally: $100–$250 an hour for experienced freelancers, monthly retainers of $1,500–$5,000 for small businesses and $5,000–$15,000 for mid-market, and project audits from $1,500–$5,000. Those are what other people charge, not what I sell. What I sell is one thing: the AI Visibility Audit at $1,500 flat, one-time, no retainer, delivered in 7 business days, with an optional action plan afterward.",
+    a: "For the market generally: $100–$250 an hour for experienced freelancers, monthly retainers of $1,500–$5,000 for small businesses and $5,000–$15,000 for mid-market, and project audits from $1,500–$5,000. Those are what other people charge, not what I sell. What I sell is one thing: the AI Visibility Audit, one-time, no retainer, delivered in 7 business days, with an optional action plan afterward. Price is scoped to your business and confirmed on a short, free call.",
   },
   {
     q: "How long does SEO take to produce results in Toronto?",
@@ -188,7 +188,8 @@ export default function SEOExpertTorontoPage() {
                 lineHeight: 1.5,
               }}
             >
-              Engagements start at $1,500 for an AI Visibility Audit,
+              Engagements start with an AI Visibility Audit, scoped to your
+              business and confirmed on a free call,
               see{" "}
               <Link href="/pricing/" style={{ color: "var(--accent)", fontWeight: 500 }}>what each step costs</Link>, or
               the{" "}
@@ -453,7 +454,7 @@ export default function SEOExpertTorontoPage() {
                 lineHeight: 1.72,
               }}
             >
-              Every engagement starts with the $1,500 AI Visibility Audit,
+              Every engagement starts with the AI Visibility Audit,
               covering both layers of search: how your business ranks on Google
               and how AI engines describe, cite, and recommend you. You get:
             </p>
@@ -718,8 +719,9 @@ export default function SEOExpertTorontoPage() {
                   position: "relative",
                 }}
               >
-                Start with a $1,500 AI Visibility Audit. Report and walkthrough
-                call within 7 business days. No retainer, no agency layer.
+                Start with an AI Visibility Audit. Report and walkthrough
+                call within 7 business days. Price scoped to your business
+                and confirmed on a free call.
               </p>
               <Link
                 href={AUDIT_URL}

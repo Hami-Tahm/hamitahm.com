@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
-import { OFFERS } from "@/lib/offers";
+import { OFFERS, AUDIT_PRICE_DISPLAY, ACTION_PLAN_PRICE_DISPLAY } from "@/lib/offers";
 import { HOMECALC_PROOF, HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
-import { getAuditPricing } from "@/lib/currency";
 
 /*
  * ⚠️ THIS PAGE SOLD DONE-FOR-YOU WORK UNTIL 2026-08-16. IT NO LONGER DOES.
@@ -33,11 +32,11 @@ export const metadata: Metadata = {
     absolute: "AI Visibility Action Plan: Recommendations & Roadmap | Toronto",
   },
   description:
-    "After the audit: prioritized recommendations, a page-level action plan and a roadmap your team can ship, grounded in your own Search Console and Bing data. From $4,500.",
+    "After the audit: prioritized recommendations, a page-level action plan and a roadmap your team can ship, grounded in your own Search Console and Bing data. Fixed scope, quoted from your audit.",
   alternates: { canonical: `https://hamitahm.com${SLUG}` },
 };
 
-function buildFaqItems(priceDisplay: string) {
+function buildFaqItems() {
   return [
   {
     q: "What is the AI Visibility Action Plan?",
@@ -61,7 +60,7 @@ function buildFaqItems(priceDisplay: string) {
   },
   {
     q: "How much does it cost and how long does it take?",
-    a: `From $4,500, fixed scope, and the ${priceDisplay} audit fee is credited toward it; the final number scales with your traffic volume, industry, and site size. Most run up to 30 days. Larger or multi-language scopes are quoted from the audit. It is a one-time, fixed-scope engagement; optional monitoring and advisory is available afterward, but it's never required.`,
+    a: "Fixed scope, quoted from your audit, and the audit fee is credited toward it; the final number scales with your traffic volume, industry, and site size. Most run up to 30 days. Larger or multi-language scopes are quoted from the audit. It is a one-time, fixed-scope engagement; optional monitoring and advisory is available afterward, but it's never required.",
   },
   {
     q: "Do you guarantee I'll get cited by AI?",
@@ -109,7 +108,7 @@ function buildStructuredData(faqItems: ReturnType<typeof buildFaqItems>) {
       provider: { "@id": "https://hamitahm.com/#hami-tahm" },
       url: `https://hamitahm.com${SLUG}`,
       description:
-        "Prioritized recommendations, a page-level action plan and a roadmap based on the AI Visibility Audit and on the client's own Search Console and Bing Webmaster Tools data. Built for the client's own team to implement. Fixed scope, from $4,500.",
+        "Prioritized recommendations, a page-level action plan and a roadmap based on the AI Visibility Audit and on the client's own Search Console and Bing Webmaster Tools data. Built for the client's own team to implement. Fixed scope, quoted from the audit.",
       offers: {
         "@type": "Offer",
         price: "4500",
@@ -144,9 +143,8 @@ function buildStructuredData(faqItems: ReturnType<typeof buildFaqItems>) {
   };
 }
 
-export default async function ImplementationPage() {
-  const { priceWithCurrency } = await getAuditPricing();
-  const FAQ_ITEMS = buildFaqItems(priceWithCurrency);
+export default function ImplementationPage() {
+  const FAQ_ITEMS = buildFaqItems();
   const structuredData = buildStructuredData(FAQ_ITEMS);
 
   return (
@@ -213,11 +211,11 @@ export default async function ImplementationPage() {
                 Talk about your plan <span className="arr">&rarr;</span>
               </Link>
               <Link href={OFFERS.audit.href} className="btn btn-ghost">
-                Or start with the {priceWithCurrency} audit
+                Or start with the audit
               </Link>
             </div>
             <p style={{ marginTop: 16, fontFamily: "var(--mono)", fontSize: 13, color: "var(--faint)" }}>
-              {OFFERS.actionPlan.priceWithCurrency}{" "}&middot; fixed scope &middot; audit fee credited &middot; one-time
+              {ACTION_PLAN_PRICE_DISPLAY}{" "}&middot; fixed scope &middot; audit fee credited &middot; one-time
             </p>
           </RevealSection>
         </div>
@@ -232,8 +230,8 @@ export default async function ImplementationPage() {
           <RevealSection delay={0.08}>
             <div style={{ display: "grid", gap: 14 }}>
               <LadderRow o={OFFERS.checker} step="Step 0" />
-              <LadderRow o={{ ...OFFERS.audit, price: priceWithCurrency }} step="Step 1" />
-              <LadderRow o={OFFERS.actionPlan} step="Step 2" highlight />
+              <LadderRow o={{ ...OFFERS.audit, price: AUDIT_PRICE_DISPLAY }} step="Step 1" />
+              <LadderRow o={{ ...OFFERS.actionPlan, price: ACTION_PLAN_PRICE_DISPLAY }} step="Step 2" highlight />
               <LadderRow o={OFFERS.monitor} step="Step 3 (optional)" />
             </div>
             <p style={{ marginTop: 18, fontSize: 15, color: "var(--muted)", lineHeight: 1.6, maxWidth: "62ch" }}>

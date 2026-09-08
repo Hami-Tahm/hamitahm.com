@@ -80,7 +80,7 @@ const HUB_FAQ = [
   },
   {
     q: "How much does AI visibility consulting cost?",
-    a: "Engagements start with a $1,500 AI visibility audit: flat fee, one-time, no retainer to get started. If you want the findings turned into a prioritized action plan and roadmap for your team to ship, that starts at $4,500 (the audit fee is credited toward it); the final number scales with your traffic volume, industry, and site size. I don't take execution work; your developer or agency implements it. Optional monitoring and advisory is available afterward on a fixed 6–12 month term; never required.",
+    a: "Engagements start with an AI visibility audit: one-time, no retainer to get started, priced to your business and confirmed on a short, free call. If you want the findings turned into a prioritized action plan and roadmap for your team to ship, that's a fixed-scope quote too (the audit fee is credited toward it), scaling with your traffic volume, industry, and site size. I don't take execution work; your developer or agency implements it. Optional monitoring and advisory is available afterward on a fixed 6–12 month term; never required.",
   },
 ] as const;
 
@@ -333,7 +333,7 @@ export default function AIVisibilityPage() {
                 <span className="arr">&rarr;</span>
               </Link>
               <Link href={AUDIT_URL} className="btn btn-ghost">
-                See the $1,500 audit
+                See the audit
               </Link>
             </div>
           </RevealSection>
@@ -536,7 +536,7 @@ export default function AIVisibilityPage() {
                   }}
                 >
                   Structured review across six AI platforms. Report, action
-                  plan, walkthrough call. $1,500 flat.
+                  plan, walkthrough call. Scoped to your business.
                 </p>
                 <div
                   style={{
@@ -1467,7 +1467,7 @@ export default function AIVisibilityPage() {
                     marginTop: 8,
                   }}
                 >
-                  $1,500 &middot; flat
+                  Scoped to your business
                 </div>
                 <p
                   style={{
@@ -2091,7 +2091,7 @@ export default function AIVisibilityPage() {
                           href={AUDIT_URL}
                           style={{ color: "var(--accent)", fontWeight: 500 }}
                         >
-                          Book an AI visibility audit for $1,500
+                          Book an AI visibility audit
                         </Link>
                         .
                       </>
@@ -2134,14 +2134,14 @@ export default function AIVisibilityPage() {
                 }}
               >
                 Six platforms reviewed, written report, action plan, and
-                walkthrough call. $1,500 flat, no retainer.
+                walkthrough call. Scoped to your business, no retainer.
               </p>
               <Link
                 href={AUDIT_URL}
                 className="btn btn-primary"
                 style={{ position: "relative" }}
               >
-                Book Your AI Visibility Audit for $1,500{" "}
+                Book Your AI Visibility Audit{" "}
                 <span className="arr">&rarr;</span>
               </Link>
             </div>

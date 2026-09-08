@@ -7,7 +7,7 @@ import {
   SNAPSHOT_INCOGNITO,
   ENGINE_CITATIONS,
 } from "@/lib/ai-citation-proof";
-import { OFFERS } from "@/lib/offers";
+import { OFFERS, AUDIT_PRICE_DISPLAY, ACTION_PLAN_PRICE_DISPLAY, BOOKING_URL, AUDIT_CTA_LABEL } from "@/lib/offers";
 import { getAuditPricing } from "@/lib/currency";
 import { ShortlistReasons } from "@/components/ShortlistReasons";
 
@@ -55,7 +55,7 @@ const MEASUREMENT_LAYERS = [
   },
 ] as const;
 
-function buildFaqItems(priceDisplay: string) {
+function buildFaqItems() {
   return [
   {
     q: "How do I choose an AI visibility consultant in Toronto?",
@@ -82,10 +82,7 @@ function buildFaqItems(priceDisplay: string) {
   },
   {
     q: "How much does an AI visibility consultant cost in Toronto?",
-    a: `The audit is ${priceDisplay} flat: one-time, no retainer. If you want the findings turned into a prioritized plan your own team can ship, the Action Plan starts at ${OFFERS.actionPlan.price.replace(
-      "From ",
-      ""
-    )} and the audit fee is credited toward it; the final number scales with your traffic volume, industry, and site size. Ongoing monitoring and advisory is optional afterward, on a fixed 6–12 month term. There's also a free AI visibility checker if you just want a first read.`,
+    a: `The audit is ${AUDIT_PRICE_DISPLAY}: one-time, no retainer. If you want the findings turned into a prioritized plan your own team can ship, the Action Plan is ${ACTION_PLAN_PRICE_DISPLAY} and the audit fee is credited toward it; the final number scales with your traffic volume, industry, and site size. Ongoing monitoring and advisory is optional afterward, on a fixed 6–12 month term. There's also a free AI visibility checker if you just want a first read.`,
   },
   {
     q: "Do you only work with Toronto businesses?",
@@ -191,13 +188,15 @@ export const metadata: Metadata = {
     absolute: "AI Visibility Consultant Toronto | AI SEO, AEO & GEO",
   },
   description:
-    "Toronto AI visibility consultant helping businesses get cited in Google AI Overviews, ChatGPT, Gemini, Claude, Copilot and Perplexity. Flat-fee audit, $1,500. Hami Tahm, a consultant, not an agency.",
+    "Toronto AI visibility consultant helping businesses get cited in Google AI Overviews, ChatGPT, Gemini, Claude, Copilot and Perplexity. Audit scoped to your business, confirmed on a free call. Hami Tahm, a consultant, not an agency.",
   alternates: { canonical: `https://hamitahm.com${SLUG}` },
 };
 
 export default async function AIVisibilityConsultantToronto() {
-  const { price, priceWithCurrency, currency } = await getAuditPricing();
-  const FAQ_ITEMS = buildFaqItems(priceWithCurrency);
+  // Only used for the schema.org Offer node below; nothing here renders as
+  // visible text (pricing is call-gated as of 2026-09-08, see offers.ts).
+  const { price, currency } = await getAuditPricing();
+  const FAQ_ITEMS = buildFaqItems();
   // Schema.org price must be a plain number: strip the "$" and thousands comma.
   const auditSchemaPrice = Number(price.replace(/[^0-9.]/g, ""));
   const structuredData = buildStructuredData(FAQ_ITEMS, auditSchemaPrice, currency);
@@ -332,7 +331,7 @@ export default async function AIVisibilityConsultantToronto() {
                 <span className="arr">&rarr;</span>
               </Link>
               <Link href={AUDIT_URL} className="btn btn-ghost">
-                See the {priceWithCurrency} audit
+                See the audit
               </Link>
             </div>
             <p
@@ -575,7 +574,7 @@ export default async function AIVisibilityConsultantToronto() {
                     marginBottom: 10,
                   }}
                 >
-                  {priceWithCurrency}{" "}&middot; Step 1
+                  {AUDIT_PRICE_DISPLAY}{" "}&middot; Step 1
                 </div>
                 <h3 style={{ fontFamily: "var(--sans)", fontSize: 16, fontWeight: 600 }}>
                   {OFFERS.audit.name}
@@ -599,7 +598,7 @@ export default async function AIVisibilityConsultantToronto() {
                     marginBottom: 10,
                   }}
                 >
-                  {OFFERS.actionPlan.priceWithCurrency}{" "}&middot; Step 2
+                  {ACTION_PLAN_PRICE_DISPLAY}{" "}&middot; Step 2
                 </div>
                 <h3 style={{ fontFamily: "var(--sans)", fontSize: 16, fontWeight: 600 }}>
                   {OFFERS.actionPlan.name}
@@ -1013,7 +1012,7 @@ export default async function AIVisibilityConsultantToronto() {
                 }}
               >
                 Six platforms reviewed, a written report, a prioritized action plan,
-                and a walkthrough call. {priceWithCurrency} flat, no retainer.
+                and a walkthrough call. Scoped to your business, no retainer.
               </p>
               <Link
                 href={AUDIT_URL}

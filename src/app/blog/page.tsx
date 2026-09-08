@@ -476,8 +476,9 @@ export default function BlogIndexPage() {
                   marginTop: 5,
                 }}
               >
-                Book a $1,500 AI Visibility Audit: full diagnosis of
+                Book an AI Visibility Audit: full diagnosis of
                 where AI engines mention you, delivered in 7&nbsp;days.
+                Scoped to your business, confirmed on a free call.
               </p>
             </div>
             <Link

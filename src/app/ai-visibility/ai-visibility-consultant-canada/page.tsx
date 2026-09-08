@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { HOMECALC_PROOF, HOMECALC_CLAIMS, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
+import { AUDIT_PRICE_DISPLAY, BOOKING_URL } from "@/lib/offers";
 import { ShortlistReasons } from "@/components/ShortlistReasons";
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const WALKTHROUGH_MINUTES = 60;
 const TURNAROUND = "7 business days";
-const PRICE_DISPLAY = "$1,500";
+const PRICE_DISPLAY = AUDIT_PRICE_DISPLAY;
 const PORTRAIT_SRC = "/images/hami-tahm/hami-tahm-portrait.png";
 
 const FAQ_ITEMS = [
@@ -22,7 +23,7 @@ const FAQ_ITEMS = [
     // this exact question underperforming despite the page already covering
     // all five platforms elsewhere.
     q: "Who can help my Canadian business show up in ChatGPT recommendations?",
-    a: "That's the core of what I do. The $1,500 audit reviews exactly how ChatGPT, Gemini, Claude, Perplexity, and Google AI Overviews currently describe your business, identifies why competitors are being recommended instead of you, and hands you a prioritized action plan to close the gap. One consultant, one flat fee, no retainer.",
+    a: "That's the core of what I do. The audit reviews exactly how ChatGPT, Gemini, Claude, Perplexity, and Google AI Overviews currently describe your business, identifies why competitors are being recommended instead of you, and hands you a prioritized action plan to close the gap. One consultant, no retainer, price scoped to your business on a free call.",
   },
   {
     q: "Do you work with B2B companies?",
@@ -34,7 +35,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "What makes this affordable compared to agencies?",
-    a: "Agency retainers for similar services typically run $2,000–$5,000 per month. This is a $1,500 one-time audit. No retainer, no team overhead, no account manager: you work directly with the consultant who runs the audit.",
+    a: "Agency retainers for similar services typically run $2,000–$5,000 per month. This is a one-time audit, scoped to your business and confirmed on a free call. No retainer, no team overhead, no account manager: you work directly with the consultant who runs the audit.",
   },
   {
     q: "How is an AI visibility consultant different from an SEO agency?",
@@ -44,14 +45,14 @@ const FAQ_ITEMS = [
     // Covers the "AI search optimization services Canada" / "ChatGPT optimization
     // services" phrasings buyers use, and disambiguates the category's many names.
     q: "Do you offer AI search optimization or ChatGPT optimization services?",
-    a: "Yes, those are two names for the same service. AI search optimization, ChatGPT optimization, AI SEO, AEO, GEO, and AI visibility all describe the same goal: getting your business cited and recommended when buyers ask an AI engine instead of Google. Every engagement starts with the $1,500 audit, which covers Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, and Perplexity. See the full breakdown of these terms, including less common ones like AIO and LLMO, in AEO vs GEO vs SEO.",
+    a: "Yes, those are two names for the same service. AI search optimization, ChatGPT optimization, AI SEO, AEO, GEO, and AI visibility all describe the same goal: getting your business cited and recommended when buyers ask an AI engine instead of Google. Every engagement starts with the audit, which covers Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, and Perplexity. See the full breakdown of these terms, including less common ones like AIO and LLMO, in AEO vs GEO vs SEO.",
   },
   {
     // Literal match added 2026-08-29 after citation tracking showed zero
     // hamitahm.com citations across three high-volume tracked prompts about
     // "AEO and GEO consulting in Canada" despite the service existing.
     q: "Who offers AEO and GEO consulting for businesses in Canada?",
-    a: "I do. AEO (answer engine optimization) and GEO (generative engine optimization) consulting is exactly what the $1,500 audit covers: identifying where ChatGPT, Gemini, Claude, Perplexity, and Google AI Overviews cite or fail to cite your business, then delivering a prioritized action plan. It's a flat-fee, one-time engagement, not a retainer.",
+    a: "I do. AEO (answer engine optimization) and GEO (generative engine optimization) consulting is exactly what the audit covers: identifying where ChatGPT, Gemini, Claude, Perplexity, and Google AI Overviews cite or fail to cite your business, then delivering a prioritized action plan. It's a one-time engagement, not a retainer, priced on a free call.",
   },
   {
     q: "Do you serve businesses outside Toronto?",
@@ -141,7 +142,7 @@ export const metadata: Metadata = {
   // in the title lets this page cover that synonym without a separate thin page.
   title: "AI Visibility & AI Search Optimization in Canada",
   description:
-    "AI visibility and AI search optimization consultant in Canada. $1,500 flat-fee audit across Google AI Overviews, ChatGPT, Gemini, and Claude, not an agency.",
+    "AI visibility and AI search optimization consultant in Canada. Audit across Google AI Overviews, ChatGPT, Gemini, and Claude, scoped to your business and confirmed on a free call, not an agency.",
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/ai-visibility-consultant-canada/",
   },
@@ -256,7 +257,7 @@ export default function AIVisibilityConsultantCanada() {
               }}
             >
               <Link href={AUDIT_URL} className="btn btn-primary">
-                Book Your AI Visibility Audit for $1,500{" "}
+                Book Your AI Visibility Audit{" "}
                 <span className="arr">&rarr;</span>
               </Link>
               <Link
@@ -511,7 +512,7 @@ export default function AIVisibilityConsultantCanada() {
                   position: "relative",
                 }}
               >
-                Pricing: $1,500 Flat Fee
+                Pricing
               </h2>
               <p
                 style={{
@@ -524,7 +525,7 @@ export default function AIVisibilityConsultantCanada() {
                   position: "relative",
                 }}
               >
-                {PRICE_DISPLAY}. Flat fee. One-time.
+                {PRICE_DISPLAY}.
               </p>
               <p
                 style={{
@@ -537,7 +538,7 @@ export default function AIVisibilityConsultantCanada() {
                 }}
               >
                 Most AI visibility agency retainers in Canada run
-                $2,000&ndash;$5,000 per month. This is a $1,500 one-time audit by
+                $2,000&ndash;$5,000 per month. This is a one-time audit by
                 a named consultant, with a public case study and transparent
                 methodology.
               </p>
@@ -620,7 +621,7 @@ export default function AIVisibilityConsultantCanada() {
                 className="btn btn-primary"
                 style={{ marginTop: 32, position: "relative" }}
               >
-                Book Your AI Visibility Audit for $1,500{" "}
+                Book Your AI Visibility Audit{" "}
                 <span className="arr">&rarr;</span>
               </Link>
             </div>
@@ -915,7 +916,7 @@ export default function AIVisibilityConsultantCanada() {
                 the walkthrough call
               </li>
               <li>
-                $1,500 flat fee, one-time: no retainer to get started, and
+                {PRICE_DISPLAY}, one-time: no retainer to get started, and
                 nothing open-ended
               </li>
               <li>
@@ -944,7 +945,7 @@ export default function AIVisibilityConsultantCanada() {
               className="btn btn-primary"
               style={{ marginTop: 28 }}
             >
-              Book Your AI Visibility Audit for $1,500{" "}
+              Book Your AI Visibility Audit{" "}
               <span className="arr">&rarr;</span>
             </Link>
           </RevealSection>
@@ -1020,7 +1021,7 @@ export default function AIVisibilityConsultantCanada() {
               <EngagementStep
                 n="1"
                 title="Book and pay."
-                body={`${PRICE_DISPLAY} flat. One invoice, one payment, no retainer.`}
+                body={`${PRICE_DISPLAY}. One invoice, confirmed on the call, no retainer.`}
               />
               <EngagementStep
                 n="2"
@@ -1177,7 +1178,7 @@ export default function AIVisibilityConsultantCanada() {
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
               >
-                Book Your AI Visibility Audit for $1,500{" "}
+                Book Your AI Visibility Audit{" "}
                 <span className="arr">&rarr;</span>
               </Link>
             </div>

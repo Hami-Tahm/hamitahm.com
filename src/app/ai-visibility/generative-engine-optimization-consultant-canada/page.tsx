@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { HOMECALC_PROOF, HOMECALC_CLAIMS, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
+import { AUDIT_PRICE_DISPLAY, BOOKING_URL } from "@/lib/offers";
 
 /**
  * ── WHY THIS PAGE READS MORE CAUTIOUSLY THAN MOST GEO PAGES (2026-08-11) ──
@@ -71,7 +72,7 @@ const MEASUREMENT_STAGES = [
       "Referral traffic, qualified enquiries, closed work. No AI platform reports this; it comes from your own analytics. It is also the only row that pays for anything.",
   },
 ] as const;
-const PRICE_DISPLAY = "$1,500";
+const PRICE_DISPLAY = AUDIT_PRICE_DISPLAY;
 
 export const metadata: Metadata = {
   title: {
@@ -79,7 +80,7 @@ export const metadata: Metadata = {
       "Generative Engine Optimization Consultant Canada | Hami Tahm",
   },
   description:
-    "Canadian GEO consultant helping businesses measure and improve how they are retrieved, mentioned and cited across Google AI, Copilot, ChatGPT, Perplexity, Gemini and Claude. Flat-fee audit, $1,500. No placement guaranteed.",
+    "Canadian GEO consultant helping businesses measure and improve how they are retrieved, mentioned and cited across Google AI, Copilot, ChatGPT, Perplexity, Gemini and Claude. Audit scoped to your business, confirmed on a free call. No placement guaranteed.",
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/generative-engine-optimization-consultant-canada/",
   },
@@ -152,7 +153,7 @@ const COMPARISON_ROWS = [
   ],
   [
     "Pricing model",
-    "Starts with $1,500 audit, no retainer",
+    "Starts with a scoped audit, no retainer",
     "Monthly retainer",
     "Monthly subscription",
   ],
@@ -236,7 +237,7 @@ const FAQ_ITEMS: {
   },
   {
     q: "How much does this cost?",
-    a: `The starting point is a ${PRICE_DISPLAY} AI visibility audit: flat fee, one-time. From there you can act on the findings yourself, or have me turn them into a fixed-scope Action Plan and roadmap for your team to ship (the audit fee is credited toward it). Optional monthly monitoring is available afterward, on a fixed 6–12 month term, never required to get started.`,
+    a: `The starting point is an AI visibility audit, ${PRICE_DISPLAY}. From there you can act on the findings yourself, or have me turn them into a fixed-scope Action Plan and roadmap for your team to ship (the audit fee is credited toward it). Optional monthly monitoring is available afterward, on a fixed 6–12 month term, never required to get started.`,
   },
   {
     q: "Do I need both AEO and GEO?",
@@ -1371,7 +1372,7 @@ export default function GEOConsultantCanada() {
                   position: "relative",
                 }}
               >
-                Start with a {PRICE_DISPLAY} AI visibility audit. Report and
+                Start with an AI visibility audit. Report and
                 walkthrough call within {TURNAROUND}.
               </p>
               <p
@@ -1387,7 +1388,7 @@ export default function GEOConsultantCanada() {
                 }}
               >
                 Most GEO engagements start with the AI Visibility Audit (
-                {PRICE_DISPLAY}, {TURNAROUND}). After the audit, we scope ongoing
+                {PRICE_DISPLAY}, delivered in {TURNAROUND}). After the audit, we scope ongoing
                 work based on what we find.
               </p>
               <Link

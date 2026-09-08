@@ -364,7 +364,7 @@ export default function Page() {
               </Link>
               <div style={{ marginTop: 16, position: "relative" }}>
                 <Link href={AUDIT_URL} style={{ color: "var(--muted)", fontSize: 14 }}>
-                  Or book the $1,500 audit &rarr;
+                  Or book the audit &rarr;
                 </Link>
               </div>
             </div>

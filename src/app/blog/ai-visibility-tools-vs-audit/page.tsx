@@ -45,7 +45,7 @@ const COMPARISON_ROWS = [
   {
     label: "Cost",
     tool: "$50–500/month",
-    audit: "$1,500 flat fee",
+    audit: "One-time fee, scoped to your business",
   },
   {
     label: "Best for",
@@ -69,7 +69,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "What does an AI visibility audit cost compared to a tool subscription?",
-    a: "A professional AI visibility audit is a flat one-time fee: $1,500 for a full audit covering all major platforms. AI visibility tool subscriptions range from $50–500/month depending on platform. Over 12 months, a $200/month tool costs $2,400, more than the audit, with no fix plan included. The audit is cheaper short-term and more actionable.",
+    a: "A professional AI visibility audit is a one-time fee, scoped to your business and confirmed on a free call, for a full audit covering all major platforms. AI visibility tool subscriptions range from $50–500/month depending on platform. Over 12 months, a $200/month tool costs $2,400, ongoing, with no fix plan included. For most businesses the one-time audit works out cheaper short-term and is more actionable.",
   },
   {
     q: "Is an AI visibility tool worth it for small businesses?",
@@ -626,14 +626,15 @@ export default function ToolsVsAuditPost() {
               >
                 If you don&rsquo;t know why you&rsquo;re invisible and you need a
                 plan: citation analysis, accuracy review, competitor gaps, and
-                a prioritized fix list. $1,500 flat.
+                a prioritized fix list. Scoped to your business, confirmed on
+                a free call.
               </p>
               <Link
                 href={AUDIT_URL}
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
               >
-                Book Your AI Visibility Audit for $1,500{" "}
+                Book Your AI Visibility Audit{" "}
                 <span className="arr">&rarr;</span>
               </Link>
             </div>

@@ -634,8 +634,9 @@ export default function OrthodonticSEOCaseStudy() {
                   position: "relative",
                 }}
               >
-                Start with a $1,500 AI Visibility Audit. Report and walkthrough
-                call within 7 business days. Consultant-led, no agency
+                Start with an AI Visibility Audit. Report and walkthrough
+                call within 7 business days. Scoped to your business,
+                confirmed on a free call. Consultant-led, no agency
                 layer.
               </p>
               <div

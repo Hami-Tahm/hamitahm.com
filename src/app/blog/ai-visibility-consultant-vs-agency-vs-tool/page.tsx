@@ -4,7 +4,7 @@ import Image from "next/image";
 import { RevealSection } from "@/components/Reveal";
 import { AuthorByline } from "@/components/AuthorByline";
 import { buildBlogSchema } from "@/lib/blog-schema";
-import { OFFERS } from "@/lib/offers";
+import { OFFERS, AUDIT_PRICE_DISPLAY, BOOKING_URL } from "@/lib/offers";
 
 const SLUG = "ai-visibility-consultant-vs-agency-vs-tool";
 const ARTICLE_TITLE = "AI Visibility Consultant vs Agency vs Tool";
@@ -30,7 +30,7 @@ const COMPARISON_ROWS = [
     label: "Typical cost",
     tool: "$50–500/month, ongoing",
     agency: "$2,000–5,000/month, ongoing",
-    consultant: `${OFFERS.audit.price} ${OFFERS.audit.priceNote}`,
+    consultant: AUDIT_PRICE_DISPLAY,
   },
   {
     label: "What you get",
@@ -84,7 +84,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "How much does each option cost?",
-    a: "AI visibility tools typically run $50–500 per month. Agency retainers for comparable strategic work typically run $2,000–5,000 per month, ongoing. A one-time AI visibility audit from an independent consultant is a flat fee: $1,500 here, covering all major AI platforms with no retainer required to start.",
+    a: "AI visibility tools typically run $50–500 per month. Agency retainers for comparable strategic work typically run $2,000–5,000 per month, ongoing. A one-time AI visibility audit from an independent consultant is a flat, one-time fee: here it's scoped to your business and confirmed on a free call, covering all major AI platforms with no retainer required to start.",
   },
 ] as const;
 
@@ -605,7 +605,7 @@ export default function ConsultantVsAgencyVsToolPost() {
               >
                 Cross-platform citation analysis, accuracy review, competitor
                 gap mapping, and a prioritized action plan.{" "}
-                {OFFERS.audit.price} {OFFERS.audit.priceNote}.
+                {AUDIT_PRICE_DISPLAY}.
               </p>
               <Link
                 href={OFFERS.checker.href}
@@ -616,11 +616,11 @@ export default function ConsultantVsAgencyVsToolPost() {
                 <span className="arr">&rarr;</span>
               </Link>
               <Link
-                href={OFFERS.audit.href}
+                href={BOOKING_URL}
                 className="btn btn-ghost"
                 style={{ marginTop: 14, marginLeft: 12, position: "relative" }}
               >
-                Or book the {OFFERS.audit.price} audit
+                Or book a free call
               </Link>
             </div>
           </RevealSection>

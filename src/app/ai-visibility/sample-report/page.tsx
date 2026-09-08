@@ -6,8 +6,11 @@ import {
   OFFERS,
   AUDIT_PLATFORMS,
   AUDIT_PLATFORM_COUNT_WORD,
+  AUDIT_PRICE_DISPLAY,
+  ACTION_PLAN_PRICE_DISPLAY,
+  BOOKING_URL,
+  AUDIT_CTA_LABEL,
 } from "@/lib/offers";
-import { getAuditPricing } from "@/lib/currency";
 import {
   HOMECALC_PROOF,
   HOMECALC_CLAIMS,
@@ -21,9 +24,11 @@ import { STUDY, SITES, COMMERCIAL_REALITY } from "@/lib/citation-study";
  * /ai-visibility/sample-report/: the audit deliverable, shown in public.
  *
  * ── WHY THIS PAGE EXISTS ──
- * The audit is $1,500 paid up front by strangers, with no sales call. The single
- * biggest thing standing between a visitor and that button is not price, it is not
- * knowing what arrives. This page removes that unknown by showing the real thing.
+ * As of 2026-09-08 the audit is scoped and priced on a free call rather than
+ * published (see the 2026-09-08 note in src/lib/offers.ts). The single
+ * biggest thing standing between a visitor and booking that call is not
+ * price, it is not knowing what arrives. This page removes that unknown by
+ * showing the real thing.
  *
  * ── THE TWO RULES THIS PAGE MUST NEVER BREAK ──
  *
@@ -67,7 +72,7 @@ const HUB_URL = "/ai-visibility/";
 export const metadata: Metadata = {
   title: "Sample AI Visibility Audit Report",
   description:
-    "See exactly what the $1,500 AI Visibility Audit delivers: the real sections, tables and findings, built from published console data rather than a mock-up.",
+    "See exactly what the AI Visibility Audit delivers: the real sections, tables and findings, built from published console data rather than a mock-up.",
   alternates: { canonical: URL },
 };
 
@@ -86,7 +91,7 @@ const SECTIONS = [
   { id: "not", n: "08", title: "What this report does not claim" },
 ] as const;
 
-function buildFaqItems(priceDisplay: string) {
+function buildFaqItems() {
   return [
   {
     q: "Is this a real report or a mock-up?",
@@ -106,7 +111,7 @@ function buildFaqItems(priceDisplay: string) {
   },
   {
     q: "Do I get a call, or just the document?",
-    a: `Both. The ${priceDisplay} audit includes the written report, a 60-minute walkthrough call, and 14 days of follow-up access. If you then want the findings turned into a fixed-scope plan your own developer can ship, that is the ${OFFERS.actionPlan.name} (${OFFERS.actionPlan.priceWithCurrency}) and the audit fee is credited toward it.`,
+    a: `Both. The audit includes the written report, a 60-minute walkthrough call, and 14 days of follow-up access. If you then want the findings turned into a fixed-scope plan your own developer can ship, that is the ${OFFERS.actionPlan.name} (${ACTION_PLAN_PRICE_DISPLAY}) and the audit fee is credited toward it.`,
   },
   ];
 }
@@ -216,9 +221,8 @@ const thStyle: React.CSSProperties = {
 const numCell: React.CSSProperties = { ...cellBase, textAlign: "right", fontFamily: "var(--mono)", fontSize: 13.5 };
 const numHead: React.CSSProperties = { ...thStyle, textAlign: "right" };
 
-export default async function SampleReportPage() {
-  const { priceWithCurrency, checkoutUrl } = await getAuditPricing();
-  const FAQ_ITEMS = buildFaqItems(priceWithCurrency);
+export default function SampleReportPage() {
+  const FAQ_ITEMS = buildFaqItems();
   const structuredData = buildStructuredData(FAQ_ITEMS);
 
   return (
@@ -265,7 +269,7 @@ export default async function SampleReportPage() {
                 maxWidth: "20ch",
               }}
             >
-              Before you pay {priceWithCurrency}, see exactly what arrives
+              Before you book a call, see exactly what arrives
             </h1>
           </RevealSection>
           <RevealSection delay={0.06}>
@@ -285,8 +289,8 @@ export default async function SampleReportPage() {
           </RevealSection>
           <RevealSection delay={0.1}>
             <div style={{ marginTop: 26, display: "flex", gap: 12, flexWrap: "wrap" }} className="no-print">
-              <a
-                href={checkoutUrl}
+              <Link
+                href={BOOKING_URL}
                 style={{
                   display: "inline-block",
                   padding: "13px 22px",
@@ -298,8 +302,8 @@ export default async function SampleReportPage() {
                   textDecoration: "none",
                 }}
               >
-                Book the audit for {priceWithCurrency}
-              </a>
+                {AUDIT_CTA_LABEL}
+              </Link>
               <PrintButton />
             </div>
           </RevealSection>
@@ -746,15 +750,15 @@ export default async function SampleReportPage() {
                 This, about your site
               </h2>
               <p style={{ fontSize: 16, color: "var(--muted)", lineHeight: 1.7, maxWidth: "56ch" }}>
-                {OFFERS.audit.name}: {priceWithCurrency}, flat fee,
-                one-time. {OFFERS.audit.scope.promptCount} prompts
+                {OFFERS.audit.name}: {AUDIT_PRICE_DISPLAY}.
+                {" "}{OFFERS.audit.scope.promptCount} prompts
                 across {AUDIT_PLATFORM_COUNT_WORD} engines, up to three competitors, a
                 content gap analysis, a 60-minute walkthrough and 14 days of follow-up.
                 Delivered within 7 business days.
               </p>
               <div style={{ marginTop: 22, display: "flex", gap: 12, flexWrap: "wrap" }}>
-                <a
-                  href={checkoutUrl}
+                <Link
+                  href={BOOKING_URL}
                   style={{
                     display: "inline-block",
                     padding: "13px 22px",
@@ -766,8 +770,8 @@ export default async function SampleReportPage() {
                     textDecoration: "none",
                   }}
                 >
-                  Book the audit
-                </a>
+                  {AUDIT_CTA_LABEL}
+                </Link>
                 <Link
                   href={CHECKER_URL}
                   style={{

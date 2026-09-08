@@ -4,8 +4,7 @@ import { ZoomableImage } from "@/components/ZoomableImage";
 import { RevealSection } from "@/components/Reveal";
 import { AuthorByline } from "@/components/AuthorByline";
 import { buildBlogSchema } from "@/lib/blog-schema";
-import { OFFERS } from "@/lib/offers";
-import { getAuditPricing } from "@/lib/currency";
+import { OFFERS, AUDIT_PRICE_DISPLAY } from "@/lib/offers";
 import { OTTERLY_BENCHMARK } from "@/lib/otterly-mortgage-benchmark";
 import { HOMECALC_PROOF } from "@/lib/homecalc-proof";
 
@@ -113,8 +112,7 @@ const thStyle: React.CSSProperties = {
 const numCell: React.CSSProperties = { ...cellBase, textAlign: "right", fontFamily: "var(--mono)", fontSize: 13.5 };
 const numHead: React.CSSProperties = { ...thStyle, textAlign: "right" };
 
-export default async function HomecalcAiSearchMortgageRankingPost() {
-  const { priceWithCurrency } = await getAuditPricing();
+export default function HomecalcAiSearchMortgageRankingPost() {
 
   return (
     <>
@@ -545,7 +543,7 @@ export default async function HomecalcAiSearchMortgageRankingPost() {
           </RevealSection>
 
           <RevealSection>
-            <InlineAuditCTA priceWithCurrency={priceWithCurrency} />
+            <InlineAuditCTA />
           </RevealSection>
 
           <RevealSection>
@@ -811,7 +809,7 @@ function ScreenshotFigure({
   );
 }
 
-function InlineAuditCTA({ priceWithCurrency }: { priceWithCurrency: string }) {
+function InlineAuditCTA() {
   return (
     <div
       style={{
@@ -845,8 +843,7 @@ function InlineAuditCTA({ priceWithCurrency }: { priceWithCurrency: string }) {
       >
         {OFFERS.audit.name} runs the same kind of engine-by-engine
         competitive comparison shown above, for your category, checked by a
-        person, not just pattern-matched. {priceWithCurrency}{" "}
-        {OFFERS.audit.priceNote}.
+        person, not just pattern-matched. {AUDIT_PRICE_DISPLAY}.
       </p>
       <Link href={OFFERS.audit.href} className="btn btn-primary">
         Book an AI Visibility Audit <span className="arr">&rarr;</span>

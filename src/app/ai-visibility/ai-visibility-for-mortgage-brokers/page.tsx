@@ -2,17 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { HOMECALC_PROOF, HOMECALC_CLAIMS, HOMECALC_CITED_PAGES, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
+import { AUDIT_PRICE_DISPLAY, BOOKING_URL } from "@/lib/offers";
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const CASE_STUDY_URL = HOMECALC_PROOF.caseStudyPath;
 const WALKTHROUGH_MINUTES = 60;
 const TURNAROUND = "7 business days";
-const PRICE_DISPLAY = "$1,500";
+const PRICE_DISPLAY = AUDIT_PRICE_DISPLAY;
 
 export const metadata: Metadata = {
   title: "AI Visibility for Mortgage Brokers",
   description:
-    "Ensure your mortgage brokerage or real-estate company appears when buyers ask Google AI Overviews, ChatGPT, Gemini, or Claude. Audit by Hami Tahm: $1,500 flat.",
+    "Ensure your mortgage brokerage or real-estate company appears when buyers ask Google AI Overviews, ChatGPT, Gemini, or Claude. Audit by Hami Tahm, scoped to your business and confirmed on a free call.",
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/ai-visibility-for-mortgage-brokers/",
   },
@@ -88,7 +89,7 @@ const COMPARISON_ROWS = [
   ],
   [
     "Pricing model",
-    "$1,500 audit, flat (one-time)",
+    `${PRICE_DISPLAY}`,
     "Monthly retainer",
     "Per-lead cost",
   ],
@@ -150,7 +151,7 @@ const FAQ_ITEMS: {
   },
   {
     q: "What does this cost?",
-    a: `$1,500, flat. One-time payment, no retainer. See the full audit page for what's included.`,
+    a: `${PRICE_DISPLAY}. One-time, no retainer. See the full audit page for what's included.`,
     auditLink: true,
   },
   {
@@ -218,7 +219,7 @@ const structuredData = {
         acceptedAnswer: {
           "@type": "Answer",
           text: auditLink
-            ? `${PRICE_DISPLAY}, flat. One-time payment, no retainer. See the full audit page for what's included.`
+            ? `${PRICE_DISPLAY}. One-time, no retainer. See the full audit page for what's included.`
             : a,
         },
       })),
@@ -751,7 +752,7 @@ export default function AIVisibilityMortgageBrokers() {
               <ProcessStep
                 n="1"
                 title="Book and pay."
-                body={`${PRICE_DISPLAY} flat. One invoice, one payment, no retainer.`}
+                body={`${PRICE_DISPLAY}. One invoice, confirmed on the call, no retainer.`}
               />
               <ProcessStep
                 n="2"
@@ -856,7 +857,7 @@ export default function AIVisibilityMortgageBrokers() {
                   >
                     {auditLink ? (
                       <>
-                        {PRICE_DISPLAY}, flat. One-time payment, no retainer.
+                        {PRICE_DISPLAY}. One-time, no retainer.
                         See the{" "}
                         <Link href={AUDIT_URL} style={{ color: "var(--accent)" }}>
                           full audit page
@@ -957,7 +958,7 @@ export default function AIVisibilityMortgageBrokers() {
                   position: "relative",
                 }}
               >
-                {PRICE_DISPLAY} flat. Report and walkthrough call within{" "}
+                {PRICE_DISPLAY}. Report and walkthrough call within{" "}
                 {TURNAROUND}.
               </p>
               <Link

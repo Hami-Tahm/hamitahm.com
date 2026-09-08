@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { HOMECALC_PROOF, HOMECALC_CLAIMS, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
+import { AUDIT_PRICE_DISPLAY, BOOKING_URL, AUDIT_CTA_LABEL } from "@/lib/offers";
 
 /**
  * ── CLAIM RULE FOR THIS PAGE (2026-08-11) ──
@@ -26,7 +27,7 @@ const GEO_URL = "/ai-visibility/generative-engine-optimization-consultant-canada
 const CASE_STUDY_URL = HOMECALC_PROOF.caseStudyPath;
 const WALKTHROUGH_MINUTES = 60;
 const TURNAROUND = "7 business days";
-const PRICE_DISPLAY = "$1,500";
+const PRICE_DISPLAY = AUDIT_PRICE_DISPLAY;
 
 export const metadata: Metadata = {
   title: {
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
       "Answer Engine Optimization Consultant Canada | AEO Services",
   },
   description:
-    "Canada-based AEO consultant helping businesses make their content easier for Google AI Overviews, ChatGPT, Copilot and Perplexity to understand and cite. $1,500 audit, delivered in 7 business days.",
+    "Canada-based AEO consultant helping businesses make their content easier for Google AI Overviews, ChatGPT, Copilot and Perplexity to understand and cite. Audit delivered in 7 business days, priced on a free call.",
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/answer-engine-optimization-consultant-canada/",
   },
@@ -88,7 +89,7 @@ const COMPARISON_ROWS = [
   ],
   [
     "Pricing model",
-    "Starts with $1,500 audit, no retainer",
+    "Starts with a scoped audit, no retainer",
     "Monthly retainer",
     "Monthly subscription",
   ],
@@ -171,7 +172,7 @@ const FAQ_ITEMS: {
   },
   {
     q: "How much does this cost?",
-    a: `The starting point is a ${PRICE_DISPLAY} AI visibility audit: flat fee, one-time. From there you can act on the findings yourself, or have me turn them into a fixed-scope Action Plan and roadmap for your team to ship (the audit fee is credited toward it). Optional monthly monitoring is available afterward, on a fixed 6–12 month term, never required to get started.`,
+    a: `The starting point is an AI visibility audit, ${PRICE_DISPLAY}. From there you can act on the findings yourself, or have me turn them into a fixed-scope Action Plan and roadmap for your team to ship (the audit fee is credited toward it). Optional monthly monitoring is available afterward, on a fixed 6–12 month term, never required to get started.`,
   },
   {
     q: "Do you guarantee AI citations?",
@@ -318,8 +319,8 @@ export default function AEOConsultantCanada() {
             >
               I help Canadian service businesses and B2B teams make their content
               easier for Google AI Overviews, ChatGPT, Perplexity and Copilot to
-              understand, cite and recommend. Engagements start with a{" "}
-              {PRICE_DISPLAY} audit delivered in {TURNAROUND}, including a written
+              understand, cite and recommend. Engagements start with an audit
+              delivered in {TURNAROUND}, including a written
               roadmap and a walkthrough call.
             </p>
           </RevealSection>
@@ -336,7 +337,7 @@ export default function AEOConsultantCanada() {
               }}
             >
               Toronto-based &middot; serving businesses across Canada &middot;{" "}
-              {PRICE_DISPLAY} flat &middot; no retainer to start
+              {PRICE_DISPLAY} &middot; no retainer to start
             </p>
           </RevealSection>
 
@@ -353,8 +354,8 @@ export default function AEOConsultantCanada() {
               <Link href={CHECKER_URL} className="btn btn-ghost">
                 Run the free AI visibility check
               </Link>
-              <Link href={AUDIT_URL} className="btn btn-primary">
-                Book the {PRICE_DISPLAY} AEO audit{" "}
+              <Link href={BOOKING_URL} className="btn btn-primary">
+                {AUDIT_CTA_LABEL}{" "}
                 <span className="arr">&rarr;</span>
               </Link>
             </div>
@@ -1144,7 +1145,7 @@ export default function AEOConsultantCanada() {
                   position: "relative",
                 }}
               >
-                Start with a {PRICE_DISPLAY} AI visibility audit. Report and
+                Start with an AI visibility audit. Report and
                 walkthrough call within {TURNAROUND}.
               </p>
               <p
@@ -1160,7 +1161,7 @@ export default function AEOConsultantCanada() {
                 }}
               >
                 Most AEO engagements start with the AI Visibility Audit (
-                {PRICE_DISPLAY}, {TURNAROUND}). After the audit, we scope ongoing
+                {PRICE_DISPLAY}, delivered in {TURNAROUND}). After the audit, we scope ongoing
                 work based on what we find.
               </p>
               <Link

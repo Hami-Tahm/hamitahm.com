@@ -856,14 +856,15 @@ Select-String "your unique answer phrase" page.html`}
                 }}
               >
                 Cross-platform citation analysis, structured data review,
-                technical audit, and a prioritized action plan. $1,500 flat.
+                technical audit, and a prioritized action plan. Scoped to
+                your business, confirmed on a free call.
               </p>
               <Link
                 href={AUDIT_URL}
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
               >
-                Book Your AI Visibility Audit for $1,500{" "}
+                Book Your AI Visibility Audit{" "}
                 <span className="arr">&rarr;</span>
               </Link>
             </div>

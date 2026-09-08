@@ -341,7 +341,7 @@ export default function AboutPage() {
                 </li>
                 <li>
                   <Link href={AUDIT_URL} style={{ color: "var(--accent)", fontWeight: 500 }}>
-                    Or book the $1,500 audit &rarr;
+                    Or book the audit &rarr;
                   </Link>
                 </li>
               </ul>
@@ -563,7 +563,7 @@ export default function AboutPage() {
               </Link>
               <div style={{ marginTop: 18, position: "relative" }}>
                 <Link href={AUDIT_URL} style={{ color: "var(--muted)", fontSize: 14 }}>
-                  Or book the $1,500 audit &rarr;
+                  Or book the audit &rarr;
                 </Link>
               </div>
             </div>

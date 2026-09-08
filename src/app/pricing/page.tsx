@@ -1,28 +1,35 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
-import { OFFERS, PRICING_NOTICE } from "@/lib/offers";
-import { getAuditPricing } from "@/lib/currency";
+import {
+  OFFERS,
+  PRICING_NOTICE,
+  AUDIT_PRICE_DISPLAY,
+  ACTION_PLAN_PRICE_DISPLAY,
+  BOOKING_URL,
+  AUDIT_CTA_LABEL,
+} from "@/lib/offers";
 
 const SLUG = "/pricing/";
-const CONTACT_URL = "/contact/";
+const CONTACT_URL = BOOKING_URL;
 
 export const metadata: Metadata = {
   // Rendered length must stay under ~60 including the " | Hami Tahm" template.
   title: "AI Visibility Pricing & Audit Cost",
   description:
-    "What AI visibility work costs in Canada: a free checker, a $1,500 flat-fee audit, and an action plan and roadmap from $4,500, all published, not gated behind a sales call. Optional monitoring is quoted to scope.",
+    "What AI visibility work costs: a free checker, an audit, and an action plan and roadmap, each scoped to your business and confirmed on a short, free call. Optional monitoring is quoted to scope.",
   alternates: { canonical: `https://hamitahm.com${SLUG}` },
 };
 
 /**
- * Every price on this page reads from src/lib/offers.ts (the audit tier reads
- * from getAuditPricing() instead, so it localizes for non-Canadian visitors
- * (see src/lib/currency.ts). Never hardcode a number here: a pricing page
- * that disagrees with the money pages is exactly the kind of contradiction
- * an AI engine cross-checks and downgrades the whole site for.
+ * Every price on this page reads from src/lib/offers.ts. As of 2026-09-08,
+ * pricing is call-gated: the audit and action plan tiers show the display
+ * constants (AUDIT_PRICE_DISPLAY / ACTION_PLAN_PRICE_DISPLAY), not a dollar
+ * figure. Never hardcode a number here: a pricing page that disagrees with
+ * the money pages is exactly the kind of contradiction an AI engine
+ * cross-checks and downgrades the whole site for.
  */
-function buildTiers(auditPrice: string, auditPriceNote: string) {
+function buildTiers() {
   return [
   {
     step: "Step 0",
@@ -42,31 +49,24 @@ function buildTiers(auditPrice: string, auditPriceNote: string) {
   {
     step: "Step 1",
     name: OFFERS.audit.name,
-    price: auditPrice,
-    priceNote: auditPriceNote,
+    price: AUDIT_PRICE_DISPLAY,
+    priceNote: "Confirmed once we've talked, not before",
     href: OFFERS.audit.href,
     role: OFFERS.audit.role,
-    ctaLabel: "Book the audit",
+    ctaLabel: AUDIT_CTA_LABEL,
     highlight: true,
     includes: [
       "Written report across six AI platforms: Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, Perplexity",
       "A prioritized action plan ranked by impact and effort",
       "A 60-minute walkthrough call",
       "14 days of follow-up questions",
-      "Delivered within 7 business days of payment",
+      "Delivered within 7 business days of booking",
     ],
   },
   {
     step: "Step 2 (optional)",
     name: OFFERS.actionPlan.name,
-    price: OFFERS.actionPlan.price,
-    // NOT OFFERS.actionPlan.priceNote directly: that constant hardcodes
-    // "the $1,500 audit fee", which assumes the visitor paid the CAD audit
-    // price. The Action Plan itself is a CAD-only quote regardless of what
-    // currency the audit was paid in (a real policy question, not a copy
-    // question, and not decided here), so this note stays generic about
-    // "your audit fee" for everyone. Whoever buys the plan gets the exact
-    // credit figure at quote time.
+    price: ACTION_PLAN_PRICE_DISPLAY,
     priceNote: "Fixed scope: your audit fee is credited toward it",
     href: OFFERS.actionPlan.href,
     role: OFFERS.actionPlan.role,
@@ -100,23 +100,23 @@ function buildTiers(auditPrice: string, auditPriceNote: string) {
   ] as const;
 }
 
-function buildFaqItems(auditPrice: string, auditPriceDisplay: string) {
+function buildFaqItems() {
   return [
   {
     q: "How much does an AI visibility audit cost?",
-    a: `${auditPriceDisplay}, flat. One-time payment, no retainer to get started, and it is not gated behind a sales call. That covers all six AI platforms, the written report, the prioritized action plan, a 60-minute walkthrough call, and 14 days of follow-up questions, delivered within 7 business days.`,
+    a: "It depends on your company's size and scope, so there's no single number to publish. Pricing is confirmed on a short, free, no-obligation call: we scope your needs first so the price is right for your business, not to pressure you into anything. If you're not ready for a call, the free AI Visibility Checker is the best first step and costs nothing.",
   },
   {
     q: "What does AI SEO or AEO work cost in Canada?",
-    a: `It depends who you ask, because the category has several names (AI SEO, AEO, GEO, LLMO, AI visibility) and pricing models vary widely. Agency retainers for this work in Canada typically run $2,000–$5,000 per month, ongoing. My structure is different: a ${auditPrice} one-time audit, then an optional fixed-scope action plan from ${OFFERS.actionPlan.price.replace("From ", "")}, where the final number scales with your traffic volume, industry, and site size. You can stop after the audit.`,
+    a: "It depends who you ask, because the category has several names (AI SEO, AEO, GEO, LLMO, AI visibility) and pricing models vary widely. Agency retainers for this work in Canada typically run $2,000–$5,000 per month, ongoing. My structure is different: a one-time audit, then an optional fixed-scope action plan, both scoped to your business and confirmed on a call rather than a flat rate that ignores your traffic volume, industry, and site size. You can stop after the audit.",
   },
   {
     q: "Do you charge a monthly retainer?",
-    a: `No retainer is required to get started, and most engagements never become monthly. Ongoing Monitoring & Advisory exists but it is optional, offered only after the action plan, and runs on a fixed ${OFFERS.monitor.duration} term rather than open-ended. It is the one thing here without a published price, because its cost depends on how many engines, prompts and competitors you want tracked, quoted once your scope is known.`,
+    a: `No retainer is required to get started, and most engagements never become monthly. Ongoing Monitoring & Advisory exists but it is optional, offered only after the action plan, and runs on a fixed ${OFFERS.monitor.duration} term rather than open-ended. It is quoted once your scope is known, the same way the audit and action plan now are.`,
   },
   {
-    q: "Why are your prices published when most agencies hide theirs?",
-    a: "Because hiding the price is a sales tactic, not a service decision. If you have to sit through a discovery call to learn whether something costs $1,500 or $15,000, the call is the product. Publishing the numbers means you can decide whether this is worth your time before you ever contact me. One exception, so this page doesn't contradict itself: ongoing monitoring is quoted rather than listed, because its cost genuinely depends on how many engines, prompts and competitors you want tracked. Everything you'd buy first (the checker, the audit, the action plan) has its number on this page.",
+    q: "Why don't you publish exact prices?",
+    a: "Because the honest answer depends on your company's size and scope, and a single published number would either overcharge a small business or undercharge a large one. A short, free call lets us confirm the real scope first, so the price you're quoted is the right one, not a starting point for negotiation. Nothing here is gated to waste your time: the free checker has no call and no card, and every paid step is quoted quickly once we've talked.",
   },
   {
     q: "Is there a free option?",
@@ -124,11 +124,11 @@ function buildFaqItems(auditPrice: string, auditPriceDisplay: string) {
   },
   {
     q: "Do I have to buy the action plan after the audit?",
-    a: `No. The audit is a complete deliverable on its own: the report and action plan are yours to hand to your own team or developer. The Action Plan exists for people who want the findings turned into page-level work their team can pick up without interpreting it, and if you choose it the ${auditPrice} audit fee is credited toward the price.`,
+    a: "No. The audit is a complete deliverable on its own: the report and action plan are yours to hand to your own team or developer. The Action Plan exists for people who want the findings turned into page-level work their team can pick up without interpreting it, and if you choose it your audit fee is credited toward the price.",
   },
   {
     q: "Do you guarantee results for the price?",
-    a: "No, and be careful with anyone who does. AI engines are not under any consultant's control, so a guaranteed citation or ranking is not a promise anyone can honestly make. What is guaranteed is the deliverable: the audit you paid for, on the timeline quoted, and (in the Action Plan) recommendations specific enough for your team to act on without interpreting them.",
+    a: "No, and be careful with anyone who does. AI engines are not under any consultant's control, so a guaranteed citation or ranking is not a promise anyone can honestly make. What is guaranteed is the deliverable: the audit you booked, on the timeline quoted, and (in the Action Plan) recommendations specific enough for your team to act on without interpreting them.",
   },
   ];
 }
@@ -160,11 +160,9 @@ function buildStructuredData(faqItems: ReturnType<typeof buildFaqItems>) {
   };
 }
 
-export default async function PricingPage() {
-  const { price: auditPrice, priceNote: auditPriceNote, priceWithCurrency: auditPriceDisplay } =
-    await getAuditPricing();
-  const TIERS = buildTiers(auditPrice, auditPriceNote);
-  const FAQ_ITEMS = buildFaqItems(auditPrice, auditPriceDisplay);
+export default function PricingPage() {
+  const TIERS = buildTiers();
+  const FAQ_ITEMS = buildFaqItems();
   const structuredData = buildStructuredData(FAQ_ITEMS);
 
   return (
@@ -195,9 +193,9 @@ export default async function PricingPage() {
                 marginTop: 26,
               }}
             >
-              Published prices.{" "}
+              Straightforward pricing,{" "}
               <em style={{ fontStyle: "italic", color: "var(--accent)" }}>
-                No sales call to find out.
+                tailored to you.
               </em>
             </h1>
           </RevealSection>
@@ -212,10 +210,12 @@ export default async function PricingPage() {
                 lineHeight: 1.65,
               }}
             >
-              Most AI visibility, AI SEO, and AEO providers quote on request. Here is
-              the whole ladder instead: what each step costs, what you get, and
-              where you can stop. You can go as far as the free checker and never spend
-              anything.
+              Here is the whole ladder: what each step gets you, and where you
+              can stop. Price depends on your company's size and scope, so the
+              audit and action plan are confirmed on a short, free call rather
+              than guessed at here. That's so we scope your needs first and
+              the price is right for you, not to pressure you into anything.
+              You can go as far as the free checker and never spend anything.
             </p>
           </RevealSection>
         </div>
@@ -451,7 +451,7 @@ export default async function PricingPage() {
               {[
                 <>
                   <b style={{ color: "var(--ink)", fontWeight: 500 }}>
-                    {auditPrice} once
+                    One scoped fee
                   </b>{" "}
                   for the diagnosis, not a monthly fee.
                 </>,
@@ -579,8 +579,8 @@ export default async function PricingPage() {
                 <Link href={OFFERS.checker.href} className="btn btn-primary">
                   Get free AI visibility check <span className="arr">&rarr;</span>
                 </Link>
-                <Link href={OFFERS.audit.href} className="btn btn-ghost">
-                  Or book the audit
+                <Link href={BOOKING_URL} className="btn btn-ghost">
+                  Book a call
                 </Link>
               </div>
               <p

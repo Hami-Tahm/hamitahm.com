@@ -327,8 +327,9 @@ export default function CaseStudiesIndexPage() {
                 Want results like these for your business?
               </h3>
               <p style={{ color: "var(--muted)", fontSize: "14.5px", marginTop: 5 }}>
-                Book a $1,500 AI Visibility Audit: full diagnosis of where
-                AI engines mention you, delivered in 7&nbsp;days.
+                Book an AI Visibility Audit: full diagnosis of where
+                AI engines mention you, delivered in 7&nbsp;days. Scoped to
+                your business, confirmed on a free call.
               </p>
               <p style={{ color: "var(--muted)", fontSize: "14.5px", marginTop: 5 }}>
                 Prefer to see the deliverable first?{" "}
