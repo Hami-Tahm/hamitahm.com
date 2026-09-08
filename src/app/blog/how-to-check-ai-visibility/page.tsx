@@ -1011,15 +1011,8 @@ export default function HowToCheckAIVisibilityPost() {
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
               >
-                Run the free AI Visibility Check{" "}
+                Get free AI visibility check{" "}
                 <span className="arr">&rarr;</span>
-              </Link>
-              <Link
-                href={AUDIT_URL}
-                className="btn btn-ghost"
-                style={{ marginTop: 14, marginLeft: 12, position: "relative" }}
-              >
-                Get an audit by an expert
               </Link>
             </div>
           </RevealSection>

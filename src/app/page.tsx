@@ -39,19 +39,32 @@ export default function Home() {
             </h1>
           </RevealSection>
 
+          <RevealSection delay={0.1}>
+            <p
+              style={{
+                marginTop: 22,
+                fontSize: "clamp(16px, 2vw, 19px)",
+                color: "var(--muted)",
+                maxWidth: "50ch",
+                lineHeight: 1.6,
+              }}
+            >
+              AI is eating search traffic. If your business isn&rsquo;t
+              showing up in AI answers, you&rsquo;re losing customers you
+              never see leave.
+            </p>
+          </RevealSection>
+
           <RevealSection delay={0.18}>
-            <div style={{ marginTop: 42, display: "flex", gap: 14, flexWrap: "wrap", alignItems: "center" }}>
-              {/* Cold page → lead with the free, low-commitment entry point (the
-                  checker), audit second. Matches the funnel used on every other
-                  cold surface. */}
+            <div style={{ marginTop: 30, display: "flex", gap: 14, flexWrap: "wrap", alignItems: "center" }}>
+              {/* Single, consistent CTA across the page (2026-09-08): the free
+                  checker is the low-commitment entry point everything else on
+                  this page points back to. No competing second action. */}
               <Link
                 href="/ai-visibility/ai-visibility-checker/"
                 className="btn btn-primary"
               >
-                Run the free AI visibility check <span className="arr">&rarr;</span>
-              </Link>
-              <Link href="/ai-visibility/ai-visibility-audit/" className="btn btn-ghost">
-                Or book the audit
+                Get free AI visibility check <span className="arr">&rarr;</span>
               </Link>
             </div>
           </RevealSection>
@@ -69,16 +82,6 @@ export default function Home() {
               <span style={{ width: 34, height: 1, background: "var(--accent)", display: "inline-block" }} />
               AI Visibility Consultant &middot; Toronto, Canada
             </div>
-            {/* Lead with the number so it's the first thing anyone scanning this
-                section sees, per feedback 2026-08-30. */}
-            <div style={{ display: "flex", alignItems: "baseline", gap: 12, flexWrap: "wrap", marginBottom: 18 }}>
-              <span style={{ fontFamily: "var(--serif)", fontWeight: 500, fontSize: "clamp(36px, 4.6vw, 52px)", letterSpacing: "-.01em", color: "var(--ink)" }}>
-                {HOMECALC_PROOF.combinedAppearances}
-              </span>
-              <span style={{ fontFamily: "var(--mono)", fontSize: "12.5px", letterSpacing: ".06em", color: "var(--muted)", textTransform: "uppercase" }}>
-                AI appearances, in just {HOMECALC_PROOF.timeframe}
-              </span>
-            </div>
             <p
               style={{
                 fontSize: "clamp(17px, 2vw, 20px)",
@@ -87,11 +90,19 @@ export default function Home() {
                 lineHeight: 1.65,
               }}
             >
-              I&rsquo;m Hami Tahm, an AI Visibility Consultant in Toronto. I help
-              Canadian businesses get cited and recommended when buyers ask AI
-              engines, and I prove it on my own products first, in public,
-              with numbers you can check.
+              I&rsquo;m Hami Tahm. I help businesses get cited and
+              recommended when buyers ask AI engines instead of Google.
             </p>
+            {/* Stat moved after the identity statement so it reads as proof
+                of the claim above, not a number interrupting it (2026-09-08). */}
+            <div style={{ display: "flex", alignItems: "baseline", gap: 12, flexWrap: "wrap", marginTop: 22 }}>
+              <span style={{ fontFamily: "var(--serif)", fontWeight: 500, fontSize: "clamp(36px, 4.6vw, 52px)", letterSpacing: "-.01em", color: "var(--ink)" }}>
+                {HOMECALC_PROOF.combinedAppearances}
+              </span>
+              <span style={{ fontFamily: "var(--mono)", fontSize: "12.5px", letterSpacing: ".06em", color: "var(--muted)", textTransform: "uppercase" }}>
+                AI appearances, in just {HOMECALC_PROOF.timeframe}, on my own product
+              </span>
+            </div>
             <Link
               href="/blog/hamitahm-ai-visibility-benchmark/"
               style={{
@@ -119,21 +130,32 @@ export default function Home() {
             <SectionLabel number="02" text="What problem do I solve" />
           </RevealSection>
           <RevealSection delay={0.06}>
-            <div className="panel">
-              <h2 style={{ fontFamily: "var(--serif)", fontWeight: 500, fontSize: "clamp(26px, 3.4vw, 38px)", lineHeight: 1.12, letterSpacing: "-.01em", maxWidth: "18ch", position: "relative" }}>
-                Most businesses are invisible the moment people stop Googling and start asking AI.
-              </h2>
-              <p style={{ color: "var(--muted)", marginTop: 18, maxWidth: "52ch", position: "relative" }}>
-                Search is moving to answer engines. I help Canadian clinics, real-estate brands, and SaaS companies show up when buyers ask ChatGPT, Perplexity, and Google&rsquo;s AI&nbsp;Overviews, using the same system I built and proved on my own products.
-              </p>
-              <Link
-                href="/ai-visibility/ai-visibility-audit/"
-                className="btn btn-primary"
-                style={{ marginTop: 36, position: "relative" }}
-              >
-                Get Your AI Visibility Audit <span className="arr">&rarr;</span>
-              </Link>
+            <h2 style={{ fontFamily: "var(--serif)", fontWeight: 500, fontSize: "clamp(26px, 3.4vw, 38px)", lineHeight: 1.12, letterSpacing: "-.01em", maxWidth: "20ch", marginBottom: 30 }}>
+              Most businesses are invisible the moment people stop Googling and start asking AI.
+            </h2>
+          </RevealSection>
+          <RevealSection delay={0.1}>
+            <div className="problem-cards" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 20 }}>
+              <ProblemCard
+                title="Visibility"
+                text="Buyers ask ChatGPT, Perplexity, and Google's AI Overviews instead of Googling. If you're not in the answer, you don't exist to them."
+              />
+              <ProblemCard
+                title="Authority"
+                text="AI engines cite sources they trust. If they can't verify who you are, they won't recommend you over a competitor."
+              />
+              <ProblemCard
+                title="Competitor gaps"
+                text="Rivals are already showing up in the answers you're missing, using the same system I built and proved on my own products."
+              />
             </div>
+            <Link
+              href="/ai-visibility/ai-visibility-checker/"
+              className="btn btn-primary"
+              style={{ marginTop: 36 }}
+            >
+              Get free AI visibility check <span className="arr">&rarr;</span>
+            </Link>
           </RevealSection>
         </div>
       </section>
@@ -203,6 +225,35 @@ export default function Home() {
       </section>
 
     </>
+  );
+}
+
+function ProblemCard({ title, text }: { title: string; text: string }) {
+  return (
+    <div
+      style={{
+        border: "1px solid var(--line)",
+        borderRadius: 12,
+        padding: "22px 22px",
+        background: "var(--panel)",
+      }}
+    >
+      <div
+        style={{
+          fontFamily: "var(--mono)",
+          fontSize: 12,
+          letterSpacing: ".08em",
+          textTransform: "uppercase",
+          color: "var(--accent)",
+          marginBottom: 10,
+        }}
+      >
+        {title}
+      </div>
+      <p style={{ color: "var(--muted)", fontSize: 14.5, lineHeight: 1.55, margin: 0 }}>
+        {text}
+      </p>
+    </div>
   );
 }
 
