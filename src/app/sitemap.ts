@@ -172,7 +172,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog/homecalc-ai-search-mortgage-ranking/": "2026-08-31",
     "/blog/hamitahm-ai-visibility-benchmark/": "2026-08-31",
     "/blog/homecalc-scrunch-citation-mention-gap/": "2026-09-07",
-    "/blog/scrunch-vs-otterly/": "2026-09-07",
+    "/blog/scrunch-vs-otterly/": "2026-09-08",
     "/blog/": "2026-09-07",
     "/blog/what-is-ai-visibility/": "2026-08-11",
     "/blog/best-ai-visibility-tools/": "2026-09-07",

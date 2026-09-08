@@ -147,6 +147,7 @@ const blogGraph = buildBlogSchema({
   title: ARTICLE_TITLE,
   description: ARTICLE_DESCRIPTION,
   datePublished: DATE_PUBLISHED,
+  dateModified: "2026-09-08",
 })["@graph"];
 
 const structuredData = {
@@ -544,7 +545,12 @@ export default function ScrunchVsOtterlyPost() {
               (1,000/month even on Lite, up to 10,000 on Premium), but
               Otterly&rsquo;s own page frames these as diagnostic output, not
               an applied optimization the way Scrunch&rsquo;s AXP is
-              positioned.
+              positioned. Notably, this audit tool isn&rsquo;t gated behind a
+              paid tier at all: the free trial itself includes 100 GEO URL
+              Audits, each scoring a page on three separate axes (static vs.
+              dynamic rendering, content analysis, structured data) rather
+              than the single 0-100 number Scrunch&rsquo;s Site Maps shows per
+              page, tested directly on this site&rsquo;s own trial account.
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>Pricing:</strong>{" "}Lite $29/month
