@@ -140,12 +140,17 @@ a single post, it is a default for all future work on this site.
 
 **Standing practice from Hami, added 2026-09-10. Adopted from HomeCalc.ca.**
 
-`EXPERIMENTS.md` at the repo root is the R&D evidence file: project scope, a scored backlog of
-candidate experiments, standing decisions and rejected directions, and a dated log. It exists to
-support SR&ED and IRAP, so what goes in it is governed by CRA's test, not by how interesting the
-work was.
+**The file itself now lives in the `citation-engine` repository, not here.** It moved on
+2026-09-10, when that repository was created, exactly as its own closing note said it would. There
+is nothing to write in this repo.
 
-**Read `EXPERIMENTS.md` Section 1 before writing in it.** The short version:
+`EXPERIMENTS.md` is the R&D evidence file: project scope, a scored backlog of candidate
+experiments, standing decisions and rejected directions, and a dated log. It exists to support
+SR&ED and IRAP, so what goes in it is governed by CRA's test, not by how interesting the work was.
+
+**Why this matters here:** work done in *this* repo is explicitly ineligible, and that is the whole
+reason the two repositories are separate. If you are working on hamitahm.com, you are not doing
+R&D. The rules below are kept so nobody has to go and find out the hard way.
 
 - **Almost nothing done in this repo is eligible.** Pages, copy, blog posts, SEO, structured data,
   CTA and pricing work are listed as explicitly ineligible. The eligible project is the separate
