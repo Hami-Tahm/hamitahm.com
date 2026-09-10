@@ -180,9 +180,17 @@ This is where the actual research is. Depends on Wave 0.
 | 1.2 | Citation normalization layer across engine output formats, with measured accuracy (H2) | 4 | 4 | 5 | 4 | Yes |
 | 1.3 | Mention vs citation vs influence separation (H3) | 4 | 4 | 4 | 5 | Yes |
 | 1.4 | Cross-engine comparability index, or a documented finding that one is not defensible | 4 | 3 | 3 | 4 | Partial |
+| 1.5 | Divergence between engine APIs and their consumer surfaces: how far apart are the answers a customer actually sees and the ones we can measure | 5 | 4 | 5 | 5 | Yes |
 
 1.1 comes first. Until sample size is settled, every other number the system produces is
 unfalsifiable, and every later experiment inherits the same doubt.
+
+1.5 was added on 2026-09-10 as a direct consequence of the API-versus-consumer-surface decision on
+item 1.1. It is scored high on every axis and it is the honest counterweight to that decision: we
+measure the API because it is stable and permitted, and we owe ourselves a measurement of how far
+that sits from what a customer sees. Google AI Overviews has no API at all, which means the surface
+Canadian SMB clients arguably care about most is outside item 1.1 entirely. That is a stated
+limitation, not an oversight.
 
 ### Wave 2: attribution
 
@@ -247,6 +255,11 @@ currently flowing toward it produces a grant-funded product nobody buys.
 | 2026-09-10 | Dual-use framing is adopted as narrative discipline only, never as an input to architecture | Knowing where the second application sits costs nothing and prevents inventing a story later. Building for a hypothetical second customer today is how months disappear. |
 | 2026-09-10 | Wave 1 item 1.1 (variance and sample size) precedes all other measurement work | Every number the system produces is unfalsifiable until sampling is settled. This is also the strongest single SR&ED candidate in the file. |
 | 2026-09-10 | B2G priority order: AI transparency consultation response, then AI Source List, then ISC, then IRAP | Ordered by cost and reversibility, cheapest and fastest first. |
+| 2026-09-10 | Measurement runs against engine APIs, not consumer surfaces, for item 1.1 | Stable, permitted, reproducible. The variance question is about run-to-run variability of a fixed configuration, which is answerable on the API. The gap between API and consumer surface is real and becomes its own experiment (item 1.5) rather than being assumed away. |
+| 2026-09-10 | First two engines: Perplexity Sonar and OpenAI with the web search tool | Perplexity returns citations natively and is the cleanest citation surface. OpenAI is the engine clients ask about most. They differ architecturally, which is what makes the cross-engine comparison worth anything. |
+| 2026-09-10 | Any n we find is per-configuration, not universal | Model, engine and prompt type are all fixed inputs to the experiment. The result must always be reported with the configuration it was measured under, or it is a misleading number. |
+| 2026-09-10 | The measurement engine gets its own repository, separate from this one | This repo is the marketing site. Mixing a measurement engine into it would confuse the eligible and ineligible work that Section 1 deliberately separates. |
+| 2026-09-10 | Budget ceiling of $50 for item 1.1 | Measured, not assumed: roughly $6.50 per full pass across both engines at September 2026 API rates, and the experiment needs four to six passes. |
 
 ### Rejected directions
 
