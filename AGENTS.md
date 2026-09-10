@@ -136,4 +136,33 @@ a single post, it is a default for all future work on this site.
 
 ---
 
+## 7. R&D Logging: EXPERIMENTS.md
+
+**Standing practice from Hami, added 2026-09-10. Adopted from HomeCalc.ca.**
+
+`EXPERIMENTS.md` at the repo root is the R&D evidence file: project scope, a scored backlog of
+candidate experiments, standing decisions and rejected directions, and a dated log. It exists to
+support SR&ED and IRAP, so what goes in it is governed by CRA's test, not by how interesting the
+work was.
+
+**Read `EXPERIMENTS.md` Section 1 before writing in it.** The short version:
+
+- **Almost nothing done in this repo is eligible.** Pages, copy, blog posts, SEO, structured data,
+  CTA and pricing work are listed as explicitly ineligible. The eligible project is the separate
+  measurement engine defined in Section 1, which has not started yet.
+- **Do not add a log entry unless there was a genuine technological uncertainty**, meaning a
+  limitation that standard practice could not resolve, plus a hypothesis, an experiment, and a
+  result with numbers and a commit reference. Difficulty is not uncertainty. Routine debugging is
+  not eligible.
+- **An empty log is the correct outcome** when no eligible work happened. Padding it is actively
+  harmful: it signals the claim was not filtered, which invites scrutiny of everything else.
+- **Never write an entry from memory after the fact.** Same-day or not at all.
+- **Nothing gets built straight off the backlog.** One-page proposal, review with Hami, agreed
+  scope, then build. See the required gate in Section 2.
+
+If you are working in this repo and think something you did belongs in the log, say so and ask
+rather than adding it. The default answer is that it does not.
+
+---
+
 **These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
