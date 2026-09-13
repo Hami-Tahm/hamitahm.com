@@ -31,6 +31,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // visibility audit look like" is a real pre-purchase query, and this is the
     // only page on the site that answers it with the deliverable itself.
     { path: "/ai-visibility/sample-report/", priority: 0.9, changeFrequency: "monthly" },
+    // White-label entry point. Agencies are a second buyer type with their own
+    // query set ("white label AEO partner"), and this is the only page that
+    // answers it.
+    { path: "/for-agencies/", priority: 0.85, changeFrequency: "monthly" },
     { path: "/ai-visibility/ai-visibility-consultant-canada/", priority: 0.9, changeFrequency: "monthly" },
     { path: "/ai-visibility/ai-visibility-consultant-toronto/", priority: 0.9, changeFrequency: "monthly" },
     { path: "/ai-visibility/answer-engine-optimization-consultant-canada/", priority: 0.85, changeFrequency: "monthly" },
