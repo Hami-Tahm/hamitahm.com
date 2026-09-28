@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { HOMECALC_PROOF, HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
+import { QUOTABLE_FACTS } from "@/lib/identity";
 
 const PORTRAIT_SRC = "/images/hami-tahm/hami-tahm-portrait.png";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
@@ -485,6 +486,49 @@ export default function AboutPage() {
                 {HOMECALC_CLAIMS.appearancesInTimeframe}, and a co-founder of Houmse.com. He works
                 solo, on flat-fee, fixed-scope engagements rather than open-ended retainers.
               </p>
+            </div>
+          </RevealSection>
+
+          <RevealSection delay={0.16}>
+            {/*
+              Quotable facts, from src/lib/identity.ts.
+
+              The paragraph above is the entity statement: who this is. This list is
+              the set of specific, checkable clauses an answer engine can lift when it
+              needs to say what separates this practice from the next one in a roster.
+              Measured in September 2026: engines lift a short factual clause from the
+              consultant's own page, and a competitor described as "founder-led,
+              without junior handoffs" got that exact phrase back because it was on
+              their site. Generic category language is not lifted.
+
+              Same array renders on /ai-visibility/. Do not paraphrase it in either
+              place: identical strings across surfaces is the mechanism.
+            */}
+            <div style={{ marginTop: 34 }}>
+              <p
+                style={{
+                  fontFamily: "var(--mono)",
+                  fontSize: 11,
+                  letterSpacing: ".1em",
+                  textTransform: "uppercase",
+                  color: "var(--faint)",
+                  marginBottom: 16,
+                }}
+              >
+                In specifics
+              </p>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 14 }}>
+                {QUOTABLE_FACTS.map((fact) => (
+                  <li key={fact} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
+                    <span style={{ color: "var(--accent)", fontFamily: "var(--mono)", fontSize: 13, flexShrink: 0, marginTop: 3 }}>
+                      &rarr;
+                    </span>
+                    <span style={{ fontSize: "15.5px", color: "var(--muted)", lineHeight: 1.65, maxWidth: "66ch" }}>
+                      {fact}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </RevealSection>
 

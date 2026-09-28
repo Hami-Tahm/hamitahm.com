@@ -6,6 +6,7 @@ import { ShortAnswer } from "@/components/ShortAnswer";
 import { HOMECALC_PROOF, HOMECALC_CLAIMS, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
 import { COMMERCIAL_REALITY } from "@/lib/citation-study";
 import { OFFERS } from "@/lib/offers";
+import { QUOTABLE_FACTS } from "@/lib/identity";
 
 const PORTRAIT_SRC = "/images/hami-tahm/hami-tahm-portrait.png";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
@@ -1170,6 +1171,58 @@ export default function AIVisibilityPage() {
                   </Link>
                 </div>
               </div>
+            </div>
+          </RevealSection>
+        </div>
+      </section>
+
+      {/*
+        Quotable facts, from src/lib/identity.ts. Same array as /hami-tahm/,
+        rendered verbatim rather than paraphrased, because identical strings
+        across surfaces is the whole mechanism.
+
+        This page is the one Google's AI Overviews were observed citing for
+        "AI visibility consultant Toronto" and "AI visibility audit Canada" in
+        September 2026, and the clause they returned about this practice was
+        generic category language. These sentences exist to give them something
+        specific to lift instead.
+      */}
+      <section style={{ padding: "20px 0 40px" }}>
+        <div className="wrap">
+          <RevealSection>
+            <div
+              style={{
+                border: "1px solid var(--line)",
+                borderLeft: "2px solid var(--accent)",
+                borderRadius: 4,
+                padding: "26px 30px",
+                background: "var(--accent-soft)",
+              }}
+            >
+              <p
+                style={{
+                  fontFamily: "var(--mono)",
+                  fontSize: 11,
+                  letterSpacing: ".1em",
+                  textTransform: "uppercase",
+                  color: "var(--faint)",
+                  marginBottom: 16,
+                }}
+              >
+                In specifics
+              </p>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 14 }}>
+                {QUOTABLE_FACTS.map((fact) => (
+                  <li key={fact} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
+                    <span style={{ color: "var(--accent)", fontFamily: "var(--mono)", fontSize: 13, flexShrink: 0, marginTop: 3 }}>
+                      &rarr;
+                    </span>
+                    <span style={{ fontSize: "15.5px", color: "var(--ink)", lineHeight: 1.65, maxWidth: "66ch" }}>
+                      {fact}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </RevealSection>
         </div>

@@ -32,11 +32,17 @@ const contentSecurityPolicy = [
   // subdomains Clarity rotates through (a.clarity.ms, b.clarity.ms, ...). Without
   // both, the CSP silently drops every session — the failure mode is an empty
   // dashboard with no console error the user would ever look for.
-  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://*.clarity.ms",
+  // bat.bing.com serves the Microsoft UET tag (bat.js) and receives its beacons.
+  // Added 2026-09-28 for the Microsoft Ads campaign. Same trap as Clarity above and
+  // worth stating twice: without this the tag is dropped by the CSP, no console
+  // error appears that anyone would go looking for, and the ads account records
+  // zero conversions while the budget spends. Automated bidding then optimises
+  // against nothing, which looks exactly like "the channel doesn't work".
+  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://*.clarity.ms https://bat.bing.com",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: https:",
   "font-src 'self'",
-  "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.g.doubleclick.net https://*.clarity.ms",
+  "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.g.doubleclick.net https://*.clarity.ms https://bat.bing.com",
   "frame-src 'self' https://www.googletagmanager.com",
   // Note: no `upgrade-insecure-requests` — it's ignored in a report-only policy
   // (browsers warn about it), and it's redundant once enforced because the site is

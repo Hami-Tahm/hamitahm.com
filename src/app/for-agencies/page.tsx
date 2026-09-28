@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
+import AgencyPartnerForm from "@/components/AgencyPartnerForm";
 import { AUDIT_PLATFORMS, AUDIT_PLATFORM_COUNT_WORD, BOOKING_URL } from "@/lib/offers";
 
 /**
@@ -393,15 +394,16 @@ export default function ForAgencies() {
                 One audit on an existing account, so you see the deliverable before you sell it to
                 anyone. No minimum, no contract.
               </p>
-              <Link href={BOOKING_URL} className="btn btn-primary" style={{ marginTop: 30, position: "relative" }}>
-                Talk about a partnership <span className="arr">&rarr;</span>
-              </Link>
-              <p style={{ marginTop: 20, fontSize: 14, color: "var(--muted)", position: "relative" }}>
-                Or email{" "}
-                <a href="mailto:hami@hamitahm.com" style={{ color: "var(--ink)" }}>
-                  hami@hamitahm.com
-                </a>
-              </p>
+              {/*
+                The closing CTA is the form itself rather than a link to /contact/.
+                Sending a qualified agency visitor to a general contact page loses them
+                to a second decision, and the mailto that used to sit here could not be
+                measured at all, which is the whole reason paid traffic had nowhere
+                trustworthy to land. See AgencyPartnerForm for the reasoning.
+              */}
+              <div style={{ maxWidth: "46ch", marginLeft: "auto", marginRight: "auto" }}>
+                <AgencyPartnerForm />
+              </div>
             </div>
           </RevealSection>
         </div>

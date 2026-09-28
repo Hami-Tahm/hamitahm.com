@@ -5,6 +5,7 @@ import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { CtaTracking } from "@/components/CtaTracking";
+import { CANONICAL_DESCRIPTOR } from "@/lib/identity";
 
 const GA_ID = "G-Z1L4M2SD14";
 const GTM_ID = "GTM-P3HNG5HQ";
@@ -87,13 +88,11 @@ const siteStructuredData = {
       alternateName: ["HamiTahm", "Hami Tahm AI Visibility"],
       url: "https://hamitahm.com/hami-tahm/",
       jobTitle: "AI Visibility Consultant",
-      // CANONICAL DESCRIPTOR: keep this identical to the footer, the X bio, the
-      // LinkedIn headline, the Linktree bio and every other profile. The repetition
-      // of one exact sentence across surfaces is what tells machines these profiles
-      // are a single entity. If you change it, change it EVERYWHERE, or you rebuild
-      // the fragmentation this was written to fix.
-      description:
-        "AI Visibility Consultant in Toronto: AEO & GEO for Canadian businesses that want to be cited in Google AI Overviews, ChatGPT, Gemini, and Claude.",
+      // CANONICAL DESCRIPTOR, from src/lib/identity.ts. On-site surfaces now read
+      // the same constant so they cannot drift apart again. Off-site profiles (X,
+      // LinkedIn, Linktree, Clutch, Semrush) are still manual: when the constant
+      // changes, those have to be updated by hand or the entity fragments again.
+      description: CANONICAL_DESCRIPTOR,
       image: "https://hamitahm.com/images/hami-tahm/hami-tahm-portrait.png",
       worksFor: { "@id": "https://hamitahm.com/#organization" },
       /*
