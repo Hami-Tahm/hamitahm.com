@@ -22,8 +22,34 @@ export const LEGAL = {
   site: "hamitahm.com",
 
   /** Last substantive review of the legal pages. */
-  effectiveDate: "2026-07-14",
-  displayDate: "July 14, 2026",
+  effectiveDate: "2026-10-02",
+  displayDate: "October 2, 2026",
+} as const;
+
+/**
+ * Advertising measurement disclosure.
+ *
+ * ⚠️ ADDED 2026-10-02, THE SAME DAY THE MICROSOFT UET TAG WENT LIVE. Before this edit
+ * the privacy page said, in three places, that the site used no advertising trackers,
+ * no retargeting pixels and no advertising cookies. From the moment UET was published
+ * in GTM that was false, on a legal page. Any future change to what fires on the site
+ * has to land here in the same change, not after.
+ *
+ * Microsoft's advertiser requirements for UET and remarketing in paid search: say that
+ * individual visitor tracking and sharing with third parties for advertising is taking
+ * place, say that Microsoft collects or receives personal data to provide Microsoft
+ * Advertising with a link to the Microsoft Privacy Statement, and tell people how to
+ * opt out of interest-based advertising. All three are on the page.
+ */
+export const ADVERTISING = {
+  microsoftPrivacyStatement: "https://www.microsoft.com/en-us/privacy/privacystatement",
+  microsoftAdSettings: "https://account.microsoft.com/privacy/ad-settings",
+  googlePrivacyPolicy: "https://policies.google.com/privacy",
+  googleAdSettings: "https://myadcenter.google.com/",
+  /** Digital Advertising Alliance of Canada: the Canadian industry opt-out. */
+  daacOptOut: "https://youradchoices.ca/",
+  /** Network Advertising Initiative opt-out, named in Microsoft's own requirements. */
+  naiOptOut: "https://optout.networkadvertising.org/",
 } as const;
 
 /**
@@ -40,12 +66,32 @@ export const DATA_COLLECTED = [
       "Submitted through this site, then stored in a private Google Sheet and emailed to Hami Tahm. Nothing is published.",
   },
   {
+    what: "Agency partnership enquiries",
+    fields:
+      "Your name, agency name, agency website (optional), work email address, and anything you choose to write in the message field.",
+    why: "To reply to your enquiry about white-label work. Nothing else.",
+    where:
+      "Submitted through the form on /for-agencies/, then stored in a private Google Sheet and emailed to Hami Tahm. Your agency is never named to anyone else.",
+  },
+  {
     what: "Analytics",
     fields:
       "Standard web analytics: pages viewed, approximate location (country/region), device type, referring site, and anonymised usage events.",
     why: "To understand which pages are useful and which are not.",
+    where: "Google Analytics 4, loaded via Google Tag Manager.",
+  },
+  {
+    /*
+     * Its own entry, not folded into Analytics: advertising measurement is a different
+     * purpose (it can be used to show you ads elsewhere), and PIPEDA requires the
+     * purpose to be identified rather than implied.
+     */
+    what: "Advertising measurement and remarketing",
+    fields:
+      "Pages you visit on this site and whether you submit a form, linked to a cookie identifier and, if you arrived from a Microsoft ad, the click identifier in the link.",
+    why: "To measure whether ads lead to real enquiries, and to build lists of past visitors that ads on Microsoft's network can be shown to later.",
     where:
-      "Google Analytics 4, loaded via Google Tag Manager. This site does not use advertising or retargeting pixels.",
+      "Microsoft Advertising, through its Universal Event Tracking (UET) tag. Google Analytics also groups visitors into audience lists; these are not currently shared with any advertising platform, and this page will be updated before that changes.",
   },
   {
     /*
@@ -85,8 +131,12 @@ export const THIRD_PARTIES = [
     role: "Heatmaps and session replay: how people scroll and click through pages. Recordings are of page interactions, not your screen or camera, and Clarity masks text input by default.",
   },
   {
+    name: "Microsoft Advertising",
+    role: "Advertising measurement and remarketing through the Universal Event Tracking (UET) tag. Microsoft collects or receives personal data from visitors to provide Microsoft Advertising, as described in the Microsoft Privacy Statement linked below.",
+  },
+  {
     name: "Google (Sheets & Apps Script)",
-    role: "Stores AI Visibility Checker submissions in a private spreadsheet and delivers the email notification.",
+    role: "Stores AI Visibility Checker submissions and agency partnership enquiries in private spreadsheets and delivers the email notifications.",
   },
   {
     name: "Vercel",

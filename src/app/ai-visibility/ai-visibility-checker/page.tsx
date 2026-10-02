@@ -6,6 +6,7 @@ import CheckerForm from "./CheckerForm";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const SAMPLE_REPORT_URL = "/ai-visibility/sample-report/";
 const HUB_URL = "/ai-visibility/";
+const HOW_TO_CHECK_URL = "/blog/how-to-check-ai-visibility/";
 const SITE = "https://hamitahm.com";
 const URL = `${SITE}/ai-visibility/ai-visibility-checker/`;
 
@@ -158,6 +159,75 @@ export default function AiVisibilityCheckerPage() {
                 day, and why it is worth it.
               </p>
             </div>
+          </RevealSection>
+
+          {/*
+            WHAT ARRIVES, AND WHEN, ABOVE THE FORM (added 2026-10-02).
+
+            Search Console: the "ai visibility checker" query family is roughly 24,000
+            impressions over three months, about 60% of everything the site shows for.
+            GA4 for the 28 days to Oct 1: 3 people started this form and 0 finished it.
+            Someone typing "free ai visibility checker" expects an answer on screen, and
+            this check deliberately does not give one. The facts were all on the page,
+            but in the FAQ below the fold. They now sit above the form, so nobody fills in
+            three fields before finding out what they will get.
+
+            Decided with Hami the same day: no instant result for now. An instant check
+            costs API money per visitor and invites abuse; the honest move is to say
+            plainly what this is and point people who want a number to the free guide.
+          */}
+          <RevealSection delay={0.09}>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(170px, 1fr))",
+                gap: 12,
+                margin: "0 0 22px",
+              }}
+            >
+              {[
+                ["Right away", "A confirmation email, so you know it arrived."],
+                ["Within one business day", "Your report, read and written by a person."],
+                ["Engines covered", "ChatGPT, Google AI Overview and Gemini."],
+                ["Markets", "Canada and the United States. Elsewhere: join the list."],
+              ].map(([k, v]) => (
+                <div
+                  key={k}
+                  style={{
+                    border: "1px solid var(--line)",
+                    borderRadius: 8,
+                    padding: "12px 14px",
+                    background: "var(--panel)",
+                  }}
+                >
+                  <div
+                    style={{
+                      fontFamily: "var(--mono)",
+                      fontSize: 11,
+                      letterSpacing: ".08em",
+                      textTransform: "uppercase",
+                      color: "var(--accent)",
+                      marginBottom: 6,
+                    }}
+                  >
+                    {k}
+                  </div>
+                  <div style={{ fontSize: 14, color: "var(--ink)", lineHeight: 1.45 }}>{v}</div>
+                </div>
+              ))}
+            </div>
+            <p style={{ fontSize: 14, color: "var(--muted)", lineHeight: 1.6, maxWidth: "62ch", margin: "0 0 26px" }}>
+              <strong style={{ color: "var(--ink)" }}>Need a number this minute?</strong>{" "}
+              Free automated checkers exist, and{" "}
+              <Link href={HOW_TO_CHECK_URL} style={{ color: "var(--accent)", fontWeight: 500 }}>
+                this guide compares seven free ways to check
+              </Link>
+              . Know what you are getting: an instant result is one answer, captured
+              once. In my own repeated measurements the same domain, on the same
+              prompt in Perplexity, was cited in 10% of runs, then 97% of runs 40
+              hours later, then 21% eight hours after that (September 2026). A single
+              snapshot can land anywhere in that range.
+            </p>
           </RevealSection>
 
           <RevealSection delay={0.1}>

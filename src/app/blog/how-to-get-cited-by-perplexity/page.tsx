@@ -496,7 +496,8 @@ export default function HowToGetCitedByPerplexityPost() {
                 could surface your brand
               </li>
               <li style={{ marginBottom: 11 }}>
-                Run each query in Perplexity
+                Run each query in Perplexity several times, in fresh threads,
+                not once: a single answer is a single sample
               </li>
               <li style={{ marginBottom: 11 }}>
                 Record whether your site is cited, what Perplexity quotes, and
@@ -514,9 +515,17 @@ export default function HowToGetCitedByPerplexityPost() {
               pulled and what text was extracted.
             </p>
             <p style={{ marginBottom: 26 }}>
-              There&rsquo;s no dedicated Perplexity citation tracking tool with
-              reliable cross-query coverage yet. Manual testing remains the
-              ground truth.
+              {/* Was "There's no dedicated Perplexity citation tracking tool...".
+                  No longer true by 2026-10-02 (Semrush, Peec add-on, Profound
+                  Enterprise, AirOps Pro all cover Perplexity), and it contradicted
+                  /blog/track-perplexity-citations/. */}
+              Citations move between checks, sometimes within hours. For how
+              many runs a result needs, and the tools and logs that record
+              Perplexity sources for you, see{" "}
+              <Link href="/blog/track-perplexity-citations/" style={{ color: "var(--accent)", textDecoration: "underline", textUnderlineOffset: 3 }}>
+                how to track Perplexity citations
+              </Link>
+              .
             </p>
           </RevealSection>
 

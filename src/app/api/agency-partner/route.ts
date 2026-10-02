@@ -95,6 +95,17 @@ export async function POST(req: Request) {
       body: JSON.stringify(payload),
     });
     if (!res.ok) throw new Error(`webhook ${res.status}`);
+
+    /*
+     * ⚠️ HTTP 200 IS NOT SUCCESS HERE. Apps Script web apps answer 200 even when the
+     * script itself throws: the error comes back inside the body as { ok: false }. If
+     * this route only checked res.ok, a sheet that had been renamed or deleted, or an
+     * expired authorisation, would send the visitor to the thanks page for a lead that
+     * was never stored. The body has to say ok: true, or it is a failed delivery and
+     * the visitor is told to email instead.
+     */
+    const body = (await res.json().catch(() => null)) as { ok?: boolean } | null;
+    if (!body || body.ok !== true) throw new Error("webhook reported failure");
   } catch {
     return NextResponse.json({ ok: false, error: "delivery failed" }, { status: 502 });
   }

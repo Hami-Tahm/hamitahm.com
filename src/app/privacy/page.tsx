@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { LegalPage, H2 } from "@/components/LegalPage";
-import { LEGAL, DATA_COLLECTED, THIRD_PARTIES } from "@/lib/legal";
+import { LEGAL, DATA_COLLECTED, THIRD_PARTIES, ADVERTISING } from "@/lib/legal";
 
 export const metadata: Metadata = {
   title: { absolute: "Privacy Policy: Hami Tahm" },
@@ -19,7 +19,7 @@ export default function PrivacyPage() {
   return (
     <LegalPage
       title="Privacy Policy"
-      intro="This site collects very little, and this page says exactly what, why, and who else can see it. No dark patterns, no selling your data, no advertising trackers."
+      intro="This site collects very little, and this page says exactly what, why, and who else can see it. No dark patterns, and your data is never sold. It does use one advertising tag, from Microsoft, described below with how to opt out."
     >
       <p>
         {LEGAL.site} is operated by {LEGAL.operator}, an independent consultant based in{" "}
@@ -66,6 +66,76 @@ export default function PrivacyPage() {
         delete everything (see below).
       </p>
 
+      <H2>The agency partnership form</H2>
+      <p>
+        If you run an agency and use the form on{" "}
+        <Link href="/for-agencies/" style={{ color: "var(--accent)" }}>
+          the agencies page
+        </Link>
+        , what you enter is stored in a private Google Sheet and emailed to me so I can
+        reply. It is not added to a mailing list, and your agency is never named to anyone
+        else, including other agencies I work with.
+      </p>
+
+      <H2>Advertising measurement</H2>
+      <p>
+        This site uses Microsoft Advertising&rsquo;s Universal Event Tracking (UET) tag.
+        It records which pages you visit here and whether you submit a form, linked to a
+        cookie identifier. That means individual visitor activity on this site is tracked
+        and shared with a third party, Microsoft, for advertising and marketing purposes:
+        to measure whether ads lead to real enquiries, and to show ads on Microsoft&rsquo;s
+        network to people who have visited before.
+      </p>
+      <p>
+        Microsoft collects or receives personal data from visitors to provide Microsoft
+        Advertising. How Microsoft handles it is set out in the{" "}
+        <a href={ADVERTISING.microsoftPrivacyStatement} style={{ color: "var(--accent)" }}>
+          Microsoft Privacy Statement
+        </a>
+        .
+      </p>
+      <p>
+        Google Analytics also groups visitors into audience lists, for example people who
+        viewed the agencies page. Those lists are not currently shared with any advertising
+        platform. If that changes, this page will say so first.
+      </p>
+
+      <H2>Opting out of interest-based advertising</H2>
+      <ul>
+        <li style={{ marginBottom: 8 }}>
+          Microsoft:{" "}
+          <a href={ADVERTISING.microsoftAdSettings} style={{ color: "var(--accent)" }}>
+            turn off personalised ads in your Microsoft account
+          </a>
+          .
+        </li>
+        <li style={{ marginBottom: 8 }}>
+          Google:{" "}
+          <a href={ADVERTISING.googleAdSettings} style={{ color: "var(--accent)" }}>
+            My Ad Center
+          </a>
+          , and the{" "}
+          <a href={ADVERTISING.googlePrivacyPolicy} style={{ color: "var(--accent)" }}>
+            Google Privacy Policy
+          </a>
+          .
+        </li>
+        <li style={{ marginBottom: 8 }}>
+          Industry-wide opt-outs covering many ad networks at once:{" "}
+          <a href={ADVERTISING.daacOptOut} style={{ color: "var(--accent)" }}>
+            Digital Advertising Alliance of Canada (YourAdChoices)
+          </a>{" "}
+          and the{" "}
+          <a href={ADVERTISING.naiOptOut} style={{ color: "var(--accent)" }}>
+            Network Advertising Initiative
+          </a>
+          .
+        </li>
+        <li>
+          Or block third-party cookies in your browser. The site works the same either way.
+        </li>
+      </ul>
+
       <H2>Consent</H2>
       <p>
         Submitting the checker form is your consent for me to use the information you
@@ -99,7 +169,10 @@ export default function PrivacyPage() {
       <H2>What is NOT done</H2>
       <ul>
         <li>Your personal information is never sold or rented.</li>
-        <li>There are no advertising or retargeting pixels on this site.</li>
+        <li>
+          The form contents you submit (your email, domain, keywords, message) are never
+          passed to an advertising platform.
+        </li>
         <li>Your submitted domain and keywords are never published.</li>
         <li>No automated decisions are made about you.</li>
       </ul>
@@ -128,9 +201,10 @@ export default function PrivacyPage() {
       <H2>Cookies</H2>
       <p>
         This site uses Google Analytics via Google Tag Manager, and Microsoft Clarity
-        for heatmaps and session replay. Both set cookies to measure usage. It does not
-        use advertising cookies. You can block cookies in your
-        browser and the site will still work normally.
+        for heatmaps and session replay. Both set cookies to measure usage. It also uses
+        Microsoft&rsquo;s UET tag, which sets an advertising cookie, as described under
+        Advertising measurement above. You can block cookies in your browser and the site
+        will still work normally.
       </p>
 
       <H2>Changes</H2>

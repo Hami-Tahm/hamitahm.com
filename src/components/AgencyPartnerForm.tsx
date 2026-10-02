@@ -149,7 +149,11 @@ export default function AgencyPartnerForm() {
 
       <p style={{ marginTop: 16, fontSize: 13, color: "var(--muted)", lineHeight: 1.6 }}>
         Goes to me, not to a sales team. No newsletter, and your agency is never named to
-        anyone else.
+        anyone else. Stored privately and deleted on request:{" "}
+        <a href="/privacy/" style={{ textDecoration: "underline" }}>
+          privacy policy
+        </a>
+        .
       </p>
     </form>
   );

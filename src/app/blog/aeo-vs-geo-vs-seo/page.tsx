@@ -9,7 +9,7 @@ const SLUG = "aeo-vs-geo-vs-seo";
 const ARTICLE_TITLE =
   "AEO vs GEO vs SEO: What's the Difference?";
 const ARTICLE_DESCRIPTION =
-  "SEO optimizes for search rankings. AEO targets AI-generated answers. GEO optimizes for AI-generated content. Here's how they differ, and which one applies to your business.";
+  "SEO earns rankings. AEO and GEO both aim to get you cited in AI answers, and they overlap more than most vendors admit. Where each term came from, where they genuinely differ, and which to fix first.";
 const DATE_PUBLISHED = "2026-06-08";
 // Added a worked "concrete example" section (dentist/SEO-AEO-GEO scenario),
 // the one piece the prior version lacked (comparison table and the direct
@@ -23,7 +23,14 @@ const DATE_PUBLISHED = "2026-06-08";
 // ranking for the core AEO/GEO/SEO comparison. SAO is explicitly flagged as
 // one vendor's (Canopy Media's) house term, not a standard; do not treat it
 // as equivalent to AEO/GEO anywhere else on the site.
-const DATE_MODIFIED = "2026-08-29";
+const DATE_MODIFIED = "2026-10-02";
+// 2026-10-02: Search Console shows ~6,000 impressions over three months at average
+// position 33 to 48, with people literally asking "are aeo and geo the same" (125),
+// "are aeo and geo different things", "is aeo the same as geo". The page answered
+// "No" and drew a sharp line the industry does not actually draw. Rewritten to the
+// honest answer (mostly the same goal, different origins and emphasis), with the
+// one primary source the GEO term traces to, and a sharper description.
+const GEO_PAPER_URL = "https://arxiv.org/abs/2311.09735";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const HUB_URL = "/ai-visibility/";
 const AEO_URL = "/ai-visibility/answer-engine-optimization-consultant-canada/";
@@ -61,7 +68,7 @@ const GLOSSARY_ROWS = [
 const FAQ_ITEMS = [
   {
     q: "Is AEO the same as GEO?",
-    a: "No. AEO focuses on appearing in AI-generated direct answer blocks: when a user asks a specific question and the AI produces a cited response. GEO is broader: it covers how AI systems represent your brand across all AI-generated content, not just direct Q&A answers.",
+    a: "Mostly, in practice. Both aim to get your business named and cited when an AI system answers a question, and most agencies use the terms interchangeably. The difference is origin and emphasis. AEO is the older term, from the featured-snippet and voice-assistant era, and leans toward winning the direct answer to a specific question. GEO comes from a 2023 research paper, GEO: Generative Engine Optimization (Aggarwal et al., presented at KDD 2024), and leans toward how generative systems select and blend sources across longer answers. If someone sells you AEO and GEO as two separate projects, ask what they would actually do differently.",
   },
   {
     q: "Does SEO still matter with AI search?",
@@ -260,18 +267,19 @@ export default function AEOvsGEOvsSEOPost() {
                   margin: 0,
                 }}
               >
-                SEO targets traditional rankings. AEO targets AI-generated direct
-                answers. GEO targets how AI models represent your brand across
-                generated content. Most businesses need all three; priority
-                depends on where your buyers search.
+                SEO targets traditional rankings. AEO and GEO both target being
+                named and cited in AI answers: AEO leans toward the direct answer to
+                one question, GEO toward how AI blends sources into longer answers,
+                and in practice they overlap heavily. Most businesses need SEO plus
+                that one AI layer; priority depends on where your buyers search.
               </p>
             </div>
           </RevealSection>
 
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
-              SEO, AEO, and GEO are three distinct optimization strategies, each
-              targeting a different layer of modern search. SEO targets
+              SEO, AEO, and GEO are usually presented as three separate
+              strategies. Two of them overlap far more than that suggests. SEO targets
               traditional search rankings. AEO (Answer Engine Optimization)
               targets AI-generated direct answers in platforms like Perplexity
               and Google AI Overviews. GEO (Generative Engine Optimization)
@@ -286,6 +294,42 @@ export default function AEOvsGEOvsSEOPost() {
                 what is AI visibility
               </Link>
               .
+            </p>
+          </RevealSection>
+
+          {/*
+            The direct answer to the most-asked question on this page, placed before
+            the definitions rather than buried in the FAQ. Search Console 2026-10-02:
+            "are aeo and geo the same" and its variants are among the page's top
+            queries. Kept in sync with the FAQ answer below, which feeds the schema.
+          */}
+          <RevealSection delay={0.08}>
+            <h2 style={h3Style}>Are AEO and GEO the same thing?</h2>
+            <p style={{ marginBottom: 22 }}>
+              Mostly, in practice. Both aim to get your business named and cited when
+              an AI system answers a question, and most agencies use the two terms
+              interchangeably. Anyone who tells you they are entirely separate
+              disciplines is usually selling them as two line items.
+            </p>
+            <p style={{ marginBottom: 22 }}>
+              The difference is origin and emphasis. <strong>AEO</strong> is the older
+              term: it grew up around featured snippets and voice assistants, and it
+              leans toward winning the direct answer to one specific question.{" "}
+              <strong>GEO</strong> comes from a 2023 research paper,{" "}
+              <a href={GEO_PAPER_URL} target="_blank" rel="noopener noreferrer" style={linkStyle}>
+                GEO: Generative Engine Optimization
+              </a>{" "}
+              (Aggarwal et al., Princeton and collaborators, presented at KDD 2024),
+              and leans toward how generative systems select and blend several sources
+              into a longer answer. The paper is also where most of the field&rsquo;s
+              first controlled evidence comes from: it tested content changes against
+              generative engines on a benchmark of roughly 10,000 queries.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              So the practical question is not which acronym to buy. It is whether the
+              work in front of you changes what AI systems can find, read and trust
+              about you. If someone sells AEO and GEO as two separate projects, ask what
+              they would actually do differently for each.
             </p>
           </RevealSection>
 

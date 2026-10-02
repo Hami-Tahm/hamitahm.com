@@ -38,7 +38,7 @@ const ARTICLE_TITLE = "Best AI Visibility Tools & Software (2026)";
 const ARTICLE_DESCRIPTION =
   "AI visibility tools and software in 2026: engine coverage and entry pricing taken from each vendor's own documentation, with the source linked for every claim. By an independent consultant with no affiliate relationships.";
 const DATE_PUBLISHED = "2026-06-09";
-const DATE_MODIFIED = "2026-09-07";
+const DATE_MODIFIED = "2026-10-02";
 
 /**
  * ── WHY THIS FILE LOOKS LIKE THIS ──
@@ -90,9 +90,9 @@ const TOOLS: readonly Tool[] = [
     name: "Profound",
     category: "dedicated",
     engines:
-      "Starter: ChatGPT only. Growth: 3 answer engines (ChatGPT, Perplexity, Google AI Overviews). Enterprise: up to 9, adding Google AI Mode, Gemini, Copilot, Grok, DeepSeek and Claude.",
+      "Free trial: ChatGPT, Gemini and Google AI Overviews. Enterprise: up to 9, adding Perplexity, Google AI Mode, Copilot, DeepSeek, Claude and Exa.",
     entryPrice:
-      "$99/mo (Starter, billed yearly, 50 prompts, 1 seat) · $399/mo (Growth, 100 prompts, 3 seats) · Enterprise custom",
+      "Brands: 7-day free trial (50 prompts daily), then Enterprise custom · Agencies: $99/mo (Agency Growth, pitch workspaces) + $399/mo per client workspace",
     sourceUrl: "https://www.tryprofound.com/pricing",
     sourceLabel: "Profound pricing page",
     what:
@@ -100,7 +100,8 @@ const TOOLS: readonly Tool[] = [
     whoFor:
       "Teams that want cross-engine tracking as the primary job of the tool, not a feature bolted onto something else.",
     watchOut:
-      "The commonly repeated line that Profound is enterprise-only is out of date, but so is the opposite reading. The $99 tier tracks ChatGPT and nothing else. Cross-engine coverage starts at the $399 tier, and the full nine engines are Enterprise. Price the plan against the engines you actually need, not the logo list on the homepage.",
+      "The pricing page changed between August and October 2026. The self-serve Starter and Growth brand plans this page used to list are gone: brands now get a 7-day trial and then talk to sales. The $99 figure you will still see quoted is the agency product, and each client workspace on it costs another $399 a month. Older comparisons, including an earlier version of this page, describe plans you can no longer buy.",
+    dateRead: "2026-10-02",
   },
   {
     name: "Otterly.ai",
@@ -270,7 +271,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Can AI visibility tools track Perplexity citations?",
-    a: "Yes, and this is now the normal case rather than the exception. Profound (from the Growth tier), Otterly.ai, SE Visible, Frase, Semrush's AI Visibility toolkit, Ahrefs Brand Radar and Yext Scout all document Perplexity coverage. If a tool does not cover Perplexity in 2026, that is the unusual thing.",
+    a: "Yes, and this is now the normal case rather than the exception. Profound (on Enterprise), Otterly.ai, SE Visible, Frase, Semrush's AI Visibility toolkit, Ahrefs Brand Radar and Yext Scout all document Perplexity coverage. If a tool does not cover Perplexity in 2026, that is the unusual thing.",
   },
   {
     q: "Do I need an AI visibility tool or a consultant?",
@@ -281,8 +282,12 @@ const FAQ_ITEMS = [
     a: "Directionally accurate rather than precise, and for a structural reason: AI answers vary between sessions, models, phrasings and locations, so any single reading is a sample. Refresh rates differ too: Otterly, Frase and Profound track daily, Semrush's Brand Performance updates weekly, and Ahrefs' AI chatbot index refreshes monthly. Two tools reporting different numbers for the same brand are not necessarily contradicting each other. Manual verification of the queries that matter commercially is always worth doing.",
   },
   {
+    q: "What is the best AI Overview checker?",
+    a: "It depends on whether you need history, price or breadth. Free: Search Console's Generative AI features report (impressions from Google's AI surfaces for your own site), Semrush's free plan, or searching yourself in a signed-out window set to your country. Cheapest paid: Otterly includes AI Overviews from $29 a month, and Peec lets you choose AI Overviews as one of three engines on its $95 Starter plan. For history, Ahrefs Brand Radar's AI Overviews index goes back to August 2024. Whatever you use, check that it records whether an Overview appeared at all, and the date and country of each check.",
+  },
+  {
     q: "What is Profound AI visibility?",
-    a: "Profound is a dedicated answer-engine monitoring platform. It runs a prompt set daily and reports mentions, citations, sentiment, ranking and competitive presence, plus AI-referred traffic through a separate Agent Analytics product. Self-serve plans start at $99/month for ChatGPT-only tracking, $399/month for three answer engines, and Enterprise plans cover up to nine.",
+    a: "Profound is a dedicated answer-engine monitoring platform. It runs a prompt set daily and reports mentions, citations, sentiment, ranking and competitive presence, plus AI-referred traffic through a separate Agent Analytics product. As of October 2, 2026, brands get a 7-day free trial covering ChatGPT, Gemini and Google AI Overviews, then a custom-priced Enterprise plan covering up to nine engines. Agencies have a separate plan from $99/month plus $399/month per client workspace.",
   },
 ] as const;
 
@@ -623,7 +628,9 @@ export default function BestAIVisibilityToolsPost() {
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>Prices and product names moved.</strong>{" "}
-              Profound now sells self-serve from $99. Otterly starts at $29, not $100.
+              Profound briefly sold self-serve brand plans from $99; by October 2026
+              brands get a trial and then Enterprise, and $99 is the agency plan.
+              Otterly starts at $29, not $100.
               BrightEdge&rsquo;s AI product is AI Hyper Cube, not Generative Parser.
               Details are in each entry.
             </p>
@@ -887,8 +894,65 @@ export default function BestAIVisibilityToolsPost() {
             </p>
           </RevealSection>
 
+          {/*
+            AI OVERVIEW CHECKERS (added 2026-10-02). Bing AI Performance, 3 months to
+            Sep 29: Copilot cited this site for "best AI overview checkers" with an 83%
+            citation share, and no page here answered that question directly. Every fact
+            below is restated from the tool entries on this page (read on their own
+            dates) or from Search Console itself. Keep the two in sync.
+          */}
           <RevealSection>
-            <SectionLabel number="08" text="How to choose" />
+            <SectionLabel number="08" text="Checking Google AI Overviews specifically" />
+          </RevealSection>
+
+          <RevealSection delay={0.06}>
+            <p style={{ marginBottom: 26 }}>
+              If Google&rsquo;s AI Overviews are the only surface you care about, the
+              choice is wider and cheaper than for full cross-engine tracking, because
+              almost every tool on this list includes them.
+            </p>
+            <ul style={{ margin: "0 0 26px 22px" }}>
+              <li style={{ marginBottom: 11 }}>
+                <strong style={labelStyle}>Free.</strong>{" "}Search Console&rsquo;s
+                Generative AI features report shows impressions from Google&rsquo;s AI
+                surfaces for your own site (impressions only, AI surfaces combined).
+                Semrush&rsquo;s free plan includes Google and AI Overviews tracking.
+                And you can search the question yourself in a signed-out window, set
+                to the country you sell in.
+              </li>
+              <li style={{ marginBottom: 11 }}>
+                <strong style={labelStyle}>Cheapest paid.</strong>{" "}Otterly includes
+                AI Overviews on every plan from $29 a month. Peec lets you pick AI
+                Overviews as one of the three engines on its $95 Starter plan.
+              </li>
+              <li style={{ marginBottom: 11 }}>
+                <strong style={labelStyle}>With history.</strong>{" "}Ahrefs Brand Radar
+                (an add-on) has an AI Overviews index going back to August 2024, so you
+                can see the past without having tracked it yourself.
+              </li>
+              <li style={{ marginBottom: 11 }}>
+                <strong style={labelStyle}>Inside a full suite.</strong>{" "}Semrush,
+                SE Visible, Scrunch, Yext Scout and Profound all include AI Overviews
+                alongside the other engines.
+              </li>
+            </ul>
+            <p style={{ marginBottom: 26 }}>
+              Two things an AI Overview checker should tell you, and cheaper ones often
+              do not. First, whether an AI Overview appeared at all: many queries do
+              not trigger one, and &ldquo;not cited&rdquo; means something different
+              from &ldquo;no Overview shown&rdquo;. Second, where and when it looked,
+              because AI Overviews differ by country and change over time. A result
+              without a date and a location is hard to act on. On how much a single
+              check can mislead, see{" "}
+              <Link href="/blog/track-perplexity-citations/" style={linkStyle}>
+                what repeated measurement shows
+              </Link>
+              {" "}(measured on Perplexity and ChatGPT, but the lesson is the same).
+            </p>
+          </RevealSection>
+
+          <RevealSection>
+            <SectionLabel number="09" text="How to choose" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
@@ -900,7 +964,7 @@ export default function BestAIVisibilityToolsPost() {
               <li style={{ marginBottom: 11 }}>
                 <strong style={labelStyle}>Which engines are included, not listed.</strong>{" "}
                 Otterly bundles Copilot and AI Overviews but charges extra for Gemini
-                and Claude. Profound&rsquo;s cheapest tier is ChatGPT-only.
+                and Claude. Profound&rsquo;s full engine list is Enterprise-only.
                 Ahrefs&rsquo; AI indexes are an add-on. SE Visible and Semrush include
                 five engines from the entry tier.
               </li>
@@ -951,7 +1015,7 @@ export default function BestAIVisibilityToolsPost() {
           </RevealSection>
 
           <RevealSection>
-            <SectionLabel number="09" text="What tools still don't do" />
+            <SectionLabel number="10" text="What tools still don't do" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
@@ -1010,7 +1074,7 @@ export default function BestAIVisibilityToolsPost() {
           </RevealSection>
 
           <RevealSection>
-            <SectionLabel number="10" text="Frequently asked questions" />
+            <SectionLabel number="11" text="Frequently asked questions" />
           </RevealSection>
 
           <RevealSection delay={0.06}>

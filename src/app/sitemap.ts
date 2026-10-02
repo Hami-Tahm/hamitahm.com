@@ -88,6 +88,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Third original-research asset: a self-benchmark (Otterly.AI), same
     // instrument as the HomeCalc one above, different subject. Added 2026-08-31.
     { path: "/blog/hamitahm-ai-visibility-benchmark/", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/blog/search-console-ai-tracker-prompts/", priority: 0.8, changeFrequency: "monthly" },
+    // Perplexity tracking/measurement post, from the citation-engine runs. Added 2026-10-02.
+    { path: "/blog/track-perplexity-citations/", priority: 0.75, changeFrequency: "monthly" },
     // Fourth original-research asset: a third, separate HomeCalc instrument
     // (Scrunch, not Otterly/Bing). Added 2026-09-07.
     { path: "/blog/homecalc-scrunch-citation-mention-gap/", priority: 0.8, changeFrequency: "monthly" },
@@ -172,16 +175,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/ai-visibility/": "2026-08-31",
     "/ai-visibility/answer-engine-optimization-consultant-canada/": "2026-08-11",
     "/ai-visibility/generative-engine-optimization-consultant-canada/": "2026-08-11",
-    "/blog/peec-vs-profound-vs-airops/": "2026-08-24",
+    // Full pricing re-verification and accuracy-claim removals, 2026-10-02.
+    "/blog/peec-vs-profound-vs-airops/": "2026-10-02",
     "/blog/homecalc-ai-search-mortgage-ranking/": "2026-08-31",
     "/blog/hamitahm-ai-visibility-benchmark/": "2026-08-31",
     "/blog/homecalc-scrunch-citation-mention-gap/": "2026-09-07",
     "/blog/scrunch-vs-otterly/": "2026-09-08",
-    "/blog/": "2026-09-07",
+    "/blog/": "2026-10-02",
+    "/blog/search-console-ai-tracker-prompts/": "2026-10-02",
+    "/blog/track-perplexity-citations/": "2026-10-02",
+    // Added the "what arrives, and when" block above the form, 2026-10-02.
+    "/ai-visibility/ai-visibility-checker/": "2026-10-02",
     "/blog/what-is-ai-visibility/": "2026-08-11",
-    "/blog/best-ai-visibility-tools/": "2026-09-07",
+    // Profound row re-read and AI Overviews section added, 2026-10-02.
+    "/blog/best-ai-visibility-tools/": "2026-10-02",
     "/blog/how-to-check-ai-visibility/": "2026-08-26",
-    "/blog/aeo-vs-geo-vs-seo/": "2026-08-26",
+    // Rewrote the "are AEO and GEO the same" answer, 2026-10-02.
+    "/blog/aeo-vs-geo-vs-seo/": "2026-10-02",
     "/blog/ai-visibility-audit-checklist/": "2026-08-26",
     "/blog/ai-visibility-tool-accuracy/": "2026-08-26",
     "/blog/ai-visibility-consultant-vs-agency-vs-tool/": "2026-08-26",

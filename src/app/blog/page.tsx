@@ -18,6 +18,22 @@ const posts = [
     excerpt:
       "Two sites, three months, 21,700 citations from Microsoft Copilot. Which pages got cited, which got nothing, and the finding nobody publishes: citations are not customers.",
   },
+  // Follow-up to the citation study above, added 2026-10-02. Sits next to it on
+  // purpose: same data family, a newer window, and a different finding.
+  {
+    href: "/blog/search-console-ai-tracker-prompts/",
+    cat: "Original research",
+    title: "Your Search Console Queries Include AI Tracker Prompts",
+    excerpt:
+      "AI visibility tools send scripted prompts to Google, and they land in Search Console looking like searches. 118 of them on one small site, zero clicks at position 8, and a regex to filter them out.",
+  },
+  {
+    href: "/blog/track-perplexity-citations/",
+    cat: "Measurement",
+    title: "How to Track Perplexity Citations (and Why One Check Means Nothing)",
+    excerpt:
+      "Four ways to see where Perplexity cites you, and what repeated runs show: a domain cited in 68 of 68 runs was cited in 2 of 68 forty hours later. How many runs a result actually needs.",
+  },
   {
     href: "/blog/homecalc-ai-search-mortgage-ranking/",
     cat: "Original research",
