@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 
 /**
  * The partnership enquiry form on /for-agencies/.
@@ -26,7 +25,6 @@ import { useRouter } from "next/navigation";
 type Status = "idle" | "sending" | "error";
 
 export default function AgencyPartnerForm() {
-  const router = useRouter();
   const [status, setStatus] = useState<Status>("idle");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -67,7 +65,25 @@ export default function AgencyPartnerForm() {
       w.dataLayer = w.dataLayer || [];
       w.dataLayer.push({ event: "agency_partner_submit" });
 
-      router.push("/for-agencies/thanks/");
+      /*
+       * A FULL page load, deliberately not router.push (changed 2026-10-02).
+       *
+       * router.push is a client-side navigation: the URL changes but no page loads.
+       * The ad tags' page-view hits fire on page load, so with router.push a visit to
+       * the thanks page reaches Microsoft and Google only if each platform's SPA
+       * tracking is configured and working. UET has that switched on in GTM
+       * (enableAutoSpaTracking), but this conversion is the one signal the whole ads
+       * setup depends on, and it should not hinge on a client-side mechanism behaving
+       * correctly in two separate platforms. A real page load is seen by every tag
+       * with no configuration at all.
+       *
+       * The cost is a full reload onto a static thank-you page, which nobody notices.
+       *
+       * Trade-off accepted: the dataLayer event above is best-effort. If the page
+       * unloads before GTM has processed it, the GA4 event can be lost. That is fine
+       * because it is a segmentation convenience; the conversion is the thanks URL.
+       */
+      window.location.assign("/for-agencies/thanks/");
     } catch {
       setStatus("error");
     }
