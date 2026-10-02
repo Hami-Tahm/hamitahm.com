@@ -32,17 +32,29 @@ const contentSecurityPolicy = [
   // subdomains Clarity rotates through (a.clarity.ms, b.clarity.ms, ...). Without
   // both, the CSP silently drops every session — the failure mode is an empty
   // dashboard with no console error the user would ever look for.
-  // bat.bing.com serves the Microsoft UET tag (bat.js) and receives its beacons.
-  // Added 2026-09-28 for the Microsoft Ads campaign. Same trap as Clarity above and
-  // worth stating twice: without this the tag is dropped by the CSP, no console
-  // error appears that anyone would go looking for, and the ads account records
-  // zero conversions while the budget spends. Automated bidding then optimises
-  // against nothing, which looks exactly like "the channel doesn't work".
-  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://*.clarity.ms https://bat.bing.com",
+  //
+  // MICROSOFT UET: bat.bing.com AND bat.bing.net, both required.
+  // bat.bing.com serves bat.js and receives the page-load and event beacons.
+  // bat.bing.net receives the consent calls (/actionp). Added 2026-09-28 with only
+  // the .com host, which was half the job: Microsoft's own CSP guide lists both for
+  // script-src (MicrosoftDocs, hlp_BA_CONC_UETv2CSP). .net added 2026-10-02.
+  //
+  // GOOGLE ADS (remarketing collection, added 2026-10-02): www.googleadservices.com,
+  // www.google.com, www.google.ca, pagead2.googlesyndication.com, ad.doubleclick.net.
+  // The exact list from Google's CSP guide for a Conversion, Remarketing or
+  // Conversion Linker tag. googleads.g.doubleclick.net is already covered by the
+  // *.g.doubleclick.net wildcard. Google TLDs cannot be wildcarded in CSP, so each
+  // one is listed: .com, and .ca because the audience is Canadian.
+  //
+  // The same trap as Clarity, and worth stating a third time because it has now
+  // nearly happened twice: a tag the CSP blocks produces no console error anyone
+  // goes looking for. The ads account records zero conversions, the remarketing
+  // list never fills, and it looks exactly like "the channel doesn't work".
+  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://*.clarity.ms https://bat.bing.com https://bat.bing.net https://www.googleadservices.com https://www.google.com",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: https:",
   "font-src 'self'",
-  "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.g.doubleclick.net https://*.clarity.ms https://bat.bing.com",
+  "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.g.doubleclick.net https://*.clarity.ms https://bat.bing.com https://bat.bing.net https://www.googleadservices.com https://pagead2.googlesyndication.com https://www.google.com https://www.google.ca https://ad.doubleclick.net",
   "frame-src 'self' https://www.googletagmanager.com",
   // Note: no `upgrade-insecure-requests` — it's ignored in a report-only policy
   // (browsers warn about it), and it's redundant once enforced because the site is
