@@ -570,7 +570,7 @@ export default function AIVisibilityToolAccuracyPost() {
               />
               <KeepReadingLink
                 href={HOW_TO_CHECK_URL}
-                title="How to Check AI Visibility: 7 Free Methods"
+                title="How to Check AI Visibility: 8 Free Methods"
                 tag="Basics"
               />
             </div>

@@ -38,7 +38,7 @@ const ARTICLE_TITLE = "Best AI Visibility Tools & Software (2026)";
 const ARTICLE_DESCRIPTION =
   "AI visibility tools and software in 2026: engine coverage and entry pricing taken from each vendor's own documentation, with the source linked for every claim. By an independent consultant with no affiliate relationships.";
 const DATE_PUBLISHED = "2026-06-09";
-const DATE_MODIFIED = "2026-10-02";
+const DATE_MODIFIED = "2026-10-03";
 
 /**
  * ── WHY THIS FILE LOOKS LIKE THIS ──
@@ -59,8 +59,8 @@ const DATE_MODIFIED = "2026-10-02";
  * DATE_FACT_CHECKED. If you cannot open that URL and see the claim, change the
  * claim; do not change the date.
  */
-const DATE_FACT_CHECKED = "2026-08-11";
-const DATE_FACT_CHECKED_HUMAN = "August 11, 2026";
+const DATE_FACT_CHECKED = "2026-10-03";
+const DATE_FACT_CHECKED_HUMAN = "October 3, 2026";
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const HUB_URL = "/ai-visibility/";
@@ -109,7 +109,8 @@ const TOOLS: readonly Tool[] = [
     engines:
       "Included on every plan: ChatGPT, Google AI Overviews, Perplexity, Microsoft Copilot. Gemini, Google AI Mode and Claude are paid add-ons.",
     entryPrice:
-      "$29/mo (Lite, 15 prompts) · $189/mo (Standard, 100 prompts) · $489/mo (Premium, 400 prompts) · Enterprise from $1,000/mo",
+      "$29/mo (Lite, 15 prompts) · $189/mo (Standard, 100 prompts) · $489/mo (Premium, 400 prompts) · Enterprise custom-priced (from 1,000 prompts)",
+    dateRead: "2026-10-03",
     sourceUrl: "https://otterly.ai/pricing",
     sourceLabel: "Otterly.ai pricing page",
     what:
@@ -133,7 +134,7 @@ const TOOLS: readonly Tool[] = [
       "Teams whose AI visibility gap includes a real technical component and who want measurement and a partial fix inside one tool rather than a separate developer handoff.",
     watchOut:
       "There is no tier below $250/month, and it buys one brand workspace, five seats, and a 25-page site-map limit. API access, MCP access, expanded model coverage and SSO beyond Google are all Enterprise-only, and Enterprise carries no published price at all. See the fuller Scrunch vs Otterly comparison for the entry-plan math against a cheaper published alternative.",
-    dateRead: "2026-09-07",
+    dateRead: "2026-10-03",
   },
   {
     name: "SE Visible (SE Ranking)",
@@ -144,33 +145,35 @@ const TOOLS: readonly Tool[] = [
     sourceUrl: "https://visible.seranking.com/for-product-marketers/",
     sourceLabel: "SE Visible product page",
     what:
-      "SE Ranking's dedicated AI visibility product (a separate app from its SEO suite, not a checkbox inside rank tracking). Covers visibility, sentiment, cited sources and competitor benchmarking with weekly updates across 7 countries and 5 languages.",
+      "SE Ranking's dedicated AI visibility product (a separate app from its SEO suite, not a checkbox inside rank tracking). Covers visibility, sentiment, cited sources and competitor benchmarking with daily updates across 7 countries and 5 languages. There is a free trial.",
     whoFor:
       "Teams that want the same five engines on the cheapest tier rather than an add-on ladder.",
     watchOut:
       "Do not confuse SE Visible with SE Ranking's classic rank tracker. They are separately priced products, and older comparisons (including an earlier version of this page) described the rank tracker's AI Overviews flag as if it were the whole AI offering. Coverage is 7 countries and 5 languages; narrow if you sell outside them.",
+    dateRead: "2026-10-03",
   },
   {
     name: "Frase",
     category: "dedicated",
-    engines: "ChatGPT, Perplexity, Claude, Gemini, Google AI.",
-    entryPrice: "Plans from $39/mo billed yearly; AI visibility tracking is part of the platform.",
-    sourceUrl: "https://www.frase.io/features/ai-tracking",
-    sourceLabel: "Frase AI visibility feature page",
+    engines: "Starter: ChatGPT and Google AI. Professional adds Perplexity. Scale adds Claude and Gemini.",
+    entryPrice: "$39/mo (Starter, billed yearly; $49 monthly) · $103/mo (Professional, yearly) · $239/mo (Scale, yearly) · 7-day trial",
+    sourceUrl: "https://www.frase.io/pricing",
+    sourceLabel: "Frase pricing page",
     what:
       "Daily prompt tracking with share of voice against competitors you nominate, the full response text behind each citation, alerts when visibility moves, and a log of which AI crawlers are actually reaching your pages.",
     whoFor:
       "Content teams that want the tracking and the content work in the same place (a gap you spot hands off to the editor rather than to a separate tool).",
     watchOut:
-      "Frase is usually filed under content optimization, and this page filed it that way too until this revision. That is now wrong: it does daily multi-engine tracking. The trade-off is depth of the tracking analytics compared with a tool that does only tracking.",
+      "Frase is usually filed under content optimization, and this page filed it that way too until this revision. That is now wrong: it does daily multi-engine tracking. But the engine list is tier-gated: the $39 Starter plan tracks ChatGPT and Google AI only, Perplexity and AI crawler monitoring start at Professional ($103), and Claude and Gemini need Scale ($239). The five-engine figure on the feature page is the Scale plan.",
+    dateRead: "2026-10-03",
   },
   {
     name: "Semrush",
     category: "seo-platform",
     engines:
-      "Google AI Overviews, Google AI Mode, ChatGPT, Perplexity, Gemini; tracked weekly in Brand Performance.",
+      "Google AI Overviews, Google AI Mode, ChatGPT, Perplexity, Gemini in the AI Visibility toolkit; Brand Performance updates weekly.",
     entryPrice:
-      "AI Visibility toolkit from $99/mo · Semrush One (SEO + AI visibility) from $199/mo · free plan shows AI mentions, citations and a visibility score",
+      "AI Visibility toolkit from $99/mo · Semrush One (SEO + AI visibility) from $199/mo · free plan shows an AI visibility snapshot in Domain Overview, plus a separate free AI visibility checker (3 checks a day, no signup)",
     sourceUrl: "https://www.semrush.com/kb/1626-ai-visibility-features",
     sourceLabel: "Semrush AI visibility documentation",
     what:
@@ -178,7 +181,8 @@ const TOOLS: readonly Tool[] = [
     whoFor:
       "SEO teams already inside Semrush, and anyone who wants one bill covering both classic search and AI answers.",
     watchOut:
-      "Which toolkit you are on determines what you see. Google and AI Overviews tracking is on any plan including the free one; tracking on ChatGPT, Perplexity and Gemini requires Semrush One or the AI Visibility toolkit. Brand Performance runs on Semrush-generated synthetic prompts based on your domain and location (useful, but not your customers' actual wording).",
+      "Which toolkit you are on determines what you see. Position tracking on Google and AI Overviews is available on any plan, including the free one; full tracking on ChatGPT, Perplexity and Gemini sits in the AI Visibility toolkit ($99/mo, no free trial) or Semrush One. Brand Performance runs on Semrush-generated synthetic prompts based on your domain and location (useful, but not your customers' actual wording).",
+    dateRead: "2026-10-03",
   },
   {
     name: "Ahrefs Brand Radar",
@@ -186,7 +190,7 @@ const TOOLS: readonly Tool[] = [
     engines:
       "Seven AI platforms: Google AI Overviews & AI Mode, ChatGPT, Perplexity, Gemini, Copilot, Grok (data collection currently paused), and Claude (custom prompts only). Plus SEO, YouTube, Reddit and TikTok indexes.",
     entryPrice:
-      "AI indexes are a paid add-on on any plan: $199/mo per single platform, or $699/mo for all platforms. Custom prompt tracking is separate: $50 / $100 / $250 per month by volume.",
+      "AI indexes are a paid add-on on any plan: $199/mo per single platform, or $699/mo for all platforms. Lite and higher Ahrefs plans include some custom prompt tracking (AI Overviews, AI Mode, ChatGPT, Perplexity, Gemini, Copilot); more is $50 / $100 / $250 per month by volume, and the $699 bundle includes 2,500 custom prompt checks a month.",
     sourceUrl: "https://help.ahrefs.com/en/articles/11064852-what-is-brand-radar-and-how-to-use-it",
     sourceLabel: "Ahrefs Brand Radar documentation",
     what:
@@ -195,6 +199,7 @@ const TOOLS: readonly Tool[] = [
       "Teams that want breadth and back-history rather than a small, hand-picked prompt set, and that already live in Ahrefs.",
     watchOut:
       "Two things the pricing page does not put up front. The AI indexes are an add-on, not something included with a standard Ahrefs plan; describing Brand Radar as bundled at $100/mo is wrong. And the AI chatbot index refreshes once a month; only AI Overviews and your own custom prompts move faster than that.",
+    dateRead: "2026-10-03",
   },
   {
     name: "BrightEdge",
@@ -254,7 +259,7 @@ const NOT_AI_TRACKERS = [
   {
     name: "Wincher",
     finding:
-      "Wincher documents a rank tracker, local rank tracker, keyword explorer and on-page checker. Its feature list mentions SERP features generically. There is no documented AI Overviews product and no AI answer tracking. An earlier version of this page said Wincher's AI Overview detection was accurate; there is no public evidence for that, and no product page to check it against.",
+      "Wincher documents a rank tracker, local rank tracker, keyword explorer and on-page checker. Its feature list mentions SERP features generically, and Wincher's help center and API reference AI Overviews as one of the SERP features it can flag on a tracked keyword. That is a yes/no flag on a ranking, not AI answer tracking: it does not tell you whether you were cited or what the answer said. An earlier version of this page said Wincher's AI Overview detection was accurate; there is no public evidence about its accuracy either way.",
     sourceUrl: "https://www.wincher.com/",
     sourceLabel: "Wincher product site",
   },
@@ -263,7 +268,7 @@ const NOT_AI_TRACKERS = [
 const FAQ_ITEMS = [
   {
     q: "Is there a free AI visibility tracker?",
-    a: "There are free entry points, but no free tool that tracks multiple engines on a schedule. Semrush's free plan shows AI mentions, citations and a visibility score in Domain Overview, and audits 100 pages for AI readiness. Yext offers a free Scout scan. Google Search Console's Generative AI features report shows impressions from Google's AI surfaces for your own site. Beyond that, free means manual: you run the prompts yourself. For ongoing multi-engine tracking, paid tools are the only systematic option.",
+    a: "There are free entry points, but no free tool that tracks multiple engines on a schedule. Semrush's free plan shows an AI visibility snapshot in Domain Overview and audits 100 pages for AI readiness, and its free AI visibility checker allows three checks a day without signing up. Bing Webmaster Tools' AI Performance report shows your Copilot citations and the queries behind them, free. Yext offers a free Scout scan. Google Search Console's Generative AI features report shows impressions from Google's AI surfaces for your own site. Beyond that, free means manual: you run the prompts yourself. For ongoing multi-engine tracking, paid tools are the only systematic option.",
   },
   {
     q: "What's the difference between AI visibility tools and SEO tools?",
@@ -279,7 +284,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "How accurate are AI visibility tracking tools?",
-    a: "Directionally accurate rather than precise, and for a structural reason: AI answers vary between sessions, models, phrasings and locations, so any single reading is a sample. Refresh rates differ too: Otterly, Frase and Profound track daily, Semrush's Brand Performance updates weekly, and Ahrefs' AI chatbot index refreshes monthly. Two tools reporting different numbers for the same brand are not necessarily contradicting each other. Manual verification of the queries that matter commercially is always worth doing.",
+    a: "Directionally accurate rather than precise, and for a structural reason: AI answers vary between sessions, models, phrasings and locations, so any single reading is a sample. Refresh rates differ too: Otterly, Frase, SE Visible and Profound track daily, Semrush's Brand Performance updates weekly, and Ahrefs' AI chatbot index refreshes monthly. Two tools reporting different numbers for the same brand are not necessarily contradicting each other. Manual verification of the queries that matter commercially is always worth doing.",
   },
   {
     q: "What is the best AI Overview checker?",
@@ -634,6 +639,14 @@ export default function BestAIVisibilityToolsPost() {
               BrightEdge&rsquo;s AI product is AI Hyper Cube, not Generative Parser.
               Details are in each entry.
             </p>
+            <p style={{ marginBottom: 26 }}>
+              <strong style={labelStyle}>Re-checked October 3, 2026.</strong>{" "}Every
+              vendor was re-read against its own pages. What moved since August:
+              Frase&rsquo;s engines turned out to be tier-gated (two on
+              the $39 plan); SE Visible now updates daily; Otterly&rsquo;s Enterprise
+              tier is custom-priced; Ahrefs includes some custom prompts on paid
+              plans; Semrush added a free AI visibility checker.
+            </p>
           </RevealSection>
 
           <RevealSection>
@@ -865,9 +878,10 @@ export default function BestAIVisibilityToolsPost() {
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
               Free methods are a legitimate starting point, and there are more of them
-              than there were: Semrush&rsquo;s free plan surfaces AI mentions,
-              citations and a visibility score; Yext offers a free Scout scan; several
-              vendors run free one-off checkers.
+              than there were: Semrush&rsquo;s free plan shows an AI visibility
+              snapshot and its free checker allows three checks a day; Bing Webmaster
+              Tools reports your Copilot citations; Yext offers a free Scout scan;
+              several vendors run free one-off checkers.
             </p>
             <p style={{ marginBottom: 26 }}>
               One correction on Google. This page previously referred to Search
@@ -916,7 +930,9 @@ export default function BestAIVisibilityToolsPost() {
                 <strong style={labelStyle}>Free.</strong>{" "}Search Console&rsquo;s
                 Generative AI features report shows impressions from Google&rsquo;s AI
                 surfaces for your own site (impressions only, AI surfaces combined).
-                Semrush&rsquo;s free plan includes Google and AI Overviews tracking.
+                Semrush&rsquo;s free plan includes position tracking on Google and AI
+                Overviews, and its free AI visibility checker covers AI Overviews and
+                AI Mode (three checks a day, no signup).
                 And you can search the question yourself in a signed-out window, set
                 to the country you sell in.
               </li>
@@ -965,13 +981,14 @@ export default function BestAIVisibilityToolsPost() {
                 <strong style={labelStyle}>Which engines are included, not listed.</strong>{" "}
                 Otterly bundles Copilot and AI Overviews but charges extra for Gemini
                 and Claude. Profound&rsquo;s full engine list is Enterprise-only.
-                Ahrefs&rsquo; AI indexes are an add-on. SE Visible and Semrush include
-                five engines from the entry tier.
+                Ahrefs&rsquo; AI indexes are an add-on. Frase&rsquo;s $39 plan tracks
+                two engines; five need its $239 plan. SE Visible and Semrush&rsquo;s AI
+                Visibility toolkit include five engines from their entry price.
               </li>
               <li style={{ marginBottom: 11 }}>
                 <strong style={labelStyle}>How often it refreshes.</strong>{" "}Daily
-                (Otterly, Frase, Profound), weekly (Semrush Brand Performance,
-                SE Visible), or monthly for the standing chatbot index (Ahrefs). If
+                (Otterly, Frase, SE Visible, Profound), weekly (Semrush Brand
+                Performance), or monthly for the standing chatbot index (Ahrefs). If
                 you are shipping changes and want to see movement, monthly is too
                 slow.
               </li>

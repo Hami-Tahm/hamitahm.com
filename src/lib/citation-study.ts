@@ -176,3 +176,29 @@ export const COMMERCIAL_REALITY = {
   siteClicksPerQuarter: 44,
   siteAvgPosition: 42.8,
 } as const;
+
+/**
+ * LATEST QUARTER for hamitahm.com, kept separate from the study on purpose.
+ *
+ * The study above is a published dataset with a fixed window (Apr 25 - Jul 25, 2026)
+ * and its numbers must never be edited to "keep them current". Pages that state a
+ * present-tense figure ("this page earns X a quarter") read from THIS object instead.
+ *
+ * PROVENANCE (read 2026-10-03):
+ *   Bing Webmaster Tools > AI Performance, 3 M view = Jul 4 - Sep 30, 2026 (89 days).
+ *   siteCitations: sum of the 89 daily values in the site chart (8,111; console shows 8.1K).
+ *   essayCitations: sum of the 89 daily values with page = /the-10000-hour-rule/
+ *     (6,897; console shows 6.9K). 6,897 / 8,111 = 85.0%.
+ *   essayGoogleClicks / essayGoogleImpressions: Search Console, Web, exact page
+ *     https://hamitahm.com/the-10000-hour-rule/, Jul 4 - Sep 30, 2026: 23 clicks, 10K.
+ * Refresh all fields together, from the same window, or not at all.
+ */
+export const LATEST_QUARTER = {
+  windowLabel: "July to September 2026",
+  windowStartISO: "2026-07-04",
+  windowEndISO: "2026-09-30",
+  siteCitations: "8,111",
+  essayCitations: "6,897",
+  essaySharePct: 85,
+  essayGoogleClicks: 23,
+} as const;

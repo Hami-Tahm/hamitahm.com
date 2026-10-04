@@ -10,8 +10,11 @@ const ARTICLE_TITLE = "Scrunch vs Otterly.AI: Pricing & Fit (2026)";
 const ARTICLE_DESCRIPTION =
   "Scrunch vs. Otterly.AI compared on pricing, AI-engine coverage, and what each is built to do, sourced from each vendor's own pricing page.";
 const DATE_PUBLISHED = "2026-09-07";
-const DATE_VERIFIED_HUMAN = "September 7, 2026";
-const DATE_VERIFIED = "2026-09-07";
+const DATE_VERIFIED_HUMAN = "October 3, 2026";
+const DATE_VERIFIED = "2026-10-03";
+// 2026-10-03: both pricing pages re-read in a browser. Scrunch Core unchanged ($250,
+// 125 prompts, 4 engines, 5 users, 25-page site map). Otterly unchanged except
+// Enterprise: now custom, "starting from 1,000 search prompts", no $1,000 floor.
 
 const SRC = {
   scrunch: "https://scrunch.com/pricing",
@@ -48,7 +51,7 @@ const BEST_FOR_ROWS = [
   {
     label: "Enterprise, full 9-engine coverage",
     scrunch: "Engines included; price fully custom, none published",
-    otterly: "Add-on engines priced per tier; Enterprise starts at $1,000/mo",
+    otterly: "Add-on engines priced per tier; Enterprise custom-priced, from 1,000 prompts",
   },
 ] as const;
 
@@ -111,7 +114,7 @@ const QUICK_COMPARISON_ROWS = [
   {
     label: "Enterprise price",
     scrunch: "Not published: \"talk to us\"",
-    otterly: "Published starting point: \"starting from $1,000/month\"",
+    otterly: "Custom (\"starting from 1,000 search prompts\"); no dollar figure since October 2026",
   },
 ] as const;
 
@@ -147,7 +150,7 @@ const blogGraph = buildBlogSchema({
   title: ARTICLE_TITLE,
   description: ARTICLE_DESCRIPTION,
   datePublished: DATE_PUBLISHED,
-  dateModified: "2026-09-08",
+  dateModified: "2026-10-03",
 })["@graph"];
 
 const structuredData = {
@@ -556,7 +559,7 @@ export default function ScrunchVsOtterlyPost() {
               <strong style={labelStyle}>Pricing:</strong>{" "}Lite $29/month
               (15 prompts), Standard $189/month (100 prompts, &ldquo;Most
               Popular&rdquo;), Premium $489/month (400 prompts), Enterprise
-              from $1,000/month. Annual billing takes 15% off any tier. Extra
+              custom-priced from 1,000 prompts. Annual billing takes 15% off any tier. Extra
               prompts can be added at $99/month per 100 on Standard and
               Premium.{" "}
               <a href={SRC.otterly} target="_blank" rel="noopener noreferrer" style={linkStyle}>
@@ -574,7 +577,7 @@ export default function ScrunchVsOtterlyPost() {
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>Verdict:</strong>{" "}Otterly is the
               more transparent and more affordable option at every tier it
-              publishes, including its Enterprise starting price. It stays a
+              publishes. It stays a
               measurement tool throughout: excellent at telling you where you
               stand, silent on how to fix a page it flags.
             </p>
@@ -592,9 +595,10 @@ export default function ScrunchVsOtterlyPost() {
               volume the gap narrows a lot: Otterly Standard is $1.89 per
               prompt (100 prompts for $189), Scrunch Core is $2.00 per
               prompt (125 for $250). Neither publishes an Enterprise number
-              you can compare directly, though Otterly at least states a
-              floor: &ldquo;starting from $1,000/month.&rdquo; Scrunch states
-              none.
+              you can compare directly. Otterly used to state a $1,000/month
+              floor; as of October 2026 it lists Enterprise as custom-priced,
+              starting from 1,000 prompts, the same &ldquo;talk to us&rdquo;
+              position as Scrunch.
             </p>
 
             <h3 style={h3Style}>Scrunch vs Otterly: tracking or fixing?</h3>

@@ -220,7 +220,7 @@ export default function AiVisibilityCheckerPage() {
               <strong style={{ color: "var(--ink)" }}>Need a number this minute?</strong>{" "}
               Free automated checkers exist, and{" "}
               <Link href={HOW_TO_CHECK_URL} style={{ color: "var(--accent)", fontWeight: 500 }}>
-                this guide compares seven free ways to check
+                this guide compares eight free ways to check
               </Link>
               . Know what you are getting: an instant result is one answer, captured
               once. In my own repeated measurements the same domain, on the same

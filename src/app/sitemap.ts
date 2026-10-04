@@ -126,7 +126,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/service-business-growth/", priority: 0.55 },
 
     // ── Long-form / evergreen: ON-TOPIC keepers only ────────────────────
-    // /the-10000-hour-rule/ stays: it earns ~6,500 AI citations (~91% of the domain)
+    // /the-10000-hour-rule/ stays: it earns 6,897 AI citations Jul-Sep 2026 (85% of the domain)
     // and is now linked from the homepage. It is the one legacy essay that is an asset.
     { path: "/the-10000-hour-rule/", priority: 0.6 },
 
@@ -172,7 +172,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Added a link to the new hamitahm-ai-visibility-benchmark post, 2026-08-31.
     "/": "2026-08-31",
     // Added a link to the new hamitahm-ai-visibility-benchmark post, 2026-08-31.
-    "/ai-visibility/": "2026-08-31",
+    // Hub stat now reads LATEST_QUARTER (Jul-Sep 2026), 2026-10-03.
+    "/ai-visibility/": "2026-10-03",
     "/ai-visibility/answer-engine-optimization-consultant-canada/": "2026-08-11",
     "/ai-visibility/generative-engine-optimization-consultant-canada/": "2026-08-11",
     // Full pricing re-verification and accuracy-claim removals, 2026-10-02.
@@ -180,16 +181,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog/homecalc-ai-search-mortgage-ranking/": "2026-08-31",
     "/blog/hamitahm-ai-visibility-benchmark/": "2026-08-31",
     "/blog/homecalc-scrunch-citation-mention-gap/": "2026-09-07",
-    "/blog/scrunch-vs-otterly/": "2026-09-08",
+    "/blog/scrunch-vs-otterly/": "2026-10-03",
     "/blog/": "2026-10-02",
     "/blog/search-console-ai-tracker-prompts/": "2026-10-02",
     "/blog/track-perplexity-citations/": "2026-10-02",
     // Added the "what arrives, and when" block above the form, 2026-10-02.
     "/ai-visibility/ai-visibility-checker/": "2026-10-02",
     "/blog/what-is-ai-visibility/": "2026-08-11",
-    // Profound row re-read and AI Overviews section added, 2026-10-02.
-    "/blog/best-ai-visibility-tools/": "2026-10-02",
-    "/blog/how-to-check-ai-visibility/": "2026-08-26",
+    // All vendors re-read 2026-10-03 (Profound 10-02; AI Overviews section added 10-02).
+    "/blog/best-ai-visibility-tools/": "2026-10-03",
+    // Full re-verification, Amplitude + Bing added, 8 methods, 2026-10-03.
+    "/blog/how-to-check-ai-visibility/": "2026-10-03",
     // Rewrote the "are AEO and GEO the same" answer, 2026-10-02.
     "/blog/aeo-vs-geo-vs-seo/": "2026-10-02",
     "/blog/ai-visibility-audit-checklist/": "2026-08-26",

@@ -23,15 +23,21 @@ const SLUG = "how-to-check-ai-visibility";
  * See the note at the top of that file for the three-way split and why it exists.
  */
 const ARTICLE_TITLE =
-  "How to Check AI Visibility: 7 Free Methods";
+  "How to Check AI Visibility: 8 Free Methods";
 const ARTICLE_DESCRIPTION =
-  "Seven free and freemium ways to check whether AI engines mention your brand: what each one actually measures, where each falls short, and one widely confused analytics tool that does not do this job at all.";
+  "Eight free ways to check whether AI engines mention your brand, including Google's and Bing's own reports: what each one actually measures, where each falls short, and what still needs a human. Re-checked October 3, 2026.";
 const DATE_PUBLISHED = "2026-06-09";
 // Tool features, pricing and platform availability in this space change monthly.
 // This is the date every product description below was last checked against the
 // vendor's own documentation. Bump it whenever you re-verify, not when you edit prose.
-const DATE_FACT_CHECKED = "2026-08-11";
-const DATE_MODIFIED = "2026-08-26";
+const DATE_FACT_CHECKED = "2026-10-03";
+const DATE_MODIFIED = "2026-10-03";
+// 2026-10-03: full re-verification against vendor docs. Amplitude now HAS a free AI
+// visibility checker, so the old "why Amplitude is not a checker" section was wrong and
+// became a method. Added Bing Webmaster Tools' AI Performance report (the only free
+// first-party report that shows citations and the queries behind them) and Semrush's
+// free checker. Wix moved out of the count: it needs a Wix Premium plan and AI credits,
+// so it is not free. Search Console's report finished rolling out Aug 31. Net: 8 free.
 // 2026-08-26: added a "track it yourself" section (a copyable log template
 // + prompt-coverage/share-of-voice/sentiment definitions) and a link to the
 // full sample report, so the page hands the reader something usable instead
@@ -52,7 +58,7 @@ const PERPLEXITY_URL = "/blog/how-to-get-cited-by-perplexity/";
 const FAQ_ITEMS = [
   {
     q: "Is there a free AI visibility checker?",
-    a: "Yes, several. Google Search Console's Generative AI performance report, Semrush's free visibility baseline, Wix's AI Visibility Overview for eligible sites, Ubersuggest, and manual ChatGPT and Perplexity checks are all free or freemium. The limitation is depth rather than absence: free tiers sample prompts, vary in platform coverage and history, and no automated score can confirm that what an AI says about you is factually correct.",
+    a: "Yes, several. Google Search Console's Generative AI performance report, Bing Webmaster Tools' AI Performance report, Semrush's free AI visibility checker, Amplitude's free AI Visibility tool, Ubersuggest, and manual ChatGPT, Perplexity and Google checks are all free or freemium. Wix's AI Visibility Overview is included with Wix Premium plans rather than free. The limitation is depth rather than absence: free tiers sample prompts, vary in platform coverage and history, and no automated score can confirm that what an AI says about you is factually correct.",
   },
   {
     q: "Does Semrush check ChatGPT visibility?",
@@ -64,7 +70,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Can I check my Perplexity visibility for free?",
-    a: "Yes, manually. Run your core queries in Perplexity and observe whether your site is cited. Perplexity shows its sources explicitly, making manual auditing relatively transparent. Eligible Wix users can also monitor Perplexity inside Wix's AI Visibility Overview, and some third-party tools offer limited or paid Perplexity tracking.",
+    a: "Yes, manually. Run your core queries in Perplexity and observe whether your site is cited. Perplexity shows its sources explicitly, making manual auditing relatively transparent. Wix sites on a Premium plan can also check Perplexity inside Wix's AI Visibility Overview, and some third-party tools offer limited or paid Perplexity tracking.",
   },
   {
     q: "What's the difference between a free AI visibility checker and a professional audit?",
@@ -182,7 +188,7 @@ export default function HowToCheckAIVisibilityPost() {
             >
               How to check your AI visibility:{" "}
               <em style={{ fontStyle: "italic", color: "var(--accent)" }}>
-                7 free and freemium methods.
+                8 free methods.
               </em>
             </h1>
           </RevealSection>
@@ -198,9 +204,9 @@ export default function HowToCheckAIVisibilityPost() {
                 lineHeight: 1.5,
               }}
             >
-              Search Console, Semrush, Wix, manual ChatGPT and Perplexity checks:
-              what each one measures, where each falls short, and one tool
-              everyone mistakes for a visibility checker.
+              Search Console, Bing Webmaster Tools, Semrush, Amplitude and manual
+              checks: what each one measures, where each falls short, and what
+              still needs a human.
             </p>
           </RevealSection>
 
@@ -220,7 +226,7 @@ export default function HowToCheckAIVisibilityPost() {
                 marginTop: 10,
               }}
             >
-              Last fact-checked: August 11, 2026
+              Last fact-checked: October 3, 2026
             </p>
           </RevealSection>
         </div>
@@ -325,7 +331,7 @@ export default function HowToCheckAIVisibilityPost() {
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
               Several free and freemium tools claim to check your AI visibility,
-              from Semrush and Wix to manual Perplexity and ChatGPT queries. Below
+              from Semrush and Amplitude to manual Perplexity and ChatGPT queries. Below
               is what each one actually measures, what it leaves out, and whether
               the output is something you can act on. Some now include competitor
               comparisons and brand-perception analysis, so the old line that
@@ -407,7 +413,7 @@ export default function HowToCheckAIVisibilityPost() {
           <RevealSection>
             <SectionLabel
               number="03"
-              text="7 free and freemium AI visibility checkers"
+              text="8 free AI visibility checks"
             />
           </RevealSection>
 
@@ -420,9 +426,12 @@ export default function HowToCheckAIVisibilityPost() {
             <h3 style={h3Style}>Semrush AI Visibility</h3>
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>What it checks:</strong>{" "}Semrush now spans several AI visibility
-              features. Free accounts get a high-level visibility baseline in Domain
-              Overview and can track Google AI Overview appearances through Position
-              Tracking. Semrush One and the paid AI Visibility Toolkit add monitoring
+              features. Its free AI visibility checker gives a visibility score,
+              mentions, citations, top cited pages and a competitor comparison across
+              ChatGPT, Gemini, Google AI Mode and AI Overviews, three times a day
+              without registering. Free accounts also get a high-level visibility
+              baseline in Domain Overview and can track Google AI Overview appearances
+              through Position Tracking. Semrush One and the paid AI Visibility Toolkit add monitoring
               across ChatGPT, Gemini, Perplexity, Google AI Mode and AI Overviews,
               including mentions, citations, sentiment, prompt research and competitor
               comparison.
@@ -445,15 +454,17 @@ export default function HowToCheckAIVisibilityPost() {
               platform: a usable free baseline, with deeper monitoring behind
               the paid plan.{" "}
             <a href="https://www.semrush.com/kb/1626-ai-visibility-features" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>Semrush AI Visibility documentation</a>
+            {" "}&middot;{" "}
+            <a href="https://www.semrush.com/free-tools/ai-search-visibility-checker/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>Semrush free AI visibility checker</a>
             </p>
 
             <h3 style={h3Style}>Ubersuggest AI Search Visibility</h3>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>What it checks:</strong>{" "}Ubersuggest runs relevant prompts across AI
-              platforms including ChatGPT and Gemini, aggregates the responses, and
-              reports brand visibility, industry rank, top prompts and competitor
-              visibility trends. Its traditional rank tracking can also flag Google AI
-              Overview appearances separately.
+              <strong style={labelStyle}>What it checks:</strong>{" "}Ubersuggest runs relevant prompts across
+              the major AI engines, aggregates the responses, and reports brand
+              visibility, industry rank, top prompts and competitor visibility trends.
+              Its announcement does not list every engine it covers, so check inside
+              the tool which ones your plan includes.
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>What I found:</strong>{" "}Broader than a plain AI Overview detector. The
@@ -472,12 +483,12 @@ export default function HowToCheckAIVisibilityPost() {
             <a href="https://neilpatel.com/blog/ubersuggest-ai-visibility-features/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>Ubersuggest AI Visibility</a>
             </p>
 
-            <h3 style={h3Style}>Wix AI Visibility Overview</h3>
+            <h3 style={h3Style}>If you&rsquo;re on Wix: AI Visibility Overview (not free)</h3>
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>What it checks:</strong>{" "}Wix generates a set of likely customer
               questions from your site description, URL and business name, then checks
-              whether the site is mentioned or cited across ChatGPT, Gemini, Perplexity
-              and Claude. Depending on availability the dashboard can show the full AI
+              whether the site is mentioned or cited on the platform you choose:
+              ChatGPT, Gemini or Perplexity. Depending on availability the dashboard can show the full AI
               response, the cited sources, where the mention sits, brand perception,
               competitor visibility, AI-referred traffic and AI-bot activity.
             </p>
@@ -487,7 +498,10 @@ export default function HowToCheckAIVisibilityPost() {
               native options available to an eligible site.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>What it misses:</strong>{" "}Wix sites only. The generated questions are
+              <strong style={labelStyle}>What it misses:</strong>{" "}Wix sites only, and not free: it needs a
+              Wix Premium plan, tests use AI credits, and a new test (needed to change
+              the questions) can run once a day, up to five times a month. That is why it is not counted in the
+              eight. The generated questions are
               plausible prompts, not verified user-query data, and results can differ
               from running the same question directly on the platform. Wix also needs
               enough site traffic before it will show the report at all.
@@ -510,9 +524,10 @@ export default function HowToCheckAIVisibilityPost() {
               direct way to inspect what ChatGPT returns in your own account and
               session, but it is an observational sample, not universal ground
               truth. Responses generated with visible web search and those generated
-              without it often differ, so run both. Use a Temporary Chat and record
-              the model, date, location and at least three repeats; ChatGPT may search
-              the web on its own, and memory can shape the answer. The limit is scale:
+              without it often differ, so run both. Use a Temporary Chat and choose
+              Unpersonalized before your first message (a Temporary Chat can still use
+              your saved memories otherwise), and record the model, date, location and
+              at least three repeats; ChatGPT may search the web on its own. The limit is scale:
               manual checks cover 10&ndash;20 queries, not hundreds.
             </p>
             <p style={{ marginBottom: 26 }}>
@@ -550,8 +565,9 @@ export default function HowToCheckAIVisibilityPost() {
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>What it misses:</strong>{" "}Same limitations
               as ChatGPT manual: no scale, no historical tracking, no competitor
-              comparison. Perplexity Pro shows fuller source attribution on some
-              queries; free accounts see limited source data.
+              comparison. Free answers include citations; Perplexity Pro shows
+              more of them per answer, so a free check can miss a source that a Pro
+              user would see.
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>Best for:</strong>{" "}Anyone who wants to
@@ -592,45 +608,44 @@ export default function HowToCheckAIVisibilityPost() {
               scale and historical data.
             </p>
 
-            <h3 style={h3Style}>Why Amplitude is not an AI visibility checker</h3>
+            <h3 style={h3Style}>Amplitude AI Visibility</h3>
+            {/* Until 2026-10-03 this section was "Why Amplitude is not an AI
+                visibility checker". Amplitude has since launched exactly that, free,
+                so the old section was wrong. Rewritten from Amplitude's own pages. */}
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>What it checks:</strong>{" "}Amplitude is a
-              product analytics platform, not an AI visibility checker in the
-              brand citation sense. If you&rsquo;ve searched for &ldquo;Amplitude
-              AI visibility,&rdquo; you&rsquo;re likely looking for one of two
-              things: Amplitude&rsquo;s AI-powered analytics features (which help
-              analyze user behavior and product data), or its attribution tools for
-              tracking which traffic sources (including AI-referred traffic)
-              convert in your product.
+              <strong style={labelStyle}>What it checks:</strong>{" "}Amplitude, better
+              known for product analytics, now has a free AI Visibility tool that
+              monitors how your brand performs in ChatGPT and Google AI Overviews:
+              how often you appear, how you rank against competitors, and which
+              prompts and sources are behind it. It is free and needs no signup.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>What I found:</strong>{" "}Amplitude
-              doesn&rsquo;t offer a standalone checker for brand citations in
-              Google AI Overviews, ChatGPT, Gemini, or Claude. It&rsquo;s a behavioral
-              analytics platform. If you&rsquo;re trying to track AI-referred
-              traffic in your conversion funnel after users arrive, Amplitude can
-              help, but that&rsquo;s a different layer than checking whether
-              you&rsquo;re being cited in the first place.
+              <strong style={labelStyle}>What I found:</strong>{" "}Earlier versions of
+              this article said Amplitude did not do this job. That was true when
+              written and is not true now. Its distinctive angle is the link to
+              Amplitude&rsquo;s analytics: if you already use Amplitude, AI-referred
+              visits and what they do afterwards sit in the same product.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>What it misses:</strong>{" "}It&rsquo;s not
-              designed for this job. Amplitude measures what happens on your site
-              after users arrive. AI visibility is about whether they find you
-              through AI search before they arrive.
+              <strong style={labelStyle}>What it misses:</strong>{" "}Two engines
+              (ChatGPT and AI Overviews), not Perplexity, Gemini or Copilot. And like
+              every tracker, its prompts are a sample, not a log of what your buyers
+              actually typed.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Best for:</strong>{" "}Product and conversion
-              analytics downstream. For AI citation visibility, use the other
-              tools in this list.
+              <strong style={labelStyle}>Best for:</strong>{" "}A quick, free second
+              opinion on ChatGPT and AI Overviews, and teams already using Amplitude
+              for analytics.{" "}
+              <a href="https://amplitude.com/ai-visibility" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>Amplitude AI Visibility</a>
             </p>
 
             <h3 style={h3Style}>
               Google Search Console: Generative AI performance report
             </h3>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>What it checks:</strong>{" "}Google is rolling out a dedicated
-              Generative AI performance report to eligible Search Console properties.
-              It reports impressions for links shown in Google AI Overviews and AI
+              <strong style={labelStyle}>What it checks:</strong>{" "}Search Console has a dedicated
+              Generative AI performance report, rolled out to all websites worldwide
+              as of August 31, 2026. It reports impressions for links shown in Google AI Overviews and AI
               Mode, broken down by page, country, date and device. That activity is
               also folded into the wider Web search totals.
             </p>
@@ -648,14 +663,43 @@ export default function HowToCheckAIVisibilityPost() {
               described a &ldquo;Search type: AI Overviews&rdquo; filter showing
               impressions and clicks; that is not what the report currently provides,
               and the claim has been corrected. It also will not show you the answer
-              itself or why a page appeared, and availability is still limited while
-              the rollout continues.
+              itself or why a page appeared.
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>Best for:</strong>{" "}Aggregate, first-party impression trends across
               AI Overviews and AI Mode. Set it up first, but pair it with
               manual checks, because it cannot audit an individual prompt.{" "}
               <a href="https://support.google.com/webmasters/answer/16984139?hl=en" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>Google&rsquo;s documentation on the report</a>
+            </p>
+
+            <h3 style={h3Style}>Bing Webmaster Tools: AI Performance report</h3>
+            <p style={{ marginBottom: 26 }}>
+              <strong style={labelStyle}>What it checks:</strong>{" "}Microsoft&rsquo;s
+              free report, in public preview since February 2026, counts how often
+              your pages are cited in Microsoft Copilot, AI-generated summaries in
+              Bing and some partner integrations. It shows total citations, citations
+              per page, and sample grounding queries: the searches the AI ran before
+              it cited you.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              <strong style={labelStyle}>What I found:</strong>{" "}This is the only
+              free first-party report I know of that shows citations rather than
+              impressions, and the queries behind them. On my own site it is how I
+              learned that one old essay earns 85% of the domain&rsquo;s Copilot
+              citations, and that some &ldquo;queries&rdquo; are really AI tracking
+              tools running scripted prompts.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              <strong style={labelStyle}>What it misses:</strong>{" "}Microsoft
+              surfaces only, not ChatGPT, Perplexity or Google. Bing labels the query
+              list a sample of overall activity, so treat it as directional. And it
+              does not show the answer text.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              <strong style={labelStyle}>Best for:</strong>{" "}Everyone. It is free,
+              it takes ten minutes to verify your site, and it is the closest thing to
+              a citation count any engine gives you directly.{" "}
+              <a href="https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", fontWeight: 500 }}>Bing&rsquo;s announcement</a>
             </p>
           </RevealSection>
 
@@ -771,7 +815,7 @@ export default function HowToCheckAIVisibilityPost() {
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>Platform coverage.</strong>{" "}Free tiers generally give you less
               platform coverage, prompt volume or history than the paid plans above
-              them, though Wix and some freemium products now reach several AI
+              them, though Semrush&rsquo;s free checker and some freemium products now reach several AI
               platforms, so this is no longer the flat &ldquo;one or two platforms&rdquo;
               limit it once was.
             </p>
@@ -782,8 +826,8 @@ export default function HowToCheckAIVisibilityPost() {
               correct. That still needs a human reading the answers.
             </p>
             <p style={{ marginBottom: 26 }}>
-              <strong style={labelStyle}>Competitor context.</strong>{" "}Wix, Ubersuggest and the paid Semrush
-              products do surface competitors. The limit is depth and customisation
+              <strong style={labelStyle}>Competitor context.</strong>{" "}Semrush&rsquo;s free checker, Amplitude,
+              Ubersuggest and Wix do surface competitors. The limit is depth and customisation
               (which competitors, on which prompts, over what period),
               not the complete absence it used to be.
             </p>

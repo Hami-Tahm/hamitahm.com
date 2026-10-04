@@ -181,7 +181,7 @@ const CATEGORY_4: ChecklistItem[] = [
   {
     label: "Core buyer questions run in ChatGPT, Perplexity, Google AI Overviews, and Gemini within the last 30 days",
     detail:
-      "There are seven free and freemium ways to do this yourself, covered separately below.",
+      "There are eight free ways to do this yourself, covered separately below.",
   },
   {
     label: "A log of prompt coverage and share of voice over time, not a single check",
@@ -584,7 +584,7 @@ export default function AIVisibilityAuditChecklistPost() {
 
               <KeepReadingLink
                 href={HOW_TO_CHECK_URL}
-                title="How to Check AI Visibility: 7 Free Methods"
+                title="How to Check AI Visibility: 8 Free Methods"
                 tag="Basics"
               />
               <KeepReadingLink

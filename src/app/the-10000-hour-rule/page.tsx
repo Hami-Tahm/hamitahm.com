@@ -4,6 +4,7 @@ import { ZoomableImage } from "@/components/ZoomableImage";
 import Link from "next/link";
 import { HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
 import { blogSchemaJson } from "@/lib/blog-schema";
+import { LATEST_QUARTER } from "@/lib/citation-study";
 
 const ARTICLE_TITLE =
   "The 10,000-Hour Rule: How Many Hours to Reach 7/10 Mastery?";
@@ -15,7 +16,7 @@ const DATE_PUBLISHED = "2025-02-22";
 // an FAQ matched to the exact grounding queries this page already gets cited
 // for in Microsoft Copilot (Clarity AI Visibility → Grounding queries, checked
 // live 2026-08-26). Purpose: this is the site's single largest AI-citation
-// asset (~91% of domain citations) and the proof the audit page's sales copy
+// asset (85% of domain citations Jul-Sep 2026; ~91% in the study window) and the proof the audit page's sales copy
 // leans on: the edit defends that position, it isn't content for its own sake.
 const DATE_MODIFIED = "2026-08-26";
 
@@ -166,8 +167,8 @@ export default function Post() {
           </div>
           <p style={{ margin: 0 }}>
             This post is one of the most-cited results in Microsoft Copilot
-            for queries about mastery and skill timelines, with over 7,000
-            AI citations and counting. I do the same thing professionally for
+            for queries about mastery and skill timelines: {LATEST_QUARTER.essayCitations}{" "}
+            Copilot citations from July to September 2026 alone. I do the same thing professionally for
             other businesses.{" "}
             <Link
               href={AUDIT_URL}
@@ -489,12 +490,11 @@ export default function Post() {
               marginRight: "auto",
             }}
           >
-            {/* Stated against the site total rather than as a standalone figure: this
-                page takes almost all of hamitahm.com's citations (416 of 421 in a
-                sampled week), so tying it to the verifiable 7,100 is safer than
-                claiming a per-page number the console doesn't report directly. */}
-            This one article takes nearly all of this site&rsquo;s 7,100 AI
-            citations a quarter.
+            {/* Was "nearly all of this site's 7,100 AI citations a quarter" (study
+                window, Apr-Jul). Updated 2026-10-03 from Bing's per-page view, which now
+                exists: Jul 4 - Sep 30, 6,897 of 8,111, 85%. See LATEST_QUARTER. */}
+            This one article earned {LATEST_QUARTER.essaySharePct}% of this
+            site&rsquo;s {LATEST_QUARTER.siteCitations} AI citations last quarter.
           </h2>
           <p
             style={{

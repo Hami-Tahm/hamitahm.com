@@ -4,7 +4,7 @@ import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { ShortAnswer } from "@/components/ShortAnswer";
 import { HOMECALC_PROOF, HOMECALC_CLAIMS, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
-import { COMMERCIAL_REALITY } from "@/lib/citation-study";
+import { LATEST_QUARTER } from "@/lib/citation-study";
 import { OFFERS } from "@/lib/offers";
 import { QUOTABLE_FACTS } from "@/lib/identity";
 
@@ -36,7 +36,7 @@ const RESOURCES = [
     tag: "Guide",
     title: "How to Check AI Visibility",
     blurb:
-      "Seven free and freemium ways to see where you stand, including the one commonly recommended tool that doesn't do this at all.",
+      "Eight free ways to see where you stand, including Google's and Bing's own reports, and what each one leaves out.",
   },
   {
     href: "/methodology/",
@@ -439,7 +439,8 @@ export default function AIVisibilityPage() {
                   used to sit here had no source anywhere in this repo. On a site whose
                   entire pitch is that its numbers can be checked, an unattributed
                   third-party statistic is the worst possible thing to lead with.
-                  Replaced with two figures from my own published dataset.
+                  Replaced with two figures from my own sites. Since 2026-10-03 they read
+                  from LATEST_QUARTER (same window for both), not the fixed-window study.
                 */}
                 <div>
                   <div
@@ -450,7 +451,7 @@ export default function AIVisibilityPage() {
                       color: "var(--accent)",
                     }}
                   >
-                    {COMMERCIAL_REALITY.aiCitations}
+                    {LATEST_QUARTER.essayCitations}
                   </div>
                   <div
                     style={{
@@ -463,7 +464,7 @@ export default function AIVisibilityPage() {
                       maxWidth: "26ch",
                     }}
                   >
-                    AI citations earned by one page of mine in a quarter
+                    Copilot citations earned by one page of mine, {LATEST_QUARTER.windowLabel}
                   </div>
                 </div>
                 <div>
@@ -475,7 +476,7 @@ export default function AIVisibilityPage() {
                       color: "var(--accent)",
                     }}
                   >
-                    {COMMERCIAL_REALITY.googleClicksPerQuarter}
+                    {LATEST_QUARTER.essayGoogleClicks}
                   </div>
                   <div
                     style={{
