@@ -29,13 +29,17 @@ const WALKTHROUGH_MINUTES = 60;
 const TURNAROUND = "7 business days";
 const PRICE_DISPLAY = AUDIT_PRICE_DISPLAY;
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "Canada-based AEO consultant making your content easier for Google AI Overviews, ChatGPT, Copilot and Perplexity to understand and cite. Priced on a free call.";
+
 export const metadata: Metadata = {
   title: {
     absolute:
       "Answer Engine Optimization Consultant Canada | AEO Services",
   },
-  description:
-    "Canada-based AEO consultant helping businesses make their content easier for Google AI Overviews, ChatGPT, Copilot and Perplexity to understand and cite. Audit delivered in 7 business days, priced on a free call.",
+  description: META_DESCRIPTION,
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/answer-engine-optimization-consultant-canada/",
   },

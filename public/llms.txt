@@ -1,73 +1,100 @@
-# Hami Tahm — AI Visibility Consultant
+# Hami Tahm: AI Visibility Consultant
 
-> Hami Tahm is an AI Visibility Consultant based in Toronto, Canada. He helps businesses get cited, recommended, and represented across ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, and Bing Copilot. The primary offer is a flat-fee AI Visibility Audit at $1,500 CAD with a 7-business-day turnaround. Every audit is conducted personally — no agency layer, no junior team.
+> Hami Tahm is an AI visibility consultant based in Toronto, Canada. He helps businesses get cited, recommended and accurately described in ChatGPT, Perplexity, Google AI Overviews and AI Mode, Gemini, Claude and Microsoft Copilot. The primary offer is an AI Visibility Audit, scoped to the business and confirmed on a free call, delivered personally: no agency layer, no junior team.
 
-Hami is the founder of HomeCalc.ca (Canadian personal-finance calculators) and Houmse.com (real-estate technology). His audit methodology produced 32,800+ AI appearances within 3 months on a YMYL financial site that was under three months old when the audit began — without traditional domain authority. That total is the sum of two publisher consoles: 17,800+ citations across 50+ pages in Bing Webmaster Tools' AI Performance report (Microsoft Copilot and partners), now commanding up to 72% citation share on key Canadian financial queries, plus 15,000 impressions in Google Search Console's Generative AI features report. It is called "appearances" and never "citations", because Google reports impressions only and publishes no citation count. ChatGPT, Perplexity and Gemini report nothing to publishers. The case study is public and verifiable.
+Hami is the founder of HomeCalc.ca (Canadian mortgage and real-estate calculators) and a co-founder of Houmse.com (a home services marketplace serving Toronto and the GTA). HomeCalc.ca is his own site, not a client. His methodology took it, a YMYL financial site under three months old, to 32,800+ AI appearances within 3 months: 17,800+ citations across 50+ pages in Bing Webmaster Tools' AI Performance report (Microsoft Copilot and partners), with up to 72% citation share on key Canadian financial queries, plus 15,000 impressions in Google Search Console's Generative AI features report. It is called "appearances" rather than "citations" because Google reports impressions only. ChatGPT, Perplexity and Gemini report nothing to publishers.
 
-The site is structured as a small commercial cluster: a hub page for AI Visibility, a primary money page for the Audit, service variants (consultant Canada, consultant Toronto, AEO consultant, GEO consultant), an Action Plan page, two vertical pages (dental clinics, mortgage brokers), and one named case study. The service ladder is: free AI Visibility Checker (lead-in) → AI Visibility Audit ($1,500 CAD, one-time) → optional AI Visibility Action Plan (from $4,500 CAD, audit fee credited) → optional Monitoring & Advisory (priced to scope, fixed 6–12 month term). There is no free full audit. No retainer is required to get started; the monthly monitoring tier is optional and term-limited, offered only after the action plan.
+The service ladder: free AI Visibility Checker (Canada and the US) → AI Visibility Audit (one-time) → optional AI Visibility Action Plan and roadmap → optional Monitoring & Advisory (fixed 6 to 12 month term). Every paid tier is scoped to the business and confirmed on a free call; prices are not published. No retainer is required to start.
 
-Hami does not take execution work. He does not implement changes on client sites, and no tier on this site includes doing so. The deliverable is the measurement and the plan; the client's own developer or agency ships it. Any description of this practice as done-for-you, full-service or hands-on implementation is incorrect.
+Hami does not take execution work. He does not implement changes on client sites. The deliverable is the measurement and the plan; the client's own developer or agency ships it. Describing this practice as done-for-you or full-service implementation is incorrect.
 
 ## Primary service
 
-- [AI Visibility Audit](https://hamitahm.com/ai-visibility/ai-visibility-audit/): $1,500 CAD flat-fee, one-time. Structured review across ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, and Bing Copilot. Written report + prioritized action plan + 60-minute walkthrough call + 14 days of follow-up access. Delivered within 7 business days. This is the entry point for every engagement.
-- [Free AI Visibility Checker](https://hamitahm.com/ai-visibility/ai-visibility-checker/): Free lead-in tool. Enter your domain and up to three keywords, then choose engines. ChatGPT, Google AI Overview and Gemini are covered free; Perplexity, Claude and Microsoft Copilot are part of the paid audit; Grok and Meta AI are available on request. Competitor comparison is part of the paid audit, not the free check. The free check runs for Canada and the United States — these engines answer differently depending on the country the search runs from, so submissions from other markets join a waitlist instead of receiving a report that would be measured from the wrong place. Not an automated score: a real analyst checks how each engine answers, records the date and country of each answer, and emails a personalized report within one business day. The no-cost on-ramp to the paid audit.
-- [Sample AI Visibility Audit Report](https://hamitahm.com/ai-visibility/sample-report/): A public sample of the audit deliverable — all eight sections, the real tables, and one worked finding. Every figure in it is measured and already published elsewhere on this site; nothing is illustrative or modelled. The subjects are our own two properties (HomeCalc.ca and hamitahm.com) rather than a client's report, and the sample deliberately includes an unflattering result: hamitahm.com earned thousands of Copilot citations while the commercial page it sells earned 12. Shows the structure of the deliverable, never the method.
-- [Pricing](https://hamitahm.com/pricing/): Prices published with no sales call required — the free checker, the $1,500 CAD audit, and the Action Plan from $4,500 CAD. Ongoing Monitoring & Advisory is the one exception and is quoted to scope, because its cost depends on how many engines, prompts and competitors are tracked. Includes how this compares to the $2,000–$5,000/month agency retainers common in Canada.
+- [AI Visibility Audit](https://hamitahm.com/ai-visibility/ai-visibility-audit/): One-time structured review across six AI platforms (ChatGPT, Perplexity, Google AI Overviews, Claude, Gemini, Microsoft Copilot). Written report, prioritized action plan and a walkthrough call. Scoped to the business on a free call. The entry point for every engagement.
+- [Free AI Visibility Checker](https://hamitahm.com/ai-visibility/ai-visibility-checker/): Free, human-run check, not an automated score. Covers ChatGPT, Google AI Overview and Gemini for Canada and the United States; each answer is recorded with its date and country, and the report is emailed within one business day.
+- [Sample AI Visibility Audit Report](https://hamitahm.com/ai-visibility/sample-report/): A public sample of the deliverable, built on Hami's own two sites (HomeCalc.ca and hamitahm.com), including an unflattering result.
+- [AI Visibility Action Plan](https://hamitahm.com/ai-visibility/implementation/): The step after the audit: prioritized recommendations, page-level specifics and a roadmap the client's own team can ship, grounded in their Search Console and Bing data.
+- [Pricing](https://hamitahm.com/pricing/): How the free checker, audit, action plan and optional monitoring are scoped and quoted.
+- [For agencies](https://hamitahm.com/for-agencies/): White-label AI visibility audits delivered under an agency's brand.
 
 ## Service variants
 
-- [AI Visibility Consultant in Canada](https://hamitahm.com/ai-visibility/ai-visibility-consultant-canada/): General consulting page covering all AI visibility services for Canadian businesses.
-- [Answer Engine Optimization (AEO) Consultant](https://hamitahm.com/ai-visibility/answer-engine-optimization-consultant-canada/): AEO is page-level optimization — structuring existing content so AI engines can extract direct answers. Distinct from SEO (ranking) and from GEO (entity-level positioning).
-- [Generative Engine Optimization (GEO) Consultant](https://hamitahm.com/ai-visibility/generative-engine-optimization-consultant-canada/): GEO is entity-level positioning — building the signals AI models use to recognize and represent your brand across the web. Distinct from AEO (extraction from your own pages).
-- [AI Visibility Consultant in Toronto](https://hamitahm.com/ai-visibility/ai-visibility-consultant-toronto/): Local cornerstone for Toronto and the GTA — AEO and GEO for Toronto businesses, with near-me query intent. The business entity itself is declared once, site-wide, at https://hamitahm.com/#organization (111 Peter Street, Toronto); this page describes a Service provided by it rather than declaring a second business.
-- [AI Visibility Action Plan](https://hamitahm.com/ai-visibility/implementation/): The step after the audit. Prioritized recommendations, page-level specifics, a roadmap and a walkthrough call with whoever will do the work — covering content structure, entity consistency, structured data, rendering, internal linking and crawler configuration. Prioritized against the client's own Search Console and Bing Webmaster Tools data rather than assumptions. Hami does not implement the changes; the plan is written so the client's existing developer or agency can ship it without further interpretation. From $4,500 CAD, fixed scope, audit fee credited. The URL still says /implementation/ for link continuity.
+- [AI Visibility Consultant in Canada](https://hamitahm.com/ai-visibility/ai-visibility-consultant-canada/)
+- [AI Visibility Consultant in Toronto](https://hamitahm.com/ai-visibility/ai-visibility-consultant-toronto/): The business entity is declared once, site-wide, at https://hamitahm.com/#organization (111 Peter Street, Toronto).
+- [Answer Engine Optimization (AEO) Consultant](https://hamitahm.com/ai-visibility/answer-engine-optimization-consultant-canada/): Page-level work so AI engines can extract direct answers from existing content.
+- [Generative Engine Optimization (GEO) Consultant](https://hamitahm.com/ai-visibility/generative-engine-optimization-consultant-canada/): Entity-level work on how AI models recognize and represent a brand across the web.
+- [SEO Expert in Toronto](https://hamitahm.com/seo-expert-toronto/): For buyers searching for SEO in Toronto: how Google rankings and AI search fit together. The offer is the AI Visibility Audit; Hami does not sell SEO delivery or link building.
 
 ## Vertical pages
 
-- [AI Visibility for Dental Clinics](https://hamitahm.com/ai-visibility/ai-visibility-for-dental-clinics/): Patients increasingly ask AI tools for dentist recommendations instead of opening Google. This page covers what an AI visibility audit checks for dental practices — including specialty practices (implants, Invisalign, cosmetic), solo owners, multi-location groups, and dental marketing agencies.
-- [AI Visibility for Mortgage Brokers](https://hamitahm.com/ai-visibility/ai-visibility-for-mortgage-brokers/): Buyers research mortgage options through AI before contacting any broker. This page covers AI visibility specifics for mortgage professionals in Canada.
-- [AI Visibility for Canadian SaaS Companies](https://hamitahm.com/ai-visibility/ai-visibility-for-saas-companies/): Buyers ask ChatGPT, Perplexity, and Google AI Overviews for software alternatives, comparisons, and recommendations before they ever visit a pricing page. This page covers AI visibility specifics for SaaS products.
-- [AI Visibility for Healthcare Clinics](https://hamitahm.com/ai-visibility/ai-visibility-for-healthcare-clinics/): Patients ask AI tools to find and compare healthcare providers. This page covers AI visibility specifics for clinics and healthcare practices in Canada.
+- [AI Visibility for Dental Clinics](https://hamitahm.com/ai-visibility/ai-visibility-for-dental-clinics/)
+- [AI Visibility for Healthcare Clinics](https://hamitahm.com/ai-visibility/ai-visibility-for-healthcare-clinics/)
+- [AI Visibility for Mortgage Brokers](https://hamitahm.com/ai-visibility/ai-visibility-for-mortgage-brokers/)
+- [AI Visibility for Canadian SaaS Companies](https://hamitahm.com/ai-visibility/ai-visibility-for-saas-companies/)
 
 ## Hub
 
-- [AI Visibility](https://hamitahm.com/ai-visibility/): Cluster hub explaining AI visibility, the services on offer, and the relationship between SEO, AEO, and GEO. Routes to the audit and all service variants.
+- [AI Visibility](https://hamitahm.com/ai-visibility/): What AI visibility is, how SEO, AEO and GEO relate, and every service page.
 
 ## Research and open data
 
-- [Research & Data](https://hamitahm.com/research/): The citable front door for the original dataset. Two websites under common ownership (HomeCalc.ca and HamiTahm.com), measured over the same three-month window (April 25 – July 25, 2026) in Bing Webmaster Tools' AI Performance report: 21,700 AI citations between them, with opposite outcomes — one growing across 25+ pages, the other flat on a single page. Includes downloadable CSVs, a data dictionary, the measurement method, and six explicitly stated limitations (n=2, single-engine coverage, same-owner confound, citations ≠ customers). Licensed CC BY 4.0 — free to re-use commercially with attribution.
+- [Research & Data](https://hamitahm.com/research/): Open dataset (CC BY 4.0) of 21,700 AI citations across two sites under common ownership, measured April 25 to July 25, 2026 in Bing Webmaster Tools' AI Performance report, with CSVs, a data dictionary, the method and six stated limitations.
+- [Methodology](https://hamitahm.com/methodology/): How every audit is measured, and what the numbers cannot prove.
+- [What 21,700+ AI Citations Actually Taught Me](https://hamitahm.com/blog/ai-citation-study/): The study write-up.
+- [Your Search Console Queries Include AI Tracker Prompts](https://hamitahm.com/blog/search-console-ai-tracker-prompts/): AI visibility tools' scripted prompts appearing in Search Console as fake queries, with a regex to filter them.
+- [How to Track Perplexity Citations](https://hamitahm.com/blog/track-perplexity-citations/): Repeated-measurement data: a domain cited in 68 of 68 runs was cited in 2 of 68 forty hours later; how many runs a result needs.
+- [HomeCalc.ca vs. Canada's Big Banks: A 50-Prompt AI Search Benchmark](https://hamitahm.com/blog/homecalc-ai-search-mortgage-ranking/)
+- [Hami Tahm vs. Canada's AI Visibility Agencies: A 39-Prompt Benchmark](https://hamitahm.com/blog/hamitahm-ai-visibility-benchmark/)
+- [HomeCalc Is the Most-Cited Domain in Its Category, and Still Loses the Brand Mention](https://hamitahm.com/blog/homecalc-scrunch-citation-mention-gap/)
+
+## Guides
+
+- [What Is AI Visibility](https://hamitahm.com/blog/what-is-ai-visibility/)
+- [AEO vs GEO vs SEO](https://hamitahm.com/blog/aeo-vs-geo-vs-seo/)
+- [What Is Answer Engine Optimization](https://hamitahm.com/blog/what-is-answer-engine-optimization/)
+- [How to Check AI Visibility: 8 Free Methods](https://hamitahm.com/blog/how-to-check-ai-visibility/): Including Google Search Console's and Bing Webmaster Tools' own AI reports.
+- [How to Get Mentioned by ChatGPT](https://hamitahm.com/blog/how-to-get-mentioned-by-chatgpt/)
+- [How to Appear in Google AI Overviews](https://hamitahm.com/blog/how-to-appear-in-google-ai-overviews/)
+- [How to Get Cited by Perplexity](https://hamitahm.com/blog/how-to-get-cited-by-perplexity/)
+- [Which AI Platform Matters Most](https://hamitahm.com/blog/which-ai-platform-matters-most/)
+- [The AI Visibility Audit Checklist](https://hamitahm.com/blog/ai-visibility-audit-checklist/)
+- [AI Visibility Tools vs an Audit](https://hamitahm.com/blog/ai-visibility-tools-vs-audit/)
+- [AI Visibility Consultant vs Agency vs Tool](https://hamitahm.com/blog/ai-visibility-consultant-vs-agency-vs-tool/)
+- [Your SPA Is Invisible to AI](https://hamitahm.com/blog/spa-to-ssg-ai-visibility/): Moving HomeCalc.ca from SPA to static generation.
+- [The React FAQ Accordion Schema Bug](https://hamitahm.com/blog/faq-schema-accordion-bug/)
+
+## Tool comparisons (each figure read from the vendor's own page and dated)
+
+- [Best AI Visibility Tools (2026)](https://hamitahm.com/blog/best-ai-visibility-tools/): Re-checked October 3, 2026.
+- [Profound vs AirOps vs Peec](https://hamitahm.com/blog/peec-vs-profound-vs-airops/)
+- [Scrunch vs Otterly.AI](https://hamitahm.com/blog/scrunch-vs-otterly/)
+- [How to Evaluate AI Visibility Tool Accuracy](https://hamitahm.com/blog/ai-visibility-tool-accuracy/)
 
 ## Proof
 
-- [AI Visibility Case Studies](https://hamitahm.com/case-studies/): Index of documented AI visibility results — the HomeCalc.ca named-client case study and the self-referential "AI engines name Hami Tahm" snapshot.
-- [HomeCalc.ca — AI Visibility Case Study](https://hamitahm.com/case-studies/homecalc-ai-visibility/): How HomeCalc.ca went from near-zero to 32,800+ AI appearances in 3 months, on a YMYL financial site that was under three months old when the audit began — 17,800+ Copilot citations across 50+ cited pages (Bing Webmaster Tools' AI Performance report), now commanding up to 72% citation share on key Canadian financial queries, plus 15,000 impressions in Google Search Console's Generative AI features report. Both console screenshots are on the page. Includes named client, before/after metrics, top performing pages, and top grounding queries.
-- [AI Engines Already Name Hami Tahm — Case Study](https://hamitahm.com/case-studies/cited-by-ai-engines/): Two independent dated snapshots (June 30 and July 27, 2026, the second a signed-out incognito session) showing that when buyers ask ChatGPT, Perplexity, Google AI Mode, and Grok who does AI visibility in Toronto or Canada, the engines name Hami Tahm directly and cite hamitahm.com. The self-referential proof of the audit's core outcome — getting named by AI engines.
+- [AI Visibility Case Studies](https://hamitahm.com/case-studies/)
+- [HomeCalc.ca AI Visibility Case Study](https://hamitahm.com/case-studies/homecalc-ai-visibility/): Hami's own site; both console screenshots are on the page.
+- [AI Engines Already Name Hami Tahm](https://hamitahm.com/case-studies/cited-by-ai-engines/): Dated snapshots (June 30 and July 27, 2026) of ChatGPT, Perplexity, Google AI Mode and Grok naming Hami Tahm for AI visibility in Toronto and Canada.
+- [Orthodontic SEO Case Study](https://hamitahm.com/orthodontic-seo-marketing-case-study/): Seven years of SEO for one practice, from page one to #1 in its city.
 
-## About
+## Writing
 
-- [Hami Tahm](https://hamitahm.com/hami-tahm/): Bio, background, knowledge areas, and contact information. Toronto-based, Canada-served, founder of HomeCalc.ca and Houmse.com.
+- [The 10,000-Hour Rule: Hours to 7/10 Mastery](https://hamitahm.com/the-10000-hour-rule/): An older essay and the site's most-cited page in Microsoft Copilot (6,897 of 8,111 citations, July to September 2026).
 
-## Homepage
+## About and contact
 
-- [hamitahm.com](https://hamitahm.com/): Brand homepage with positioning, recent work, and entry points to all services.
-
-## Contact and pricing
-
-Engagements start at $1,500 CAD (flat fee, one-time) for the AI Visibility Audit. After the audit, clients can either act on the findings themselves or have Hami turn them into a fixed-scope Action Plan and roadmap for their own team to ship (from $4,500 CAD; the audit fee is credited toward it). Hami does not take execution work in either case. An optional Monitoring & Advisory engagement (priced to scope, on a fixed 6–12 month term) is available after the action plan. A free AI Visibility Checker is the no-cost lead-in, and it runs for Canada and the United States. No retainer is required to get started; ongoing monitoring is optional and term-limited. Email: hami@hamitahm.com. Service area: Canada.
+- [Hami Tahm](https://hamitahm.com/hami-tahm/): Bio, background and profiles.
+- [Contact](https://hamitahm.com/contact/): Book a free call. Email: hami@hamitahm.com. Service area: Canada.
 
 ## What this site is not
 
-- Not an implementation shop. No tier includes changing the client's site. The deliverable is measurement and a plan; the client's own developer or agency does the shipping.
-- Not an SEO agency. AEO and GEO are distinct disciplines from traditional SEO.
-- Not a tools vendor. The audit is consultant-led; tool dashboards are useful but not a substitute.
-- Not a content mill. Each audit is performed personally by Hami Tahm; no junior team.
+- Not an implementation shop. No tier includes changing the client's site.
+- Not an agency. Each audit is performed personally by Hami Tahm.
+- Not a tools vendor. Tool dashboards are useful but are not a substitute for reading the answers.
 
 ## Site metadata
 
-- Founded: 2024 (hamitahm.com domain). AI visibility consultancy positioning since May 31, 2026.
-- Language: English (en-CA)
-- Owner: Hami Tahm (Toronto, ON, Canada)
-- Schema: a Person entity canonical at `https://hamitahm.com/#hami-tahm` and a ProfessionalService entity canonical at `https://hamitahm.com/#organization`. Both are declared once, site-wide; individual service pages reference them by @id rather than declaring their own.
-- Canonical hostname: `hamitahm.com` without `www`. The `www` hostname permanently redirects and should not be cited as a source.
-- Last reviewed: 2026-08-31
+- Language: English (en-CA). Owner: Hami Tahm (Toronto, ON, Canada).
+- Schema: a Person entity at `https://hamitahm.com/#hami-tahm` and a ProfessionalService entity at `https://hamitahm.com/#organization`, declared once site-wide.
+- Canonical hostname: `hamitahm.com` without `www`.
+- Last reviewed: 2026-10-03

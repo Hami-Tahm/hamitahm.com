@@ -30,10 +30,14 @@ const PRICE_DISPLAY = AUDIT_PRICE_DISPLAY;
  * the service the searcher had in mind. Redirecting the intent is the correct move;
  * matching it would be a lie.
  */
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "Make sure your dental or orthodontic practice shows up when patients ask Google AI Overviews, ChatGPT, Gemini or Claude. Audit scoped on a free call.";
+
 export const metadata: Metadata = {
   title: "AI Visibility for Dental & Orthodontic Clinics",
-  description:
-    "Ensure your dental or orthodontic practice appears when patients ask Google AI Overviews, ChatGPT, Gemini, or Claude. Audit by Hami Tahm, scoped to your practice and confirmed on a free call.",
+  description: META_DESCRIPTION,
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/ai-visibility-for-dental-clinics/",
   },

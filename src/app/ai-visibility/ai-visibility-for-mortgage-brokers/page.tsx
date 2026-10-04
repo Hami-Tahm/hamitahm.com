@@ -10,10 +10,14 @@ const WALKTHROUGH_MINUTES = 60;
 const TURNAROUND = "7 business days";
 const PRICE_DISPLAY = AUDIT_PRICE_DISPLAY;
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "Make sure your mortgage brokerage shows up when buyers ask Google AI Overviews, ChatGPT, Gemini or Claude. AI visibility audit scoped on a free call.";
+
 export const metadata: Metadata = {
   title: "AI Visibility for Mortgage Brokers",
-  description:
-    "Ensure your mortgage brokerage or real-estate company appears when buyers ask Google AI Overviews, ChatGPT, Gemini, or Claude. Audit by Hami Tahm, scoped to your business and confirmed on a free call.",
+  description: META_DESCRIPTION,
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/ai-visibility-for-mortgage-brokers/",
   },

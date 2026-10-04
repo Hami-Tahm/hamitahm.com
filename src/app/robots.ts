@@ -46,11 +46,14 @@ const SEARCH_TIME_CRAWLERS = [
   "Perplexity-User",
   "Claude-User",
   "Claude-SearchBot",
+  // Moved from TRAINING_CRAWLERS 2026-10-03: Perplexity documents PerplexityBot as
+  // the crawler that indexes pages for Perplexity search results, not for training.
+  // Blocking it would remove Perplexity citations.
+  "PerplexityBot",
 ];
 
 const TRAINING_CRAWLERS = [
   "GPTBot",
-  "PerplexityBot",
   "ClaudeBot",
   "Google-Extended",
 ];

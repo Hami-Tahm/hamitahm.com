@@ -428,6 +428,17 @@ export default function Page() {
                 </Link>
                 .
               </p>
+              <p>
+                Two follow-ups from the same consoles, three months later:{" "}
+                <Link href="/blog/search-console-ai-tracker-prompts/" style={{ color: "var(--accent)" }}>
+                  the AI tracker prompts hiding in Search Console
+                </Link>
+                , and{" "}
+                <Link href="/blog/track-perplexity-citations/" style={{ color: "var(--accent)" }}>
+                  how much a single Perplexity check can mislead
+                </Link>
+                .
+              </p>
             </div>
           </RevealSection>
 

@@ -23,10 +23,14 @@ const SLUG = "/research/";
  * at the CSV served from this domain.
  */
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "The open dataset behind the AI citation study: 21,700 citations across two Canadian sites in three months. Files, method and limitations, CC BY 4.0.";
+
 export const metadata: Metadata = {
   title: "Research & Data: AI Citation Dataset",
-  description:
-    "The open dataset behind the AI citation study: 21,700 citations across two owner-operated Canadian sites in three months. Files, methodology, and stated limitations, CC BY 4.0.",
+  description: META_DESCRIPTION,
   alternates: { canonical: `https://hamitahm.com${SLUG}` },
 };
 

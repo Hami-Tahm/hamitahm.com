@@ -52,6 +52,13 @@ const RESOURCES = [
     blurb:
       "Every published result in one place: what changed, over what window, and which console reported it.",
   },
+  {
+    href: "/for-agencies/",
+    tag: "Agencies",
+    title: "For agencies",
+    blurb:
+      "White-label AI visibility audits delivered under your agency's brand, so your client relationship stays yours.",
+  },
 ] as const;
 
 const HUB_FAQ = [

@@ -591,6 +591,11 @@ export default function ToolsVsAuditPost() {
                 title="What Is AI Visibility?"
                 tag="Basics"
               />
+              <KeepReadingLink
+                href="/blog/ai-visibility-consultant-vs-agency-vs-tool/"
+                title="AI Visibility Consultant vs Agency vs Tool"
+                tag="Strategy"
+              />
             </div>
           </RevealSection>
         </div>

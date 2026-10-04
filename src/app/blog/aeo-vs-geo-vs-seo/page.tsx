@@ -115,9 +115,14 @@ const structuredData = {
   ],
 };
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "SEO earns rankings; AEO and GEO aim to get you cited in AI answers, and overlap more than vendors admit. Where each term came from and which to fix first.";
+
 export const metadata: Metadata = {
   title: ARTICLE_TITLE,
-  description: ARTICLE_DESCRIPTION,
+  description: META_DESCRIPTION,
 };
 
 const linkStyle = {

@@ -10,10 +10,14 @@ const WALKTHROUGH_MINUTES = 60;
 const TURNAROUND = "7 business days";
 const PRICE_DISPLAY = AUDIT_PRICE_DISPLAY;
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "Make sure your SaaS product shows up when buyers ask ChatGPT, Perplexity or Google AI Overviews for alternatives and comparisons. Audit scoped on a free call.";
+
 export const metadata: Metadata = {
   title: "AI Visibility for Canadian SaaS Companies",
-  description:
-    "Ensure your SaaS product appears when buyers ask ChatGPT, Perplexity, or Google AI Overviews for alternatives, comparisons, and recommendations. Audit by Hami Tahm, scoped to your business and confirmed on a free call.",
+  description: META_DESCRIPTION,
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/ai-visibility-for-saas-companies/",
   },

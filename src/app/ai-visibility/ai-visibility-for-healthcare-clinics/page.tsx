@@ -27,10 +27,14 @@ const DENTAL_URL = "/ai-visibility/ai-visibility-for-dental-clinics/";
  * own case-study placeholder. This page exists for the healthcare buyers the
  * dental page was never written for. Cross-link both ways; do not merge.
  */
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "Make sure your clinic shows up when patients ask ChatGPT, Google AI Overviews, Gemini or Claude for a healthcare provider. Audit scoped on a free call.";
+
 export const metadata: Metadata = {
   title: "AI Visibility for Healthcare Clinics",
-  description:
-    "Ensure your clinic appears when patients ask ChatGPT, Google AI Overviews, Gemini, or Claude for a healthcare provider. Audit by Hami Tahm, scoped to your practice and confirmed on a free call.",
+  description: META_DESCRIPTION,
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/ai-visibility-for-healthcare-clinics/",
   },

@@ -110,9 +110,14 @@ const structuredData = {
   ],
 };
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "Software, an agency retainer, or an independent consultant: what each AI visibility option is built for, what it costs, and how to pick the right one.";
+
 export const metadata: Metadata = {
   title: ARTICLE_TITLE,
-  description: ARTICLE_DESCRIPTION,
+  description: META_DESCRIPTION,
 };
 
 const linkStyle = {

@@ -74,13 +74,17 @@ const MEASUREMENT_STAGES = [
 ] as const;
 const PRICE_DISPLAY = AUDIT_PRICE_DISPLAY;
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "Canadian GEO consultant: measure and improve how you are retrieved, mentioned and cited across Google AI, Copilot, ChatGPT, Perplexity, Gemini and Claude.";
+
 export const metadata: Metadata = {
   title: {
     absolute:
       "Generative Engine Optimization Consultant Canada | Hami Tahm",
   },
-  description:
-    "Canadian GEO consultant helping businesses measure and improve how they are retrieved, mentioned and cited across Google AI, Copilot, ChatGPT, Perplexity, Gemini and Claude. Audit scoped to your business, confirmed on a free call. No placement guaranteed.",
+  description: META_DESCRIPTION,
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/generative-engine-optimization-consultant-canada/",
   },

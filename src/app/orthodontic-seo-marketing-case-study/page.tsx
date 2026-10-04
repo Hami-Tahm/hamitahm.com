@@ -8,10 +8,14 @@ const DENTAL_URL = "/ai-visibility/ai-visibility-for-dental-clinics/";
 const CASE_STUDY_URL = "/case-studies/homecalc-ai-visibility/";
 const ABOUT_URL = "/hami-tahm/";
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "How one orthodontic practice went from page-one obscurity to #1 in its city through seven years of honest SEO, brand building and conversion work.";
+
 export const metadata: Metadata = {
   title: "Top 10 to #1: A 7-Year Dental SEO Case Study",
-  description:
-    "How a single orthodontic practice went from page-one obscurity to #1 in the city through 7+ years of honest SEO, brand building, and conversion work. By Hami Tahm.",
+  description: META_DESCRIPTION,
   alternates: {
     canonical: "https://hamitahm.com/orthodontic-seo-marketing-case-study/",
   },

@@ -8,9 +8,34 @@ export const metadata: Metadata = {
     "Get in touch with Hami Tahm: AI visibility, SEO, partnerships, or ambitious projects. Based in Toronto, Canada.",
 };
 
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "@id": "https://hamitahm.com/contact/#page",
+      url: "https://hamitahm.com/contact/",
+      name: "Contact Hami Tahm",
+      inLanguage: "en-CA",
+      mainEntity: { "@id": "https://hamitahm.com/#organization" },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://hamitahm.com/" },
+        { "@type": "ListItem", position: 2, name: "Contact", item: "https://hamitahm.com/contact/" },
+      ],
+    },
+  ],
+};
+
 export default function ContactPage() {
   return (
     <section style={{ padding: "80px 0", minHeight: "calc(100vh - 200px)" }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
+      />
       <div className="wrap">
         <div className="contact-grid">
           {/* Left column */}

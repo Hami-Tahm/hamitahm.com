@@ -95,9 +95,14 @@ const structuredData = {
   ],
 };
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "Answer Engine Optimization (AEO) structures content so AI search engines cite it directly. What AEO is, how it works, and how it differs from SEO.";
+
 export const metadata: Metadata = {
   title: ARTICLE_TITLE,
-  description: ARTICLE_DESCRIPTION,
+  description: META_DESCRIPTION,
 };
 
 const linkStyle = {

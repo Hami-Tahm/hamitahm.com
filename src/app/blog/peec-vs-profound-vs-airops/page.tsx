@@ -224,9 +224,16 @@ const structuredData = {
   ],
 };
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "Profound vs AirOps vs Peec AI: published pricing, AI engines covered and what each is built for. Every figure from the vendor's own page, checked Oct 2026.";
+// Under ~48 chars so the " | Hami Tahm" suffix still fits a Google title.
+const META_TITLE = "Profound vs AirOps vs Peec (2026): Pricing";
+
 export const metadata: Metadata = {
-  title: ARTICLE_TITLE,
-  description: ARTICLE_DESCRIPTION,
+  title: META_TITLE,
+  description: META_DESCRIPTION,
 };
 
 const linkStyle = {
@@ -1040,6 +1047,11 @@ export default function PeecVsProfoundVsAirOpsPost() {
                 href={TOOLS_VS_AUDIT_URL}
                 title="AI Visibility Tools vs. Audit"
                 tag="Strategy"
+              />
+              <KeepReadingLink
+                href="/blog/scrunch-vs-otterly/"
+                title="Scrunch vs Otterly.AI (2026)"
+                tag="Tools"
               />
               <KeepReadingLink
                 href="/blog/how-to-check-ai-visibility/"

@@ -99,9 +99,16 @@ const structuredData = {
   ],
 };
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "Four ways to track Perplexity citations, and why one check means nothing: a site cited in 68 of 68 runs was cited in 2 of 68 forty hours later.";
+// Under ~48 chars so the " | Hami Tahm" suffix still fits a Google title.
+const META_TITLE = "How to Track Perplexity Citations";
+
 export const metadata: Metadata = {
-  title: ARTICLE_TITLE,
-  description: ARTICLE_DESCRIPTION,
+  title: META_TITLE,
+  description: META_DESCRIPTION,
 };
 
 const linkStyle = {

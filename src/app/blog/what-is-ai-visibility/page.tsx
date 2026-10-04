@@ -109,9 +109,14 @@ const structuredData = {
   ],
 };
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "AI visibility is how often, and how accurately, your brand appears in AI answers. What it means, how to measure it, and how it differs from SEO.";
+
 export const metadata: Metadata = {
   title: ARTICLE_TITLE,
-  description: ARTICLE_DESCRIPTION,
+  description: META_DESCRIPTION,
 };
 
 const linkStyle = {

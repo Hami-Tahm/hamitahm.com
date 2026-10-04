@@ -26,10 +26,14 @@ import { AUDIT_PLATFORMS, AUDIT_PLATFORM_COUNT_WORD, BOOKING_URL } from "@/lib/o
 const SLUG = "/for-agencies/";
 const TURNAROUND = "7 business days";
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "White-label AI visibility audits for agencies: six AI platforms, delivered under your brand by one senior consultant in Toronto. Your client stays yours.";
+
 export const metadata: Metadata = {
   title: "White-Label AI Visibility Audits for Agencies",
-  description:
-    "Add AI visibility to your agency without hiring for it. Audits across six AI platforms, delivered under your brand, by one senior consultant in Toronto. Your client relationship stays yours.",
+  description: META_DESCRIPTION,
   alternates: { canonical: `https://hamitahm.com${SLUG}` },
 };
 

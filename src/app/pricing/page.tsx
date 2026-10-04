@@ -13,11 +13,15 @@ import {
 const SLUG = "/pricing/";
 const CONTACT_URL = BOOKING_URL;
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "What AI visibility work costs: a free checker, an audit, and an action plan and roadmap, each scoped to your business and confirmed on a short, free call.";
+
 export const metadata: Metadata = {
   // Rendered length must stay under ~60 including the " | Hami Tahm" template.
   title: "AI Visibility Pricing & Audit Cost",
-  description:
-    "What AI visibility work costs: a free checker, an audit, and an action plan and roadmap, each scoped to your business and confirmed on a short, free call. Optional monitoring is quoted to scope.",
+  description: META_DESCRIPTION,
   alternates: { canonical: `https://hamitahm.com${SLUG}` },
 };
 

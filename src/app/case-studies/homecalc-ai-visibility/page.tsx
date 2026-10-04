@@ -37,9 +37,14 @@ const GOOGLE_AI_ALT =
   "Google Search Console Generative AI features report for homecalc.ca, three-month view: 15,000 total impressions in Google's generative AI surfaces.";
 const CHART_ALT = `Bing Webmaster Tools AI Performance console for homecalc.ca, three-month view: AI citations climbing from near-zero in early May 2026 to ${HOMECALC_PROOF.citations} total across ${HOMECALC_PROOF.pagesCited} cited pages, with daily peaks of ${HOMECALC_PROOF.peakPerDay}.`;
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "How HomeCalc.ca, a Canadian mortgage site under three months old, went from near-zero to thousands of AI citations and top citation share on key queries.";
+
 export const metadata: Metadata = {
   title: "HomeCalc.ca AI Visibility Case Study",
-  description: `How HomeCalc.ca went from near-zero to ${HOMECALC_CLAIMS.appearancesInTimeframe} on a YMYL financial site that was under three months old when the audit began, now commanding up to ${HOMECALC_PROOF.topCitationShare} citation share on key queries. By Hami Tahm.`,
+  description: META_DESCRIPTION,
   alternates: {
     canonical: "https://hamitahm.com/case-studies/homecalc-ai-visibility/",
   },
@@ -265,7 +270,10 @@ export default function HomeCalcCaseStudy() {
                 marginBottom: 24,
               }}
             >
-              The Client: HomeCalc.ca
+              {/* Was "The Client: HomeCalc.ca". HomeCalc is Hami's own site (see
+                  /disclaimer/ and the hub), so "client" contradicted the rest of
+                  the site. Fixed 2026-10-03. */}
+              The Site: HomeCalc.ca
             </h2>
             <div
               style={{
@@ -275,7 +283,7 @@ export default function HomeCalcCaseStudy() {
               }}
             >
               <p style={{ marginBottom: 20 }}>
-                HomeCalc.ca is a Canadian personal finance calculator platform:
+                HomeCalc.ca is my own Canadian personal finance calculator platform:
                 mortgage qualifiers, closing-cost estimators, rent-increase
                 tools, and land-transfer-tax calculators for buyers and renters
                 in Ontario and across the rest of Canada. The site launched in

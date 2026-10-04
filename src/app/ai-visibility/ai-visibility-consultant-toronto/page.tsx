@@ -180,6 +180,11 @@ function buildStructuredData(
   };
 }
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "Toronto AI visibility consultant helping businesses get cited in Google AI Overviews, ChatGPT, Gemini, Copilot and Perplexity. A consultant, not an agency.";
+
 export const metadata: Metadata = {
   title: {
     // Buyers search this category under five different names. The title carries the
@@ -187,8 +192,7 @@ export const metadata: Metadata = {
     // covers the synonym cluster instead of spawning thin per-synonym pages.
     absolute: "AI Visibility Consultant Toronto | AI SEO, AEO & GEO",
   },
-  description:
-    "Toronto AI visibility consultant helping businesses get cited in Google AI Overviews, ChatGPT, Gemini, Claude, Copilot and Perplexity. Audit scoped to your business, confirmed on a free call. Hami Tahm, a consultant, not an agency.",
+  description: META_DESCRIPTION,
   alternates: { canonical: `https://hamitahm.com${SLUG}` },
 };
 

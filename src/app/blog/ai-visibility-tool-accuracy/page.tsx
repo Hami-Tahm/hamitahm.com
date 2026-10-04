@@ -64,9 +64,14 @@ const structuredData = {
   ],
 };
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "AI visibility tools all report a number, but not the same way. A self-test protocol and the questions to ask any vendor before trusting the dashboard.";
+
 export const metadata: Metadata = {
   title: ARTICLE_TITLE,
-  description: ARTICLE_DESCRIPTION,
+  description: META_DESCRIPTION,
 };
 
 const linkStyle = {

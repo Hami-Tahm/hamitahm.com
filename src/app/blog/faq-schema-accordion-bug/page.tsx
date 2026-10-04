@@ -64,9 +64,14 @@ const structuredData = {
   ],
 };
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "React FAQ accordions can ship FAQPage schema with answers missing from the rendered HTML. The bug, what it costs you, and the one-line fix.";
+
 export const metadata: Metadata = {
   title: ARTICLE_TITLE,
-  description: ARTICLE_DESCRIPTION,
+  description: META_DESCRIPTION,
   alternates: {
     canonical: `https://hamitahm.com/blog/${SLUG}/`,
   },

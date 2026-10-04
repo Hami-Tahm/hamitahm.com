@@ -27,12 +27,16 @@ import { HOMECALC_PROOF, HOMECALC_CLAIMS } from "@/lib/homecalc-proof";
 const SLUG = "/ai-visibility/implementation/";
 const CONTACT_URL = "/contact/";
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "After the audit: prioritized recommendations, a page-level action plan and a roadmap your team can ship, grounded in your own Search Console and Bing data.";
+
 export const metadata: Metadata = {
   title: {
-    absolute: "AI Visibility Action Plan: Recommendations & Roadmap | Toronto",
+    absolute: "AI Visibility Action Plan & Roadmap | Hami Tahm",
   },
-  description:
-    "After the audit: prioritized recommendations, a page-level action plan and a roadmap your team can ship, grounded in your own Search Console and Bing data. Fixed scope, quoted from your audit.",
+  description: META_DESCRIPTION,
   alternates: { canonical: `https://hamitahm.com${SLUG}` },
 };
 

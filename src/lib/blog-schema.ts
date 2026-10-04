@@ -6,6 +6,7 @@
 const SITE = "https://hamitahm.com";
 const AUTHOR_ID = `${SITE}/#hami-tahm`;
 const PUBLISHER_ID = `${SITE}/#organization`;
+const DEFAULT_ARTICLE_IMAGE = `${SITE}/images/hami-tahm/hami-tahm-portrait.png`;
 
 type BlogSchemaInput = {
   /** URL slug, e.g. "what-is-ai-visibility" */
@@ -46,22 +47,20 @@ export function buildBlogSchema(input: BlogSchemaInput) {
 
   const isWriting = cluster === "writing";
   const url = isWriting ? `${SITE}/${slug}/` : `${SITE}/blog/${slug}/`;
+  // Google recommends an image on every Article. Posts without their own image fall
+  // back to the author portrait (2026-10-03; previously no Article had an image).
   const resolvedImage = image
     ? image.startsWith("http")
       ? image
       : `${SITE}${image}`
-    : undefined;
+    : DEFAULT_ARTICLE_IMAGE;
 
   const breadcrumbItems = isWriting
     ? [
+        // /writing/ is noindexed, so it no longer appears as a breadcrumb step for
+        // indexable root-level posts (2026-10-03).
         { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "Writing",
-          item: `${SITE}/writing/`,
-        },
-        { "@type": "ListItem", position: 3, name: title, item: url },
+        { "@type": "ListItem", position: 2, name: title, item: url },
       ]
     : cluster === "ai-visibility"
       ? [

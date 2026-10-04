@@ -25,6 +25,8 @@ const schemaJson = blogSchemaJson({
   title: ARTICLE_TITLE,
   description: ARTICLE_DESCRIPTION,
   datePublished: DATE_PUBLISHED,
+  // Matches the sitemap lastmod (2026-08-10); was defaulting to datePublished.
+  dateModified: "2026-08-10",
   cluster: "ai-visibility",
 });
 

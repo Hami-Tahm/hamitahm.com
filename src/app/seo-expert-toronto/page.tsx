@@ -8,10 +8,14 @@ const CONSULTANT_URL = "/ai-visibility/ai-visibility-consultant-canada/";
 const CASE_STUDY_URL = "/case-studies/homecalc-ai-visibility/";
 const ABOUT_URL = "/hami-tahm/";
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "Toronto SEO expert covering both Google rankings and AI search (AI Overviews, ChatGPT, Perplexity). Consultant-led, not an agency. By Hami Tahm.";
+
 export const metadata: Metadata = {
   title: "SEO Expert in Toronto: SEO + AI Search",
-  description:
-    "SEO expert in Toronto who covers both Google SEO and the new AI-search layer (Google AI Overviews, ChatGPT, Perplexity). Consultant-led, not an agency. By Hami Tahm.",
+  description: META_DESCRIPTION,
   alternates: {
     canonical: "https://hamitahm.com/seo-expert-toronto/",
   },
@@ -619,7 +623,7 @@ export default function SEOExpertTorontoPage() {
               }}
             >
               Current builds: HomeCalc.ca (Canadian personal-finance calculators)
-              and Houmse.com (managed cleaning marketplace across the GTA). The
+              and Houmse.com (a home services marketplace across the GTA). The
               AI visibility consultancy at HamiTahm.com is where I work directly
               with other businesses.
             </p>

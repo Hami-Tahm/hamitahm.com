@@ -6,9 +6,14 @@ import { SNAPSHOT } from "@/lib/ai-citation-proof";
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "Real AI visibility results: how a new Canadian site earned thousands of AI citations, and how ChatGPT, Perplexity and Google AI Mode came to name Hami Tahm.";
+
 export const metadata: Metadata = {
   title: "AI Visibility Case Studies",
-  description: `Real results from AI visibility work: how a brand-new Canadian site earned ${HOMECALC_CLAIMS.appearancesInTimeframe}, and how ChatGPT, Perplexity, Google AI Mode, and Grok came to name Hami Tahm directly.`,
+  description: META_DESCRIPTION,
   alternates: { canonical: "https://hamitahm.com/case-studies/" },
 };
 
@@ -23,7 +28,7 @@ type CaseStudy = {
 const CASE_STUDIES: readonly CaseStudy[] = [
   {
     href: "/case-studies/homecalc-ai-visibility/",
-    tag: "Named client · YMYL finance",
+    tag: "My own site · YMYL finance",
     title: `How a brand-new Canadian site earned ${HOMECALC_CLAIMS.appearancesInTimeframe}`,
     excerpt:
       "HomeCalc.ca launched into real estate and mortgage, a market dominated by banks and finance, and became a default AI source without ad budget or domain authority.",
@@ -164,7 +169,7 @@ export default function CaseStudiesIndexPage() {
                 lineHeight: 1.6,
               }}
             >
-              Documented results from AI visibility work: a named client
+              Documented results from AI visibility work: a site I founded
               that went from near-zero to a default AI source, and proof on the
               AI-visibility category itself.
             </p>

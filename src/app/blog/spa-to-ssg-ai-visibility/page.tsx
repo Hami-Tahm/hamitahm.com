@@ -66,9 +66,14 @@ const structuredData = {
   ],
 };
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "Single Page Apps can serve AI crawlers an empty page. Moving HomeCalc.ca from SPA to SSG took Bing Copilot citations from 20 a day to 200 in two days.";
+
 export const metadata: Metadata = {
   title: ARTICLE_TITLE,
-  description: ARTICLE_DESCRIPTION,
+  description: META_DESCRIPTION,
   alternates: {
     canonical: `https://hamitahm.com/blog/${SLUG}/`,
   },

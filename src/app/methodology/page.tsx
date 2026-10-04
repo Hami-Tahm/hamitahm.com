@@ -20,10 +20,14 @@ const SLUG = "/methodology/";
  * not. See the note in src/lib/homecalc-proof.ts.
  */
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "How every audit is measured: which AI engines, how prompts are run and recorded, which metrics are used, and what these numbers cannot prove.";
+
 export const metadata: Metadata = {
   title: "How I Measure AI Visibility: Methodology",
-  description:
-    "The measurement method behind every audit: which engines, how prompts are run and recorded, which metrics, and (just as importantly) what these numbers cannot prove.",
+  description: META_DESCRIPTION,
   alternates: { canonical: `https://hamitahm.com${SLUG}` },
 };
 

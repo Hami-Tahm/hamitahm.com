@@ -96,9 +96,16 @@ const structuredData = {
   ],
 };
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "AI visibility tools send scripted prompts to Google that show up in Search Console as fake queries. Spot them, see why they hurt CTR, filter them out.";
+// Under ~48 chars so the " | Hami Tahm" suffix still fits a Google title.
+const META_TITLE = "AI Tracker Prompts in Search Console";
+
 export const metadata: Metadata = {
-  title: ARTICLE_TITLE,
-  description: ARTICLE_DESCRIPTION,
+  title: META_TITLE,
+  description: META_DESCRIPTION,
 };
 
 const linkStyle = {

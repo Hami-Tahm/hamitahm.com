@@ -66,9 +66,16 @@ const structuredData = {
   ],
 };
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "50 mortgage questions across ChatGPT, Perplexity, AI Overviews and Copilot: HomeCalc.ca outranked every big Canadian bank. Full data, method and limits.";
+// Under ~48 chars so the " | Hami Tahm" suffix still fits a Google title.
+const META_TITLE = "HomeCalc vs Big Banks: 50-Prompt AI Benchmark";
+
 export const metadata: Metadata = {
-  title: ARTICLE_TITLE,
-  description: ARTICLE_DESCRIPTION,
+  title: META_TITLE,
+  description: META_DESCRIPTION,
 };
 
 const linkStyle = {

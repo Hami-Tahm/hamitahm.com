@@ -29,6 +29,8 @@ const PROFILES = [
   { label: "GitHub", href: "https://github.com/Hami-Tahm" },
   { label: "Crunchbase", href: "https://www.crunchbase.com/person/hami-tahm" },
   { label: "Product Hunt", href: "https://www.producthunt.com/@hamitahm" },
+  // In the Person sameAs (layout.tsx); listed here too so the link is visible both ways.
+  { label: "Linktree", href: "https://linktr.ee/Hami_Tahm" },
 ] as const;
 
 /** Ventures he founded: linked, but NOT asserted as his identity (no rel="me"). */
@@ -47,6 +49,11 @@ const pillStyle: React.CSSProperties = {
   textDecoration: "none",
 };
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "Hami Tahm, Toronto AI visibility consultant, helps Canadian businesses get cited in Google AI Overviews, ChatGPT, Gemini and Claude. Founder of HomeCalc.ca.";
+
 export const metadata: Metadata = {
   // `absolute` is required. The root layout applies the template "%s | Hami Tahm", so
   // a plain string here rendered as "Hami Tahm: AI Visibility Consultant | HamiTahm.com
@@ -55,8 +62,7 @@ export const metadata: Metadata = {
   title: {
     absolute: "Hami Tahm: AI Visibility Consultant in Toronto, Canada",
   },
-  description:
-    "Hami Tahm: Toronto AI visibility consultant. AEO & GEO to get Canadian businesses cited in Google AI Overviews, ChatGPT, Gemini, and Claude. Founder of HomeCalc.ca.",
+  description: META_DESCRIPTION,
   alternates: {
     canonical: "https://hamitahm.com/hami-tahm/",
   },
@@ -124,12 +130,16 @@ export default function AboutPage() {
             <div className="hero-grid">
               <div>
                 <h1 style={{ fontFamily: "var(--serif)", fontWeight: 500, fontSize: "clamp(38px, 5.6vw, 64px)", lineHeight: 1.06, letterSpacing: "-.032em" }}>
+                  {/* The entity's own page now names the entity in its H1 (2026-10-03). */}
+                  <span style={{ display: "block", fontFamily: "var(--sans)", fontSize: ".36em", fontWeight: 600, letterSpacing: "-.01em", color: "var(--ink)", marginBottom: 14 }}>
+                    Hami Tahm, AI visibility consultant in Toronto
+                  </span>
                   I build, test, and ship,{" "}
                   <em style={{ fontStyle: "italic", color: "var(--accent)" }}>then double down</em>{" "}
                   on what works.
                 </h1>
                 <p style={{ marginTop: 28, fontSize: "clamp(17px, 2vw, 20px)", color: "var(--muted)", maxWidth: "54ch", lineHeight: 1.65 }}>
-                  Hami Tahm is a Canadian AI visibility consultant and founder, building tools and practices that help businesses appear in AI-powered search. Based in Toronto, Hami runs HamiTahm.com as his AI visibility practice and HomeCalc.ca as a live case study in AI citation growth. He works with <Link href="/ai-visibility/ai-visibility-consultant-toronto/" style={{ color: "var(--accent)", fontWeight: 500 }}>businesses across Toronto and the GTA</Link>, and takes on <Link href="/seo-expert-toronto/" style={{ color: "var(--accent)", fontWeight: 500 }}>traditional SEO engagements</Link> where the two overlap. Every result he publishes is traceable to a <Link href="/case-studies/" style={{ color: "var(--accent)", fontWeight: 500 }}>case study</Link>.
+                  Hami Tahm is a Canadian AI visibility consultant and founder, building tools and practices that help businesses appear in AI-powered search. Based in Toronto, Hami runs HamiTahm.com as his AI visibility practice and HomeCalc.ca as a live case study in AI citation growth. He works with <Link href="/ai-visibility/ai-visibility-consultant-toronto/" style={{ color: "var(--accent)", fontWeight: 500 }}>businesses across Toronto and the GTA</Link>, and explains <Link href="/seo-expert-toronto/" style={{ color: "var(--accent)", fontWeight: 500 }}>how SEO and AI search fit together</Link> for buyers who still search for an SEO expert. He does not sell SEO delivery or implementation. Every result he publishes is traceable to a <Link href="/case-studies/" style={{ color: "var(--accent)", fontWeight: 500 }}>case study</Link>.
                 </p>
               </div>
               <div className="portrait">

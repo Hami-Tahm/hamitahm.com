@@ -319,9 +319,14 @@ const structuredData = {
   ],
 };
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "The best AI visibility tools in 2026: engines covered and entry prices from each vendor's own pages, every claim linked, no affiliate links. Checked Oct 2026.";
+
 export const metadata: Metadata = {
   title: ARTICLE_TITLE,
-  description: ARTICLE_DESCRIPTION,
+  description: META_DESCRIPTION,
 };
 
 const linkStyle = {
@@ -1225,6 +1230,11 @@ export default function BestAIVisibilityToolsPost() {
                 href="/blog/peec-vs-profound-vs-airops/"
                 title="Profound vs AirOps vs Peec"
                 tag="Comparison"
+              />
+              <KeepReadingLink
+                href="/blog/scrunch-vs-otterly/"
+                title="Scrunch vs Otterly.AI (2026)"
+                tag="Tools"
               />
             </div>
           </RevealSection>

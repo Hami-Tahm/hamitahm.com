@@ -137,12 +137,16 @@ const structuredData = {
   ],
 };
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "AI visibility and AI search optimization consultant in Canada. Audits across Google AI Overviews, ChatGPT, Gemini and Claude, scoped on a free call.";
+
 export const metadata: Metadata = {
   // "AI search optimization" is the phrasing Canada-wide buyers use most; carrying it
   // in the title lets this page cover that synonym without a separate thin page.
   title: "AI Visibility & AI Search Optimization in Canada",
-  description:
-    "AI visibility and AI search optimization consultant in Canada. Audit across Google AI Overviews, ChatGPT, Gemini, and Claude, scoped to your business and confirmed on a free call, not an agency.",
+  description: META_DESCRIPTION,
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/ai-visibility-consultant-canada/",
   },

@@ -7,10 +7,14 @@ import { ENGINE_CITATIONS, SNAPSHOT, SNAPSHOT_INCOGNITO } from "@/lib/ai-citatio
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const TURNAROUND = "7 business days";
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "Ask ChatGPT, Perplexity, Google AI Mode or Grok who does AI visibility in Toronto and they name Hami Tahm. A dated snapshot of what the audit aims for.";
+
 export const metadata: Metadata = {
-  title: "AI Engines Already Name Hami Tahm",
-  description:
-    "Ask ChatGPT, Perplexity, Google AI Mode, or Grok who does AI visibility in Toronto: they name Hami Tahm. A dated snapshot of the outcome the audit is built to produce.",
+  title: { absolute: "AI Engines Already Name Hami Tahm" },
+  description: META_DESCRIPTION,
   alternates: {
     canonical: "https://hamitahm.com/case-studies/cited-by-ai-engines/",
   },

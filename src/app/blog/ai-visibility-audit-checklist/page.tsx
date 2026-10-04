@@ -65,9 +65,16 @@ const structuredData = {
   ],
 };
 
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "A free 23-point AI visibility audit checklist: crawlability, entity and schema, answerability, citation tracking and competitors. Run it yourself first.";
+// Under ~48 chars so the " | Hami Tahm" suffix still fits a Google title.
+const META_TITLE = "AI Visibility Audit Checklist: 23 Checks";
+
 export const metadata: Metadata = {
-  title: ARTICLE_TITLE,
-  description: ARTICLE_DESCRIPTION,
+  title: META_TITLE,
+  description: META_DESCRIPTION,
 };
 
 const linkStyle = {

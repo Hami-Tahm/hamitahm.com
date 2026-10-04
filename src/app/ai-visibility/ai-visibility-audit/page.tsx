@@ -41,13 +41,17 @@ const TURNAROUND = "7 business days";
  * a signal something's wrong. Fixed 2026-08-31: metadata now reads the same
  * cookie-derived currency as the rest of the page.
  */
+// Search snippet (<=158 chars). Kept separate from any long on-page/schema
+// description, which can stay longer. Added 2026-10-03.
+const META_DESCRIPTION =
+  "An AI visibility audit across Google AI Overviews, ChatGPT, Gemini and Claude (also called an AEO or ChatGPT visibility audit), scoped on a free call.";
+
 export const metadata: Metadata = {
   // Buyers search this deliverable as "ChatGPT visibility audit", "AI search audit"
   // and "AEO audit" as often as "AI visibility audit"; title/description carry the
   // aliases so one page ranks for the whole cluster.
   title: "ChatGPT & AI Visibility Audit",
-  description:
-    "AI visibility audit across Google AI Overviews, ChatGPT, Gemini, and Claude (also called a ChatGPT visibility or AEO audit), by Hami Tahm. Scoped to your business and confirmed on a free call.",
+  description: META_DESCRIPTION,
   alternates: {
     canonical: "https://hamitahm.com/ai-visibility/ai-visibility-audit/",
   },
@@ -117,7 +121,7 @@ function buildComparisonRows() {
   ["Pricing", "Scoped to your business, confirmed on a call", "Retainer or quote on request", "Monthly subscription"],
   [
     "Case study access",
-    "Public, named client (HomeCalc.ca)",
+    "Public case study on my own site (HomeCalc.ca)",
     "Rarely public",
     "None",
   ],
