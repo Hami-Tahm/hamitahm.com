@@ -115,14 +115,8 @@ function buildStructuredData(faqItems: ReturnType<typeof buildFaqItems>) {
         "Prioritized recommendations, a page-level action plan and a roadmap based on the AI Visibility Audit and on the client's own Search Console and Bing Webmaster Tools data. Built for the client's own team to implement. Fixed scope, quoted from the audit.",
       offers: {
         "@type": "Offer",
-        price: "4500",
-        priceCurrency: "CAD",
-        priceSpecification: {
-          "@type": "PriceSpecification",
-          price: "4500",
-          priceCurrency: "CAD",
-          valueAddedTaxIncluded: false,
-        },
+        // No price/priceCurrency (removed 2026-10-03): pricing is call-gated and not
+        // shown on the page, and Google wants markup to match what visitors see.
         availability: "https://schema.org/InStock",
         seller: { "@id": "https://hamitahm.com/#hami-tahm" },
       },

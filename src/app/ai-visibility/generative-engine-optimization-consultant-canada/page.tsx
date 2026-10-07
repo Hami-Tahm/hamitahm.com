@@ -300,8 +300,8 @@ const structuredData = {
       url: "https://hamitahm.com/ai-visibility/generative-engine-optimization-consultant-canada/",
       offers: {
         "@type": "Offer",
-        price: "1500",
-        priceCurrency: "CAD",
+        // No price/priceCurrency (removed 2026-10-03): pricing is call-gated and not
+        // shown on the page, and Google wants markup to match what visitors see.
         availability: "https://schema.org/InStock",
         itemOffered: {
           "@type": "Service",

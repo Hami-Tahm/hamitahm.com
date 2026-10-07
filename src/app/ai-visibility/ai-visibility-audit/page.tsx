@@ -3,7 +3,6 @@ import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { HOMECALC_PROOF, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
 import { SNAPSHOT } from "@/lib/ai-citation-proof";
-import { getAuditPricing } from "@/lib/currency";
 import { BOOKING_URL, AUDIT_CTA_LABEL, AUDIT_PRICE_DISPLAY } from "@/lib/offers";
 import { ShortlistReasons } from "@/components/ShortlistReasons";
 import { ZoomableImage } from "@/components/ZoomableImage";
@@ -23,7 +22,8 @@ const CHART_ALT = `Bing Webmaster Tools AI Performance console for homecalc.ca, 
  * free call (BOOKING_URL, imported from offers.ts) as the PRIMARY action,
  * not straight to Stripe.
  *
- * getAuditPricing() is still called below, but only for the schema.org Offer
+ * (2026-10-03: getAuditPricing() and the Offer price were both removed.)
+ * getAuditPricing() was previously called below, but only for the schema.org Offer
  * node's `price`/`priceCurrency`, which needs a real number regardless of
  * what visible copy says. Nothing on this page should render
  * `priceWithCurrency` or `checkoutUrl` as visible text or a button anymore.
@@ -171,7 +171,7 @@ const RELATED_LINKS = [
   },
 ] as const;
 
-function buildStructuredData(faqItems: ReturnType<typeof buildFaqItems>, price: number, priceCurrency: string) {
+function buildStructuredData(faqItems: ReturnType<typeof buildFaqItems>) {
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -201,8 +201,8 @@ function buildStructuredData(faqItems: ReturnType<typeof buildFaqItems>, price: 
         provider: { "@id": "https://hamitahm.com/#hami-tahm" },
         offers: {
           "@type": "Offer",
-          price,
-          priceCurrency,
+          // No price/priceCurrency (removed 2026-10-03): pricing is call-gated and not
+          // shown on the page, and Google wants markup to match what visitors see.
           availability: "https://schema.org/InStock",
           seller: { "@id": "https://hamitahm.com/#hami-tahm" },
         },
@@ -220,14 +220,11 @@ function buildStructuredData(faqItems: ReturnType<typeof buildFaqItems>, price: 
 }
 
 export default async function AIVisibilityAudit() {
-  // Only used for the schema.org Offer node below; nothing here renders as
-  // visible text (see the 2026-09-08 note above).
-  const { price, currency } = await getAuditPricing();
   const FAQ_ITEMS = buildFaqItems();
   const COMPARISON_ROWS = buildComparisonRows();
-  // Schema.org price must be a plain number: strip the "$" and thousands comma.
-  const schemaPrice = Number(price.replace(/[^0-9.]/g, ""));
-  const structuredData = buildStructuredData(FAQ_ITEMS, schemaPrice, currency);
+  // The Offer no longer carries a price (2026-10-03), so the per-visitor
+  // CAD/USD lookup that only fed it is gone too.
+  const structuredData = buildStructuredData(FAQ_ITEMS);
 
   return (
     <>

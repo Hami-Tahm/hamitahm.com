@@ -8,7 +8,6 @@ import {
   ENGINE_CITATIONS,
 } from "@/lib/ai-citation-proof";
 import { OFFERS, AUDIT_PRICE_DISPLAY, ACTION_PLAN_PRICE_DISPLAY, BOOKING_URL, AUDIT_CTA_LABEL } from "@/lib/offers";
-import { getAuditPricing } from "@/lib/currency";
 import { ShortlistReasons } from "@/components/ShortlistReasons";
 
 const SLUG = "/ai-visibility/ai-visibility-consultant-toronto/";
@@ -97,8 +96,6 @@ function buildFaqItems() {
 
 function buildStructuredData(
   faqItems: ReturnType<typeof buildFaqItems>,
-  auditSchemaPrice: number,
-  auditPriceCurrency: string,
 ) {
   return {
   "@context": "https://schema.org",
@@ -129,8 +126,8 @@ function buildStructuredData(
         itemListElement: [
           {
             "@type": "Offer",
-            price: String(auditSchemaPrice),
-            priceCurrency: auditPriceCurrency,
+            // No price/priceCurrency (removed 2026-10-03): pricing is call-gated and not
+            // shown on the page, and Google wants markup to match what visitors see.
             availability: "https://schema.org/InStock",
             itemOffered: {
               "@type": "Service",
@@ -140,10 +137,7 @@ function buildStructuredData(
           },
           {
             "@type": "Offer",
-            // Action Plan pricing stays CAD-only site-wide; the cross-currency
-            // credit policy is an unresolved business decision, not decided here.
-            price: "4500",
-            priceCurrency: "CAD",
+            // No price (removed 2026-10-03): pricing is call-gated, see offers.ts.
             availability: "https://schema.org/InStock",
             itemOffered: {
               "@type": "Service",
@@ -197,13 +191,9 @@ export const metadata: Metadata = {
 };
 
 export default async function AIVisibilityConsultantToronto() {
-  // Only used for the schema.org Offer node below; nothing here renders as
-  // visible text (pricing is call-gated as of 2026-09-08, see offers.ts).
-  const { price, currency } = await getAuditPricing();
   const FAQ_ITEMS = buildFaqItems();
-  // Schema.org price must be a plain number: strip the "$" and thousands comma.
-  const auditSchemaPrice = Number(price.replace(/[^0-9.]/g, ""));
-  const structuredData = buildStructuredData(FAQ_ITEMS, auditSchemaPrice, currency);
+  // Offers carry no price since 2026-10-03, so no per-visitor pricing lookup.
+  const structuredData = buildStructuredData(FAQ_ITEMS);
 
   return (
     <>
