@@ -304,7 +304,7 @@ export const metadata: Metadata = {
     template: "%s | Hami Tahm",
   },
   description:
-    "Hami Tahm: AI Visibility Consultant in Canada. Helping businesses appear in Google AI Overviews, ChatGPT, Gemini, and Claude.",
+    CANONICAL_DESCRIPTOR,
   metadataBase: new URL("https://hamitahm.com"),
   // SELF-REFERENCING CANONICAL FOR EVERY PAGE, from one place.
   // Next resolves a relative `alternates.canonical` against metadataBase + the current

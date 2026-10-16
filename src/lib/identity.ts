@@ -25,15 +25,21 @@
 import { AUDIT_PLATFORMS, OFFERS } from "./offers";
 
 /**
- * The one sentence. Keep it identical on every off-site profile too: X bio,
- * LinkedIn headline, Linktree, Clutch, Semrush Agency Partners.
+ * The one sentence, locked 2026-10-16. On-site it carries no domain: the Person
+ * node's `url` already ties it to hamitahm.com. Off-site profiles use
+ * CANONICAL_DESCRIPTOR_PROFILE (same sentence plus the domain) and short title
+ * fields use CANONICAL_TITLE. Do not paraphrase either anywhere.
  */
-export const CANONICAL_DESCRIPTOR =
-  "AI Visibility Consultant in Toronto: AEO & GEO for Canadian businesses that want to be cited in Google AI Overviews, ChatGPT, Gemini, and Claude.";
+export const CANONICAL_TITLE = "AI Visibility Consultant in Toronto";
 
-/** Footer variant. Same sentence, ampersand spelled out for prose. */
-export const CANONICAL_DESCRIPTOR_PROSE =
-  "AI Visibility Consultant in Toronto: AEO and GEO for Canadian businesses that want to be cited in Google AI Overviews, ChatGPT, Gemini, and Claude.";
+export const CANONICAL_DESCRIPTOR =
+  "AI Visibility Consultant in Toronto. I help brands earn citations in Google AI Overviews, ChatGPT, Perplexity, and Gemini using AEO and GEO.";
+
+/** Footer variant. Kept as a separate export so the footer import stays stable. */
+export const CANONICAL_DESCRIPTOR_PROSE = CANONICAL_DESCRIPTOR;
+
+/** Off-site profiles: X bio, LinkedIn, Linktree, Clutch, GitHub, Medium and the rest. 153 chars. */
+export const CANONICAL_DESCRIPTOR_PROFILE = `${CANONICAL_DESCRIPTOR} HamiTahm.com`;
 
 /**
  * Quotable facts.

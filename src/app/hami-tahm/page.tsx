@@ -52,7 +52,7 @@ const pillStyle: React.CSSProperties = {
 // Search snippet (<=158 chars). Kept separate from any long on-page/schema
 // description, which can stay longer. Added 2026-10-03.
 const META_DESCRIPTION =
-  "Hami Tahm, Toronto AI visibility consultant, helps Canadian businesses get cited in Google AI Overviews, ChatGPT, Gemini and Claude. Founder of HomeCalc.ca.";
+  "Hami Tahm, AI visibility consultant in Toronto, helps brands earn citations in Google AI Overviews, ChatGPT, Perplexity, and Gemini. Founder of HomeCalc.ca.";
 
 export const metadata: Metadata = {
   // `absolute` is required. The root layout applies the template "%s | Hami Tahm", so
@@ -491,7 +491,7 @@ export default function AboutPage() {
                 Optimization (AEO) and Generative Engine Optimization (GEO), helping Canadian
                 trust-based local businesses (dental clinics, mortgage brokers, realtors
                 and law firms) get cited and recommended in AI-generated answers from
-                Google AI Overviews, ChatGPT, Gemini and Copilot. He is the founder
+                Google AI Overviews, ChatGPT, Perplexity and Gemini. He is the founder
                 of HomeCalc.ca, which he grew from near-zero to{" "}
                 {HOMECALC_CLAIMS.appearancesInTimeframe}, and a co-founder of Houmse.com. He works
                 solo, on flat-fee, fixed-scope engagements rather than open-ended retainers.
@@ -610,7 +610,7 @@ export default function AboutPage() {
                 Want to be found in AI search?
               </h2>
               <p style={{ color: "var(--muted)", marginTop: 16, position: "relative", maxWidth: "54ch", marginLeft: "auto", marginRight: "auto" }}>
-                I help Canadian businesses show up in Google AI&nbsp;Overviews, ChatGPT, Gemini, and Claude, using the same system I proved on my own products, in public, with numbers you can check.
+                I help brands earn citations in Google AI&nbsp;Overviews, ChatGPT, Perplexity, and Gemini, using the same system I proved on my own products, in public, with numbers you can check.
               </p>
               <Link href={CHECKER_URL} className="btn btn-primary" style={{ marginTop: 36, position: "relative" }}>
                 Run the free AI visibility check <span className="arr">&rarr;</span>

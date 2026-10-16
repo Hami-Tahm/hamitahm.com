@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Hami Tahm: AI Visibility Consultant",
     short_name: "Hami Tahm",
     description:
-      "AI Visibility Consultant in Canada. Helping businesses appear in Google AI Overviews, ChatGPT, Gemini, and Claude.",
+      "AI Visibility Consultant in Toronto. I help brands earn citations in Google AI Overviews, ChatGPT, Perplexity, and Gemini using AEO and GEO.",
     start_url: "/",
     display: "minimal-ui",
     background_color: "#f4f1ea",

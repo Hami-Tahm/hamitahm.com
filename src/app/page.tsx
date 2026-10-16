@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   // Trimmed to ~150 chars (was ~207 and would truncate in the SERP). Leads with the
   // exact query: "AI Visibility Consultant in Canada", then the engines.
   description:
-    "AI Visibility Consultant in Canada. I help businesses get cited in Google AI Overviews, ChatGPT, Gemini, and Claude. Flat-fee audits, no retainer.",
+    "AI Visibility Consultant in Toronto. I help brands earn citations in Google AI Overviews, ChatGPT, Perplexity, and Gemini using AEO and GEO.",
   alternates: {
     canonical: "https://hamitahm.com/",
   },

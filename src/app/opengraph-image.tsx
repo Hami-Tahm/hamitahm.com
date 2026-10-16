@@ -10,6 +10,6 @@ export default async function Image() {
     badge: "AI VISIBILITY",
     title: "AI Visibility Consultant",
     subtitle:
-      "Helping Canadian businesses get cited by Google AI Overviews, ChatGPT, Gemini, and Claude.",
+      "I help brands earn citations in Google AI Overviews, ChatGPT, Perplexity, and Gemini using AEO and GEO.",
   });
 }
