@@ -31,6 +31,16 @@ const PROFILES = [
   { label: "Product Hunt", href: "https://www.producthunt.com/@hamitahm" },
   // In the Person sameAs (layout.tsx); listed here too so the link is visible both ways.
   { label: "Linktree", href: "https://linktr.ee/Hami_Tahm" },
+  // Added 2026-10-17, same list as the Person sameAs in layout.tsx.
+  { label: "ORCID", href: "https://orcid.org/0009-0006-6578-9518" },
+  { label: "Medium", href: "https://medium.com/@HamiTahm" },
+  { label: "Substack", href: "https://substack.com/@hamitahm" },
+  { label: "Qwoted", href: "https://app.qwoted.com/sources/hami-tahm" },
+  { label: "Kaggle", href: "https://www.kaggle.com/hamitahm" },
+  { label: "DEV", href: "https://dev.to/hamitahm" },
+  { label: "Bluesky", href: "https://bsky.app/profile/hamitahm.bsky.social" },
+  { label: "Indie Hackers", href: "https://www.indiehackers.com/hamitahm" },
+  { label: "Quora", href: "https://www.quora.com/profile/Hami-Tahm" },
 ] as const;
 
 /** Ventures he founded: linked, but NOT asserted as his identity (no rel="me"). */

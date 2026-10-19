@@ -148,6 +148,20 @@ const siteStructuredData = {
         "https://www.crunchbase.com/person/hami-tahm",
         "https://github.com/Hami-Tahm",
         "https://www.producthunt.com/@hamitahm",
+        // Added 2026-10-17. Each one checked live that day: profile name "Hami Tahm"
+        // and the locked bio (CANONICAL_DESCRIPTOR_PROFILE) or, for ORCID, a link to
+        // HamiTahm.com. Deliberately NOT listed: the Reddit and Gravatar accounts
+        // (usernames unrelated to the name, so not a clean identity assertion) and
+        // Contra (profile still mostly empty). Add them only if that changes.
+        "https://orcid.org/0009-0006-6578-9518",
+        "https://medium.com/@HamiTahm",
+        "https://substack.com/@hamitahm",
+        "https://app.qwoted.com/sources/hami-tahm",
+        "https://www.kaggle.com/hamitahm",
+        "https://dev.to/hamitahm",
+        "https://bsky.app/profile/hamitahm.bsky.social",
+        "https://www.indiehackers.com/hamitahm",
+        "https://www.quora.com/profile/Hami-Tahm",
       ],
       /*
        * `owns` WAS HERE AND WAS INVALID: removed 2026-08-16. Do not re-add it.
@@ -206,6 +220,9 @@ const siteStructuredData = {
       // the practice as "HamiTahm"), not new names invented for this markup.
       alternateName: ["HamiTahm", "Hami Tahm"],
       url: "https://hamitahm.com/",
+      // The business's own listings (not the person's). Clutch lists the practice
+      // under the name HamiTahm.com. Added 2026-10-17.
+      sameAs: ["https://clutch.co/profile/hamitahmcom"],
       // Real, publicly published contact channel (footer, /contact/, every
       // service page): true and free under AGENTS.md #5. No `telephone`
       // still, per the note above, because none is published.
