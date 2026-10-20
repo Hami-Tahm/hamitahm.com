@@ -47,6 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ── Case studies ─────────────────────────────────────────────────────
     { path: "/case-studies/", priority: 0.8, changeFrequency: "monthly" },
     { path: "/case-studies/homecalc-ai-visibility/", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/case-studies/homecalc-ai-benchmark-canada/", priority: 0.8, changeFrequency: "monthly" },
     { path: "/case-studies/cited-by-ai-engines/", priority: 0.8, changeFrequency: "monthly" },
 
     // ── Person + brand pages ─────────────────────────────────────────────
@@ -200,6 +201,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog/what-is-answer-engine-optimization/": "2026-08-16",
     "/blog/which-ai-platform-matters-most/": "2026-08-10",
     "/case-studies/homecalc-ai-visibility/": "2026-08-10",
+    "/case-studies/homecalc-ai-benchmark-canada/": "2026-10-20",
     "/research/": "2026-08-09",
     "/methodology/": "2026-08-09",
     // Metadata switched from a hardcoded CAD title to generateMetadata() so
