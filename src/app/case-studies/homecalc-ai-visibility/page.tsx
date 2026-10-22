@@ -12,7 +12,7 @@ import {
 } from "@/lib/homecalc-proof";
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
-const TURNAROUND = "7 business days";
+const PILOT_URL = "/for-agencies/";
 /**
  * Screenshot of the Bing Webmaster Tools → AI Performance console for homecalc.ca,
  * trailing 3-month view (May 9 – Aug 7, 2026), captured 2026-08-07.
@@ -34,13 +34,13 @@ const CHART_SRC = "/images/case-studies/homecalc-citation-chart.jpg";
  */
 const GOOGLE_AI_SRC = "/images/case-studies/homecalc-google-ai-impressions.jpg";
 const GOOGLE_AI_ALT =
-  "Google Search Console Generative AI features report for homecalc.ca, three-month view: 15,000 total impressions in Google's generative AI surfaces.";
+  "Google Search Console Generative AI features report for homecalc.ca, three-month view captured August 10, 2026: 15,000 total impressions in Google's generative AI surfaces.";
 const CHART_ALT = `Bing Webmaster Tools AI Performance console for homecalc.ca, three-month view: AI citations climbing from near-zero in early May 2026 to ${HOMECALC_PROOF.citations} total across ${HOMECALC_PROOF.pagesCited} cited pages, with daily peaks of ${HOMECALC_PROOF.peakPerDay}.`;
 
 // Search snippet (<=158 chars). Kept separate from any long on-page/schema
 // description, which can stay longer. Added 2026-10-03.
 const META_DESCRIPTION =
-  "How HomeCalc.ca, a Canadian mortgage site under three months old, went from near-zero to thousands of AI citations and top citation share on key queries.";
+  "How HomeCalc.ca, my own Canadian mortgage calculator site, went from near-zero to 17,800+ Microsoft Copilot citations between May 9 and Aug 7, 2026.";
 
 export const metadata: Metadata = {
   title: "HomeCalc.ca AI Visibility Case Study",
@@ -51,16 +51,16 @@ export const metadata: Metadata = {
 };
 
 const HERO_STATS = [
-  { value: HOMECALC_HEADLINE_STAT.value, label: "Total AI Appearances" },
-  { value: HOMECALC_PROOF.pagesCited, label: "Pages Cited" },
-  { value: HOMECALC_PROOF.timeframe, label: "Timeframe" },
-  { value: "< 3 months", label: "Domain Age" },
+  { value: HOMECALC_PROOF.citations, label: `Microsoft Copilot citations, ${HOMECALC_PROOF.window}` },
+  { value: HOMECALC_PROOF.pagesCited, label: "Pages cited by Copilot" },
+  { value: HOMECALC_PROOF.googleImpressions, label: "Google AI impressions, separate metric" },
+  { value: "< 3 months", label: "Domain age when the window opened" },
 ] as const;
 
 const RESULT_STATS = [
-  { value: HOMECALC_HEADLINE_STAT.value, label: "Total appearances" },
+  { value: HOMECALC_PROOF.citations, label: "Copilot citations" },
   { value: HOMECALC_PROOF.pagesCited, label: "Pages cited" },
-  { value: `< ${HOMECALC_PROOF.timeframe}`, label: "Time to lift" },
+  { value: HOMECALC_PROOF.peakPerDay, label: "Peak citations in one day" },
 ] as const;
 
 const PROCESS_STEPS = [
@@ -74,7 +74,7 @@ const PROCESS_STEPS = [
   },
   {
     label: "Implement",
-    outcome: "Change deployed; citations climbed within 48 hours",
+    outcome: "Changes deployed; citations rose over the following weeks",
   },
 ] as const;
 
@@ -123,7 +123,7 @@ const structuredData = {
       "@type": "Article",
       headline: `How a brand-new Canadian site earned ${HOMECALC_CLAIMS.appearancesInTimeframe}`,
       datePublished: "2026-05-01",
-      dateModified: "2026-07-17",
+      dateModified: "2026-10-22",
       author: { "@id": "https://hamitahm.com/#hami-tahm" },
       publisher: { "@id": "https://hamitahm.com/#organization" },
       about: {
@@ -181,8 +181,8 @@ export default function HomeCalcCaseStudy() {
                 maxWidth: "24ch",
               }}
             >
-              How a brand-new Canadian site earned {HOMECALC_PROOF.combinedAppearances} AI
-              appearances in {HOMECALC_PROOF.timeframe}
+              How My Own New Canadian Site Earned {HOMECALC_PROOF.citations} Copilot
+              Citations in {HOMECALC_PROOF.timeframe}
             </h1>
           </RevealSection>
 
@@ -197,8 +197,8 @@ export default function HomeCalcCaseStudy() {
                 maxWidth: "40ch",
               }}
             >
-              Proof that AI search visibility can be built, not bought. The same
-              method we run for your business.
+              A dated record of one owned site: what Microsoft Copilot cited, what
+              Google showed, and what that does and does not prove.
             </p>
           </RevealSection>
 
@@ -215,7 +215,8 @@ export default function HomeCalcCaseStudy() {
               <Link href="/hami-tahm/" style={{ color: "var(--accent)" }}>
                 Hami Tahm
               </Link>
-              , May 2026. Updated June 17, 2026 with latest citation data.
+              . HomeCalc.ca is my own site (an owned property, not a client).
+              Copilot data: {HOMECALC_PROOF.window}. Last reviewed October 22, 2026.
             </p>
           </RevealSection>
 
@@ -229,12 +230,13 @@ export default function HomeCalcCaseStudy() {
                 lineHeight: 1.65,
               }}
             >
-              HomeCalc.ca launched into one of Canada&rsquo;s most competitive
-              niches: real estate and mortgage. With no ad budget and nothing
-              to buy its way in, it earned {HOMECALC_PROOF.combinedAppearances} AI
-              appearances in its first {HOMECALC_PROOF.timeframe}, in a market
-              dominated by banks/finance. Here is exactly what we did, and what
-              it means for your business.
+              HomeCalc.ca launched in early 2026 into Canadian real estate and
+              mortgage, a category where banks and government sources dominate AI
+              answers. Between {HOMECALC_PROOF.window}, Microsoft Copilot cited it{" "}
+              {HOMECALC_PROOF.citations} times across {HOMECALC_PROOF.pagesCited} pages.
+              Google&rsquo;s generative AI features showed it{" "}
+              {HOMECALC_PROOF.googleImpressions} times in its own three-month view. Those
+              are two different measurements, reported separately below.
             </p>
           </RevealSection>
 
@@ -248,8 +250,8 @@ export default function HomeCalcCaseStudy() {
 
           <RevealSection delay={0.16}>
             <div style={{ marginTop: 36 }}>
-              <Link href={AUDIT_URL} className="btn btn-primary">
-                Book Your AI Visibility Audit <span className="arr">&rarr;</span>
+              <Link href={PILOT_URL} className="btn btn-primary">
+                See the White-Label Pilot <span className="arr">&rarr;</span>
               </Link>
             </div>
           </RevealSection>
@@ -296,10 +298,9 @@ export default function HomeCalcCaseStudy() {
                 ), Google&rsquo;s designation for content that could materially
                 affect a reader&rsquo;s financial wellbeing. YMYL sites are held
                 to a higher standard than almost any other category, and AI
-                engines apply similar caution before citing them. Building
-                authority in YMYL is slow under the best conditions. On a domain
-                under three months old, it shouldn&rsquo;t have been possible at
-                all.
+                engines appear to apply similar caution before citing them. A
+                domain under three months old is a harder starting point than
+                most.
               </p>
             </div>
             <p style={{ marginTop: 8, fontSize: 15 }}>
@@ -383,11 +384,9 @@ export default function HomeCalcCaseStudy() {
                 marginBottom: 28,
               }}
             >
-              HomeCalc.ca had no traditional domain authority to lean on. No
-              backlink portfolio. No years of indexed content. No brand
-              recognition signals. By every conventional measure, a site like
-              this is expected to wait twelve to eighteen months before AI
-              platforms start recognizing it, if ever.
+              HomeCalc.ca had no established domain authority to lean on: no
+              backlink portfolio, no years of indexed content, no brand
+              recognition.
             </p>
           </RevealSection>
 
@@ -435,15 +434,14 @@ export default function HomeCalcCaseStudy() {
                 marginBottom: 28,
               }}
             >
-              HomeCalc.ca accumulated {HOMECALC_PROOF.citations} AI citations
-              across {HOMECALC_PROOF.pagesCited} pages in{" "}
-              {HOMECALC_PROOF.timeframe}, on a financial site less than three
-              months old at the time of the audit. The closing-cost-calculator
-              page alone received {HOMECALC_CITED_PAGES[0].citations} citations,
-              and on the &ldquo;mortgage affordability calculator&rdquo; query,
-              HomeCalc commands a {HOMECALC_PROOF.topCitationShare} citation
-              share, meaning roughly three out of every four AI answers on that
-              query cite HomeCalc.
+              Between {HOMECALC_PROOF.window}, Microsoft Copilot cited HomeCalc.ca{" "}
+              {HOMECALC_PROOF.citations} times across {HOMECALC_PROOF.pagesCited} pages.
+              The most-cited page was the {HOMECALC_CITED_PAGES[0].label.toLowerCase()} guide,
+              with {HOMECALC_CITED_PAGES[0].citations} citations. The highest citation share
+              on a query with a meaningful count was {HOMECALC_PROOF.topCitationShare}, on
+              &ldquo;{HOMECALC_PROOF.topCitationShareQuery}&rdquo; ({HOMECALC_PROOF.topCitationShareCitations}{" "}
+              citations): of all the citations Copilot gave for that query in this window,
+              about {HOMECALC_PROOF.topCitationShare} pointed to HomeCalc.
             </p>
           </RevealSection>
 
@@ -456,91 +454,36 @@ export default function HomeCalcCaseStudy() {
           </RevealSection>
 
           {/*
-            HEADLINE COMBINED FIGURE. Deliberately labelled "AI appearances", not
-            "citations": 15,000 of it is Google impressions, and calling that a
-            citation is the one move here that would be indefensible. The breakdown
-            sits directly underneath so the total is never load-bearing on its own.
+            TWO SEPARATE FIGURES (2026-10-22). The former 32,800 "AI appearances"
+            total added Copilot citations to Google impressions across two windows
+            that do not match. Retired after independent fact-check. Never re-add.
           */}
           <RevealSection delay={0.08}>
-            <div
-              style={{
-                marginTop: 40,
-                padding: "34px 32px",
-                borderRadius: 14,
-                background: "var(--accent-soft)",
-                border: "1px solid var(--accent)",
-              }}
-            >
-              <div
-                style={{
-                  fontFamily: "var(--serif)",
-                  fontSize: "clamp(46px, 9vw, 88px)",
-                  fontWeight: 600,
-                  lineHeight: 1,
-                  letterSpacing: "-.04em",
-                  color: "var(--accent)",
-                }}
-              >
-                {HOMECALC_PROOF.combinedAppearances}
-              </div>
-              <div
-                style={{
-                  fontFamily: "var(--serif)",
-                  fontSize: "clamp(19px, 2.6vw, 26px)",
-                  fontWeight: 500,
-                  color: "var(--ink)",
-                  marginTop: 8,
-                  letterSpacing: "-.01em",
-                }}
-              >
-                {HOMECALC_PROOF.combinedLabel} in {HOMECALC_PROOF.timeframe}
-              </div>
-
-              <div
-                style={{
-                  marginTop: 22,
-                  paddingTop: 20,
-                  borderTop: "1px solid var(--line-strong)",
-                  display: "grid",
-                  gap: 14,
-                }}
-              >
-                <div style={{ fontSize: 15.5, color: "var(--ink)", lineHeight: 1.55 }}>
-                  <strong style={{ fontWeight: 600 }}>
-                    {HOMECALC_PROOF.citations} citations
-                  </strong>{" "}
-                  <span style={{ color: "var(--muted)" }}>
-                    via {HOMECALC_PROOF.sourceLabel}
-                  </span>
+            <div className="cs-results-row" style={{ marginTop: 40, gridTemplateColumns: "repeat(2, 1fr)" }}>
+              <div className="proof-card">
+                <div style={{ fontFamily: "var(--serif)", fontSize: 44, fontWeight: 500, color: "var(--accent)", lineHeight: 1 }}>
+                  {HOMECALC_PROOF.citations}
                 </div>
-                <div style={{ fontSize: 15.5, color: "var(--ink)", lineHeight: 1.55 }}>
-                  <strong style={{ fontWeight: 600 }}>
-                    {HOMECALC_PROOF.googleImpressions} impressions
-                  </strong>{" "}
-                  <span style={{ color: "var(--muted)" }}>
-                    via {HOMECALC_PROOF.googleSourceLabel}
-                  </span>
+                <div style={{ fontSize: 15, color: "var(--ink)", marginTop: 10, fontWeight: 600 }}>Microsoft Copilot citations</div>
+                <div style={{ fontSize: 13.5, color: "var(--muted)", marginTop: 6, lineHeight: 1.5 }}>
+                  Bing Webmaster Tools, AI Performance. {HOMECALC_PROOF.window}.
                 </div>
               </div>
-
-              <p
-                style={{
-                  marginTop: 20,
-                  fontSize: 14.5,
-                  color: "var(--muted)",
-                  lineHeight: 1.65,
-                  maxWidth: "64ch",
-                }}
-              >
-                Two companies&rsquo; consoles, two different metrics, added under the
-                one word that is honestly true of both: a link to this site appeared
-                inside an AI-generated answer. They are separate engines, so nothing is
-                counted twice. Deliberately <em style={{ fontStyle: "italic" }}>not</em>{" "}
-                called 32,800 citations: 15,000 of it is impressions, and Google
-                reports no citation count at all. Neither console shows the total; each
-                shows its own half, and both screenshots are below.
-              </p>
+              <div className="proof-card">
+                <div style={{ fontFamily: "var(--serif)", fontSize: 44, fontWeight: 500, color: "var(--accent)", lineHeight: 1 }}>
+                  {HOMECALC_PROOF.googleImpressions}
+                </div>
+                <div style={{ fontSize: 15, color: "var(--ink)", marginTop: 10, fontWeight: 600 }}>Google generative AI impressions</div>
+                <div style={{ fontSize: 13.5, color: "var(--muted)", marginTop: 6, lineHeight: 1.5 }}>
+                  Search Console, Generative AI features (Beta). {HOMECALC_PROOF.googleWindow}.
+                </div>
+              </div>
             </div>
+            <p style={{ marginTop: 16, fontSize: 14.5, color: "var(--muted)", lineHeight: 1.65, maxWidth: "64ch" }}>
+              These are not added together. Bing counts citations; Google counts impressions
+              and exposes no clicks, CTR or position. The two windows also differ. Both
+              screenshots are below.
+            </p>
           </RevealSection>
 
           <RevealSection delay={0.1}>
@@ -579,7 +522,8 @@ export default function HomeCalcCaseStudy() {
                 {HOMECALC_PROOF.sourceLong}. This is Copilot data. Google now
                 reports <em style={{ fontStyle: "italic" }}>impressions</em> in
                 generative AI features (below), but not citation counts; ChatGPT,
-                Gemini and Perplexity still report nothing to publishers. A
+                Gemini and Perplexity still report nothing to publishers. Bing
+                labels its page and query tables as a sample of overall activity. A
                 selected-sample dataset behind this work is published openly
                 (CC BY 4.0) in the{" "}
                 <Link href="/blog/ai-citation-study/" style={{ color: "var(--accent)", fontWeight: 500 }}>
@@ -633,7 +577,8 @@ export default function HomeCalcCaseStudy() {
                 <strong style={{ color: "var(--ink)", fontWeight: 600 }}>
                   15,000 impressions
                 </strong>{" "}
-                over roughly the same three months.{" "}
+                in its own three-month view, captured August 10, 2026 (Google&rsquo;s
+                window does not line up exactly with Bing&rsquo;s).{" "}
                 <strong style={{ color: "var(--ink)", fontWeight: 600 }}>
                   This is not added to the Copilot figure above, on purpose.
                 </strong>{" "}
@@ -667,7 +612,7 @@ export default function HomeCalcCaseStudy() {
             </h3>
             <p style={{ fontSize: 16, color: "var(--muted)", lineHeight: 1.7, marginBottom: 20, maxWidth: "62ch" }}>
               Having both consoles open at once surfaced something neither shows on
-              its own. Same site, same window: almost entirely different
+              its own. Same site, overlapping windows: almost entirely different
               winners.
             </p>
 
@@ -795,11 +740,13 @@ export default function HomeCalcCaseStudy() {
                 marginBottom: 16,
               }}
             >
-              &ldquo;Citation share&rdquo; is the percentage of all AI citations
-              for a given query that came from HomeCalc.ca. A{" "}
-              {HOMECALC_PROOF.topCitationShare} share means that when AI engines
-              answered this query, they cited HomeCalc in roughly three of every
-              four answers.
+              &ldquo;Citation share&rdquo; is Bing&rsquo;s percentage of all Copilot
+              citations for a query that pointed to HomeCalc.ca. It is a share of
+              citations, not of answers or searches. The highest share on a query
+              with a meaningful count was {HOMECALC_PROOF.topCitationShare} on
+              &ldquo;{HOMECALC_PROOF.topCitationShareQuery}&rdquo; (
+              {HOMECALC_PROOF.topCitationShareCitations} citations). The table below is
+              sorted by citation volume instead.
             </p>
             <DataTable
               headers={["Query", "AI Citations"]}
@@ -820,10 +767,9 @@ export default function HomeCalcCaseStudy() {
                 fontWeight: 500,
               }}
             >
-              Volume matters. Dominance matters more. HomeCalc is no longer just
-              cited by AI engines for Canadian financial calculations; for
-              several of the most important queries in the category, it is the
-              <em style={{ fontStyle: "italic" }}> default source</em>.
+              On its five highest-volume queries, HomeCalc received between 18% and
+              39% of Copilot&rsquo;s citations in this window. That is a large share
+              for a new site, on one engine, in one period.
             </p>
           </RevealSection>
         </div>
@@ -853,10 +799,12 @@ export default function HomeCalcCaseStudy() {
                 marginBottom: 24,
               }}
             >
-              Hami Tahm conducted an AI visibility audit on HomeCalc.ca. He
-              identified a specific technical change that would improve AI
-              platform recognition of the site&rsquo;s pages. The change was
-              implemented, and citations began climbing within 48 hours.
+              I ran an AI visibility audit on HomeCalc.ca and implemented the
+              technical changes it identified. Copilot citations rose over the
+              following weeks. The timing is consistent with those changes helping,
+              but this is one site with no control group, and new content, crawling
+              and engine updates moved in the same period, so it is not proof of
+              cause.
             </p>
             <blockquote
               style={{
@@ -870,9 +818,8 @@ export default function HomeCalcCaseStudy() {
                 lineHeight: 1.6,
               }}
             >
-              &ldquo;I identified a specific technical change that produced this
-              lift. The methodology is part of what you receive in the
-              audit.&rdquo;
+              &ldquo;The specific changes are part of what an audit or pilot
+              delivers.&rdquo;
             </blockquote>
             <div className="cs-process-steps">
               {PROCESS_STEPS.map(({ label, outcome }, i) => (
@@ -939,17 +886,14 @@ export default function HomeCalcCaseStudy() {
               }}
             >
               <p style={{ marginBottom: 20 }}>
-                If this worked on a YMYL financial site {HOMECALC_PROOF.domainAge}
-                (the hardest category on the web, on one of the youngest domains
-                in market), it works on businesses with real authority,
-                established history, and clearer queries.
+                One owned site is not a guarantee for any other. Results depend on
+                the category, the competition, the engines that matter to your
+                buyers and what the measurement finds.
               </p>
               <p>
-                An established dental clinic, mortgage broker, or B2B services
-                firm doesn&rsquo;t carry the trust deficit HomeCalc started with.
-                The same audit applied to your business should move faster, with
-                less friction, against weaker competition for AI citations in
-                your category.
+                What this case does show is that the measurement is practical: you
+                can see which engine cites which page, where you are absent, and who
+                is cited instead. That baseline is what the pilot below delivers.
               </p>
             </div>
           </RevealSection>
@@ -1071,39 +1015,71 @@ export default function HomeCalcCaseStudy() {
                   position: "relative",
                 }}
               >
-                Get Your AI Visibility Audit
+                Run This Measurement for an Agency Client
               </h2>
               <p
                 style={{
                   marginTop: 16,
                   fontSize: 16,
                   color: "var(--muted)",
-                  maxWidth: "48ch",
+                  maxWidth: "56ch",
                   marginLeft: "auto",
                   marginRight: "auto",
                   lineHeight: 1.6,
                   position: "relative",
                 }}
               >
-                See what an AI visibility audit can do for your business.
+                White-label AI visibility pilot: one client brand, domain and market,
+                up to 20 agreed prompts and three named competitors. Agency-branded
+                report, 60-minute handoff and one revision, delivered seven business
+                days after payment and intake. The agency keeps the client
+                relationship and any implementation work.
               </p>
               <p
                 style={{
                   marginTop: 12,
                   fontSize: 15,
+                  color: "var(--ink)",
+                  position: "relative",
+                  fontWeight: 600,
+                }}
+              >
+                US$1,500 (US clients) &middot; CA$2,000 (Canadian clients), plus applicable tax
+              </p>
+              <p
+                style={{
+                  marginTop: 8,
+                  fontSize: 13.5,
+                  color: "var(--muted)",
+                  position: "relative",
+                  maxWidth: "56ch",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                }}
+              >
+                A dated, sampled snapshot and opportunity map. No guarantee of
+                rankings, citations, traffic, leads or revenue.
+              </p>
+              <Link
+                href={PILOT_URL}
+                className="btn btn-primary"
+                style={{ marginTop: 30, position: "relative" }}
+              >
+                See the White-Label Pilot <span className="arr">&rarr;</span>
+              </Link>
+              <p
+                style={{
+                  marginTop: 16,
+                  fontSize: 14,
                   color: "var(--muted)",
                   position: "relative",
                 }}
               >
-                Scoped to your business, confirmed on a free call. Report and walkthrough call within {TURNAROUND}.
+                Not an agency?{" "}
+                <Link href={AUDIT_URL} style={{ color: "var(--ink)" }}>
+                  See the AI visibility audit
+                </Link>
               </p>
-              <Link
-                href={AUDIT_URL}
-                className="btn btn-primary"
-                style={{ marginTop: 30, position: "relative" }}
-              >
-                Book Your AI Visibility Audit <span className="arr">&rarr;</span>
-              </Link>
               <p
                 style={{
                   marginTop: 20,

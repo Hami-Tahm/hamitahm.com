@@ -564,7 +564,7 @@ export default async function AIVisibilityAudit() {
                 >
                   HomeCalc.ca, a Canadian financial calculator site{" "}
                   {HOMECALC_PROOF.domainAge}, went from near-zero
-                  to {HOMECALC_PROOF.combinedAppearances}{" "}AI appearances in{" "}
+                  to {HOMECALC_PROOF.citations}{" "}Microsoft Copilot citations in{" "}
                   {HOMECALC_PROOF.timeframe} ({HOMECALC_PROOF.combinedSourceLong}).
                 </p>
                 <p

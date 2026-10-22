@@ -9,7 +9,21 @@
  * Outcome only. Never put the underlying mechanism in this file or anywhere
  * else on the public site: that is paid IP.
  *
- * Last updated: 2026-08-07, read directly from Bing Webmaster → AI Performance,
+ * RE-VERIFIED 2026-10-22 against the live console, Custom range May 9 to Aug 7, 2026:
+ * Total Citations 17.8K, 56 pages listed, daily series 3, 1, 0, 2 ... peak 575 (Jul 22),
+ * top page /blog/how-to-qualify-for-a-mortgage-in-canada 1.8K, and 71.83% citation share
+ * on "calculate land transfer tax ontario" (102 citations). Bing labels the tables "a
+ * sample of overall activity".
+ *
+ * ⚠️ 2026-10-22: THE 32,800 "AI APPEARANCES" SUM IS RETIRED. Independent fact-check
+ * rejected adding Copilot citations to Google impressions (different metrics, and the
+ * two console windows do not match: Bing May 9 to Aug 7, Google's 3-month view captured
+ * Aug 10). The legacy keys below (combinedAppearances, combinedLabel, combinedSourceLong,
+ * HOMECALC_CLAIMS.appearances*) are KEPT so ~30 pages compile, but now resolve to the
+ * Copilot-only figure and a Bing-only source line. Google impressions are only ever shown
+ * as their own separate figure. Do not reintroduce a sum.
+ *
+ * Originally read 2026-08-07 directly from Bing Webmaster → AI Performance,
  * site selector confirmed as homecalc.ca (it defaults to another property, always
  * check it before reading a number), trailing 3-month view, May 9 – Aug 7, 2026.
  * The 91 daily values on that chart sum to 17,826, which is what the console rounds
@@ -49,6 +63,8 @@ export const HOMECALC_PROOF = {
   // metrics; conflating them would overstate or understate by ~3x.
   pagesCited: "50+",
   timeframe: "3 months",
+  /** The exact Bing window every Copilot figure in this file comes from. */
+  window: "May 9 to Aug 7, 2026",
   // ⚠️ TIME-ANCHORED ON PURPOSE. HomeCalc launched around March 2026, so by the END of
   // the current measurement window (Aug 7, 2026) the domain is roughly five months old,
   // not three. What is true, and verifiable in the console, is that it was under three
@@ -72,6 +88,9 @@ export const HOMECALC_PROOF = {
   // meaningful citation count behind it. Never guess upward, and never round up off a
   // tiny denominator.
   topCitationShare: "72%",
+  /** The query the 72% belongs to. Never attach 72% to any other query or page. */
+  topCitationShareQuery: "calculate land transfer tax ontario",
+  topCitationShareCitations: "102",
 
   // PLATFORM PROVENANCE: the single most important honesty control
   // `citations` above comes from ONE source: Bing Webmaster Tools' AI Performance
@@ -103,24 +122,23 @@ export const HOMECALC_PROOF = {
   //
   // Also: Google renders its figure as a rounded "15K", so the combined number carries
   // no more precision than that. Write 32,800+, never 32,826.
-  combinedAppearances: "32,800+",
-  combinedLabel: "AI appearances",
+  // Legacy keys, retired sum (see header). Resolve to the Copilot-only figure.
+  combinedAppearances: "17,800+",
+  combinedLabel: "Microsoft Copilot citations",
   googleImpressions: "15,000",
   googleSourceLabel: "Google generative AI features (Search Console, Beta)",
+  /** Google's own window: 3-month view captured Aug 10, 2026. Not Bing's window. */
+  googleWindow: "3-month view captured Aug 10, 2026",
   googleSourceLong:
     "measured in Google Search Console's Generative AI features report (Beta), which reports impressions only: no clicks, CTR, position or queries",
 
-  // Attribution that MUST travel with the combined figure. `sourceLong` above names
-  // Bing only and is now reserved for the Copilot-specific exhibits on the case study.
-  // Rendering the 32,800 number next to a Bing-only source line would attribute a
-  // two-console total to one console, a worse error than the label problem, because
-  // it is not just imprecise, it is false.
+  // Legacy keys: now Bing-only, because the headline figure is Copilot-only.
   combinedSourceLong:
-    "counted across two consoles: Bing Webmaster Tools' AI Performance report (Microsoft Copilot) for citations, and Google Search Console's Generative AI features report for impressions",
-  combinedSourceLabel: "Microsoft Copilot + Google generative AI features",
+    "measured in Bing Webmaster Tools' AI Performance report (Microsoft Copilot and partners), May 9 to Aug 7, 2026",
+  combinedSourceLabel: "Microsoft Copilot (Bing AI Performance)",
 } as const;
 
-const COMBINED_BARE = HOMECALC_PROOF.combinedAppearances.replace("+", "");
+const COMBINED_BARE = HOMECALC_PROOF.citations.replace("+", "");
 const TIMEFRAME_TITLE = HOMECALC_PROOF.timeframe
   .split(" ")
   .map((w) => (w[0] ? w[0].toUpperCase() + w.slice(1) : w))
@@ -144,22 +162,22 @@ const TIMEFRAME_TITLE = HOMECALC_PROOF.timeframe
  * case study (the Bing chart, the cited-pages table, the grounding-query table).
  */
 export const HOMECALC_CLAIMS = {
-  /** "32,800+ AI appearances in 3 months" */
-  appearancesInTimeframe: `${HOMECALC_PROOF.combinedAppearances} AI appearances in ${HOMECALC_PROOF.timeframe}`,
-  /** "over 32,800 AI appearances in 3 months" */
-  overAppearancesInTimeframe: `over ${COMBINED_BARE} AI appearances in ${HOMECALC_PROOF.timeframe}`,
-  /** "32,800-appearance lift visible in 3 months" (compound, no plus sign) */
-  liftVisible: `${COMBINED_BARE}-appearance lift visible in ${HOMECALC_PROOF.timeframe}`,
-  /** "full 32,800-appearance lift visible in 3 months" */
-  fullLiftVisible: `full ${COMBINED_BARE}-appearance lift visible in ${HOMECALC_PROOF.timeframe}`,
-  /** "near-zero to 32,800+ AI appearances in 3 months" */
-  zeroToAppearances: `near-zero to ${HOMECALC_PROOF.combinedAppearances} AI appearances in ${HOMECALC_PROOF.timeframe}`,
-  /** "HomeCalc case study: 32,800+ AI appearances in 3 months" */
-  caseStudyCardLabel: `HomeCalc case study: ${HOMECALC_PROOF.combinedAppearances} AI appearances in ${HOMECALC_PROOF.timeframe}`,
-  /** "32,800+ AI Appearances. 3 Months." (hero / H2 punch line) */
-  heroPunchLine: `${HOMECALC_PROOF.combinedAppearances} AI Appearances. ${TIMEFRAME_TITLE}.`,
-  /** The breakdown, for anywhere the total appears without the two figures beside it. */
-  breakdown: `${HOMECALC_PROOF.citations} citations in ${HOMECALC_PROOF.sourceLabel} plus ${HOMECALC_PROOF.googleImpressions} impressions in ${HOMECALC_PROOF.googleSourceLabel}`,
+  /** "17,800+ Microsoft Copilot citations in 3 months" */
+  appearancesInTimeframe: `${HOMECALC_PROOF.citations} Microsoft Copilot citations in ${HOMECALC_PROOF.timeframe}`,
+  /** "over 17,800 Microsoft Copilot citations in 3 months" */
+  overAppearancesInTimeframe: `over ${COMBINED_BARE} Microsoft Copilot citations in ${HOMECALC_PROOF.timeframe}`,
+  /** "17,800-citation lift visible in 3 months" (compound, no plus sign) */
+  liftVisible: `${COMBINED_BARE}-citation lift visible in ${HOMECALC_PROOF.timeframe}`,
+  /** "full 17,800-citation lift visible in 3 months" */
+  fullLiftVisible: `full ${COMBINED_BARE}-citation lift visible in ${HOMECALC_PROOF.timeframe}`,
+  /** "near-zero to 17,800+ Microsoft Copilot citations in 3 months" */
+  zeroToAppearances: `near-zero to ${HOMECALC_PROOF.citations} Microsoft Copilot citations in ${HOMECALC_PROOF.timeframe}`,
+  /** "HomeCalc case study: 17,800+ Copilot citations in 3 months" */
+  caseStudyCardLabel: `HomeCalc case study: ${HOMECALC_PROOF.citations} Copilot citations in ${HOMECALC_PROOF.timeframe}`,
+  /** "17,800+ Copilot Citations. 3 Months." */
+  heroPunchLine: `${HOMECALC_PROOF.citations} Copilot Citations. ${TIMEFRAME_TITLE}.`,
+  /** The two figures, kept separate. */
+  breakdown: `${HOMECALC_PROOF.citations} citations in ${HOMECALC_PROOF.sourceLabel} (${HOMECALC_PROOF.window}); Google's generative AI features report showed ${HOMECALC_PROOF.googleImpressions} impressions in its own ${HOMECALC_PROOF.googleWindow}, a different metric that is never added to it`,
 } as const;
 
 /**
@@ -175,11 +193,11 @@ export const HOMECALC_CLAIMS = {
  * unit must travel together or they drift apart. Pair them here, once.
  */
 export const HOMECALC_HEADLINE_STAT = {
-  /** "32,800+" */
-  value: HOMECALC_PROOF.combinedAppearances,
-  /** "AI appearances" */
+  /** "17,800+" (Copilot only since 2026-10-22) */
+  value: HOMECALC_PROOF.citations,
+  /** "Microsoft Copilot citations" */
   label: HOMECALC_PROOF.combinedLabel,
-  /** "AI appearances (HomeCalc, 3 months)": for stat rails that need the context. */
+  /** "Microsoft Copilot citations (HomeCalc, 3 months)" */
   labelLong: `${HOMECALC_PROOF.combinedLabel} (HomeCalc, ${HOMECALC_PROOF.timeframe})`,
 } as const;
 

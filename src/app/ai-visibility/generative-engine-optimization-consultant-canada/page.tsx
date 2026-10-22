@@ -233,7 +233,7 @@ const FAQ_ITEMS: {
   },
   {
     q: "How quickly can I see GEO results?",
-    a: `On HomeCalc.ca (a site I own), appearances began climbing within 48 hours of the changes, with the ${HOMECALC_CLAIMS.fullLiftVisible}. That is one property, and one observation is not a timeline you should plan around. There is no published service level for this: Google's own documentation says recrawling alone can take days to months and that indexing is never guaranteed. What you can control is measuring on a fixed schedule so you can tell movement from noise.`,
+    a: `On HomeCalc.ca (a site I own), Copilot citations rose in the weeks after the changes, with the ${HOMECALC_CLAIMS.fullLiftVisible}. That is one property, and one observation is not a timeline you should plan around. There is no published service level for this: Google's own documentation says recrawling alone can take days to months and that indexing is never guaranteed. What you can control is measuring on a fixed schedule so you can tell movement from noise.`,
   },
   {
     q: "What do I receive when working with a GEO consultant?",
@@ -833,11 +833,11 @@ export default function GEOConsultantCanada() {
                 HomeCalc.ca is a Canadian personal-finance calculator site that I own,
                 not a client engagement, which is why the raw data can be
                 published in full. Over {HOMECALC_PROOF.timeframe} it recorded{" "}
-                {HOMECALC_PROOF.combinedAppearances} measured AI appearances across two
-                publisher reports: {HOMECALC_PROOF.citations} Copilot citations in Bing
-                Webmaster Tools and {HOMECALC_PROOF.googleImpressions} impressions in
-                Google&rsquo;s Generative AI features report. That is measurable growth
-                on those two surfaces. It does not establish equivalent results on
+                {HOMECALC_PROOF.citations} Copilot citations in Bing Webmaster Tools
+                ({HOMECALC_PROOF.window}). Separately, Google&rsquo;s Generative AI
+                features report showed {HOMECALC_PROOF.googleImpressions} impressions in
+                its own three-month view; the two are different metrics and are not
+                added. That is measurable growth on those two surfaces. It does not establish equivalent results on
                 engines that report nothing, and appearances are not customers.
               </p>
               <p

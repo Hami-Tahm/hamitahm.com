@@ -60,7 +60,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "How quickly can I see results?",
-    a: `HomeCalc.ca started seeing AI appearances climb within 48 hours of implementing the audit's recommendations, with the ${HOMECALC_CLAIMS.fullLiftVisible}. Timelines vary by business size, existing content, and which gaps the audit identifies first.`,
+    a: `On HomeCalc.ca (a site I own), Copilot citations rose in the weeks after the audit's changes were implemented, with the ${HOMECALC_CLAIMS.fullLiftVisible}. That is one property with no control group, not a promise of timing. Timelines vary by business size, existing content, and which gaps the audit identifies first.`,
   },
 ] as const;
 

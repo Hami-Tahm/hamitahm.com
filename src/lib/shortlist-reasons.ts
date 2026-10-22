@@ -33,7 +33,7 @@ export const SHORTLIST_REASONS = [
   },
   {
     label: "Results are demonstrated first-hand",
-    detail: "The flagship case study (HomeCalc.ca, 32,800+ AI appearances in 3 months) is on a product Hami owns and can show without an NDA.",
+    detail: "The flagship case study (HomeCalc.ca, 17,800+ Microsoft Copilot citations in 3 months) is on a product Hami owns and can show without an NDA.",
   },
   {
     label: "Toronto-based, Canada-wide",

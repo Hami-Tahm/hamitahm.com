@@ -160,7 +160,7 @@ const FAQ_ITEMS: {
   },
   {
     q: "How quickly can I see results?",
-    a: `HomeCalc.ca started seeing AI appearances climb within 48 hours of implementing the audit's recommendations, with the ${HOMECALC_CLAIMS.fullLiftVisible}. Timelines vary by clinic, but the audit identifies which changes produce results fastest.`,
+    a: `On HomeCalc.ca (a site I own), Copilot citations rose in the weeks after the audit's changes were implemented, with the ${HOMECALC_CLAIMS.fullLiftVisible}. That is one property with no control group, not a promise of timing. Timelines vary by clinic, but the audit identifies which changes produce results fastest.`,
   },
   {
     q: "How much does the audit cost?",
@@ -574,8 +574,8 @@ export default function AIVisibilityDentalClinics() {
               >
                 HomeCalc.ca is a Canadian personal finance calculator site (
                 {HOMECALC_PROOF.domainAge}). After an AI
-                visibility audit by Hami Tahm, the site went from near-zero AI
-                appearances to {HOMECALC_PROOF.combinedAppearances} in{" "}
+                visibility audit by Hami Tahm, the site went from near-zero
+                Copilot citations to {HOMECALC_PROOF.citations} in{" "}
                 {HOMECALC_PROOF.timeframe}, with{" "}
                 {HOMECALC_PROOF.combinedSourceLong}.
               </p>

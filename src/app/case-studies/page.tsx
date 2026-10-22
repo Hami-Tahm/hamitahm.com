@@ -47,7 +47,7 @@ const CASE_STUDIES: readonly CaseStudy[] = [
     stats: [
       { value: HOMECALC_HEADLINE_STAT.value, label: HOMECALC_HEADLINE_STAT.label },
       { value: HOMECALC_PROOF.timeframe, label: "Timeframe" },
-      { value: HOMECALC_PROOF.topCitationShare, label: "Peak citation share" },
+      { value: HOMECALC_PROOF.topCitationShare, label: "Top Copilot citation share, one query" },
     ],
   },
   {

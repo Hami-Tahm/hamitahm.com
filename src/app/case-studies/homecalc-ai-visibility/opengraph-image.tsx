@@ -10,6 +10,6 @@ export default async function Image() {
   return renderOgImage({
     badge: "CASE STUDY · HOMECALC",
     title: HOMECALC_CLAIMS.heroPunchLine,
-    subtitle: `How HomeCalc.ca went from near-zero to ${HOMECALC_PROOF.combinedAppearances} AI appearances on a YMYL site ${HOMECALC_PROOF.domainAge}.`,
+    subtitle: `My own site HomeCalc.ca: near-zero to ${HOMECALC_PROOF.citations} Microsoft Copilot citations, ${HOMECALC_PROOF.window}.`,
   });
 }
