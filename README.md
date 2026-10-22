@@ -27,11 +27,9 @@ This site is the consultancy. It's also the public lab where I document what's a
 
 The audit methodology was first proved on [HomeCalc.ca](https://homecalc.ca/), a Canadian financial-calculator platform under three months old at the time:
 
-- **32,800+ AI appearances in 3 months**, counted across two publisher consoles
-  - **17,800+ citations** — Bing Webmaster Tools' AI Performance report (Microsoft Copilot and partners), across **50+ pages**, peaking at 570+ per day
-  - **15,000 impressions** — Google Search Console's Generative AI features report (Beta)
-- Called *appearances*, never *citations* — Google reports impressions only and publishes no citation count
-- **up to 72% citation share** on key Canadian financial queries (e.g. `calculate land transfer tax ontario`)
+- **17,800+ Microsoft Copilot citations, May 9 to Aug 7, 2026** (Bing Webmaster Tools, AI Performance), across **50+ pages** (56 listed), peaking at 570+ per day
+- **15,000 impressions** in Google Search Console's Generative AI features report (Beta), its own 3-month view captured Aug 10, 2026. A different metric and window: never added to the Copilot figure (the former 32,800 sum was retired on 2026-10-22)
+- **72% citation share** on one query, `calculate land transfer tax ontario` (102 citations), in the same Bing window
 - A YMYL category — financial — which is the hardest category to gain authority in, on the youngest possible domain
 
 Full data, top pages, and grounding queries are in the [case study](https://hamitahm.com/case-studies/homecalc-ai-visibility/).

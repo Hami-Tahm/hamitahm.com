@@ -13,10 +13,10 @@ import { AUDIT_PRICE_DISPLAY, BOOKING_URL, AUDIT_CTA_LABEL } from "@/lib/offers"
  * traceable to a vendor document or a dated test on a real domain. Several were
  * traceable to neither and have been removed.
  *
- * On the combined HomeCalc figure: summing Copilot citations and Google impressions
- * under the superset label "AI appearances" is defensible ONLY while the components
- * stay visible next to it. See the rule in src/lib/homecalc-proof.ts. Never label
- * the total "citations", and never imply it covers engines that report nothing.
+ * On the HomeCalc figure: since 2026-10-22 it is Copilot citations only. The former
+ * Copilot + Google "AI appearances" sum is retired (see src/lib/homecalc-proof.ts).
+ * Never add Google impressions to it, and never imply it covers engines that report
+ * nothing.
  */
 const GOOGLE_AI_FEATURES_URL =
   "https://developers.google.com/search/docs/appearance/ai-features";
@@ -164,7 +164,7 @@ const FAQ_ITEMS: {
   },
   {
     q: "How long does AEO take to show results?",
-    a: `On HomeCalc.ca (a site I own), appearances began climbing within 48 hours of the changes, with the ${HOMECALC_CLAIMS.fullLiftVisible}. That is one property and no control group, so treat it as an encouraging data point rather than a timeline to plan around. There is no published service level for this: Google's documentation says recrawling alone can take days to months and that indexing is never guaranteed. What is controllable is measuring on a fixed schedule so you can tell movement from noise.`,
+    a: `On HomeCalc.ca (a site I own), Copilot citations rose in the weeks after the changes, with the ${HOMECALC_CLAIMS.fullLiftVisible}. That is one property and no control group, so treat it as an encouraging data point rather than a timeline to plan around. There is no published service level for this: Google's documentation says recrawling alone can take days to months and that indexing is never guaranteed. What is controllable is measuring on a fixed schedule so you can tell movement from noise.`,
   },
   {
     q: "Do I need AEO if I already rank on Google?",
@@ -725,13 +725,12 @@ export default function AEOConsultantCanada() {
                   marginBottom: 20,
                 }}
               >
-                Read that number carefully, because it is two different things added
-                together: {HOMECALC_PROOF.citations} Copilot citations and{" "}
-                {HOMECALC_PROOF.googleImpressions} Google generative-AI impressions.
-                A citation and an impression are not the same event, the two are not
-                deduplicated against each other, and the total covers Microsoft and
-                Google only; ChatGPT, Gemini, Claude and Perplexity publish
-                nothing, so no figure here speaks for them. The lift{" "}
+                Read that number carefully: it is {HOMECALC_PROOF.citations} Microsoft
+                Copilot citations ({HOMECALC_PROOF.window}). Google&rsquo;s generative AI
+                features report separately showed {HOMECALC_PROOF.googleImpressions}{" "}
+                impressions in its own window; a citation and an impression are not the
+                same event, so the two are never added. ChatGPT, Gemini, Claude and
+                Perplexity publish nothing, so no figure here speaks for them. The lift{" "}
                 <em>followed</em> a specific technical change; with one property and
                 no control, that is a sequence rather than a proven cause.
               </p>

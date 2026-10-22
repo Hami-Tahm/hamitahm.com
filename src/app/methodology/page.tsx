@@ -326,12 +326,11 @@ export default function MethodologyPage() {
               <p style={{ margin: 0, color: "var(--ink)", lineHeight: 1.7, fontSize: 15.5 }}>
                 This is why the {HOMECALC_PROOF.citations} citation figure on this site is
                 always attributed to {HOMECALC_PROOF.sourceLabel} and never presented
-                as a cross-engine citation count. Where the larger{" "}
-                {HOMECALC_PROOF.combinedAppearances} figure appears, it is labelled
-                <em style={{ fontStyle: "italic" }}> appearances</em>, not citations,
-                and carries both components with it:
-                {" "}{HOMECALC_PROOF.googleImpressions} of it is Google impressions,
-                and Google publishes no citation count at all. The{" "}
+                as a cross-engine citation count. Google&rsquo;s generative AI
+                impressions ({HOMECALC_PROOF.googleImpressions} in its own three-month
+                view) are a different metric from a different console and window, so
+                they are always shown separately and never added to it; Google
+                publishes no citation count at all. The{" "}
                 <Link href="/blog/ai-citation-study/" style={linkStyle}>
                   AI Citation Study
                 </Link>{" "}

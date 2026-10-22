@@ -365,9 +365,8 @@ export default function AIVisibilityPage() {
                 maxWidth: "62ch",
               }}
             >
-              {HOMECALC_HEADLINE_STAT.value}{" "}measured AI appearances in{" "}
-              {HOMECALC_PROOF.timeframe}{" "}on a site I own: Copilot citations
-              plus Google generative-AI impressions &middot;{" "}
+              {HOMECALC_HEADLINE_STAT.value}{" "}Microsoft Copilot citations in{" "}
+              {HOMECALC_PROOF.timeframe}{" "}on a site I own ({HOMECALC_PROOF.window}) &middot;{" "}
               <Link href="/methodology/" style={{ color: "var(--accent)" }}>
                 public methodology
               </Link>{" "}

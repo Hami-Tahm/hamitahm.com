@@ -413,7 +413,7 @@ export default function SampleReportPage() {
               }}
             >
               {[
-                { v: HOMECALC_PROOF.combinedAppearances, l: HOMECALC_PROOF.combinedLabel },
+                { v: HOMECALC_PROOF.citations, l: "Microsoft Copilot citations" },
                 { v: HOMECALC_PROOF.pagesCited, l: "distinct cited pages" },
                 { v: HOMECALC_PROOF.peakPerDay, l: "peak citations per day" },
                 { v: HOMECALC_PROOF.topCitationShare, l: "top citation share" },
@@ -434,8 +434,7 @@ export default function SampleReportPage() {
               ))}
             </div>
             <Source>
-              {HOMECALC_PROOF.combinedSourceLong}. The {HOMECALC_PROOF.combinedLabel}{" "}
-              total is {HOMECALC_CLAIMS.breakdown}.
+              {HOMECALC_PROOF.combinedSourceLong}. {HOMECALC_CLAIMS.breakdown}.
             </Source>
           </RevealSection>
         </div>

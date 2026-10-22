@@ -60,18 +60,17 @@ export default function DisclaimerPage() {
       </p>
       <ul>
         <li>
-          It is counted across <strong>two consoles</strong>:{" "}
+          It comes from <strong>one console</strong>:{" "}
           {HOMECALC_PROOF.citations} citations in Bing Webmaster Tools &rarr; AI
-          Performance (Microsoft Copilot and partners), plus{" "}
-          {HOMECALC_PROOF.googleImpressions} impressions in Google Search
-          Console&rsquo;s Generative AI features report. It is still not a measure of
-          every AI engine: ChatGPT, Gemini and Perplexity publish nothing at all.
+          Performance (Microsoft Copilot and partners), {HOMECALC_PROOF.window}.
+          Google Search Console&rsquo;s Generative AI features report separately showed{" "}
+          {HOMECALC_PROOF.googleImpressions} impressions in its own three-month view;
+          that is a different metric and is never added to the citation count. Neither
+          measures every AI engine: ChatGPT, Gemini and Perplexity publish nothing at all.
         </li>
         <li>
-          It is a count of <strong>appearances</strong>: how often a page was
-          cited or shown as a source inside an AI answer. It is deliberately not called
-          a citation count, because {HOMECALC_PROOF.googleImpressions} of it is Google
-          impressions and Google publishes no citation figure. It is{" "}
+          It is a count of <strong>Copilot citations</strong>: how often Copilot
+          cited a HomeCalc page as a source inside an answer. It is{" "}
           <strong>not</strong> a revenue figure, a traffic figure, or a lead figure.
         </li>
         <li>
