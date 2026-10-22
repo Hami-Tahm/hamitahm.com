@@ -103,25 +103,10 @@ export const HOMECALC_PROOF = {
   sourceLong:
     "measured in Bing Webmaster Tools' AI Performance report (Microsoft Copilot and partners)",
 
-  // ── THE COMBINED FIGURE ──
-  // Added 2026-08-10, after Google Search Console shipped its "Generative AI features"
-  // report (Beta) and homecalc.ca showed 15,000 impressions there.
-  //
-  // THE RULE, stated precisely: an earlier version of this comment said "never sum",
-  // which was too blunt and would have made the site contradict Hami's own bios:
-  //
-  //   ✅ ALLOWED: summing them under a label that is true of BOTH, with the two
-  //      components and their metrics shown alongside. "32,800+ AI appearances" is
-  //      honest: a Copilot citation and a Google AI impression are both "a link to
-  //      this page appeared inside an AI-generated answer", the two engines are
-  //      separate surfaces so nothing is double-counted, and every part is checkable.
-  //
-  //   ❌ FORBIDDEN: calling the total "citations". 15,000 of it is not citations.
-  //      Anyone opening Google Search Console would find no such number. That single
-  //      word is the difference between a defensible claim and a fabricated one.
-  //
-  // Also: Google renders its figure as a rounded "15K", so the combined number carries
-  // no more precision than that. Write 32,800+, never 32,826.
+  // ── THE FORMER COMBINED FIGURE (retired 2026-10-22) ──
+  // From 2026-08-10 the site summed Copilot citations and Google impressions as
+  // "32,800+ AI appearances". Independent fact-check rejected it: different metrics,
+  // different consoles, and windows that do not match. ❌ Do not sum them again.
   // Legacy keys, retired sum (see header). Resolve to the Copilot-only figure.
   combinedAppearances: "17,800+",
   combinedLabel: "Microsoft Copilot citations",
@@ -148,18 +133,9 @@ const TIMEFRAME_TITLE = HOMECALC_PROOF.timeframe
  * Pre-formatted claim phrases. Use these on every page instead of hardcoding
  * the numbers. When HOMECALC_PROOF changes, all phrases update automatically.
  *
- * ⚠️ THESE SAY "APPEARANCES", NOT "CITATIONS" (2026-08-10).
- * The headline figure across the site is now the two-console total (32,800+), so the
- * noun had to change with the number. 15,000 of that total is Google IMPRESSIONS;
- * calling it a citation count would be false, and Google publishes no citation count
- * at all. The keys were renamed too (citationsInTimeframe → appearancesInTimeframe)
- * rather than left pointing at a different noun, because a constant named for one
- * thing and returning another is how the next person reintroduces the error.
- *
- * ⚠️ ALWAYS render these next to `combinedSourceLong`, never `sourceLong`:
- * the latter names Bing alone and would attribute a two-console total to one console.
- * `sourceLong` / `sourceLabel` are now reserved for the Copilot-only exhibits on the
- * case study (the Bing chart, the cited-pages table, the grounding-query table).
+ * Since 2026-10-22 these say "Microsoft Copilot citations" and carry the Copilot-only
+ * figure. The key names still say "appearances" only so existing pages compile; the
+ * values are citations. Render them next to `combinedSourceLong` (now Bing-only).
  */
 export const HOMECALC_CLAIMS = {
   /** "17,800+ Microsoft Copilot citations in 3 months" */
