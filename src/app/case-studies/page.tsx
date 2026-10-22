@@ -29,12 +29,12 @@ const CASE_STUDIES: readonly CaseStudy[] = [
   {
     href: "/case-studies/homecalc-ai-benchmark-canada/",
     tag: "My own site · 4 AI engines · Oct 2026",
-    title: "Canada's Most-Cited Independent Source in AI Answers About Mortgages",
+    title: "The Most-Cited Non-Government Source in a Canadian Mortgage AI Benchmark",
     excerpt:
-      "On 50 Canadian mortgage questions across Copilot, Perplexity, ChatGPT and Google, HomeCalc.ca is cited more than Ratehub, WOWA and the big banks. Only government sources rank higher. Includes where it still loses.",
+      "My own site, HomeCalc.ca, on a 50-question Canadian mortgage benchmark across Copilot, Perplexity, ChatGPT and Google (Oct 13 to 19, 2026): cited in more prompts than Ratehub, WOWA and the big banks; only government ranked higher. Includes where it still loses.",
     stats: [
-      { value: "#1", label: "Independent domain cited" },
-      { value: "61.9K", label: "Copilot citations, 3 months" },
+      { value: "#1", label: "Non-government domain, this benchmark" },
+      { value: "61.9K", label: "Copilot citations (Bing, 3 months)" },
       { value: "4", label: "AI engines measured" },
     ],
   },

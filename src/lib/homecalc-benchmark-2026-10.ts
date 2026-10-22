@@ -27,15 +27,16 @@ export const BENCHMARK = {
   bingTotalLong: "61,900",
   bingAvgPagesPerDay: 49,
   bingReadOn: "October 20, 2026",
-  bingLowWeek: 164,
-  bingPeakWeek: 1065,
-  bingPeakDay: "1,500",
+  /** Highest single day on the console chart, read visually: stated as a floor. */
+  bingPeakDayFloor: "1,500",
   publishedISO: "2026-10-20",
 } as const;
 
-/** Weekly average Copilot citations per day, weeks starting Jul 20 to Oct 5. Last week partial. */
-export const BING_WEEKLY = [491, 164, 354, 519, 411, 589, 689, 720, 954, 1036, 1065, 867] as const;
-export const BING_WEEK_LABELS = ["Jul 20", "", "Aug 3", "", "Aug 17", "", "Aug 31", "", "Sep 14", "", "Sep 28", "Oct 5"] as const;
+/*
+ * BING_WEEKLY was removed 2026-10-22 (evidence gate): the weekly averages were derived
+ * from a third-party chart, not from the console's own export. Re-add only from the Bing
+ * AI Performance CSV ("Download" on the 3-month view), with the export date.
+ */
 
 /** Share of the 50 prompts in which each domain was cited, all 4 engines. */
 export const DOMAIN_COVERAGE = [
@@ -55,7 +56,7 @@ export type EngineCard = { engine: string; big: string; line1: string; line2: st
 export const ENGINE_CARDS: readonly EngineCard[] = [
   { engine: "Microsoft Copilot", big: "#1", line1: "most-cited domain (51% of prompts)", line2: "Named in 23% of answers, #2 brand behind CMHC", good: true },
   { engine: "Perplexity", big: "#1", line1: "most-cited domain (46% of prompts)", line2: "Named in 18% of answers, #2 brand behind CMHC", good: true },
-  { engine: "ChatGPT", big: "#8", line1: "brand, named in 3.1% of answers", line2: "28 citations, most from a single prompt", good: false },
+  { engine: "ChatGPT", big: "#8", line1: "brand, named in 3.1% of answers", line2: "28 homecalc.ca citations, 16 of them from one prompt", good: false },
   { engine: "Google AI Overviews", big: "3%", line1: "brand coverage, outside the top 10", line2: "Named in 2 of the 50 prompts", good: false },
 ];
 

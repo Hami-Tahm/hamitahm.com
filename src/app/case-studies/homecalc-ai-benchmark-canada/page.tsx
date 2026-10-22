@@ -3,24 +3,22 @@ import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import {
   BENCHMARK,
-  BING_WEEKLY,
-  BING_WEEK_LABELS,
   BRAND_TABLE,
   DOMAIN_COVERAGE,
   ENGINE_CARDS,
   TOP_URLS,
 } from "@/lib/homecalc-benchmark-2026-10";
 
-const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
+const PILOT_URL = "/for-agencies/";
 const PAGE_URL = "https://hamitahm.com/case-studies/homecalc-ai-benchmark-canada/";
-const H1 = "Canada's Most-Cited Independent Source in AI Answers About Mortgages";
+const H1 = "The Most-Cited Non-Government Source in a 50-Question Canadian Mortgage AI Benchmark";
 
 // Search snippet (<=158 chars).
 const META_DESCRIPTION =
-  "On 50 Canadian mortgage questions across 4 AI engines, HomeCalc.ca is cited more than Ratehub, WOWA and the banks. Only government sources rank higher.";
+  "In a 50-question Canadian mortgage benchmark on 4 AI engines, my site HomeCalc.ca was cited more than Ratehub, WOWA and banks. Only government ranked higher.";
 
 export const metadata: Metadata = {
-  title: "Most-Cited Independent Mortgage Source in AI",
+  title: "HomeCalc: Canadian Mortgage AI Benchmark",
   description: META_DESCRIPTION,
   alternates: { canonical: PAGE_URL },
 };
@@ -62,10 +60,10 @@ const bodyStyle = { fontSize: "clamp(16px, 1.9vw, 18px)", color: "var(--ink)", l
 const noteStyle = { fontFamily: "var(--mono)", fontSize: 12, color: "var(--faint)", marginTop: 14, lineHeight: 1.6 } as const;
 
 const HERO_STATS = [
-  { value: "#1", label: "independent domain cited across 4 AI engines; only canada.ca is cited more" },
-  { value: BENCHMARK.bingTotal, label: "Microsoft Copilot citations in 3 months" },
-  { value: "6.5×", label: `from ${BENCHMARK.bingLowWeek} to ${BENCHMARK.bingPeakWeek.toLocaleString("en-CA")} Copilot citations a day` },
-  { value: "#1", label: "commercial brand on Copilot and Perplexity, second only to CMHC" },
+  { value: "#1", label: "non-government domain cited across 4 AI engines in this benchmark (26% of prompts; canada.ca 31%)" },
+  { value: BENCHMARK.bingTotal, label: `Microsoft Copilot citations, Bing 3-month view read ${BENCHMARK.bingReadOn}` },
+  { value: String(BENCHMARK.bingAvgPagesPerDay), label: "different HomeCalc pages cited by Copilot on an average day (same Bing view)" },
+  { value: "#2", label: "brand on Copilot and Perplexity in this benchmark, behind only CMHC" },
 ];
 
 function Section({ children }: { children: React.ReactNode }) {
@@ -75,32 +73,6 @@ function Section({ children }: { children: React.ReactNode }) {
         <RevealSection>{children}</RevealSection>
       </div>
     </section>
-  );
-}
-
-function CopilotChart() {
-  const W = 640, H = 260, x0 = 52, x1 = 620, yBase = 224, max = 1200;
-  const xs = BING_WEEKLY.map((_, i) => x0 + (i * (x1 - x0)) / (BING_WEEKLY.length - 1));
-  const y = (v: number) => yBase - (v * 210) / max;
-  const pts = BING_WEEKLY.map((v, i) => `${xs[i].toFixed(1)},${y(v).toFixed(1)}`).join(" ");
-  const lowI = BING_WEEKLY.indexOf(BENCHMARK.bingLowWeek);
-  const peakI = BING_WEEKLY.indexOf(BENCHMARK.bingPeakWeek);
-  return (
-    <svg viewBox={`0 0 ${W} ${H}`} width="100%" role="img" aria-label="Weekly average Microsoft Copilot citations per day for homecalc.ca, rising from 164 in late July to 1,065 in late September 2026">
-      {[0, 400, 800, 1200].map((v) => (
-        <g key={v}>
-          <line x1={x0} x2={x1} y1={y(v)} y2={y(v)} stroke="var(--line)" />
-          <text x={x0 - 6} y={y(v) + 4} fontSize="11" textAnchor="end" fill="var(--faint)">{v.toLocaleString("en-CA")}</text>
-        </g>
-      ))}
-      <path d={`M${x0},${yBase} L${pts.replace(/ /g, " L")} L${x1},${yBase} Z`} fill="var(--accent)" fillOpacity="0.12" />
-      <polyline fill="none" stroke="var(--accent)" strokeWidth="3" points={pts} />
-      {BING_WEEK_LABELS.map((l, i) => l ? (
-        <text key={i} x={xs[i]} y={244} fontSize="10.5" textAnchor="middle" fill="var(--faint)">{l}</text>
-      ) : null)}
-      <text x={xs[lowI]} y={y(BENCHMARK.bingLowWeek) + 18} fontSize="12" fontWeight="700" textAnchor="middle" fill="var(--ink)">{BENCHMARK.bingLowWeek}/day</text>
-      <text x={xs[peakI]} y={y(BENCHMARK.bingPeakWeek) - 9} fontSize="12" fontWeight="700" textAnchor="middle" fill="var(--accent)">{BENCHMARK.bingPeakWeek.toLocaleString("en-CA")}/day</text>
-    </svg>
   );
 }
 
@@ -142,13 +114,15 @@ export default function HomecalcAiBenchmarkPage() {
           </RevealSection>
           <RevealSection delay={0.06}>
             <p style={{ marginTop: 24, fontSize: "clamp(17px, 2vw, 19.5px)", color: "var(--muted)", maxWidth: "62ch", lineHeight: 1.65 }}>
-              Seven months after launch, HomeCalc.ca is cited by AI engines more often than Ratehub,
-              WOWA, nesto and every big bank across {BENCHMARK.promptCount} Canadian mortgage and
-              home-buying questions. Only the federal government is cited more. No ad spend.
+              HomeCalc.ca is my own site, launched in 2026. In a {BENCHMARK.promptCount}-question
+              Canadian mortgage and home-buying benchmark run on four AI engines from{" "}
+              {BENCHMARK.otterlyWindowShort}, it was cited in more prompts than Ratehub, WOWA, nesto,
+              Scotiabank, RBC and NerdWallet. Only federal government sources were cited more.
             </p>
             <p style={{ ...noteStyle, marginTop: 12 }}>
-              Measured on Microsoft Copilot, Perplexity, ChatGPT and Google AI Overviews. Where it is
-              winning, where it is not, and why. HomeCalc is my own product.
+              I wrote the prompt set, and many prompts ask for calculators or tools, the category HomeCalc
+              competes in. Read these results as a dated benchmark, not a ranking of all AI answers in
+              Canada. Where it wins and where it does not are both below.
             </p>
           </RevealSection>
           <RevealSection delay={0.1}>
@@ -165,21 +139,20 @@ export default function HomecalcAiBenchmarkPage() {
       </header>
 
       <Section>
-        <h2 style={h2Style}>From {BENCHMARK.bingLowWeek} to {BENCHMARK.bingPeakWeek.toLocaleString("en-CA")} AI Citations a Day</h2>
-        <p style={ledeStyle}>Microsoft Copilot citations of homecalc.ca, weekly average per day (Bing Webmaster Tools, AI Performance).</p>
-        <CopilotChart />
-        <p style={{ ...bodyStyle, marginTop: 18 }}>
-          In the week of July 27, Copilot cited HomeCalc about {BENCHMARK.bingLowWeek} times a day. By the
-          week of September 28 it was {BENCHMARK.bingPeakWeek.toLocaleString("en-CA")}. Over the full quarter that adds up to{" "}
-          {BENCHMARK.bingTotalLong} citations, with a single-day peak above {BENCHMARK.bingPeakDay}. On an average day
-          Copilot cited {BENCHMARK.bingAvgPagesPerDay} different HomeCalc pages: a whole site being used, not one lucky article.
+        <h2 style={h2Style}>{BENCHMARK.bingTotal} Copilot Citations in Three Months</h2>
+        <p style={ledeStyle}>First-party data from Bing Webmaster Tools, AI Performance (Microsoft Copilot and partners), 3-month view read on {BENCHMARK.bingReadOn}.</p>
+        <p style={bodyStyle}>
+          Over that window Copilot cited homecalc.ca {BENCHMARK.bingTotalLong} times, with a single day above{" "}
+          {BENCHMARK.bingPeakDayFloor} on the console chart. On an average day it cited{" "}
+          {BENCHMARK.bingAvgPagesPerDay} different HomeCalc pages, so the citations are spread across the site rather than
+          concentrated on one article. This figure covers Microsoft Copilot only; it says nothing about ChatGPT, Perplexity
+          or Google.
         </p>
-        <p style={noteStyle}>The last point is a partial week.</p>
       </Section>
 
       <Section>
-        <h2 style={h2Style}>Only the Federal Government Gets Cited More</h2>
-        <p style={ledeStyle}>Share of the {BENCHMARK.promptCount} prompts in which each domain was cited, all four engines combined ({BENCHMARK.otterlyWindowShort}).</p>
+        <h2 style={h2Style}>Only Government Domains Were Cited More</h2>
+        <p style={ledeStyle}>Otterly.AI domain coverage: share of the {BENCHMARK.promptCount} prompts in which each domain was cited, all four engines combined ({BENCHMARK.otterlyWindowShort}).</p>
         <div style={{ maxWidth: 720 }}>
           {DOMAIN_COVERAGE.map((d) => (
             <div key={d.domain} style={{ display: "grid", gridTemplateColumns: "160px 1fr 48px", gap: 10, alignItems: "center", margin: "8px 0", fontSize: 14.5 }}>
@@ -194,13 +167,13 @@ export default function HomecalcAiBenchmarkPage() {
           ))}
         </div>
         <p style={noteStyle}>
-          Grey bars are federal government sources. Among everyone else, homecalc.ca is first, ahead
-          of Ratehub, WOWA, nesto, Scotiabank, NerdWallet and RBC.
+          Grey bars are federal government sources. Among everyone else in this benchmark, homecalc.ca
+          is first, ahead of Ratehub, WOWA, nesto, Scotiabank, NerdWallet and RBC.
         </p>
       </Section>
 
       <Section>
-        <h2 style={h2Style}>Two Engines Won. Two Still to Go.</h2>
+        <h2 style={h2Style}>Strong on Two Engines. Weak on Two.</h2>
         <p style={ledeStyle}>Each AI engine builds its own picture of the market. HomeCalc&rsquo;s position, engine by engine.</p>
         <div className="cs-stat-strip">
           {ENGINE_CARDS.map((c) => (
@@ -274,14 +247,14 @@ export default function HomecalcAiBenchmarkPage() {
       </Section>
 
       <Section>
-        <h2 style={h2Style}>Two Independent Tests, One Verdict</h2>
+        <h2 style={h2Style}>Two Different Tools, the Same Split</h2>
         <p style={bodyStyle}>
-          The Otterly results are not a one-tool artefact. On October 13 I ran a separate test
+          On October 13 I ran a separate test with a different method
           through the engines&rsquo; own APIs: 10 broker and realtor questions, 15 runs each, 300
           answers. Perplexity cited homecalc.ca in <strong>63%</strong> of its answers. OpenAI&rsquo;s
           search-enabled model cited it in <strong>0 of 150</strong>. A week of tracking on{" "}
-          {BENCHMARK.promptCount} prompts shows the same split: strong on Perplexity and Copilot,
-          nearly absent on ChatGPT.
+          {BENCHMARK.promptCount} prompts in Otterly shows the same split: strong on Perplexity and Copilot,
+          nearly absent on ChatGPT. Both prompt sets were written by me.
         </p>
       </Section>
 
@@ -290,8 +263,8 @@ export default function HomecalcAiBenchmarkPage() {
         <ul style={{ ...bodyStyle, paddingLeft: 20 }}>
           <li style={{ marginBottom: 10 }}>
             <strong>Google AI Overviews:</strong> 3% brand coverage, outside the top 10; named in only 2
-            of {BENCHMARK.promptCount} prompts. AI Overviews lean on sites that already rank in Google,
-            where Ratehub and WOWA have a decade of links.
+            of {BENCHMARK.promptCount} prompts. My working explanation, not a tested finding: AI Overviews
+            appear to favour sites that already rank well in Google, where Ratehub and WOWA are long established.
           </li>
           <li style={{ marginBottom: 10 }}>
             <strong>ChatGPT:</strong> #8 at 3.1%, and 0 of 150 in the unbranded API test. 16 of its 28
@@ -303,22 +276,23 @@ export default function HomecalcAiBenchmarkPage() {
           </li>
         </ul>
         <p style={{ ...bodyStyle, marginTop: 18, paddingLeft: 16, borderLeft: "3px solid var(--accent)" }}>
-          Next: off-page. Earned media from original data, expert mentions and directory presence.
-          Engines that lean on the open web&rsquo;s link graph need links before they cite you.
+          What I am testing next: off-page signals such as earned media from original data, expert
+          mentions and directory presence. Whether they move ChatGPT and Google is an open question; I
+          will publish the result either way.
         </p>
       </Section>
 
       <Section>
         <div className="cta-box">
-          <h2 style={{ ...h2Style, position: "relative" }}>Could Your Brand Be Next?</h2>
-          <p style={{ color: "var(--muted)", maxWidth: "58ch", margin: "12px auto 0", position: "relative", lineHeight: 1.65 }}>
-            The same measurement works for any Canadian business whose buyers ask AI before they call:
-            mortgage brokers, realtors and boards, lenders and fintechs. Every engagement starts with an
-            AI visibility audit: where you stand on each engine, who is cited instead of you, and a fix
-            list ranked by impact.
+          <h2 style={{ ...h2Style, position: "relative" }}>Run This Benchmark for an Agency Client</h2>
+          <p style={{ color: "var(--muted)", maxWidth: "60ch", margin: "12px auto 0", position: "relative", lineHeight: 1.65 }}>
+            White-label AI visibility pilot for agencies: one client brand, domain and market, up to 20 agreed prompts and
+            three named competitors, delivered as an agency-branded report with a 60-minute handoff and one revision, seven
+            business days after payment and intake. Fixed price, confirmed before you commit. It is a dated snapshot and
+            opportunity map, not a guarantee of citations, traffic or revenue.
           </p>
-          <Link href={AUDIT_URL} className="btn btn-primary" style={{ marginTop: 28, position: "relative" }}>
-            Book Your AI Visibility Audit <span className="arr">&rarr;</span>
+          <Link href={PILOT_URL} className="btn btn-primary" style={{ marginTop: 28, position: "relative" }}>
+            See the White-Label Pilot <span className="arr">&rarr;</span>
           </Link>
         </div>
       </Section>
@@ -326,7 +300,7 @@ export default function HomecalcAiBenchmarkPage() {
       <Section>
         <h2 style={{ ...h2Style, fontSize: "clamp(22px, 2.6vw, 28px)" }}>How This Was Measured</h2>
         <ul style={{ fontSize: 14.5, color: "var(--muted)", lineHeight: 1.7, paddingLeft: 20, maxWidth: "72ch" }}>
-          <li><strong>Disclosure:</strong> HomeCalc is Hami Tahm&rsquo;s own product, and he chose the prompt set.</li>
+          <li><strong>Disclosure:</strong> HomeCalc.ca is Hami Tahm&rsquo;s own site (an owned property, not a client). He wrote both prompt sets.</li>
           <li>
             <strong>Otterly.AI brand report:</strong> {BENCHMARK.promptCount} tracked prompts, country Canada,{" "}
             {BENCHMARK.otterlyWindow}. Engines: ChatGPT, Google AI Overviews, Perplexity, Microsoft Copilot.{" "}
@@ -336,14 +310,15 @@ export default function HomecalcAiBenchmarkPage() {
           <li>
             <strong>Bing Webmaster Tools, AI Performance:</strong> first-party Microsoft Copilot citation data
             for homecalc.ca, 3-month view read on {BENCHMARK.bingReadOn} ({BENCHMARK.bingTotal} total citations,{" "}
-            {BENCHMARK.bingAvgPagesPerDay} cited pages per day on average). The chart shows weekly averages.
+            {BENCHMARK.bingAvgPagesPerDay} average cited pages per day). Copilot only. This window differs from the Otterly
+            window; the two are never combined.
           </li>
           <li>
             <strong>API test, October 13, 2026:</strong> Perplexity Agent API and OpenAI Responses API with web
             search, 300 answers. These are APIs, not the consumer apps.
           </li>
-          <li>Brand coverage = share of AI answers that mention the brand. Domain coverage = share of prompts in which the domain is cited.</li>
-          <li>Results describe this benchmark, not all AI traffic in Canada. CMHC, FCAC and canada.ca are federal government sources. Figures as measured; no guarantee of similar results.</li>
+          <li>Brand coverage = share of AI answers that mention the brand. Domain coverage = Otterly&rsquo;s share of prompts in which the domain is cited.</li>
+          <li>Results describe this benchmark, not all AI traffic in Canada. CMHC, FCAC and canada.ca are federal government sources. Figures as measured. They show association, not proof that any single change caused them, and are no guarantee of similar results.</li>
         </ul>
         <p style={noteStyle}>
           Earlier chapter: <Link href="/case-studies/homecalc-ai-visibility/" style={{ color: "var(--accent)" }}>how HomeCalc went from near-zero to its first AI citations</Link>.
