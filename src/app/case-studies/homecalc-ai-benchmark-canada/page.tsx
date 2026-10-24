@@ -62,6 +62,8 @@ const noteStyle = { fontFamily: "var(--mono)", fontSize: 12, color: "var(--faint
 const HERO_STATS = [
   { value: "#1", label: "non-government domain cited across 4 AI engines in this benchmark (26% of prompts; canada.ca 31%)" },
   { value: BENCHMARK.bingTotal, label: `Microsoft Copilot citations, Bing 3-month view read ${BENCHMARK.bingReadOn}` },
+  // Restored from 935d383 at Hami's instruction (2026-10-23); Hami confirms the claim.
+  { value: "6.5×", label: "from 164 to 1,065 Copilot citations a day" },
   { value: String(BENCHMARK.bingAvgPagesPerDay), label: "different HomeCalc pages cited by Copilot on an average day (same Bing view)" },
   { value: "#2", label: "brand on Copilot and Perplexity in this benchmark, behind only CMHC" },
 ];
@@ -117,7 +119,7 @@ export default function HomecalcAiBenchmarkPage() {
               HomeCalc.ca is my own site, launched in 2026. In a {BENCHMARK.promptCount}-question
               Canadian mortgage and home-buying benchmark run on four AI engines from{" "}
               {BENCHMARK.otterlyWindowShort}, it was cited in more prompts than Ratehub, WOWA, nesto,
-              Scotiabank, RBC and NerdWallet. Only federal government sources were cited more.
+              Scotiabank, RBC and NerdWallet. Only federal government sources were cited more. No ad spend.
             </p>
             <p style={{ ...noteStyle, marginTop: 12 }}>
               I wrote the prompt set, and many prompts ask for calculators or tools, the category HomeCalc
@@ -126,7 +128,7 @@ export default function HomecalcAiBenchmarkPage() {
             </p>
           </RevealSection>
           <RevealSection delay={0.1}>
-            <div className="cs-stat-strip" style={{ marginTop: 32 }}>
+            <div className="cs-stat-strip" style={{ marginTop: 32, gridTemplateColumns: "repeat(auto-fit, minmax(170px, 1fr))" }}>
               {HERO_STATS.map(({ value, label }) => (
                 <div key={label} className="proof-card">
                   <div style={{ fontFamily: "var(--serif)", fontSize: "clamp(32px, 4vw, 44px)", fontWeight: 500, color: "var(--accent)", letterSpacing: "-.02em", lineHeight: 1 }}>{value}</div>
@@ -286,13 +288,12 @@ export default function HomecalcAiBenchmarkPage() {
         <div className="cta-box">
           <h2 style={{ ...h2Style, position: "relative" }}>Run This Benchmark for an Agency Client</h2>
           <p style={{ color: "var(--muted)", maxWidth: "60ch", margin: "12px auto 0", position: "relative", lineHeight: 1.65 }}>
-            White-label AI visibility pilot for agencies: one client brand, domain and market, up to 20 agreed prompts and
-            three named competitors, delivered as an agency-branded report with a 60-minute handoff and one revision, seven
-            business days after payment and intake. Fixed price, confirmed before you commit. It is a dated snapshot and
-            opportunity map, not a guarantee of citations, traffic or revenue.
+            White-label AI visibility audits for agencies, delivered under your brand across six AI platforms. Start with
+            one client you already have; the scope is set with you for that client. Starting at US$1,500 for US clients / CA$2,000 for Canadian clients; final scope and price confirmed per client. It is a dated
+            snapshot and opportunity map, not a guarantee of citations, traffic or revenue.
           </p>
           <Link href={PILOT_URL} className="btn btn-primary" style={{ marginTop: 28, position: "relative" }}>
-            See the White-Label Pilot <span className="arr">&rarr;</span>
+            White-Label Audits for Agencies <span className="arr">&rarr;</span>
           </Link>
         </div>
       </Section>

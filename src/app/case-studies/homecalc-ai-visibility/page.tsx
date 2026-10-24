@@ -251,7 +251,7 @@ export default function HomeCalcCaseStudy() {
           <RevealSection delay={0.16}>
             <div style={{ marginTop: 36 }}>
               <Link href={PILOT_URL} className="btn btn-primary">
-                See the White-Label Pilot <span className="arr">&rarr;</span>
+                White-Label Audits for Agencies <span className="arr">&rarr;</span>
               </Link>
             </div>
           </RevealSection>
@@ -818,7 +818,7 @@ export default function HomeCalcCaseStudy() {
                 lineHeight: 1.6,
               }}
             >
-              &ldquo;The specific changes are part of what an audit or pilot
+              &ldquo;The specific changes are part of what the audit
               delivers.&rdquo;
             </blockquote>
             <div className="cs-process-steps">
@@ -893,7 +893,7 @@ export default function HomeCalcCaseStudy() {
               <p>
                 What this case does show is that the measurement is practical: you
                 can see which engine cites which page, where you are absent, and who
-                is cited instead. That baseline is what the pilot below delivers.
+                is cited instead. That baseline is what the white-label audit below delivers.
               </p>
             </div>
           </RevealSection>
@@ -1029,11 +1029,10 @@ export default function HomeCalcCaseStudy() {
                   position: "relative",
                 }}
               >
-                White-label AI visibility pilot: one client brand, domain and market,
-                up to 20 agreed prompts and three named competitors. Agency-branded
-                report, 60-minute handoff and one revision, delivered seven business
-                days after payment and intake. The agency keeps the client
-                relationship and any implementation work.
+                White-label AI visibility audits for agencies, delivered under your
+                brand across six AI platforms. Start with one client you already have;
+                the scope is set with you for that client. The agency keeps the
+                client relationship and any implementation work.
               </p>
               <p
                 style={{
@@ -1044,7 +1043,7 @@ export default function HomeCalcCaseStudy() {
                   fontWeight: 600,
                 }}
               >
-                US$1,500 (US clients) &middot; CA$2,000 (Canadian clients), plus applicable tax
+                Starting at US$1,500 for US clients / CA$2,000 for Canadian clients; final scope and price confirmed per client.
               </p>
               <p
                 style={{
@@ -1065,7 +1064,7 @@ export default function HomeCalcCaseStudy() {
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
               >
-                See the White-Label Pilot <span className="arr">&rarr;</span>
+                White-Label Audits for Agencies <span className="arr">&rarr;</span>
               </Link>
               <p
                 style={{

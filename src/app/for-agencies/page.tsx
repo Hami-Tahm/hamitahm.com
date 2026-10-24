@@ -19,8 +19,9 @@ import { AUDIT_PLATFORMS, AUDIT_PLATFORM_COUNT_WORD, BOOKING_URL } from "@/lib/o
  * it would be as a comparison, and it stays true regardless of what anyone else
  * changes on their site next week.
  *
- * ⚠️ NO PRICES. Consistent with the 2026-09-08 decision. Wholesale rates are
- * quoted per scope on a call. Do not add a number here without asking Hami.
+ * PRICES (Hami, 2026-10-23): shown as a starting price only. "Starting at US$1,500
+ * (US) / CA$2,000 (Canada); final scope and price confirmed per client." Do not turn
+ * this into a fixed scope or fixed price without asking Hami.
  */
 
 const SLUG = "/for-agencies/";
@@ -93,7 +94,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "What does it cost me?",
-    a: "Wholesale is quoted per client, because scope genuinely varies with site size, market and how many competitors you want benchmarked. You set your own retail price and keep the margin. There is no published rate card and no required markup.",
+    a: "Starting at US$1,500 for US clients / CA$2,000 for Canadian clients; final scope and price confirmed per client, because scope genuinely varies with site size, market and how many competitors you want benchmarked. You set your own retail price and keep the margin. There is no required markup.",
   },
   {
     q: "Is there a minimum or a contract?",
@@ -235,6 +236,9 @@ export default function ForAgencies() {
                 Or read a real sample report first &rarr;
               </Link>
             </div>
+            <p style={{ marginTop: 18, fontFamily: "var(--mono)", fontSize: 13, color: "var(--muted)" }}>
+              Starting at US$1,500 for US clients / CA$2,000 for Canadian clients; final scope and price confirmed per client.
+            </p>
           </RevealSection>
         </div>
       </header>
