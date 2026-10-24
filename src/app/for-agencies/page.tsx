@@ -26,15 +26,52 @@ import { AUDIT_PLATFORMS, AUDIT_PLATFORM_COUNT_WORD, BOOKING_URL } from "@/lib/o
 const SLUG = "/for-agencies/";
 const TURNAROUND = "7 business days";
 
-// Search snippet (<=158 chars). Kept separate from any long on-page/schema
-// description, which can stay longer. Added 2026-10-03.
+const PAGE_URL = `https://hamitahm.com${SLUG}`;
+
+// Title = LinkedIn Featured card title (Hami, 2026-10-23). Absolute, so the layout
+// template does not append " | Hami Tahm". Description stays on the page's actual
+// offer (audits on six platforms, start with one client), not a fixed scope.
+const META_TITLE = "White-label AI visibility pilot for agencies";
 const META_DESCRIPTION =
-  "White-label AI visibility audits for agencies: six AI platforms, delivered under your brand by one senior consultant in Toronto. Your client stays yours.";
+  "White-label AI visibility audits across six AI platforms, delivered under your brand. Start with one client you already have. Your client stays yours.";
+
+/**
+ * Static OG image (1200x630 PNG in /public) instead of the root opengraph-image
+ * route, which is rendered per request and served uncached (max-age=0): slow for
+ * link-preview crawlers such as LinkedInBot. Absolute URL, as LinkedIn requires.
+ */
+const OG_IMAGE = {
+  url: "https://hamitahm.com/images/og/for-agencies-pilot.png",
+  width: 1200,
+  height: 630,
+  alt: "White-label AI visibility for agencies: audits across six AI platforms, delivered under your brand. Hami Tahm.",
+  type: "image/png",
+};
 
 export const metadata: Metadata = {
-  title: "White-Label AI Visibility Audits for Agencies",
+  title: { absolute: META_TITLE },
   description: META_DESCRIPTION,
-  alternates: { canonical: `https://hamitahm.com${SLUG}` },
+  alternates: { canonical: PAGE_URL },
+  // Full objects: Next.js replaces (does not merge) the parent's openGraph/twitter
+  // when a page sets them, so every field a preview crawler reads is set here.
+  openGraph: {
+    type: "website",
+    url: PAGE_URL,
+    siteName: "Hami Tahm",
+    locale: "en_CA",
+    title: META_TITLE,
+    description: META_DESCRIPTION,
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@hamitahm",
+    creator: "@hamitahm",
+    title: META_TITLE,
+    description: META_DESCRIPTION,
+    images: [OG_IMAGE.url],
+  },
+  robots: { index: true, follow: true },
 };
 
 const FAQ_ITEMS = [
