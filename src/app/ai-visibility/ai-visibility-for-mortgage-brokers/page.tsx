@@ -2,13 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { HOMECALC_PROOF, HOMECALC_CLAIMS, HOMECALC_CITED_PAGES, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
-import { AUDIT_PRICE_DISPLAY, BOOKING_URL } from "@/lib/offers";
+import { AUDIT_CTA_LABEL, BOOKING_URL, OFFERS } from "@/lib/offers";
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const CASE_STUDY_URL = HOMECALC_PROOF.caseStudyPath;
 const WALKTHROUGH_MINUTES = 60;
 const TURNAROUND = "7 business days";
-const PRICE_DISPLAY = AUDIT_PRICE_DISPLAY;
+// Starting price for the one-time mortgage-broker audit (Hami, 2026-10-29). This
+// page only; the rest of the site still uses AUDIT_PRICE_DISPLAY. Unit kept inside
+// the string per the PRICE DISPLAY RULE in src/lib/offers.ts.
+const PRICE_DISPLAY = `From ${OFFERS.audit.price} CAD`;
+const PRICE_TERMS = "Final scope confirmed before work starts, no retainer required";
+const COST_ANSWER = `${PRICE_DISPLAY} for the one-time AI Visibility Audit. ${PRICE_TERMS}. See the full audit page for what's included.`;
 
 // Search snippet (<=158 chars). Kept separate from any long on-page/schema
 // description, which can stay longer. Added 2026-10-03.
@@ -93,7 +98,7 @@ const COMPARISON_ROWS = [
   ],
   [
     "Pricing model",
-    `${PRICE_DISPLAY}`,
+    `${PRICE_DISPLAY}, one-time`,
     "Monthly retainer",
     "Per-lead cost",
   ],
@@ -155,7 +160,7 @@ const FAQ_ITEMS: {
   },
   {
     q: "What does this cost?",
-    a: `${PRICE_DISPLAY}. One-time, no retainer. See the full audit page for what's included.`,
+    a: COST_ANSWER,
     auditLink: true,
   },
   {
@@ -223,7 +228,7 @@ const structuredData = {
         acceptedAnswer: {
           "@type": "Answer",
           text: auditLink
-            ? `${PRICE_DISPLAY}. One-time, no retainer. See the full audit page for what's included.`
+            ? COST_ANSWER
             : a,
         },
       })),
@@ -315,8 +320,8 @@ export default function AIVisibilityMortgageBrokers() {
 
           <RevealSection delay={0.14}>
             <div style={{ marginTop: 32 }}>
-              <Link href={AUDIT_URL} className="btn btn-primary">
-                Book Your AI Visibility Audit <span className="arr">&rarr;</span>
+              <Link href={BOOKING_URL} className="btn btn-primary">
+                {AUDIT_CTA_LABEL} <span className="arr">&rarr;</span>
               </Link>
             </div>
           </RevealSection>
@@ -679,11 +684,6 @@ export default function AIVisibilityMortgageBrokers() {
             </div>
           </RevealSection>
 
-          <RevealSection delay={0.14}>
-            <div style={{ marginTop: 24 }}>
-              <PlaceholderCard note="Mortgage brokerage: case study publishing summer 2026" />
-            </div>
-          </RevealSection>
         </div>
       </section>
 
@@ -756,7 +756,7 @@ export default function AIVisibilityMortgageBrokers() {
               <ProcessStep
                 n="1"
                 title="Book and pay."
-                body={`${PRICE_DISPLAY}. One invoice, confirmed on the call, no retainer.`}
+                body={`${PRICE_DISPLAY}. One invoice. ${PRICE_TERMS}.`}
               />
               <ProcessStep
                 n="2"
@@ -861,7 +861,7 @@ export default function AIVisibilityMortgageBrokers() {
                   >
                     {auditLink ? (
                       <>
-                        {PRICE_DISPLAY}. One-time, no retainer.
+                        {PRICE_DISPLAY} for the one-time AI Visibility Audit. {PRICE_TERMS}.
                         See the{" "}
                         <Link href={AUDIT_URL} style={{ color: "var(--accent)" }}>
                           full audit page
@@ -962,15 +962,15 @@ export default function AIVisibilityMortgageBrokers() {
                   position: "relative",
                 }}
               >
-                {PRICE_DISPLAY}. Report and walkthrough call within{" "}
-                {TURNAROUND}.
+                {PRICE_DISPLAY}, one-time. {PRICE_TERMS}. Report and walkthrough
+                call within {TURNAROUND}.
               </p>
               <Link
-                href={AUDIT_URL}
+                href={BOOKING_URL}
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
               >
-                Book Your AI Visibility Audit <span className="arr">&rarr;</span>
+                {AUDIT_CTA_LABEL} <span className="arr">&rarr;</span>
               </Link>
               <p
                 style={{
@@ -1196,38 +1196,5 @@ function ComparisonTable({
         ))}
       </div>
     </>
-  );
-}
-
-function PlaceholderCard({ note }: { note: string }) {
-  return (
-    <div
-      className="proof-card dental-coming-soon-card"
-      style={{ borderStyle: "dashed", maxWidth: 420 }}
-    >
-      <div
-        style={{
-          fontFamily: "var(--mono)",
-          fontSize: 11,
-          color: "var(--accent)",
-          textTransform: "uppercase",
-          letterSpacing: ".08em",
-        }}
-      >
-        Coming soon
-      </div>
-      <p
-        style={{
-          marginTop: 10,
-          fontFamily: "var(--sans)",
-          fontSize: 15,
-          fontWeight: 600,
-          color: "var(--ink)",
-          lineHeight: 1.5,
-        }}
-      >
-        {note}
-      </p>
-    </div>
   );
 }
