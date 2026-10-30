@@ -16,6 +16,7 @@ import { ATTRIBUTION_KEYS, type FirstTouch } from "./attribution";
 
 export const LEAD_PENDING_KEY = "ht_lead_pending";
 export const LEAD_EVENT = "qualified_lead_submit";
+const GOOGLE_ADS_LEAD_DESTINATION = "AW-18546533331/fNHOCPDV_64dENPH1otF";
 
 export type LeadEvent = {
   event: typeof LEAD_EVENT;
@@ -60,9 +61,21 @@ export function flushPendingLeadEvent(): boolean {
     window.sessionStorage.removeItem(LEAD_PENDING_KEY);
     const ev = JSON.parse(raw) as LeadEvent;
     if (ev?.event !== LEAD_EVENT) return false;
-    const w = window as unknown as { dataLayer?: Record<string, unknown>[] };
+    const w = window as unknown as {
+      dataLayer?: Record<string, unknown>[];
+      gtag?: (...args: unknown[]) => void;
+    };
     w.dataLayer = w.dataLayer || [];
     w.dataLayer.push(ev as unknown as Record<string, unknown>);
+    // Google Ads receives the same confirmed, once-only lead signal. No PII is sent.
+    w.gtag = w.gtag || function (...args: unknown[]) {
+      w.dataLayer?.push(args as unknown as Record<string, unknown>);
+    };
+    w.gtag("event", "conversion", {
+      send_to: GOOGLE_ADS_LEAD_DESTINATION,
+      value: 1,
+      currency: "CAD",
+    });
     return true;
   } catch {
     return false;

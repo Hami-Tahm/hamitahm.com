@@ -10,6 +10,7 @@ import { CANONICAL_DESCRIPTOR } from "@/lib/identity";
 
 const GA_ID = "G-Z1L4M2SD14";
 const GTM_ID = "GTM-P3HNG5HQ";
+const GOOGLE_ADS_ID = "AW-18546533331";
 /*
  * ⚠️ MICROSOFT CLARITY IS NOT LOADED FROM THIS FILE. DO NOT RE-ADD IT HERE.
  *
@@ -375,6 +376,18 @@ export default function RootLayout({
             so a visitor who bounces in well under a second may go uncounted. */}
         <Script id="gtm-init" strategy="lazyOnload">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`}
+        </Script>
+        {/* Google Ads conversion tracking. The Ads account and GTM container live
+            under different Google logins, so the Ads destination is registered
+            directly here. gtag shares the existing dataLayer and queues conversion
+            commands until its library has loaded. */}
+        <Script
+          id="google-ads-library"
+          src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`}
+          strategy="lazyOnload"
+        />
+        <Script id="google-ads-init" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){window.dataLayer.push(arguments)};window.gtag('js',new Date());window.gtag('config','${GOOGLE_ADS_ID}');`}
         </Script>
         {/* GA4 and Microsoft Clarity both fire via GTM: no standalone gtag or
             clarity snippet here. See the Clarity note at the top of this file
