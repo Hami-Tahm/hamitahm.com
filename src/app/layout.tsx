@@ -384,7 +384,7 @@ export default function RootLayout({
         <Script
           id="google-ads-library"
           src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`}
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
         <Script id="google-ads-init" strategy="afterInteractive">
           {`window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){window.dataLayer.push(arguments)};window.gtag('js',new Date());window.gtag('config','${GOOGLE_ADS_ID}');`}

@@ -68,8 +68,10 @@ export function flushPendingLeadEvent(): boolean {
     w.dataLayer = w.dataLayer || [];
     w.dataLayer.push(ev as unknown as Record<string, unknown>);
     // Google Ads receives the same confirmed, once-only lead signal. No PII is sent.
-    w.gtag = w.gtag || function (...args: unknown[]) {
-      w.dataLayer?.push(args as unknown as Record<string, unknown>);
+    w.gtag = w.gtag || function () {
+      // gtag.js expects its queued commands as the function's special
+      // `arguments` object, not as a normal array.
+      w.dataLayer?.push(arguments as unknown as Record<string, unknown>);
     };
     w.gtag("event", "conversion", {
       send_to: GOOGLE_ADS_LEAD_DESTINATION,
