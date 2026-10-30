@@ -5,6 +5,7 @@ import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { CtaTracking } from "@/components/CtaTracking";
+import { AttributionCapture } from "@/components/AttributionCapture";
 import { CANONICAL_DESCRIPTOR } from "@/lib/identity";
 
 const GA_ID = "G-Z1L4M2SD14";
@@ -397,6 +398,7 @@ export default function RootLayout({
         </noscript>
         {/* Single delegated listener that emits `cta_click` for every funnel CTA. */}
         <CtaTracking />
+        <AttributionCapture />
         <Nav />
         <main>{children}</main>
         <Footer />

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
+import ContactLeadForm from "@/components/ContactLeadForm";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -188,6 +189,21 @@ export default function ContactPage() {
 
           {/* ── Right column ── */}
           <RevealSection delay={0.14}>
+            <div className="card" id="contact-form" style={{ marginBottom: 20 }}>
+              <div
+                style={{
+                  fontFamily: "var(--mono)",
+                  fontSize: "11.5px",
+                  letterSpacing: ".12em",
+                  textTransform: "uppercase",
+                  color: "var(--faint)",
+                  marginBottom: 20,
+                }}
+              >
+                Tell me about your business
+              </div>
+              <ContactLeadForm />
+            </div>
             <div className="card">
               <div
                 style={{
