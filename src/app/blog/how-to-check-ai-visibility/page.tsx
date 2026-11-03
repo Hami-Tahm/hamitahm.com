@@ -785,6 +785,25 @@ export default function HowToCheckAIVisibilityPost() {
               description is accurate and favorable, since that&rsquo;s the
               one thing no automated tool can verify for you.
             </p>
+            {/* Inline CTA directly under the definitions: Clarity (Oct 28 - Nov 3, 2026) shows
+                most Google mobile visits land on exactly this paragraph and leave within a
+                second, so the next step has to sit here, not at the end of the article. */}
+            <p
+              style={{
+                margin: "0 0 26px",
+                padding: "14px 18px",
+                border: "1px solid var(--line-strong)",
+                borderRadius: 8,
+                background: "var(--panel)",
+                fontSize: 16,
+              }}
+            >
+              Want these three numbers for your own business?{" "}
+              <Link href="/ai-visibility/ai-visibility-checker/" style={linkStyle}>
+                Get a free AI visibility check
+              </Link>
+              : a person runs your prompts and sends the read within one business day.
+            </p>
             <p style={{ marginBottom: 26 }}>
               This is exactly the raw material a professional audit
               formalizes and scales. See a{" "}

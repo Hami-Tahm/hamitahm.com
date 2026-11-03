@@ -191,13 +191,13 @@ export default function AiVisibilityCheckerPage() {
                 ["Engines covered", "ChatGPT, Google AI Overview and Gemini."],
                 ["Markets", "Canada and the United States. Elsewhere: join the list."],
               ].map(([k, v]) => (
+                /* Plain info, not a card: Clarity (Oct 28, 2026) recorded dead clicks on
+                   these when they were bordered boxes, so they no longer look tappable. */
                 <div
                   key={k}
                   style={{
-                    border: "1px solid var(--line)",
-                    borderRadius: 8,
-                    padding: "12px 14px",
-                    background: "var(--panel)",
+                    borderLeft: "2px solid var(--line-strong)",
+                    padding: "2px 0 2px 12px",
                   }}
                 >
                   <div
