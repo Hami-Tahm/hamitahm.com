@@ -1465,6 +1465,14 @@ export default function AIVisibilityPage() {
                 </p>
               </div>
             </div>
+            {/* 2026-11-07: internal link to the AEO/GEO explainer (Search Console: ~2,400
+                impressions at position ~36). A line, not a card, so the 3-column grid stays even. */}
+            <p style={{ marginTop: 18, fontSize: 15, color: "var(--muted)", lineHeight: 1.6 }}>
+              AEO and GEO overlap more than most vendors admit.{" "}
+              <Link href="/blog/aeo-vs-geo-vs-seo/" style={{ color: "var(--accent)", fontWeight: 500 }}>
+                AEO vs GEO vs SEO: what&rsquo;s actually different &rarr;
+              </Link>
+            </p>
           </RevealSection>
         </div>
       </section>
