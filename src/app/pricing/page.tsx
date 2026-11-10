@@ -294,14 +294,18 @@ export default function PricingPage() {
                         {t.name}
                       </h3>
                     </div>
-                    <div style={{ textAlign: "right" }}>
+                    {/* 2026-11-09: two tiers now show a sentence instead of a number
+                        ("Scoped to your business, confirmed on a free call"). At 26px with
+                        nowrap that ran off the card on phones and made the page scroll
+                        sideways. Long values wrap at a smaller size; see .tier-price. */}
+                    <div
+                      className={t.price.length > 14 ? "tier-price tier-price--long" : "tier-price"}
+                    >
                       <div
                         style={{
                           fontFamily: "var(--serif)",
-                          fontSize: 26,
                           fontWeight: 500,
                           color: t.highlight ? "var(--accent)" : "var(--ink)",
-                          whiteSpace: "nowrap",
                         }}
                       >
                         {t.price}
