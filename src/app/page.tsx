@@ -4,6 +4,7 @@ import { RevealSection } from "@/components/Reveal";
 import { EngineRotator } from "@/components/EngineRotator";
 import { latestWritingPosts } from "@/lib/writing-posts";
 import { HOMECALC_PROOF } from "@/lib/homecalc-proof";
+import FreeCheckFunnel from "@/components/FreeCheckFunnel";
 
 export const metadata: Metadata = {
   // Trimmed to ~150 chars (was ~207 and would truncate in the SERP). Leads with the
@@ -56,16 +57,14 @@ export default function Home() {
           </RevealSection>
 
           <RevealSection delay={0.18}>
-            <div style={{ marginTop: 30, display: "flex", gap: 14, flexWrap: "wrap", alignItems: "center" }}>
+            <div style={{ marginTop: 30, maxWidth: 760 }}>
               {/* Single, consistent CTA across the page (2026-09-08): the free
                   checker is the low-commitment entry point everything else on
-                  this page points back to. No competing second action. */}
-              <Link
-                href="/ai-visibility/ai-visibility-checker/"
-                className="btn btn-primary"
-              >
-                Get free AI visibility check <span className="arr">&rarr;</span>
-              </Link>
+                  this page points back to. No competing second action.
+                  2026-11-10: the three steps under it say what happens next
+                  (check -> written report -> 20-minute call), shared with the
+                  AEO/GEO landing pages via FreeCheckFunnel. */}
+              <FreeCheckFunnel booking={false} />
             </div>
           </RevealSection>
         </div>
@@ -154,7 +153,7 @@ export default function Home() {
               className="btn btn-primary"
               style={{ marginTop: 36 }}
             >
-              Get free AI visibility check <span className="arr">&rarr;</span>
+              Get your free AI visibility check <span className="arr">&rarr;</span>
             </Link>
           </RevealSection>
         </div>

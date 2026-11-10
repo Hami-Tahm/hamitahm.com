@@ -242,6 +242,13 @@ a { color: inherit; text-decoration: none; }
   .inc-grid, .verts, .ladder { grid-template-columns: 1fr; }
 }
 
+/* Free-check funnel CTAs (components/FreeCheckFunnel.tsx): full-width, stacked
+   buttons on phones so the primary action is one clear thumb target. */
+@media (max-width: 560px) {
+  .funnel-ctas { flex-direction: column; align-items: stretch !important; }
+  .funnel-ctas .btn { justify-content: center; width: 100%; }
+}
+
 /* Pricing tier price (pricing/page.tsx). A number stays on one line; a sentence
    ("Scoped to your business...") wraps at a smaller size so it never overflows
    the card on a phone. */

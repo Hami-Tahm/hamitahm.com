@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { HOMECALC_PROOF, HOMECALC_CLAIMS, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
-import { AUDIT_PRICE_DISPLAY, BOOKING_URL, AUDIT_CTA_LABEL } from "@/lib/offers";
+import { AUDIT_PRICE_DISPLAY } from "@/lib/offers";
+import FreeCheckFunnel from "@/components/FreeCheckFunnel";
 
 /**
  * ── CLAIM RULE FOR THIS PAGE (2026-08-11) ──
@@ -21,7 +22,6 @@ import { AUDIT_PRICE_DISPLAY, BOOKING_URL, AUDIT_CTA_LABEL } from "@/lib/offers"
 const GOOGLE_AI_FEATURES_URL =
   "https://developers.google.com/search/docs/appearance/ai-features";
 
-const CHECKER_URL = "/ai-visibility/ai-visibility-checker/";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const GEO_URL = "/ai-visibility/generative-engine-optimization-consultant-canada/";
 const CASE_STUDY_URL = HOMECALC_PROOF.caseStudyPath;
@@ -345,23 +345,11 @@ export default function AEOConsultantCanada() {
             </p>
           </RevealSection>
 
+          {/* 2026-11-10: landing page for the Google Ads keyword "answer engine
+              optimization". Funnel = free check -> report -> call (FreeCheckFunnel). */}
           <RevealSection delay={0.14}>
-            <div
-              style={{
-                marginTop: 32,
-                display: "flex",
-                gap: 14,
-                flexWrap: "wrap",
-                alignItems: "center",
-              }}
-            >
-              <Link href={CHECKER_URL} className="btn btn-ghost">
-                Run the free AI visibility check
-              </Link>
-              <Link href={BOOKING_URL} className="btn btn-primary">
-                {AUDIT_CTA_LABEL}{" "}
-                <span className="arr">&rarr;</span>
-              </Link>
+            <div style={{ marginTop: 32 }}>
+              <FreeCheckFunnel proof />
             </div>
           </RevealSection>
         </div>
@@ -1124,7 +1112,7 @@ export default function AEOConsultantCanada() {
                   position: "relative",
                 }}
               >
-                Work With Me
+                See what AI says about you, for free
               </h2>
               <p
                 style={{
@@ -1138,19 +1126,13 @@ export default function AEOConsultantCanada() {
                   position: "relative",
                 }}
               >
-                Ready to find out how your content performs in AI search?
+                Start with the free check. You get a written report on how
+                ChatGPT, Google AI Overview and Gemini answer your customers&rsquo;
+                questions, then we decide together what is worth fixing.
               </p>
-              <p
-                style={{
-                  marginTop: 12,
-                  fontSize: 15,
-                  color: "var(--muted)",
-                  position: "relative",
-                }}
-              >
-                Start with an AI visibility audit. Report and
-                walkthrough call within {TURNAROUND}.
-              </p>
+              <div style={{ marginTop: 24, position: "relative" }}>
+                <FreeCheckFunnel center />
+              </div>
               <p
                 style={{
                   marginTop: 20,
@@ -1163,17 +1145,13 @@ export default function AEOConsultantCanada() {
                   position: "relative",
                 }}
               >
-                Most AEO engagements start with the AI Visibility Audit (
-                {PRICE_DISPLAY}, delivered in {TURNAROUND}). After the audit, we scope ongoing
-                work based on what we find.
+                Ready for the full picture now? The{" "}
+                <Link href={AUDIT_URL} style={{ color: "var(--accent)", fontWeight: 600 }}>
+                  AI Visibility Audit
+                </Link>{" "}
+                ({PRICE_DISPLAY}) is delivered in {TURNAROUND}, with a written roadmap and a
+                walkthrough call.
               </p>
-              <Link
-                href={AUDIT_URL}
-                className="btn btn-primary"
-                style={{ marginTop: 24, position: "relative" }}
-              >
-                Book Your AI Visibility Audit <span className="arr">&rarr;</span>
-              </Link>
               <p
                 style={{
                   marginTop: 20,

@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { HOMECALC_PROOF, HOMECALC_CLAIMS, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
-import { AUDIT_PRICE_DISPLAY, BOOKING_URL } from "@/lib/offers";
+import { AUDIT_PRICE_DISPLAY } from "@/lib/offers";
+import FreeCheckFunnel from "@/components/FreeCheckFunnel";
 
 /**
  * ── WHY THIS PAGE READS MORE CAUTIOUSLY THAN MOST GEO PAGES (2026-08-11) ──
@@ -412,12 +413,11 @@ export default function GEOConsultantCanada() {
             </p>
           </RevealSection>
 
+          {/* 2026-11-10: landing page for the Google Ads keyword "generative engine
+              optimization". Funnel = free check -> report -> call (FreeCheckFunnel). */}
           <RevealSection delay={0.14}>
             <div style={{ marginTop: 32 }}>
-              <Link href={AUDIT_URL} className="btn btn-primary">
-                Start With an AI Visibility Audit{" "}
-                <span className="arr">&rarr;</span>
-              </Link>
+              <FreeCheckFunnel proof />
             </div>
           </RevealSection>
         </div>
@@ -1352,7 +1352,7 @@ export default function GEOConsultantCanada() {
                   position: "relative",
                 }}
               >
-                Work With Me
+                See what AI says about you, for free
               </h2>
               <p
                 style={{
@@ -1366,19 +1366,14 @@ export default function GEOConsultantCanada() {
                   position: "relative",
                 }}
               >
-                Ready to find out why AI models aren&rsquo;t citing your business?
+                Find out whether AI models cite your business, and who they cite
+                instead. Start with the free check: a written report on ChatGPT,
+                Google AI Overview and Gemini, then we decide together what is
+                worth fixing.
               </p>
-              <p
-                style={{
-                  marginTop: 12,
-                  fontSize: 15,
-                  color: "var(--muted)",
-                  position: "relative",
-                }}
-              >
-                Start with an AI visibility audit. Report and
-                walkthrough call within {TURNAROUND}.
-              </p>
+              <div style={{ marginTop: 24, position: "relative" }}>
+                <FreeCheckFunnel center />
+              </div>
               <p
                 style={{
                   marginTop: 20,
@@ -1391,17 +1386,13 @@ export default function GEOConsultantCanada() {
                   position: "relative",
                 }}
               >
-                Most GEO engagements start with the AI Visibility Audit (
-                {PRICE_DISPLAY}, delivered in {TURNAROUND}). After the audit, we scope ongoing
-                work based on what we find.
+                Ready for the full picture now? The{" "}
+                <Link href={AUDIT_URL} style={{ color: "var(--accent)", fontWeight: 600 }}>
+                  AI Visibility Audit
+                </Link>{" "}
+                ({PRICE_DISPLAY}) is delivered in {TURNAROUND}, with a written roadmap and a
+                walkthrough call.
               </p>
-              <Link
-                href={AUDIT_URL}
-                className="btn btn-primary"
-                style={{ marginTop: 24, position: "relative" }}
-              >
-                Book Your AI Visibility Audit <span className="arr">&rarr;</span>
-              </Link>
               <p
                 style={{
                   marginTop: 20,
