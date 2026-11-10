@@ -289,7 +289,7 @@ export default function HomecalcAiBenchmarkPage() {
           <h2 style={{ ...h2Style, position: "relative" }}>Run This Benchmark for an Agency Client</h2>
           <p style={{ color: "var(--muted)", maxWidth: "60ch", margin: "12px auto 0", position: "relative", lineHeight: 1.65 }}>
             White-label AI visibility audits for agencies, delivered under your brand across six AI platforms. Start with
-            one client you already have; the scope is set with you for that client. Starting at US$1,500 for US clients / CA$2,000 for Canadian clients; final scope and price confirmed per client. It is a dated
+            one client you already have; the scope is set with you for that client. Scope and price confirmed per client on a short call. It is a dated
             snapshot and opportunity map, not a guarantee of citations, traffic or revenue.
           </p>
           <Link href={PILOT_URL} className="btn btn-primary" style={{ marginTop: 28, position: "relative" }}>

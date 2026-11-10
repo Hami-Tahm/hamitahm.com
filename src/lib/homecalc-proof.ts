@@ -190,6 +190,37 @@ export const HOMECALC_COPILOT_STAT = {
   label: "Copilot citations",
 } as const;
 
+/**
+ * LATEST Copilot figure, a SEPARATE window from HOMECALC_PROOF above.
+ *
+ * Read 2026-11-10 from Bing Webmaster Tools → AI Performance, site selector
+ * homecalc.ca, 3 M view = Aug 10 to Nov 8, 2026 (91 days). Total Citations tile
+ * 78.4K; the 91 daily values sum to 78,392. Avg. Cited Pages tile 57 (a per-DAY
+ * average, not a count of distinct pages). Same metric and same 3-month view
+ * length as HOMECALC_PROOF.citations, so the two are comparable: launch window
+ * (May 9 to Aug 7) 17,800+, latest window (Aug 10 to Nov 8) 78,000+.
+ *
+ * ⚠️ HOMECALC_PROOF stays the LAUNCH story ("near-zero to 17,800+"): the case
+ * study's pages table, peak day, 72% share and chart all belong to that window.
+ * Never write "near-zero to 78,000+": the latest window did not start near zero.
+ * Use this for the current headline figure only, always with its window.
+ * When re-reading, update every field here and public/llms.txt line 5.
+ */
+export const HOMECALC_LATEST = {
+  citations: "78,000+",
+  /** As the console renders it. */
+  citationsConsole: "78.4K",
+  window: "Aug 10 to Nov 8, 2026",
+  readOn: "November 10, 2026",
+  avgCitedPagesPerDay: 57,
+  sourceLabel: "Microsoft Copilot (Bing AI Performance)",
+} as const;
+
+export const HOMECALC_LATEST_STAT = {
+  value: HOMECALC_LATEST.citations,
+  label: `Copilot citations, ${HOMECALC_LATEST.window}`,
+} as const;
+
 export const HOMECALC_CITED_PAGES = [
   // Refreshed 2026-08-07 from the same trailing 3-month view as the headline figure.
   // Values are shown exactly as the console renders them (1.8K, not "1,800") so the

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { ShortAnswer } from "@/components/ShortAnswer";
-import { HOMECALC_PROOF, HOMECALC_CLAIMS, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
+import { HOMECALC_PROOF, HOMECALC_CLAIMS, HOMECALC_LATEST, HOMECALC_LATEST_STAT } from "@/lib/homecalc-proof";
 import { LATEST_QUARTER } from "@/lib/citation-study";
 import { OFFERS } from "@/lib/offers";
 import { QUOTABLE_FACTS } from "@/lib/identity";
@@ -365,8 +365,8 @@ export default function AIVisibilityPage() {
                 maxWidth: "62ch",
               }}
             >
-              {HOMECALC_HEADLINE_STAT.value}{" "}Microsoft Copilot citations in{" "}
-              {HOMECALC_PROOF.timeframe}{" "}on a site I own ({HOMECALC_PROOF.window}) &middot;{" "}
+              {HOMECALC_LATEST.citations}{" "}Microsoft Copilot citations in 3 months
+              {" "}on a site I own ({HOMECALC_LATEST.window}) &middot;{" "}
               <Link href="/methodology/" style={{ color: "var(--accent)" }}>
                 public methodology
               </Link>{" "}
@@ -578,8 +578,7 @@ export default function AIVisibilityPage() {
                   }}
                 >
                   What to change and in what order, written for your team to
-                  ship. {OFFERS.actionPlan.priceWithCurrency}, fixed scope:
-                  audit fee credited.
+                  ship. Fixed scope, audit fee credited.
                 </p>
                 <div
                   style={{
@@ -884,7 +883,7 @@ export default function AIVisibilityPage() {
                     color: "var(--accent)",
                   }}
                 >
-                  {HOMECALC_HEADLINE_STAT.value}
+                  {HOMECALC_LATEST_STAT.value}
                 </div>
                 <div
                   style={{
@@ -896,7 +895,7 @@ export default function AIVisibilityPage() {
                     letterSpacing: ".06em",
                   }}
                 >
-                  {HOMECALC_HEADLINE_STAT.label}
+                  {HOMECALC_LATEST_STAT.label}
                 </div>
               </div>
               <div className="tier">

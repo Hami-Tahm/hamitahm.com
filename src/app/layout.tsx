@@ -285,7 +285,6 @@ const siteStructuredData = {
         latitude: 43.6469,
         longitude: -79.3924,
       },
-      priceRange: "$$$",
     },
     // Companies Hami founded: declared as first-class entities with a founder link
     // back to the Person, which is the schema.org-correct way to connect them.

@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { HOMECALC_PROOF, HOMECALC_CLAIMS, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
-import { AUDIT_PRICE_DISPLAY } from "@/lib/offers";
+import { AUDIT_PLATFORMS, AUDIT_PRICE_DISPLAY } from "@/lib/offers";
+import { BENCHMARK } from "@/lib/homecalc-benchmark-2026-10";
 import FreeCheckFunnel from "@/components/FreeCheckFunnel";
 
 /**
@@ -217,6 +218,10 @@ const FAQ_ITEMS: {
   aeoLink?: boolean;
 }[] = [
   {
+    q: "How do I choose a GEO consultant in Canada?",
+    a: "Look for three things: a measured baseline before any promise (the prompts, engines and dates written down), dated proof on a site you can check yourself, and a documented method. Be wary of guaranteed placement, because AI answers vary between runs. Here, GEO means generative engine optimization, not geology or GIS. I am Hami Tahm, an independent GEO consultant in Toronto; my public proof is a dated benchmark on HomeCalc.ca, a property I own, and a full sample report is on this site.",
+  },
+  {
     q: "What is the difference between GEO and SEO?",
     a: "They overlap heavily. Google states that its AI features run on its core Search ranking systems and that optimizing for AI Overviews and AI Mode is still SEO, with no special markup required, so on Google's surfaces, SEO foundations are the work. What generative visibility adds is the engines that do not use Google's index at all, and an outcome that is a spectrum rather than a position: you can be retrieved, mentioned, cited, paraphrased without attribution, or omitted. Nobody has shown that either discipline 'rewards' a specific fixed factor.",
   },
@@ -422,6 +427,96 @@ export default function GEOConsultantCanada() {
           </RevealSection>
         </div>
       </header>
+
+      {/* CIT-07 (2026-11-10): "best GEO consultant Canada" was a gap, and Google
+          read "GEO" as geology on one run. Direct answer, selection criteria,
+          proof and method, on this existing page. No new location page. */}
+      <section style={{ padding: "40px 0 20px" }}>
+        <div className="wrap" style={{ maxWidth: 760 }}>
+          <RevealSection>
+            <h2
+              style={{
+                fontFamily: "var(--serif)",
+                fontWeight: 500,
+                fontSize: "clamp(27px, 3.6vw, 40px)",
+                lineHeight: 1.12,
+                letterSpacing: "-.015em",
+              }}
+            >
+              How to choose a GEO consultant in Canada
+            </h2>
+            <p
+              style={{
+                marginTop: 20,
+                fontSize: "clamp(17px, 2vw, 19px)",
+                color: "var(--muted)",
+                lineHeight: 1.65,
+              }}
+            >
+              The short answer: choose someone who measures before they promise,
+              shows dated proof on a site you can check, and documents how they
+              measure. I am Hami Tahm, an independent generative engine
+              optimization (GEO) consultant based in Toronto, working with
+              businesses across Canada and the United States. I run every audit
+              personally across {AUDIT_PLATFORMS.length} AI engines and hand you a
+              written plan your own team can ship.
+            </p>
+            <p style={{ marginTop: 14, fontSize: 15, color: "var(--faint)", lineHeight: 1.6 }}>
+              GEO here means generative engine optimization: how your business
+              shows up in AI-generated answers. It is not geology, geomatics or GIS.
+            </p>
+            <ul
+              style={{
+                marginTop: 22,
+                paddingLeft: 0,
+                listStyle: "none",
+                display: "flex",
+                flexDirection: "column",
+                gap: 12,
+                fontSize: 16,
+                color: "var(--muted)",
+                lineHeight: 1.55,
+              }}
+            >
+              <li>
+                <b style={{ color: "var(--ink)", fontWeight: 600 }}>A measured baseline first.</b>{" "}
+                The prompts, engines and dates are written down before any change,
+                so you can see whether anything moved.
+              </li>
+              <li>
+                <b style={{ color: "var(--ink)", fontWeight: 600 }}>Proof you can check.</b>{" "}
+                Mine is{" "}
+                <Link href="/case-studies/homecalc-ai-benchmark-canada/" style={{ color: "var(--accent)", fontWeight: 500 }}>
+                  a dated benchmark on HomeCalc.ca
+                </Link>
+                , a property I own: across {BENCHMARK.promptCount} mortgage prompts on{" "}
+                {BENCHMARK.engines.length} engines ({BENCHMARK.otterlyWindowShort}), it was the
+                most-cited non-government domain, ahead of Ratehub and WOWA.
+              </li>
+              <li>
+                <b style={{ color: "var(--ink)", fontWeight: 600 }}>A method in writing.</b>{" "}
+                <Link href="/methodology/" style={{ color: "var(--accent)", fontWeight: 500 }}>
+                  How I measure
+                </Link>{" "}
+                is public, and{" "}
+                <Link href="/ai-visibility/sample-report/" style={{ color: "var(--accent)", fontWeight: 500 }}>
+                  a full sample report
+                </Link>{" "}
+                shows exactly what you receive.
+              </li>
+              <li>
+                <b style={{ color: "var(--ink)", fontWeight: 600 }}>No guaranteed placement.</b>{" "}
+                AI answers vary between runs. Anyone promising a fixed position in
+                ChatGPT or Google AI Overviews is promising something no one controls.
+              </li>
+              <li>
+                <b style={{ color: "var(--ink)", fontWeight: 600 }}>You know who does the work.</b>{" "}
+                One named person, not an account manager in front of a team.
+              </li>
+            </ul>
+          </RevealSection>
+        </div>
+      </section>
 
       {/* Section 2: What Is GEO */}
       <section style={{ padding: "60px 0" }}>

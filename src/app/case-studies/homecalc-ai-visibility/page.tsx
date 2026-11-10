@@ -9,6 +9,7 @@ import {
   HOMECALC_PROOF,
   HOMECALC_TOP_QUERIES,
   homecalcPageUrl,
+  HOMECALC_LATEST,
 } from "@/lib/homecalc-proof";
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
@@ -216,7 +217,10 @@ export default function HomeCalcCaseStudy() {
                 Hami Tahm
               </Link>
               . HomeCalc.ca is my own site (an owned property, not a client).
-              Copilot data: {HOMECALC_PROOF.window}. Last reviewed October 22, 2026.
+              Copilot data: {HOMECALC_PROOF.window}. Update, {HOMECALC_LATEST.readOn}: in the
+              latest 3-month view ({HOMECALC_LATEST.window}) Copilot cited HomeCalc.ca{" "}
+              {HOMECALC_LATEST.citations} times, about {HOMECALC_LATEST.avgCitedPagesPerDay} cited
+              pages a day. Last reviewed {HOMECALC_LATEST.readOn}.
             </p>
           </RevealSection>
 
@@ -1043,7 +1047,7 @@ export default function HomeCalcCaseStudy() {
                   fontWeight: 600,
                 }}
               >
-                Starting at US$1,500 for US clients / CA$2,000 for Canadian clients; final scope and price confirmed per client.
+                Scope and price confirmed per client on a short call.
               </p>
               <p
                 style={{

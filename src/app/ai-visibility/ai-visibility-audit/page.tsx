@@ -6,6 +6,7 @@ import { SNAPSHOT } from "@/lib/ai-citation-proof";
 import { BOOKING_URL, AUDIT_CTA_LABEL, AUDIT_PRICE_DISPLAY } from "@/lib/offers";
 import { ShortlistReasons } from "@/components/ShortlistReasons";
 import { ZoomableImage } from "@/components/ZoomableImage";
+import EngagementFacts from "@/components/EngagementFacts";
 
 // Same file, same alt text, as the full case study
 // (src/app/case-studies/homecalc-ai-visibility/page.tsx): the point of
@@ -72,6 +73,12 @@ function buildFaqItems() {
     a: "An AI visibility audit is a structured review of how your business appears across AI platforms: Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, and Perplexity. The output is a written report and a prioritized action plan.",
   },
   {
+    // CIT-07 (2026-11-10): prompt 8 "who can audit my ChatGPT visibility" was a
+    // consistent miss. Answer the question as asked, then say who I am.
+    q: "Who can audit my ChatGPT visibility?",
+    a: "Three kinds of provider: an independent consultant, an agency, or a self-serve tracking tool. A consultant runs the prompts personally and hands you a written plan; an agency usually bundles the audit into a monthly retainer; a tool gives you a dashboard and leaves the interpretation to you. I am Hami Tahm, an independent AI visibility consultant in Toronto. I run each audit myself across ChatGPT, Google AI Overviews, Gemini, Claude, Microsoft Copilot and Perplexity, test 30 buyer prompts for your business, and deliver a written report and walkthrough within 7 business days. You can read a full sample report before booking, or start with the free AI Visibility Checker.",
+  },
+  {
     // Alias-capture FAQ: same deliverable, four search phrasings.
     q: "Is this the same as a ChatGPT visibility audit or an AEO audit?",
     a: "Yes. ChatGPT visibility audit, AI search audit, AEO audit, GEO audit: these are different names for the same deliverable. The difference here is coverage: this audit reviews six engines (Google AI Overviews, ChatGPT, Gemini, Claude, Bing Copilot, and Perplexity), so you get the full picture rather than a single-platform snapshot.",
@@ -120,6 +127,12 @@ function buildComparisonRows() {
   ],
   ["Pricing", "Scoped to your business, confirmed on a call", "Retainer or quote on request", "Monthly subscription"],
   [
+    "Best when",
+    "You want one accountable person and a plan your team can ship",
+    "You need several channels run by one team on an ongoing retainer",
+    "You already know what to fix and want to track it over time",
+  ],
+  [
     "Case study access",
     "Public case study on my own site (HomeCalc.ca)",
     "Rarely public",
@@ -156,7 +169,11 @@ const RELATED_LINKS = [
     label: "Want the plan to act on it? The Action Plan",
     href: "/ai-visibility/implementation/",
   },
-  { label: "Full pricing: every step, published", href: "/pricing/" },
+  { label: "Pricing: how each step is scoped", href: "/pricing/" },
+  {
+    label: "AI visibility consultant vs agency vs tool",
+    href: "/blog/ai-visibility-consultant-vs-agency-vs-tool/",
+  },
   { label: "Case studies: the results behind the method", href: "/case-studies/" },
   { label: "How I measure AI visibility (methodology)", href: "/methodology/" },
   { label: "What is AI visibility?", href: "/ai-visibility/" },
@@ -327,6 +344,9 @@ export default async function AIVisibilityAudit() {
                 </Link>
               </div>
             </div>
+          </RevealSection>
+          <RevealSection delay={0.2}>
+            <EngagementFacts />
           </RevealSection>
         </div>
       </header>
@@ -864,6 +884,13 @@ export default async function AIVisibilityAudit() {
 
             <p style={{ marginTop: 24, fontSize: 15, color: "var(--muted)" }}>
               Want the longer breakdown?{" "}
+              <Link
+                href="/blog/ai-visibility-consultant-vs-agency-vs-tool/"
+                style={{ color: "var(--accent)", fontWeight: 500 }}
+              >
+                Consultant vs agency vs tool &rarr;
+              </Link>{" "}
+              or{" "}
               <Link
                 href="/blog/ai-visibility-tools-vs-audit/"
                 style={{ color: "var(--accent)", fontWeight: 500 }}

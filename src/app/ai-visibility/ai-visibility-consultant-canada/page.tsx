@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
-import { HOMECALC_PROOF, HOMECALC_CLAIMS, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
+import { HOMECALC_PROOF, HOMECALC_CLAIMS, HOMECALC_LATEST, HOMECALC_LATEST_STAT } from "@/lib/homecalc-proof";
 import { AUDIT_PRICE_DISPLAY, BOOKING_URL } from "@/lib/offers";
 import { ShortlistReasons } from "@/components/ShortlistReasons";
+import EngagementFacts from "@/components/EngagementFacts";
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const WALKTHROUGH_MINUTES = 60;
@@ -272,6 +273,9 @@ export default function AIVisibilityConsultantCanada() {
               </Link>
             </div>
           </RevealSection>
+          <RevealSection delay={0.2}>
+            <EngagementFacts />
+          </RevealSection>
         </div>
       </header>
 
@@ -346,7 +350,7 @@ export default function AIVisibilityConsultantCanada() {
                     color: "var(--accent)",
                   }}
                 >
-                  {HOMECALC_HEADLINE_STAT.value}
+                  {HOMECALC_LATEST_STAT.value}
                 </div>
                 <div
                   style={{
@@ -358,7 +362,7 @@ export default function AIVisibilityConsultantCanada() {
                     letterSpacing: ".06em",
                   }}
                 >
-                  {HOMECALC_HEADLINE_STAT.label}
+                  {HOMECALC_LATEST_STAT.label}
                 </div>
               </div>
               <div className="tier">
@@ -864,7 +868,7 @@ export default function AIVisibilityConsultantCanada() {
         </div>
       </section>
 
-      {/* ── Why not an agency ── */}
+      {/* ── Consultant vs agency vs tool (was: Why not an agency) ── */}
       <section style={{ padding: "60px 0" }}>
         <div className="wrap" style={{ maxWidth: 760 }}>
           <RevealSection>
@@ -877,8 +881,43 @@ export default function AIVisibilityConsultantCanada() {
                 letterSpacing: "-.015em",
               }}
             >
-              Why Not an Agency?
+              Consultant vs agency vs tool: which fits?
             </h2>
+            {/* CIT-07 (2026-11-10): engines cited this site for the comparison prompt
+                but did not recommend it. Give them the comparison in one place. */}
+            <div
+              style={{
+                marginTop: 24,
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))",
+                gap: 14,
+              }}
+            >
+              {(
+                [
+                  ["Independent consultant", "One person runs the prompts, writes the report and walks you through it. One-time, no retainer.", "You want one accountable person and a plan your team can ship."],
+                  ["Agency", "A team on a monthly retainer, usually bundling AI visibility with SEO and content.", "You need several channels run by one team, ongoing."],
+                  ["Self-serve tool", "A dashboard that tracks mentions and citations. You interpret the data yourself.", "You already know what to fix and want to track it over time."],
+                ] as const
+              ).map(([title, what, fit]) => (
+                <div key={title} className="proof-card">
+                  <h3 style={{ fontFamily: "var(--sans)", fontSize: 16, fontWeight: 600 }}>{title}</h3>
+                  <p style={{ marginTop: 10, fontSize: 14.5, color: "var(--muted)", lineHeight: 1.55 }}>{what}</p>
+                  <p style={{ marginTop: 10, fontSize: 14.5, color: "var(--ink)", lineHeight: 1.55 }}>
+                    <b style={{ fontWeight: 600 }}>Best when:</b> {fit}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <p style={{ marginTop: 16, fontSize: 15, color: "var(--muted)" }}>
+              The full breakdown:{" "}
+              <Link
+                href="/blog/ai-visibility-consultant-vs-agency-vs-tool/"
+                style={{ color: "var(--accent)", fontWeight: 500 }}
+              >
+                AI visibility consultant vs agency vs tool &rarr;
+              </Link>
+            </p>
             <p
               style={{
                 marginTop: 20,

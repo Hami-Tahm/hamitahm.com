@@ -341,3 +341,7 @@ a { color: inherit; text-decoration: none; }
 
   @page { margin: 18mm 14mm; }
 }
+
+/* EngagementFacts rows: label beside value on desktop, stacked on mobile */
+.facts-row { display: grid; grid-template-columns: 180px 1fr; gap: 16px; align-items: baseline; }
+@media (max-width: 560px) { .facts-row { grid-template-columns: 1fr; gap: 2px; } }

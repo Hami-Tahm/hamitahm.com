@@ -9,6 +9,7 @@ import {
 } from "@/lib/ai-citation-proof";
 import { OFFERS, AUDIT_PRICE_DISPLAY, ACTION_PLAN_PRICE_DISPLAY, BOOKING_URL, AUDIT_CTA_LABEL } from "@/lib/offers";
 import { ShortlistReasons } from "@/components/ShortlistReasons";
+import EngagementFacts from "@/components/EngagementFacts";
 
 const SLUG = "/ai-visibility/ai-visibility-consultant-toronto/";
 const AUDIT_URL = OFFERS.audit.href;
@@ -339,10 +340,13 @@ export default async function AIVisibilityConsultantToronto() {
             >
               Prefer to talk first?{" "}
               <Link href="/contact/" style={{ color: "var(--accent)" }}>
-                Book a 16-minute fit call
+                Book a free 20-minute call
               </Link>
               , optional, and never required to buy anything.
             </p>
+          </RevealSection>
+          <RevealSection delay={0.2}>
+            <EngagementFacts />
           </RevealSection>
         </div>
       </header>

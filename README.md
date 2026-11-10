@@ -15,7 +15,7 @@ This site is the consultancy. It's also the public lab where I document what's a
 ## The cluster
 
 - [`/ai-visibility/`](https://hamitahm.com/ai-visibility/) — hub
-- [`/ai-visibility/ai-visibility-audit/`](https://hamitahm.com/ai-visibility/ai-visibility-audit/) — **$1,500 CAD flat-fee audit** (the single entry point)
+- [`/ai-visibility/ai-visibility-audit/`](https://hamitahm.com/ai-visibility/ai-visibility-audit/) — **AI visibility audit, scoped on a free call** (the single entry point)
 - [`/ai-visibility/ai-visibility-consultant-canada/`](https://hamitahm.com/ai-visibility/ai-visibility-consultant-canada/)
 - [`/ai-visibility/answer-engine-optimization-consultant-canada/`](https://hamitahm.com/ai-visibility/answer-engine-optimization-consultant-canada/)
 - [`/ai-visibility/generative-engine-optimization-consultant-canada/`](https://hamitahm.com/ai-visibility/generative-engine-optimization-consultant-canada/)
@@ -28,6 +28,7 @@ This site is the consultancy. It's also the public lab where I document what's a
 The audit methodology was first proved on [HomeCalc.ca](https://homecalc.ca/), a Canadian financial-calculator platform under three months old at the time:
 
 - **17,800+ Microsoft Copilot citations, May 9 to Aug 7, 2026** (Bing Webmaster Tools, AI Performance), across **50+ pages** (56 listed), peaking at 570+ per day
+- **78,000+ Microsoft Copilot citations, Aug 10 to Nov 8, 2026** (same report, the next 3-month view, read Nov 10, 2026), averaging 57 cited pages a day
 - **15,000 impressions** in Google Search Console's Generative AI features report (Beta), its own 3-month view captured Aug 10, 2026. A different metric and window: never added to the Copilot figure (the former 32,800 sum was retired on 2026-10-22)
 - **72% citation share** on one query, `calculate land transfer tax ontario` (102 citations), in the same Bing window
 - A YMYL category — financial — which is the hardest category to gain authority in, on the youngest possible domain

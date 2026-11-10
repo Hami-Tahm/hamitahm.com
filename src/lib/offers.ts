@@ -48,6 +48,16 @@
  * equally explicit decision from Hami reversing this one.
  */
 
+/*
+ * ⚠️ NO PRICES ANYWHERE, decided by Hami 2026-11-10. READ THIS FIRST.
+ *
+ * No dollar figure for any HamiTahm service may appear in visible copy, meta
+ * tags, llms.txt or schema.org (no Offer price, no priceRange). The raw `price`
+ * fields below now hold display text, not numbers, so no page can print one by
+ * accident. Stripe amounts live in Stripe, not here. Market ranges for OTHER
+ * providers (agency retainers, tool subscriptions) are not our price and may
+ * stay where they are clearly labelled as such.
+ */
 export const OFFERS = {
   checker: {
     name: "Free AI Visibility Checker",
@@ -57,8 +67,8 @@ export const OFFERS = {
   },
   audit: {
     name: "AI Visibility Audit",
-    price: "$1,500",
-    priceNote: "Flat fee, one-time",
+    price: "Scoped on a free call",
+    priceNote: "One-time, no retainer",
     /**
      * USD price for visitors outside Canada, added 2026-08-29 alongside
      * src/proxy.ts and src/lib/currency.ts. This is a REAL price backed
@@ -74,8 +84,8 @@ export const OFFERS = {
      * same-day). If the upcharge amount ever changes, that's a deliberate
      * pricing decision to get explicitly, not a rate to recalculate.
      */
-    priceUSD: "$1,500",
-    priceNoteUSD: "Flat fee, one-time",
+    priceUSD: "Scoped on a free call",
+    priceNoteUSD: "One-time, no retainer",
     href: "/ai-visibility/ai-visibility-audit/",
     role: "Diagnosis: exactly where AI engines cite you, where they don't, and what to change.",
     /**
@@ -135,10 +145,10 @@ export const OFFERS = {
    */
   actionPlan: {
     name: "AI Visibility Action Plan",
-    price: "From $4,500",
+    price: "Scoped to your business",
     /** Use this in prose. See PRICE DISPLAY RULE below. */
-    priceWithCurrency: "From $4,500",
-    priceNote: "Fixed scope: the $1,500 audit fee is credited toward it",
+    priceWithCurrency: "Scoped to your business",
+    priceNote: "Fixed scope: the audit fee is credited toward it",
     /**
      * Why $4,500 is a floor, not the number everyone pays: the final scope (and
      * therefore the final price) depends on the client's traffic volume, industry,

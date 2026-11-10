@@ -3,7 +3,7 @@ import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { EngineRotator } from "@/components/EngineRotator";
 import { latestWritingPosts } from "@/lib/writing-posts";
-import { HOMECALC_PROOF } from "@/lib/homecalc-proof";
+import { HOMECALC_LATEST } from "@/lib/homecalc-proof";
 import FreeCheckFunnel from "@/components/FreeCheckFunnel";
 
 export const metadata: Metadata = {
@@ -96,10 +96,10 @@ export default function Home() {
                 of the claim above, not a number interrupting it (2026-09-08). */}
             <div style={{ display: "flex", alignItems: "baseline", gap: 12, flexWrap: "wrap", marginTop: 22 }}>
               <span style={{ fontFamily: "var(--serif)", fontWeight: 500, fontSize: "clamp(36px, 4.6vw, 52px)", letterSpacing: "-.01em", color: "var(--ink)" }}>
-                {HOMECALC_PROOF.citations}
+                {HOMECALC_LATEST.citations}
               </span>
               <span style={{ fontFamily: "var(--mono)", fontSize: "12.5px", letterSpacing: ".06em", color: "var(--muted)", textTransform: "uppercase" }}>
-                Microsoft Copilot citations in {HOMECALC_PROOF.timeframe}, on my own product
+                Microsoft Copilot citations in 3 months ({HOMECALC_LATEST.window}), on my own product
               </span>
             </div>
             <Link

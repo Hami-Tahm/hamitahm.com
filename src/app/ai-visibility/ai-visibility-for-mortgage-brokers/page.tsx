@@ -2,17 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { HOMECALC_PROOF, HOMECALC_CLAIMS, HOMECALC_CITED_PAGES, HOMECALC_HEADLINE_STAT } from "@/lib/homecalc-proof";
-import { AUDIT_CTA_LABEL, BOOKING_URL, OFFERS } from "@/lib/offers";
+import { AUDIT_CTA_LABEL, AUDIT_PRICE_DISPLAY, BOOKING_URL, OFFERS } from "@/lib/offers";
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const CASE_STUDY_URL = HOMECALC_PROOF.caseStudyPath;
 const WALKTHROUGH_MINUTES = 60;
 const TURNAROUND = "7 business days";
-// Starting price for the one-time mortgage-broker audit (Hami, 2026-10-29). This
-// page only; the rest of the site still uses AUDIT_PRICE_DISPLAY. Unit kept inside
-// the string per the PRICE DISPLAY RULE in src/lib/offers.ts.
-const PRICE_DISPLAY = `From ${OFFERS.audit.price} CAD`;
-const PRICE_TERMS = "Final scope confirmed before work starts, no retainer required";
+// No published price (Hami, 2026-11-10): same display line as the rest of the site.
+const PRICE_DISPLAY = AUDIT_PRICE_DISPLAY;
+const PRICE_TERMS = "No retainer required";
 const COST_ANSWER = `${PRICE_DISPLAY} for the one-time AI Visibility Audit. ${PRICE_TERMS}. See the full audit page for what's included.`;
 
 // Search snippet (<=158 chars). Kept separate from any long on-page/schema
