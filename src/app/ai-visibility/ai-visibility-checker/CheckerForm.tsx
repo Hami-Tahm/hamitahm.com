@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
 /**
@@ -106,6 +106,29 @@ export default function CheckerForm() {
    * submit-only tracking cannot show.
    */
   const isWaitlist = country === COUNTRY_OTHER;
+
+  /*
+   * 2026-11-09: keep the visitor on the form when it changes size. Step 1 is long and
+   * step 2 (email) and the confirmation are short, so on a phone pressing Continue or
+   * submitting left the visitor scrolled below the form, looking at the page under it,
+   * with no sign anything had happened. After each step change the top of the form is
+   * brought into view (only if it is above the screen) and focused for screen readers.
+   */
+  const topRef = useRef<HTMLDivElement>(null);
+  const stepKey = status === "done" ? "done" : showRest ? "rest" : "first";
+  const prevStepRef = useRef(stepKey);
+  useEffect(() => {
+    if (prevStepRef.current === stepKey) return;
+    prevStepRef.current = stepKey;
+    const el = topRef.current;
+    if (!el) return;
+    const top = el.getBoundingClientRect().top;
+    if (top < 0 || top > window.innerHeight * 0.6) {
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: window.scrollY + top - 96, behavior: reduce ? "auto" : "smooth" });
+    }
+    el.focus({ preventScroll: true });
+  }, [stepKey]);
 
   const startedRef = useRef(false);
   function markStarted() {
@@ -214,6 +237,7 @@ export default function CheckerForm() {
   if (status === "done" && isWaitlist) {
     return (
       <div className="proof-card" style={{ padding: "40px 32px" }}>
+        <div ref={topRef} tabIndex={-1} style={{ outline: "none" }} />
         <div
           style={{
             fontFamily: "var(--serif)",
@@ -253,6 +277,7 @@ export default function CheckerForm() {
   if (status === "done") {
     return (
       <div className="proof-card" style={{ padding: "40px 32px" }}>
+        <div ref={topRef} tabIndex={-1} style={{ outline: "none" }} />
         <div
           style={{
             fontFamily: "var(--serif)",
@@ -362,6 +387,7 @@ export default function CheckerForm() {
       className="proof-card"
       style={{ padding: "32px 30px" }}
     >
+      <div ref={topRef} tabIndex={-1} style={{ outline: "none" }} />
       {!showRest ? (
         <>
           {/* Step 1: the engaging part (pick engines, type your domain and
