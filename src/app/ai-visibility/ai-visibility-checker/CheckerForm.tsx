@@ -69,6 +69,9 @@ const ENGINES: readonly { id: string; label: string }[] = [
 
 type Status = "idle" | "submitting" | "done" | "error";
 
+/** Google Ads conversion "Free check request" (account 763-646-5760), created 2026-11-10. */
+const CHECKER_ADS_CONVERSION = "AW-18546533331/39E4CMDq6bUdENPH1otF";
+
 export default function CheckerForm() {
   // Not pre-selected by default (2026-08-30, per feedback): the visitor picks which
   // engines they want checked rather than starting from all three already on.
@@ -215,6 +218,28 @@ export default function CheckerForm() {
           // number would overstate the funnel.
           scope,
         });
+        // 2026-11-10: the free check is now the funnel's first step (FreeCheckFunnel),
+        // so a confirmed request is a Google Ads conversion ("Free check request",
+        // Primary, Count One). Fires only after the server accepted the request, and
+        // only for served markets: a waitlist signup is not a lead the ads can win.
+        // No personal data: the call carries the conversion label and a nominal value.
+        if (scope === "served") {
+          const g = window as unknown as {
+            dataLayer?: unknown[];
+            gtag?: (...args: unknown[]) => void;
+          };
+          g.dataLayer = g.dataLayer || [];
+          // gtag.js reads queued commands only as the special `arguments` object.
+          g.gtag = g.gtag || function () {
+            // eslint-disable-next-line prefer-rest-params
+            g.dataLayer?.push(arguments);
+          };
+          g.gtag("event", "conversion", {
+            send_to: CHECKER_ADS_CONVERSION,
+            value: 1,
+            currency: "CAD",
+          });
+        }
       }
       setStatus("done");
     } catch {
