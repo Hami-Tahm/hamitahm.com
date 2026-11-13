@@ -5,6 +5,7 @@ import { HOMECALC_PROOF, HOMECALC_CLAIMS, HOMECALC_LATEST, HOMECALC_LATEST_STAT 
 import { AUDIT_PRICE_DISPLAY, BOOKING_URL } from "@/lib/offers";
 import { ShortlistReasons } from "@/components/ShortlistReasons";
 import EngagementFacts from "@/components/EngagementFacts";
+import { cta } from "@/lib/cta";
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const WALKTHROUGH_MINUTES = 60;
@@ -261,7 +262,7 @@ export default function AIVisibilityConsultantCanada() {
                 alignItems: "center",
               }}
             >
-              <Link href={AUDIT_URL} className="btn btn-primary">
+              <Link {...cta("canada", "audit", "hero")} href={AUDIT_URL} className="btn btn-primary">
                 Book Your AI Visibility Audit{" "}
                 <span className="arr">&rarr;</span>
               </Link>
@@ -274,7 +275,7 @@ export default function AIVisibilityConsultantCanada() {
             </div>
           </RevealSection>
           <RevealSection delay={0.2}>
-            <EngagementFacts />
+            <EngagementFacts ctaPage="canada" />
           </RevealSection>
         </div>
       </header>
@@ -624,7 +625,7 @@ export default function AIVisibilityConsultantCanada() {
                   </ul>
                 </div>
               </div>
-              <Link
+              <Link {...cta("canada", "audit", "offer")}
                 href={AUDIT_URL}
                 className="btn btn-primary"
                 style={{ marginTop: 32, position: "relative" }}
@@ -983,7 +984,7 @@ export default function AIVisibilityConsultantCanada() {
               personally, and hands you a plan you can execute or hand to a team:
               book the audit.
             </p>
-            <Link
+            <Link {...cta("canada", "audit", "comparison")}
               href={AUDIT_URL}
               className="btn btn-primary"
               style={{ marginTop: 28 }}
@@ -1214,9 +1215,9 @@ export default function AIVisibilityConsultantCanada() {
                 }}
               >
                 Six platforms reviewed, written report, action plan, and
-                walkthrough call. {PRICE_DISPLAY}{" "}flat: no retainer.
+                walkthrough call. {PRICE_DISPLAY}. No retainer.
               </p>
-              <Link
+              <Link {...cta("canada", "audit", "final")}
                 href={AUDIT_URL}
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}

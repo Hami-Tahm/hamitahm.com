@@ -10,6 +10,7 @@ import {
 import { OFFERS, AUDIT_PRICE_DISPLAY, ACTION_PLAN_PRICE_DISPLAY, BOOKING_URL, AUDIT_CTA_LABEL } from "@/lib/offers";
 import { ShortlistReasons } from "@/components/ShortlistReasons";
 import EngagementFacts from "@/components/EngagementFacts";
+import { cta } from "@/lib/cta";
 
 const SLUG = "/ai-visibility/ai-visibility-consultant-toronto/";
 const AUDIT_URL = OFFERS.audit.href;
@@ -321,11 +322,11 @@ export default async function AIVisibilityConsultantToronto() {
                 alignItems: "center",
               }}
             >
-              <Link href={CHECKER_URL} className="btn btn-primary">
+              <Link {...cta("toronto", "checker", "hero")} href={CHECKER_URL} className="btn btn-primary">
                 Get a free Toronto AI visibility check{" "}
                 <span className="arr">&rarr;</span>
               </Link>
-              <Link href={AUDIT_URL} className="btn btn-ghost">
+              <Link {...cta("toronto", "audit", "hero-secondary")} href={AUDIT_URL} className="btn btn-ghost">
                 See the audit
               </Link>
             </div>
@@ -339,14 +340,14 @@ export default async function AIVisibilityConsultantToronto() {
               }}
             >
               Prefer to talk first?{" "}
-              <Link href="/contact/" style={{ color: "var(--accent)" }}>
+              <Link {...cta("toronto", "contact", "hero-call")} href="/contact/" style={{ color: "var(--accent)" }}>
                 Book a free 20-minute call
               </Link>
               , optional, and never required to buy anything.
             </p>
           </RevealSection>
           <RevealSection delay={0.2}>
-            <EngagementFacts />
+            <EngagementFacts ctaPage="toronto" />
           </RevealSection>
         </div>
       </header>
@@ -537,7 +538,7 @@ export default async function AIVisibilityConsultantToronto() {
 
           <RevealSection delay={0.06}>
             <div className="inc-grid">
-              <Link href={CHECKER_URL} className="inc">
+              <Link {...cta("toronto", "checker", "ladder")} href={CHECKER_URL} className="inc">
                 <div
                   style={{
                     fontFamily: "var(--mono)",
@@ -561,7 +562,7 @@ export default async function AIVisibilityConsultantToronto() {
                 </span>
               </Link>
 
-              <Link href={AUDIT_URL} className="inc">
+              <Link {...cta("toronto", "audit", "ladder")} href={AUDIT_URL} className="inc">
                 <div
                   style={{
                     fontFamily: "var(--mono)",
@@ -609,7 +610,7 @@ export default async function AIVisibilityConsultantToronto() {
                 </span>
               </Link>
 
-              <Link href={OFFERS.monitor.href} className="inc">
+              <Link {...cta("toronto", "contact", "ladder-monitor")} href={OFFERS.monitor.href} className="inc">
                 <div
                   style={{
                     fontFamily: "var(--mono)",
@@ -877,7 +878,7 @@ export default async function AIVisibilityConsultantToronto() {
               }}
             >
               All of it is published rather than described:{" "}
-              <Link href="/methodology/" style={LINK}>
+              <Link {...cta("toronto", "methodology", "measurement")} href="/methodology/" style={LINK}>
                 the methodology
               </Link>
               ,{" "}
@@ -1012,7 +1013,7 @@ export default async function AIVisibilityConsultantToronto() {
                 Six platforms reviewed, a written report, a prioritized action plan,
                 and a walkthrough call. Scoped to your business, no retainer.
               </p>
-              <Link
+              <Link {...cta("toronto", "audit", "final")}
                 href={AUDIT_URL}
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
@@ -1028,7 +1029,7 @@ export default async function AIVisibilityConsultantToronto() {
                 }}
               >
                 Or email{" "}
-                <a href="mailto:hami@hamitahm.com" style={{ color: "var(--ink)" }}>
+                <a {...cta("toronto", "contact", "final-email")} href="mailto:hami@hamitahm.com" style={{ color: "var(--ink)" }}>
                   hami@hamitahm.com
                 </a>
               </p>

@@ -5,6 +5,7 @@ import { HOMECALC_PROOF } from "@/lib/homecalc-proof";
 import { STUDY } from "@/lib/citation-study";
 import { SNAPSHOT } from "@/lib/ai-citation-proof";
 import { OFFERS } from "@/lib/offers";
+import { cta } from "@/lib/cta";
 
 const SLUG = "/methodology/";
 
@@ -395,7 +396,7 @@ export default function MethodologyPage() {
             <p style={pStyle}>
               That is not evasiveness; it is the deliverable. You receive it in full,
               written down, in the{" "}
-              <Link href={OFFERS.audit.href} style={linkStyle}>
+              <Link {...cta("methodology", "audit", "inline")} href={OFFERS.audit.href} style={linkStyle}>
                 {OFFERS.audit.name}
               </Link>
               : documented so your own team can execute it, or so I can implement
@@ -478,10 +479,10 @@ export default function MethodologyPage() {
                   position: "relative",
                 }}
               >
-                <Link href={OFFERS.checker.href} className="btn btn-primary">
+                <Link {...cta("methodology", "checker", "final")} href={OFFERS.checker.href} className="btn btn-primary">
                   Run the free checker <span className="arr">&rarr;</span>
                 </Link>
-                <Link href={OFFERS.audit.href} className="btn btn-ghost">
+                <Link {...cta("methodology", "audit", "final")} href={OFFERS.audit.href} className="btn btn-ghost">
                   Or book the full audit
                 </Link>
               </div>

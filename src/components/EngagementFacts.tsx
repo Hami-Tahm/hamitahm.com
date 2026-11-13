@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AUDIT_PLATFORMS, OFFERS } from "@/lib/offers";
+import { cta } from "@/lib/cta";
 
 /**
  * "At a glance" facts box for the pages AI engines already recommend
@@ -19,7 +20,15 @@ const REVIEWED_LABEL = "November 10, 2026";
 
 type Variant = "audit" | "agency";
 
-export default function EngagementFacts({ variant = "audit" }: { variant?: Variant }) {
+export default function EngagementFacts({
+  variant = "audit",
+  ctaPage,
+}: {
+  variant?: Variant;
+  /** CIT-05: page key for CTA tracking (src/lib/cta.ts). Omit to leave untracked. */
+  ctaPage?: string;
+}) {
+  const track = (dest: "sample-report" | "methodology" | "checker") => (ctaPage ? cta(ctaPage, dest, "facts") : {});
   const rows: [string, string][] =
     variant === "agency"
       ? [
@@ -87,15 +96,15 @@ export default function EngagementFacts({ variant = "audit" }: { variant?: Varia
         ))}
       </dl>
       <p style={{ marginTop: 14, fontSize: 14.5, color: "var(--muted)", lineHeight: 1.6 }}>
-        <Link href="/ai-visibility/sample-report/" style={{ color: "var(--accent)", fontWeight: 500 }}>
+        <Link href="/ai-visibility/sample-report/" style={{ color: "var(--accent)", fontWeight: 500 }} {...track("sample-report")}>
           Read a full sample report
         </Link>
         {" · "}
-        <Link href="/methodology/" style={{ color: "var(--accent)", fontWeight: 500 }}>
+        <Link href="/methodology/" style={{ color: "var(--accent)", fontWeight: 500 }} {...track("methodology")}>
           How I measure
         </Link>
         {" · "}
-        <Link href={OFFERS.checker.href} style={{ color: "var(--accent)", fontWeight: 500 }}>
+        <Link href={OFFERS.checker.href} style={{ color: "var(--accent)", fontWeight: 500 }} {...track("checker")}>
           Start with the free check
         </Link>
       </p>

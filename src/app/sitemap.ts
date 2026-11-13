@@ -178,11 +178,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/ai-visibility/answer-engine-optimization-consultant-canada/": "2026-08-11",
     "/ai-visibility/generative-engine-optimization-consultant-canada/": "2026-08-11",
     // Full pricing re-verification and accuracy-claim removals, 2026-10-02.
-    "/blog/peec-vs-profound-vs-airops/": "2026-10-02",
+    "/blog/peec-vs-profound-vs-airops/": "2026-11-13",
     "/blog/homecalc-ai-search-mortgage-ranking/": "2026-08-31",
     "/blog/hamitahm-ai-visibility-benchmark/": "2026-08-31",
     "/blog/homecalc-scrunch-citation-mention-gap/": "2026-09-07",
-    "/blog/scrunch-vs-otterly/": "2026-10-03",
+    "/blog/scrunch-vs-otterly/": "2026-11-13",
     "/blog/": "2026-10-02",
     "/blog/search-console-ai-tracker-prompts/": "2026-10-02",
     "/blog/track-perplexity-citations/": "2026-10-02",
@@ -196,7 +196,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Rewrote the "are AEO and GEO the same" answer, 2026-10-02.
     "/blog/aeo-vs-geo-vs-seo/": "2026-10-02",
     "/blog/ai-visibility-audit-checklist/": "2026-08-26",
-    "/blog/ai-visibility-tool-accuracy/": "2026-08-26",
+    "/blog/ai-visibility-tool-accuracy/": "2026-11-13",
     "/blog/ai-visibility-consultant-vs-agency-vs-tool/": "2026-08-26",
     "/blog/what-is-answer-engine-optimization/": "2026-08-16",
     "/blog/which-ai-platform-matters-most/": "2026-08-10",

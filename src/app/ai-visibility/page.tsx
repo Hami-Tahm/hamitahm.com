@@ -7,6 +7,7 @@ import { HOMECALC_PROOF, HOMECALC_CLAIMS, HOMECALC_LATEST, HOMECALC_LATEST_STAT 
 import { LATEST_QUARTER } from "@/lib/citation-study";
 import { OFFERS } from "@/lib/offers";
 import { QUOTABLE_FACTS } from "@/lib/identity";
+import { cta, ctaDestinationFor } from "@/lib/cta";
 
 const PORTRAIT_SRC = "/images/hami-tahm/hami-tahm-portrait.png";
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
@@ -333,14 +334,14 @@ export default function AIVisibilityPage() {
                 alignItems: "center",
               }}
             >
-              <Link
+              <Link {...cta("hub", "checker", "hero")}
                 href="/ai-visibility/ai-visibility-checker/"
                 className="btn btn-primary"
               >
                 Check my AI visibility for free{" "}
                 <span className="arr">&rarr;</span>
               </Link>
-              <Link href={AUDIT_URL} className="btn btn-ghost">
+              <Link {...cta("hub", "audit", "hero-secondary")} href={AUDIT_URL} className="btn btn-ghost">
                 See the audit
               </Link>
             </div>
@@ -367,7 +368,7 @@ export default function AIVisibilityPage() {
             >
               {HOMECALC_LATEST.citations}{" "}Microsoft Copilot citations in 3 months
               {" "}on a site I own ({HOMECALC_LATEST.window}) &middot;{" "}
-              <Link href="/methodology/" style={{ color: "var(--accent)" }}>
+              <Link {...cta("hub", "methodology", "proof")} href="/methodology/" style={{ color: "var(--accent)" }}>
                 public methodology
               </Link>{" "}
               &middot; no retainer to start
@@ -524,7 +525,7 @@ export default function AIVisibilityPage() {
 
           <RevealSection delay={0.06}>
             <div className="inc-grid" style={{ marginTop: 34 }}>
-              <Link href={AUDIT_URL} className="inc">
+              <Link {...cta("hub", "audit", "services")} href={AUDIT_URL} className="inc">
                 <h3
                   style={{
                     fontFamily: "var(--serif)",
@@ -2067,7 +2068,7 @@ export default function AIVisibilityPage() {
           <RevealSection delay={0.1}>
             <div className="inc-grid" style={{ marginTop: 30 }}>
               {RESOURCES.map((r) => (
-                <Link key={r.href} href={r.href} className="inc">
+                <Link {...(ctaDestinationFor(r.href) ? cta("hub", ctaDestinationFor(r.href)!, "resources") : {})} key={r.href} href={r.href} className="inc">
                   <div
                     style={{
                       fontFamily: "var(--mono)",
@@ -2154,7 +2155,7 @@ export default function AIVisibilityPage() {
                     {q === "How do I check my AI visibility?" && (
                       <>
                         {" "}
-                        <Link
+                        <Link {...cta("hub", "audit", "faq")}
                           href={AUDIT_URL}
                           style={{ color: "var(--accent)", fontWeight: 500 }}
                         >
@@ -2203,7 +2204,7 @@ export default function AIVisibilityPage() {
                 Six platforms reviewed, written report, action plan, and
                 walkthrough call. Scoped to your business, no retainer.
               </p>
-              <Link
+              <Link {...cta("hub", "audit", "final")}
                 href={AUDIT_URL}
                 className="btn btn-primary"
                 style={{ position: "relative" }}

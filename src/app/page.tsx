@@ -5,6 +5,7 @@ import { EngineRotator } from "@/components/EngineRotator";
 import { latestWritingPosts } from "@/lib/writing-posts";
 import { HOMECALC_LATEST } from "@/lib/homecalc-proof";
 import FreeCheckFunnel from "@/components/FreeCheckFunnel";
+import { cta } from "@/lib/cta";
 
 export const metadata: Metadata = {
   // Trimmed to ~150 chars (was ~207 and would truncate in the SERP). Leads with the
@@ -64,7 +65,7 @@ export default function Home() {
                   2026-11-10: the three steps under it say what happens next
                   (check -> written report -> 20-minute call), shared with the
                   AEO/GEO landing pages via FreeCheckFunnel. */}
-              <FreeCheckFunnel booking={false} />
+              <FreeCheckFunnel booking={false} ctaPage="home" ctaPosition="hero" />
             </div>
           </RevealSection>
         </div>
@@ -148,7 +149,7 @@ export default function Home() {
                 text="Rivals are already showing up in the answers you're missing, using the same system I built and proved on my own products."
               />
             </div>
-            <Link
+            <Link {...cta("home", "checker", "proof")}
               href="/ai-visibility/ai-visibility-checker/"
               className="btn btn-primary"
               style={{ marginTop: 36 }}

@@ -4,6 +4,7 @@ import { RevealSection } from "@/components/Reveal";
 import AgencyPartnerForm from "@/components/AgencyPartnerForm";
 import { AUDIT_PLATFORMS, AUDIT_PLATFORM_COUNT_WORD, BOOKING_URL } from "@/lib/offers";
 import EngagementFacts from "@/components/EngagementFacts";
+import { cta } from "@/lib/cta";
 
 /**
  * /for-agencies/: the white-label entry point.
@@ -227,10 +228,10 @@ export default function ForAgencies() {
 
           <RevealSection delay={0.14}>
             <div style={{ marginTop: 32, display: "flex", gap: 18, flexWrap: "wrap", alignItems: "center" }}>
-              <Link href={BOOKING_URL} className="btn btn-primary">
+              <Link {...cta("agencies", "contact", "hero")} href={BOOKING_URL} className="btn btn-primary">
                 Talk about a partnership <span className="arr">&rarr;</span>
               </Link>
-              <Link
+              <Link {...cta("agencies", "sample-report", "hero-secondary")}
                 href="/ai-visibility/sample-report/"
                 style={{ fontFamily: "var(--mono)", fontSize: 13, color: "var(--faint)" }}
               >
@@ -242,7 +243,7 @@ export default function ForAgencies() {
             </p>
           </RevealSection>
           <RevealSection delay={0.2}>
-            <EngagementFacts variant="agency" />
+            <EngagementFacts variant="agency" ctaPage="agencies" />
           </RevealSection>
         </div>
       </header>
@@ -348,7 +349,7 @@ export default function ForAgencies() {
                     citations while the page it actually sells earned twelve. A sample that only
                     shows wins tells you nothing about what happens when the answer is
                     unflattering.{" "}
-                    <Link href="/ai-visibility/sample-report/" style={linkStyle}>
+                    <Link {...cta("agencies", "sample-report", "proof")} href="/ai-visibility/sample-report/" style={linkStyle}>
                       Read the full sample
                     </Link>
                     .
@@ -361,7 +362,7 @@ export default function ForAgencies() {
                   <>
                     How the measurement works is written down rather than described as proprietary
                     magic. That matters when you are the one in the room defending the numbers.{" "}
-                    <Link href="/methodology/" style={linkStyle}>
+                    <Link {...cta("agencies", "methodology", "proof")} href="/methodology/" style={linkStyle}>
                       Methodology
                     </Link>{" "}
                     and{" "}

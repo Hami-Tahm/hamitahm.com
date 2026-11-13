@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { cta } from "@/lib/cta";
 import { BOOKING_URL } from "@/lib/offers";
 import { BENCHMARK } from "@/lib/homecalc-benchmark-2026-10";
 
@@ -43,6 +44,8 @@ export default function FreeCheckFunnel({
   booking = true,
   proof = false,
   center = false,
+  ctaPage,
+  ctaPosition = "funnel",
 }: {
   /** Show the CTA buttons above the steps. */
   buttons?: boolean;
@@ -52,7 +55,12 @@ export default function FreeCheckFunnel({
   proof?: boolean;
   /** Centre the block (for the final CTA panels). */
   center?: boolean;
+  /** CIT-05: page key for CTA tracking (src/lib/cta.ts). Omit to leave untracked. */
+  ctaPage?: string;
+  /** CIT-05: position key, unique per page when the funnel appears twice. */
+  ctaPosition?: string;
 }) {
+  const track = (dest: "checker" | "contact") => (ctaPage ? cta(ctaPage, dest, ctaPosition) : {});
   return (
     <div style={{ textAlign: center ? "center" : "left" }}>
       {buttons && (
@@ -66,11 +74,11 @@ export default function FreeCheckFunnel({
             justifyContent: center ? "center" : "flex-start",
           }}
         >
-          <Link href={CHECKER_URL} className="btn btn-primary">
+          <Link href={CHECKER_URL} className="btn btn-primary" {...track("checker")}>
             Get your free AI visibility check <span className="arr">&rarr;</span>
           </Link>
           {booking && (
-            <Link href={BOOKING_URL} className="btn btn-ghost">
+            <Link href={BOOKING_URL} className="btn btn-ghost" {...track("contact")}>
               Or book a free call
             </Link>
           )}

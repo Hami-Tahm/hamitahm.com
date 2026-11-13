@@ -4,8 +4,8 @@ import Script from "next/script";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
-import { CtaTracking } from "@/components/CtaTracking";
 import { AttributionCapture } from "@/components/AttributionCapture";
+import { CtaTracker } from "@/components/CtaTracker";
 import { CANONICAL_DESCRIPTOR } from "@/lib/identity";
 
 const GA_ID = "G-Z1L4M2SD14";
@@ -408,8 +408,8 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-        {/* Single delegated listener that emits `cta_click` for every funnel CTA. */}
-        <CtaTracking />
+        {/* Single delegated listener: the only source of `cta_click` (CIT-05). */}
+        <CtaTracker />
         <AttributionCapture />
         <Nav />
         <main>{children}</main>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { RevealSection } from "@/components/Reveal";
 import { AuthorByline } from "@/components/AuthorByline";
 import { buildBlogSchema } from "@/lib/blog-schema";
+import ComparisonTable from "@/components/ComparisonTable";
 import { OFFERS, AUDIT_PRICE_DISPLAY, BOOKING_URL } from "@/lib/offers";
 
 const SLUG = "ai-visibility-tool-accuracy";
@@ -11,6 +12,16 @@ const ARTICLE_TITLE = "How to Evaluate AI Visibility Tool Accuracy";
 const ARTICLE_DESCRIPTION =
   "AI visibility platforms like Profound, AirOps, Peec, and Share-of-Model trackers all report a number, but they don't all measure the same thing the same way. A self-test protocol and the questions to ask any vendor before you trust their dashboard.";
 const DATE_PUBLISHED = "2026-08-26";
+// CIT-06 (2026-11-13): reviewed. Vendor facts re-checked in a browser against
+// peec.ai/pricing, tryprofound.com/pricing and airops.com/pricing. Share-of-model
+// definition aligned with the source it links to (share of AI answers, not share of
+// all brand mentions). Coverage now names the entry-vs-top numbers it relies on.
+const DATE_MODIFIED = "2026-11-13";
+const VENDOR_SRC = {
+  peec: "https://peec.ai/pricing",
+  profound: "https://www.tryprofound.com/pricing",
+  airops: "https://www.airops.com/pricing",
+} as const;
 const HUB_URL = "/ai-visibility/";
 const DEFINITION_URL = "/blog/what-is-ai-visibility/";
 const HOW_TO_CHECK_URL = "/blog/how-to-check-ai-visibility/";
@@ -34,7 +45,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Is Share of Model a specific tool or a metric?",
-    a: "Both, depending on who's using the phrase. As a metric, share of model is your brand's mentions as a percentage of all brand mentions in your category, across the AI platforms your buyers use, the AI-era equivalent of share of voice. Several vendors also sell a product under that name. Before comparing a \"share of model\" number between two tools, confirm both are measuring the same set of platforms and prompts, or the comparison is meaningless.",
+    a: "Both, depending on who's using the phrase. As a metric, share of model is the share of AI answers in your category that mention or recommend your brand, across the AI platforms your buyers use: the AI-era equivalent of share of voice. The phrase also turns up as a product label. Before comparing a \"share of model\" number between two tools, confirm both are measuring the same set of platforms and prompts, or the comparison is meaningless.",
   },
   {
     q: "Should I trust a vendor's own accuracy claims?",
@@ -47,6 +58,7 @@ const blogGraph = buildBlogSchema({
   title: ARTICLE_TITLE,
   description: ARTICLE_DESCRIPTION,
   datePublished: DATE_PUBLISHED,
+  dateModified: DATE_MODIFIED,
 })["@graph"];
 
 const structuredData = {
@@ -180,6 +192,19 @@ export default function AIVisibilityToolAccuracyPost() {
 
           <RevealSection delay={0.18}>
             <AuthorByline date="August 26, 2026" readTime="10 min read" />
+            <p
+              style={{
+                marginTop: 18,
+                fontSize: 14,
+                lineHeight: 1.6,
+                color: "var(--faint)",
+                fontStyle: "italic",
+              }}
+            >
+              <strong style={{ fontStyle: "normal" }}>Last reviewed: November 2026</strong>
+              {" "}&middot; vendor plan details re-checked on each vendor&rsquo;s
+              own pricing page on November 13, 2026.
+            </p>
           </RevealSection>
         </div>
       </header>
@@ -291,8 +316,22 @@ export default function AIVisibilityToolAccuracyPost() {
               <Link href={COMPARISON_URL} style={linkStyle}>
                 Profound vs AirOps vs Peec comparison
               </Link>{" "}
-              found each vendor's entry-level plan covers meaningfully fewer
-              engines than the number in its marketing headline.
+              found each vendor's cheapest way in covers meaningfully fewer
+              engines than the number in its marketing headline. As of
+              November 13, 2026:{" "}
+              <a href={VENDOR_SRC.peec} target="_blank" rel="noopener noreferrer" style={linkStyle}>
+                Peec&rsquo;s
+              </a>{" "}
+              Starter plan tracks 3 models against up to 26 on Enterprise;{" "}
+              <a href={VENDOR_SRC.airops} target="_blank" rel="noopener noreferrer" style={linkStyle}>
+                AirOps&rsquo;
+              </a>{" "}
+              Solo plan covers ChatGPT only against 10+ engines on Pro; and{" "}
+              <a href={VENDOR_SRC.profound} target="_blank" rel="noopener noreferrer" style={linkStyle}>
+                Profound
+              </a>{" "}
+              no longer sells an entry brand plan: its free trial covers 3
+              engines, and its only brand plan, Enterprise, up to 10.
             </p>
             <h3 style={h3Style}>Sample size and repetition</h3>
             <p style={{ marginBottom: 26 }}>
@@ -319,6 +358,18 @@ export default function AIVisibilityToolAccuracyPost() {
               your brand name appearing in a disclaimer or a competitor list
               is not the same as being recommended.
             </p>
+            <ComparisonTable
+              caption="The four dimensions at a glance"
+              rowHeader="Dimension"
+              columns={["What to check", "Ask the vendor"]}
+              rows={[
+                { label: "Coverage", values: ["Which engines are queried on the plan you would buy", "Which engines are on my tier, not the top tier?"] },
+                { label: "Sample size", values: ["How many prompts run, and how often each repeats", "How many runs per prompt before a result is reported?"] },
+                { label: "Freshness", values: ["When the dashboard number was last refreshed", "How often is each prompt re-run?"] },
+                { label: "Verification", values: ["Whether a person or a script counts a mention", "How do you tell a recommendation from a passing mention?"] },
+              ]}
+              minWidth={520}
+            />
           </RevealSection>
 
           <RevealSection>
@@ -433,10 +484,10 @@ export default function AIVisibilityToolAccuracyPost() {
                 Share of model
               </a>{" "}
               is used two ways in this space, and mixing them up is its own
-              accuracy problem. As a metric, it's your brand's mentions as a
-              percentage of all brand mentions in your category: the
-              AI-era version of share of voice. Several vendors also sell a
-              product under that literal name. Before comparing a share-of-
+              accuracy problem. As a metric, it&rsquo;s the share of AI
+              answers in your category that mention or recommend your brand:
+              the AI-era version of share of voice. The phrase also turns up
+              as a product label. Before comparing a share-of-
               model number pulled from two different tools, confirm they
               covered the same platforms and the same prompt set. Otherwise
               you're comparing two different measurements that happen to

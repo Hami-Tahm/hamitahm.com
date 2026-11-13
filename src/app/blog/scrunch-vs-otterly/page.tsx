@@ -3,6 +3,7 @@ import Link from "next/link";
 import { RevealSection } from "@/components/Reveal";
 import { AuthorByline } from "@/components/AuthorByline";
 import { buildBlogSchema } from "@/lib/blog-schema";
+import ComparisonTable from "@/components/ComparisonTable";
 
 const SLUG = "scrunch-vs-otterly";
 
@@ -10,15 +11,33 @@ const ARTICLE_TITLE = "Scrunch vs Otterly.AI: Pricing & Fit (2026)";
 const ARTICLE_DESCRIPTION =
   "Scrunch vs. Otterly.AI compared on pricing, AI-engine coverage, and what each is built to do, sourced from each vendor's own pricing page.";
 const DATE_PUBLISHED = "2026-09-07";
-const DATE_VERIFIED_HUMAN = "October 3, 2026";
-const DATE_VERIFIED = "2026-10-03";
-// 2026-10-03: both pricing pages re-read in a browser. Scrunch Core unchanged ($250,
-// 125 prompts, 4 engines, 5 users, 25-page site map). Otterly unchanged except
-// Enterprise: now custom, "starting from 1,000 search prompts", no $1,000 floor.
+const DATE_VERIFIED_HUMAN = "November 13, 2026";
+const DATE_VERIFIED = "2026-11-13";
+// 2026-11-13 (CIT-06): both pricing pages re-read in a real browser (rendered page,
+// Canada). Scrunch Core unchanged ($250, 125 prompts, 4 LLMs, 5 site audits/month,
+// 1 brand workspace, 5 users, 25-page site map, 1 country). Correction: AXP shows a dash (not included) on
+// Core and "Custom" on Enterprise, so it is Enterprise-only; earlier copy implied Core.
+// Otterly moved to credits: every engine on every plan; Lite/Standard/Premium =
+// 2,000/15,000/50,000 credits. The browser view showed these as 20/160/535 prompts on
+// 3 of 7 engines. The 4-engine figures (16/120/403) are DERIVED: credits / (4 engines x
+// 31 daily runs), and match what a plain fetch showed. Comparisons use the 4-engine
+// basis because Scrunch Core tracks 4 engines (like for like). Also re-checked in the
+// browser: Scrunch Core "Page Optimizations 1 / month"; Otterly 200k agent analytics
+// events/month, 2,000 API + 2,000 MCP requests/month from Standard, "1 workspace" on
+// Lite and Unlimited above, Enterprise "Unlimited AI engines". The
+// per-engine add-ons and the $99-per-100-prompts packs are gone (credit packs instead).
+// ⚠️ A plain HTTP fetch of scrunch.com/pricing returned a DIFFERENT plan set
+// (Starter/Growth) the same day. The rendered page a visitor sees showed Core, so Core
+// is what this page states. Re-check in a browser, not with a fetcher.
 
 const SRC = {
   scrunch: "https://scrunch.com/pricing",
+  scrunchAgencies: "https://scrunch.com/agencies",
   otterly: "https://otterly.ai/pricing",
+  otterlyEngines: "https://help.otterly.ai/which-ai-searches-does-otterlyai-support",
+  otterlyTrial: "https://help.otterly.ai/free-trial",
+  otterlyAudit: "https://help.otterly.ai/what-does-the-geo-audit-do",
+  clarityBots: "https://clarity.microsoft.com/blog/ai-bot-activity-in-clarity/",
 } as const;
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
@@ -36,7 +55,7 @@ const BEST_FOR_ROWS = [
   {
     label: "Multi-country / global brand",
     scrunch: "1 country on Core; custom on Enterprise",
-    otterly: "Best fit (50+ countries from Lite)",
+    otterly: "Best fit (unlimited countries and languages on every plan)",
   },
   {
     label: "Agency managing multiple clients",
@@ -45,13 +64,13 @@ const BEST_FOR_ROWS = [
   },
   {
     label: "Fixing pages for AI crawlers, not just tracking",
-    scrunch: "Best fit (Site Maps, AXP, Page Optimizations built in)",
-    otterly: "Tracking-first; GEO URL Audits included but less central",
+    scrunch: "Best fit (Site Maps and Page Optimizations on Core; AXP on Enterprise)",
+    otterly: "Tracking-first; GEO Audit included on every plan, but less central",
   },
   {
-    label: "Enterprise, full 9-engine coverage",
+    label: "Enterprise / full engine coverage",
     scrunch: "Engines included; price fully custom, none published",
-    otterly: "Add-on engines priced per tier; Enterprise custom-priced, from 1,000 prompts",
+    otterly: "All 7 engines on every plan, paid in credits; Enterprise lists \"unlimited AI engines\", custom-priced from 1,000 prompts",
   },
 ] as const;
 
@@ -69,22 +88,22 @@ const QUICK_COMPARISON_ROWS = [
   {
     label: "Prompts included at that price",
     scrunch: "125 prompt variants (Core)",
-    otterly: "15 search prompts (Lite)",
+    otterly: "2,000 credits a month (Lite): 20 prompts on 3 engines, or about 16 on 4",
   },
   {
     label: "Engines on the entry plan",
     scrunch: "ChatGPT, Perplexity, Google AI Overviews, Microsoft Copilot",
-    otterly: "ChatGPT, Perplexity, Google AI Overviews, Microsoft Copilot",
+    otterly: "Any of 7 on every plan (ChatGPT, AI Overviews, Perplexity, Copilot, AI Mode, Gemini, Claude), paid in credits",
   },
   {
     label: "Engines at the top tier",
     scrunch: "9 on Enterprise (adds Claude, Gemini, Meta AI, Google AI Mode, Grok)",
-    otterly: "7 total; Claude, Gemini, Google AI Mode are paid add-ons at any tier",
+    otterly: "All 7 on every plan (a Claude answer uses 3 credits); Enterprise lists \"unlimited AI engines\"",
   },
   {
     label: "Site technical audit",
     scrunch: "Site Maps: per-page 0-100 audit score, up to 25 pages on Core",
-    otterly: "GEO URL Audits: 1,000/mo on Lite, 5,000 on Standard, 10,000 on Premium",
+    otterly: "GEO Audit on every plan; no monthly cap published",
   },
   {
     label: "AI agent / bot traffic tracking",
@@ -121,23 +140,23 @@ const QUICK_COMPARISON_ROWS = [
 const FAQ_ITEMS = [
   {
     q: "Is Scrunch or Otterly cheaper?",
-    a: "Otterly, at every published tier. Otterly's Lite plan is $29/month for 15 prompts, with no Scrunch equivalent below its $250/month Core plan. At comparable prompt volume the gap narrows: Otterly's Standard plan is $189/month for 100 prompts ($1.89/prompt) against Scrunch Core's $250/month for 125 prompts ($2.00/prompt), close enough that prompt cost alone shouldn't decide it. Figures read from both vendors' pricing pages on September 7, 2026.",
+    a: "Otterly, at every published tier. Otterly's Lite plan is $29/month, with no Scrunch equivalent below its $250/month Core plan. Compared like for like on four engines (Scrunch Core tracks four), Otterly is also cheaper per prompt: its Standard plan is $189/month for 15,000 credits, which works out to about 120 prompts tracked daily on four engines (roughly $1.58 a prompt; Otterly's own table shows 160 on three), against Scrunch Core's $250/month for 125 prompts ($2.00 a prompt). Otterly's prompt count rises or falls with the number of engines you track, so treat unit cost as a guide. Figures read from both vendors' pricing pages on November 13, 2026.",
   },
   {
     q: "Do Scrunch and Otterly track the same AI engines?",
-    a: "Their entry plans track the identical four: ChatGPT, Perplexity, Google AI Overviews and Microsoft Copilot. Past that, the paths differ. Otterly sells Claude, Gemini and Google AI Mode as priced add-ons on any tier (for example, Claude is $29/month extra on Lite, $109 on Standard, $439 on Premium), so you can see exactly what full coverage costs before buying. Scrunch bundles its full nine-engine list (adding Claude, Gemini, Meta AI, Google AI Mode and Grok) into Enterprise only, and Enterprise carries no published price at all.",
+    a: "Not on the same terms. Scrunch's Core plan tracks four: ChatGPT, Perplexity, Google AI Overviews and Microsoft Copilot; its full nine-engine list (adding Claude, Gemini, Meta AI, Google AI Mode and Grok) is Enterprise-only, and Enterprise carries no published price. Otterly makes all seven of its engines (ChatGPT, Google AI Overviews, Perplexity, Microsoft Copilot, Google AI Mode, Gemini and Claude) available on every plan and meters them in monthly credits, with a Claude answer counting as three credits, so you can work out what fuller coverage costs before buying.",
   },
   {
     q: "Which tool is better for an agency with multiple clients?",
-    a: "Otterly, on what's published. Its Standard and Premium tiers include unlimited workspaces, and it runs an explicit Agency Partner program (per-client workspace management, pitch workspaces for prospects before they sign, white-labeled reporting via Looker Studio, consolidated billing). Scrunch's Core plan includes one brand workspace; multiple workspaces require the custom-priced Enterprise tier, and Scrunch's pricing page doesn't describe an agency-specific program the way Otterly's does.",
+    a: "Otterly, on what's published. Its Standard and Premium tiers include unlimited workspaces, and it runs an explicit Agency Partner program (per-client workspace management, pitch workspaces for prospects before they sign, white-labeled reporting via Looker Studio, consolidated billing). Scrunch's Core plan includes one brand workspace and multiple workspaces require the custom-priced Enterprise tier; Scrunch does run an Agency Partner Program, but it doesn't publish per-client workspace pricing the way Otterly does.",
   },
   {
     q: "Does either tool actually fix AI visibility problems, or just track them?",
-    a: "Scrunch goes further on the built-in-fix side: Site Maps scores every tracked page 0-100 on its own AI-accessibility audit, AXP (its Agent Experience Platform) serves an optimized version of pages to AI agents, and a basic content-generation feature is included from Core. Otterly is closer to Peec in this comparison series: strong on measurement (citations, share of voice, sentiment, domain ranking), with GEO URL Audits included but positioned as a diagnostic, not an on-page fix. Neither replaces a written, prioritized action plan built for your own site.",
+    a: "Scrunch goes further on the built-in-fix side: Site Maps scores every tracked page 0-100 on its own AI-accessibility audit, basic content generation and one page optimization a month are included from Core, and AXP (its Agent Experience Platform, Enterprise-only) serves an optimized version of pages to AI agents. Otterly is closer to Peec in this comparison series: strong on measurement (citations, share of voice, sentiment, domain ranking), with its GEO Audit included but positioned as a diagnostic, not an on-page fix. Neither replaces a written, prioritized action plan built for your own site.",
   },
   {
     q: "Is paying for AI bot traffic tracking worth it, when Microsoft Clarity does this for free?",
-    a: "Not for that feature alone. Microsoft Clarity launched an AI Bot Activity dashboard in January 2026 (reading real server logs from a connected CDN, not client-side JS) and added a robots.txt-violations layer in June 2026, both at Clarity's standard price of $0. That covers the same ground as the \"AI agent/bot traffic tracking\" checkbox on Scrunch's Core plan and Otterly's Agent Analytics feature: which AI crawlers are hitting your site and whether they're following robots.txt. What Clarity does not do is score individual pages for AI-readability or serve an optimized version of a page to an agent; that's Scrunch's Site Maps and AXP specifically, and Otterly's GEO URL Audits cover the diagnostic half without the serving part either. If bot-traffic visibility is the only thing you need, start with the free tool.",
+    a: "Not for that feature alone. Microsoft Clarity launched an AI Bot Activity dashboard in January 2026 (reading real server logs from a connected CDN, not client-side JS) and added a robots.txt-violations layer in June 2026, both at Clarity's standard price of $0. That covers the same ground as the \"AI agent/bot traffic tracking\" checkbox on Scrunch's Core plan and Otterly's Agent Analytics feature: which AI crawlers are hitting your site and whether they're following robots.txt. What Clarity does not do is score individual pages for AI-readability or serve an optimized version of a page to an agent; that's Scrunch's Site Maps and AXP specifically, and Otterly's GEO Audit covers the diagnostic half without the serving part either. If bot-traffic visibility is the only thing you need, start with the free tool.",
   },
   {
     q: "Do I need a tool or a consultant for AI visibility?",
@@ -150,7 +169,7 @@ const blogGraph = buildBlogSchema({
   title: ARTICLE_TITLE,
   description: ARTICLE_DESCRIPTION,
   datePublished: DATE_PUBLISHED,
-  dateModified: "2026-10-03",
+  dateModified: DATE_VERIFIED,
 })["@graph"];
 
 const structuredData = {
@@ -289,9 +308,10 @@ export default function ScrunchVsOtterlyPost() {
                 fontStyle: "italic",
               }}
             >
-              Published September 7, 2026 &middot; every price and feature
-              read from the vendors&rsquo; own pricing pages on{" "}
-              {DATE_VERIFIED_HUMAN}.
+              Published September 7, 2026 &middot;{" "}
+              <strong style={{ fontStyle: "normal" }}>Last reviewed: November 2026</strong>
+              {" "}&middot; every price and feature read from the vendors&rsquo;
+              own pages on {DATE_VERIFIED_HUMAN}.
             </p>
           </RevealSection>
         </div>
@@ -346,20 +366,21 @@ export default function ScrunchVsOtterlyPost() {
               >
                 <strong>Otterly</strong>{" "}if price, multi-country reach or
                 agency workspace management decide it: it publishes a full
-                pricing ladder from $29/month, covers 50+ countries even on
-                its cheapest plan, and runs a named agency program.{" "}
+                pricing ladder from $29/month, covers unlimited countries and
+                languages even on its cheapest plan, and runs a named agency
+                program.{" "}
                 <strong>Scrunch</strong>{" "}if the job includes fixing what AI
                 crawlers see on your own pages, not just measuring it: site
-                audits, an Agent Experience Platform and basic content
-                generation are built in from its $250/month Core plan, at a
-                price Otterly doesn&rsquo;t have an equivalent tier for.
+                audits, page optimizations and basic content generation are
+                built in from its $250/month Core plan, and its Agent
+                Experience Platform is added on Enterprise.
                 <br />
                 <br />
-                Both track the identical four engines on their entry
-                plans. Coverage past that is priced two different ways:
-                Otterly sells extra engines à la carte with a listed price
-                per tier; Scrunch folds full coverage into an Enterprise plan
-                with no published number at all.
+                Engine coverage is priced two different ways: Otterly
+                opens all seven of its engines on every plan and meters them
+                in published monthly credits; Scrunch tracks four on Core and
+                folds its full nine into an Enterprise plan with no published
+                number at all.
               </p>
             </div>
           </RevealSection>
@@ -406,6 +427,23 @@ export default function ScrunchVsOtterlyPost() {
                 accuracy.
               </p>
               <p style={{ margin: "12px 0 0" }}>
+                <strong>Method and sources.</strong>{" "}Each pricing page was
+                read as a visitor sees it, in a browser, on{" "}
+                {DATE_VERIFIED_HUMAN}. Per-prompt costs on four engines are my
+                own arithmetic from Otterly&rsquo;s published credits. Scrunch:{" "}
+                <a href={SRC.scrunch} target="_blank" rel="noopener noreferrer" style={linkStyle}>pricing</a>,{" "}
+                <a href={SRC.scrunchAgencies} target="_blank" rel="noopener noreferrer" style={linkStyle}>agencies</a>.
+                Otterly:{" "}
+                <a href={SRC.otterly} target="_blank" rel="noopener noreferrer" style={linkStyle}>pricing</a>,{" "}
+                <a href={SRC.otterlyEngines} target="_blank" rel="noopener noreferrer" style={linkStyle}>engines supported</a>,{" "}
+                <a href={SRC.otterlyTrial} target="_blank" rel="noopener noreferrer" style={linkStyle}>free trial</a>,{" "}
+                <a href={SRC.otterlyAudit} target="_blank" rel="noopener noreferrer" style={linkStyle}>GEO Audit</a>.
+                Microsoft Clarity:{" "}
+                <a href={SRC.clarityBots} target="_blank" rel="noopener noreferrer" style={linkStyle}>AI Bot Activity</a>.
+                Vendors change plans often; if a page here disagrees with the
+                vendor&rsquo;s, the vendor&rsquo;s page wins.
+              </p>
+              <p style={{ margin: "12px 0 0" }}>
                 <strong>Disclosure.</strong>{" "}I hold a paid Scrunch account
                 for HomeCalc.ca and no commercial relationship with either
                 company: no affiliate commission, no payment, no free access
@@ -421,7 +459,7 @@ export default function ScrunchVsOtterlyPost() {
             <p style={{ marginBottom: 26 }}>
               Scrunch and Otterly both get pitched as &ldquo;AI visibility
               tracking,&rdquo; and on the entry plan they genuinely overlap:
-              same four engines, a prompt-based pricing model, competitor
+              the same core engines, prompt-based tracking, competitor
               benchmarking. Past the entry plan they diverge. Otterly stays a
               measurement tool end to end and publishes a full price ladder
               for it. Scrunch adds a second job, fixing what it measures
@@ -478,15 +516,15 @@ export default function ScrunchVsOtterlyPost() {
               <strong style={labelStyle}>Standout feature:</strong>{" "}Site
               Maps, a per-page audit that scores every tracked page 0-100 on
               AI accessibility and shows which pages an AI agent actually
-              crawls, paired with AXP (Agent Experience Platform), which
-              serves an optimized version of a page to AI agents rather than
-              only reporting a score. Neither Otterly nor the three tools in
+              crawls, paired on Enterprise with AXP (Agent Experience
+              Platform), which serves an optimized version of a page to AI
+              agents rather than only reporting a score. Neither Otterly nor the three tools in
               the companion Peec/Profound/AirOps comparison publish an
               equivalent on-page fix layer.
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>What it doesn&rsquo;t include at
-              Core:</strong>{" "}API access, MCP access, expanded model
+              Core:</strong>{" "}AXP, API access, MCP access, expanded model
               coverage, SSO beyond Google, and more than one brand workspace
               are all Enterprise-only, and Enterprise carries no published
               price. A prospective buyer who needs any one of those has to
@@ -526,9 +564,13 @@ export default function ScrunchVsOtterlyPost() {
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>What it tracks:</strong>{" "}Otterly
               runs a scheduled prompt set (daily tracking frequency on every
-              tier) across ChatGPT, Google AI Overviews, Perplexity and
-              Microsoft Copilot, with Claude, Google AI Mode and Gemini
-              available as priced add-ons on any plan. It reports a Brand
+              tier) across any of{" "}
+              <a href={SRC.otterlyEngines} target="_blank" rel="noopener noreferrer" style={linkStyle}>
+                seven engines
+              </a>{" "}
+              (ChatGPT, Google AI Overviews, Perplexity, Microsoft Copilot,
+              Google AI Mode, Gemini and Claude), all available on every plan
+              and paid for in monthly credits. It reports a Brand
               Visibility Index, domain ranking, link-citation analysis, and
               recommendations, plus, from Standard up, Agent Analytics for
               AI-referred traffic to your own site and a Looker Studio
@@ -536,32 +578,40 @@ export default function ScrunchVsOtterlyPost() {
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>Standout feature:</strong>{" "}the
-              published, per-tier add-on pricing for extra engines. Wanting
-              Claude tracking on the $29 Lite plan costs a stated $29/month
-              more; wanting it on Premium costs $439/month more. Whatever the
-              final number, it comes from Otterly&rsquo;s own page, not a
-              sales call.
+              credit model. Every engine is available on every plan, each
+              answer uses credits, and a Claude answer counts as three. What
+              wider coverage costs can be worked out from Otterly&rsquo;s own
+              page, not a sales call.
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>What it doesn&rsquo;t track:</strong>{" "}
-              on-page fixes. GEO URL Audits are included at meaningful volume
-              (1,000/month even on Lite, up to 10,000 on Premium), but
-              Otterly&rsquo;s own page frames these as diagnostic output, not
-              an applied optimization the way Scrunch&rsquo;s AXP is
-              positioned. Notably, this audit tool isn&rsquo;t gated behind a
-              paid tier at all: the free trial itself includes 100 GEO URL
-              Audits, each scoring a page on three separate axes (static vs.
-              dynamic rendering, content analysis, structured data) rather
-              than the single 0-100 number Scrunch&rsquo;s Site Maps shows per
-              page, tested directly on this site&rsquo;s own trial account.
+              on-page fixes. The{" "}
+              <a href={SRC.otterlyAudit} target="_blank" rel="noopener noreferrer" style={linkStyle}>
+                GEO Audit
+              </a>{" "}
+              is included on every plan, with no monthly cap published, but
+              Otterly frames it as diagnostic output, not an applied
+              optimization the way Scrunch&rsquo;s AXP is positioned. It
+              isn&rsquo;t gated behind a paid tier either: Otterly&rsquo;s{" "}
+              <a href={SRC.otterlyTrial} target="_blank" rel="noopener noreferrer" style={linkStyle}>
+                free trial
+              </a>{" "}
+              lists GEO audits with no limit. Each audit reports separate
+              results (content analysis including static vs. dynamic
+              rendering, readiness, and structured data) rather than the
+              single 0-100 number Scrunch&rsquo;s Site Maps shows per page,
+              which I saw directly on this site&rsquo;s own trial account.
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>Pricing:</strong>{" "}Lite $29/month
-              (15 prompts), Standard $189/month (100 prompts, &ldquo;Most
-              Popular&rdquo;), Premium $489/month (400 prompts), Enterprise
-              custom-priced from 1,000 prompts. Annual billing takes 15% off any tier. Extra
-              prompts can be added at $99/month per 100 on Standard and
-              Premium.{" "}
+              (2,000 credits), Standard $189/month (15,000 credits), Premium
+              $489/month (50,000 credits), Enterprise custom-priced from 1,000
+              prompts. Otterly&rsquo;s table shows those credits as 20, 160 and
+              535 prompts tracked daily on three engines; on four engines the
+              same credits work out to about 16, 120 and 403. More engines means
+              fewer prompts. Annual billing takes 15% off.
+              Extra credit packs are $65/month for 5,000 on Standard and
+              $99/month for 10,000 on Premium; Lite can&rsquo;t add any.{" "}
               <a href={SRC.otterly} target="_blank" rel="noopener noreferrer" style={linkStyle}>
                 Otterly pricing
               </a>
@@ -569,8 +619,8 @@ export default function ScrunchVsOtterlyPost() {
             </p>
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>Best for:</strong>{" "}Solo marketers
-              and small teams who want to start cheap and scale by adding
-              prompts and engines individually; agencies running AI
+              and small teams who want to start cheap and scale by buying
+              credits; agencies running AI
               visibility as a service across many client workspaces; brands
               in multiple countries from day one.
             </p>
@@ -591,12 +641,13 @@ export default function ScrunchVsOtterlyPost() {
             <h3 style={h3Style}>Scrunch vs Otterly: which is cheaper?</h3>
             <p style={{ marginBottom: 26 }}>
               Otterly, without qualification, at the entry tier: $29/month
-              against Scrunch&rsquo;s $250/month minimum. At matched prompt
-              volume the gap narrows a lot: Otterly Standard is $1.89 per
-              prompt (100 prompts for $189), Scrunch Core is $2.00 per
-              prompt (125 for $250). Neither publishes an Enterprise number
+              against Scrunch&rsquo;s $250/month minimum. Per prompt, on the
+              same four engines Scrunch Core tracks, it is cheaper too:
+              Otterly Standard works out to about $1.58 (roughly 120 prompts
+              for $189, our calculation from its credits), Scrunch Core to
+              $2.00 (125 for $250). Neither publishes an Enterprise number
               you can compare directly. Otterly used to state a $1,000/month
-              floor; as of October 2026 it lists Enterprise as custom-priced,
+              floor; since October 2026 it has listed Enterprise as custom-priced,
               starting from 1,000 prompts, the same &ldquo;talk to us&rdquo;
               position as Scrunch.
             </p>
@@ -607,9 +658,9 @@ export default function ScrunchVsOtterlyPost() {
               dashboard, both work, and Otterly gets you one for less money.
               If the deliverable includes changing what an AI agent actually
               receives when it crawls your page, Scrunch&rsquo;s Site Maps
-              and AXP are built for that specifically; Otterly&rsquo;s GEO
-              URL Audits measure the same territory but hand the fix back to
-              you.
+              and AXP are built for that specifically (AXP on Enterprise);
+              Otterly&rsquo;s GEO Audit measures the same territory but hands
+              the fix back to you.
             </p>
 
             <h3 style={h3Style}>
@@ -622,8 +673,12 @@ export default function ScrunchVsOtterlyPost() {
               consolidated billing across clients. Scrunch&rsquo;s Core plan
               includes exactly one brand workspace; running multiple clients
               means either separate Core subscriptions or a custom Enterprise
-              deal, and Scrunch&rsquo;s page doesn&rsquo;t describe an
-              agency-specific structure the way Otterly&rsquo;s does.
+              deal. Scrunch does run an{" "}
+              <a href={SRC.scrunchAgencies} target="_blank" rel="noopener noreferrer" style={linkStyle}>
+                Agency Partner Program
+              </a>
+              , but doesn&rsquo;t publish per-client workspace pricing the way
+              Otterly does.
             </p>
           </RevealSection>
 
@@ -647,9 +702,9 @@ export default function ScrunchVsOtterlyPost() {
               this site tracks. On the specific axis this post is built
               around, Scrunch&rsquo;s AXP sits closest to Profound&rsquo;s
               Agents (both act on findings rather than only reporting them),
-              while Otterly&rsquo;s published per-engine add-on pricing has
-              more in common with Peec&rsquo;s transparent, self-serve ladder
-              than with Profound&rsquo;s tier-gated one.
+              while Otterly&rsquo;s published, credit-based ladder has more in
+              common with Peec&rsquo;s transparent, self-serve pricing than
+              with Profound&rsquo;s Enterprise-only one.
             </p>
           </RevealSection>
 
@@ -745,122 +800,21 @@ function SectionLabel({ number, text }: { number: string; text: string }) {
 
 function BestForTable() {
   return (
-    <div
-      style={{
-        background: "var(--panel)",
-        border: "1px solid var(--line-strong)",
-        borderRadius: 10,
-        padding: "20px 16px",
-        margin: "0 0 20px",
-        fontFamily: "var(--sans)",
-        fontSize: 13,
-        overflowX: "auto",
-      }}
-    >
-      <div
-        style={{
-          fontFamily: "var(--mono)",
-          fontSize: 10,
-          letterSpacing: ".08em",
-          textTransform: "uppercase",
-          color: "var(--faint)",
-          marginBottom: 14,
-        }}
-      >
-        At a glance: best fit by situation
-      </div>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1.3fr 1fr 1fr",
-          gap: 12,
-          minWidth: 560,
-          fontFamily: "var(--mono)",
-          fontSize: 10,
-          letterSpacing: ".06em",
-          textTransform: "uppercase",
-          color: "var(--faint)",
-          paddingBottom: 12,
-          borderBottom: "1px solid var(--line)",
-        }}
-      >
-        <span />
-        <span>Scrunch</span>
-        <span>Otterly</span>
-      </div>
-      {BEST_FOR_ROWS.map((row) => (
-        <div
-          key={row.label}
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1.3fr 1fr 1fr",
-            gap: 12,
-            minWidth: 560,
-            padding: "14px 0",
-            borderBottom: "1px solid var(--line)",
-            alignItems: "start",
-          }}
-        >
-          <span style={{ color: "var(--ink)", fontWeight: 600 }}>{row.label}</span>
-          <span style={{ color: "var(--muted)" }}>{row.scrunch}</span>
-          <span style={{ color: "var(--muted)" }}>{row.otterly}</span>
-        </div>
-      ))}
-    </div>
+    <ComparisonTable
+      caption={"At a glance: best fit by situation"}
+      rowHeader="Situation"
+      columns={["Scrunch", "Otterly"]}
+      rows={BEST_FOR_ROWS.map((r) => ({ label: r.label, values: [r.scrunch, r.otterly] }))}
+    />
   );
 }
 
 function QuickComparisonTable() {
   return (
-    <div
-      style={{
-        background: "var(--panel)",
-        border: "1px solid var(--line-strong)",
-        borderRadius: 10,
-        padding: "24px 16px",
-        margin: "0 0 26px",
-        fontFamily: "var(--sans)",
-        fontSize: 13,
-        overflowX: "auto",
-      }}
-    >
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1.1fr 1fr 1fr",
-          gap: 12,
-          minWidth: 560,
-          fontFamily: "var(--mono)",
-          fontSize: 10,
-          letterSpacing: ".06em",
-          textTransform: "uppercase",
-          color: "var(--faint)",
-          paddingBottom: 12,
-          borderBottom: "1px solid var(--line)",
-        }}
-      >
-        <span />
-        <span>Scrunch</span>
-        <span>Otterly</span>
-      </div>
-      {QUICK_COMPARISON_ROWS.map((row) => (
-        <div
-          key={row.label}
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1.1fr 1fr 1fr",
-            gap: 12,
-            minWidth: 560,
-            padding: "14px 0",
-            borderBottom: "1px solid var(--line)",
-            alignItems: "start",
-          }}
-        >
-          <span style={{ color: "var(--ink)", fontWeight: 600 }}>{row.label}</span>
-          <span style={{ color: "var(--muted)" }}>{row.scrunch}</span>
-          <span style={{ color: "var(--muted)" }}>{row.otterly}</span>
-        </div>
-      ))}
-    </div>
+    <ComparisonTable
+      caption={`Scrunch vs Otterly.AI, from each vendor's own pricing page, read ${DATE_VERIFIED_HUMAN}`}
+      columns={["Scrunch", "Otterly"]}
+      rows={QUICK_COMPARISON_ROWS.map((r) => ({ label: r.label, values: [r.scrunch, r.otterly] }))}
+    />
   );
 }

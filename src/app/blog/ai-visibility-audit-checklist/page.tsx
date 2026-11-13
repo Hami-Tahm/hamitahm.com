@@ -5,6 +5,7 @@ import { RevealSection } from "@/components/Reveal";
 import { AuthorByline } from "@/components/AuthorByline";
 import { buildBlogSchema } from "@/lib/blog-schema";
 import { OFFERS, AUDIT_PLATFORM_COUNT_WORD, AUDIT_PRICE_DISPLAY, BOOKING_URL } from "@/lib/offers";
+import { cta } from "@/lib/cta";
 
 const SLUG = "ai-visibility-audit-checklist";
 const ARTICLE_TITLE = "The AI Visibility Audit Checklist: 23 Things to Check";
@@ -374,7 +375,7 @@ export default function AIVisibilityAuditChecklistPost() {
           <RevealSection delay={0.06}>
             <p style={{ marginBottom: 26 }}>
               A professional{" "}
-              <Link href={OFFERS.audit.href} style={linkStyle}>
+              <Link {...cta("checklist", "audit", "intro")} href={OFFERS.audit.href} style={linkStyle}>
                 AI visibility audit
               </Link>{" "}
               checks the same things this checklist walks through; it
@@ -459,7 +460,7 @@ export default function AIVisibilityAuditChecklistPost() {
               short list of gaps rather than a clean sheet, that&rsquo;s the
               normal outcome: running the same raw material at 30
               prompts across six engines is exactly what a{" "}
-              <Link href={SAMPLE_REPORT_URL} style={linkStyle}>
+              <Link {...cta("checklist", "sample-report", "inline")} href={SAMPLE_REPORT_URL} style={linkStyle}>
                 full sample report
               </Link>{" "}
               looks like done at scale, with the analysis already worked out.
@@ -640,7 +641,7 @@ export default function AIVisibilityAuditChecklistPost() {
                 Cross-platform citation analysis, accuracy review, competitor
                 gap mapping, and a prioritized action plan. {AUDIT_PRICE_DISPLAY}.
               </p>
-              <Link
+              <Link {...cta("checklist", "checker", "final")}
                 href={OFFERS.checker.href}
                 className="btn btn-primary"
                 style={{ marginTop: 30, position: "relative" }}
@@ -648,7 +649,7 @@ export default function AIVisibilityAuditChecklistPost() {
                 Run the free AI Visibility Check{" "}
                 <span className="arr">&rarr;</span>
               </Link>
-              <Link
+              <Link {...cta("checklist", "contact", "final")}
                 href={BOOKING_URL}
                 className="btn btn-ghost"
                 style={{ marginTop: 14, marginLeft: 12, position: "relative" }}
@@ -769,7 +770,7 @@ function InlineAuditCTA() {
         with platform-specific citation analysis, accuracy review, competitor
         gap mapping, and a prioritized action plan.
       </p>
-      <Link href={OFFERS.audit.href} className="btn btn-primary">
+      <Link {...cta("checklist", "audit", "mid")} href={OFFERS.audit.href} className="btn btn-primary">
         Book an AI Visibility Audit <span className="arr">&rarr;</span>
       </Link>
     </div>
