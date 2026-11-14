@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { readLeadAttribution } from "@/lib/attribution";
 
 /**
  * COUNTRY IS A FIXED LIST, NOT FREE TEXT (2026-08-20).
@@ -203,6 +204,9 @@ export default function CheckerForm() {
           // Tells the webhook which confirmation email to send. See the note above.
           scope,
           email: email.trim(),
+          // Where this lead came from: first, last and this-visit touch (no PII).
+          form_page: window.location.pathname,
+          attribution: readLeadAttribution(),
         }),
       });
       if (!res.ok) throw new Error("bad status");

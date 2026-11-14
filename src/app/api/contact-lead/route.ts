@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { flattenAttribution } from "@/lib/attribution";
 
 /**
  * POST /api/contact-lead
@@ -75,6 +76,10 @@ export async function POST(req: Request) {
   const campaignIn = (body.campaign ?? {}) as Record<string, unknown>;
   const campaignLines = CAMPAIGN_KEYS.map((k) => `${k}: ${clean(campaignIn[k], 150) || "(none)"}`);
   const pagePath = clean(body.page_path, 150) || "/contact/";
+  // 2026-11-14: full lead attribution (first / last / this-visit touch). The deployed
+  // script only maps name/agency/website/email/message, so it travels in `message`
+  // (and as flat ft_/lt_/st_ fields for when the script maps them).
+  const attribution = flattenAttribution(body.attribution);
 
   const payload = {
     submittedAt: new Date().toISOString(),
@@ -89,8 +94,16 @@ export async function POST(req: Request) {
       "---",
       "Lead type: qualified contact lead (hamitahm.com contact form)",
       `Form page: ${pagePath}`,
+      "",
+      "Where this lead came from:",
+      attribution.text,
+      "",
+      "Legacy first-touch campaign fields:",
       ...campaignLines,
     ].join("\n"),
+    form_page: pagePath,
+    attribution_text: attribution.text,
+    ...attribution.fields,
   };
 
   try {

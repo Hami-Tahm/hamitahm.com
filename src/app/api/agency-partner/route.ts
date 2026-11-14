@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { flattenAttribution } from "@/lib/attribution";
 
 /**
  * POST /api/agency-partner
@@ -35,6 +36,7 @@ export async function POST(req: Request) {
     email?: string;
     message?: string;
     company?: string;
+    attribution?: unknown;
   };
   try {
     body = await req.json();
@@ -77,6 +79,10 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: "missing required fields" }, { status: 400 });
   }
 
+  // 2026-11-14: lead attribution. The deployed script maps only name/agency/website/
+  // email/message, so the readable block is appended to `message`.
+  const attribution = flattenAttribution(body.attribution);
+
   const payload = {
     submittedAt: new Date().toISOString(),
     formType: "agency-partner",
@@ -85,7 +91,9 @@ export async function POST(req: Request) {
     website,
     // validated by the strict regex above, so it cannot begin with a formula character
     email,
-    message,
+    message: [message || "(no message)", "", "---", "Where this lead came from:", attribution.text].join("\n"),
+    attribution_text: attribution.text,
+    ...attribution.fields,
   };
 
   try {

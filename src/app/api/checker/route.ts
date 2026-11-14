@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { flattenAttribution } from "@/lib/attribution";
 
 /**
  * POST /api/checker
@@ -26,6 +27,8 @@ export async function POST(req: Request) {
     country?: string;
     scope?: string;
     email?: string;
+    form_page?: string;
+    attribution?: unknown;
   };
   try {
     body = await req.json();
@@ -80,6 +83,12 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: "missing required fields" }, { status: 400 });
   }
 
+  // 2026-11-14: lead attribution (first / last / this-visit touch). Sent both as flat
+  // columns (ft_*, lt_*, st_*) for the sheet and as a readable block for the email.
+  // The Apps Script must map them; see docs/lead-attribution-webhook.md.
+  const attribution = flattenAttribution(body.attribution);
+  const formPage = deFormula(String(body.form_page || "").trim().slice(0, 150));
+
   const payload = {
     submittedAt: new Date().toISOString(),
     // email is validated by the strict regex above, so it can't start with a formula char
@@ -90,6 +99,9 @@ export async function POST(req: Request) {
     engines,
     keywords,
     competitors,
+    form_page: formPage,
+    attribution_text: attribution.text,
+    ...attribution.fields,
   };
 
   try {

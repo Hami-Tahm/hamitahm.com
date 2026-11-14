@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { readFirstTouch } from "@/lib/attribution";
+import { readFirstTouch, readLeadAttribution } from "@/lib/attribution";
 import { buildLeadEvent, LEAD_PENDING_KEY } from "@/lib/lead-event";
 
 /**
@@ -44,6 +44,8 @@ export default function ContactLeadForm() {
       fax: String(data.get("fax") || ""), // honeypot
       page_path: pagePath,
       campaign: firstTouch ?? {},
+      // Where this lead came from: first, last and this-visit touch (no PII).
+      attribution: readLeadAttribution(),
     };
 
     try {

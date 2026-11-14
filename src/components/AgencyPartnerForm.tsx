@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { readLeadAttribution } from "@/lib/attribution";
 
 /**
  * The partnership enquiry form on /for-agencies/.
@@ -41,6 +42,8 @@ export default function AgencyPartnerForm() {
       message: String(data.get("message") || ""),
       // honeypot: hidden from people, filled in by naive bots
       company: String(data.get("company") || ""),
+      // Where this lead came from: first, last and this-visit touch (no PII).
+      attribution: readLeadAttribution(),
     };
 
     try {
