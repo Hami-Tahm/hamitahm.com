@@ -81,8 +81,14 @@ In that script's `doPost(e)` (where `d = JSON.parse(e.postData.contents)`):
    `CHECKER_SHEET_WEBHOOK` in Vercel does not change. Creating a NEW deployment would give
    a new URL and break the form until the env var is updated.
 
-Where the script lives: it was not found under "My Projects" for dimaht@gmail.com,
-tahmhami@gmail.com or authuser 2 on 2026-11-14, and the "AI Checker Leads" sheet's bound
-project is an empty "Untitled project" created at 10:57 that day (0 executions; not the
-webhook). Open the script from wherever the Vercel `CHECKER_SHEET_WEBHOOK` URL's project
-is owned (script.google.com/macros/s/<id>/exec → the owning account's Apps Script).
+Where the script lives (found 2026-11-14): Apps Script project "Untitled project",
+owner dimaht@gmail.com, id `1eXhk7RmdouUrBsZz4HKlr5g6BWpkuaJMH1xpddKfN6ujEnc9xBjbmJ0u`,
+bound to the Drive file "AI Visibility Database" (it writes to "AI Checker Leads" by
+SHEET_ID). Both the project and its container had been in Drive trash since 2026-08-16
+while still serving; they were restored on 2026-11-14.
+
+**Status: DONE 2026-11-14.** Steps 1 and 2 applied (email block + 24 columns from column
+I, headers written automatically on the first new lead), deployed as Version 6 on the
+SAME deployment (`AKfycbxdBX...9IDu6TDZiKJw`), so `CHECKER_SHEET_WEBHOOK` is unchanged.
+Until the site code with attribution is deployed, new rows simply get empty attribution
+columns and the email says "(not recorded)".
