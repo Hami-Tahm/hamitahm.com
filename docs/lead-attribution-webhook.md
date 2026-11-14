@@ -81,7 +81,8 @@ In that script's `doPost(e)` (where `d = JSON.parse(e.postData.contents)`):
    `CHECKER_SHEET_WEBHOOK` in Vercel does not change. Creating a NEW deployment would give
    a new URL and break the form until the env var is updated.
 
-Where the script lives (found 2026-11-14): Apps Script project "Untitled project",
+Where the script lives (found 2026-11-14): Apps Script project "HamiTahm - AI Checker
+Webhook (LIVE, do not delete)" (renamed from "Untitled project" on 2026-11-14),
 owner dimaht@gmail.com, id `1eXhk7RmdouUrBsZz4HKlr5g6BWpkuaJMH1xpddKfN6ujEnc9xBjbmJ0u`,
 bound to the Drive file "AI Visibility Database" (it writes to "AI Checker Leads" by
 SHEET_ID). Both the project and its container had been in Drive trash since 2026-08-16
