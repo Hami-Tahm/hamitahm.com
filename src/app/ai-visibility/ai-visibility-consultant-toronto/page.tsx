@@ -340,7 +340,7 @@ export default async function AIVisibilityConsultantToronto() {
               }}
             >
               Prefer to talk first?{" "}
-              <Link {...cta("toronto", "contact", "hero-call")} href="/contact/" style={{ color: "var(--accent)" }}>
+              <Link {...cta("toronto", "contact", "hero-call")} href={BOOKING_URL} style={{ color: "var(--accent)" }}>
                 Book a free 20-minute call
               </Link>
               , optional, and never required to buy anything.

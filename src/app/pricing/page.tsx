@@ -7,11 +7,12 @@ import {
   AUDIT_PRICE_DISPLAY,
   ACTION_PLAN_PRICE_DISPLAY,
   BOOKING_URL,
+  CONTACT_PAGE_URL,
   AUDIT_CTA_LABEL,
 } from "@/lib/offers";
 
 const SLUG = "/pricing/";
-const CONTACT_URL = BOOKING_URL;
+const CONTACT_URL = CONTACT_PAGE_URL;
 
 // Search snippet (<=158 chars). Kept separate from any long on-page/schema
 // description, which can stay longer. Added 2026-10-03.

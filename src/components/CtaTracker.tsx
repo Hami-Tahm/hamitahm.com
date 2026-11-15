@@ -43,6 +43,8 @@ type Classified = { cta: string; funnelStep: string };
 /** Legacy funnel classification, kept from CtaTracking.tsx for continuity. */
 function classify(href: string): Classified | null {
   if (href.startsWith("mailto:")) return { cta: "email", funnelStep: "contact" };
+  // 2026-11-15: booking CTAs go to Cal.com (BOOKING_URL in src/lib/offers.ts).
+  if (href.includes("cal.com/hamitahm")) return { cta: "booking", funnelStep: "call" };
   let path: string;
   try {
     const url = new URL(href, window.location.origin);

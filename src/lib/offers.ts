@@ -295,5 +295,13 @@ export const ACTION_PLAN_PRICE_DISPLAY = "Scoped to your business";
  * src/app/ai-visibility/ai-visibility-audit/page.tsx; that local copy should
  * be replaced with this import rather than kept as a second definition.
  */
-export const BOOKING_URL = "/contact/";
+/*
+ * 2026-11-15: "Book a call" CTAs go straight to the Cal.com booking page (20-minute
+ * AI Visibility Strategy Call, Google Meet, synced to Hami's calendars) instead of the
+ * /contact/ form. Fewer steps between "I want to talk" and a booked slot. The contact
+ * form stays at CONTACT_PAGE_URL for written enquiries. Do not append
+ * ?overlayCalendar=true: it asks visitors to connect their own calendar.
+ */
+export const BOOKING_URL = "https://cal.com/hamitahm/ai-visibility-call";
+export const CONTACT_PAGE_URL = "/contact/";
 export const AUDIT_CTA_LABEL = "Book a free call";

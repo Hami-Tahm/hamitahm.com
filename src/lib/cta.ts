@@ -42,6 +42,6 @@ export function ctaDestinationFor(href: string): CtaDestination | null {
   if (href.startsWith("/ai-visibility/sample-report")) return "sample-report";
   if (href.startsWith("/methodology")) return "methodology";
   if (href.startsWith("/for-agencies")) return "agencies";
-  if (href.startsWith("/contact") || href.startsWith("mailto:")) return "contact";
+  if (href.startsWith("/contact") || href.startsWith("mailto:") || href.includes("cal.com/hamitahm")) return "contact";
   return null;
 }
