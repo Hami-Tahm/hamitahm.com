@@ -50,12 +50,16 @@ const contentSecurityPolicy = [
   // nearly happened twice: a tag the CSP blocks produces no console error anyone
   // goes looking for. The ads account records zero conversions, the remarketing
   // list never fills, and it looks exactly like "the channel doesn't work".
-  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://*.clarity.ms https://bat.bing.com https://bat.bing.net https://www.googleadservices.com https://www.google.com",
+  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://*.clarity.ms https://bat.bing.com https://bat.bing.net https://www.googleadservices.com https://www.google.com https://app.cal.com",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: https:",
   "font-src 'self'",
-  "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.g.doubleclick.net https://*.clarity.ms https://bat.bing.com https://bat.bing.net https://www.googleadservices.com https://pagead2.googlesyndication.com https://www.google.com https://www.google.ca https://ad.doubleclick.net",
-  "frame-src 'self' https://www.googletagmanager.com",
+  "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.g.doubleclick.net https://*.clarity.ms https://bat.bing.com https://bat.bing.net https://www.googleadservices.com https://pagead2.googlesyndication.com https://www.google.com https://www.google.ca https://ad.doubleclick.net https://app.cal.com",
+  // CAL.COM (2026-11-16): the booking pop-up (src/components/CalBookingEmbed.tsx)
+  // loads app.cal.com/embed/embed.js and renders the booking page in an app.cal.com
+  // iframe. Without these three entries the pop-up silently never opens and the
+  // click falls back to cal.com, losing the booking conversion.
+  "frame-src 'self' https://www.googletagmanager.com https://app.cal.com https://cal.com",
   // Note: no `upgrade-insecure-requests` — it's ignored in a report-only policy
   // (browsers warn about it), and it's redundant once enforced because the site is
   // HTTPS-only and Strict-Transport-Security already forces HTTPS. Add it to the

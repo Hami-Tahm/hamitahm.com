@@ -6,6 +6,7 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { AttributionCapture } from "@/components/AttributionCapture";
 import { CtaTracker } from "@/components/CtaTracker";
+import { CalBookingEmbed } from "@/components/CalBookingEmbed";
 import { CANONICAL_DESCRIPTOR } from "@/lib/identity";
 
 const GA_ID = "G-Z1L4M2SD14";
@@ -419,6 +420,8 @@ export default function RootLayout({
         {/* Single delegated listener: the only source of `cta_click` (CIT-05). */}
         <CtaTracker />
         <AttributionCapture />
+        {/* Booking CTAs open Cal.com as an on-site pop-up so the booking conversion can fire. */}
+        <CalBookingEmbed />
         <Nav />
         <main>{children}</main>
         <Footer />

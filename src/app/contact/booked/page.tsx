@@ -3,12 +3,15 @@ import Link from "next/link";
 import BookedEvent from "./BookedEvent";
 
 /**
- * /contact/booked/: where Cal.com sends people after they book the 20-minute call
- * (Cal.com event settings → Advanced → "Redirect on booking" →
- * https://hamitahm.com/contact/booked/).
+ * /contact/booked/: thank-you page for a Cal.com redirect after booking.
  *
- * NOINDEX and absent from sitemap.ts. Fires `call_booked` once per session (see
- * BookedEvent). It is not a Google Ads conversion unless Hami decides to add one.
+ * 2026-11-16: Cal.com's "Redirect on booking" is a paid (Teams) feature, so on the
+ * free plan nobody is sent here. Bookings now happen in an on-site pop-up
+ * (src/components/CalBookingEmbed.tsx), which records the conversion itself. This
+ * page is kept for the day the redirect is available.
+ *
+ * NOINDEX and absent from sitemap.ts. If reached from Cal.com, fires `call_booked`
+ * and the Google Ads lead conversion once per session (see BookedEvent).
  */
 export const metadata: Metadata = {
   title: "You're booked",
