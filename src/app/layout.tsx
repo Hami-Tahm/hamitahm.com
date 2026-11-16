@@ -373,8 +373,16 @@ export default function RootLayout({
             source of long tasks / TBT on mobile. Deferring it until the browser is
             idle keeps it off the critical path. Trade-off: tags fire a beat later,
             so a visitor who bounces in well under a second may go uncounted. */}
+        {/* GA4 bot guard (2026-11-15). A crawler hit /blog/how-to-check-ai-visibility
+            ~5x a day from Oct 18 (168 sessions in 28 days): Chrome on "iOS 27.0.1",
+            google / organic referrer, every session a new user, 0s engagement, 0
+            events, while Search Console showed 0 clicks for that page. It made the
+            page look like the site's top organic landing page. GTM (and so GA4 and
+            Clarity) is not loaded for that exact fingerprint on that exact page.
+            Narrow on purpose: any other page, OS version or browser is untouched.
+            Remove once the pattern stops showing in GA4 (OS with version report). */}
         <Script id="gtm-init" strategy="lazyOnload">
-          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`}
+          {`if(!(navigator.userAgent.indexOf('CriOS/')>-1&&navigator.userAgent.indexOf('OS 27_0_1 ')>-1&&location.pathname.indexOf('/blog/how-to-check-ai-visibility')===0))(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`}
         </Script>
         {/* Google Ads conversion tracking. The Ads account and GTM container live
             under different Google logins, so the Ads destination is registered

@@ -253,8 +253,17 @@ const structuredData = {
 
 // Search snippet (<=158 chars). Kept separate from any long on-page/schema
 // description, which can stay longer. Added 2026-10-03.
+// 2026-11-15: snippet now answers the "which is better" queries directly (GSC 28d to
+// Nov 14: 1,415 impressions, 0 clicks, avg position 7.4; queries "peec ai vs airops:
+// which is better?", "does airops outperform profound in citation visibility?",
+// "airops vs profound"). Old text said "checked Oct 2026", which was stale after the
+// Nov 13 re-check. META_TITLE deliberately NOT changed: it was changed on Nov 7 and
+// needs ~4 weeks before it can be judged. One variable at a time; compare clicks
+// for Nov 16 to Dec 13 against the baseline above.
+// Previous: "Profound vs AirOps vs Peec AI: published pricing, AI engines covered and
+// what each is built for. Every figure from the vendor's own page, checked Oct 2026."
 const META_DESCRIPTION =
-  "Profound vs AirOps vs Peec AI: published pricing, AI engines covered and what each is built for. Every figure from the vendor's own page, checked Oct 2026.";
+  "Which is better? Profound for enterprise monitoring, AirOps if AI data should drive content, Peec from $95/mo for tracking. Prices re-checked Nov 13, 2026.";
 // Under ~48 chars so the " | Hami Tahm" suffix still fits a Google title.
 // 2026-11-07: led with "AirOps vs Profound" and "which" to match how the question is
 // actually searched (see the FAQ_ITEMS note). Previous: "Profound vs AirOps vs Peec (2026): Pricing".

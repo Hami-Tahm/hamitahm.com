@@ -38,7 +38,7 @@ const ARTICLE_TITLE = "Best AI Visibility Tools & Software (2026)";
 const ARTICLE_DESCRIPTION =
   "AI visibility tools and software in 2026: engine coverage and entry pricing taken from each vendor's own documentation, with the source linked for every claim. By an independent consultant with no affiliate relationships.";
 const DATE_PUBLISHED = "2026-06-09";
-const DATE_MODIFIED = "2026-10-03";
+const DATE_MODIFIED = "2026-11-15";
 
 /**
  * ── WHY THIS FILE LOOKS LIKE THIS ──
@@ -61,6 +61,14 @@ const DATE_MODIFIED = "2026-10-03";
  */
 const DATE_FACT_CHECKED = "2026-10-03";
 const DATE_FACT_CHECKED_HUMAN = "October 3, 2026";
+/*
+ * 2026-11-15 review: every PRICED row (Profound, Otterly, Scrunch, SE Visible, Frase,
+ * Semrush, Ahrefs) was re-read in a browser on Nov 13 or Nov 15 and carries its own
+ * dateRead. The three enterprise rows with no public pricing (BrightEdge, Yext,
+ * Brandwatch) and the two "not AI trackers" were last read on DATE_FACT_CHECKED.
+ * DATE_REVIEWED is the date of the latest pass; the per-row date is the evidence.
+ */
+const DATE_REVIEWED_HUMAN = "November 15, 2026";
 
 const AUDIT_URL = "/ai-visibility/ai-visibility-audit/";
 const HUB_URL = "/ai-visibility/";
@@ -90,9 +98,9 @@ const TOOLS: readonly Tool[] = [
     name: "Profound",
     category: "dedicated",
     engines:
-      "Free trial: ChatGPT, Gemini and Google AI Overviews. Enterprise: up to 9, adding Perplexity, Google AI Mode, Copilot, DeepSeek, Claude and Exa.",
+      "Free trial: ChatGPT, Gemini and Google AI Overviews. Enterprise: up to 10, adding Perplexity, Google AI Mode, DeepSeek, Claude, Exa, Muse Spark and Qwen. Microsoft Copilot is not on the list.",
     entryPrice:
-      "Brands: 7-day free trial (50 prompts daily), then Enterprise custom · Agencies: $99/mo (Agency Growth, pitch workspaces) + $399/mo per client workspace",
+      "Brands: 7-day free trial (50 prompts), then Enterprise custom · Agencies: $399/mo per client workspace, 5 extra trial workspaces $199/mo, Agency Growth base price not shown",
     sourceUrl: "https://www.tryprofound.com/pricing",
     sourceLabel: "Profound pricing page",
     what:
@@ -100,32 +108,32 @@ const TOOLS: readonly Tool[] = [
     whoFor:
       "Teams that want cross-engine tracking as the primary job of the tool, not a feature bolted onto something else.",
     watchOut:
-      "The pricing page changed between August and October 2026. The self-serve Starter and Growth brand plans this page used to list are gone: brands now get a 7-day trial and then talk to sales. The $99 figure you will still see quoted is the agency product, and each client workspace on it costs another $399 a month. Older comparisons, including an earlier version of this page, describe plans you can no longer buy.",
-    dateRead: "2026-10-02",
+      "The pricing page keeps moving. The self-serve Starter and Growth brand plans are gone: brands get a 7-day trial and then talk to sales. In October the agency plan showed $99 a month; by November 13 the Agency Growth base price was no longer shown, only $399 a month per client workspace. Copilot is missing even from the 10-engine Enterprise list, which matters if Bing is where your buyers search. Older comparisons, including earlier versions of this page, describe plans you can no longer buy.",
+    dateRead: "2026-11-13",
   },
   {
     name: "Otterly.ai",
     category: "dedicated",
     engines:
-      "Included on every plan: ChatGPT, Google AI Overviews, Perplexity, Microsoft Copilot. Gemini, Google AI Mode and Claude are paid add-ons.",
+      "All seven engines on every plan (ChatGPT, Google AI Overviews, Google AI Mode, Perplexity, Microsoft Copilot, Gemini, Claude), paid for out of a monthly credit allowance.",
     entryPrice:
-      "$29/mo (Lite, 15 prompts) · $189/mo (Standard, 100 prompts) · $489/mo (Premium, 400 prompts) · Enterprise custom-priced (from 1,000 prompts)",
-    dateRead: "2026-10-03",
+      "$29/mo (Lite, 2,000 credits) · $189/mo (Standard, 15,000 credits) · $489/mo (Premium, 50,000 credits) · Enterprise custom-priced (from 1,000 prompts)",
+    dateRead: "2026-11-13",
     sourceUrl: "https://otterly.ai/pricing",
     sourceLabel: "Otterly.ai pricing page",
     what:
-      "Daily prompt tracking with brand visibility scoring, link citation analysis, competitor comparison and a GEO audit, across 50+ countries. API, MCP access and Looker Studio reporting start at the Standard tier.",
+      "Daily prompt tracking with brand visibility scoring, link citation analysis, competitor comparison and a GEO audit, with no cap on countries. API, MCP access and Looker Studio reporting start at the Standard tier.",
     whoFor:
       "Small teams and agencies that want systematic multi-engine tracking at a price that does not require a procurement process.",
     watchOut:
-      "The engine list is the thing to read carefully. Copilot and AI Overviews are included; Gemini and Claude are not. Adding Gemini costs $9–$149/mo depending on plan, and Claude $29–$439/mo. A quoted base price can understate the real cost by a wide margin if Gemini or Claude matter to you.",
+      "Between October and mid-November 2026 Otterly moved from prompts plus engine add-ons to credits, so the plan names now hide the real capacity. Otterly's own worked example: 2,000 credits is about 20 prompts tracked on 3 of the 7 engines, 15,000 about 160, 50,000 about 535. Track more engines and the prompt count falls; Claude costs 3 credits per answer. Extra credit packs are $65 for 5,000 on Standard and $99 for 10,000 on Premium. Work out prompts times engines before you compare it with a per-prompt tool.",
   },
   {
     name: "Scrunch",
     category: "dedicated",
     engines:
       "Core: ChatGPT, Perplexity, Google AI Overviews, Microsoft Copilot. Enterprise: 9 total, adding Claude, Gemini, Meta AI, Google AI Mode and Grok.",
-    entryPrice: "$250/mo (Core, 125 prompt variants, 7-day free trial) · Enterprise not published (\"talk to us\")",
+    entryPrice: "$250/mo (Core, 125 prompts, 4 engines, 5 users, 1 brand, 1 country) · Enterprise not published (\"talk to us\")",
     sourceUrl: "https://scrunch.com/pricing",
     sourceLabel: "Scrunch pricing page",
     what:
@@ -133,30 +141,33 @@ const TOOLS: readonly Tool[] = [
     whoFor:
       "Teams whose AI visibility gap includes a real technical component and who want measurement and a partial fix inside one tool rather than a separate developer handoff.",
     watchOut:
-      "There is no tier below $250/month, and it buys one brand workspace, five seats, and a 25-page site-map limit. API access, MCP access, expanded model coverage and SSO beyond Google are all Enterprise-only, and Enterprise carries no published price at all. See the fuller Scrunch vs Otterly comparison for the entry-plan math against a cheaper published alternative.",
-    dateRead: "2026-10-03",
+      "There is no tier below $250/month, and it buys one brand workspace, five seats, one country and five site audits a month. AXP (the agent-facing page layer described above) and the 9-engine coverage are Enterprise-only, and Enterprise carries no published price at all. See the fuller Scrunch vs Otterly comparison for the entry-plan math against a cheaper published alternative.",
+    dateRead: "2026-11-13",
   },
   {
     name: "SE Visible (SE Ranking)",
     category: "dedicated",
-    engines: "ChatGPT, Gemini, Google AI Mode, Perplexity, Google AI Overviews, all on every tier.",
+    engines:
+      "ChatGPT, Gemini, Google AI Mode, Google AI Overviews and Microsoft Copilot on every tier; the Agency tier adds Claude. Perplexity is no longer listed.",
     entryPrice:
-      "$99/mo (Basic, 200 prompts) · $189/mo (Core, 450 prompts) · $355/mo (Plus, 1,000 prompts)",
+      "From $89/mo (Basic, 75 prompts daily) · $189/mo (Core, 200 prompts) · $399/mo (Agency, 1,000 prompts) · monthly prices, 20% less billed annually · 14-day free trial",
     sourceUrl: "https://visible.seranking.com/for-product-marketers/",
     sourceLabel: "SE Visible product page",
     what:
-      "SE Ranking's dedicated AI visibility product (a separate app from its SEO suite, not a checkbox inside rank tracking). Covers visibility, sentiment, cited sources and competitor benchmarking with daily updates across 7 countries and 5 languages. There is a free trial.",
+      "SE Ranking's dedicated AI visibility product (a separate app from its SEO suite, not a checkbox inside rank tracking). Covers visibility, sentiment, cited sources and competitor benchmarking with daily updates across 7 countries and 5 languages. There is a 14-day free trial.",
     whoFor:
-      "Teams that want the same five engines on the cheapest tier rather than an add-on ladder.",
+      "Teams that want the same five engines, Copilot included, on the cheapest tier rather than an add-on ladder.",
     watchOut:
-      "Do not confuse SE Visible with SE Ranking's classic rank tracker. They are separately priced products, and older comparisons (including an earlier version of this page) described the rank tracker's AI Overviews flag as if it were the whole AI offering. Coverage is 7 countries and 5 languages; narrow if you sell outside them.",
-    dateRead: "2026-10-03",
+      "The plans were reshuffled between October and November 2026: the entry tier went from $99 for 200 prompts to $89 for 75, and the engine list swapped Perplexity for Copilot. If Perplexity matters to you, this is no longer the tool that covers it. Also do not confuse SE Visible with SE Ranking's classic rank tracker: they are separately priced products. Coverage is 7 countries and 5 languages; narrow if you sell outside them.",
+    dateRead: "2026-11-15",
   },
   {
     name: "Frase",
     category: "dedicated",
-    engines: "Starter: ChatGPT and Google AI. Professional adds Perplexity. Scale adds Claude and Gemini.",
-    entryPrice: "$39/mo (Starter, billed yearly; $49 monthly) · $103/mo (Professional, yearly) · $239/mo (Scale, yearly) · 7-day trial",
+    engines:
+      "Starter: ChatGPT and Google AI. Professional adds Perplexity. Scale adds Claude and Gemini. Enterprise adds Grok, Copilot and DeepSeek.",
+    entryPrice:
+      "$39/mo (Starter, 20 tracked prompts, billed yearly; $49 monthly) · $103/mo (Professional, 50 prompts, yearly) · $239/mo (Scale, 75 prompts, yearly) · 7-day trial",
     sourceUrl: "https://www.frase.io/pricing",
     sourceLabel: "Frase pricing page",
     what:
@@ -164,8 +175,8 @@ const TOOLS: readonly Tool[] = [
     whoFor:
       "Content teams that want the tracking and the content work in the same place (a gap you spot hands off to the editor rather than to a separate tool).",
     watchOut:
-      "Frase is usually filed under content optimization, and this page filed it that way too until this revision. That is now wrong: it does daily multi-engine tracking. But the engine list is tier-gated: the $39 Starter plan tracks ChatGPT and Google AI only, Perplexity and AI crawler monitoring start at Professional ($103), and Claude and Gemini need Scale ($239). The five-engine figure on the feature page is the Scale plan.",
-    dateRead: "2026-10-03",
+      "Frase is usually filed under content optimization, and this page filed it that way too until this revision. That is now wrong: it does daily multi-engine tracking. But the engine list is tier-gated: the $39 Starter plan tracks ChatGPT and Google AI only, Perplexity and AI crawler monitoring start at Professional ($103), and Claude and Gemini need Scale ($239). The five-engine figure on the feature page is the Scale plan. Prompt counts are small too: 20 on Starter, 75 on Scale.",
+    dateRead: "2026-11-15",
   },
   {
     name: "Semrush",
@@ -173,7 +184,7 @@ const TOOLS: readonly Tool[] = [
     engines:
       "Google AI Overviews, Google AI Mode, ChatGPT, Perplexity, Gemini in the AI Visibility toolkit; Brand Performance updates weekly.",
     entryPrice:
-      "AI Visibility toolkit from $99/mo · Semrush One (SEO + AI visibility) from $199/mo · free plan shows an AI visibility snapshot in Domain Overview, plus a separate free AI visibility checker (3 checks a day, no signup)",
+      "AI Visibility toolkit from $99/mo · Semrush One (SEO + AI visibility) from $199/mo · free plan shows AI mentions, citations and a visibility score in Domain Overview, and audits 100 pages for AI readiness",
     sourceUrl: "https://www.semrush.com/kb/1626-ai-visibility-features",
     sourceLabel: "Semrush AI visibility documentation",
     what:
@@ -181,8 +192,8 @@ const TOOLS: readonly Tool[] = [
     whoFor:
       "SEO teams already inside Semrush, and anyone who wants one bill covering both classic search and AI answers.",
     watchOut:
-      "Which toolkit you are on determines what you see. Position tracking on Google and AI Overviews is available on any plan, including the free one; full tracking on ChatGPT, Perplexity and Gemini sits in the AI Visibility toolkit ($99/mo, no free trial) or Semrush One. Brand Performance runs on Semrush-generated synthetic prompts based on your domain and location (useful, but not your customers' actual wording).",
-    dateRead: "2026-10-03",
+      "Which toolkit you are on determines what you see. Position tracking on Google and AI Overviews is available on any plan, including the free one; full tracking on ChatGPT, Perplexity and Gemini sits in the AI Visibility toolkit (from $99/mo) or Semrush One. The daily Position Tracking on AI platforms uses prompts you define; Brand Performance, which updates weekly, runs on Semrush-generated synthetic prompts based on your domain and location (useful, but not your customers' actual wording).",
+    dateRead: "2026-11-13",
   },
   {
     name: "Ahrefs Brand Radar",
@@ -199,7 +210,7 @@ const TOOLS: readonly Tool[] = [
       "Teams that want breadth and back-history rather than a small, hand-picked prompt set, and that already live in Ahrefs.",
     watchOut:
       "Two things the pricing page does not put up front. The AI indexes are an add-on, not something included with a standard Ahrefs plan; describing Brand Radar as bundled at $100/mo is wrong. And the AI chatbot index refreshes once a month; only AI Overviews and your own custom prompts move faster than that.",
-    dateRead: "2026-10-03",
+    dateRead: "2026-11-15",
   },
   {
     name: "BrightEdge",
@@ -272,11 +283,11 @@ const FAQ_ITEMS = [
   },
   {
     q: "What's the difference between AI visibility tools and SEO tools?",
-    a: "SEO tools track rankings, traffic and backlinks in traditional search. AI visibility tools track whether you are mentioned and cited in AI-generated answers, and what those answers say. The line has blurred: Semrush, Ahrefs and SE Ranking all now sell AI visibility products covering ChatGPT, Gemini and Perplexity as well as Google's AI surfaces. The practical difference is usually packaging and price: in Ahrefs the AI indexes are a paid add-on, in Semrush they are a separate toolkit, and in SE Ranking's case an entirely separate product called SE Visible.",
+    a: "SEO tools track rankings, traffic and backlinks in traditional search. AI visibility tools track whether you are mentioned and cited in AI-generated answers, and what those answers say. The line has blurred: Semrush, Ahrefs and SE Ranking all now sell AI visibility products covering ChatGPT and Gemini as well as Google's AI surfaces. The practical difference is usually packaging and price: in Ahrefs the AI indexes are a paid add-on, in Semrush they are a separate toolkit, and in SE Ranking's case an entirely separate product called SE Visible.",
   },
   {
     q: "Can AI visibility tools track Perplexity citations?",
-    a: "Yes, and this is now the normal case rather than the exception. Profound (on Enterprise), Otterly.ai, SE Visible, Frase, Semrush's AI Visibility toolkit, Ahrefs Brand Radar and Yext Scout all document Perplexity coverage. If a tool does not cover Perplexity in 2026, that is the unusual thing.",
+    a: "Yes, and this is the normal case. Profound (on Enterprise), Otterly.ai, Scrunch, Frase (from Professional), Semrush's AI Visibility toolkit, Ahrefs Brand Radar and Yext Scout all document Perplexity coverage. The exception as of November 15, 2026 is SE Visible, whose plans now list Copilot instead of Perplexity.",
   },
   {
     q: "Do I need an AI visibility tool or a consultant?",
@@ -292,7 +303,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "What is Profound AI visibility?",
-    a: "Profound is a dedicated answer-engine monitoring platform. It runs a prompt set daily and reports mentions, citations, sentiment, ranking and competitive presence, plus AI-referred traffic through a separate Agent Analytics product. As of October 2, 2026, brands get a 7-day free trial covering ChatGPT, Gemini and Google AI Overviews, then a custom-priced Enterprise plan covering up to nine engines. Agencies have a separate plan from $99/month plus $399/month per client workspace.",
+    a: "Profound is a dedicated answer-engine monitoring platform. It runs a prompt set daily and reports mentions, citations, sentiment, ranking and competitive presence, plus AI-referred traffic through a separate Agent Analytics product. As of November 13, 2026, brands get a 7-day free trial covering ChatGPT, Gemini and Google AI Overviews, then a custom-priced Enterprise plan covering up to ten engines (Microsoft Copilot is not among them). Agencies pay $399/month per client workspace; the Agency Growth base price is no longer shown.",
   },
 ] as const;
 
@@ -456,10 +467,11 @@ export default function BestAIVisibilityToolsPost() {
                 fontStyle: "italic",
               }}
             >
-              Last fact-checked: {DATE_FACT_CHECKED_HUMAN}. Every engine list and
-              price below was read on that date from the linked vendor page. This
-              category changes monthly. If you are reading this well after
-              that date, open the source link before you buy.
+              Last reviewed: {DATE_REVIEWED_HUMAN}. Every published price on this
+              page was re-read from the linked vendor page on November 13 or 15,
+              2026; each entry shows the date its source was read. This category
+              changes monthly. If you are reading this well after that date, open
+              the source link before you buy.
             </p>
           </RevealSection>
         </div>
@@ -585,8 +597,7 @@ export default function BestAIVisibilityToolsPost() {
               get two things I can point at a source for: the{" "}
               <strong style={labelStyle}>engines the vendor documents</strong>{" "}and
               the <strong style={labelStyle}>entry price the vendor publishes</strong>
-              , each linked to the page it came from, all read on{" "}
-              {DATE_FACT_CHECKED_HUMAN}. Where a vendor publishes no pricing, this
+              , each linked to the page it came from and dated. Where a vendor publishes no pricing, this
               page says so instead of inventing a range: three of the nine
               tools here fall into that bucket, and the dollar figures this page used
               to quote for them came from nowhere.
@@ -639,7 +650,7 @@ export default function BestAIVisibilityToolsPost() {
             <p style={{ marginBottom: 26 }}>
               <strong style={labelStyle}>Prices and product names moved.</strong>{" "}
               Profound briefly sold self-serve brand plans from $99; by October 2026
-              brands get a trial and then Enterprise, and $99 is the agency plan.
+              brands get a trial and then Enterprise, and the $99 was the agency plan (by November its base price was no longer shown).
               Otterly starts at $29, not $100.
               BrightEdge&rsquo;s AI product is AI Hyper Cube, not Generative Parser.
               Details are in each entry.
@@ -651,6 +662,17 @@ export default function BestAIVisibilityToolsPost() {
               the $39 plan); SE Visible now updates daily; Otterly&rsquo;s Enterprise
               tier is custom-priced; Ahrefs includes some custom prompts on paid
               plans; Semrush added a free AI visibility checker.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              <strong style={labelStyle}>Re-checked November 13 and 15, 2026.</strong>{" "}
+              Four of the seven priced tools had changed in six weeks. Otterly
+              replaced prompts and engine add-ons with credits, so every engine is
+              now on every plan but the prompt count depends on how many you track.
+              SE Visible cut its entry tier to $89 for 75 prompts and swapped
+              Perplexity for Copilot. Profound&rsquo;s Enterprise list grew to 10
+              engines (still no Copilot) and the agency base price is no longer
+              shown. Scrunch&rsquo;s Core plan is now spelled out: 125 prompts, four
+              engines, one country. Frase, Semrush and Ahrefs had not moved.
             </p>
           </RevealSection>
 
@@ -670,8 +692,9 @@ export default function BestAIVisibilityToolsPost() {
               }}
             >
               <em>
-                Every row was read from the linked vendor page on{" "}
-                {DATE_FACT_CHECKED_HUMAN}. &ldquo;Not published&rdquo; means the
+                Every row was read from the linked vendor page on the date shown
+                in its entry below (priced rows: November 13 or 15, 2026).
+                &ldquo;Not published&rdquo; means the
                 vendor does not disclose pricing publicly, not that it is
                 expensive, though in practice these are enterprise contracts.
               </em>
@@ -984,11 +1007,14 @@ export default function BestAIVisibilityToolsPost() {
             <ul style={{ margin: "0 0 26px 22px" }}>
               <li style={{ marginBottom: 11 }}>
                 <strong style={labelStyle}>Which engines are included, not listed.</strong>{" "}
-                Otterly bundles Copilot and AI Overviews but charges extra for Gemini
-                and Claude. Profound&rsquo;s full engine list is Enterprise-only.
-                Ahrefs&rsquo; AI indexes are an add-on. Frase&rsquo;s $39 plan tracks
-                two engines; five need its $239 plan. SE Visible and Semrush&rsquo;s AI
-                Visibility toolkit include five engines from their entry price.
+                Otterly includes all seven engines but every engine you track uses
+                credits, so more engines means fewer prompts. Profound&rsquo;s full
+                engine list is Enterprise-only and leaves out Copilot. Ahrefs&rsquo;
+                AI indexes are an add-on. Frase&rsquo;s $39 plan tracks two engines;
+                five need its $239 plan. SE Visible and Semrush&rsquo;s AI Visibility
+                toolkit include five engines from their entry price, but not the
+                same five: SE Visible has Copilot and no Perplexity, Semrush the
+                reverse.
               </li>
               <li style={{ marginBottom: 11 }}>
                 <strong style={labelStyle}>How often it refreshes.</strong>{" "}Daily
@@ -1020,7 +1046,8 @@ export default function BestAIVisibilityToolsPost() {
               </li>
               <li style={{ marginBottom: 11 }}>
               <strong style={labelStyle}>Geography and language.</strong>{" "}SE Visible
-                covers 7 countries and 5 languages. Otterly covers 50+ countries. If
+                covers 7 countries and 5 languages. Otterly puts no cap on countries;
+                Scrunch Core covers one. If
                 you sell in more than one language, check this before anything else.
               </li>
             </ul>
@@ -1151,7 +1178,8 @@ export default function BestAIVisibilityToolsPost() {
                 no affiliate relationship with, and receive no compensation from, any
                 tool named on this page. I sell an AI visibility audit, which competes
                 for the same budget as some of them. Engine lists and prices were read
-                from the linked vendor pages on {DATE_FACT_CHECKED_HUMAN}; the
+                from the linked vendor pages on the dates shown in each entry
+                (last review {DATE_REVIEWED_HUMAN}); the
                 judgements about fit are mine and are not scored.
               </p>
               <p

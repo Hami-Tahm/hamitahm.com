@@ -23,7 +23,12 @@ const DATE_PUBLISHED = "2026-06-08";
 // ranking for the core AEO/GEO/SEO comparison. SAO is explicitly flagged as
 // one vendor's (Canopy Media's) house term, not a standard; do not treat it
 // as equivalent to AEO/GEO anywhere else on the site.
-const DATE_MODIFIED = "2026-10-02";
+const DATE_MODIFIED = "2026-11-15";
+// 2026-11-15: the line under the H1 was a teaser ("Three strategies, three surfaces...")
+// that answered nothing. Replaced with a two-sentence direct answer, so the first text
+// after the H1 is the extractable definition (Search Console, 28 days to Nov 14: high
+// impressions, zero clicks). Added a visible "Last reviewed" line.
+const DATE_REVIEWED_HUMAN = "November 15, 2026";
 // 2026-10-02: Search Console shows ~6,000 impressions over three months at average
 // position 33 to 48, with people literally asking "are aeo and geo the same" (125),
 // "are aeo and geo different things", "is aeo the same as geo". The page answered
@@ -218,13 +223,31 @@ export default function AEOvsGEOvsSEOPost() {
                 lineHeight: 1.5,
               }}
             >
-              Three strategies, three surfaces, and how to know which layer
-              your business needs first.
+              SEO gets your pages ranked in search results. AEO (answer engine
+              optimization) and GEO (generative engine optimization) both get your
+              business named and cited inside AI answers from ChatGPT, Google AI
+              Overviews, Perplexity and Copilot, and in practice they are mostly the
+              same work under two names. The real choice is SEO versus AI
+              visibility, not AEO versus GEO.
             </p>
           </RevealSection>
 
           <RevealSection delay={0.18}>
             <AuthorByline date="June 8, 2026" readTime="12 min read" />
+          </RevealSection>
+
+          <RevealSection delay={0.2}>
+            <p
+              style={{
+                marginTop: 22,
+                fontSize: 14,
+                lineHeight: 1.6,
+                color: "var(--faint)",
+                fontStyle: "italic",
+              }}
+            >
+              Last reviewed: {DATE_REVIEWED_HUMAN}.
+            </p>
           </RevealSection>
         </div>
       </header>
