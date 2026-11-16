@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ZoomableImage } from "@/components/ZoomableImage";
 import { RevealSection } from "@/components/Reveal";
 
 /*
@@ -61,6 +62,11 @@ const structuredData = {
     },
   ],
 };
+
+// Client's console screenshot, cropped by Hami; shows no site name, domain or account.
+const CHART_SRC = "/images/case-studies/home-services-gsc-ai-features.png";
+const CHART_ALT =
+  "Google Search Console Generative AI features report for an anonymized home services client, web search, three months from August 15 to November 14, 2026: 156K total impressions, daily impressions rising from about 1,400 to 2,596 on November 14.";
 
 const h2Style = {
   fontFamily: "var(--serif)",
@@ -172,6 +178,20 @@ export default function HomeServicesGoogleAiFeaturesPage() {
           asks Google what a job involves, what it costs or who to call is often deciding now. If the AI
           answer draws on your page, you are part of that decision before anyone clicks a list of links.
         </p>
+        <figure style={{ margin: "30px 0 0", maxWidth: 980 }}>
+          <ZoomableImage
+            src={CHART_SRC}
+            alt={CHART_ALT}
+            width={2282}
+            height={1106}
+            loading="lazy"
+            style={{ width: "100%", height: "auto", borderRadius: 12, border: "1px solid var(--line-strong)" }}
+          />
+          <figcaption style={{ marginTop: 14, fontSize: 14.5, color: "var(--muted)", lineHeight: 1.6, maxWidth: "62ch" }}>
+            The client&rsquo;s Google Search Console, Generative AI features report, web search,
+            August 15 to November 14, 2026. Cropped so the site cannot be identified.
+          </figcaption>
+        </figure>
       </Section>
 
       <Section>
