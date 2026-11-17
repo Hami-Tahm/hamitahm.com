@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ZoomableImage } from "@/components/ZoomableImage";
 import { RevealSection } from "@/components/Reveal";
 
 /*
@@ -22,10 +23,13 @@ import { RevealSection } from "@/components/Reveal";
  * Engagement as stated by Hami: full audit, action plan and implementation, covering
  * technical work, content, AEO and GEO. The page names those workstreams only.
  *
- * Chart image: add the cropped screenshot as
- * public/images/case-studies/nutrition-gsc-ai-features.png and render it like the
- * home services case study (ZoomableImage + figcaption) once the file exists.
+ * Chart image: public/images/case-studies/nutrition-gsc-ai-features.png, the
+ * client's console cropped by Hami (no site name, domain or account visible).
  */
+
+const CHART_SRC = "/images/case-studies/nutrition-gsc-ai-features.png";
+const CHART_ALT =
+  "Google Search Console Generative AI features report for an anonymized nutrition and diet client, web search, three months from August 16 to November 15, 2026: 23K total impressions, daily impressions rising from about 120 to about 490.";
 
 const SLUG = "nutrition-site-google-ai-features";
 const PAGE_URL = `https://hamitahm.com/case-studies/${SLUG}/`;
@@ -200,6 +204,20 @@ export default function NutritionSiteGoogleAiFeaturesPage() {
           which sources they draw on. Being one of those sources is the starting point for being trusted
           and chosen.
         </p>
+        <figure style={{ margin: "30px 0 0", maxWidth: 980 }}>
+          <ZoomableImage
+            src={CHART_SRC}
+            alt={CHART_ALT}
+            width={2282}
+            height={1106}
+            loading="lazy"
+            style={{ width: "100%", height: "auto", borderRadius: 12, border: "1px solid var(--line-strong)" }}
+          />
+          <figcaption style={{ marginTop: 14, fontSize: 14.5, color: "var(--muted)", lineHeight: 1.6, maxWidth: "62ch" }}>
+            The client&rsquo;s Google Search Console, Generative AI features report, web search,
+            August 16 to November 15, 2026. Cropped so the site cannot be identified.
+          </figcaption>
+        </figure>
       </Section>
 
       <Section>
