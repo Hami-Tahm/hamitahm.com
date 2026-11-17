@@ -27,6 +27,18 @@ type CaseStudy = {
 
 const CASE_STUDIES: readonly CaseStudy[] = [
   {
+    href: "/case-studies/nutrition-site-google-ai-features/",
+    tag: "Client · Nutrition · Audit + implementation · Aug to Nov 2026",
+    title: "A Nutrition Website Roughly Quadrupled Its Daily Google AI Impressions in Three Months",
+    excerpt:
+      "An anonymized client, delivered end to end: audit, action plan and implementation across technical, content, AEO and GEO work. Daily impressions in Google's AI features went from about 120 in mid-August to 492 on November 15, 2026. Source: the client's Search Console.",
+    stats: [
+      { value: "~4×", label: "Daily Google AI impressions" },
+      { value: "492", label: "Impressions on Nov 15" },
+      { value: "23K", label: "Google AI impressions, 3 months" },
+    ],
+  },
+  {
     href: "/case-studies/home-services-google-ai-features/",
     tag: "Client · Home services · Aug to Nov 2026",
     title: "A Home Services Website Reached 156,000 Google AI Impressions in Three Months",
@@ -193,8 +205,8 @@ export default function CaseStudiesIndexPage() {
                 lineHeight: 1.6,
               }}
             >
-              Documented results from AI visibility work: a client in home
-              services, a site I founded that went from near-zero to a default
+              Documented results from AI visibility work: clients in home
+              services and nutrition, a site I founded that went from near-zero to a default
               AI source, and proof on the AI-visibility category itself.
             </p>
           </RevealSection>

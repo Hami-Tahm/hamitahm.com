@@ -50,6 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/case-studies/homecalc-ai-benchmark-canada/", priority: 0.8, changeFrequency: "monthly" },
     { path: "/case-studies/cited-by-ai-engines/", priority: 0.8, changeFrequency: "monthly" },
     { path: "/case-studies/home-services-google-ai-features/", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/case-studies/nutrition-site-google-ai-features/", priority: 0.8, changeFrequency: "monthly" },
 
     // ── Person + brand pages ─────────────────────────────────────────────
     { path: "/hami-tahm/", priority: 0.85, changeFrequency: "monthly" },
@@ -204,6 +205,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/case-studies/homecalc-ai-visibility/": "2026-08-10",
     "/case-studies/homecalc-ai-benchmark-canada/": "2026-10-20",
     "/case-studies/home-services-google-ai-features/": "2026-11-16",
+    "/case-studies/nutrition-site-google-ai-features/": "2026-11-17",
     "/research/": "2026-08-09",
     "/methodology/": "2026-08-09",
     // Metadata switched from a hardcoded CAD title to generateMetadata() so
