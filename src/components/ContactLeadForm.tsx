@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { readFirstTouch, readLeadAttribution } from "@/lib/attribution";
 import { buildLeadEvent, LEAD_PENDING_KEY } from "@/lib/lead-event";
+import { HeardFromField } from "@/components/HeardFromField";
 
 /**
  * Qualified-lead form on /contact/ (Google Ads pilot, 2026-10-30).
@@ -42,6 +43,8 @@ export default function ContactLeadForm() {
       website: String(data.get("website") || ""),
       need: String(data.get("need") || ""),
       fax: String(data.get("fax") || ""), // honeypot
+      heard_from: String(data.get("heard_from") || ""),
+      heard_from_other: String(data.get("heard_from_other") || ""),
       page_path: pagePath,
       campaign: firstTouch ?? {},
       // Where this lead came from: first, last and this-visit touch (no PII).
@@ -110,6 +113,8 @@ export default function ContactLeadForm() {
             style={{ ...inputStyle, resize: "vertical", fontFamily: "inherit" }}
           />
         </label>
+
+        <HeardFromField id="contact-heard-from" labelStyle={labelStyle} labelTextStyle={labelTextStyle} inputStyle={inputStyle} />
 
         {/* Honeypot: off-screen, out of tab order and the accessibility tree. */}
         <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", top: 0 }}>

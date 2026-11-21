@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { flattenAttribution } from "@/lib/attribution";
+import { heardFromLine } from "@/lib/heard-from";
 
 /**
  * POST /api/agency-partner
@@ -37,6 +38,8 @@ export async function POST(req: Request) {
     message?: string;
     company?: string;
     attribution?: unknown;
+    heard_from?: unknown;
+    heard_from_other?: unknown;
   };
   try {
     body = await req.json();
@@ -82,6 +85,8 @@ export async function POST(req: Request) {
   // 2026-11-14: lead attribution. The deployed script maps only name/agency/website/
   // email/message, so the readable block is appended to `message`.
   const attribution = flattenAttribution(body.attribution);
+  // 2026-11-21: optional self-reported source ("How did you hear about me?").
+  const heardFrom = heardFromLine(body.heard_from, body.heard_from_other);
 
   const payload = {
     submittedAt: new Date().toISOString(),
@@ -91,7 +96,16 @@ export async function POST(req: Request) {
     website,
     // validated by the strict regex above, so it cannot begin with a formula character
     email,
-    message: [message || "(no message)", "", "---", "Where this lead came from:", attribution.text].join("\n"),
+    message: [
+      message || "(no message)",
+      "",
+      "---",
+      `How they heard about me (self-reported): ${heardFrom || "(not answered)"}`,
+      "",
+      "Where this lead came from:",
+      attribution.text,
+    ].join("\n"),
+    heard_from: heardFrom,
     attribution_text: attribution.text,
     ...attribution.fields,
   };

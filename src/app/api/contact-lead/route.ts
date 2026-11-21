@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { flattenAttribution } from "@/lib/attribution";
+import { heardFromLine } from "@/lib/heard-from";
 
 /**
  * POST /api/contact-lead
@@ -80,6 +81,8 @@ export async function POST(req: Request) {
   // script only maps name/agency/website/email/message, so it travels in `message`
   // (and as flat ft_/lt_/st_ fields for when the script maps them).
   const attribution = flattenAttribution(body.attribution);
+  // 2026-11-21: optional self-reported source ("How did you hear about me?").
+  const heardFrom = heardFromLine(body.heard_from, body.heard_from_other);
 
   const payload = {
     submittedAt: new Date().toISOString(),
@@ -94,6 +97,7 @@ export async function POST(req: Request) {
       "---",
       "Lead type: qualified contact lead (hamitahm.com contact form)",
       `Form page: ${pagePath}`,
+      `How they heard about me (self-reported): ${heardFrom || "(not answered)"}`,
       "",
       "Where this lead came from:",
       attribution.text,
@@ -102,6 +106,7 @@ export async function POST(req: Request) {
       ...campaignLines,
     ].join("\n"),
     form_page: pagePath,
+    heard_from: heardFrom,
     attribution_text: attribution.text,
     ...attribution.fields,
   };

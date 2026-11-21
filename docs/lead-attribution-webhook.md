@@ -93,3 +93,21 @@ I, headers written automatically on the first new lead), deployed as Version 6 o
 SAME deployment (`AKfycbxdBX...9IDu6TDZiKJw`), so `CHECKER_SHEET_WEBHOOK` is unchanged.
 Until the site code with attribution is deployed, new rows simply get empty attribution
 columns and the email says "(not recorded)".
+
+## Self-reported source ("How did you hear about me?"), 2026-11-21
+
+All three forms have an optional select (src/components/HeardFromField.tsx; options in
+src/lib/heard-from.ts: ChatGPT, Bing, Microsoft Copilot, Google Search, Perplexity,
+Gemini, Claude, Muse, Other + free text). The routes allow-list the value and send it as
+`heard_from`:
+
+- **Checker:** the Apps Script (Version 7, same deployment, deployed 2026-11-21) writes
+  `Self-reported: <answer>` into column G ("Lead source"; it was the unused Competitors
+  column). The answer is also the first line of `attribution_text` in the email.
+- **Contact and For Agencies:** a "How they heard about me (self-reported)" line in
+  `message` (sheet + email). No script change needed.
+- **Cal.com bookings:** the event's booking form has an optional "How did you hear about
+  me?" select (identifier `heard_from`) and a HIDDEN short-text question "Traffic source
+  (auto)" (identifier `traffic_source`). src/components/CalBookingEmbed.tsx prefills
+  `traffic_source` with the visitor's this-visit / first-visit source. Both show in the
+  booking details in Cal.com.

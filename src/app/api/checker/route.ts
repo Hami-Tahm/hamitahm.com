@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { flattenAttribution } from "@/lib/attribution";
+import { heardFromLine } from "@/lib/heard-from";
 
 /**
  * POST /api/checker
@@ -29,6 +30,8 @@ export async function POST(req: Request) {
     email?: string;
     form_page?: string;
     attribution?: unknown;
+    heard_from?: unknown;
+    heard_from_other?: unknown;
   };
   try {
     body = await req.json();
@@ -88,6 +91,10 @@ export async function POST(req: Request) {
   // The Apps Script must map them; see docs/lead-attribution-webhook.md.
   const attribution = flattenAttribution(body.attribution);
   const formPage = deFormula(String(body.form_page || "").trim().slice(0, 150));
+  // 2026-11-21: optional self-reported source ("How did you hear about me?"). Sent as
+  // its own field (sheet column, once the Apps Script maps it) and as the first line
+  // of attribution_text, which the script already puts in the notification email.
+  const heardFrom = heardFromLine(body.heard_from, body.heard_from_other);
 
   const payload = {
     submittedAt: new Date().toISOString(),
@@ -100,7 +107,8 @@ export async function POST(req: Request) {
     keywords,
     competitors,
     form_page: formPage,
-    attribution_text: attribution.text,
+    heard_from: heardFrom,
+    attribution_text: `How they heard about me (self-reported): ${heardFrom || "(not answered)"}\n${attribution.text}`,
     ...attribution.fields,
   };
 

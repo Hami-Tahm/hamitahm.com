@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { BOOKING_URL } from "@/lib/offers";
 import { recordCallBooked } from "@/lib/booking-conversion";
+import { readLeadAttribution, type Touch } from "@/lib/attribution";
 
 /**
  * Opens the Cal.com booking page as a pop-up ON hamitahm.com instead of sending the
@@ -105,6 +106,36 @@ function loadCal(): Promise<void> {
   return loader;
 }
 
+/**
+ * 2026-11-21: where this visitor came from, as one short line, prefilled into a
+ * HIDDEN booking question on the Cal.com event (identifier "traffic_source"). It shows
+ * up in the booking details and the booking email, next to the visitor's own answer
+ * to "How did you hear about me?". Source, medium, campaign and landing path only:
+ * no gclid, no query strings, nothing the visitor typed.
+ */
+const SOURCE_FIELD = "traffic_source";
+
+function touchLine(t: Touch | null): string {
+  if (!t) return "";
+  const parts = [`${t.source} / ${t.medium}`];
+  if (t.campaign) parts.push(`campaign=${t.campaign}`);
+  if (t.term) parts.push(`keyword=${t.term}`);
+  if (t.landing_page) parts.push(`landing=${t.landing_page}`);
+  return parts.join(" | ");
+}
+
+function sourceSummary(): string {
+  try {
+    const a = readLeadAttribution();
+    const now = touchLine(a.session_touch);
+    const first = touchLine(a.first_touch);
+    const line = first && first !== now ? `This visit: ${now} || First visit: ${first}` : `This visit: ${now}`;
+    return line.slice(0, 400);
+  } catch {
+    return "";
+  }
+}
+
 function isBookingHref(href: string): boolean {
   try {
     const u = new URL(href, window.location.origin);
@@ -131,7 +162,10 @@ export function CalBookingEmbed() {
       e.preventDefault();
       loadCal()
         .then(() => {
-          w.Cal!.ns![NAMESPACE]("modal", { calLink: CAL_LINK, config: { layout: "month_view" } });
+          const config: Record<string, string> = { layout: "month_view" };
+          const src = sourceSummary();
+          if (src) config[SOURCE_FIELD] = src;
+          w.Cal!.ns![NAMESPACE]("modal", { calLink: CAL_LINK, config });
         })
         .catch(() => {
           window.location.href = a.href;

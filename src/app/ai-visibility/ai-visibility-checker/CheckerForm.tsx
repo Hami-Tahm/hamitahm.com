@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { readLeadAttribution } from "@/lib/attribution";
+import { HeardFromField } from "@/components/HeardFromField";
 
 /**
  * COUNTRY IS A FIXED LIST, NOT FREE TEXT (2026-08-20).
@@ -188,6 +189,8 @@ export default function CheckerForm() {
     // waitlist can't be acted on, which would make the promise in the email empty.
     const resolvedCountry = isWaitlist ? otherCountry.trim() : country.trim();
     const scope: Scope = isWaitlist ? "waitlist" : "served";
+    // Optional self-reported source (HeardFromField is uncontrolled; read it here).
+    const fd = new FormData(e.currentTarget as HTMLFormElement);
     setStatus("submitting");
     try {
       const res = await fetch("/api/checker", {
@@ -207,6 +210,8 @@ export default function CheckerForm() {
           // Where this lead came from: first, last and this-visit touch (no PII).
           form_page: window.location.pathname,
           attribution: readLeadAttribution(),
+          heard_from: String(fd.get("heard_from") || ""),
+          heard_from_other: String(fd.get("heard_from_other") || ""),
         }),
       });
       if (!res.ok) throw new Error("bad status");
@@ -584,6 +589,10 @@ export default function CheckerForm() {
           <div style={{ marginBottom: 18 }}>
             <label style={labelStyle} htmlFor="cw-email">Email (for your report)</label>
             <input id="cw-email" type="email" style={inputStyle} placeholder="you@yourbrand.com" value={email} onChange={(e) => setEmail(e.target.value)} />
+          </div>
+
+          <div style={{ marginBottom: 18 }}>
+            <HeardFromField id="cw-heard-from" labelStyle={{ display: "block" }} labelTextStyle={labelStyle} inputStyle={inputStyle} />
           </div>
 
           {/*

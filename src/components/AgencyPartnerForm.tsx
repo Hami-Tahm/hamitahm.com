@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { readLeadAttribution } from "@/lib/attribution";
+import { HeardFromField } from "@/components/HeardFromField";
 
 /**
  * The partnership enquiry form on /for-agencies/.
@@ -40,6 +41,8 @@ export default function AgencyPartnerForm() {
       website: String(data.get("website") || ""),
       email: String(data.get("email") || ""),
       message: String(data.get("message") || ""),
+      heard_from: String(data.get("heard_from") || ""),
+      heard_from_other: String(data.get("heard_from_other") || ""),
       // honeypot: hidden from people, filled in by naive bots
       company: String(data.get("company") || ""),
       // Where this lead came from: first, last and this-visit touch (no PII).
@@ -116,6 +119,8 @@ export default function AgencyPartnerForm() {
             style={{ ...inputStyle, resize: "vertical", fontFamily: "inherit" }}
           />
         </label>
+
+        <HeardFromField id="agency-heard-from" labelStyle={labelStyle} labelTextStyle={labelTextStyle} inputStyle={inputStyle} />
 
         {/*
           Honeypot. Hidden with inline styles rather than `display: none`, which some
