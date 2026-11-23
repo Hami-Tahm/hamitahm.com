@@ -10,7 +10,14 @@ const ARTICLE_TITLE = "What Is Answer Engine Optimization (AEO)?";
 const ARTICLE_DESCRIPTION =
   "Answer Engine Optimization (AEO) is the practice of structuring content so AI-powered search engines cite it directly. Here's what it is, how it works, and why it's different from SEO.";
 const DATE_PUBLISHED = "2026-06-09";
-const DATE_MODIFIED = "2026-08-16";
+const DATE_MODIFIED = "2026-11-23";
+// 2026-11-23: Search Console "Crawled - currently not indexed" (last crawl Nov 14),
+// while /blog/aeo-vs-geo-vs-seo/ is indexed and covers the comparison. Refocused this
+// page on the one thing only it does: define AEO and show it on a page. Added a worked
+// before/after example (section 04) with a fixed-prompt way to check it, removed the
+// blockquote that repeated the "In short" box word for word, and aligned the AEO vs
+// GEO FAQ with the comparison post (it said GEO was "broader"; that post, rewritten
+// 2026-10-02, says they are mostly the same goal). Title and meta unchanged.
 
 /**
  * ── CORRECTED 2026-08-16 ──
@@ -64,7 +71,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "What's the difference between AEO and GEO?",
-    a: "AEO optimizes for being cited in AI-generated direct answers. GEO (Generative Engine Optimization) is broader: it covers how AI systems represent your brand across all AI-generated content, not just direct Q&A responses. They overlap, but AEO is narrower and answer-specific. See AEO vs GEO vs SEO for the full breakdown.",
+    a: "In practice, very little. Both aim to get your business named and cited when an AI system answers a question, and most agencies use the terms interchangeably. AEO is the older term and leans toward winning the direct answer to one specific question. GEO comes from a 2023 research paper and leans toward how generative systems pick and blend sources across longer answers. See AEO vs GEO vs SEO for the full comparison.",
   },
   {
     q: "Is AEO only for ChatGPT?",
@@ -274,19 +281,6 @@ export default function WhatIsAnswerEngineOptimizationPost() {
               chooses to quote, paraphrase, or recommend when users ask questions
               in your space.
             </p>
-            <blockquote
-              style={{
-                borderLeft: "2px solid var(--accent)",
-                padding: "6px 0 6px 24px",
-                margin: "0 0 26px",
-                fontStyle: "italic",
-                color: "var(--muted)",
-              }}
-            >
-              AEO structures content so AI search platforms (Perplexity, Google
-              AI Overviews, ChatGPT) cite it directly. The goal is citations,
-              not rankings.
-            </blockquote>
             <p style={{ marginBottom: 26 }}>
               AEO is one layer of a broader{" "}
               <Link href={DEFINITION_URL} style={linkStyle}>
@@ -460,7 +454,71 @@ export default function WhatIsAnswerEngineOptimizationPost() {
           </RevealSection>
 
           <RevealSection>
-            <SectionLabel number="04" text="What AEO is for" />
+            <SectionLabel number="04" text="AEO on one page: a worked example" />
+          </RevealSection>
+
+          <RevealSection delay={0.06}>
+            <p style={{ marginBottom: 26 }}>
+              Definitions only go so far. Here is what AEO changes on a single
+              page, using a common case: a real estate law firm with a page about
+              closing a home purchase. Buyers ask AI assistants one question
+              about it more than any other: how long does closing take?
+            </p>
+
+            <h3 style={h3Style}>Before</h3>
+            <p style={{ marginBottom: 26 }}>
+              The page is titled &ldquo;Our Closing Process.&rdquo; It opens with
+              the firm&rsquo;s history, then a paragraph about service. The
+              actual answer (the firm&rsquo;s usual timeline and what slows it
+              down) sits in the fourth paragraph, mixed in with a sales pitch.
+              The page may rank, but an answer engine has to dig for the one
+              sentence it needs. Usually it quotes a page that says it more
+              plainly.
+            </p>
+
+            <h3 style={h3Style}>After</h3>
+            <ul style={{ margin: "0 0 26px 22px" }}>
+              <li style={{ marginBottom: 11 }}>
+                <strong style={labelStyle}>The heading asks the question</strong>{" "}
+                the way buyers ask it: &ldquo;How long does closing take in
+                [city]?&rdquo;
+              </li>
+              <li style={{ marginBottom: 11 }}>
+                <strong style={labelStyle}>The first two sentences answer it</strong>:
+                the firm&rsquo;s usual range, and the one or two things that
+                most often stretch it.
+              </li>
+              <li style={{ marginBottom: 11 }}>
+                <strong style={labelStyle}>The steps follow as a numbered list</strong>,
+                so each one can be quoted on its own.
+              </li>
+              <li style={{ marginBottom: 11 }}>
+                <strong style={labelStyle}>The page says who is answering</strong>:
+                a named lawyer, the jurisdiction, and a date it was last
+                checked.
+              </li>
+            </ul>
+            <p style={{ marginBottom: 26 }}>
+              Nothing here is a trick. The page now answers the question it was
+              always about, in the order a reader (or a model) needs it.
+            </p>
+
+            <h3 style={h3Style}>How to tell if it worked</h3>
+            <p style={{ marginBottom: 26 }}>
+              Write down the exact question and run it in the same AI assistants
+              on a fixed day each week, before and after the change. For each
+              run, record whether the firm is named and whether this page is the
+              cited source. One run proves nothing, because answers vary from
+              run to run. A trend over several weeks does.{" "}
+              <Link href="/blog/how-to-check-ai-visibility/" style={linkStyle}>
+                How to check your AI visibility
+              </Link>{" "}
+              walks through the full method.
+            </p>
+          </RevealSection>
+
+          <RevealSection>
+            <SectionLabel number="05" text="What AEO is for" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
@@ -499,7 +557,7 @@ export default function WhatIsAnswerEngineOptimizationPost() {
           </RevealSection>
 
           <RevealSection>
-            <SectionLabel number="05" text="AEO for AI search visibility" />
+            <SectionLabel number="06" text="AEO for AI search visibility" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
@@ -530,7 +588,7 @@ export default function WhatIsAnswerEngineOptimizationPost() {
           </RevealSection>
 
           <RevealSection>
-            <SectionLabel number="06" text="What AEO is not" />
+            <SectionLabel number="07" text="What AEO is not" />
           </RevealSection>
 
           <RevealSection delay={0.06}>
@@ -578,7 +636,7 @@ export default function WhatIsAnswerEngineOptimizationPost() {
           </RevealSection>
 
           <RevealSection>
-            <SectionLabel number="07" text="Frequently asked questions" />
+            <SectionLabel number="08" text="Frequently asked questions" />
           </RevealSection>
 
           <RevealSection delay={0.06}>

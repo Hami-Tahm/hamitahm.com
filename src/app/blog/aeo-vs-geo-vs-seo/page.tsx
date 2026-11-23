@@ -23,12 +23,16 @@ const DATE_PUBLISHED = "2026-06-08";
 // ranking for the core AEO/GEO/SEO comparison. SAO is explicitly flagged as
 // one vendor's (Canopy Media's) house term, not a standard; do not treat it
 // as equivalent to AEO/GEO anywhere else on the site.
-const DATE_MODIFIED = "2026-11-15";
+const DATE_MODIFIED = "2026-11-23";
+// 2026-11-23: section 02 still listed "FAQPage schema" as an AEO signal, which the
+// site's own AEO definition post withdrew on 2026-08-16. Replaced with the signals
+// that hold, added a one-line correction linking there, and fixed the same claim in
+// the comparison table ("Schema" -> "Direct answers"). Title, H1, meta unchanged.
 // 2026-11-15: the line under the H1 was a teaser ("Three strategies, three surfaces...")
 // that answered nothing. Replaced with a two-sentence direct answer, so the first text
 // after the H1 is the extractable definition (Search Console, 28 days to Nov 14: high
 // impressions, zero clicks). Added a visible "Last reviewed" line.
-const DATE_REVIEWED_HUMAN = "November 15, 2026";
+const DATE_REVIEWED_HUMAN = "November 23, 2026";
 // 2026-10-02: Search Console shows ~6,000 impressions over three months at average
 // position 33 to 48, with people literally asking "are aeo and geo the same" (125),
 // "are aeo and geo different things", "is aeo the same as geo". The page answered
@@ -396,9 +400,20 @@ export default function AEOvsGEOvsSEOPost() {
               someone asks a question.
             </p>
             <p style={{ marginBottom: 26 }}>
-              The signals: FAQPage schema, structured Q&amp;A content, citation
-              authority, clear direct answers. The output: your brand cited in
-              the answer block, not buried in the ranked results below it.
+              The signals: a clear direct answer early on the page, headings
+              that match the question, citation authority, and an entity AI
+              systems can identify. The output: your brand cited in the answer
+              block, not buried in the ranked results below it.
+            </p>
+            <p style={{ marginBottom: 26 }}>
+              One correction to a common claim, including one this page used to
+              make: FAQPage schema is not an AEO signal. Google stopped showing
+              FAQ rich results in May 2026, and no schema type has been shown to
+              earn an AI citation.{" "}
+              <Link href="/blog/what-is-answer-engine-optimization/" style={linkStyle}>
+                What schema still does for AEO
+              </Link>{" "}
+              is narrower: it states facts about a page that is already clear.
             </p>
             <p style={{ marginBottom: 26 }}>
               AEO matters because a growing share of searches now end without a
@@ -847,7 +862,7 @@ function ComparisonTable() {
   const rows = [
     ["Targets", "Google/Bing rankings", "AI direct answers", "AI-generated content"],
     ["Platforms", "Google, Bing", "Perplexity, Google AIO, Gemini", "ChatGPT, Claude, all LLMs"],
-    ["Ranking signal", "Backlinks, keywords", "Schema, authority, citations", "Training data, entity presence"],
+    ["Ranking signal", "Backlinks, keywords", "Direct answers, authority, citations", "Training data, entity presence"],
     ["Traffic type", "Click-through", "Zero-click answers", "Brand mentions + citations"],
     ["Measurement", "Rankings, clicks", "Citation frequency, featured placement", "Brand mention rate, accuracy"],
     ["Best for", "All businesses", "Q&A-heavy industries", "Thought leadership, B2B"],

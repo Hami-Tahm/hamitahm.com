@@ -196,11 +196,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Full re-verification, Amplitude + Bing added, 8 methods, 2026-10-03.
     "/blog/how-to-check-ai-visibility/": "2026-10-03",
     // Rewrote the "are AEO and GEO the same" answer, 2026-10-02.
-    "/blog/aeo-vs-geo-vs-seo/": "2026-11-15",
+    "/blog/aeo-vs-geo-vs-seo/": "2026-11-23",
     "/blog/ai-visibility-audit-checklist/": "2026-08-26",
     "/blog/ai-visibility-tool-accuracy/": "2026-11-13",
     "/blog/ai-visibility-consultant-vs-agency-vs-tool/": "2026-08-26",
-    "/blog/what-is-answer-engine-optimization/": "2026-08-16",
+    "/blog/what-is-answer-engine-optimization/": "2026-11-23",
     "/blog/which-ai-platform-matters-most/": "2026-08-10",
     "/case-studies/homecalc-ai-visibility/": "2026-08-10",
     "/case-studies/homecalc-ai-benchmark-canada/": "2026-10-20",
