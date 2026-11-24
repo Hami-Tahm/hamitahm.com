@@ -427,23 +427,59 @@ export default function ForAgencies() {
                   position: "relative",
                 }}
               >
-                Start with one client you already have.
+                How a one-client pilot works
               </h2>
-              <p
+              {/*
+                2026-11-24: one-client pilot copy approved by Hami (independent review 94/100).
+                Replaces the former "Start with one client you already have." heading and intro
+                so the pilot is explained once, directly above the form. No published price,
+                no ongoing commitment, no promised placement.
+              */}
+              {/* Same 46ch column as the form below, so the copy and the fields share one edge. */}
+              <div style={{ maxWidth: "46ch", marginLeft: "auto", marginRight: "auto" }}>
+              <div
                 style={{
                   marginTop: 16,
                   fontSize: 16,
                   color: "var(--muted)",
-                  maxWidth: "48ch",
-                  marginLeft: "auto",
-                  marginRight: "auto",
                   lineHeight: 1.6,
                   position: "relative",
+                  textAlign: "left",
+                  display: "grid",
+                  gap: 12,
                 }}
               >
-                One audit on an existing account, so you see the deliverable before you sell it to
-                anyone. No minimum, no contract.
-              </p>
+                <p>
+                  Pick one existing client who’s asking how they show up in AI search. Send me their
+                  website, target market, the service they most want buyers to find, and the
+                  competitors you want compared.
+                </p>
+                <p>
+                  I’ll test the questions those buyers ask across six AI platforms. You get a report
+                  under your agency’s brand showing where the client is recommended, who appears
+                  instead, which pages are cited, and what to fix first. Every finding carries the
+                  prompt, engine, country and date, so you can answer questions in the client meeting.
+                </p>
+                <p>
+                  We agree scope and price on a short call before work starts, and you get a delivery
+                  date with the brief, typically about seven business days. I never contact your
+                  client. You present the findings, and your team or the client’s developer decides
+                  what to implement. Implementation isn’t part of the pilot.
+                </p>
+                <p>
+                  <Link
+                    href="/ai-visibility/sample-report/"
+                    style={{
+                      color: "var(--accent)",
+                      textDecoration: "underline",
+                      textUnderlineOffset: 3,
+                    }}
+                  >
+                    Read a sample report (built on my own sites) <span className="arr">&rarr;</span>
+                  </Link>
+                </p>
+              </div>
+              </div>
               {/*
                 The closing CTA is the form itself rather than a link to /contact/.
                 Sending a qualified agency visitor to a general contact page loses them

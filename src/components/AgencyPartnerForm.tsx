@@ -141,7 +141,7 @@ export default function AgencyPartnerForm() {
         disabled={status === "sending"}
         style={{ marginTop: 22, opacity: status === "sending" ? 0.6 : 1 }}
       >
-        {status === "sending" ? "Sending..." : "Talk about a partnership"}{" "}
+        {status === "sending" ? "Sending..." : "Scope a pilot for one client"}{" "}
         {status !== "sending" && <span className="arr">&rarr;</span>}
       </button>
 
